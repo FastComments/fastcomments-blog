@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>FastComments Blog</title>
+    <link rel="shortcut icon" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="/css/blog.css">
+    <script src="js/blog.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="header">
+    <h1 class="brand-title"><a href="/">FastComments</a></h1>
+    <h2 class="brand-tagline">Blog</h2>
+    <div class="buttons">
+        <a href="https://blog.fastcomments.com/rss.xml"><img src="/images/rss.png"/></a>
+        <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.fastcomments.com%2Frss.xml'
+           target='blank'><img id='feedlyFollow'
+                               src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-medium_2x.png'
+                               alt='follow us in feedly' width='71' height='28'></a>
+    </div>
+    <div id="watchly-target" style="font-size: 10px"></div>
+    <script src="https://watch.ly/js/watchly-web.min.js"></script>
+    <script>
+        watchly.connect(document.getElementById('watchly-target'), {
+            "key": "5d1fcfabcc00a66e161816b4",
+            "prefix": "<img src=\"https://watch.ly/images/eye-s-w.png\" style=\"width: 20px;vertical-align: middle;margin-right: 4px;\" title=\"Live Count by Watch.ly\" />",
+            "postfix": " Current Visitors on Homepage"
+        });
+    </script>
+</div>
+<div class="content ">
+    <div class="posts">
+        <h1 class="content-subhead">Recent Posts</h1>
+
+        {{#posts}}
+        <section class="post">
+            <div class="post-description">
+                <p>
+                    {{{html}}}
+                </p>
+            </div>
+        </section>
+        {{/posts}}
+    </div>
+    <div class="footer">Copyright winrickLabs LLC {{footerYears}}</div>
+    <div class="left-right-art"></div>
+</div>
+</body>
+</html>
