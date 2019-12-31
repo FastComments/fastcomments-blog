@@ -2,7 +2,7 @@
 
 npm install
 node src/app
-mkdir src/static/generated/
+mkdir -p src/static/generated/
 cp -rv src/static/css src/static/generated/
 cp -rv src/static/images src/static/generated/
 cp -rv src/static/js src/static/generated/
