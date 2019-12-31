@@ -53,6 +53,14 @@ body {
     margin: 10px;
 }
 
+.post-link-icon {
+    text-decoration: none;
+}
+
+.content.post-page .post-link-icon {
+    display: none;
+}
+
 .content .code {
     padding: 10px;
     border: 1px solid #000;

@@ -22,7 +22,7 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	const fullUrl = 'https://blog.fastcomments.com/' + urlId;
 
 	let fileContent = fs.readFileSync(path.join(CONTENT_DIR, item), 'utf8');
-	fileContent = fileContent.replace('[postlink]', `<a href="${fullUrl}">&#128279;</a>`);
+	fileContent = fileContent.replace('[postlink]', `<a href="${fullUrl}" class="post-link-icon">&#128279;</a>`);
 	let html = marked(fileContent);
 	const postByteSize = byteSize(html.length).toString();
 
