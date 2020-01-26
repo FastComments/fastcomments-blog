@@ -9,6 +9,10 @@ body {
     text-align: center;
 }
 
+section.post {
+    border-top: 1px solid #000;
+}
+
 .header {
     font-size: 18px;
     font-weight: 700;
