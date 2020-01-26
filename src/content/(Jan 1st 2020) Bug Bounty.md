@@ -1,4 +1,4 @@
-###### May 5th 2019
+###### Jan 1st 2020
 # FastComments Bug Bounty [postlink]
 *Article size is [filesize] and is a [readtime]*
 
