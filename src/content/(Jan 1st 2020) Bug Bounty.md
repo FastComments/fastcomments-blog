@@ -1,6 +1,5 @@
 ###### Jan 1st 2020
 # FastComments Bug Bounty [postlink]
-*Article size is [filesize] and is a [readtime]*
 
 If you can find any bug with FastComments we'll pay you five dollars.
 
