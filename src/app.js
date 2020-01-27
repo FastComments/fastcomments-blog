@@ -39,13 +39,16 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	const readTime = readingTime(html).text;
 	html = html.replace('[readtime]', readTime);
 
+	const dateString = title.substring(1, title.indexOf(')'));
+	const ctime = new Date(dateString);
+
 	posts.push({
 		html: html,
 		title: title,
 		urlId: urlId,
 		fullUrl: fullUrl,
-		dateTimeObj: fs.statSync(path.join(CONTENT_DIR, item)).ctime,
-		dateTime: fs.statSync(path.join(CONTENT_DIR, item)).size,
+		dateTimeObj: ctime,
+		dateTime: ctime.getTime(),
 		minSize: postByteSize,
 		mediaSize: mediaSize,
 		fileSizeString: fileSizeString,
