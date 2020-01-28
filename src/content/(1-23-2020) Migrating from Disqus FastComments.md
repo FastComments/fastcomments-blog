@@ -10,7 +10,7 @@ file you get via email has a mysterious "gz" file extension. If you're a bit of 
 
 ### Don't open the "gz" file
 
-A default Windows 10 installation will not be able to open the file from Disquss. That's fine, because you don't have to with FastComments. Our backend understands
+A default Windows 10 installation will not be able to open the file from Disqus. That's fine, because you don't have to with FastComments. Our backend understands
 this compressed file so all you have to do is follow their instructions <a href="https://help.disqus.com/en/articles/1717199-importing-exporting" target="_blank">here to get said file</a>.
 
 After that, if you're logged in you can go <a href="https://fastcomments.com/auth/my-account/manage-data/import" target="_blank">here to import the file</a>. Select Disqus from the dropdown and upload your file.
