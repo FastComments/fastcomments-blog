@@ -42,8 +42,17 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	const dateString = title.substring(1, title.indexOf(')'));
 	const ctime = new Date(dateString);
 
+	const previewHTML = getCompiledPost(html, {
+		isPost: false
+	});
+
+	html = getCompiledPost(html, {
+		isPost: true
+	});
+
 	posts.push({
 		html: html,
+		previewHTML: previewHTML,
 		title: title,
 		urlId: urlId,
 		fullUrl: fullUrl,
@@ -86,14 +95,16 @@ fs.readdirSync(TEMPLATE_DIR).forEach(function(item) {
 	if(item === 'index.html') {
 		fs.writeFileSync(path.join(STATIC_GENERATED_DIR, item), getCompiledTemplate(item, {
 			posts: posts,
-				footerYears: footerYears
+			footerYears: footerYears,
+			isPost: false
 		}), 'utf8');
 	}
 	else if (item === 'post.html') {
 		posts.forEach(function(post) {
 			const html = getCompiledTemplate(item, {
 				post: post,
-				footerYears: footerYears
+				footerYears: footerYears,
+				isPost: true
 			});
 
 			feedGeneratorInstance.addItem({
@@ -118,6 +129,10 @@ fs.readdirSync(TEMPLATE_DIR).forEach(function(item) {
 
 function getCompiledTemplate(templateName, data) {
 	return handlebars.compile(fs.readFileSync(path.join(TEMPLATE_DIR, templateName), 'utf8'))(data);
+}
+
+function getCompiledPost(html, data) {
+	return handlebars.compile(html)(data);
 }
 
 console.log(`Execution Time: ${Date.now() - startTime}ms`);

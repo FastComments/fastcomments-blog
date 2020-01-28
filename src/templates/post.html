@@ -32,16 +32,20 @@
     <div class="posts">
         <section class="post">
             <div class="post-description">
-                <p>
-                    {{{post.html}}}
-                </p>
+                {{{post.html}}}
             </div>
         </section>
         <script src="https://fastcomments.com/js/embed.min.js"></script>
         <div id="fastcomments-widget"></div>
         <script>
             window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId: 'nYrnfYEv'
+                tenantId: 'nYrnfYEv',
+                commentCountFormat: window.fcCommentCountFormat,
+                commentCountUpdated: window.fcCommentCountUpdated,
+                headerHTML: window.fcHeaderHTML,
+                hideAvatars: true,
+                inputAfterComments: true,
+                absoluteDates: true
             });
         </script>
     </div>
