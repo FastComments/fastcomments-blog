@@ -6,7 +6,7 @@ There are a lot of things Disqus gets right, but where they fall short is where 
 ### Export Your Existing Comments
 
 One thing Disqus gets right is how they handle exporting data. You'll notice after following the steps in their guide <a href="https://help.disqus.com/en/articles/1717199-importing-exporting" target="_blank">here</a> that the resulting
-file you get via email has a mysterious "gz" file extension. If you're a bit of a geek you might know this stands for "gzip" and is a popular and efficient way to compress files. 
+file you get via email has a mysterious "gz" file extension. If you're a bit extra technically savvy you might know this stands for "gzip" and is a popular and efficient way to compress files. 
 
 ### Don't open the "gz" file
 

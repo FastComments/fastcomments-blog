@@ -5,7 +5,7 @@
 
 In order to export your site's Comment and User data from Commento from their Admin dashboard go to General and then Export Data.
 
-You'll notice that the resulting file you get via email has a mysterious "gz" file extension. If you're a bit of a geek you might know this stands for "gzip" and is a popular and efficient way to compress files. 
+You'll notice that the resulting file you get via email has a mysterious "gz" file extension. If you're a bit extra technically savvy you might know this stands for "gzip" and is a popular and efficient way to compress files. 
 
 ### Don't open the "gz" file
 
