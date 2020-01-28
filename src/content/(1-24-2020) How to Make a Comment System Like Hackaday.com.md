@@ -245,6 +245,9 @@ Soon we'll be creating a UI to configure all of these and style your widget in y
         document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Comments';
     };
     window.fcHeaderHTML = '<h1>Leave a Reply</h1>';
+    window.hideAvatars = true;
+    window.inputAfterComments = true;
+    window.absoluteDates = true;
 </script>
 
 {{/isPost}}
