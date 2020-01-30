@@ -1,6 +1,13 @@
 ###### Jan 25rd 2020
 # Migrating From Commento To FastComments [postlink]
 
+{{#unless isPost}}
+Read this post to see how to fully migrate from Commento to FastComments.
+
+We'll go over exports, imports, and gotchas.
+{{/unless}}
+
+{{#isPost}}
 ### Export Your Existing Comments
 
 In order to export your site's Comment and User data from Commento from their Admin dashboard go to General and then Export Data.
@@ -52,3 +59,4 @@ you may want to check that your site is properly secured.
 ## Why Won't Commento Won't Send Me My File?
 For larger sites Commento might not be able to create the exported file due to technical limitations on their end. We have the ability to scrape your existing site and pull the comments off it, however this can be
 fairly custom and due to the time involved will require you to have the Support Package. <a href="https://fastcomments.com/auth/my-account/help" target="_blank">You can request help with this here</a>.
+{{/isPost}}

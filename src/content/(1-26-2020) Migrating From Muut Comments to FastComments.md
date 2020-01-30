@@ -1,6 +1,13 @@
 ###### Jan 26rd 2020
 # Migrating From Muut Comments To FastComments [postlink]
 
+{{#unless isPost}}
+Read this post to see how to fully migrate from Muut to FastComments.
+
+We'll go over exports, imports, and gotchas.
+{{/unless}}
+
+{{#isPost}}
 ### Export Your Existing Comments
 
 In order to export your site's Comment and User data from Muut from their Admin dashboard go to Integrations and then JSON Export.
@@ -48,3 +55,4 @@ you are migrating more than just a couple urls create an Excel sheet.
 ## Why Won't Muut Won't Send Me My File?
 For larger sites Muut might not be able to create the exported file due to technical limitations on their end. We have the ability to scrape your existing site and pull the comments off it, however this can be
 fairly custom and due to the time involved will require you to have the Support Package. <a href="https://fastcomments.com/auth/my-account/help" target="_blank">You can request help with this here</a>.
+{{/isPost}}
