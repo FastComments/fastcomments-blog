@@ -4,7 +4,11 @@
 {{#unless isPost}}
 Read this post to see how to fully migrate from Commento to FastComments.
 
-We'll go over exports, imports, and gotchas.
+## Gotchas
+
+Commento doesn't give us full URLs. What they provide is just the domain name that a comment thread belongs to - like "fastcomments.com/some-page".
+This means that the FastComments importer has to assume what the protocol is, and it defaults to https. If you run the import and are not seeing your data
+you may want to check that your site is properly secured.
 {{/unless}}
 
 {{#isPost}}

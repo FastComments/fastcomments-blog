@@ -4,7 +4,8 @@
 {{#unless isPost}}
 Read this post to see how to fully migrate from Muut to FastComments.
 
-We'll go over exports, imports, and gotchas.
+It's simply a matter of removing the small snippet Muut gives you and replacing it with <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">our own</a>.
+You can even run Muut and FastComments on the same site temporarily to test and tweak the look and feel. <a href="https://fastcomments.com/auth/my-account/help" target="_blank">We can help with that</a>.
 {{/unless}}
 
 {{#isPost}}

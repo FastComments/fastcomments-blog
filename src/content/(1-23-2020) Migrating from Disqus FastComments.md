@@ -4,7 +4,10 @@
 {{#unless isPost}}
 Read this post to see how to fully migrate from Disqus to FastComments.
 
-We'll go over exports, imports, and gotchas.
+If you're using the Generic Site Integration with Disqus then it's simply a matter of removing the small snippet they give you and replacing it with <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">our own</a>.
+You can even run Disqus and FastComments on the same site temporarily to test and tweak the look and feel. <a href="https://fastcomments.com/auth/my-account/help" target="_blank">We can help with that</a>.
+
+If you're not using the Generic Site Integration then the instructions will vary based on your platform - again <a href="https://fastcomments.com/auth/my-account/help" target="_blank">reach out to us</a>.
 {{/unless}}
 
 {{#isPost}}

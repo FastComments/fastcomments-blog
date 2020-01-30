@@ -108,3 +108,12 @@ body {
 .content .footer {
     margin-top: 10em;
 }
+
+.content .posts .post .post-description h1 {
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+.content .posts .post .post-description h1 a {
+    font-size: 0.9em;
+}
