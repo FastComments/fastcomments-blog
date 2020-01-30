@@ -24,8 +24,18 @@ This post is a demonstration of using FastComments to make a comment system that
 We don't suggest you copy them. But this demonstrates the flexibility of FastComments.
 
 Making FastComments look this way is simple!
+We built a UI for it! For example, here is the configuration we used to make FastComments match this page:
 
-We just have to set a few options. Well, seven. Here's the code snippet (custom CSS omitted).
+<img 
+    data-src="images/fc-custom-settings-hackaday.png"
+    alt="FastComments Hackaday Settings"
+    class='lozad'
+    height="850px" />
+
+If you want to do it in-code it is just as easy.
+
+We just have to set a few options. Well, seven. Here's the code snippet (custom CSS omitted). Only so much CSS can be inserted this way. We recommend you use
+the above UI for defining CSS. It will also minify it for you, where as defining the customCSS property will apply no minification optimizations.
 
 <div class="code" id="code"></div>
 <script>
@@ -53,8 +63,6 @@ top of the page
 - inputAfterComments = Repositions the reply box to the bottom of the comment feed.
 - absoluteDates = Changes the default date format (ie, "11 Minutes Ago") to an absolute date.
 - customCSS = Custom styling
-
-Soon we'll be creating a UI to configure all of these and style your widget in your browser - no coding required.
 
 <style>
     body, .content {
@@ -147,107 +155,39 @@ Soon we'll be creating a UI to configure all of these and style your widget in y
     .post-header .right {
         float: right;
     }
+    
+    @media(max-width: 768px) {
+        .header {
+            padding-top: 0;
+        }
+        
+        .header a {
+            padding: 0;
+            font-size: 40px;
+        }
+        
+        .content {
+            margin: 7px auto;
+            padding: 8px;
+        }
+        
+        .content h6#jan-24nd-2020-1 {
+            top: -70px;
+            right: 5px;
+        }
+        
+        .content h1 {
+            padding: 0 0 10px;
+            font-size: 32px;
+        }
+    }
 </style>
 <link rel="stylesheet" href="https://use.typekit.net/dru2dki.css" />
 
 <script>
-    window.fcCustomCSS = `
-        @import "https://use.typekit.net/dru2dki.css";
-        .fast-comments {
-            color: #fff !important;
-            font-family: "proxima-nova-n7","proxima-nova-n6","proxima-nova","sans-serif";
-        }
-        
-        .fast-comments .comment-count {
-            line-height: 1;
-            text-transform: uppercase;
-            font-size: 2.4rem !important;
-            font-weight: 800;
-        }
-        
-        .fast-comments .comment > .comment-content .commenter-name {
-            padding: 0;
-            color: #fff;
-            font-size: inherit;
-        }
-        
-        .fast-comments .comment > .comment-content .commenter-name > b::after {
-            content: " says:";
-            font-weight: normal;
-        }
-        
-        .fast-comments .comment > .comment-content .commenter-name .jump-link {
-            color: #f3bf10 !important;
-            font-size: .8rem;
-            display: block;
-        }
-        
-        .fast-comments .comment > .comment-content .commenter-name .jump-link:hover {
-            color: #fddb2f !important;
-        } 
-        
-        .fast-comments .comment > .comment-content > .comment-text {
-            padding: 0;
-            color: #fff;
-        }
-        
-        .fast-comments .comment {
-            border: 1px solid #484848;
-            padding: 20px;
-            margin: 20px 0 0;
-            font-size: 16.15px;
-            line-height: 1.4;
-        }
-        
-        .fast-comments .comment .comment-vote {
-            margin: 15px 0 0 0;
-        }
-        
-        .fast-comments .comment > .comment-content .comment-text {
-            margin: 10px 0 0;
-        }
-        
-        .fast-comments .comment > .comment-content .comment-vote-options > span {
-            color: #f3bf10 !important;        
-        }
-        
-        .fast-comments button {
-            background: none !important;
-            border: none !important;
-            color: #f3bf10 !important;
-            cursor: pointer !important;
-        }
-        
-        .fast-comments button:hover,
-        .fast-comments .comment > .comment-content .comment-vote-options > span:hover {
-            color: #fddb2f !important;
-        }
-        
-        .fast-comments .comment-reply-start {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        .fast-comments input, textarea {
-            padding: 10px !important;
-            text-shadow: 0 1px 0 rgba( 0, 0, 0, 0.45 );
-            color: rgba( 255, 255, 255, 0.8 );
-            font-size: 14px;
-            background: transparent !important;
-            font-family: inherit;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            border: 1px solid rgba( 255, 255, 255, 0.13 ) !important;
-        }
-    `.replace(/\n/g, '');
-    window.fcCommentCountFormat = '[count] THOUGHTS ON "HOW TO MAKE A COMMENT SYSTEM LIKE HACKADAY.COM"';
     window.fcCommentCountUpdated = function(count) {
         document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Comments';
     };
-    window.fcHeaderHTML = '<h1>Leave a Reply</h1>';
-    window.hideAvatars = true;
-    window.inputAfterComments = true;
-    window.absoluteDates = true;
 </script>
 
 {{/isPost}}
