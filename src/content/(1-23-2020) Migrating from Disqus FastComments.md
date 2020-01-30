@@ -15,6 +15,8 @@ There are a lot of things Disqus gets right, but where they fall short is where 
 
 ### Export Your Existing Comments
 
+The FastComments importer will migrate your comments, user names, and inline images. We'll move the images to our servers seamlessly. Avatars can't be migrated from Disqus using this mechanism since Disqus does not provide them - however if you reach out to us we may be able to help.
+
 One thing Disqus gets right is how they handle exporting data. You'll notice after following the steps in their guide <a href="https://help.disqus.com/en/articles/1717199-importing-exporting" target="_blank">here</a> that the resulting
 file you get via email has a mysterious "gz" file extension. If you're a bit extra technically savvy you might know this stands for "gzip" and is a popular and efficient way to compress files. 
 
