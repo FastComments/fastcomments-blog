@@ -11,6 +11,8 @@ You can even run Muut and FastComments on the same site temporarily to test and 
 {{#isPost}}
 ### Export Your Existing Comments
 
+The FastComments importer will migrate your comments, usernames, user avatars, and inline images. We'll move the images to our servers seamlessly.
+
 In order to export your site's Comment and User data from Muut from their Admin dashboard go to Integrations and then JSON Export.
 
 You'll notice that the resulting file you get via email has a mysterious "gz" file extension. If you're a bit extra technically savvy you might know this stands for "gzip" and is a popular and efficient way to compress files. 
