@@ -1,4 +1,4 @@
-###### Jan 1st 2020
+###### [postdate]
 # FastComments Bug Bounty [postlink]
 
 If you can find any bug with FastComments we'll pay you five dollars.

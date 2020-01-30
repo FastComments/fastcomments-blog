@@ -1,4 +1,4 @@
-###### Jan 26rd 2020
+###### [postdate]
 # Migrating From Muut Comments To FastComments [postlink]
 
 {{#unless isPost}}

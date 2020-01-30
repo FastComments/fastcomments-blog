@@ -1,4 +1,4 @@
-###### Dec 30th 2019
+###### [postdate]
 # FastComments Demo [postlink]
 
 {{#unless isPost}}

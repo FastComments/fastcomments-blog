@@ -1,4 +1,4 @@
-###### Jan 25rd 2020
+###### [postdate]
 # Migrating From Commento To FastComments [postlink]
 
 {{#unless isPost}}

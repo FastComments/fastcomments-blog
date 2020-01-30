@@ -1,4 +1,4 @@
-###### Jan 22nd 2020
+###### [postdate]
 # FastComments Gets Avatars [postlink]
 
 After launch this was the most asked for feature, so here it is.

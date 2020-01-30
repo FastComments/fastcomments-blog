@@ -1,5 +1,5 @@
 {{#unless isPost}}
-###### Jan 24nd 2020
+###### [postdate]
 {{/unless}}
 # How to make a comment system like Hackaday.com [postlink]
 

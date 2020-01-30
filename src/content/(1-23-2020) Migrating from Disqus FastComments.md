@@ -1,4 +1,4 @@
-###### Jan 23rd 2020
+###### [postdate]
 # Migrating From Disqus To FastComments [postlink]
 
 {{#unless isPost}}

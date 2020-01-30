@@ -42,6 +42,8 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	const dateString = title.substring(1, title.indexOf(')'));
 	const ctime = new Date(dateString);
 
+	html = html.replace('[postdate]', ctime.toDateString());
+
 	const previewHTML = getCompiledPost(html, {
 		isPost: false
 	});
