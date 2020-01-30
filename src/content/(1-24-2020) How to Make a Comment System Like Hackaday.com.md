@@ -172,7 +172,7 @@ top of the page
         }
         
         .content h6#jan-24nd-2020-1 {
-            top: -70px;
+            top: -38px;
             right: 5px;
         }
         
