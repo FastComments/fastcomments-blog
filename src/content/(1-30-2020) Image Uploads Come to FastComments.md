@@ -5,6 +5,7 @@
 A picture is worth a thousand blog posts, right?
 {{/unless}}
 
+{{#isPost}}
 Just as the title says - there is now a little image icon in the comment area of any FastComments widget. Upon clicking this you can insert
 an image into your comment.
 
