@@ -1,7 +1,7 @@
 {{#unless isPost}}
 ###### [postdate]
 {{/unless}}
-# How to make a comment system like Hackaday.com [postlink]
+# [postlink]How to make a comment system like Hackaday.com[/postlink]
 
 {{#unless isPost}}
 Here we'll explore creating a comment thread that looks like the one on Hackaday.

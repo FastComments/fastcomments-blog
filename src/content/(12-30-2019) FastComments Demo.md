@@ -1,5 +1,5 @@
 ###### [postdate]
-# FastComments Demo [postlink]
+# [postlink]FastComments Demo[/postlink]
 
 {{#unless isPost}}
 View this blog post to see a demo of FastComments. Feel free to comment and play around.

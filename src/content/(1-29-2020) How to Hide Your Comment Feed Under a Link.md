@@ -1,5 +1,5 @@
 ###### [postdate]
-# How to Hide Your Comment Feed Under a Link [postlink]
+# [postlink]How to Hide Your Comment Feed Under a Link[/postlink]
 
 Don't want to show a comment feed at the end of your pages, but want to let users comment? We got you.
 

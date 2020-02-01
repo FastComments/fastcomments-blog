@@ -116,6 +116,11 @@ body {
 
 .content .posts .post .post-description h1 a {
     font-size: 0.9em;
+    color: #000;
+}
+
+.content.post-page .posts .post .post-description h1 a {
+    text-decoration: none
 }
 
 .content .posts .post .btn {

@@ -1,5 +1,5 @@
 ###### [postdate]
-# Image Uploads Come to FastComments [postlink]
+# [postlink]Image Uploads Come to FastComments[/postlink]
 
 {{#unless isPost}}
 A picture is worth a thousand blog posts, right?

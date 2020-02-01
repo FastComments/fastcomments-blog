@@ -1,5 +1,5 @@
 ###### [postdate]
-# Migrating From Muut Comments To FastComments [postlink]
+# [postlink]Migrating From Muut Comments To FastComments[/postlink]
 
 {{#unless isPost}}
 Read this post to see how to fully migrate from Muut to FastComments.

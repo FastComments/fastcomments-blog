@@ -1,5 +1,5 @@
 ###### [postdate]
-# Migrating From Commento To FastComments [postlink]
+# [postlink]Migrating From Commento To FastComments[/postlink]
 
 {{#unless isPost}}
 Read this post to see how to fully migrate from Commento to FastComments.

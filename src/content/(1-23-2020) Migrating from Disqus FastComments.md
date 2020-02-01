@@ -1,5 +1,5 @@
 ###### [postdate]
-# Migrating From Disqus To FastComments [postlink]
+# [postlink]Migrating From Disqus To FastComments[/postlink]
 
 {{#unless isPost}}
 Read this post to see how to fully migrate from Disqus to FastComments.

@@ -1,5 +1,5 @@
 ###### [postdate]
-# What Notifications Does FastComments Send? [postlink]
+# [postlink]What Notifications Does FastComments Send?[/postlink]
 
 Learn about how FastComments might - or hopefully might not - bug you.
 

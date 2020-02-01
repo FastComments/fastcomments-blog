@@ -1,5 +1,5 @@
 ###### [postdate]
-# FastComments Bug Bounty [postlink]
+# [postlink]FastComments Bug Bounty[/postlink]
 
 If you can find any bug with FastComments we'll pay you! We also offer subscription credits.
 

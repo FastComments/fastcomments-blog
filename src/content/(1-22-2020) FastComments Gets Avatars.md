@@ -1,5 +1,5 @@
 ###### [postdate]
-# FastComments Gets Avatars [postlink]
+# [postlink]FastComments Gets Avatars[/postlink]
 
 After launch this was the most asked for feature, so here it is.
 

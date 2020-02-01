@@ -1,5 +1,5 @@
 ###### [postdate]
-# How to Prevent Spam in Your Comments [postlink]
+# [postlink]How to Prevent Spam in Your Comments[/postlink]
 
 There's no way to 100% combat spam. But FastComments helps a lot.
 
