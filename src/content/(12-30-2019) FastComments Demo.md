@@ -17,5 +17,9 @@ If you leave a comment and don't verify it via email within three days it'll aut
 powers to fight spam.
 
 It may not look impressive, but that's its job. FastComments should get out of the way of your users and let them engage with you. So the less impact the better.
+
+<div class="text-center">
+    <a class="btn" href="https://fastcomments.com/auth/tenant-signup?tier=0" target="_blank">Add FastComments to a Website</a>
+</div>
 {{/isPost}}
 
