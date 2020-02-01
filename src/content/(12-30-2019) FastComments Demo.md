@@ -20,6 +20,7 @@ It may not look impressive, but that's its job. FastComments should get out of t
 
 <div class="text-center">
     <a class="btn" href="https://fastcomments.com/auth/tenant-signup?tier=0" target="_blank">Add FastComments to a Website</a>
+    <div class="sm">No Credit Card Required For Initial Signup & Installation</div>
 </div>
 {{/isPost}}
 
