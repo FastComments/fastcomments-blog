@@ -43,7 +43,7 @@ body {
     padding: 0 5px;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 769px) {
     .header .nav {
         display: block;
         margin-top: 10px;
@@ -54,7 +54,7 @@ body {
 }
 
 .content {
-    max-width: 768px;
+    max-width: 769px;
     margin: 5% auto;
     padding: 20px;
     box-sizing: content-box;
@@ -70,13 +70,13 @@ body {
     height: auto;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 769px) {
     .content {
         box-shadow: none;
     }
 }
 
-@media(min-width: 768px) {
+@media(min-width: 769px) {
     .left-right-art {
         position: fixed;
         bottom: -300px;
