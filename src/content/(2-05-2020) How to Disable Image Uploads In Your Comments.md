@@ -16,4 +16,7 @@ Enabling the setting looks like this:
 
 ... and hit save.
 On this page you must define your domain if it's not already pre-filled. Leave URL ID blank to apply the rule to your whole site.
+
+This page has image uploads disabled as an example.
+
 {{/isPost}}
