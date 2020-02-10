@@ -117,7 +117,7 @@ top of the page
         color: #fddb2f;
     }
     
-    .content h1 {
+    .content .posts .post .post-description h1 {
         margin: 0;
         padding: 20px 0 10px;
         font-style: normal;
