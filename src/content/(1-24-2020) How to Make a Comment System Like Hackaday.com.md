@@ -121,10 +121,11 @@ top of the page
         margin: 0;
         padding: 20px 0 10px;
         font-style: normal;
-        font-size: 51px;
+        font-size: 51px !important;
         font-weight: 800;
         line-height: 1;
         text-transform: uppercase;
+        color: #fff !important;
     }
     
     .content h6#jan-24nd-2020-1 {
