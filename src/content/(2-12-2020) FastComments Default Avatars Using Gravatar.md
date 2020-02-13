@@ -8,7 +8,7 @@ An avatar is the profile icon associated with every account and shown next to ev
 ### What's Gravatar?
 
 <a href="https://en.gravatar.com/" target="_blank">Gravatar</a> brands themselves as "A Globally Recognized Avatar".
-It's a service where you can define an avatar for a given email. Anywhere you sign-up using that email can then
+It's a service where you can define an avatar for a given email. Any products you sign-up to using that email can then
 use that avatar. This removes a step for people signing up to FastComments since their avatar is setup automatically.
 
 ### So what's the change?
