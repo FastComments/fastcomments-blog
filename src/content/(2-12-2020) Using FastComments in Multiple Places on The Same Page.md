@@ -28,6 +28,13 @@ This means we can have as many threads on a page as we want. For example, here a
 #fastcomments-widget {
     display: none;
 }
+
+@media(max-width: 768px) {
+    .content .widget {
+        display: block;
+        width: 100%;
+    }
+}
 </style>
 
 <script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
