@@ -1,5 +1,5 @@
 ###### [postdate]
-# [postlink]Using FastComments in Multiple Places on The Same Page[/postlink]
+# [postlink]Using FastComments in Multiple Places On The Same Page[/postlink]
 
 FastComments is flexible. It attaches to a regular element on a page so it works with any web framework.
 
@@ -50,5 +50,32 @@ This means we can have as many threads on a page as we want. For example, here a
         headerHTML: '<h1>Discuss Dogs</h1>'
     });
 </script>
+
+### How it works
+
+Here's the code that makes this happen. We customize the urlId parameter to make each thread unique. Note that we use ids however you can
+pass in any DOM element queried in any manner you like.
+
+
+<div class="code" id="code">&lt;script src="https://cdn.fastcomments.com/js/embed.min.js"&gt;&lt;/script&gt;
+&lt;div class="widgets"&gt;
+   &lt;div class="widget left" id="fastcomments-widget2"&gt;&lt;/div&gt;
+   &lt;div class="widget right" id="fastcomments-widget3"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+ window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
+   tenantId: 'nYrnfYEv',
+   urlId: window.location.href + '?cats',
+   headerHTML: '&lt;h1&gt;Discuss Cats&lt;/h1&gt;'
+ });
+&lt;/script&gt;
+&lt;script&gt;
+ window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
+   tenantId: 'nYrnfYEv',
+   urlId: window.location.href + '?dogs',
+   headerHTML: '&lt;h1&gt;Discuss Dogs&lt;/h1&gt;'
+ });
+&lt;/script&gt;</div>
 
 {{/isPost}}
