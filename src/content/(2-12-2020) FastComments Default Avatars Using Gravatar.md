@@ -3,7 +3,7 @@
 
 ### What's an Avatar?
 
-An Avatar is the profile icon associated with every account and shown next to every comment.
+An avatar is the profile icon associated with every account and shown next to every comment.
 
 ### What's Gravatar?
 
@@ -15,5 +15,5 @@ use that avatar. This removes a step for people signing up to FastComments since
 
 FastComments will now pull default avatars from Gravatar. You or or users don't have to do anything to get this feature.
 
-If your existing users have already defined their own Avatar - no worries - we aren't going to overwrite their custom avatars.
+If your existing users have already defined their own avatar - no worries - we aren't going to overwrite their custom avatars.
 Also, users can still overwrite the Gravatar avatar in FastComments.
