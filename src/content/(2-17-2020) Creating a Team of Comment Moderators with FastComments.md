@@ -38,7 +38,8 @@ an invite link which will also guide them through account creation.
 If you have a team of moderators you can see their progress from the same place - the Comment Moderators list provides stats for each moderator. This includes
 the number of comments they've marked reviewed, spam, and deleted.
 
-That's it. After you send that invite link they can create their account and will have full access to moderate your comments.
+That's it. After you send that invite link they can create their account and will have full access to moderate your comments. They will only see a simplified
+version of the Moderate Comments page - no ability to change settings is provided to moderators.
 
 Happy commenting!
 
