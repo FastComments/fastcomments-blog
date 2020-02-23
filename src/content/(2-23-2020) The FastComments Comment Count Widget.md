@@ -1,5 +1,5 @@
 ###### [postdate]
-# [postlink]New FastComments Widget - Comment Count[/postlink]
+# [postlink]The FastComments Comment Count Widget[/postlink]
 
 Want to show off the number of comments on a page before a user clicks in? No problem with FastComments.
 
