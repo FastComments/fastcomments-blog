@@ -6,7 +6,7 @@ Want to show off the number of comments on a page before a user clicks in? No pr
 {{#isPost}}
 The first of many to come - FastComments now supports comment count widgets.
 
-For example, this page has <b><span id="fastcomments-widget-comment-count"></span></b> comments. That number is inserted via the widget! 
+For example, this page has <b><span id="fastcomments-widget-comment-count"></span></b>. That number is inserted via the widget! 
 <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <script>
     window.FastCommentsCommentCount(document.getElementById('fastcomments-widget-comment-count'), {
