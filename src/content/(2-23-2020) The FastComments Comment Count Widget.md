@@ -31,11 +31,11 @@ A better example may be a list of blog posts, for example:
 ##### 256 Comments
 
 <style>
-#post-1, #post-2, #post-3 {
+h3#post-1, h3#post-2, h3#post-3 {
     margin-bottom: 0;
 }
 
-#64-comments, #128-comments, #256-comments {
+h5#64-comments, h5#128-comments, h5#256-comments {
     margin-top: 0;
 }
 </style>
