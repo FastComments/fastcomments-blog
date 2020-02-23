@@ -30,16 +30,23 @@
 <div class="content">
     <div class="posts">
         <h1 class="content-subhead">Recent Posts</h1>
+        <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 
-        {{#posts}}
+        {{#each posts}}
         <section class="post">
             <div class="post-description">
                 <p>
-                    {{{previewHTML}}}
+                    {{{this.previewHTML}}}
                 </p>
             </div>
+            <div class="post-comment-count" id="fc-w-c-{{@index}}"></div>
         </section>
-        {{/posts}}
+        <script>
+            window.FastCommentsCommentCount(document.getElementById('fc-w-c' + {{@index}}), {
+                tenantId: 'nYrnfYEv'
+            });
+        </script>
+        {{/each}}
     </div>
     <div class="footer">Copyright winrickLabs LLC {{footerYears}}</div>
 </div>
