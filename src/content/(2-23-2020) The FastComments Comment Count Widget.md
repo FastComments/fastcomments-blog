@@ -32,6 +32,6 @@ A better example may be a list of blog posts, for example:
 
 You can also see a live example of this on the blog <a href="https://blog.fastcomments.com" target="_blank">homepage</a>.
 
-The Comment Count widget does not render in an iframe, so it is fully customizable via CSS. It will automatically inherit your page's styling - fonts, colors, line heights, and so one.
+The Comment Count widget does not render in an iframe, so it is fully customizable via CSS. It will automatically inherit your page's styling - fonts, colors, line heights, and so on.
 
 {{/isPost}}
