@@ -145,3 +145,8 @@ body {
 .content .posts .post .sm {
     font-size: 10px;
 }
+
+.content .posts .post .post-comment-count {
+    text-align: right;
+    font-size: 13px;
+}
