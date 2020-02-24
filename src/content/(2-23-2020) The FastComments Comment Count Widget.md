@@ -39,7 +39,7 @@ The Comment Count widget does not render in an iframe, so it is fully customizab
 .content #post-1, .content #post-2, .content #post-3 {
     margin-bottom: 0;
 }
-.content h5[id="#64-comments"], .content h5[id="#128-comments"], .content h5[id="#256-comments"] {
+.content h5[id="64-comments"], .content h5[id="128-comments"], .content h5[id="256-comments"] {
     margin-top: 0;
 }
 </style>
