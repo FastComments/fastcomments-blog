@@ -30,18 +30,18 @@ A better example may be a list of blog posts, for example:
 ### Post #3
 ##### 256 Comments
 
-<style>
-#post-1, #post-2, #post-3 {
-    margin-bottom: 0;
-}
-
-#64-comments, #128-comments, #256-comments {
-    margin-top: 0;
-}
-</style>
-
 You can also see a live example of this on the blog <a href="https://blog.fastcomments.com" target="_blank">homepage</a>.
 
 The Comment Count widget does not render in an iframe, so it is fully customizable via CSS. It will automatically inherit your page's styling - fonts, colors, line heights, and so on.
 
+
+<style>
+.content #post-1, .content #post-2, .content #post-3 {
+    margin-bottom: 0;
+}
+
+.content #64-comments, .content #128-comments, .content #256-comments {
+    margin-top: 0;
+}
+</style>
 {{/isPost}}
