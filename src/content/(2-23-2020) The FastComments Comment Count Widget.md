@@ -34,6 +34,9 @@ You can also see a live example of this on the blog <a href="https://blog.fastco
 
 The Comment Count widget does not render in an iframe, so it is fully customizable via CSS. It will automatically inherit your page's styling - fonts, colors, line heights, and so on.
 
+To get access to the Comment Count widget code for your account simply go <a href="https://fastcomments.com/auth/my-account/widgets/widget/widget-comment-count" target="_blank">here</a>.
+
+You can find it via the UI via the account page, then clicking Get Widget Code and then Other Widgets.
 
 <style>
 .content #post-1, .content #post-2, .content #post-3 {
