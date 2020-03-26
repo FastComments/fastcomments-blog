@@ -13,6 +13,14 @@ If you're not using the Generic Site Integration then the instructions will vary
 {{#isPost}}
 There are a lot of things Disqus gets right, but where they fall short is where FastComments steps in.
 
+## If You're on WordPress
+
+FastComments has a dedicated WordPress plugin: <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">https://wordpress.org/plugins/fastcomments/</a>.
+
+The plugin makes the installation, setup, and sync very easy. If you go this route you can ignore the rest of the instructions here.
+
+## Manual, Generic Install
+
 ### Export Your Existing Comments
 
 The FastComments importer will migrate your comments, user names, and inline images. We'll move the images to our servers seamlessly. Avatars can't be migrated from Disqus using this mechanism since Disqus does not provide them - however if you reach out to us we may be able to help.

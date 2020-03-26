@@ -6,6 +6,14 @@ Read this post to demonstrate how to fully migrate from IntenseDebate to FastCom
 {{/unless}}
 
 {{#isPost}}
+## If You're on WordPress
+
+FastComments has a dedicated WordPress plugin: <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">https://wordpress.org/plugins/fastcomments/</a>.
+
+The plugin makes the installation, setup, and sync very easy. If you go this route you can ignore the rest of the instructions here.
+
+## Manual, Generic Install
+
 ### Export Your Existing Comments
 
 In order to export your site's Comment and User data from IntenseDebate from their Admin dashboard go to Sites -> Your Site -> Tools -> XML Export.
