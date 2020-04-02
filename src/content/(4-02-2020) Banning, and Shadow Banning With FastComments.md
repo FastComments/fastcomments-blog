@@ -3,7 +3,7 @@
 
 {{#unless isPost}}
 The FastComments moderation toolset now has the ability to ban or shadow ban a user.
-{{/isPost}}
+{{/unless}}
 
 {{#isPost}}
 
