@@ -74,7 +74,7 @@ The User object contains the following schema, all properties being strings:
 - id (1k characters max)
 - email (1k characters max)
 - username (1k characters max)
-- avatar
+- avatar (3k characters max)
 
 ##### Unauthenticated users
 
