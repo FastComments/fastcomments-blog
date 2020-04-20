@@ -18,7 +18,7 @@ their email when they comment. However, we understand that even that is extra fr
 
 ### How do I get it?
 
-All account types - from the $4.99/mo plan to the $350/mo plan - gets access to SSO as well as support.
+All account types - from the $4.99/mo plan to the $350/mo plan - get access to SSO as well as support.
 
 #### WordPress Users
 
