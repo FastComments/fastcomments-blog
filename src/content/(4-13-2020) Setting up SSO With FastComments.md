@@ -78,7 +78,7 @@ The User object contains the following schema, all properties being strings:
 
 ##### Unauthenticated users
 
-To represent an authenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
+To represent an unauthenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
 
 ##### Direct Examples for Serializing and Hashing User Data
 
