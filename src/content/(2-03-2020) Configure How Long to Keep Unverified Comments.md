@@ -23,7 +23,7 @@ By default the Comment Moderation Settings might look like this for you, with au
     title="Comment Moderation UI"
     class='lozad' />
     
-If we wanted to set the time for these unverified comments to live to 100 days, we just drag the slider like this:
+If we wanted to set the time for these unverified comments to live to 300 days, we just drag the slider like this:
     
 <img 
     data-src="images/fc-unverified-comments-expiration02.png"
