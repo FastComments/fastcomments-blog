@@ -11,8 +11,8 @@ From there, check "Automatically Approve Comments" if it's not checked - then "O
 
 <img 
     data-src="images/fc-verification-approves-comment.png"
-    alt="The \"Only Auto Approve Verified Comments\" option highlighted"
-    title="The \"Only Auto Approve Verified Comments\" option highlighted"
+    alt="The auto approve when verified option highlighted"
+    title="The auto approve when verified option highlighted"
     class='lozad' />
 
 Now any comment that's not verified by email won't show until the commenter verifies it. They'll also be shown a friendly message
