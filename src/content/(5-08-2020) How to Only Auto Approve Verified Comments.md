@@ -5,7 +5,7 @@ Have auto approval enabled but only want verified comments to show on your site 
 
 {{#isPost}}
 
-Here's how: Go to <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings">Moderate Comments -> Edit Moderation Settings</a>.
+Here's how: Go to <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Moderate Comments -> Edit Moderation Settings</a>.
 
 From there, check "Automatically Approve Comments" if it's not checked - then "Only Auto Approve Verified Comments" and hit save.
 
