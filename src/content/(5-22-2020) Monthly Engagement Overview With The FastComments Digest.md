@@ -1,7 +1,7 @@
 ###### [postdate]
 # [postlink]Monthly Engagement Overview With The FastComments Digest[/postlink]
 
-Want to get a daily, weekly, or monthly email with counts for new comments, spam, and comments that need your approval?
+Want a regular reminder of comments that may need attention, without getting emails every hour?
 
 {{#isPost}}
 
