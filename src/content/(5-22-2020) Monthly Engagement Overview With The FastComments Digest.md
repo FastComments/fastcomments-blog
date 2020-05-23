@@ -7,7 +7,7 @@ Want a regular reminder of comments that may need attention, without getting ema
 
 Now you can! As part of this roll out by default all site owners and moderators will get the FastComments Digest, monthly, starting in June.
 
-To opt out, or to configure the frequency, go to <a href="https://fastcomments.com/auth/my-account/edit-notifications" target="_blank">My Account ->️ Notifications</a>.
+To opt out, or to configure the frequency, go to <a href="https://fastcomments.com/auth/my-account/edit-notifications" target="_blank">My Account -> Notifications</a>.
 
 From there, under **Digest Schedule** you can pick an option like **Weekly** or **Disabled** and hit **save**.
 
