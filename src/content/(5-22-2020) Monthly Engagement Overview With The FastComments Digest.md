@@ -39,5 +39,7 @@ Like the rest of FastComments, the Digest email is light, easy to read, and very
 We hope you find this scheduled email a useful and friendly reminder of comments that may require approval. We also hope that in the event you don't want
 to use this feature you find it easy to disable.
 
+###### If you find something missing from this email, or you have difficulty with your email client, please reach out to your customer service representative.
+
 {{/isPost}}
 
