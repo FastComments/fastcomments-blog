@@ -27,7 +27,7 @@ of the admin dashboard.
 In order to keep the client-side widget size down, we'll only auto detect pasted code for C and Python-like languages (Java, JavaScript, CSS, C++, for example) that either use "{" or spaces for control flow.
 If you're commonly using a language that is not being auto detected, reach out to us.
 
-To manually insert a block of code, write a comment like: ```<code>(defun someLispCode(1, 2, 3))</code>```. We can auto detect around 189 languages. 
+To manually insert a block of code, write a comment like: ```<code>(defun someLispCode(1, 2, 3))</code>```. We can auto detect around 150 languages. 
 
 ### Migrating Existing Comments
 
