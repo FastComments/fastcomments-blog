@@ -17,19 +17,24 @@ So we've come up with a compromise.
 
 Here you can see before, we did not use space very efficiently.
 
-<img 
-    data-src="images/mobile-v1.png"
-    alt="Mobile Version Before"
-    title="Mobile Version Before"
-    class='lozad' />
+<div class="text-center">
+    <img 
+        data-src="images/mobile-v1.png"
+        alt="Mobile Version Before"
+        title="Mobile Version Before"
+        class='lozad' />
+</div>
 
 Now, we have exchanged vertical screen space for horizontal screen space.
 
-<img 
-    data-src="images/mobile-v2.png"
-    alt="Mobile Version After"
-    title="Mobile Version After"
-    class='lozad' />
+<div class="text-center">
+    <img 
+        data-src="images/mobile-v2.png"
+        alt="Mobile Version After"
+        title="Mobile Version After"
+        class='lozad' />
+</div>
+
     
 #### Customization Rule Implications
 
