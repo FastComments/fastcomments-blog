@@ -20,7 +20,7 @@ testing account.
 
 You'll have to add your GitHub domain as a valid domain in your account. No worries though, all FastComments tiers currently have unlimited domains and are only limited by traffic.
 
-<img data-src="fc-github-pages-add-domain.png" alt="Add GitHub Domain in UI" title="Add Domain UI" class="lozad" />
+<img data-src="images/fc-github-pages-add-domain.png" alt="Add GitHub Domain in UI" title="Add Domain UI" class="lozad" />
 
 #### In Conclusion
 
