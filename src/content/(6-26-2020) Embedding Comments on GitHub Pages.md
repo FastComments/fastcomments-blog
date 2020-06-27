@@ -1,5 +1,5 @@
 ###### [postdate]
-# [postlink]Embed Comments on GitHub Pages[/postlink]
+# [postlink]Embedding Comments on GitHub Pages[/postlink]
 
 {{#unless isPost}}
 Want to add comments to a static site, like GitHub Pages?
