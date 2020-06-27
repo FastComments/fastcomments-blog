@@ -24,7 +24,9 @@ You'll have to add your GitHub domain as a valid domain in your account. No worr
 
 #### In Conclusion
 
-<img src="https://cdn2.thecatapi.com/images/3sg.gif" alt="Kitty Jumping" title="Athletic Kitty" />
+<div class="text-center">
+    <img src="https://cdn2.thecatapi.com/images/3sg.gif" alt="Kitty Jumping" title="Athletic Kitty" />
+</div>
 
 We hope you find FastComments fast and easy to use - cheers!
 
