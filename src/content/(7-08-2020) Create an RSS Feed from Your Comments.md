@@ -19,6 +19,6 @@ This icon goes to a link - which is your very own RSS feed! Simply copy and past
 
 The feed will include all comments in the last 30 days.
 
-That's all there is too it. Happy commenting!
+That's all there is to it. Happy commenting!
 
 {{/isPost}}
