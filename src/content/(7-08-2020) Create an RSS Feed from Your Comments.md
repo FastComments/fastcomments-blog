@@ -3,7 +3,7 @@
 
 {{#unless isPost}}
 RSS is still alive and well, and now FastComments supports it. Don't know what RSS is? Don't worry, we'll fill you in.
-{{/isPost}}
+{{/unless}}
 
 {{#isPost}}
 
