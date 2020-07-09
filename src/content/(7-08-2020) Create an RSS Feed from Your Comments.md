@@ -7,7 +7,7 @@ RSS is still alive and well, and now FastComments supports it. Don't know what R
 
 {{#isPost}}
 
-<a href="https://en.wikipedia.org/wiki/RSS" target="_blank">RSS</a>, is a way to subscribe to many different websites using a single news aggregator.
+<a href="https://en.wikipedia.org/wiki/RSS" target="_blank">RSS</a> is a way to subscribe to many different websites using a single news aggregator.
 
 What this means is that you can now **monitor your comments on FastComments using an RSS app on your desktop or mobile phone.**
 
