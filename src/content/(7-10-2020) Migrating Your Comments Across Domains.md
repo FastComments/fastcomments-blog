@@ -14,7 +14,7 @@ How do you go about moving all of your comments - that used to be on blog.greatc
 
 #### The Self-Service Solution
 Previously, you would create a support ticket and your dedicated customer support representative would handle this for you. While your awesome FastComments representative
-is still there for you time can be saved by doing it yourself.
+is still there for you - time can be saved by doing it yourself.
 
 Simply go to Import/Export, and then Migrate Domains to see the new tool. You'll be able to define the old domain, the new one, and then schedule the migration.
 
