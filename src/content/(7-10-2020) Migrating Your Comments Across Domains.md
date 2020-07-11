@@ -1,4 +1,5 @@
 ###### [postdate]
+
 # [postlink]Migrating Your Comments Across Domains[/postlink]
 
 {{#unless isPost}}
@@ -27,6 +28,8 @@ Here's the tool in action:
 </div>
 
 You will observe upon submitting that the status of your request may be in the state of "requested". Fear not, the system checks for new requests every minute and yours will be picked up soon.
+
+After you see it in the state of Requested you can simply close the page. You'll get an email when it's done. If it fails, for any reason, you and our technical support staff will recieve an email.
 
 #### In Conclusion
 Like all FastComments admin tools we hope you find this one fast and easy to use. Cheers!
