@@ -33,14 +33,11 @@ Once you can open the template editor you'll see a file browser on the left side
 You'll want to navigate to the HTML template that represents a blog post. It's at templates/components/blog/post.html, as illustrated:
 
 <div class="text-center">
-    <img data-src="images/fc-bigcommerce-editor-post-file.png" alt="Editor Post File Location" title="Editor Post File Location" class="lozad" />
+    <img style="vertical-align: top;" data-src="images/fc-bigcommerce-editor-post-file.png" alt="Editor Post File Location" title="Editor Post File Location" class="lozad" />
+    <img style="vertical-align: top;" data-src="images/fc-bigcommerce-blog-post-script-location.png" alt="Place to insert FastComments" title="Place to insert FastComments" class="lozad" />
 </div>
 
 Your FastComments code snippet, which you can get from <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">here</a> should be pasted right after line 48, which has the text "&#123;{>components/common/share}&#125;".
-
-<div class="text-center">
-    <img data-src="images/fc-bigcommerce-blog-post-script-location.png" alt="Place to insert FastComments" title="Place to insert FastComments" class="lozad" />
-</div>
 
 #### Remember!
 You'll have to add the domain for your store to FastComments, which you can do <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">here</a>.
