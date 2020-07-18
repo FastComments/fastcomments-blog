@@ -15,12 +15,9 @@ In the BigCommerce dashboard go to Storefront -> My Themes.
     <img data-src="images/fc-bigcommerce-store-link.png" alt="Store Link" title="Store Link" class="lozad" />
 </div>
 
-<div class="text-center">
-    <img data-src="images/fc-bigcommerce-my-themes.png" alt="My Themes Link" title="My Themes Link" class="lozad" />
-</div>
 
 <div class="text-center">
-    <img data-src="images/fc-bigcommerce-advanced-dropdown.png" alt="Theme Advanced Dropdown" title="Theme Advanced Dropdown" class="lozad" />
+    <img data-src="images/fc-bigcommerce-my-themes.png" alt="My Themes Link" title="My Themes Link" class="lozad" />
 </div>
 
 Under "Current Theme" you'll see a dropdown with the label "Advanced".
