@@ -39,7 +39,7 @@ You'll want to navigate to the HTML template that represents a blog post. It's a
     <img data-src="images/fc-bigcommerce-editor-post-file.png" alt="Editor Post File Location" title="Editor Post File Location" class="lozad" />
 </div>
 
-Your FastComments code snippet, which you can get from <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">here</a> should be pasted right after line 48, which has the text "{{>components/common/share}}".
+Your FastComments code snippet, which you can get from <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">here</a> should be pasted right after line 48, which has the text "&#123;{>components/common/share}&#125;".
 
 <div class="text-center">
     <img data-src="images/fc-bigcommerce-blog-post-script-location.png" alt="Place to insert FastComments" title="Place to insert FastComments" class="lozad" />
