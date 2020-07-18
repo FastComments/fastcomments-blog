@@ -12,12 +12,8 @@ In order to add FastComments to your BigCommerce store's blog, you'll have to ed
 In the BigCommerce dashboard go to Storefront -> My Themes.
 
 <div class="text-center">
-    <img data-src="images/fc-bigcommerce-store-link.png" alt="Store Link" title="Store Link" class="lozad" />
-</div>
-
-
-<div class="text-center">
-    <img data-src="images/fc-bigcommerce-my-themes.png" alt="My Themes Link" title="My Themes Link" class="lozad" />
+    <img style="vertical-align: top;" data-src="images/fc-bigcommerce-store-link.png" alt="Store Link" title="Store Link" class="lozad" />
+    <img style="vertical-align: top;" data-src="images/fc-bigcommerce-my-themes.png" alt="My Themes Link" title="My Themes Link" class="lozad" />
 </div>
 
 Under "Current Theme" you'll see a dropdown with the label "Advanced".
@@ -33,11 +29,14 @@ Once you can open the template editor you'll see a file browser on the left side
 You'll want to navigate to the HTML template that represents a blog post. It's at templates/components/blog/post.html, as illustrated:
 
 <div class="text-center">
-    <img style="vertical-align: top;" data-src="images/fc-bigcommerce-editor-post-file.png" alt="Editor Post File Location" title="Editor Post File Location" class="lozad" />
-    <img style="vertical-align: top;" data-src="images/fc-bigcommerce-blog-post-script-location.png" alt="Place to insert FastComments" title="Place to insert FastComments" class="lozad" />
+    <img data-src="images/fc-bigcommerce-editor-post-file.png" alt="Editor Post File Location" title="Editor Post File Location" class="lozad" />
 </div>
 
 Your FastComments code snippet, which you can get from <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">here</a> should be pasted right after line 48, which has the text "&#123;{>components/common/share}&#125;".
+
+<div class="text-center">
+    <img data-src="images/fc-bigcommerce-blog-post-script-location.png" alt="Place to insert FastComments" title="Place to insert FastComments" class="lozad" />
+</div>
 
 #### Remember!
 You'll have to add the domain for your store to FastComments, which you can do <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">here</a>.
