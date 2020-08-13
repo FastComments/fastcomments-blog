@@ -11,7 +11,7 @@ Installing FastComments on a web page only requires inserting a small code snipp
 
 #### A Demo
 
-We've setup an example GitHub Page <a href="https://blog.fastcomments.com/(12-30-2019)-fastcomments-demo.html" target="_blank">here</a>.
+We've setup an example GitHub Page <a href="https://fastcomments.github.io/fastcomments-demo.github.io/" target="_blank">here</a>.
 
 <a href="https://github.com/fastcomments/fastcomments-demo.github.io/blob/master/index.html#L29" target="_blank">Here</a> is the link to where we've added the code snippet for our
 testing account.
