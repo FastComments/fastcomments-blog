@@ -11,7 +11,7 @@ You can now use FastComments to embed comments into a site made with Gatsby!
 
 #### What's New
 
-We've recently launched our <a href="https://blog.fastcomments.com/(8-12-2020)-fastcomments-goes-react.html">React component</a> for FastComments.
+We've recently launched our <a href="https://blog.fastcomments.com/(8-12-2020)-fastcomments-goes-react.html" target="_blank">React component</a> for FastComments.
 
 This opens up a lot of opportunities - including integrating FastComments with Gatsby.
 
