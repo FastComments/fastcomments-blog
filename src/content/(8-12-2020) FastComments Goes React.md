@@ -19,7 +19,7 @@ The repository also contains example usage of the widget.
 
 It's on NPM, which you can find <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">here</a>.
 
-#### How it works
+#### How it Works
 
 The way this new component works is that the React component is a wrapper around the existing FastComments widget.
  
