@@ -9,8 +9,6 @@ Need to embed comments into an application developed with React? We got you.
 
 ### <i class="circle">!</i> This Article Contains Technical Jargon
 
-<a href="https://reactjs.org/" target="_blank">React</a> is a fast and developer friendly library for manipulating the DOM.
-
 #### What's New
 
 FastComments now has a React component that's at feature-parity with our VanillaJS widget.
