@@ -44,7 +44,7 @@ and Spring in the Java example there are no frameworks/libraries required in the
 
 You can find the code example repository here:
 
-<a href="https://github.com/winrid/fastcomments-code-examples" class="btn" target="_blank">FastComments SSO Code Examples</a>
+<a href="https://github.com/fastcomments/fastcomments-code-examples" class="btn" target="_blank">FastComments SSO Code Examples</a>
 
 ##### Get Your API Secret Key
 
@@ -82,9 +82,9 @@ To represent an unauthenticated user, simply do not populate userDataJSONBase64,
 
 ##### Direct Examples for Serializing and Hashing User Data
 
-More details as an examples <a href="https://github.com/winrid/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">here (js)</a>,
-<a href="https://github.com/winrid/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">here (java)</a> and
-<a href="https://github.com/winrid/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">here (php)</a>.
+More details as an examples <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">here (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">here (java)</a> and
+<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">here (php)</a>.
 
 
 #### Migrating from Disqus SSO
