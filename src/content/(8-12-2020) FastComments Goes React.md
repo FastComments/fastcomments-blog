@@ -13,11 +13,11 @@ Need to embed comments into an application developed with React? We got you.
 
 FastComments now has a React component that's at feature-parity with our VanillaJS widget.
 
-We decided to call the library fastcomments-react. You can find the GitHub repository with the source code <a href="https://github.com/FastComments/fastcomments-react" target="_blank">here.</a>
+We decided to call the library fastcomments-react. You can find the GitHub repository with the source code <a href="https://github.com/FastComments/fastcomments-react" target="_blank">here</a>.
 
 The repository also contains example usage of the widget.
 
-It's on NPM, which you can find <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">here.</a>
+It's on NPM, which you can find <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">here</a>.
 
 The way it works is that the React component is a wrapper around the existing FastComments widget - so if we add features to our existing components you'll still benefit.
 
