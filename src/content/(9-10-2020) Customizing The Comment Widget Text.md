@@ -14,7 +14,7 @@ pass in the translations, or to file a customer support ticket.
 
 #### How it Works
 
-Like other widget customizations, this will be handled on the <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">Customizations</a> page.
+Like other widget customizations, this is now handled on the <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">Customizations</a> page.
 
 Enter the domain you want to customize text for, and either a specific URL or * for all pages.
 
