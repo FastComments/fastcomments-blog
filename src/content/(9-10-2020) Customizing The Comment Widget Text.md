@@ -10,7 +10,7 @@ Customizing the widget text is a frequent support question. Now it's self-servic
 #### What's New
 
 Previously the only way to customize the text in the comment widget was either to make code changes when embedding the widget to
-pass in the translations, or file a customer support ticket. 
+pass in the translations, or to file a customer support ticket. 
 
 #### How it Works
 
