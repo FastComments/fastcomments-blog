@@ -14,7 +14,7 @@ Comments not showing? Settings don't seem to be applied? Figuring that out just 
 At <a href="https://fastcomments.com">FastComments</a> we've just released a browser extension for Google Chrome. This extension will assist you in understanding what configuration
 the comment widget is receiving as well as why it may not be showing.
 
-You can find the extension here: <a href="https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj"> target="_blank">https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj</a>
+You can find the extension here: <a href="https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj" target="_blank">https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj</a>
 
 #### How To Use It
 
