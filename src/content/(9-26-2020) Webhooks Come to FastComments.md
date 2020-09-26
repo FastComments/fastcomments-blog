@@ -82,7 +82,8 @@ The "delete" event request body is a WebhookComment object, **but only containin
 
 #### Why do Create and Update both use HTTP PUT and not POST?
 
-**Since all of our requests contain an ID**, repeating the same Create or Update request **should not create new objects on your side**.
+**Since all of our requests contain an ID**, repeating the same Create or Update request **should not create new objects on your side**. This means that these calls are idempotent and should be
+PUT events as per the HTTP specification.
 
 #### How It Works
 
