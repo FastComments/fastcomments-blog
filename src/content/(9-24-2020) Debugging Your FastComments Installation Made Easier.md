@@ -34,7 +34,7 @@ To debug both, you start with simply click on the icon.
 If the tool does not find the comment widget on the page you'll get a big red error:
 
 <div class="text-center">
-    <img data-src="images/fc-extension-pin-embed-js-not-found.png" alt="Embed.js not found example" title="Embed.js not found example" class="lozad" />
+    <img data-src="images/fc-extension-embed-js-not-found.png" alt="Embed.js not found example" title="Embed.js not found example" class="lozad" />
 </div>
 
 If one or more instances of the widget have been found, you'll see their configurations displayed separately:
