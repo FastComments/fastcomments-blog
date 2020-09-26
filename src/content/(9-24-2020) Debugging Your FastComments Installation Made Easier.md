@@ -45,6 +45,14 @@ If one or more instances of the widget have been found, you'll see their configu
 
 Moreover, the FastComments Debugger will also display warnings for common gotchas - like the widget not showing in readonly mode if no comments are available.
 
+#### "Final" Instance Settings?
+
+You may see that the debugger shows two sets of configurations - one labeled "Passed to Widget" and one labeled "Final".
+
+The "Passed to Widget" configuration is, as you may guess, the configuration that you pass to the widget. Some values get implicitly passed by embed.js like the URL or Page Title - and those are included.
+
+The "Final" configuration is everything the widget uses to render itself. This may mean self-filled values (like instance id), or <b>values from the widget customization admin page</b>.
+
 #### How It Works
 
 The comment widget stores its configuration in a place where the debugger can find it, and then the debugger scans the current page you are on for instances of the widget and loads them into memory.
