@@ -42,8 +42,7 @@ see an error like:
 </div>
 
 #### The Comment Object Structure
-<div class="code">
-/**
+<div class="code">/**
  * @typedef {Object} WebhookComment
  * @property {string} id
  * @property {string} urlId
