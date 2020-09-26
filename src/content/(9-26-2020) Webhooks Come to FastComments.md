@@ -13,7 +13,7 @@ FastComments can now call your API for comment creation, updates, and removal.
 
 With FastComments it's now possible to invoke an API endpoint whenever a comment gets added, updated, or removed from our system. 
 
-We accomplish this with asynchronous webhooks over http.
+We accomplish this with asynchronous webhooks over HTTP/HTTPS.
 
 #### How To Use It
 
