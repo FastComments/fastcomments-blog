@@ -32,6 +32,11 @@ We wrote the FastComments VanillaJS widget to be the core of our business (along
 While without this new React library, you could have integrated FastComments into your application by writing your own library, it would have been a major hurdle of adoption. By supporting
 React directly we make adopting FastComments much easier for these types of customers.
 
+#### Single Page Applications?
+
+FastComments supports SPAs at its core. The component monitors changes to the config object - so if you update the current page (called urlId) the widget
+will re-render.
+
 #### What Changes for Existing Customers 
 
 Nothing changes for existing customers - and there's **nothing** wrong with using the VanillaJS version of FastComments for new projects. fastcomments-react depends on the VanillaJS
