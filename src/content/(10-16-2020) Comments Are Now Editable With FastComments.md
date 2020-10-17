@@ -24,7 +24,7 @@ commenting as long as they don't close their browser. For example this means an 
 
 If the anonymous commenter closes their browser, they won't be able to edit their comment unless they click the magic link sent to their email.
 
-For additional security, temporary edit key it will be invalidated on any attempt to guess the key incorrectly.
+For additional security, the temporary edit key will be invalidated on any attempt to guess the key incorrectly.
 
 #### Why Now, after so long?
 
