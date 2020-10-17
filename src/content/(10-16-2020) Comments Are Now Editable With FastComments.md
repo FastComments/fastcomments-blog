@@ -13,7 +13,7 @@ A much anticipated update, you can now edit comments left with FastComments.
 
 Comments left with FastComments can now be edited - whether you are logged in or not.
 
-<img data-src="images/fc-editing-demo" class="lozad" alt="Editing Demo GIF (17mb)" title="Editing Demo" />
+<img data-src="images/fc-editing-demo.gif" class="lozad" alt="Editing Demo GIF (17mb)" title="Editing Demo" />
 
 Understandably, has been one of our most requested features, and we're happy to reach this milestone with our user base.
 
