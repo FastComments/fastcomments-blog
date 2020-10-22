@@ -44,6 +44,12 @@ We've finished rolling out comment editing by default for all of our customers. 
 
 We plan on releasing the ability to delete comments as well in a future update.
 
+#### Third Party Integrations
+
+Editing a comment will cause the event to propagate to any integrations you have - like WordPress. If you use our WordPress plugin, then adding a comment updates
+your WordPress installation in the background so you retain a copy of your data. If you edit a comment, we follow the same logic and update the copy in your WordPress
+installation. This applies to other integrations, not just WordPress.
+
 #### In Conclusion
 
 We know this feature has been long awaited by some. Like all major releases, we're glad that we could take the time to optimize, test, and properly release this feature.

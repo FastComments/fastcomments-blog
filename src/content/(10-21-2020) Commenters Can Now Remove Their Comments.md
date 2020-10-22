@@ -39,6 +39,12 @@ Just like commenting and voting - deleting happens live. If two users are on the
 
 We've finished rolling out comment editing and deleting by default for all of our customers. Currently, it cannot be turned off.
 
+#### Third Party Integrations
+
+Deleting a comment will cause the event to propagate to any integrations you have - like WordPress. If you use our WordPress plugin, then adding a comment updates
+your WordPress installation in the background so you retain a copy of your data. If you remove comments, we follow the same logic and remove it from your WordPress
+installation. This applies to other integrations, not just WordPress.
+
 #### In Conclusion
 
 We know this feature has been long awaited by some. Like all major releases, we're glad that we could take the time to optimize, test, and properly release this feature.
