@@ -61,7 +61,7 @@ Note that in this example we use document.getElementById, but you can use whatev
 #### Gotchas
 
 While just updating "urlId" will work, you should update both "urlId" and "url" even if they are the same so that links from notification emails and
-the moderation tools work.
+the moderation tools work. Just updating the "url" will not work - comments are tied to "urlId".
 
 #### In Conclusion
 
