@@ -39,15 +39,13 @@ Note that we've documented the complete configuration the widget supports in Typ
 
 When the widget is instantiated, capture the result from the FastCommentsUI function that you would normally call:
 
-<div class="code">
-    const config = {tenantId: 'demo'};
+<div class="code">  const config = {tenantId: 'demo'};
     const widgetInstance = window.FastCommentsUI(document.getElementById('fastcomments-widget'), config);
 </div>
 
 Then, you can invoke an "update" method on the instance object to update the configuration. This will refresh the component:
 
-<div class="code">
-    const config = {tenantId: 'demo'};
+<div class="code">  const config = {tenantId: 'demo'};
     const widgetInstance = window.FastCommentsUI(document.getElementById('fastcomments-widget'), config);
     widgetInstance.update({
         ...config,
