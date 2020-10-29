@@ -1,7 +1,7 @@
 {
 	"name": "fastcomments-blog",
 	"dependencies": {
-		"handlebars": "^4.1.2",
+		"handlebars": "^4.5.3",
 		"marked": "^0.7.0",
 		"feed": "^4.0.0",
 		"byte-size": "^6.2.0",
