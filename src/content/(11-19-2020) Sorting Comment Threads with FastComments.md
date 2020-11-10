@@ -9,7 +9,7 @@ Since launch, FastComments did not allow you to change the sort order of the com
 
 #### Target Audience
 
-This target audience for this article is site consists of both administrators and commenters.
+This target audience for this article consists of both administrators and commenters.
 
 #### Introduction
 
