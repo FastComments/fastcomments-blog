@@ -28,7 +28,7 @@ When the number of top-level comments is greater than one, a new dropdown will a
     <img src="images/fc-sort-dropdown.png" alt="Sort Selection Dropdown" title="Sort Selection Dropdown" />
 </div>
 
-When selecting Newest or Oldest first the karma of the comment is not taken into account.
+When selecting Newest or Oldest First we do not take the karma of the comment into account.
 
 #### Keeping it Fast
 
