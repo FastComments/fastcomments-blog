@@ -24,7 +24,9 @@ The FastComments comment widget now additionally supports sorting by Newest and 
 
 When the number of top-level comments is greater than one, a new dropdown will appear to allow changing the sort direction.
 
-<img src="images/fc-sort-dropdown.png" alt="Sort Selection Dropdown" title="Sort Selection Dropdown" />
+<div class="text-center">
+    <img src="images/fc-sort-dropdown.png" alt="Sort Selection Dropdown" title="Sort Selection Dropdown" />
+</div>
 
 When selecting Newest or Oldest first the karma of the comment is not taken into account.
 
