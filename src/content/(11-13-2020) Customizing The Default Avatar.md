@@ -31,7 +31,7 @@ Scroll down to the "Default Avatar" section.
     alt="FastComments Hackaday Settings"
     class='lozad' />
     
-Click the button to upload a JPG, PNG, or GIF of up to 20mb. It will be resized to 100mb.
+Click the button to upload a JPG, PNG, or GIF of up to 20mb. It will be resized to a 100px square.
 
 #### In Code
 
