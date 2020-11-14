@@ -39,7 +39,7 @@ If you wish to host the default avatar, and you have a public URL for it already
 
 <div class="code">    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
         tenantId: 'demo',
-        defaultAvatarSrc: 'https://example.com/some-100-x-100-image.png',
+        defaultAvatarSrc: 'https://example.com/some-100-x-100-image.png'
     });
 </div>
 
