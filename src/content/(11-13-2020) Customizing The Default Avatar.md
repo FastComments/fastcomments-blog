@@ -11,7 +11,7 @@ The default avatar image can now be customized.
 
 #### Introduction
 
-The default icon has been the same since FastComments launched. Behold, the default profile icon.
+The default icon has been the same since FastComments launched. Behold the glory of the default profile icon.
 
 <div class="text-center">
     <img src="https://fastcomments.com/images/unknown-person.png" title="Default Profile Icon" alt="Default Profile Icon" />
