@@ -37,10 +37,10 @@ Click the button to upload a JPG, PNG, or GIF of up to 20mb. It will be resized 
 
 If you wish to host the default avatar, and you have a public URL for it already, it can be defined in code as in the given example.
 
-<div class="code">window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
-            tenantId: 'demo',
-            defaultAvatarSrc: 'https://example.com/some-100-x-100-image.png',
-        });
+<div class="code">    window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+        tenantId: 'demo',
+        defaultAvatarSrc: 'https://example.com/some-100-x-100-image.png',
+    });
 </div>
 
 The image should be square, and its size should be a 100px square. Following these constraints will ensure the best experience.
