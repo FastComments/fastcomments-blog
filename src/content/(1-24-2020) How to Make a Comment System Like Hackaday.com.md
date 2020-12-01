@@ -26,11 +26,13 @@ We don't suggest you copy them. But this demonstrates the flexibility of FastCom
 Making FastComments look this way is simple!
 We built a UI for it! For example, here is the configuration we used to make FastComments match this page:
 
-<img 
-    data-src="images/fc-custom-settings-hackaday.png"
-    alt="FastComments Hackaday Settings"
-    class='lozad'
-    height="850px" />
+<div class="text-center">
+    <img 
+        data-src="images/fc-custom-settings-hackaday.png"
+        alt="FastComments Hackaday Settings"
+        class='lozad'
+        height="850px" />
+</div>
 
 If you want to do it in-code it is just as easy.
 
