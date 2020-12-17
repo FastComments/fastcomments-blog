@@ -64,8 +64,10 @@ To enable SSO, pass a new "sso" object, which must have the following parameters
 - userDataJSONBase64: The user's data in JSON format, which is then Base64 encoded.
 - verificationHash: The HMAC-SHA256 hash created from UNIX_TIME + userDataJSONBase64.
 - timestamp: The current unix time. **Must not be in the future, or more than three hours in the past.**
-- logoutURL: A URL that the comment widget can show to log the user out.
 - loginURL: A URL that the comment widget can show to log the user in.
+- logoutURL: A URL that the comment widget can show to log the user out.
+- loginCallback: When provided instead of the login URL, a function that the comment widget will invoke when clicking the login button.
+- logoutCallback: When provided instead of the logout URL, a function that the comment widget will invoke when clicking the logout button.
 
 ##### The User Object 
 
