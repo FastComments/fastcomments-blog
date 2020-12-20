@@ -161,7 +161,7 @@ All configuration options are documented <a href="https://github.com/FastComment
         float: right;
     }
     
-    @media(max-width: 768px) {
+    @media(max-width: 1024px) {
         .header {
             padding-top: 0;
         }
