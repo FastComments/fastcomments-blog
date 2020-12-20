@@ -80,7 +80,7 @@ All configuration options are documented <a href="https://github.com/FastComment
         border: none;
     }
     
-    .header a {
+    .header .header-inner a {
         display: block;
         padding-top: 35px;
         color: #fff;
@@ -88,11 +88,11 @@ All configuration options are documented <a href="https://github.com/FastComment
         font-size: 80px;
     }
     
-    .header .buttons {
+    .header .header-inner .buttons {
         display: none;
     }
     
-    .header #watchly-target {
+    .header .header-inner #watchly-target {
         display: none;
     }
     
@@ -166,7 +166,7 @@ All configuration options are documented <a href="https://github.com/FastComment
             padding-top: 0;
         }
         
-        .header a {
+        .header .header-inner a {
             padding: 0;
             font-size: 40px;
         }
