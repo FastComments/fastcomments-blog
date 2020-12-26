@@ -20,7 +20,7 @@ With any functionality change, we test with our customers' styling, and have fou
 
 #### Who Gets The Labels
 
-If a user is an Account Owner, or is Super Admin, the "Administrator" (localized by region) label is displayed.
+If a user is an Account Owner, or is a Super Admin, the "Administrator" (localized by region) label is displayed.
 
 If the user is a moderator, or is a user on the tenant that doesn't have the above administrator permissions, but has the comment moderation permission,
 then the "Moderator" label is displayed.
