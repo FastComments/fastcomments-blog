@@ -6,8 +6,6 @@ Read this post to see how to fully migrate from JustComments to FastComments.
 
 It's usually a matter of removing the small snippet they give you and replacing it with <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">our own</a>.
 You can even run JustComments and FastComments on the same site temporarily to test and tweak the look and feel. <a href="https://fastcomments.com/auth/my-account/help" target="_blank">We can help with that</a>.
-
-If you're not using the Generic Site Integration then the instructions will vary based on your platform - again <a href="https://fastcomments.com/auth/my-account/help" target="_blank">reach out to us</a>.
 {{/unless}}
 
 {{#isPost}}
@@ -64,8 +62,6 @@ It's safe to reimport as many times as required - however if your import fails t
 
 If you're not using the JustComments WordPress plugin then it's simply a matter of removing the small snippet they give you and replacing it with <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">our own</a>.
 You can even run JustComments and FastComments on the same site temporarily to test and tweak the look and feel. <a href="https://fastcomments.com/auth/my-account/help" target="_blank">We can help with that</a>.
-
-If you're not using the Generic Site Integration then the instructions will vary based on your platform - again <a href="https://fastcomments.com/auth/my-account/help" target="_blank">reach out to us</a>.
 
 ### Migrating URLs at the same time
 
