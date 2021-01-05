@@ -37,6 +37,11 @@ field. Simply enable the option "Enable Commenter Links".
     <img src="images/fc-commenter-links-enabling.png" alt="Enabling Commenter Links" title="Blog Links" />
 </div>
 
+## Overriding The Input Field Text
+
+By default, the commenter link field placeholder is "Your Blog URL.". This can be overridden via the same customization rule
+you used to enable the feature, by clicking "Show Custom Text".
+
 ## Improving Spam Classification
 
 This feature has the side effect of reducing content flagged by spam that may not be spam. Comments with little text and a link have a higher chance to be classified
