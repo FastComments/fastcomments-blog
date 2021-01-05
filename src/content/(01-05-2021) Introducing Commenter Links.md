@@ -31,7 +31,7 @@ This link can also be customized via editing your <a href="https://fastcomments.
 ## Enabling Commenter links
 
 By creating a <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">Customization Rule</a> we can enable the new input
-field.
+field. Simply enable the option "Enable Commenter Links".
 
 <div class="text-center">
     <img src="images/fc-commenter-links-enabling.png" alt="Enabling Commenter Links" title="Blog Links" />
