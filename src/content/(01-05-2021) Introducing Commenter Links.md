@@ -39,7 +39,7 @@ field. Simply enable the option "Enable Commenter Links".
 
 ## Improving Spam Classification
 
-This feature has the side effect of reducing content flagged by spam that may not be spam. Comments with little text and a link would normally be classified
+This feature has the side effect of reducing content flagged by spam that may not be spam. Comments with little text and a link have a higher chance to be classified
 as spam. However, the commenter link does not affect the classification of whether the comment is spam or not. This means that a user can comment with their blog link
 with a much lower risk of the comment being flagged as spam.
 
