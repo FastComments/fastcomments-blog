@@ -71,12 +71,18 @@ To enable SSO, pass a new "sso" object, which must have the following parameters
 
 ##### The User Object 
 
-The User object contains the following schema, all properties being strings:
+The User object contains the following schema:
 
-- id (required) (1k characters max)
-- email (required) (1k characters max)
-- username (required) (1k characters max)
-- avatar (optional) (3k characters max)
+- id (string, required) (1k characters max)
+- email (string, required) (1k characters max)
+- username (string, required) (1k characters max)
+- avatar (string, optional) (3k characters max)
+- optedInNotifications (boolean, optional)
+
+##### Notifications
+
+To enable or disable notifications, set the value of optedInNotifications to true or false respectively. The first time the user loads the page with this value in the SSO payload,
+their notification settings will be updated.
 
 ##### Unauthenticated users
 
