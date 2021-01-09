@@ -75,7 +75,7 @@ The User object contains the following schema:
 
 - id (string, required) (1k characters max)
 - email (string, required) (1k characters max)
-- username (string, required) (1k characters max)
+- username (string, required) (1k characters max). Note: the username cannot be an email.
 - avatar (string, optional) (3k characters max)
 - optedInNotifications (boolean, optional)
 
