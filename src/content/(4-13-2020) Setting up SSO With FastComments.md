@@ -74,8 +74,8 @@ To enable SSO, pass a new "sso" object, which must have the following parameters
 The User object contains the following schema:
 
 - id (string, required) (1k characters max)
-- email (string, required) (1k characters max)
-- username (string, required) (1k characters max). Note: the username cannot be an email.
+- email (string, required) (1k characters max). Note: Must be unique.
+- username (string, required) (1k characters max). Note: The username cannot be an email. Does not have to be unique.
 - avatar (string, optional) (3k characters max)
 - optedInNotifications (boolean, optional)
 
