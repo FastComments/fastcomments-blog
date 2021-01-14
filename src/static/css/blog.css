@@ -133,8 +133,9 @@ body {
 }
 
 .content .footer {
-    font-size: 12px;
     margin-top: 10em;
+    font-size: 12px;
+    text-align: center;
 }
 
 .content .posts .post .post-description h1 {
