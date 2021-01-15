@@ -30,6 +30,10 @@ When the number of top-level comments is greater than one, a new dropdown will a
 
 When selecting Newest or Oldest First we do not take the karma of the comment into account.
 
+#### Changing The Default Sort Direction
+
+While the default sort direction is Most Relevant, the default sort direction can easily be customized by creating a <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">customization rule</a>.
+
 #### Keeping it Fast
 
 In order for FastComments to continue to live up to its name a considerable amount of time has been spent to ensure
