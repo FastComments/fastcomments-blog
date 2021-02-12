@@ -78,11 +78,17 @@ The User object contains the following schema:
 - username (string, required) (1k characters max). Note: The username cannot be an email. Does not have to be unique.
 - avatar (string, optional) (3k characters max)
 - optedInNotifications (boolean, optional)
+- displayLabel (string, optional, 100 characters max). This label will be shown next to their name.
+- websiteUrl (string, optional, 2000 characters max). The user's name will link to this.
 
 ##### Notifications
 
 To enable or disable notifications, set the value of optedInNotifications to true or false respectively. The first time the user loads the page with this value in the SSO payload,
 their notification settings will be updated.
+
+##### VIP Users & Special Labels
+
+You can display a special label next to the user's name by using the optional "displayLabel" field.
 
 ##### Unauthenticated users
 
