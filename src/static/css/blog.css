@@ -103,19 +103,6 @@ body {
     border-radius: 30px;
 }
 
-@media(min-width: 1024px) {
-    .left-right-art {
-        position: fixed;
-        bottom: -300px;
-        right: -300px;
-        height: 600px;
-        width: 600px;
-        background: #201600;
-        transform: rotate(45deg);
-        z-index: -1;
-    }
-}
-
 .post-link-icon {
     text-decoration: none;
 }
