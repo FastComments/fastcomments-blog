@@ -33,8 +33,9 @@ Administrators and moderators are the only users that can pin and unpin comments
 
 Whenever a comment is pinned, or unpinned, that update is sent to all viewers of the comment thread.
 
-However, when a comment's pin state changes, the comment thread is not immediately resorted. During our testing we found this
-experience to be very jarring, so pinned comments will only affect the sort order on page load.
+When a comment's pin state changes, the comment is immediately moved for the person pinning the comment and anybody
+viewing the comment thread. If a user disconnects, followed by a comment being pinned, the comment will be pinned and moved
+for that user upon reconnecting.
 
 #### Performance
 
