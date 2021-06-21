@@ -107,7 +107,7 @@ customer base over time.
 Happy commenting!
 
 <link href="image-compare/twentytwenty.css" rel="stylesheet" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
 <script src="image-compare/jquery.twentytwenty.js"></script> 
 <script src="image-compare/jquery.event.move.js"></script>
 <script src="image-compare/new-look.js"></script>
