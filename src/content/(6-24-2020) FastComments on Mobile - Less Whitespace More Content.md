@@ -43,7 +43,7 @@ gone through everyone's custom widget styling to make sure it is not broken. How
 
 #### Performance Implications
 
-This change has increased the widget size by about 300kb, bringing it to a total of 10.1kb. As with all releases that increase the size of the widget we'll be looking
+This change has increased the widget size by about 300 bytes, bringing it to a total of 10.1kb. As with all releases that increase the size of the widget we'll be looking
 into ways to bring it back down.
 
 Happy commenting!
