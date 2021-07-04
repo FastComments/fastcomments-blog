@@ -16,7 +16,7 @@ a whole new version!
 Check out the comparison below (drag the slider to compare):
 
 <div class="text-center">
-    <div class="screenshot-comparison twentytwenty-container">
+    <div class="screenshot-comparison">
       <img src="images/fc-redesign-old.png" />
       <img src="images/fc-redesign-new.png" />
     </div>
