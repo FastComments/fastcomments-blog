@@ -11,7 +11,8 @@
 		"lozad": "^1.14.0"
 	},
 	"scripts": {
-		"serve": "serve src/static/generated"
+		"serve": "serve src/static/generated",
+		"build-windows": "build.bat"
 	},
 	"devDependencies": {
 		"serve": "^11.2.0"
