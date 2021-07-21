@@ -7,20 +7,20 @@ FastComments provides SSO solutions for various platforms and custom integration
 
 {{#isPost}}
 
-## Overview
+# Overview
 
-### What is SSO?
+## What is SSO?
 
 SSO, or single-sign-on, is a set of conventions used to allow you or your users use FastComments without having to create another account.
 
 Assuming you don't allow anonymous commenting, an account is required to comment with FastComments. We make this sign up process very easy - the user just leaves
 their email when they comment. However, we understand that even that is extra friction some sites want to avoid.
 
-### How do I get it?
+## How do I get it?
 
 All account types - from the $4.99/mo plan to the $350/mo plan - get access to SSO as well as support.
 
-#### WordPress Users
+### WordPress Users
 
 If you're using our <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">WordPress</a> plugin then there is no code to write! Simply go to the plugin's Admin page, click SSO Settings, and then Enable.
 
@@ -28,7 +28,7 @@ This will take you to a single-button click wizard which will create your API ke
 
 Note that if you are installing the plugin for the first time you will have to follow up the setup process before you see the admin page with the SSO Settings button.
 
-#### Custom Integrations
+### Custom Integrations
 
 FastComments SSO uses HMAC-SHA256 encryption as the mechanism to implement SSO. First we'll go over the overall architecture, provide examples, and detailed steps. However at the end
 of this article there are instructions for **migrating from Disqus and Commento**.
@@ -48,12 +48,12 @@ You can find the code example repository here:
 
 <a href="https://github.com/fastcomments/fastcomments-code-examples" class="btn" target="_blank">FastComments SSO Code Examples</a>
 
-##### Get Your API Secret Key
+#### Get Your API Secret Key
 
 Your API Secret can be retrieved from <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">this page</a>. You can find this page also by going to My Account,
 clicking the API/SSO tile, and then clicking "Get API Secret Key".
 
-##### Comment Widget Parameters
+#### Comment Widget Parameters
 
 High-level API documentation for the comment widget can be found <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">here</a> and clicking "Show Advanced Options". Search for SSO on the page.
 
@@ -71,7 +71,7 @@ To enable SSO, pass a new "sso" object, which must have the following parameters
 - loginCallback: When provided instead of the login URL, a function that the comment widget will invoke when clicking the login button.
 - logoutCallback: When provided instead of the logout URL, a function that the comment widget will invoke when clicking the logout button.
 
-##### The User Object 
+#### The User Object 
 
 The User object contains the following schema:
 
@@ -83,32 +83,32 @@ The User object contains the following schema:
 - displayLabel (string, optional, 100 characters max). This label will be shown next to their name.
 - websiteUrl (string, optional, 2000 characters max). The user's name will link to this.
 
-##### Notifications
+#### Notifications
 
 To enable or disable notifications, set the value of optedInNotifications to true or false respectively. The first time the user loads the page with this value in the SSO payload,
 their notification settings will be updated.
 
-##### VIP Users & Special Labels
+#### VIP Users & Special Labels
 
 You can display a special label next to the user's name by using the optional "displayLabel" field.
 
-##### Unauthenticated users
+#### Unauthenticated users
 
 To represent an unauthenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
 
-##### Direct Examples for Serializing and Hashing User Data
+#### Direct Examples for Serializing and Hashing User Data
 
 More details as an examples <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">here (js)</a>,
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">here (java)</a> and
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">here (php)</a>.
 
 
-#### Migrating from Disqus SSO
+### Migrating from Disqus SSO
 
 The biggest differences between Disqus and FastComments SSO is that Disqus uses SHA1 for encryption while we use SHA256.
 This means migrating from Disqus is easy - change the hashing algorithm used from SHA1 to SHA256 and update the property names passed to the UI.
 
-#### Migrating from Commento SSO
+### Migrating from Commento SSO
 
 Commento uses a drastically different SSO approach - they require you to have an endpoint that they invoke to authenticate the user. FastComments is the other way around - 
 simply encode and hash the user's information using your secret key and pass it along.
