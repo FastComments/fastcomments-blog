@@ -36,7 +36,9 @@
         <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
         <div id="fastcomments-widget"></div>
         <script>
-            FastCommentsCollabChat(document.querySelector('.post-description'));
+            FastCommentsCollabChat(document.querySelector('.post-description'), {
+                tenantId: 'nYrnfYEv'
+            });
             window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
                 tenantId: 'nYrnfYEv',
                 commentCountFormat: window.fcCommentCountFormat,
