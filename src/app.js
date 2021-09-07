@@ -27,7 +27,7 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	let html = marked(fileContent);
 	const postByteSize = byteSize(html.length).toString();
 
-	const imageSrcs = html.match(/data-src\s*=\s*"?(.+?)["|\s]/g);
+	const imageSrcs = html.match(/src\s*=\s*"?(.+?)["|\s]/g);
 	let mediaSize = 0;
 	if(imageSrcs) {
 		for(const imageSrc of imageSrcs) {

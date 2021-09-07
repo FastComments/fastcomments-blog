@@ -20,7 +20,7 @@ When logged in, moderators will have a small edit icon in the top right of each 
 show a menu with some new options.
 
 <div class="text-center">
-    <img class="lozad" data-src="images/fc-moderate-comment-actions.png" alt="Comment Moderation Actions" title="Comment Moderation Actions" />
+    <img class="lozad" src="images/fc-moderate-comment-actions.png" alt="Comment Moderation Actions" title="Comment Moderation Actions" />
 </div>
 
 These options will show in the Comment Thread Viewer as well.

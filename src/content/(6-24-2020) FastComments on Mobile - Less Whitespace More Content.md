@@ -19,7 +19,7 @@ Here you can see before, we did not use space very efficiently.
 
 <div class="text-center">
     <img 
-        data-src="images/mobile-v1.png"
+        src="images/mobile-v1.png"
         alt="Mobile Version Before"
         title="Mobile Version Before"
         class='lozad' />
@@ -29,7 +29,7 @@ Now, we have exchanged vertical screen space for horizontal screen space.
 
 <div class="text-center">
     <img 
-        data-src="images/mobile-v2.png"
+        src="images/mobile-v2.png"
         alt="Mobile Version After"
         title="Mobile Version After"
         class='lozad' />

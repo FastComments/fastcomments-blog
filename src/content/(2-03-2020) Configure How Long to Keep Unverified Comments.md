@@ -18,7 +18,7 @@ But now you can configure how long to keep these comments - maybe you don't even
 By default the Comment Moderation Settings might look like this for you, with automatic removal enabled and the time-to-live to three days:
 
 <img 
-    data-src="images/fc-unverified-comments-expiration.png"
+    src="images/fc-unverified-comments-expiration.png"
     alt="Comment Moderation UI"
     title="Comment Moderation UI"
     class='lozad' />
@@ -26,7 +26,7 @@ By default the Comment Moderation Settings might look like this for you, with au
 If we wanted to set the time for these unverified comments to live to 300 days, we just drag the slider like this:
     
 <img 
-    data-src="images/fc-unverified-comments-expiration02.png"
+    src="images/fc-unverified-comments-expiration02.png"
     alt="Comment Moderation UI"
     title="Comment Moderation UI"
     class='lozad' />

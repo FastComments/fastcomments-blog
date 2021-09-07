@@ -22,7 +22,7 @@ If you find the comment widget is not loading, or some configuration you've defi
 and opening it on the page in question. To see the icon in your toolbar, you may have to click the puzzle piece in the top right to pin it as shown:
 
 <div class="text-center">
-    <img data-src="images/fc-extension-pin.png" alt="How to Pin the Extension" title="How to Pin the Extension" class="lozad" />
+    <img src="images/fc-extension-pin.png" alt="How to Pin the Extension" title="How to Pin the Extension" class="lozad" />
 </div>
 
 The extension can help debug two classifications of errors. The first, if the widget is not included on the page at all or there is a major typo in the script.
@@ -34,13 +34,13 @@ To debug both, you start with simply click on the icon.
 If the tool does not find the comment widget on the page you'll get a big red error:
 
 <div class="text-center">
-    <img data-src="images/fc-extension-embed-js-not-found.png" alt="Embed.js not found example" title="Embed.js not found example" class="lozad" />
+    <img src="images/fc-extension-embed-js-not-found.png" alt="Embed.js not found example" title="Embed.js not found example" class="lozad" />
 </div>
 
 If one or more instances of the widget have been found, you'll see their configurations displayed separately:
 
 <div class="text-center">
-    <img data-src="images/fc-extension-multiple-instances.png" alt="Multiple Configuration Example" title="Multiple Configuration Example" class="lozad" />
+    <img src="images/fc-extension-multiple-instances.png" alt="Multiple Configuration Example" title="Multiple Configuration Example" class="lozad" />
 </div>
 
 Moreover, the FastComments Debugger will also display warnings for common gotchas - like the widget not showing in readonly mode if no comments are available.

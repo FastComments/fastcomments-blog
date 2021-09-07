@@ -24,7 +24,7 @@ From there you can specify endpoints for each type of comment event.
 For each type of event, be sure to click **Send Test Payload** to ensure you've setup your integration correctly. See the next section, "Testing", for details.
 
 <div class="text-center">
-    <img data-src="images/fc-webhooks-test-verified.png" alt="Webhooks Setup Example" title="Webhooks Setup Example" class="lozad" />
+    <img src="images/fc-webhooks-test-verified.png" alt="Webhooks Setup Example" title="Webhooks Setup Example" class="lozad" />
 </div>
 
 #### Testing
@@ -38,7 +38,7 @@ When the test sends an invalid API key you should return a status code of 401 fo
 see an error like:
 
 <div class="text-center">
-    <img data-src="images/fc-webhooks-test-expected-401.png" alt="Webhooks Authentication Test Failure" title="Webhooks Authentication Test Failure" class="lozad" />
+    <img src="images/fc-webhooks-test-expected-401.png" alt="Webhooks Authentication Test Failure" title="Webhooks Authentication Test Failure" class="lozad" />
 </div>
 
 #### The Comment Object Structure

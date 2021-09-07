@@ -17,7 +17,7 @@ The benchmarks don't lie - at 100 comments on a post running on a server with no
 With FastComments enabled, that number jumps up to **over 400**.
 
 <img 
-    data-src="images/fc-wordpress-stats.png"
+    src="images/fc-wordpress-stats.png"
     alt="Benchmark Results"
     title="Benchmark Results"
     class='lozad' />

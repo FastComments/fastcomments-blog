@@ -27,7 +27,7 @@ be applied for just a page, a domain, or your entire account. If you want to cha
 Scroll down to the "Default Avatar" section.
 
 <img 
-    data-src="/images/fc-customize-default-icon-button.png"
+    src="/images/fc-customize-default-icon-button.png"
     alt="FastComments Hackaday Settings"
     class='lozad' />
     

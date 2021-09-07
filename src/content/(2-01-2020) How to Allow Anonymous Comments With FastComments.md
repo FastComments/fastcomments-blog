@@ -15,7 +15,7 @@ to allow anonymous commenting on.
 This means that you can control on a page-by-page basis where you allow anonymous comments.
 
 <img 
-    data-src="images/fc-allow-anon.png"
+    src="images/fc-allow-anon.png"
     alt="Allow Anonymous Comments"
     class='lozad' />
 

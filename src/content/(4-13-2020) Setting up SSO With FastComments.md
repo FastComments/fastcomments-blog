@@ -36,7 +36,7 @@ of this article there are instructions for **migrating from Disqus and Commento*
 The flow looks like this:
 
 <div class="text-center">
-<img data-src="/images/sso-diagram.png" alt="FastComments SSO Diagram" title="FastComments SSO Diagram" class="lozad" />
+<img src="/images/sso-diagram.png" alt="FastComments SSO Diagram" title="FastComments SSO Diagram" class="lozad" />
 </div>
 
 You don't have to write any new API endpoints with FastComments SSO. Simply encrypt the user's info using your secret key and pass the payload to the comment widget.

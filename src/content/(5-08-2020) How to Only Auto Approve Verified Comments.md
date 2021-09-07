@@ -10,7 +10,7 @@ Here's how: Go to <a href="https://fastcomments.com/auth/my-account/moderate-com
 From there, check **Automatically Approve Comments** if it's not checked - then **Only Auto Approve Verified Comments** and hit **save**.
 
 <img 
-    data-src="images/fc-verification-approves-comment.png"
+    src="images/fc-verification-approves-comment.png"
     alt="The auto approve when verified option highlighted"
     title="The auto approve when verified option highlighted"
     class='lozad' />

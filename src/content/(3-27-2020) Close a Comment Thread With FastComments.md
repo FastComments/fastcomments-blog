@@ -12,7 +12,7 @@ Simply go to the <a href="https://fastcomments.com/auth/my-account/customize-wid
 Note that you should define a URL, unless you want to disable commenting across your entire site.
 
 <img 
-    data-src="images/fc-mark-thread-readonly.png"
+    src="images/fc-mark-thread-readonly.png"
     alt="Location of option to toggle commenting"
     title="Location of option to toggle commenting"
     class='lozad' />

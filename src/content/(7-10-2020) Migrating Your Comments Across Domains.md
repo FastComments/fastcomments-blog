@@ -23,7 +23,7 @@ If you're already logged in, you can just <a href="https://fastcomments.com/auth
 Here's the tool in action:
 
 <div class="text-center">
-    <img data-src="images/fc-domain-migration-tool.png" alt="Domain Migration Tool Screenshot" title="Domain Migration Tool" class="lozad" />
+    <img src="images/fc-domain-migration-tool.png" alt="Domain Migration Tool Screenshot" title="Domain Migration Tool" class="lozad" />
 </div>
 
 You will observe upon submitting that the status of your request may be in the state of "requested". Fear not, the system checks for new requests every minute and yours will be picked up soon.

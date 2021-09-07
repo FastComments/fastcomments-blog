@@ -8,7 +8,7 @@ For some, the default word blacklist is too restrictive or too open.
 The default word blacklist can now be edited, or completely changed. Simply go to Moderate Comments -> Edit Moderation Settings -> Edit Blacklist.
 
 <img 
-    data-src="images/fc-customize-blacklist.png"
+    src="images/fc-customize-blacklist.png"
     alt="Customize Blacklist"
     title="Customize Blacklist"
     class='lozad' />

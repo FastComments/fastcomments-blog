@@ -10,7 +10,7 @@ Don't want to show a comment feed at the end of your pages, but want to let user
 In order to hide a comment feed for a given page, or URL, under a link like "Show 103 Comments", simply create a customization rule like so:
 
 <img 
-    data-src="images/hide-comments-under-link.png"
+    src="images/hide-comments-under-link.png"
     alt="Hide Comments Under Link Setting"
     class='lozad' />
 

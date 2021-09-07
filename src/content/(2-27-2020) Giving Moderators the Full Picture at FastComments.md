@@ -11,7 +11,7 @@ If it has replies, the text will change to indicate the number of replies. Howev
 to the comment. 
 
 <img 
-    data-src="images/fc-moderator-view-comment.png"
+    src="images/fc-moderator-view-comment.png"
     alt="How to View a Comment With Context"
     title="How to View a Comment With Context"
     class='lozad' />
@@ -21,7 +21,7 @@ This will take you to the Comment Thread Viewer and quickly scroll your browser 
 There are no slow animations or things to distract you from your job. It quickly jumps to the comment you are trying to view.
 
 <img 
-    data-src="images/fc-moderator-view-comment-thread.png"
+    src="images/fc-moderator-view-comment-thread.png"
     alt="Comment Thread Viewer"
     title="Comment Thread Viewer"
     class='lozad' />

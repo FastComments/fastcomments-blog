@@ -9,7 +9,7 @@ Simply go to the Moderate Comments page and enter some text in the search box in
 words and phrases.
 
 <img 
-    data-src="images/fc-search-comments.png"
+    src="images/fc-search-comments.png"
     alt="Searching Comments Example"
     title="Searching Comments Example"
     class='lozad' />

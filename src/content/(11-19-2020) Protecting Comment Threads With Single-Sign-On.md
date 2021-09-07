@@ -24,7 +24,7 @@ We can prevent viewing and interacting with our comment threads, when SSO is set
 When doing so, search for SSO, and you will find this option:
 
 <div class="text-center">
-    <img data-src="/images/fc-sso-protection.png" title="Configuration Option for Locking Down Comments via SSO" alt="Configuration Option for Locking Down Comments via SSO" class="lozad" />
+    <img src="/images/fc-sso-protection.png" title="Configuration Option for Locking Down Comments via SSO" alt="Configuration Option for Locking Down Comments via SSO" class="lozad" />
 </div>
 
 Enable it and save the customization rule.
@@ -36,7 +36,7 @@ To only protect a certain Domain or Page, we'll simply configure the customizati
 At the top of the customization UI, we'll find two inputs, Domain and URL ID.
 
 <div class="text-center">
-    <img data-src="/images/fc-sso-protection-by-page.png" title="Configuration Option By Page or Domain" alt="Configuration Option By Page or Domain" class="lozad" />
+    <img src="/images/fc-sso-protection-by-page.png" title="Configuration Option By Page or Domain" alt="Configuration Option By Page or Domain" class="lozad" />
 </div>
 
 To just protect a particular domain, enter the domain in question into the "domain" field.

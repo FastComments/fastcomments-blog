@@ -16,7 +16,7 @@ On this page there is an option called "Automatically Approve Comments". Uncheck
 That's it. All of your comments will now require approval. 
 
 <img 
-    data-src="images/fc-auto-approval.png"
+    src="images/fc-auto-approval.png"
     alt="Auto Approval Setting"
     title="Auto Approval Setting"
     class='lozad' />
@@ -24,7 +24,7 @@ That's it. All of your comments will now require approval.
 In order to approve comments you can filter as desired and click the "Mark Approved" option. If the option switches to "Mark Not Approved" that means it saved.
 
 <img 
-    data-src="images/fc-mark-approved.png"
+    src="images/fc-mark-approved.png"
     alt="How to Mark a Comment Approved"
     title="How to Mark a Comment Approved"
     class='lozad' />
@@ -32,7 +32,7 @@ In order to approve comments you can filter as desired and click the "Mark Appro
 You can view how many comments your moderators approve via the Moderators page:
 
 <img 
-    data-src="images/fc-moderator-stats.png"
+    src="images/fc-moderator-stats.png"
     alt="Moderator Settings and Stats"
     title="Moderator Settings and Stats"
     class='lozad' />

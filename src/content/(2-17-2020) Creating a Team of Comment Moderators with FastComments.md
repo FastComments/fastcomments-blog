@@ -27,7 +27,7 @@ Simply log into your account and go to Moderate Comments. From there in the top 
 will say Edit Moderators.
 
 <img 
-    data-src="images/fc-add-moderator.png"
+    src="images/fc-add-moderator.png"
     alt="Add a Moderator"
     title="Add a Moderator"
     class='lozad' />

@@ -28,7 +28,7 @@ We built a UI for it! For example, here is the configuration we used to make Fas
 
 <div class="text-center">
     <img 
-        data-src="images/fc-custom-settings-hackaday.png"
+        src="images/fc-custom-settings-hackaday.png"
         alt="FastComments Hackaday Settings"
         class='lozad'
         height="850px" />

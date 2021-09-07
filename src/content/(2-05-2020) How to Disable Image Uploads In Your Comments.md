@@ -9,7 +9,7 @@ To do so, go to <a href="https://fastcomments.com/auth/my-account/customize-widg
 Enabling the setting looks like this:
 
 <img 
-    data-src="images/fc-disable-image-uploads.png"
+    src="images/fc-disable-image-uploads.png"
     alt="Disable Image Uploads"
     title="Disable Image Uploads"
     class='lozad' />

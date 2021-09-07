@@ -29,7 +29,7 @@ marks comments as reviewed. Right now this email is static - however we have a s
 Like the rest of FastComments, the Digest email is light, easy to read, and very functional.
 
 <img 
-    data-src="images/fc-digest-email.png"
+    src="images/fc-digest-email.png"
     alt="The FastComments Digest Email"
     title="The FastComments Digest Email"
     class='lozad' />

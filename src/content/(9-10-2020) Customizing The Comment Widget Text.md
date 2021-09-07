@@ -25,7 +25,7 @@ In the dropdown you can search for translations by the default english text in t
 As you make changes, they will appear in the preview at the bottom of the page (as highlighted).
 
 <div class="text-center">
-    <img data-src="images/fc-customize-translations.png" alt="Translation Customization UI" title="Translation Customization UI" class="lozad" />
+    <img src="images/fc-customize-translations.png" alt="Translation Customization UI" title="Translation Customization UI" class="lozad" />
 </div>
 
 #### What Changes for Existing Translation Customizations
