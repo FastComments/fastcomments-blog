@@ -2,7 +2,7 @@
 # [postlink]Adding Commenting to Notion Pages[/postlink]
 
 {{#unless isPost}}
-Want to add comments to your Notion.so pages? We have you covered.
+Want to add comments to your Notion pages? We have you covered.
 {{/unless}}
 
 {{#isPost}}
