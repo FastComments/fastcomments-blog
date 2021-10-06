@@ -9,15 +9,15 @@ Want to add comments to your Notion pages? We have you covered.
 
 ### What's New
 
-FastComments is now an https://embed.ly provider, and as such provides APIs and services that allow comment threads
+FastComments is now an embed.ly provider, and as such provides APIs and services that allow comment threads
 to be embedded into applications that support [oEmbed](https://oembed.com).
 
 ### How to Use It - A Quick Demo
 
-When logged in to your tenant, you may simply visit https://fastcomments.com/create to create a conversation link that then
+When logged in to your tenant, you may simply visit [fastcomments.com/create](https://fastcomments.com/create) to create a conversation link that then
 can be added to your Notion page, or any application that integrates with https://embed.ly.
 
-You can try it yourself using your demo embed link, https://fastcomments.com/c/demo:
+You can try it yourself using your demo embed link, [fastcomments.com/c/demo](https://fastcomments.com/c/demo):
 
 <video src="images/fastcomments-notion.mp4" autoplay="false" controls="true" alt="FastComments and Notion Demo" title="FastComments and Notion Demo"></video>
 
