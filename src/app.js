@@ -31,7 +31,10 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	let mediaSize = 0;
 	if(imageSrcs) {
 		for(const imageSrc of imageSrcs) {
-			mediaSize += fs.statSync(path.join(STATIC_DIR, imageSrc.substring(10, imageSrc.length - 1))).size; // Would be nice to fix regex to not include src=""
+			const localPath = imageSrc.substring(5, imageSrc.length - 1);
+			if (!localPath.startsWith('http')) {
+				mediaSize += fs.statSync(path.join(STATIC_DIR, )).size; // Would be nice to fix regex to not include src="
+			}
 		}
 	}
 	mediaSize = prettyBytes(mediaSize);
