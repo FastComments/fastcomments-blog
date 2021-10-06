@@ -17,7 +17,7 @@ to be embedded into applications that support [oEmbed](https://oembed.com).
 When logged in to your tenant, you may simply visit https://fastcomments.com/create to create a conversation link that then
 can be added to your Notion page, or any application that integrates with https://embed.ly.
 
-You can try it yourself using your demo embed link, https://fastcomments.com/c/demo;
+You can try it yourself using your demo embed link, https://fastcomments.com/c/demo:
 
 <video src="images/fastcomments-notion.mp4" autoplay="false" controls="true" alt="FastComments and Notion Demo" title="FastComments and Notion Demo"></video>
 
