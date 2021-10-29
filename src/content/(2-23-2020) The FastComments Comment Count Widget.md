@@ -10,7 +10,8 @@ For example, this page has <b><span id="fastcomments-widget-comment-count"></spa
 <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <script>
     window.FastCommentsCommentCount(document.getElementById('fastcomments-widget-comment-count'), {
-        tenantId: 'nYrnfYEv'
+        tenantId: 'nYrnfYEv',
+        isLive: true
     });
 </script>
 
