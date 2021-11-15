@@ -41,7 +41,7 @@ logos from the default.
 
 ## How do I get it?
 
-Custom branding is currently available with the FastComments Pro and Unlimited plans.
+Custom branding is currently available with the FastComments Pro and Enterprise plans.
 
 ## In Conclusion
 

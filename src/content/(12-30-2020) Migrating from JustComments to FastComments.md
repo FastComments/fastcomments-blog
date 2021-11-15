@@ -17,7 +17,7 @@ You'll find that FastComments provides many of the same features you're used to,
 ## Pricing Differences
 
 While JustComments uses a credit based system, FastComments uses a tiered model with three tiers available. With FastComments, our $5/mo plan
-covers you up to 1M page loads a month. Beyond that are the Pro and Unlimited plans, which you can view on our <a href="https://fastcomments.com/traffic-pricing" target="_blank">pricing page</a>.
+covers you up to 1M page loads a month. Beyond that are the Pro and Enterprise plans, which you can view on our <a href="https://fastcomments.com/traffic-pricing" target="_blank">pricing page</a>.
 
 ## If You're on WordPress
 
