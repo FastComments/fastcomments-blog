@@ -18,11 +18,11 @@ const STATIC_DIR = path.join(__dirname, 'static');
 var posts = [];
 fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	const title = item.replace('\.md', '');
-	const urlId = title.toLowerCase().replace(/ /g, '-') + '.html';
+	const urlId = encodeURIComponent(title.toLowerCase().replace(/ /g, '-') + '.html');
 	const fullUrl = 'https://blog.fastcomments.com/' + urlId;
 
 	let fileContent = fs.readFileSync(path.join(CONTENT_DIR, item), 'utf8');
-	fileContent = fileContent.replace('[postlink]', `<a href="${fullUrl}">`);
+	fileContent = fileContent.replace('[postlink]', `<a href="${urlId}">`); // using relative url here is better for local dev and won't make an SEO difference
 	fileContent = fileContent.replace('[/postlink]', `</a>`);
 	let html = marked(fileContent);
 	const postByteSize = byteSize(html.length).toString();
