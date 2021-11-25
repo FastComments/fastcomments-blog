@@ -37,7 +37,7 @@ This means we can have as many threads on a page as we want. For example, here a
 }
 </style>
 
-<script src="https://cdn.fastcomments.com/js/embed.min.js"></script>
+<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div class="widgets">
     <div class="widget left" id="fastcomments-widget2"></div>
     <div class="widget right" id="fastcomments-widget3"></div>
