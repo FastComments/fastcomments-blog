@@ -64,7 +64,7 @@ Here's the code that makes this happen. We customize the urlId parameter to make
 pass in any DOM element queried in any manner you like.
 
 
-<div class="code" id="code">&lt;script src="https://cdn.fastcomments.com/js/embed.min.js"&gt;&lt;/script&gt;
+<div class="code" id="code">&lt;script src="https://cdn.fastcomments.com/js/embed-v2.min.js"&gt;&lt;/script&gt;
 &lt;div class="widgets"&gt;
    &lt;div class="widget left" id="fastcomments-widget2"&gt;&lt;/div&gt;
    &lt;div class="widget right" id="fastcomments-widget3"&gt;&lt;/div&gt;
