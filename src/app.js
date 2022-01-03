@@ -62,6 +62,7 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 		title: title,
 		urlId: urlId,
 		fullUrl: fullUrl,
+		fullUrlEncoded: encodeURI(fullUrl),
 		dateTimeObj: ctime,
 		dateTime: ctime.getTime(),
 		minSize: postByteSize,
