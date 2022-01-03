@@ -18,7 +18,8 @@ const STATIC_DIR = path.join(__dirname, 'static');
 var posts = [];
 fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	const title = item.replace('\.md', '');
-	const urlId = encodeURIComponent(title.toLowerCase().replace(/ /g, '-') + '.html');
+	const urlIdRaw = title.toLowerCase().replace(/ /g, '-') + '.html';
+	const urlId = encodeURIComponent(urlIdRaw);
 	const fullUrl = 'https://blog.fastcomments.com/' + urlId;
 
 	let fileContent = fs.readFileSync(path.join(CONTENT_DIR, item), 'utf8');
@@ -61,8 +62,8 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 		previewHTML: previewHTML,
 		title: title,
 		urlId: urlId,
+		urlIdRaw: urlIdRaw,
 		fullUrl: fullUrl,
-		fullUrlEncoded: encodeURI(fullUrl),
 		dateTimeObj: ctime,
 		dateTime: ctime.getTime(),
 		minSize: postByteSize,
@@ -127,7 +128,7 @@ fs.readdirSync(TEMPLATE_DIR).forEach(function(item) {
 				],
 				date: post.dateTimeObj
 			});
-			fs.writeFileSync(path.join(STATIC_GENERATED_DIR, post.urlId), html, 'utf8');
+			fs.writeFileSync(path.join(STATIC_GENERATED_DIR, post.urlIdRaw), html, 'utf8');
 		});
 		fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'rss.xml'), feedGeneratorInstance.rss2(), 'utf8');
 	}
