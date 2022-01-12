@@ -133,6 +133,17 @@ body {
     border-radius: 30px;
 }
 
+.columns {
+    margin-bottom: 50px;
+}
+
+.columns > * {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(49% - 10px);
+    padding: 5px;
+}
+
 .post-link-icon {
     text-decoration: none;
 }
