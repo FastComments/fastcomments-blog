@@ -13,7 +13,7 @@ Previously, when search engines crawled websites with FastComments installed, th
 
 This was because previously the search engines saw the same thing you did when visiting your site.
 
-Now, when a search engine visits your site, all of the comments will be loaded.
+Now, when a search engine visits your site, all comments will be loaded.
 
 ## Impacts to Page Rank
 
