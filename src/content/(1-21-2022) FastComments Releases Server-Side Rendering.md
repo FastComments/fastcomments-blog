@@ -59,6 +59,11 @@ Complete documentation is available in the [SSR Docs at docs.fastcomments.com](h
 
 Because we love enterprise-sounding acronyms, don't worry, SSR supports SSO. [An example of Single-Sign-On with SSR is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/ssr/server.php#L44)
 
+## Localization
+
+The SSR-based endpoint automatically localizes the response based on the language related headers the browser sends. It can also use the same localization
+overrides as the JavaScript based widget.
+
 ## Why This Was Built
 
 One of the main complaints about services like FastComments is that they require JS. We already make our comment widget slim as possible, and ensure we meet
