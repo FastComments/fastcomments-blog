@@ -57,7 +57,7 @@ Complete documentation is available in the [SSR Docs at docs.fastcomments.com](h
 
 ## SSO
 
-Single-Sign-On is also supported. [An example is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/ssr/server.php#L44)
+Because we love enterprise-sounding acronyms, don't worry, SSR supports SSO. [An example of Single-Sign-On with SSR is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/ssr/server.php#L44)
 
 ## Why This Was Built
 
