@@ -24,7 +24,7 @@ The above screenshot is the FastComments commenting widget, without JavaScript. 
 
 ## How to Use It
 
-If you're using WordPress, the FastComments plugin 3.10.1 automatically adds support for SSR as a fallback for your users that browse with JS disabled.
+If you're using WordPress, the FastComments plugin version 3.10.1 automatically adds support for SSR as a fallback for your users that browse with JS disabled.
 
 For custom implementations, fetch the UI for a comment thread, simply call the `/ssr/comments` for that page:
 
