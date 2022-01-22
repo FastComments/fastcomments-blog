@@ -16,6 +16,7 @@ Since launch in early 2020, FastComments has exclusively used JavaScript to rend
 What if we told you could have almost all the same essential functionality, but without using JS?
 
 <div class="text-center">
+    <div class="sm">This is a screenshot, stop trying to click it.</div>
     <img src="images/ssr-demo.png" alt="SSR Demo" title="SSR Demo" />
 </div>
 
@@ -53,6 +54,10 @@ For example, with PHP we can send an iframe to the page that renders the comment
 We could also make an API call to get the HTML for a comment thread, and render, or store it.
 
 Complete documentation is available in the [SSR Docs at docs.fastcomments.com](https://docs.fastcomments.com/guide-ssr.html).
+
+## SSO
+
+Single-Sign-On is also supported. [An example is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/ssr/server.php#L44)
 
 ## Why This Was Built
 
