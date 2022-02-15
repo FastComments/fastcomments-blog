@@ -26,7 +26,7 @@ You can now, via the API:
 
 With billing, there are two options:
 
-1. Via FastComments Flex, the usage of your child tenants is automatically wrapped up and billed to the parent tenant. This can be monitored [at /auth/my-account/analytics/billing](https://fastcomments.com/auth/my-account/analytics/billing).
+1. Via FastComments Flex, the usage of your child tenants is automatically wrapped up and billed to the parent tenant. This can be monitored via the [Billing Analytics Page](https://fastcomments.com/auth/my-account/analytics/billing).
 2. Via FastComments Pro, you get access to create a fixed number of child tenants for a fixed monthly price.
 
 ## Debranding
