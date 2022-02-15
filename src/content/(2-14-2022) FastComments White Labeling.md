@@ -45,9 +45,7 @@ An example script which uses the API to setup a tenant with users and moderators
 
 Each API resource contains comprehensive validations and restrictions, with helpful error messages, to guide you through using them correctly.
 
-<div class="code">
-<div class="title">Detailed Error Example</div><div class="line">{</div><div class="line">  "status": "failed",</div><div class="line">  "reason": "A user with that id does not exist in this tenant. Create the user first and then make them a moderator.",</div><div class="line">  "code": "not-found"</div><div class="line">}</div>
-</div>
+<div class="code"><div class="title">Detailed Error Example</div><div class="line">{</div><div class="line">  "status": "failed",</div><div class="line">  "reason": "A user with that id does not exist in this tenant. Create the user first and then make them a moderator.",</div><div class="line">  "code": "not-found"</div><div class="line">}</div></div>
 
 ## Other Use Cases
 
