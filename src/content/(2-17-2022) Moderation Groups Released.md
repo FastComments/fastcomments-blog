@@ -41,9 +41,9 @@ You can verify the integration is properly setup by checking the Comment Count i
 
 ## Impact to Existing Customers
 
-If you're an existing customer using FastComments, the change has already been applied to your account, and no further action is required.
+If you're an existing customer using FastComments, the feature has already been made available to your account.
 
-If you don't make any changes, your moderators will not experience any changes to their workflow.
+If you don't make any changes to use this feature your moderators will not experience any changes to their workflow.
 
 ## In Conclusion
 
