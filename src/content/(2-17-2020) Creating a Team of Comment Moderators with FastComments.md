@@ -1,7 +1,7 @@
 ###### [postdate]
 # [postlink]Creating a Team of Comment Moderators with FastComments[/postlink]
 
-A one man army only scales so far. What do you do when you're overwhelmed by the number of comments you have to review?
+A one-man army only scales so far. What do you do when you're overwhelmed by the number of comments you have to review?
 
 {{#unless isPost}}
 Read this post to see how to invite comment moderators to FastComments.
@@ -17,23 +17,25 @@ and need to scale your operation.
 
 FastComments moderation tools provide an efficient environment for reviewing comments, marking them as spam, or (if you must) deleting them.
 
-The dashboard is also responsive so you can review and moderate comments on the go.
+The dashboard is also responsive, so you can review and moderate comments on the go!
 
 But access to moderating comments for your site is not limited to just your account. Someone can create their own FastComments account and be invited
-to your site via the admin dashboard. They don't even need to know about FastComments or create an account beforehand. The invite link that we'll show you
+to your site via the admin dashboard, [or in bulk via the API](https://docs.fastcomments.com/guide-api.html#moderator-structure). They don't even need to know about FastComments or create an account beforehand. The invite link that we'll show you
 how to send will guide them through creating an account.
 
-Simply log into your account and go to Moderate Comments. From there in the top right there is an Add Moderators link. If you've already added moderators it
-will say Edit Moderators.
+Simply log into your account and hover over Moderate Comments. You'll see an option to Manage Moderators.
 
 <img 
-    src="images/fc-add-moderator.png"
-    alt="Add a Moderator"
-    title="Add a Moderator"
+    src="images/fc-add-moderator-menu.png"
+    alt="Manage Moderators Menu"
+    title="Manage Moderators Menu"
     class='lozad' />
 
-From this button a wizard will guide you through adding a moderator. You'll just need to provide a name and an email and they will automatically sent
-an invite link which will also guide them through account creation.
+If you haven't added any moderators yet, this button will take you to a wizard which will guide you through adding a moderator.
+
+You'll just need to provide a name and email. They will automatically be sent an invitation link which will also guide them through account creation.
+
+Optionally, you can also place moderators and comments into separate groups. [Learn more about Moderation Groups and further moderation features here.](https://docs.fastcomments.com/guide-moderation.html)
 
 If you have a team of moderators you can see their progress from the same place - the Comment Moderators list provides stats for each moderator. This includes
 the number of comments they've marked reviewed, spam, and deleted.
