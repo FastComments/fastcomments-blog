@@ -26,7 +26,7 @@
 <div class="content">
     <div class="posts">
         <h1 class="content-subhead">Recent Posts</h1>
-        <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
+        <script src="https://cdn.fastcomments.com/js/widget-comment-count-bulk.min.js"></script>
 
         {{#each posts}}
         <section class="post">
@@ -35,15 +35,14 @@
                     {{{this.previewHTML}}}
                 </p>
             </div>
-            <div class="post-comment-count" id="fc-w-c-{{@index}}"></div>
+            <div class="post-comment-count fast-comments-count" data-fast-comments-url-id="{{this.fullUrl}}">...</div>
         </section>
+        {{/each}}
         <script>
-            window.FastCommentsCommentCount(document.getElementById('fc-w-c-{{@index}}'), {
-                tenantId: 'nYrnfYEv',
-                urlId: '{{this.fullUrl}}'
+            window.FastCommentsCommentCountBulk({
+                tenantId: 'nYrnfYEv'
             });
         </script>
-        {{/each}}
     </div>
     <div class="footer">
         <div>FastComments is Made With ❤️ by WinrickLabs LLC</div>
