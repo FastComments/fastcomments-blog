@@ -19,7 +19,7 @@ replies - thus eliminating any confusing jarring of content. Comment karma will 
 
 Here's a short video showing it in action.
 
-<video src="images/realtime-demo.mp4" autoplay="true" controls="true" alt="FastComments Realtime" title="FastComments Realtime"></video>
+<video src="images/realtime-demo.mp4" autoplay controls loop alt="FastComments Realtime" title="FastComments Realtime"></video>
 
 We hope you and your users find it fun to use, cheers!
 

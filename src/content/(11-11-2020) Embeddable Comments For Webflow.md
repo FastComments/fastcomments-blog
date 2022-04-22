@@ -26,7 +26,7 @@ providers like Webflow.
 Here is a video detailing the installation, which starts with us in the Webflow designer and ends with having the embedded comment widget functioning in our site.
 
 <div class="text-center">
-    <video src="images/fc-webflow-install.mp4" autoplay="false" controls="true" alt="Webflow Installation Instructional Video" title="Webflow Installation Instructional Video"></video>
+    <video src="images/fc-webflow-install.mp4" controls alt="Webflow Installation Instructional Video" title="Webflow Installation Instructional Video"></video>
 </div>
 
 #### Gotchas

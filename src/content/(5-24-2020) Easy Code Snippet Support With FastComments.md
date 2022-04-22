@@ -10,7 +10,7 @@ to add the formatting. Simply paste!
 
 Here's a quick demo showing it in action.
 
-<video src="images/fc-code-snippet-demo.mp4" autoplay="true" controls="true" loop=true alt="Code Snippet Sharing Demo" title="Code Snippet Sharing Demo"></video>
+<video src="images/fc-code-snippet-demo.mp4" autoplay controls loop=true alt="Code Snippet Sharing Demo" title="Code Snippet Sharing Demo"></video>
 
 ### Performance Implications
 

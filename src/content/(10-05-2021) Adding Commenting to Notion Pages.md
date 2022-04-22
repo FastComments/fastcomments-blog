@@ -19,7 +19,7 @@ can be added to your Notion page, or any application that integrates with embed.
 
 You can try it yourself using your demo embed link, [fastcomments.com/c/demo](https://fastcomments.com/c/demo):
 
-<video src="images/fastcomments-notion.mp4" controls="true" alt="FastComments and Notion Demo" title="FastComments and Notion Demo"></video>
+<video src="images/fastcomments-notion.mp4" controls alt="FastComments and Notion Demo" title="FastComments and Notion Demo"></video>
 
 The embedded commenting widget can then be customized just like any other instance of FastComments.
 
