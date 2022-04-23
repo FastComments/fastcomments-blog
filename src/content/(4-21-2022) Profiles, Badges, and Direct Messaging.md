@@ -94,7 +94,9 @@ When they do so, their response will appear **live** to the other user in the Me
 
 FastComments User Profiles is fully compatible with existing Secure SSO installations.
 
-Things like the user's privacy settings can also be configured via the `isProifleActivityPrivate` flag in the SSO payload.
+Things like the user's privacy settings can also be configured via the `isProfileActivityPrivate` flag in the SSO payload.
+
+By default, `isProfileActivityPrivate` is true.
 
 ### Existing Customers
 
