@@ -25,6 +25,27 @@ The embedded commenting widget can then be customized just like any other instan
 
 For example, as shown in the above video, we can customize the comment widget so that the user only has to enter their name, and not their email, to comment or vote.
 
+### Google Sites
+
+Google Sites is also supported, and the flow is similar.
+
+1. [Create a conversation to embed.](https://fastcomments.com/create)
+2. When editing your Google Site, navigate to `Insert` -> `Embed`. Select `By URL`.
+3. Paste the URL from Step 1.
+4. Hit `Insert`. Done!
+
+#### Adding The Embed Link
+
+<div class="text-center">
+    <img src="/images/google-sites-howto.png" title="How to add FastComments to a Google Site" alt="How to add FastComments to a Google Site" />
+</div>
+
+#### Commenting Added to Your Google Site!
+
+<div class="text-center">
+    <img src="/images/google-sites-howto-done.png" title="Done!" alt="Done!" />
+</div>
+
 ### Who Gets It
 
 All current and new FastComments customers, on all tiers, now have access to oEmbed support.
