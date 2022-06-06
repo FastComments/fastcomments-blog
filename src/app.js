@@ -26,7 +26,7 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	let fileContent = fs.readFileSync(path.join(CONTENT_DIR, item), 'utf8');
 	fileContent = fileContent.replace('[postlink]', `<a href="${urlIdRaw}">`); // using relative url here is better for local dev and won't make an SEO difference
 	fileContent = fileContent.replace('[/postlink]', `</a>`);
-	let html = marked(fileContent);
+	let html = marked.parse(fileContent);
 	const postByteSize = byteSize(html.length).toString();
 
 	const imageSrcs = html.match(/src\s*=\s*"?(.+?)["|\s]/g);
