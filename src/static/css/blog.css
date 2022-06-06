@@ -52,10 +52,6 @@ body {
     text-align: center;
 }
 
-.content:not(.post-page) section.post {
-    border-top: 1px solid #201600;
-}
-
 .header {
     font-size: 18px;
     font-weight: 700;
@@ -119,6 +115,16 @@ body {
     .content {
         box-shadow: none;
     }
+}
+
+.posts {
+    padding-left: 10px;
+    border-left: 1px solid #eee;
+}
+
+.post-page .posts {
+    border-left: 1px solid transparent;
+    border-image: linear-gradient(to bottom, #eee, #fff) 1 50%;
 }
 
 .circle {
@@ -200,10 +206,18 @@ body {
 .content .posts .post .post-description h1 a {
     font-size: 0.9em;
     color: #201600;
+    text-decoration: none;
 }
 
 .content.post-page .posts .post .post-description h1 a {
     text-decoration: none
+}
+
+.content .posts .post h6 {
+    position: relative;
+    left: -11px;
+    padding-left: 10px;
+    border-left: 1px solid #201600;
 }
 
 .content .posts .post .btn {
@@ -230,6 +244,5 @@ body {
 }
 
 .content .posts .post .post-comment-count {
-    text-align: right;
-    font-size: 13px;
+    display: inline;
 }

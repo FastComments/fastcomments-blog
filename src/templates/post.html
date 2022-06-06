@@ -30,9 +30,16 @@
                 {{{post.html}}}
             </div>
         </section>
+        <script src="https://cdn.fastcomments.com/js/widget-comment-count-bulk.min.js"></script>
+        <script>
+            window.FastCommentsCommentCountBulk({
+                tenantId: 'nYrnfYEv'
+            });
+        </script>
+
         <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
         <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
-        <div id="fastcomments-widget"></div>
+        <div id="fastcomments-widget" class="post-comment-widget"></div>
         <script>
             FastCommentsCollabChat(document.querySelector('.post-description'), {
                 tenantId: 'nYrnfYEv'
@@ -58,6 +65,7 @@
                 width="100%"
                 height="1000px"
                 style= "width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important;"
+                class="post-comment-widget"
             ></iframe>
         </noscript>
     </div>

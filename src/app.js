@@ -22,6 +22,7 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	const urlId = encodeURIComponent(urlIdRaw);
 	const fullUrl = 'https://blog.fastcomments.com/' + urlId;
 	const fullUrlRaw = 'https://blog.fastcomments.com/' + urlIdRaw;
+	const commentCountHTML = `<div class="post-comment-count fast-comments-count" data-fast-comments-url-id="${fullUrlRaw}">...</div>`;
 
 	let fileContent = fs.readFileSync(path.join(CONTENT_DIR, item), 'utf8');
 	fileContent = fileContent.replace('[postlink]', `<a href="${urlIdRaw}">`); // using relative url here is better for local dev and won't make an SEO difference
@@ -48,7 +49,7 @@ fs.readdirSync(CONTENT_DIR).forEach(function(item) {
 	const dateString = title.substring(1, title.indexOf(')'));
 	const ctime = new Date(dateString);
 
-	html = html.replace('[postdate]', ctime.toDateString());
+	html = html.replace('[postdate]', ctime.toDateString() + ' - ' + commentCountHTML);
 
 	const previewHTML = getCompiledPost(html, {
 		isPost: false
