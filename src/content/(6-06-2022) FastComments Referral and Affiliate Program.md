@@ -7,7 +7,7 @@ Refer customers and get a recurring commission!
 
 {{#isPost}}
 
-FastComments now offers an affiliate program, for affiliate marketers as well as referrals. For the year 2022, referrals will earn **30%** commission for the **lifetime** of the customer. 
+FastComments now offers an affiliate program for affiliate marketers as well as one-time referrals. For the year 2022, referrals will earn **30%** commission for the **lifetime** of the customer. 
 
 ### What tiers does the affiliate program apply to?
 
