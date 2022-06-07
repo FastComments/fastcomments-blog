@@ -246,3 +246,7 @@ body {
 .content .posts .post .post-comment-count {
     display: inline;
 }
+
+.post-comment-widget {
+    margin-left: -10px
+}
