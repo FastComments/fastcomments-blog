@@ -13,7 +13,7 @@ We now have an isolated datacenter in the EU for our EU customers. Keep your pla
 
 ## Server Locations
 
-Our servers are currently split between separate datacenters Germany with backups in France.
+Our servers are currently split between two locations. We have our main deployment in Germany, with backups in France.
 
 ## How to Access our EU Site
 
