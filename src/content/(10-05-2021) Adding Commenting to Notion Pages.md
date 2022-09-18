@@ -7,12 +7,14 @@ Want to add comments to your Notion pages? We have you covered.
 
 {{#isPost}}
 
-### What's New
+## What's New
 
 FastComments is now an embed.ly provider, and as such provides APIs and services that allow comment threads
 to be embedded into applications that support [oEmbed](https://oembed.com).
 
-### How to Use It - A Quick Demo
+That means that you can now easily add live commenting to a site built with Notion, Google Sites, or Nimbus Note.
+
+## How to Use It - A Quick Demo
 
 When logged in to your tenant, you may simply visit [fastcomments.com/create](https://fastcomments.com/create) to create a conversation link that then
 can be added to your Notion page, or any application that integrates with embed.ly.
@@ -25,7 +27,7 @@ The embedded commenting widget can then be customized just like any other instan
 
 For example, as shown in the above video, we can customize the comment widget so that the user only has to enter their name, and not their email, to comment or vote.
 
-### Google Sites
+## Google Sites
 
 Google Sites is also supported, and the flow is similar.
 
@@ -45,6 +47,15 @@ Google Sites is also supported, and the flow is similar.
 <div class="text-center">
     <img src="/images/google-sites-howto-done.png" title="Done!" alt="Done!" />
 </div>
+
+## Nimbus Note
+
+Nimbus Note is also supported, and the flow is similar.
+
+1. [Create a conversation to embed.](https://fastcomments.com/create)
+2. When editing your note, add an embed block.
+3. Use the URL from Step 1 as the URL to embed.
+4. Hit `Insert`. Done!
 
 ### Who Gets It
 
