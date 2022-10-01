@@ -6,6 +6,13 @@ body {
     color: #201600;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #fff;
+        background-color: #181a1b;
+    }
+}
+
 .css-logo {
     display: inline-block;
     vertical-align: middle;
@@ -105,6 +112,12 @@ body {
     line-height: 1.5em;
 }
 
+@media (prefers-color-scheme: dark) {
+    .content {
+        background-color: #181a1b;
+    }
+}
+
 .content .post img, .content .post video {
     max-width: 97%;
     margin: 0 auto;
@@ -125,6 +138,12 @@ body {
 .post-page .posts {
     border-left: 1px solid transparent;
     border-image: linear-gradient(to bottom, #eee, #fff) 1 50%;
+}
+
+@media (prefers-color-scheme: dark) {
+    .post-page .posts {
+        border-image: linear-gradient(to bottom, #012f46, #181a1b) 1 50%;
+    }
 }
 
 .circle {
@@ -209,6 +228,12 @@ body {
     text-decoration: none;
 }
 
+@media (prefers-color-scheme: dark) {
+    .content .posts .post .post-description h1 a {
+        color: #fff;
+    }
+}
+
 .content.post-page .posts .post .post-description h1 a {
     text-decoration: none
 }
@@ -218,6 +243,12 @@ body {
     left: -11px;
     padding-left: 10px;
     border-left: 1px solid #201600;
+}
+
+@media (prefers-color-scheme: dark) {
+    .content .posts .post h6 {
+        border-color: #012f46;
+    }
 }
 
 .content .posts .post .btn {
@@ -250,3 +281,10 @@ body {
 .post-comment-widget {
     margin-left: -10px
 }
+
+@media (prefers-color-scheme: dark) {
+    a {
+        color: #fff;
+    }
+}
+

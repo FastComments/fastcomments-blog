@@ -1,18 +1,24 @@
 {
-	"name": "fastcomments-blog",
-	"dependencies": {
-		"handlebars": "^4.7.7",
-		"marked": "^4.0.10",
-		"feed": "^4.0.0",
-		"byte-size": "^6.2.0",
-		"pretty-bytes": "^5.3.0",
-		"reading-time": "^1.2.0"
-	},
-	"scripts": {
-		"serve": "serve src/static/generated",
-		"build-windows": "build.bat"
-	},
-	"devDependencies": {
-		"serve": "^11.2.0"
-	}
+    "name": "fastcomments-blog",
+    "dependencies": {
+        "handlebars": "^4.7.7",
+        "marked": "^4.0.10",
+        "feed": "^4.0.0",
+        "byte-size": "^6.2.0",
+        "pretty-bytes": "^5.3.0",
+        "reading-time": "^1.2.0"
+    },
+    "scripts": {
+        "serve": "serve src/static/generated",
+        "build-windows": "build.bat",
+        "watch": "nodemon --exec npm run \"build-windows\""
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20",
+        "serve": "^11.2.0"
+    },
+    "nodemonConfig": {
+        "ignore": "src/static/generated",
+        "ext": "css,png,ico,mp4,gif,jpg,js,html,otf"
+    }
 }
