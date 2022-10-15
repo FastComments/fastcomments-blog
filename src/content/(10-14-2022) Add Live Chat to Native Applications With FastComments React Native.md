@@ -23,7 +23,7 @@ The library supports different skins and layouts. For example, here's the Erebus
 </div>
 
 The library is available [on GitHub at FastComments/fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk) as well as
-[on NPM.](https://www.npmjs.com/package/fastcomments-react-native-sdk).
+[on NPM](https://www.npmjs.com/package/fastcomments-react-native-sdk).
 
 ### Customizable
 
