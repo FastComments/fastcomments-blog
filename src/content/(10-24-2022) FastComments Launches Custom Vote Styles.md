@@ -28,7 +28,7 @@ Official docs for this feature are [available on docs.fastcomments.com](https://
 
 ### Who Gets It
 
-All current and new FastComments customers, on all tiers, now have access to custom vote styles. This feature is only supported by v2 of the comment widget and onwards.
+All current and new FastComments customers, on all tiers, now have access to custom vote styles. This feature is only supported by v2 of the comment widget and onward.
 
 ### Optimizations
 
