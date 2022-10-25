@@ -15,7 +15,8 @@ in some communities.
 
 We have now introduced the concept of `voteStyle` into the platform, with the first new vote style being the heart icon many have requested.
 
-When defined via the widget customization UI this also adds validation to the platform, which prevents down-voting altogether, so that hackers can no longer bypass the UI and down vote a user into oblivion. 
+When defined via the widget customization UI this also adds validation to the platform, which prevents down-voting altogether, so that hackers can no longer bypass the UI and down vote a user into oblivion,
+as could happen if anonymous voting was enabled. 
 
 ### How to Use It
 
