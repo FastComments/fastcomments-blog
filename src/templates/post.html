@@ -4,16 +4,18 @@
     <link rel="shortcut icon" href="/images/favicon.ico"/>
     <link rel="stylesheet" href="/css/blog.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="FastComments.com" />
-    <meta property="og:description" content="Live embedded commenting, fast." />
-    <meta property="og:image" content="https://fastcomments.com/images/logo-1080-2020-01.png" />
-    <meta property="og:image:width" content="1080"  />
-    <meta property="og:image:height" content="1080"  />
+    <meta property="og:title" content="FastComments.com"/>
+    <meta property="og:description" content="Live embedded commenting, fast."/>
+    <meta property="og:image" content="https://fastcomments.com/images/logo-1080-2020-01.png"/>
+    <meta property="og:image:width" content="1080"/>
+    <meta property="og:image:height" content="1080"/>
 </head>
 <body>
 <div class="header">
     <div class="header-inner">
-        <a href="/"><div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>FastComments.com Blog</a>
+        <a href="/">
+            <div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>
+            FastComments.com Blog</a>
         <div class="buttons">
             <a href="https://blog.fastcomments.com/rss.xml"><img src="/images/rss.png"/></a>
             <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.fastcomments.com%2Frss.xml'
@@ -57,17 +59,24 @@
         </script>
         <noscript>
             <iframe
-                src="https://fastcomments.com/ssr/comments/?tenantId=nYrnfYEv&urlId={{post.fullUrl}}&url={{post.fullUrl}}"
-                horizontalscrolling="no"
-                allowtransparency="true"
-                frameborder="0"
-                title="FastComments"
-                width="100%"
-                height="1000px"
-                style= "width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important;"
-                class="post-comment-widget"
+                    src="https://fastcomments.com/ssr/comments/?tenantId=nYrnfYEv&urlId={{post.fullUrl}}&url={{post.fullUrl}}"
+                    horizontalscrolling="no"
+                    allowtransparency="true"
+                    frameborder="0"
+                    title="FastComments"
+                    width="100%"
+                    height="1000px"
+                    style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important;"
+                    class="post-comment-widget"
             ></iframe>
         </noscript>
+        <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js"></script>
+        <div id="fastcomments-page-likes-floating"></div>
+        <script>
+            window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
+                tenantId: 'nYrnfYEv'
+            });
+        </script>
     </div>
 
     <div class="footer">
