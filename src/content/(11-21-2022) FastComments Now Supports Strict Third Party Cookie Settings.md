@@ -13,7 +13,7 @@ Disabling third-party cookies by default is becoming the norm in privacy-focused
 if you leave your email to comment with FastComments, verify that comment, and then come back to that page to leave another comment, or reply
 to someone, you'll find that any further comments you leave will be marked as unverified.
 
-This is with the default setup that shows an `Unverified` label on comments. However, this can impact other things like automatic approvals
+This will only happen with the default setup that shows an `Unverified` label on comments. However, this can impact other things like automatic approvals
 if auto approvals are only enabled for verified comments.
 
 As you can imagine, this can result in frustrating behavior where a user verifies their comment, clicks "Keep Me Logged In", and they are
