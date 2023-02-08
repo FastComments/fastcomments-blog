@@ -21,7 +21,7 @@ The widget supports SSO for authentication purposes, as well.
 
 ### Documentation
 
-You can find the documentation on [docs.fastcomments.com](https://docs.fastcomments.com.html/guide-page-reacts).
+You can find the documentation on [docs.fastcomments.com](https://docs.fastcomments.com/guide-page-reacts.html).
 
 ### Customizable
 
