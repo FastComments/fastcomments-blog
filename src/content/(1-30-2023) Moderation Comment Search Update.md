@@ -13,15 +13,15 @@ Previously FastComments would let you search by phrases, or exact string match, 
 
 Now you can search for comments in the following ways:
 
-- Fuzzy word search: `cats love`
-- Exact phrase match: `I love cats.`
-- By Page Title: `page:"Page Title"`
+- Fuzzy word search: **cats love**
+- Exact phrase match: **"I love cats."**
+- By Page Title: **page:"Page Title"**
   - Supports autocomplete.
   - Shows number of comments for each page in the autocomplete suggestion list.
-- By Page URL: `page:"https://example.com/some-page"`
+- By Page URL: **page:"https://example.com/some-page"**
   - Supports autocomplete.
   - Shows number of comments for each page in the autocomplete suggestion list.
-- By User: `user:"Bob"`
+- By User: **user:"Bob"**
   - Supports autocomplete.
 
 You can share search results with other moderators or administrators by sharing the page URL from the moderation page. The search field
