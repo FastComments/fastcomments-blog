@@ -15,13 +15,13 @@ Now you can search for comments in the following ways:
 
 - Fuzzy word search: **cats love**
 - Exact phrase match: **"I love cats."**
-- By Page Title: **page:"Page Title"**
+- **_New!_** By Page Title: **page:"Page Title"**
   - Supports autocomplete.
   - Shows number of comments for each page in the autocomplete suggestion list.
-- By Page URL: **page:"https://example.com/some-page"**
+- **_New!_** By Page URL: **page:"https://example.com/some-page"**
   - Supports autocomplete.
   - Shows number of comments for each page in the autocomplete suggestion list.
-- By User: **user:"Bob"**
+- **_New!_** By User: **user:"Bob"**
   - Supports autocomplete.
 
 You can share search results with other moderators or administrators by sharing the page URL from the moderation page. The search field
