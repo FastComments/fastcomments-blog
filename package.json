@@ -11,7 +11,9 @@
     "scripts": {
         "serve": "serve src/static/generated",
         "build-windows": "build.bat",
-        "watch": "nodemon --exec npm run \"build-windows\""
+        "build-posix": "bash build.sh",
+        "watch-windows": "nodemon --exec npm run \"build-windows\"",
+        "watch-posix": "nodemon --exec npm run \"build-posix\""
     },
     "devDependencies": {
         "nodemon": "^2.0.20",
@@ -19,6 +21,7 @@
     },
     "nodemonConfig": {
         "ignore": "src/static/generated",
-        "ext": "css,png,ico,mp4,gif,jpg,js,html,otf"
+        "watch": "src/content",
+        "ext": "css,png,ico,mp4,gif,jpg,js,html,otf,md"
     }
 }
