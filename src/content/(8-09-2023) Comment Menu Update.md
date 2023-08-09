@@ -58,7 +58,7 @@ past the scrollable content area.
 One benefit of this change is that we were able to abstract much code into an asynchronously-loading
 module. This will allow us to expand the actions you can take on comment data without making
 the initial load of the widget bloated. This introduces a network call the first time you hover
-over the edit menu, but the initial bundle is very tiny (~2kb) so this should not be very noticeable.
+over the edit menu, but the initial bundle is very tiny (< 1kb) so this should not be very noticeable.
 
 It's very hard to continue to evolve software and also decrease its size over time. Usually software
 starts fast and gets slow. So, we're always happy to chip away at keeping FastComments fast:
