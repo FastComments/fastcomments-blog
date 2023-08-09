@@ -63,10 +63,10 @@ over the edit menu, but the initial bundle is very tiny (< 1kb) so this should n
 It's very hard to continue to evolve software and also decrease its size over time. Usually software
 starts fast and gets slow. So, we're always happy to chip away at keeping FastComments fast:
 
-    Before: 28.76kb (108.02kb total)
-    After: 28.39kb (105.79kb total)
+    Before: 28.76kb gzipped (108.02kb total)
+    After: 28.39kb gzipped (105.79kb total)
 
-The impact of this will expand as more features are added.
+Less code is also less code for your browser to parse on page load. The impact of this will expand as more features are added.
 
 ### Performance Benefits
 
