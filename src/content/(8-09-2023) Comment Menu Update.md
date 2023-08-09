@@ -30,7 +30,7 @@ New:
 ### Existing Tenants
 
 If you're already using the "menu-content" selector - congratulations! We've gone through all our
-tenants using this selector and updated it to prevent breakages.
+tenants using this selector and updated their widget configurations to prevent breakages.
 
 Let us know if you have any issues.
 
