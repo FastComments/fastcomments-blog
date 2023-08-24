@@ -40,7 +40,7 @@ can be pipelined in parallel.
 
 ### In Conclusion
 
-Thanks to our customers in their patience with rolling out these changes. We hope you
+Thanks to our customers with their patience rolling out these changes. We hope you
 continue to love FastComments.
 
 Cheers!
