@@ -33,6 +33,13 @@ the past work of other tenants.
 As you begin to mark comments as spam/not spam, the system will transition over to use your
 own training set.
 
+### Update Sept 20 2023
+
+We found this setup was not ideal for everyone by default. Isolated Spam Training is not opt-in
+only. You can enable this in the Moderation Settings page by selecting "Isolated" in the "Spam Filter" option.
+
+The default is now back to "Shared" training.
+
 ### Live
 
 The training set for your tenant is now always rebuilt any time you mark a comment as spam or not spam.
