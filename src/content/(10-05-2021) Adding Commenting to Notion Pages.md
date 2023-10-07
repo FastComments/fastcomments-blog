@@ -27,6 +27,10 @@ The embedded commenting widget can then be customized just like any other instan
 
 For example, as shown in the above video, we can customize the comment widget so that the user only has to enter their name, and not their email, to comment or vote.
 
+## Update 2023 - Support for Super.so
+
+You can now add commenting to Super.so sites, which are built on top of Notion documents, using FastComments! [You can find the documentation here.](https://docs.fastcomments.com/guide-installation-super-so.html)
+
 ## Google Sites
 
 Google Sites is also supported, and the flow is similar.
