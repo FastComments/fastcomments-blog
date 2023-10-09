@@ -1,4 +1,3 @@
-
 ###### [postdate]
 # [postlink]Introducing Commenter Name Formats[/postlink]
 
