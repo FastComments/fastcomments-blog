@@ -20,7 +20,7 @@ What if we told you could have almost all the same essential functionality, but 
     <img src="images/ssr-demo.png" alt="SSR Demo" title="SSR Demo" />
 </div>
 
-The above screenshot is the FastComments commenting widget, without JavaScript. [You can view this page, without JavaScript, here.](https://fastcomments.com/ssr/comments?tenantId=nYrnfYEv&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DnYrnfYEv%26urlId%3Dssr-test)
+The above screenshot is the FastComments commenting widget, without JavaScript. [You can view this page, without JavaScript, here.](https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test)
 
 ## How to Use It
 
