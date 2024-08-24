@@ -25,7 +25,7 @@ We've enabled a demo Page Reacts config for this blog post specifically, you can
 
 ### Documentation
 
-[You can find the developer documentation for setting up Page Reacts here.](https://docs.fastcomments.com/guide-page-reacts)
+[You can find the developer documentation for setting up Page Reacts here.](https://docs.fastcomments.com/guide-page-reacts.html)
 
 ### In Conclusion
 
