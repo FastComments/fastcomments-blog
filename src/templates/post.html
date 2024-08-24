@@ -10,7 +10,8 @@
     <meta property="og:image:width" content="1080"/>
     <meta property="og:image:height" content="1080"/>
     <script async src="https://watchlycdn.com/js/watchly.min.js" data-key="5d1fcfabcc00a66e161816b4"></script>
-    <link rel="alternate" type="application/rss+xml" title="FastComments Blog" href="https://blog.fastcomments.com/rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="FastComments Blog"
+          href="https://blog.fastcomments.com/rss.xml">
 </head>
 <body>
 <div class="header">
@@ -45,19 +46,25 @@
         <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
         <div id="fastcomments-widget" class="post-comment-widget"></div>
         <script>
-            FastCommentsCollabChat(document.querySelector('.post-description'), {
-                tenantId: 'L177BUDVvSe'
-            });
-            window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
-                tenantId: 'L177BUDVvSe',
-                commentCountFormat: window.fcCommentCountFormat,
-                commentCountUpdated: window.fcCommentCountUpdated,
-                headerHTML: window.fcHeaderHTML,
-                hideAvatars: window.hideAvatars,
-                inputAfterComments: window.inputAfterComments,
-                absoluteDates: window.absoluteDates,
-                countAll: true
-            });
+            (function () {
+                FastCommentsCollabChat(document.querySelector('.post-description'), {
+                    tenantId: 'L177BUDVvSe'
+                });
+                const config = {
+                    tenantId: 'L177BUDVvSe',
+                    commentCountFormat: window.fcCommentCountFormat,
+                    commentCountUpdated: window.fcCommentCountUpdated,
+                    headerHTML: window.fcHeaderHTML,
+                    hideAvatars: window.hideAvatars,
+                    inputAfterComments: window.inputAfterComments,
+                    absoluteDates: window.absoluteDates,
+                    countAll: true
+                };
+                if (window.demoOverrides) {
+                    Object.assign(config, window.demoOverrides);
+                }
+                window.FastCommentsUI(document.getElementById('fastcomments-widget'), config);
+            })();
         </script>
         <noscript>
             <iframe
