@@ -18,7 +18,7 @@ We've enabled a comment view counts for this blog post specifically! Check the c
 
 ### Documentation
 
-[You can find the developer documentation for setting up View Counts here.](https://docs.fastcomments.com/guide-customization-and-configuration.html#enable-comment-view-counts)
+[You can find the developer documentation for setting up View Counts here.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#enable-comment-view-counts)
 
 ### Performance
 
