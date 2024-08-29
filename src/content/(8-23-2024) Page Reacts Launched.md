@@ -27,6 +27,10 @@ We've enabled a demo Page Reacts config for this blog post specifically, you can
 
 [You can find the developer documentation for setting up Page Reacts here.](https://docs.fastcomments.com/guide-page-reacts.html)
 
+### React User List
+
+Page Reacts can also be configured to show a tooltip that reveals the list of users that left a specific reaction.
+
 ### In Conclusion
 
 We thank our customers that give us continuous feedback so that we can think of ideas like this and also give us the time to launch well optimized features. We hope you
@@ -37,6 +41,7 @@ Cheers!
 <script>
     window.demoOverrides = {
         pageReactConfig: {
+            showUsers: true,
             reacts: [
                 {id: 'droll', src: 'https://docs.fastcomments.com/images/emojis/droll.png'},
                 {id: 'he', src: 'https://docs.fastcomments.com/images/emojis/heart-eyes.png'},
