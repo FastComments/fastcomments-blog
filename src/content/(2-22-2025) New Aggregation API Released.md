@@ -18,19 +18,19 @@ your comments, votes, and **34 more resources**!
 
 For example with the new API we can get a count of comments by page (`urlId`) and user email (`commenterEmail`):  
 
-```shell
-curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
+<div class="code">
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --data '{
     "resourceName": "Comment",
     "operations": [
         { "op": "distinct", "field": "urlId", "alias": "urlId" },
         { "op": "distinct", "field": "commenterEmail", "alias": "commenterEmail" }
     ]
-}'
-```
+}' --header 'Content-Type: application/json'
+</div>
 
 This would give us something like:
 
-```json
+<div class="code">
 {
     "status": "success",
     "data": [
@@ -52,22 +52,22 @@ This would give us something like:
     ],
     "stats": { "scanned": 2 }
 }
-```
+</div>
 
 Or maybe we want to count our approved and unapproved comments:
 
-```shell
-curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
+<div class="code">
+curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --data '{
     "resourceName": "Comment",
     "operations": [
         { "op": "distinct", "field": "approved", "alias": "approved" },
     ]
-}'
-```
+}' --header 'Content-Type: application/json'
+</div>
 
 Gives us:
 
-```json
+<div class="code">
 {
     "status": "success",
     "data": [
@@ -77,7 +77,7 @@ Gives us:
     ],
     "stats": { "scanned": 2431 }
 }
-```
+</div>
 
 The API also supports query filters and more in-depth grouping.
 
