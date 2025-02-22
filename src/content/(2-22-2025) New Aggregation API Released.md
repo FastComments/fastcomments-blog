@@ -1,5 +1,5 @@
 ###### [postdate]
-# [postlink]FastComments TypeScript Migration Completed[/postlink]
+# [postlink]New Aggregation API Released[/postlink]
 
 {{#unless isPost}}
 FastComments gives its customers unbeatable access to their data with a flexible and fast aggregation API
