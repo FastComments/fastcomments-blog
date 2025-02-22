@@ -59,8 +59,24 @@ I can do something like:
 
 But it won't run, with modern es modules. Your IDE will happily even autocomplete `__dirname`, and then it will blow up at runtime. It feels like Spring DI, but worse.
 
+You can also do things like:
+
+    context.someImportantMethodToCall;
+
+Now, this is a "statement". It's a valid "statement". At first glance you might think we're calling `someImportantMethodToCall`, but we're not! My IDE, at least, doesn't
+warn about this, and neither does the compiler. The code will just do nothing (unless `someImportantMethodToCall` is a class `getter` in which case it is implicitly called...)
+
+The fix is:
+
+    context.someImportantMethodToCall();
+
+I think you can probably detect this with something like eslint and some "no no side-effects" rule, but then you pull in another large set of libraries to keep updated, and
+then eslint has to parse your whole code base on every build, the tools are slow, and so on - no thanks. The productivity impact of dealing with slow tools like eslint has been
+more significant in my career in past jobs than the productivity "boost" I ever got from the minor things eslint fixes/prevents with spacing etc. There are faster alternatives
+coming out now, which is great.
+
 TypeScript is really nice because of language features like `Pick<User, 'username', 'email'>`. This, combined with type inference, provides a way to have type-safe query results from the database for subsets
-of larger objects without having to define a class for each shape.
+of larger objects without having to define a class for each shape. `Pick` is something I'm surprised Scala doesn't have. Type Unions are also really nice.
 
 Incremental builds also work reasonably well, we've only increased our build times in CI by about 5 - 10 seconds on average, for building the shared library, frontend, and backend.
 
