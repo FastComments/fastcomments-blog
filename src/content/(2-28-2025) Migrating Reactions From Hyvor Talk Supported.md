@@ -18,7 +18,6 @@ Re-running the import will not cause counts to duplicate or lose any reaction va
 
 Page reacts showing is not automatic. To get started, you'll have to update your widget configuration:
 
-<div class="code">
 ```
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -38,7 +37,6 @@ Page reacts showing is not automatic. To get started, you'll have to update your
     });
 </script>
 ```
-</div>
 
 The ids must match the ones from the Hyvor Talk export. This example uses the correct values.
 
