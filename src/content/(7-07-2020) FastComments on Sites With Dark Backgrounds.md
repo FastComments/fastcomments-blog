@@ -1,3 +1,4 @@
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]FastComments on Sites with Dark Backgrounds[/postlink]
 

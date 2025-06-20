@@ -1,3 +1,5 @@
+[category:UI & Customization]
+
 ###### [postdate]
 # [postlink]Customizing Email Footer Logos[/postlink]
 

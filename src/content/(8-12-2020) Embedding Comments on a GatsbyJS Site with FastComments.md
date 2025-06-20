@@ -1,3 +1,4 @@
+[category:Integrations]
 ###### [postdate]
 # [postlink]Embedding Comments on a GatsbyJS Site with FastComments[/postlink]
 

@@ -1,3 +1,4 @@
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]Unread Comments are Now Highlighted With FastComments[/postlink]
 

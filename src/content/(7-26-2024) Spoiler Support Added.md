@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Spoiler Support Added[/postlink]
 

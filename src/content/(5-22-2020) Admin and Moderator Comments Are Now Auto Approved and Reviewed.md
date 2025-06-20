@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]Admin and Moderator Comments Are Now Auto Approved and Reviewed[/postlink]
 

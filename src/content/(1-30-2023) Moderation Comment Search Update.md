@@ -1,3 +1,6 @@
+[category:Moderation]
+[category:Features]
+
 ###### [postdate]
 # [postlink]Moderation Comment Search Update[/postlink]
 

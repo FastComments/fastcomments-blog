@@ -1,3 +1,5 @@
+[category:Tutorials]
+[category:UI & Customization]
 {{#unless isPost}}
 ###### [postdate]
 {{/unless}}

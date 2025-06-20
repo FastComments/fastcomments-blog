@@ -1,3 +1,5 @@
+[category:Announcements]
+
 ###### [postdate]
 # [postlink]FastComments Is Now Backed Up Across Multiple Cloud Providers[/postlink]
 

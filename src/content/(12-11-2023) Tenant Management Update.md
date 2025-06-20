@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Tenant Management Update[/postlink]
 

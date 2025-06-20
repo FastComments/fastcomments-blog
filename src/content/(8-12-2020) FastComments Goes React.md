@@ -1,3 +1,4 @@
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments Goes React[/postlink]
 

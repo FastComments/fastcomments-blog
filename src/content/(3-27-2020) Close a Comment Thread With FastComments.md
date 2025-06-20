@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]Close a Comment Thread With FastComments[/postlink]
 

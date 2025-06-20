@@ -1,4 +1,6 @@
 
+[category:Features]
+
 ###### [postdate]
 # [postlink]Image Uploading Improvements[/postlink]
 

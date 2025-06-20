@@ -1,10 +1,10 @@
 <html>
 <head>
-    <title>FastComments Blog</title>
+    <title>{{#if pageTitle}}{{pageTitle}} - {{/if}}FastComments Blog</title>
     <link rel="shortcut icon" href="/images/favicon.ico"/>
     <link rel="stylesheet" href="/css/blog.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="FastComments.com" />
+    <meta property="og:title" content="{{#if pageTitle}}{{pageTitle}} - {{/if}}FastComments Blog" />
     <meta property="og:description" content="Live embedded commenting, fast." />
     <meta property="og:image" content="https://fastcomments.com/images/logo-1080-2020-01.png" />
     <meta property="og:image:width" content="1080"  />
@@ -26,27 +26,67 @@
     </div>
 </div>
 <div class="content">
-    <div class="posts">
-        <h1 class="content-subhead">Recent Posts</h1>
-        <script src="https://cdn.fastcomments.com/js/widget-comment-count-bulk.min.js"></script>
+    <div class="blog-container">
+        <div class="blog-main">
+            <h1 class="content-subhead">{{#if currentCategory}}{{currentCategory}} Posts{{else}}{{#if pageTitle}}{{pageTitle}}{{else}}Recent Posts{{/if}}{{/if}}</h1>
+            <script src="https://cdn.fastcomments.com/js/widget-comment-count-bulk.min.js"></script>
 
-        {{#each posts}}
-        <section class="post">
-            <div class="post-description">
-                <p>
+            {{#each posts}}
+            <article class="post-card">
+                <div class="post-content">
                     {{{this.previewHTML}}}
-                </p>
+                    {{#if this.categories.length}}
+                    <div class="post-categories">
+                        {{#each this.categories}}
+                        <a href="/category-{{toLowerCase (replace this " " "-")}}.html" class="category-tag">{{this}}</a>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                </div>
+            </article>
+            {{/each}}
+
+            {{#if totalPages}}
+            <div class="pagination">
+                {{#if hasPrevPage}}
+                <a href="{{prevPageUrl}}" class="pagination-btn pagination-prev">← Previous</a>
+                {{/if}}
+
+                <span class="pagination-info">Page {{currentPage}} of {{totalPages}}</span>
+
+                {{#if hasNextPage}}
+                <a href="{{nextPageUrl}}" class="pagination-btn pagination-next">Next →</a>
+                {{/if}}
             </div>
-        </section>
-        {{/each}}
-        <script>
-            window.FastCommentsCommentCountBulk({
-                tenantId: 'L177BUDVvSe'
-            });
-        </script>
+            {{/if}}
+
+            <script>
+                window.FastCommentsCommentCountBulk({
+                    tenantId: 'L177BUDVvSe'
+                });
+            </script>
+        </div>
+
+        <aside class="blog-sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Categories</h3>
+                <div class="category-list">
+                    <a href="/" class="category-item {{#unless currentCategory}}active{{/unless}}">
+                        All Posts
+                    </a>
+                    {{#each categories}}
+                    <a href="/category-{{toLowerCase (replace this " " "-")}}.html"
+                       class="category-item {{#if (eq ../currentCategory this)}}active{{/if}}">
+                        {{this}} <span class="category-count">({{lookup ../categoryCounts this}})</span>
+                    </a>
+                    {{/each}}
+                </div>
+            </div>
+        </aside>
     </div>
+
     <div class="footer">
-        <div>FastComments is Made With ❤️ by WinrickLabs LLC</div>
+        <div>Copyright FastComments.com</div>
     </div>
 </div>
 </body>

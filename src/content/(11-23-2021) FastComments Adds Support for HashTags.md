@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]FastComments Adds Support for #HashTags[/postlink]
 

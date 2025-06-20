@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]Image Content Moderation With FastComments[/postlink]
 

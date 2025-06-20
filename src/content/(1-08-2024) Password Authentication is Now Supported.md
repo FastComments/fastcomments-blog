@@ -1,3 +1,5 @@
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Password Authentication is Now Supported[/postlink]
 

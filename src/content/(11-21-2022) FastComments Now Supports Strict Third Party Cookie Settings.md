@@ -1,3 +1,5 @@
+[category:Security]
+
 ###### [postdate]
 # [postlink]FastComments Now Supports Strict Third Party Cookie Settings[/postlink]
 

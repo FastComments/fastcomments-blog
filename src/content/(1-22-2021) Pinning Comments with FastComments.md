@@ -1,3 +1,5 @@
+[category:Features]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Pinning Comments with FastComments[/postlink]
 

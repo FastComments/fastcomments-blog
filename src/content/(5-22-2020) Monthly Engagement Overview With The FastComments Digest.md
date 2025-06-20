@@ -1,3 +1,5 @@
+[category:Analytics]
+
 ###### [postdate]
 # [postlink]Monthly Engagement Overview With The FastComments Digest[/postlink]
 

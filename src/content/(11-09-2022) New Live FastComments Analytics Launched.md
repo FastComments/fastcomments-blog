@@ -1,3 +1,5 @@
+[category:Analytics]
+
 ###### [postdate]
 # [postlink]New Live FastComments Analytics Launched[/postlink]
 

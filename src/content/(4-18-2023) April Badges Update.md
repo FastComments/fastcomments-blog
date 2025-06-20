@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 
 # [postlink]April Badges Update[/postlink]

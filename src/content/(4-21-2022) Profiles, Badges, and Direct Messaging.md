@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 
 # [postlink]Profiles, Badges, and Direct Messaging[/postlink]

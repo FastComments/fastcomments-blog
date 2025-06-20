@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Sorting Comment Threads with FastComments[/postlink]
 

@@ -1,3 +1,4 @@
+[category:Performance]
 ###### [postdate]
 # [postlink]Indexing Your Comment Threads in Search Engines[/postlink]
 

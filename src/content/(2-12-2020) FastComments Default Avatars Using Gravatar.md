@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]FastComments Default Avatars Using Gravatar[/postlink]
 

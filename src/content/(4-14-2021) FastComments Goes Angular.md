@@ -1,3 +1,5 @@
+[category:API & Development]
+
 ###### [postdate]
 # [postlink]FastComments Goes Angular[/postlink]
 

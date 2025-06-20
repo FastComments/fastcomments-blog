@@ -1,3 +1,5 @@
+[category:Announcements]
+
 ###### [postdate]
 # [postlink]FastComments Referral and Affiliate Program[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]Customize Your Comments Blacklist With FastComments[/postlink]
 

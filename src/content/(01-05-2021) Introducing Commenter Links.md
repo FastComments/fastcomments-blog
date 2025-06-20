@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Introducing Commenter Links[/postlink]
 

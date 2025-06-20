@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]Creating a Team of Comment Moderators with FastComments[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 
 # [postlink]Hiding Flagged Comments with FastComments[/postlink]

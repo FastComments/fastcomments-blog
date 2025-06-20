@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]New Widgets! Top Pages and Recent Comments[/postlink]
 

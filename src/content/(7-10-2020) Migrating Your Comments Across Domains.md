@@ -1,3 +1,4 @@
+[category:Migration]
 ###### [postdate]
 # [postlink]Migrating Your Comments Across Domains[/postlink]
 

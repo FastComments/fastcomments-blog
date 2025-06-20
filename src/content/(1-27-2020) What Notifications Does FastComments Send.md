@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]What Notifications Does FastComments Send?[/postlink]
 

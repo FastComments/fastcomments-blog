@@ -1,3 +1,4 @@
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]FastComments Launches Custom Vote Styles[/postlink]
 

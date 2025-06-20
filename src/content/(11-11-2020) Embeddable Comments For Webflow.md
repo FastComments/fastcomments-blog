@@ -1,3 +1,5 @@
+[category:Integrations]
+
 ###### [postdate]
 # [postlink]Embeddable Comments For Webflow[/postlink]
 

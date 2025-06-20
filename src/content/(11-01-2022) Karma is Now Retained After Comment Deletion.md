@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Karma is Now Retained After Comment Deletion[/postlink]
 

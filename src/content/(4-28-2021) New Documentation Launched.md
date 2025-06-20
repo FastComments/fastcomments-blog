@@ -1,3 +1,5 @@
+[category:Announcements]
+
 ###### [postdate]
 # [postlink]New Documentation Launched[/postlink]
 

@@ -1,3 +1,4 @@
+[category:Performance]
 ###### [postdate]
 # [postlink]FastComments Upgraded to HTTP/2[/postlink]
 

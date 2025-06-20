@@ -1,3 +1,4 @@
+[category:Integrations]
 ###### [postdate]
 # [postlink]Comments For The Jamstack[/postlink]
 

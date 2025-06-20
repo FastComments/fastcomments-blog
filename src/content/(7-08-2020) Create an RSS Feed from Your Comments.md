@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Create an RSS Feed from Your Comments[/postlink]
 

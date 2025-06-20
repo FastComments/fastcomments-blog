@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]Users Can Now Reorder Their Badges[/postlink]
 

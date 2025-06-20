@@ -1,3 +1,4 @@
+[category:Migration]
 ###### [postdate]
 # [postlink]Migrating From Hyvor Talk To FastComments[/postlink]
 

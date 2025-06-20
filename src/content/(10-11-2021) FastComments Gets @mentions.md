@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]FastComments Gets @mentions[/postlink]
 

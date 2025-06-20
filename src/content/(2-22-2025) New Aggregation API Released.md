@@ -1,3 +1,5 @@
+[category:API & Development]
+
 ###### [postdate]
 # [postlink]New Aggregation API Released[/postlink]
 

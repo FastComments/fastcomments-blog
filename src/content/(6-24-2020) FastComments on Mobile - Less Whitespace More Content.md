@@ -1,3 +1,4 @@
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]FastComments on Mobile - Less Whitespace More Content[/postlink]
 

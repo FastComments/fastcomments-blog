@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]How to Require Approval for All Comments[/postlink]
 

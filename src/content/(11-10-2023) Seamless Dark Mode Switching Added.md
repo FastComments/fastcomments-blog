@@ -1,3 +1,5 @@
+[category:UI & Customization]
+
 ###### [postdate]
 # [postlink]Seamless Dark Mode Switching Added[/postlink]
 

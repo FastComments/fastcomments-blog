@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]New Floating Like Widget Released[/postlink]
 

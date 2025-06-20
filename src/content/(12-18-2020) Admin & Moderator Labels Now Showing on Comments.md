@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Admin & Moderator Labels Now Showing on Comments[/postlink]
 

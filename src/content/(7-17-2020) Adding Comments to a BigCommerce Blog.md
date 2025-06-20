@@ -1,3 +1,4 @@
+[category:Integrations]
 ###### [postdate]
 # [postlink]Adding Comments to a BigCommerce Blog[/postlink]
 

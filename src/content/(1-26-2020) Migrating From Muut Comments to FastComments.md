@@ -1,3 +1,4 @@
+[category:Migration]
 ###### [postdate]
 # [postlink]Migrating From Muut Comments To FastComments[/postlink]
 

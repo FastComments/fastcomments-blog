@@ -1,3 +1,5 @@
+[category:Migration]
+
 ###### [postdate]
 # [postlink]Migrating Reactions From Hyvor Talk Is Now Supported[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Features]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments Releases Server-Side Rendering[/postlink]
 

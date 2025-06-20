@@ -1,3 +1,5 @@
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Adding Commenting to Notion Pages[/postlink]
 

@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Custom Email Templates Released[/postlink]
 

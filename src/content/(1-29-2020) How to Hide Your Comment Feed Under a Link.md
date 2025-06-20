@@ -1,3 +1,6 @@
+[category:Tutorials]
+[category:UI & Customization]
+
 ###### [postdate]
 # [postlink]How to Hide Your Comment Feed Under a Link[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]FastComments Gets Localized[/postlink]
 

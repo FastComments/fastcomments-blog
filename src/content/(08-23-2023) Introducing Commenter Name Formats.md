@@ -1,3 +1,5 @@
+[category:Features]
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]Introducing Commenter Name Formats[/postlink]
 

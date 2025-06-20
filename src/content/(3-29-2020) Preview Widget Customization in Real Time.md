@@ -1,3 +1,5 @@
+[category:UI & Customization]
+
 ###### [postdate]
 # [postlink]Preview Widget Customization in Real Time[/postlink]
 

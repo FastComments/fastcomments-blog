@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]The FastComments WYSIWYG Editor is Out of Beta[/postlink]
 

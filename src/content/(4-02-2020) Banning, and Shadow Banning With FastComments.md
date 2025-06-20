@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]Banning, and Shadow Banning With FastComments[/postlink]
 

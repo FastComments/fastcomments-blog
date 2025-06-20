@@ -1,3 +1,5 @@
+[category:AI & Machine Learning]
+
 ###### [postdate]
 # [postlink]Announcing FastComments Trust Factor[/postlink]
 

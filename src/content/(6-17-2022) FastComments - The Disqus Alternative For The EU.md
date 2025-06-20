@@ -1,3 +1,4 @@
+[category:Announcements]
 ###### [postdate]
 # [postlink]FastComments - The Disqus Alternative for The EU[/postlink]
 

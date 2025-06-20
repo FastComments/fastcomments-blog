@@ -1,3 +1,5 @@
+[category:Features]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Languages Used in Comments Can Now Be Limited[/postlink]
 

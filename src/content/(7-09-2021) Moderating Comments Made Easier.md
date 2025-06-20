@@ -1,3 +1,4 @@
+[category:Moderation]
 ###### [postdate]
 
 # [postlink]Moderating Comments Made Easier[/postlink]

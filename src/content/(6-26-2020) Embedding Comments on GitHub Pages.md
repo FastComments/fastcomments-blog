@@ -1,3 +1,4 @@
+[category:Integrations]
 ###### [postdate]
 # [postlink]Embedding Comments on GitHub Pages[/postlink]
 

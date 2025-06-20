@@ -1,3 +1,4 @@
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]Customizing The Widget Text[/postlink]
 

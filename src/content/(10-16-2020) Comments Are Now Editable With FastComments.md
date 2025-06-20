@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Comments Are Now Editable With FastComments[/postlink]
 

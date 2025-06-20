@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]Threaded Pagination Comes to FastComments[/postlink]
 

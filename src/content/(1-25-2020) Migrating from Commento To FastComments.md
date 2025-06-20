@@ -1,3 +1,4 @@
+[category:Migration]
 ###### [postdate]
 # [postlink]Migrating From Commento To FastComments[/postlink]
 

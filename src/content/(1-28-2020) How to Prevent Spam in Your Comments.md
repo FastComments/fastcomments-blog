@@ -1,3 +1,5 @@
+[category:Moderation]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]How to Prevent Spam in Your Comments[/postlink]
 

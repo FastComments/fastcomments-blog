@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]Easy Code Snippet Support With FastComments[/postlink]
 

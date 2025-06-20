@@ -1,3 +1,4 @@
+[category:API & Development]
 ###### [postdate]
 # [postlink]Using FastComments in VanillaJS Single Page Applications[/postlink]
 

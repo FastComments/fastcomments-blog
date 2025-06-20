@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]Image Uploads Come to FastComments[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Tutorials]
+
 ###### [postdate]
 # [postlink]How to Allow Anonymous Comments With FastComments[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Tutorials]
+
 ###### [postdate]
 # [postlink]Configure How Long to Keep Unverified Comments[/postlink]
 

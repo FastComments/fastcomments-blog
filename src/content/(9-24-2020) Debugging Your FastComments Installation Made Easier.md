@@ -1,3 +1,4 @@
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Debugging Your FastComments Installation Made Easier[/postlink]
 

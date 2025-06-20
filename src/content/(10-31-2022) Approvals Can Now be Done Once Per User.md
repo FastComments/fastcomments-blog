@@ -1,3 +1,4 @@
+[category:Moderation]
 ###### [postdate]
 # [postlink]Approvals Can Now be Done Once Per User[/postlink]
 

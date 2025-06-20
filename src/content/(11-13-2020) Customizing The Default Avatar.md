@@ -1,3 +1,5 @@
+[category:UI & Customization]
+
 ###### [postdate]
 # [postlink]Customizing The Default Avatar[/postlink]
 

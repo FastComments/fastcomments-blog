@@ -1,3 +1,5 @@
+[category:UI & Customization]
+
 ###### [postdate]
 # [postlink]Page Sizes are Now Customizable[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Tutorials]
+
 ###### [postdate]
 # [postlink]How to Disable Image Uploads In Your Comments[/postlink]
 

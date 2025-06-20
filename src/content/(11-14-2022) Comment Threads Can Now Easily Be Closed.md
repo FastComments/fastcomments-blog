@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]Comment Threads Can Now Easily Be Closed[/postlink]
 

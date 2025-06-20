@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]Moderation Update - Badges in Moderation Page[/postlink]
 

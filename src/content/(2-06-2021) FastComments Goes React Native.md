@@ -1,3 +1,5 @@
+[category:Integrations]
+
 ###### [postdate]
 # [postlink]FastComments Goes React Native[/postlink]
 

@@ -1,3 +1,4 @@
+[category:AI & Machine Learning]
 ###### [postdate]
 # [postlink]Spam Detection Training is Now Per-Tenant[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Features]
+[category:AI & Machine Learning]
 ###### [postdate]
 # [postlink]New ChatGPT 4 Based Spam Filter.[/postlink]
 

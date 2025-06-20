@@ -1,3 +1,5 @@
+[category:Performance]
+[category:Features]
 ###### [postdate]
 # [postlink]Dropping The iframe for SEO[/postlink]
 

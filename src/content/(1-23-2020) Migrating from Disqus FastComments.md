@@ -1,3 +1,5 @@
+[category:Migration]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Migrating From Disqus To FastComments[/postlink]
 

@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]FastComments Now Supports Markdown[/postlink]
 

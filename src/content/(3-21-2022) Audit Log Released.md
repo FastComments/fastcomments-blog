@@ -1,5 +1,6 @@
-###### [postdate]
+[category:Security]
 
+###### [postdate]
 # [postlink]Audit Log Released[/postlink]
 
 {{#unless isPost}}FastComments now provides a detailed log of all modifications made via the platform.{{/unless}}

@@ -1,3 +1,5 @@
+[category:Moderation]
+
 ###### [postdate]
 # [postlink]Giving Moderators The Full Picture at FastComments[/postlink]
 

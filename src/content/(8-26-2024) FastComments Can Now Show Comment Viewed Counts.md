@@ -1,3 +1,4 @@
+[category:Analytics]
 ###### [postdate]
 # [postlink]FastComments Can Now Show Comment Viewed Counts[/postlink]
 

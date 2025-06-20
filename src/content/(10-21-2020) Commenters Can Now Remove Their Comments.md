@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Commenters Can Now Remove Their Comments[/postlink]
 

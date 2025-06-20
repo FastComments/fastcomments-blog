@@ -1,3 +1,4 @@
+[category:UI & Customization]
 ###### [postdate]
 
 # [postlink]FastComments Gets a New Look[/postlink]

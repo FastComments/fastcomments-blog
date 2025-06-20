@@ -1,3 +1,5 @@
+[category:Migration]
+
 ###### [postdate]
 # [postlink]Migrating From IntenseDebate To FastComments[/postlink]
 

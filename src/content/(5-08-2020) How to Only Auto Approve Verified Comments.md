@@ -1,3 +1,5 @@
+[category:Tutorials]
+
 ###### [postdate]
 # [postlink]How to Only Auto Approve Verified Comments[/postlink]
 

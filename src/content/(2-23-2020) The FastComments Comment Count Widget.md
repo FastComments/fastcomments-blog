@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]The FastComments Comment Count Widget[/postlink]
 

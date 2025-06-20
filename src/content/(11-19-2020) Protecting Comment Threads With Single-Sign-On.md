@@ -1,3 +1,5 @@
+[category:Security]
+
 ###### [postdate]
 # [postlink]Protecting Comment Threads With Single-Sign-On[/postlink]
 

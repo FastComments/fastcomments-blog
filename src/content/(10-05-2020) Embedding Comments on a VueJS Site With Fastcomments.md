@@ -1,3 +1,5 @@
+[category:Tutorials]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Embedding Comments on a VueJS site With FastComments[/postlink]
 

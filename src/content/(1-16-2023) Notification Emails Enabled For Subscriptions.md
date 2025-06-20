@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Notification Emails Enabled For Subscriptions[/postlink]
 

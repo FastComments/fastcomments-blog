@@ -1,3 +1,5 @@
+[category:Features]
+
 ###### [postdate]
 # [postlink]Full Text Search Comes to FastComments[/postlink]
 

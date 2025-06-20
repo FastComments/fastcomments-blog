@@ -1,3 +1,4 @@
+[category:Moderation]
 ###### [postdate]
 # [postlink]Profanity Masking Update[/postlink]
 

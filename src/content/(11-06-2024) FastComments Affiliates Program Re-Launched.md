@@ -1,3 +1,4 @@
+[category:Announcements]
 ###### [postdate]
 # [postlink]FastComments Affiliates Program Re-Launched[/postlink]
 

@@ -1,3 +1,6 @@
+[category:API & Development]
+[category:Announcements]
+
 ###### [postdate]
 # [postlink]FastComments TypeScript Migration Completed[/postlink]
 

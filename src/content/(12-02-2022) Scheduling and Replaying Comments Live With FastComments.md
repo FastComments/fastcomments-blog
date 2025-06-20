@@ -1,3 +1,4 @@
+[category:Features]
 ###### [postdate]
 # [postlink]Scheduling and Replaying Comments Live With FastComments[/postlink]
 

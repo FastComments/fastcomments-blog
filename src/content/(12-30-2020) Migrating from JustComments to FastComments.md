@@ -1,3 +1,4 @@
+[category:Migration]
 ###### [postdate]
 # [postlink]Migrating From JustComments To FastComments[/postlink]
 

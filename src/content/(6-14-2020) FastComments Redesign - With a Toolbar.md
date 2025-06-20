@@ -1,3 +1,4 @@
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]FastComments Redesign - With a Toolbar![/postlink]
 
