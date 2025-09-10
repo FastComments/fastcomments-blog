@@ -55,6 +55,12 @@ using our own combination of a custom DNS server which routes clients globally b
 with the other transport instances. The transport terminates SSL, handles the pubsub work, and is our CDN. The benefit of this is less overhead when moving things between
 services, and less infrastructure overhead/abstraction. The downside is visibility, so good metrics are important.
 
+In terms of resulting performance, the Rust services used about 10-30% of the memory of the Java ones, despite all of our work. I read books like Java Concurrency in Practice for fun, so
+while not an expert I know a thing or two about writing fast JVM services, and it was a lot easier to accomplish this with Rust. Additionally, spikes of messages to large numbers
+of subscribers would barely register on CPU usage when the JVM services would be spending 40% of their time in GC, despite writing our code more like a game engine and less
+like your typical server. I can't say I'm a huge Rust fan, but for services that do a lot of work and don't change much after initial development, it's perfect. Our main business logic
+remains in TypeScript.
+
 ### The New Architecture
 
 The new architecture has no more "pet" nodes. Instead, each server is a complete clone with all the same services and almost identical configuration. They each run
