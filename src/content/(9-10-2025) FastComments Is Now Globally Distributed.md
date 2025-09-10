@@ -108,8 +108,10 @@ All the public endpoints, like for serving the public comment widget, always rea
 
 The comment thread are not static, they are live, and applying a live stream over the stale static data also does not work as when you view a thread as
 an anonymous user you get an "anonymous session". In this anonymous session you can do things like block and flag other users, and you have to show
-if the anon user liked a given comment, and so on. This kind of "progressive enhancement" where the dynamic data is mapped to the static data from the CDN
-gives you a bad experience where content jumps around or changes after a few seconds. We would prefer not to do that.
+if the anon user liked a given comment, and so on. Comment threads can also be locked behind SSO, authentication, or user groups. 
+
+Finally, the kind of "progressive enhancement" where the dynamic data is mapped to the static data from the CDN gives you a bad experience where content jumps around or changes after a few seconds.
+We would prefer not to do that.
 
 ### Who Has My Data Now
 
