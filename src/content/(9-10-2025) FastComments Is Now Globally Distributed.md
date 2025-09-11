@@ -47,7 +47,7 @@ Rust was picked since we are not C++ experts and making a mistake in net code co
 We wanted to consolidate these services anyway, so while we could have made *another* pass optimizing them perhaps with GraalVM, we decided to move to Rust and be done with it.
 
 The migration was not without trouble. These services have to terminate SSL, support HTTP 1.1, HTTP/2, and so on. They do things like manage many streams of data concurrently,
-reading form disk, S3, databases, and communicating in a mesh. The Java ecosystem, Vertx and Netty, were very good for these things. We are pushing the library ecosystem to its limit, and not having a ton of experience with the Rust libraries meant we had
+reading media from an edge on-disk lru cache, S3, databases, and communicating in a mesh. The Java ecosystem, Vertx and Netty, were very good for these things. We are pushing the library ecosystem to its limit, and not having a ton of experience with the Rust libraries meant we had
 some trial and error. This caused some downtime, and we apologize for that.
 
 We also experimented with different memory managers, settling on mimalloc for our custom DNS servers and libc for the transport layer. We don't run Nginx or Apache, instead
