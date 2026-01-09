@@ -14,9 +14,7 @@ What this means is that you can now **monitor your comments on FastComments usin
 
 #### How to Use It
 
-On the <a href="https://fastcomments.com/auth/my-account/moderate-comments" target="_blank">Moderate Comments</a> page of the admin dashboard there is now an RSS feed icon at the bottom.
-
-This icon goes to a link - which is your very own RSS feed! Simply copy and paste this link into your favorite RSS aggregator.
+You can now manage your RSS feed from the dedicated <a href="https://fastcomments.com/auth/my-account/rss" target="_blank">RSS Feed page</a> in your dashboard. Simply enable the feed, copy your unique RSS URL, and paste it into your favorite RSS aggregator.
 
 The feed will include all comments in the last 30 days.
 
