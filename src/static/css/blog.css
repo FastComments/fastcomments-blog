@@ -114,6 +114,11 @@ body {
     color: #201600;
 }
 
+.header .buttons > a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 @media (prefers-color-scheme: dark) {
     .header a {
         color: #fff;

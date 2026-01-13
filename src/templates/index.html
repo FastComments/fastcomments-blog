@@ -50,7 +50,7 @@
 <div class="content">
     <div class="blog-container">
         <div class="blog-main">
-            <h1 class="content-subhead">{{#if currentCategory}}{{currentCategory}} Posts{{else}}{{#if pageTitle}}{{pageTitle}}{{else}}Recent Posts{{/if}}{{/if}}</h1>
+            <h1 class="content-subhead">{{#if currentCategory}}{{translateCategory currentCategory t}} {{t.posts}}{{else}}{{#if pageTitle}}{{pageTitle}}{{else}}{{t.recentPosts}}{{/if}}{{/if}}</h1>
             <script src="https://cdn.fastcomments.com/js/widget-comment-count-bulk.min.js"></script>
 
             {{#each posts}}
@@ -71,13 +71,13 @@
             {{#if totalPages}}
             <div class="pagination">
                 {{#if hasPrevPage}}
-                <a href="{{prevPageUrl}}" class="pagination-btn pagination-prev">← Previous</a>
+                <a href="{{prevPageUrl}}" class="pagination-btn pagination-prev">← {{t.previous}}</a>
                 {{/if}}
 
-                <span class="pagination-info">Page {{currentPage}} of {{totalPages}}</span>
+                <span class="pagination-info">{{t.page}} {{currentPage}} {{t.of}} {{totalPages}}</span>
 
                 {{#if hasNextPage}}
-                <a href="{{nextPageUrl}}" class="pagination-btn pagination-next">Next →</a>
+                <a href="{{nextPageUrl}}" class="pagination-btn pagination-next">{{t.next}} →</a>
                 {{/if}}
             </div>
             {{/if}}
@@ -91,15 +91,15 @@
 
         <aside class="blog-sidebar">
             <div class="sidebar-section">
-                <h3 class="sidebar-title">Categories</h3>
+                <h3 class="sidebar-title">{{t.categories}}</h3>
                 <div class="category-list">
-                    <a href="/" class="category-item {{#unless currentCategory}}active{{/unless}}">
-                        All Posts
+                    <a href="/{{#if locale}}{{#unless (eq locale "en")}}index-{{locale}}.html{{else}}{{/unless}}{{/if}}" class="category-item {{#unless currentCategory}}active{{/unless}}">
+                        {{t.allPosts}}
                     </a>
                     {{#each categories}}
-                    <a href="/category-{{toLowerCase (replace this " " "-")}}.html"
+                    <a href="/{{categoryUrl this ../locale}}"
                        class="category-item {{#if (eq ../currentCategory this)}}active{{/if}}">
-                        {{this}} <span class="category-count">({{lookup ../categoryCounts this}})</span>
+                        {{translateCategory this ../t}} <span class="category-count">({{lookup ../categoryCounts this}})</span>
                     </a>
                     {{/each}}
                 </div>

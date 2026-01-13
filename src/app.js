@@ -9,6 +9,7 @@ const byteSize = require('byte-size');
 const prettyBytes = require('pretty-bytes');
 const readingTime = require('reading-time');
 const {locales, defaultLocale} = require('./locales');
+const translations = require('./translations');
 
 const BLOG_START_YEAR_STR = '2019';
 const CONTENT_DIR = path.join(__dirname, 'content');
@@ -27,6 +28,15 @@ handlebars.registerHelper('replace', function(str, find, replace) {
 
 handlebars.registerHelper('eq', function(a, b) {
 	return a === b;
+});
+
+handlebars.registerHelper('translateCategory', function(category, t) {
+	return (t.categoryNames && t.categoryNames[category]) || category;
+});
+
+handlebars.registerHelper('categoryUrl', function(category, locale) {
+	const categorySlug = category.toLowerCase().replace(/\s+/g, '-');
+	return createCategoryUrl(categorySlug, locale);
 });
 
 function getCompiledTemplate(templateName, data) {
@@ -296,7 +306,8 @@ for (const locale of Object.keys(locales)) {
 		locale: locale,
 		lang: locales[locale].hreflang,
 		alternateLocales: buildAlternateLocales(createIndexUrl(locale), locale),
-		availableLocales: buildAvailableLocales(createIndexUrl(locale), locale)
+		availableLocales: buildAvailableLocales(createIndexUrl(locale), locale),
+		t: translations[locale] || translations[defaultLocale]
 	};
 
 	// Generate main index page
@@ -348,6 +359,7 @@ for (const locale of Object.keys(locales)) {
 		if (categoryPosts.length === 0) return;
 
 		const categoryUrl = createCategoryUrl(categorySlug, locale);
+		const translatedCategory = (localeData.t.categoryNames && localeData.t.categoryNames[category]) || category;
 
 		// Generate main category page
 		fs.writeFileSync(path.join(STATIC_GENERATED_DIR, categoryUrl), getCompiledTemplate('index.html', {
@@ -362,7 +374,7 @@ for (const locale of Object.keys(locales)) {
 			categories: categoriesArray,
 			categoryCounts: categoryCounts,
 			currentCategory: category,
-			pageTitle: `${category} Posts`,
+			pageTitle: `${translatedCategory} ${localeData.t.posts}`,
 			...localeData
 		}), 'utf8');
 
@@ -385,7 +397,7 @@ for (const locale of Object.keys(locales)) {
 				categories: categoriesArray,
 				categoryCounts: categoryCounts,
 				currentCategory: category,
-				pageTitle: `${category} Posts - Page ${page}`,
+				pageTitle: `${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`,
 				...localeData
 			}), 'utf8');
 		}
@@ -397,7 +409,8 @@ for (const locale of Object.keys(locales)) {
 			locale: locale,
 			lang: locales[locale].hreflang,
 			alternateLocales: buildAlternateLocales(post.urlIdRaw, locale),
-			availableLocales: buildAvailableLocales(post.urlIdRaw, locale)
+			availableLocales: buildAvailableLocales(post.urlIdRaw, locale),
+			t: translations[locale] || translations[defaultLocale]
 		};
 
 		const html = getCompiledTemplate('post.html', {
