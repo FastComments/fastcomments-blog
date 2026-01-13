@@ -20,7 +20,8 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     # Check if there are changes to commit
     if [ -n "$(git status --porcelain src/content src/translation-cache.json 2>/dev/null)" ]; then
       echo "Committing translation changes..."
-      git add src/content src/translation-cache.json
+      git add -A src/content
+      git add src/translation-cache.json
       git commit -m "Automated translation update"
       echo "Translation changes committed."
 
