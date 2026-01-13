@@ -64,7 +64,10 @@ function processPost(item, locale, contentDir) {
 	const urlId = encodeURIComponent(urlIdRawWithLocale);
 	const fullUrl = 'https://blog.fastcomments.com/' + urlIdRawWithLocale;
 	const fullUrlRaw = 'https://blog.fastcomments.com/' + urlIdRawWithLocale;
-	const commentCountHTML = `<div class="post-comment-count fast-comments-count" data-fast-comments-url-id="${fullUrlRaw}">...</div>`;
+	// Use stable urlId without locale for comments (shared across all languages)
+	const stableUrlId = urlIdRaw;
+	const stableUrlIdForCount = 'https://blog.fastcomments.com/' + urlIdRaw;
+	const commentCountHTML = `<div class="post-comment-count fast-comments-count" data-fast-comments-url-id="${stableUrlIdForCount}">...</div>`;
 
 	let fileContent = fs.readFileSync(path.join(contentDir, item), 'utf8');
 
@@ -126,6 +129,7 @@ function processPost(item, locale, contentDir) {
 		urlIdRaw: urlIdRawWithLocale,
 		fullUrl: fullUrl,
 		fullUrlRaw: fullUrlRaw,
+		stableUrlId: stableUrlId,
 		dateTimeObj: ctime,
 		dateTime: ctime.getTime(),
 		minSize: postByteSize,
