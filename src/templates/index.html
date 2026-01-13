@@ -1,4 +1,4 @@
-<html>
+<html lang="{{#if lang}}{{lang}}{{else}}en{{/if}}">
 <head>
     <title>{{#if pageTitle}}{{pageTitle}} - {{/if}}FastComments Blog</title>
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -9,6 +9,9 @@
     <meta property="og:image" content="https://fastcomments.com/images/logo-1080-2020-01.png" />
     <meta property="og:image:width" content="1080"  />
     <meta property="og:image:height" content="1080"  />
+    {{#each alternateLocales}}
+    <link rel="alternate" hreflang="{{hreflang}}" href="/{{url}}">
+    {{/each}}
     <script async src="https://watchlycdn.com/js/watchly.min.js" data-key="5d1fcfabcc00a66e161816b4"></script>
     <link rel="alternate" type="application/rss+xml" title="FastComments Blog" href="https://blog.fastcomments.com/rss.xml">
 </head>
@@ -17,6 +20,25 @@
     <div class="header-inner">
         <a href="/"><div class="css-logo"><i class="t"></i><i class="m"></i><i class="b"></i></div>FastComments.com Blog</a>
         <div class="buttons">
+            {{#if availableLocales}}
+            <div class="language-selector">
+                <div class="language-selector-toggle" tabindex="0">
+                    <span class="language-selector-flag">{{#each availableLocales}}{{#if current}}{{flag}}{{/if}}{{/each}}</span>
+                    <span class="language-selector-arrow">▼</span>
+                </div>
+                <div class="language-selector-dropdown">
+                    {{#each availableLocales}}
+                    <a href="/{{url}}" class="language-option {{#if current}}current{{/if}}">
+                        <span class="language-option-flag">{{flag}}</span>
+                        <div class="language-option-names">
+                            <div class="language-option-native">{{nativeName}}</div>
+                            <div class="language-option-english">{{name}}</div>
+                        </div>
+                    </a>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
             <a href="https://blog.fastcomments.com/rss.xml"><img src="/images/rss.png"/></a>
             <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fblog.fastcomments.com%2Frss.xml'
                target='blank'><img id='feedlyFollow'
