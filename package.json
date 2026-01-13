@@ -13,7 +13,9 @@
         "build-windows": "build.bat",
         "build-posix": "bash build.sh",
         "watch-windows": "nodemon --exec npm run \"build-windows\"",
-        "watch-posix": "nodemon --exec npm run \"build-posix\""
+        "watch-posix": "nodemon --exec npm run \"build-posix\"",
+        "check-translations": "node src/check-translations.js",
+        "translate": "node src/translate-with-gpt.js"
     },
     "devDependencies": {
         "nodemon": "^2.0.20",
