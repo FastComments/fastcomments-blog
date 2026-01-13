@@ -293,7 +293,7 @@ function parseArgs() {
     const args = process.argv.slice(2);
     const options = {
         locale: null,
-        concurrency: 5,
+        concurrency: 20,
         dryRun: false,
         force: false
     };
@@ -318,7 +318,7 @@ Usage: node src/translate-with-gpt.js [options]
 
 Options:
   --locale <locale>      Only translate for this locale (e.g., fr_fr, de_de)
-  --concurrency <n>      Number of concurrent API calls (default: 5)
+  --concurrency <n>      Number of concurrent API calls (default: 20)
   --dry-run              Show what would be translated without making API calls
   --force                Force re-translation even if snapshot says up-to-date
   --help                 Show this help message
