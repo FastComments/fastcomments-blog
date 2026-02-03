@@ -1,5 +1,5 @@
 ---
-[category:Модерація]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Випущено групи для модерації[/postlink]

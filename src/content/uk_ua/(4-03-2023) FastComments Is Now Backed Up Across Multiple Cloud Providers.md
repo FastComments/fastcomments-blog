@@ -1,5 +1,5 @@
 ---
-[category:Оголошення]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]FastComments тепер має резервні копії в кількох постачальниках хмарних послуг[/postlink]

@@ -1,6 +1,6 @@
 ---
-[category:Навчання]
-[category:Інтерфейс та Налаштування]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]Як сховати вашу стрічку коментарів під посиланням[/postlink]

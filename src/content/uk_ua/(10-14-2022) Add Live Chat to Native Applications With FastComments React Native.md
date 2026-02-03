@@ -1,6 +1,6 @@
 ---
-[category:Інтеграції]
-[category:API та Розробка]
+[category:Integrations]
+[category:API & Development]
 ###### [postdate]
 # [postlink]Додайте Живий Чат до Нативних Додатків За Допомогою FastComments React Native[/postlink]
 

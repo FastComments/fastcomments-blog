@@ -1,5 +1,5 @@
 ---
-[category:Оголошення]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]Запущена нова документація[/postlink]

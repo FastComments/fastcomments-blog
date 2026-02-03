@@ -1,7 +1,7 @@
 ---
-[category:Оголошення]
-[category:Продуктивність]
-[category:API та Розробка]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments Тепер Глобально Розподілений[/postlink]
 

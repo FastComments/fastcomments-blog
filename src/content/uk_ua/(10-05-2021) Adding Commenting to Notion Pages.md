@@ -1,6 +1,6 @@
 ---
-[category:Інтеграції]
-[category:Посібники]
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Додавання коментарів до сторінок Notion[/postlink]
 

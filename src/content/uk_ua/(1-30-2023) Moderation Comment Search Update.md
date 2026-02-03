@@ -1,6 +1,6 @@
 ---
-[category:Модерація]
-[category:Особливості]
+[category:Moderation]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Оновлення пошуку коментарів модерації[/postlink]

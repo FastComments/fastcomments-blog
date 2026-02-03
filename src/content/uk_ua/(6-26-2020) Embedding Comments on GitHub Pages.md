@@ -1,5 +1,5 @@
 ---
-[category:Інтеграції]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Вбудовування коментарів на GitHub Pages[/postlink]
 

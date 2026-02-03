@@ -1,5 +1,5 @@
 ---
-[category:Модерація]
+[category:Moderation]
 ###### [postdate]
 
 # [postlink]Модерація коментарів стала простішою[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Аналітика]
+[category:Analytics]
 
 ###### [postdate]
 # [postlink]Запущено нову аналітику FastComments в реальному часі[/postlink]

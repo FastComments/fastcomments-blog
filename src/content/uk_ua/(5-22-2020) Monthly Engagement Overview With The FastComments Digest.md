@@ -1,5 +1,5 @@
 ---
-[category:Аналітика]
+[category:Analytics]
 
 ###### [postdate]
 # [postlink]Щомісячний огляд взаємодії з дайджестом FastComments[/postlink]

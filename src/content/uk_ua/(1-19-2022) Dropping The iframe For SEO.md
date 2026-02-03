@@ -1,6 +1,6 @@
 ---
-[category:Продуктивність]
-[category:Функції]
+[category:Performance]
+[category:Features]
 ###### [postdate]
 # [postlink]Видалення iframe для SEO[/postlink]
 
