@@ -1,6 +1,6 @@
 ---
-[category:Beveiliging]
-[category:Functies]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Twee-Factor Authenticatie (2FA) Nu Beschikbaar[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:Integraciones]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]Comentarios Integrables Para Webflow[/postlink]

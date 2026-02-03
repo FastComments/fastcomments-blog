@@ -1,5 +1,5 @@
 ---
-[category:Modération]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Mise à jour de Modération - Badges dans la page de Modération[/postlink]

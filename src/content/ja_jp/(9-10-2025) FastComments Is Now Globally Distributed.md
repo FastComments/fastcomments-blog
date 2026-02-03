@@ -1,7 +1,7 @@
 ---
-[category:お知らせ]
-[category:パフォーマンス]
-[category:API & 開発]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastCommentsがグローバルに分散されました[/postlink]
 

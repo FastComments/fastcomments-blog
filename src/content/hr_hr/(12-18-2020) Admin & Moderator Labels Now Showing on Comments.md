@@ -1,5 +1,5 @@
 ---
-[category:Značajke]
+[category:Features]
 ###### [postdate]
 # [postlink]Administratorske i Moderator vrste sada prikazane na komentarima[/postlink]
 

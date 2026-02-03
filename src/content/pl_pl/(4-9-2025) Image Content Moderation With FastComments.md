@@ -1,5 +1,5 @@
 ---
-[category:Moderacja]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Moderacja Treści Obrazów z FastComments[/postlink]

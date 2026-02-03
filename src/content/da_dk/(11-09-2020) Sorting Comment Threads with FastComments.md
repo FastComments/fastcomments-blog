@@ -1,5 +1,5 @@
 ---
-[category:Funktioner]
+[category:Features]
 ###### [postdate]
 # [postlink]Sortering af Kommentartråde med FastComments[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:Ασφάλεια]
-[category:Χαρακτηριστικά]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Διαθέσιμη πλέον η Επικύρωση Δύο Σταδίων (2FA)[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:Модерация]
-[category:Функции]
+[category:Moderation]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Обновление поиска комментариев в модерации[/postlink]

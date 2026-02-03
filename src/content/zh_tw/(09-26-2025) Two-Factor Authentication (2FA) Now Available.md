@@ -1,6 +1,6 @@
 ---
-[category:安全性]
-[category:功能]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]雙因素身份驗證 (2FA) 現已提供[/postlink]
 

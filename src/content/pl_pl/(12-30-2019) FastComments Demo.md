@@ -1,5 +1,5 @@
 ---
-[category:Ogłoszenia]
+[category:Announcements]
 ###### [postdate]
 # [postlink]Demo FastComments[/postlink]
 

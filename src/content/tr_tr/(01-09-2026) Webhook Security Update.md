@@ -1,6 +1,6 @@
 ---
-[category:Güvenlik]
-[category:Özellikler]
+[category:Security]
+[category:Features]
 [category:Webhooks]
 ###### [postdate]
 # [postlink]Webhook Güvenlik Güncellemesi[/postlink]

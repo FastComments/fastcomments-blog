@@ -1,6 +1,6 @@
 ---
-[category:機能]
-[category:UI & カスタマイズ]
+[category:Features]
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]コメント投稿者名のフォーマットの紹介[/postlink]
 

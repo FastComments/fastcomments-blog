@@ -1,6 +1,6 @@
 ---
-[category:Značajke]
-[category:UI & Prilagodba]
+[category:Features]
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]Uvođenje formata imena komentatora[/postlink]
 

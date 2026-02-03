@@ -1,6 +1,6 @@
 ---
-[category:安全]
-[category:功能]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]现在支持密码认证[/postlink]
 

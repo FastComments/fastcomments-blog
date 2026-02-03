@@ -1,5 +1,5 @@
 ---
-[category:Integrações]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]FastComments Agora com React Native[/postlink]

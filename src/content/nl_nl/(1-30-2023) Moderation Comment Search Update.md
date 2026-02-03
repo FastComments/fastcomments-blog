@@ -1,6 +1,6 @@
 ---
-[category:Moderatie]
-[category:Functies]
+[category:Moderation]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Moderatie Commentaar Zoekupdate[/postlink]

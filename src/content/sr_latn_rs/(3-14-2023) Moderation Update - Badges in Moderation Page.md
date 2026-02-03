@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Ažuriranje Moderacije - Bedževi na Stranici za Moderaciju[/postlink]

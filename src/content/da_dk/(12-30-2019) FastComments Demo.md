@@ -1,5 +1,5 @@
 ---
-[category:Meddelelser]
+[category:Announcements]
 ###### [postdate]
 # [postlink]FastComments Demo[/postlink]
 

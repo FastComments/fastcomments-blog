@@ -1,7 +1,7 @@
 ---
-[category:Ανακοινώσεις]
-[category:Απόδοση]
-[category:API & Ανάπτυξη]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]Το FastComments Είμαι Τώρα Παγκοσμίως Διανεμημένο[/postlink]
 

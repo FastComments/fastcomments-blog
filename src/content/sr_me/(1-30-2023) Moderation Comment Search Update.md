@@ -1,6 +1,6 @@
 ---
-[category:Moderacija]
-[category:Funkcionalnosti]
+[category:Moderation]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Ažuriranje pretrage komentara za moderaciju[/postlink]

@@ -1,6 +1,6 @@
 ---
-[category:Bezbednost]
-[category:Karakteristike]
+[category:Security]
+[category:Features]
 [category:Webhooks]
 ###### [postdate]
 # [postlink]Ažuriranje bezbednosti Webhook-a[/postlink]

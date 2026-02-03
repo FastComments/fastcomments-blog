@@ -1,6 +1,6 @@
 ---
-[category:Уроци]
-[category:Интерфейс и Персонализация]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]Как да скриете вашия коментарен поток под линк[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Integracije]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]Ugradivi komentari za Webflow[/postlink]

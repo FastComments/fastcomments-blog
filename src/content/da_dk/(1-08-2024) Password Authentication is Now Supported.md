@@ -1,6 +1,6 @@
 ---
-[category:Sikkerhed]
-[category:Funktioner]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Password-authentifikation er nu understøttet[/postlink]
 

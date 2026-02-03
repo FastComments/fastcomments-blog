@@ -1,5 +1,5 @@
 ---
-[category:Integraties]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]Inbedbare Reacties Voor Webflow[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Moderación]
+[category:Moderation]
 
 ###### [postdate]
 

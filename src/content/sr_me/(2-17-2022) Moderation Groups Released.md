@@ -1,4 +1,4 @@
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Objavljene Grupe za Moderaciju[/postlink]

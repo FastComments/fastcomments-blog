@@ -1,5 +1,5 @@
 ---
-[category:Moderación]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Actualización de Moderación - Insignias en la Página de Moderación[/postlink]

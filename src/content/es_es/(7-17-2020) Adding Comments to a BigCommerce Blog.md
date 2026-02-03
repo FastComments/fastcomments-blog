@@ -1,5 +1,5 @@
 ---
-[category:Integraciones]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Añadiendo Comentarios a un Blog de BigCommerce[/postlink]
 

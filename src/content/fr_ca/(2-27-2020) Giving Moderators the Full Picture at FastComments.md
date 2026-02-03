@@ -1,5 +1,5 @@
 ---
-[category:Modération]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Donner aux modérateurs une vue d'ensemble chez FastComments[/postlink]

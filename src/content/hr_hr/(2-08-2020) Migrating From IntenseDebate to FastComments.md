@@ -1,5 +1,5 @@
 ---
-[category:Migracija]
+[category:Migration]
 
 ###### [postdate]
 # [postlink]Migracija s IntenseDebate na FastComments[/postlink]

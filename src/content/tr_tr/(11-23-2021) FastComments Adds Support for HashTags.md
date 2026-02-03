@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 
 ###### [postdate]
 # [postlink]FastComments #HashTag Desteği Ekledi[/postlink]

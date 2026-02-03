@@ -1,5 +1,5 @@
 ---
-[category:Moderação]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Como Exigir Aprovação para Todos os Comentários[/postlink]

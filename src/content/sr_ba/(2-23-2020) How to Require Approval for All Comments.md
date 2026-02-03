@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Kako zahtevati odobrenje za sve komentare[/postlink]

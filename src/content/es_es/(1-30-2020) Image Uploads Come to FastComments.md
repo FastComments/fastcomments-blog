@@ -1,5 +1,5 @@
 ---
-[category:Características]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Las Cargas de Imágenes Llegan a FastComments[/postlink]

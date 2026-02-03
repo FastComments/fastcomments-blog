@@ -1,5 +1,5 @@
 ---
-[category:Entegrasyonlar]
+[category:Integrations]
 ###### [postdate]
 # [postlink]GitHub Sayfalarına Yorum Ekleme[/postlink]
 

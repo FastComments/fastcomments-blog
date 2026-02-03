@@ -1,6 +1,6 @@
 ---
-[category:Varnost]
-[category:Značilnosti]
+[category:Security]
+[category:Features]
 ###### [datum objave]
 # [postlink]Dvofaktorska avtentikacija (2FA) zdaj na voljo[/postlink]
 

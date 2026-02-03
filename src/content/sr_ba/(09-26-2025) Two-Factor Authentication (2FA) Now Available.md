@@ -1,6 +1,6 @@
 ---
-[category:Sigurnost]
-[category:Karakteristike]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Dvofaktorska Autentifikacija (2FA) Sada Dostupna[/postlink]
 

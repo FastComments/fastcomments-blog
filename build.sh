@@ -35,6 +35,14 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     echo "All translations up to date."
   fi
 
+  # Check for invalid categories in translated posts
+  echo "Checking for invalid categories..."
+  node src/check-categories.js
+  if [ $? -ne 0 ]; then
+    echo "Build failed: Invalid categories found in translated posts"
+    exit 1
+  fi
+
   mkdir -p src/static/generated/
   node src/app
   cp -rv src/static/css src/static/generated/

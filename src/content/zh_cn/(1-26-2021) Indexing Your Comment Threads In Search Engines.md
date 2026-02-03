@@ -1,5 +1,5 @@
 ---
-[category:性能]
+[category:Performance]
 ###### [postdate]
 # [postlink]在搜索引擎中索引您的评论线程[/postlink]
 

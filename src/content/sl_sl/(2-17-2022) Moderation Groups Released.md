@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Objavljene skupine za moderacijo[/postlink]

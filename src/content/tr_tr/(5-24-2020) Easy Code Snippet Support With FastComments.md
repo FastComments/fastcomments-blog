@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 
 ###### [postdate]
 # [postlink]FastComments ile Kolay Kod Parçası Desteği[/postlink]

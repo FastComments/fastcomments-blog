@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Niti za komentare sada se mogu lako zatvoriti[/postlink]

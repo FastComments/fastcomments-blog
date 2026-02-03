@@ -1,5 +1,5 @@
 ---
-[category:Performanse]
+[category:Performance]
 ###### [postdate]
 # [postlink]FastComments ažuriran na HTTP/2[/postlink]
 

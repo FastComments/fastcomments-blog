@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Davanje moderatorima potpunog pregleda na FastComments[/postlink]

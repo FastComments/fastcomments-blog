@@ -1,5 +1,5 @@
 ---
-[category:Performans]
+[category:Performance]
 ###### [postdate]
 # [postlink]FastComments HTTP/2'ye Yükseltildi[/postlink]
 

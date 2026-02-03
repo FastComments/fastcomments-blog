@@ -1,5 +1,5 @@
 ---
-[category:Moderatie]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Hoe goedkeuring voor alle reacties verplicht te stellen[/postlink]

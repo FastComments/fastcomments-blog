@@ -1,6 +1,6 @@
 ---
-[category:Características]
-[category:Moderación]
+[category:Features]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Fijando Comentarios con FastComments[/postlink]
 

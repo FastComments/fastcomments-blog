@@ -1,6 +1,6 @@
 ---
-[category:Moderacija]
-[category:Uputstva]
+[category:Moderation]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Kako sprečiti spam u vašim komentarima[/postlink]
 

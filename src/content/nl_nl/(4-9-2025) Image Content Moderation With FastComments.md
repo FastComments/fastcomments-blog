@@ -1,5 +1,5 @@
 ---
-[category:Moderatie]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Afbeeldingsinhoud Moderatie Met FastComments[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Modération]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Les fils de commentaires peuvent désormais être fermés facilement[/postlink]

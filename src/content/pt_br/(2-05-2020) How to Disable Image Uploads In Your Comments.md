@@ -1,5 +1,5 @@
 ---
-[category:Tutoriais]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Como Desativar Uploads de Imagens Nos Seus Comentários[/postlink]

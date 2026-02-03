@@ -1,7 +1,7 @@
 ---
-[category:Aankondigingen]
-[category:Prestaties]
-[category:API & Ontwikkeling]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments Is Nu Globaal Gedistribueerd[/postlink]
 

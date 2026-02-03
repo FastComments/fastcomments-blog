@@ -1,5 +1,5 @@
 ---
-[category:Модерация]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Бан и теневой бан с FastComments[/postlink]

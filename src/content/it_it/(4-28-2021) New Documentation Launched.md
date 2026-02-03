@@ -1,5 +1,5 @@
 ---
-[category:Annunci]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]Nuova Documentazione Lanciate[/postlink]

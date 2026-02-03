@@ -1,5 +1,5 @@
 ---
-[category:Moderação]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Aprovações Agora Podem Ser Feitas Uma Vez Por Usuário[/postlink]
 

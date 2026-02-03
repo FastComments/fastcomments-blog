@@ -1,6 +1,6 @@
 ---
-[category:Особливості]
-[category:Модерація]
+[category:Features]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Тепер можна обмежити мови в коментарях[/postlink]
 

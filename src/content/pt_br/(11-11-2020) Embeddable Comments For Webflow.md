@@ -1,5 +1,5 @@
 ---
-[category:Integrações]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]Comentários Embutidos Para Webflow[/postlink]

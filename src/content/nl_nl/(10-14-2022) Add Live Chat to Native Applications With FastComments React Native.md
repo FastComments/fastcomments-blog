@@ -1,6 +1,6 @@
 ---
-[category:Integraties]
-[category:API & Ontwikkeling]
+[category:Integrations]
+[category:API & Development]
 ###### [postdate]
 # [postlink]Voeg Live Chat toe aan Native Applicaties met FastComments React Native[/postlink]
 

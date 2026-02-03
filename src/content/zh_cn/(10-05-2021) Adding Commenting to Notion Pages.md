@@ -1,6 +1,6 @@
 ---
-[category:集成]
-[category:教程]
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]在 Notion 页面添加评论[/postlink]
 

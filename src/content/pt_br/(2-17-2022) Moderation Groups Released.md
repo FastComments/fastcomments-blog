@@ -1,5 +1,5 @@
 ---
-[category:Moderação]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Grupos de Moderação Lançados[/postlink]

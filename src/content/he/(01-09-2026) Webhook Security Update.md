@@ -1,7 +1,7 @@
 ---
-[category:אבטחה]
-[category:תכונות]
-[category:Webhook]
+[category:Security]
+[category:Features]
+[category:Webhooks]
 ###### [postdate]
 # [postlink]עדכון אבטחת Webhook[/postlink]
 

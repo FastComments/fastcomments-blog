@@ -1,6 +1,6 @@
 ---
-[category:Moderação]
-[category:Recursos]
+[category:Moderation]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Atualização de Busca de Comentários de Moderação[/postlink]

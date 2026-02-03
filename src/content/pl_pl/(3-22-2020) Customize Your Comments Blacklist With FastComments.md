@@ -1,5 +1,5 @@
 ---
-[category:Moderacja]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Dostosuj swoją czarną listę komentarzy z FastComments[/postlink]

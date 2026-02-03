@@ -1,6 +1,6 @@
 ---
-[category:Tutoriais]
-[category:UI & Personalização]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]Como Ocultar Seu Feed de Comentários Sob um Link[/postlink]

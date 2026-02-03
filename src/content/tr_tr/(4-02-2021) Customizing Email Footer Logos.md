@@ -1,5 +1,5 @@
 ---
-[category:UI & Özelleştirme]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]E-posta Alt Bilgi Logolarını Özelleştirme[/postlink]

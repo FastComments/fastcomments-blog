@@ -1,5 +1,5 @@
 ---
-[category:Integraties]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Reacties opnemen op GitHub Pages[/postlink]
 

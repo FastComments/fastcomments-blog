@@ -1,6 +1,6 @@
 ---
-[category:Bezpieczeństwo]
-[category:Funkcje]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Wieloskładnikowa Autoryzacja (2FA) Teraz Dostępna[/postlink]
 

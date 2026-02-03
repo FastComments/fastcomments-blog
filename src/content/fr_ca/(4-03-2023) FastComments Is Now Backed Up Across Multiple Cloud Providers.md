@@ -1,5 +1,5 @@
 ---
-[category:Annonces]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]FastComments est maintenant sauvegardé sur plusieurs fournisseurs de cloud[/postlink]

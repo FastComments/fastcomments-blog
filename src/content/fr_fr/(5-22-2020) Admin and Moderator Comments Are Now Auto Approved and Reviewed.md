@@ -1,5 +1,5 @@
 ---
-[category:Modération]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Les commentaires des administrateurs et des modérateurs sont désormais automatiquement approuvés et examinés[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Sigurnost]
+[category:Security]
 
 ###### [postdate]
 # [postlink]FastComments sada podržava stroge postavke kolačića trećih strana[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Ankündigungen]
+[category:Announcements]
 ###### [postdate]
 # [postlink]FastComments Affiliates Programm Wiederaufgelegt[/postlink]
 

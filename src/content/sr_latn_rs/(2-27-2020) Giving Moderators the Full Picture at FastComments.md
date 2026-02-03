@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Davanje Potpune Slike Moderatorima na FastCommentsu[/postlink]

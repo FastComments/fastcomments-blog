@@ -1,5 +1,5 @@
 ---
-[category:Značajke]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Jednostavna podrška za isječke koda s FastComments[/postlink]

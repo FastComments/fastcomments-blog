@@ -1,5 +1,5 @@
 ---
-[category:Güvenlik]
+[category:Security]
 
 ###### [postdate]
 # [postlink]Tek Oturum Açma ile Yorum Dizilerini Koruma[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Tutoriales]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Configurar cuánto tiempo mantener los comentarios no verificados[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Безопасность]
+[category:Security]
 
 ###### [postdate]
 # [postlink]FastComments теперь поддерживает строгие настройки сторонних файлов cookie[/postlink]

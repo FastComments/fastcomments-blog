@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Ažuriranje maskiranja uvredljivih reči[/postlink]
 

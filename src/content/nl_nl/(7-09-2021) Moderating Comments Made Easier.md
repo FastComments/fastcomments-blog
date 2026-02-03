@@ -1,5 +1,5 @@
 ---
-[category:Moderatie]
+[category:Moderation]
 ###### [postdate]
 
 # [postlink]Modereren van Reacties Gemakkelijker Gemaakt[/postlink]

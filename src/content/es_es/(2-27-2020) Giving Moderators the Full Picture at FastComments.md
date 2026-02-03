@@ -1,5 +1,5 @@
 ---
-[category:Moderación]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Dando a los Moderadores la Imagen Completa en FastComments[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Tutoriali]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Kako onemogućiti prijenos slika u svojim komentarima[/postlink]

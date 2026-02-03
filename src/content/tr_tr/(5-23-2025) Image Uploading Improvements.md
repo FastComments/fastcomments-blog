@@ -1,6 +1,6 @@
 ---
 
-[category:Özellikler]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Görüntü Yükleme İyileştirmeleri[/postlink]

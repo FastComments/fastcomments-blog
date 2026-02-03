@@ -1,5 +1,5 @@
 ---
-[category:Ankündigungen]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]Neue Dokumentation gestartet[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:安全]
+[category:Security]
 
 ###### [postdate]
 # [postlink]FastComments 现在支持严格的第三方 Cookie 设置[/postlink]

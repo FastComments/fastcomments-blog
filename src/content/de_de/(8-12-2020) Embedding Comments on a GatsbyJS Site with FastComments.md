@@ -1,5 +1,5 @@
 ---
-[category:Integrationen]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Kommentare auf einer GatsbyJS-Website mit FastComments einbetten[/postlink]
 

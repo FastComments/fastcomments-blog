@@ -1,6 +1,6 @@
 ---
-[category:Entegrasyonlar]
-[category:Kılavuzlar]
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Notion Sayfalarına Yorum Ekleme[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:教程]
-[category:集成]
+[category:Tutorials]
+[category:Integrations]
 ###### [postdate]
 # [postlink]在VueJS网站上嵌入FastComments评论[/postlink]
 

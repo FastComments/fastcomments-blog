@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Prilagodite svoju crnu listu komentara sa FastComments[/postlink]

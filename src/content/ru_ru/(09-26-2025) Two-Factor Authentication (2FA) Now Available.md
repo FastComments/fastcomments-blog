@@ -1,6 +1,6 @@
 ---
-[category:Безопасность]
-[category:Функции]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Двухфакторная аутентификация (2FA) теперь доступна[/postlink]
 

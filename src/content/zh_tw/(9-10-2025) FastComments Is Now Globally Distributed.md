@@ -1,7 +1,7 @@
 ---
-[category:公告]
-[category:性能]
-[category:API 與開發]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments 現在已全球分佈[/postlink]
 

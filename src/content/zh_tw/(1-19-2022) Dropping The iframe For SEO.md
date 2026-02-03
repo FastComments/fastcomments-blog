@@ -1,6 +1,6 @@
 ---
-[category:性能]
-[category:功能]
+[category:Performance]
+[category:Features]
 ###### [postdate]
 # [postlink]取消 iframe 以改善 SEO[/postlink]
 

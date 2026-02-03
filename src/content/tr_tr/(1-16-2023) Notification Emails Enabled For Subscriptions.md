@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 ###### [postdate]
 # [postlink]Abonelikler İçin Bildirim E-posta'ları Aktif Hale Geldi[/postlink]
 

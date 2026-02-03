@@ -1,5 +1,5 @@
 ---
-[category:Anúncios]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]FastComments Agora Está Backup em Vários Provedores de Nuvem[/postlink]

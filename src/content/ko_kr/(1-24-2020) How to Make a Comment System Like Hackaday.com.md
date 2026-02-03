@@ -1,6 +1,6 @@
 ---
-[category:튜토리얼]
-[category:UI 및 사용자 정의]
+[category:Tutorials]
+[category:UI & Customization]
 {{#unless isPost}}
 ###### [postdate]
 {{/unless}}

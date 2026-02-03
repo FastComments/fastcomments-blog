@@ -1,5 +1,5 @@
 ---
-[category:Značajke]
+[category:Features]
 
 ###### [postdate]
 # [postlink]FastComments je lokaliziran[/postlink]

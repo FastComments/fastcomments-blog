@@ -1,6 +1,6 @@
 ---
-[category:Moderazione]
-[category:Caratteristiche]
+[category:Moderation]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Aggiornamento Ricerca Commenti Moderazione[/postlink]

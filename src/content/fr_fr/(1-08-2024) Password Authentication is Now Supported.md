@@ -1,6 +1,6 @@
 ---
-[category:Sécurité]
-[category:Fonctionnalités]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]L'authentification par mot de passe est maintenant prise en charge[/postlink]
 

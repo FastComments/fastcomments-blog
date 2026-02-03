@@ -1,5 +1,5 @@
 ---
-[category:Integracije]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]FastComments ide na React Native[/postlink]

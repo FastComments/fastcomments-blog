@@ -1,5 +1,5 @@
 ---
-[category:Ogłoszenia]
+[category:Announcements]
 ###### [postdate]
 # [postlink]Program Partnerski FastComments Ponownie Uruchomiony[/postlink]
 

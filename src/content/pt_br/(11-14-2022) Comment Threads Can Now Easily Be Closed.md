@@ -1,5 +1,5 @@
 ---
-[category:Moderação]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Os Fios de Comentários Agora Podem Ser Fechados Facilmente[/postlink]

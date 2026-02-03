@@ -1,6 +1,6 @@
 ---
-[category:Integraciones]
-[category:Tutoriales]
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Agregar Comentarios a las Páginas de Notion[/postlink]
 

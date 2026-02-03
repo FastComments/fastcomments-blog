@@ -1,6 +1,6 @@
 ---
-[category:Учебники]
-[category:Интерфейс и настройка]
+[category:Tutorials]
+[category:UI & Customization]
 {{#unless isPost}}
 ###### [postdate]
 {{/unless}}

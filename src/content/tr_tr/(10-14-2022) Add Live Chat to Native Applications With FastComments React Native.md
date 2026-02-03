@@ -1,6 +1,6 @@
 ---
-[category:Entegrasyonlar]
-[category:API & Geliştirme]
+[category:Integrations]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments React Native ile Yerel Uygulamalara Canlı Sohbet Ekleyin[/postlink]
 

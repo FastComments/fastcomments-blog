@@ -1,6 +1,6 @@
 ---
-[category:API & Entwicklung]
-[category:Ankündigungen]
+[category:API & Development]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]FastComments TypeScript-Migration Abgeschlossen[/postlink]

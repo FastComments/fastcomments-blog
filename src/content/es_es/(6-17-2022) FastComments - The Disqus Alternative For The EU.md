@@ -1,5 +1,5 @@
 ---
-[category:Anuncios]
+[category:Announcements]
 ###### [postdate]
 # [postlink]FastComments - La alternativa a Disqus para la UE[/postlink]
 

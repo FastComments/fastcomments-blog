@@ -1,5 +1,5 @@
 ---
-[category:Tutoriali]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Kako onemogućiti otpremanje slika u vašim komentarima[/postlink]

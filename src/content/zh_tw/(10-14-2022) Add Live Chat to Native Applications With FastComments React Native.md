@@ -1,6 +1,6 @@
 ---
-[category:整合]
-[category:API 與開發]
+[category:Integrations]
+[category:API & Development]
 ###### [postdate]
 # [postlink]將即時聊天功能添加到使用 FastComments 的原生應用程序中[/postlink]
 

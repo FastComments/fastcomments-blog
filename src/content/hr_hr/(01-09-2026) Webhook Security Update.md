@@ -1,7 +1,7 @@
 ---
-[category:Sigurnost]
-[category:Značajke]
-[category:Webhookovi]
+[category:Security]
+[category:Features]
+[category:Webhooks]
 ###### [postdate]
 # [postlink]Ažuriranje sigurnosti webhooks-a[/postlink]
 

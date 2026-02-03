@@ -1,5 +1,5 @@
 ---
-[category:Moderação]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Banimento e Shadow Ban com FastComments[/postlink]

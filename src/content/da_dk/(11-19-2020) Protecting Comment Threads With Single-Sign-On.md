@@ -1,5 +1,5 @@
 ---
-[category:Sikkerhed]
+[category:Security]
 
 ###### [postdate]
 # [postlink]Beskytter Kommentartråde Med Single-Sign-On[/postlink]

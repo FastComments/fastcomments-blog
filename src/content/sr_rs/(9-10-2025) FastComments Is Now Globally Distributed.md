@@ -1,7 +1,7 @@
 ---
-[category:Obaveštenja]
-[category:Performanse]
-[category:API i Razvoj]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments je sada globalno distribuiran[/postlink]
 

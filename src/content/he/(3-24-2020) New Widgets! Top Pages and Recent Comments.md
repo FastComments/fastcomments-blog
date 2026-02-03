@@ -1,5 +1,5 @@
 ---
-[category:מאפיינים]
+[category:Features]
 
 ###### [postdate]
 # [postlink]וידג'טים חדשים! דפים מובילים ותגובות אחרונות[/postlink]

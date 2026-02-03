@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Zabrana i Šadow Zabrana sa FastComments[/postlink]

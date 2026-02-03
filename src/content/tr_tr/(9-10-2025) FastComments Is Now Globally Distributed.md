@@ -1,7 +1,7 @@
 ---
-[category:Duyurular]
-[category:Performans]
-[category:API & Geliştirme]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments Artık Küresel Olarak Dağıtılmıştır[/postlink]
 

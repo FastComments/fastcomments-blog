@@ -1,5 +1,5 @@
 ---
-[category:Caractéristiques]
+[category:Features]
 
 ###### [postdate]
 # [postlink]La pagination imbriquée arrive sur FastComments[/postlink]

@@ -1,6 +1,6 @@
 ---
-[category:Značajke]
-[category:Moderacija]
+[category:Features]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Jezici korišteni u komentarima sada se mogu ograničiti[/postlink]
 

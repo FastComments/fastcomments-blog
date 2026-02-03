@@ -1,5 +1,5 @@
 ---
-[category:Интеграции]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]Вградени коментари за Webflow[/postlink]

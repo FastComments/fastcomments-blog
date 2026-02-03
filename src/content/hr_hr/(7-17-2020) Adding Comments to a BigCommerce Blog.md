@@ -1,5 +1,5 @@
 ---
-[category:Integracije]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Dodavanje komentara na BigCommerce blog[/postlink]
 

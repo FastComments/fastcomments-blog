@@ -1,5 +1,5 @@
 ---
-[category:IA & Apprentissage Machine]
+[category:AI & Machine Learning]
 
 ###### [postdate]
 # [postlink]Annonçant le Facteur de Confiance FastComments[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Sikkerhed]
+[category:Security]
 
 ###### [postdate]
 # [postlink]FastComments understøtter nu strenge indstillinger for tredjepartscookies[/postlink]

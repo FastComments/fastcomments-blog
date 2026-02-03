@@ -1,6 +1,6 @@
 ---
-[category:教程]
-[category:用户界面与定制]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]如何在链接下隐藏评论反馈[/postlink]

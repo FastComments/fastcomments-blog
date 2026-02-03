@@ -1,5 +1,5 @@
 ---
-[category:Tutoriels]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Utiliser FastComments à Plusieurs Endroits Sur La Même Page[/postlink]

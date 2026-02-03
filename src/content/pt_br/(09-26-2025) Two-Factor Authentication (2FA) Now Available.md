@@ -1,6 +1,6 @@
 ---
-[category:Segurança]
-[category:Recursos]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Autenticação em Duas Etapas (2FA) Agora Disponível[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:API & Desenvolvimento]
+[category:API & Development]
 
 ###### [postdate]
 # [postlink]Configurando SSO Com FastComments[/postlink]

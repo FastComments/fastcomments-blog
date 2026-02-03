@@ -1,5 +1,5 @@
 ---
-[category:IA & Apprentissage Machine]
+[category:AI & Machine Learning]
 ###### [postdate]
 # [postlink]La formation de détection de spam est maintenant par locataire[/postlink]
 

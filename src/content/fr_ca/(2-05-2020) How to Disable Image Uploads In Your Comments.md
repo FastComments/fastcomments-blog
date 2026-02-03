@@ -1,5 +1,5 @@
 ---
-[category:Tutoriels]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Comment désactiver les téléchargements d'images dans vos commentaires[/postlink]

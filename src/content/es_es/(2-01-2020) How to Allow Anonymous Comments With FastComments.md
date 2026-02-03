@@ -1,5 +1,5 @@
 ---
-[category:Tutoriales]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Cómo Permitir Comentarios Anónimos Con FastComments[/postlink]

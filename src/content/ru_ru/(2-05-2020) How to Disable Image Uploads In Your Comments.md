@@ -1,5 +1,5 @@
 ---
-[category:Учебники]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Как отключить загрузку изображений в ваших комментариях[/postlink]

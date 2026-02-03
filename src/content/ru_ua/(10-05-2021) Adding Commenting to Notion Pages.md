@@ -1,6 +1,6 @@
 ---
-[category:Интеграции]
-[category:Учебники]
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Добавление комментариев на страницы Notion[/postlink]
 

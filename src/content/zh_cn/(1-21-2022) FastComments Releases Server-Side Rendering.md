@@ -1,6 +1,6 @@
 ---
-[category:功能]
-[category:API与开发]
+[category:Features]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments发布服务器端渲染[/postlink]
 

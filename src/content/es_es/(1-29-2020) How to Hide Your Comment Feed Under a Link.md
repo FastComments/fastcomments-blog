@@ -1,6 +1,6 @@
 ---
-[category:Tutoriales]
-[category:Interfaz y Personalización]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]Cómo Ocultar Tu Flujo de Comentarios Bajo un Enlace[/postlink]

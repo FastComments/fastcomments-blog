@@ -1,5 +1,5 @@
 ---
-[category:Annonces]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]Programme de référence et d'affiliation FastComments[/postlink]

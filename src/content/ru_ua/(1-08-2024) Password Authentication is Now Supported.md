@@ -1,6 +1,6 @@
 ---
-[category:Безопасность]
-[category:Особенности]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Тепер підтримується автентифікація за паролем[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:Модерация]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Персонализирайте черния списък за коментари с FastComments[/postlink]

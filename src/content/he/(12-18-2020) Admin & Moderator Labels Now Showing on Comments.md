@@ -1,5 +1,5 @@
 ---
-[category:מאפיינים]
+[category:Features]
 ###### [postdate]
 # [postlink]תוויות מנהל ומmoderator עכשיו מופיעות בהערות[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:Özellikler]
-[category:Moderasyon]
+[category:Features]
+[category:Moderation]
 ###### [postdate]
 # [postlink]FastComments ile Yorumları Sabitleme[/postlink]
 

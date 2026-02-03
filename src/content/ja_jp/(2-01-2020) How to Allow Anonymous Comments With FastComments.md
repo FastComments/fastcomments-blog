@@ -1,5 +1,5 @@
 ---
-[category:チュートリアル]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]FastCommentsで匿名コメントを許可する方法[/postlink]

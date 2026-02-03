@@ -1,5 +1,5 @@
 ---
-[category:Модерация]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Одобрения теперь могут выполняться один раз для каждого пользователя[/postlink]
 

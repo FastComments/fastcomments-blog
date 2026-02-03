@@ -1,5 +1,5 @@
 ---
-[category:Moderatie]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Pas uw reacties blacklist aan met FastComments[/postlink]

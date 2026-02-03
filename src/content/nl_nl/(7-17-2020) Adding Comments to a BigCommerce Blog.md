@@ -1,5 +1,5 @@
 ---
-[category:Integraties]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Reacties toevoegen aan een BigCommerce Blog[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:Funkcije]
+[category:Features]
 
 ###### [postdate]
 

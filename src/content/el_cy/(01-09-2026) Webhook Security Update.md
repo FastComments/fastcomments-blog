@@ -1,6 +1,6 @@
 ---
-[category:Ασφάλεια]
-[category:Χαρακτηριστικά]
+[category:Security]
+[category:Features]
 [category:Webhooks]
 ###### [postdate]
 # [postlink]Ενημέρωση Ασφάλειας Webhook[/postlink]

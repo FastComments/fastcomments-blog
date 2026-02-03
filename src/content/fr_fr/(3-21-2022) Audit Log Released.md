@@ -1,5 +1,5 @@
 ---
-[category:Sécurité]
+[category:Security]
 
 ###### [postdate]
 # [postlink]Journal d'Audit Publié[/postlink]

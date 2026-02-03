@@ -1,5 +1,5 @@
 ---
-[category:Sécurité]
+[category:Security]
 
 ###### [postdate]
 # [postlink]Protéger les fils de commentaires avec l'authentification unique[/postlink]

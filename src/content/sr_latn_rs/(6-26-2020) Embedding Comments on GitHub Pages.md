@@ -1,5 +1,5 @@
 ---
-[category:Integracije]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Uključivanje komentara na GitHub Pages[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:Moderación]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Los Hilos de Comentarios Ahora Pueden Ser Cerrados Fácilmente[/postlink]

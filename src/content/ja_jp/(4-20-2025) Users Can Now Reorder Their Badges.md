@@ -1,5 +1,5 @@
 ---
-[category:機能]
+[category:Features]
 
 ###### [postdate]
 # [postlink]ユーザーは現在、バッジの順序を変更できます[/postlink]

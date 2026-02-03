@@ -1,5 +1,5 @@
 ---
-[category:機能]
+[category:Features]
 
 ###### [postdate]
 # [postlink]FastComments のデフォルトアバターを Gravatar を利用して設定する[/postlink]

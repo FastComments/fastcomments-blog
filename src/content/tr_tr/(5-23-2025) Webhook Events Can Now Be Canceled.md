@@ -1,5 +1,5 @@
 ---
-[category:API & Geliştirme]
+[category:API & Development]
 
 ###### [postdate]
 # [postlink]Webhook Olayları Artık İptal Edilebilir[/postlink]

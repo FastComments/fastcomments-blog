@@ -1,5 +1,5 @@
 ---
-[category:Seguridad]
+[category:Security]
 
 ###### [postdate]
 # [postlink]Protegiendo Hilos de Comentarios con Inicio de Sesión Único (SSO)[/postlink]

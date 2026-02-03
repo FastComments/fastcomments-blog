@@ -1,6 +1,6 @@
 ---
-[category:Značajke]
-[category:API i razvoj]
+[category:Features]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments objavljuje renderiranje na strani poslužitelja[/postlink]
 

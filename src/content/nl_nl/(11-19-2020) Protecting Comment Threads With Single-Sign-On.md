@@ -1,5 +1,5 @@
 ---
-[category:Beveiliging]
+[category:Security]
 
 ###### [postdate]
 # [postlink]Bescherming van Reactiedraden met Single-Sign-On[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Karakteristike]
+[category:Features]
 
 ###### [postdate]
 # [postlink]FastComments Podrazumevani Avatari Korišćenjem Gravatara[/postlink]

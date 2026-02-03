@@ -1,5 +1,5 @@
 ---
-[category:Moderacja]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Aktualizacja Moderacji - Odznaki na Stronie Moderacji[/postlink]

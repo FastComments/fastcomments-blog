@@ -1,5 +1,5 @@
 ---
-[category:Moderatie]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Moderatie-update - Badges op de Moderatiepagina[/postlink]

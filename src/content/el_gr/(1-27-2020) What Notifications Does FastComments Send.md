@@ -1,5 +1,5 @@
 ---
-[category:Χαρακτηριστικά]
+[category:Features]
 ###### [postdate]
 # [postlink]Ποιες ειδοποιήσεις στέλνει το FastComments;[/postlink]
 

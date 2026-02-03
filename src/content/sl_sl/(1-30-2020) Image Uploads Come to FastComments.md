@@ -1,5 +1,5 @@
 ---
-[category:Značilnosti]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Naložitev slik v FastComments[/postlink]

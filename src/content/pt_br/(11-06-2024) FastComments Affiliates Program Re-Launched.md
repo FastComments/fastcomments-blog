@@ -1,5 +1,5 @@
 ---
-[category:Anúncios]
+[category:Announcements]
 ###### [postdate]
 # [postlink]Programa de Afiliados da FastComments Re-Lançado[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:チュートリアル]
-[category:UIとカスタマイズ]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]リンクの下にコメントフィードを隠す方法[/postlink]

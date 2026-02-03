@@ -1,5 +1,5 @@
 ---
-[category:Модерация]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Създаване на екип от модератори на коментари с FastComments[/postlink]

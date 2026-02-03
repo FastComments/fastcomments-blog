@@ -1,5 +1,5 @@
 ---
-[category:Tutoriels]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Configurer la durée de conservation des commentaires non vérifiés[/postlink]

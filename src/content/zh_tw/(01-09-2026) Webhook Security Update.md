@@ -1,7 +1,7 @@
 ---
-[category:安全性]
-[category:功能]
-[category:Webhook]
+[category:Security]
+[category:Features]
+[category:Webhooks]
 ###### [postdate]
 # [postlink]Webhook 安全更新[/postlink]
 

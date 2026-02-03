@@ -1,5 +1,5 @@
 ---
-[category:Wydajność]
+[category:Performance]
 ###### [postdate]
 # [postlink]FastComments zaktualizowane do HTTP/2[/postlink]
 

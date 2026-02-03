@@ -1,5 +1,5 @@
 ---
-[category:Moderação]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Dando aos Moderadores o Quadro Completo no FastComments[/postlink]

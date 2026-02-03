@@ -1,5 +1,5 @@
 ---
-[category:Modération]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Interdiction et Interdiction Invisible avec FastComments[/postlink]

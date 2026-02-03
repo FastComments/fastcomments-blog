@@ -1,5 +1,5 @@
 ---
-[category:Moderatie]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Admin- en Moderatorcommentaren Zijn Nu Auto-Goedgekeurd en Beoordeeld[/postlink]

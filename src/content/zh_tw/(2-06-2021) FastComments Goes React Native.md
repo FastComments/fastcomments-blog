@@ -1,5 +1,5 @@
 ---
-[category:整合]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]FastComments 支援 React Native[/postlink]

@@ -1,6 +1,6 @@
 ---
-[category:功能]
-[category:用户界面与自定义]
+[category:Features]
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]介绍评论者姓名格式[/postlink]
 

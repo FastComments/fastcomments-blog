@@ -1,5 +1,5 @@
 ---
-[category:Segurança]
+[category:Security]
 
 ###### [postdate]
 # [postlink]FastComments Agora Suporta Configurações Rigorosas de Cookies de Terceiros[/postlink]

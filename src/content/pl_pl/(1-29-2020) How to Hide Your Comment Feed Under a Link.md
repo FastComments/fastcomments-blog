@@ -1,6 +1,6 @@
 ---
-[category:Tutoriale]
-[category:UI i Dostosowywanie]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]Jak ukryć swój kanał komentarzy pod linkiem[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Aankondigingen]
+[category:Announcements]
 ###### [postdate]
 # [postlink]FastComments - Het Disqus Alternatief voor de EU[/postlink]
 

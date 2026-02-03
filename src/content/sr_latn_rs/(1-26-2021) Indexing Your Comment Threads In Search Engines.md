@@ -1,5 +1,5 @@
 ---
-[category:Performanse]
+[category:Performance]
 ###### [postdate]
 # [postlink]Indeksiranje vaših komentara u pretraživačima[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:Modération]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Créer une équipe de modérateurs de commentaires avec FastComments[/postlink]

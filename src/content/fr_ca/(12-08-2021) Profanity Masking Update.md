@@ -1,5 +1,5 @@
 ---
-[category:Modération]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Mise à jour du Masquage de Profanités[/postlink]
 

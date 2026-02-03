@@ -1,5 +1,5 @@
 ---
-[category:Značajke]
+[category:Features]
 ###### [postdate]
 # [postlink]Objavljen novi widget za lajkove[/postlink]
 

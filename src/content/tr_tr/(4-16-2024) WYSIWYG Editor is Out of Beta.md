@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 
 ###### [postdate]
 # [postlink]FastComments WYSIWYG Editörü Beta Döneminden Çıktı[/postlink]

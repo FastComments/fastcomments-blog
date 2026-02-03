@@ -15,6 +15,7 @@
         "watch-windows": "nodemon --exec npm run \"build-windows\"",
         "watch-posix": "nodemon --exec npm run \"build-posix\"",
         "check-translations": "node src/check-translations.js",
+        "check-categories": "node src/check-categories.js",
         "translate": "node src/translate-with-gpt.js"
     },
     "devDependencies": {

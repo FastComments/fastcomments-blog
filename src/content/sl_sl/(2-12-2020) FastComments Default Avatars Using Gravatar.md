@@ -1,5 +1,5 @@
 ---
-[category:Značilnosti]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Privzeti Avatari FastComments z uporabo Gravatar[/postlink]

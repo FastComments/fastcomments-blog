@@ -1,5 +1,5 @@
 ---
-[category:Integracije]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Komentari za Jamstack[/postlink]
 

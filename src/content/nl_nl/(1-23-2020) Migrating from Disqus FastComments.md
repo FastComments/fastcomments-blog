@@ -1,6 +1,6 @@
 ---
-[category:Migratie]
-[category:Handleidingen]
+[category:Migration]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Migreren Van Disqus Naar FastComments[/postlink]
 

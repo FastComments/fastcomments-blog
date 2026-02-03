@@ -1,5 +1,5 @@
 ---
-[category:Anuncios]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]FastComments Ahora Está Respaldado en Múltiples Proveedores de Nube[/postlink]

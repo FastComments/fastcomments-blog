@@ -1,5 +1,5 @@
 ---
-[category:Moderação]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Atualização de Moderação - Distintivos na Página de Moderação[/postlink]

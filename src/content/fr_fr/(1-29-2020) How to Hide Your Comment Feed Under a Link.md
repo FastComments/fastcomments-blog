@@ -1,6 +1,6 @@
 ---
-[category:Tutoriels]
-[category:UI & Personnalisation]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]Comment cacher votre fil de commentaires sous un lien[/postlink]

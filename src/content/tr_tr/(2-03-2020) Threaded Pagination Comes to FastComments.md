@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Hiyerarşik Sayfalama FastComments’a Geliyor[/postlink]

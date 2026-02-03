@@ -1,5 +1,5 @@
 ---
-[category:API & Entwicklung]
+[category:API & Development]
 
 ###### [postdate]
 # [postlink]Neue Aggregation-API veröffentlicht[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Moderación]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Las Aprobaciones Ahora Pueden Hacerse Una Sola Vez Por Usuario[/postlink]
 

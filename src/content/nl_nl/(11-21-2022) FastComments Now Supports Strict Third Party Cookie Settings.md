@@ -1,5 +1,5 @@
 ---
-[category:Beveiliging]
+[category:Security]
 
 ###### [postdate]
 # [postlink]FastComments ondersteunt nu strikte instellingen voor cookies van derden[/postlink]

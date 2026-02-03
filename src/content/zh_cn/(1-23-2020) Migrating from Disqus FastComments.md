@@ -1,6 +1,6 @@
 ---
-[category:迁移]
-[category:教程]
+[category:Migration]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]从 Disqus 迁移到 FastComments[/postlink]
 

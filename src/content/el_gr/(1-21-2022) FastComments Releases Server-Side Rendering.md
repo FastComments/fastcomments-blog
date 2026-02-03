@@ -1,6 +1,6 @@
 ---
-[category:Χαρακτηριστικά]
-[category:API & Ανάπτυξη]
+[category:Features]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments Δημοσιεύει Απόδοση Από Διακομιστή[/postlink]
 

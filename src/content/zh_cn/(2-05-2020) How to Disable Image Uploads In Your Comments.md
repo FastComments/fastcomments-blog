@@ -1,5 +1,5 @@
 ---
-[category:教程]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]如何在评论中禁用图片上传[/postlink]

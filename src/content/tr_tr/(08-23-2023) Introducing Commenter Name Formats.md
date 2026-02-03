@@ -1,6 +1,6 @@
 ---
-[category:Özellikler]
-[category:Arayüz & Özelleştirme]
+[category:Features]
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]Yorumcu İsim Formatlarını Tanıtıyoruz[/postlink]
 

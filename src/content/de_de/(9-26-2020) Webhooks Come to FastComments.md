@@ -1,5 +1,5 @@
 ---
-[category:API & Entwicklung]
+[category:API & Development]
 ###### [postdate]
 # [postlink]Webhooks kommen zu FastComments[/postlink]
 

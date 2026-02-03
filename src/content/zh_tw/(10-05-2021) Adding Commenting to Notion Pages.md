@@ -1,6 +1,6 @@
 ---
-[category:整合]
-[category:教學]
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]將評論添加到 Notion 頁面[/postlink]
 

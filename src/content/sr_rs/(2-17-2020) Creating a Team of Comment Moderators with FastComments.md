@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Kreiranje tima moderatora komentara sa FastComments[/postlink]

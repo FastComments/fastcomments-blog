@@ -1,6 +1,6 @@
 ---
-[category:Sikkerhed]
-[category:Funktioner]
+[category:Security]
+[category:Features]
 [category:Webhooks]
 ###### [postdate]
 # [postlink]Webhook Sikkerhedsopdatering[/postlink]

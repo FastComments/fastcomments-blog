@@ -1,5 +1,5 @@
 ---
-[category:Moderación]
+[category:Moderation]
 ###### [postdate]
 
 # [postlink]La moderación de comentarios ahora es más fácil[/postlink]

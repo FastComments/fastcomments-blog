@@ -1,6 +1,6 @@
 ---
-[category:Güvenlik]
-[category:Özellikler]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]İki Faktörlü Kimlik Doğrulama (2FA) Artık Mevcut[/postlink]
 

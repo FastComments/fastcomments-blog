@@ -1,6 +1,6 @@
 ---
-[category:Beveiliging]
-[category:Functies]
+[category:Security]
+[category:Features]
 [category:Webhooks]
 ###### [postdate]
 # [postlink]Webhook Beveiligingsupdate[/postlink]

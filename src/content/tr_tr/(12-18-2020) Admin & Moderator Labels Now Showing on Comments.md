@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 ###### [postdate]
 # [postlink]Artık Yorumlarda Yönetici ve Moderatör Etiketleri Görünüyor[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:API & Razvoj]
+[category:API & Development]
 
 ###### [postdate]
 # [postlink]FastComments White Labeling[/postlink]

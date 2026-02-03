@@ -1,5 +1,5 @@
 ---
-[category:Značajke]
+[category:Features]
 
 ###### [postdate]
 # [postlink]FastComments Dodaje Podršku za #HashTagove[/postlink]

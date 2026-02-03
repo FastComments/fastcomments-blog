@@ -1,6 +1,6 @@
 ---
-[category:Modération]
-[category:Tutoriels]
+[category:Moderation]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Comment prévenir le spam dans vos commentaires[/postlink]
 

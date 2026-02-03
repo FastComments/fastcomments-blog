@@ -1,6 +1,6 @@
 ---
-[category:Performanse]
-[category:Karakteristike]
+[category:Performance]
+[category:Features]
 ###### [postdate]
 # [postlink]Uklanjanje iframe-a za SEO[/postlink]
 

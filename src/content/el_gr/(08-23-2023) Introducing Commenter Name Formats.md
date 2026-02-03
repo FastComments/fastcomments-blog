@@ -1,6 +1,6 @@
 ---
-[category:Χαρακτηριστικά]
-[category:Διεπαφή & Προσαρμογή]
+[category:Features]
+[category:UI & Customization]
 ###### [postdate]
 # [postlink]Εισάγουμε τα Φορμάτ Όνοματος Σχολιαστή[/postlink]
 

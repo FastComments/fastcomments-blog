@@ -1,5 +1,5 @@
 ---
-[category:Sécurité]
+[category:Security]
 
 ###### [postdate]
 # [postlink]FastComments prend maintenant en charge les paramètres stricts des cookies tiers[/postlink]

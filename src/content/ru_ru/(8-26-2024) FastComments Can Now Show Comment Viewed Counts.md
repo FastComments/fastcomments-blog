@@ -1,5 +1,5 @@
 ---
-[category:Аналитика]
+[category:Analytics]
 ###### [postdate]
 # [postlink]FastComments теперь может показывать количество просмотренных комментариев[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:Tutoriali]
-[category:SUčelje & Prilagodba]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]Kako sakriti svoj komentar pod linkom[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Tutoriels]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Comment approuver automatiquement uniquement les commentaires vérifiés[/postlink]

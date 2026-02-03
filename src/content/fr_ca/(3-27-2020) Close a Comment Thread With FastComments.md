@@ -1,5 +1,5 @@
 ---
-[category:Fonctionnalités]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Fermer un fil de commentaire avec FastComments[/postlink]

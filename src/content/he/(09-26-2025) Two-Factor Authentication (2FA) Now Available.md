@@ -1,6 +1,6 @@
 ---
-[category:אבטחה]
-[category:תכונות]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]אימות דו-שלבי (2FA) זמין עכשיו[/postlink]
 

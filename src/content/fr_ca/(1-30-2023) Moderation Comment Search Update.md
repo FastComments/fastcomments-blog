@@ -1,6 +1,6 @@
 ---
-[category:Modération]
-[category:Fonctionnalités]
+[category:Moderation]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Mise à jour de la recherche de commentaires en modération[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Integrationen]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]FastComments ist auf WordPress![/postlink]

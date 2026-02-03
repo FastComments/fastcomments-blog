@@ -1,6 +1,6 @@
 ---
-[category:Características]
-[category:IA y Aprendizaje Automático]
+[category:Features]
+[category:AI & Machine Learning]
 ###### [postdate]
 # [postlink]Nuevo Filtro de Spam Basado en ChatGPT 4.[/postlink]
 

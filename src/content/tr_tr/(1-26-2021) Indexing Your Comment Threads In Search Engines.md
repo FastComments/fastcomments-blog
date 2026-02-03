@@ -1,5 +1,5 @@
 ---
-[category:Performans]
+[category:Performance]
 ###### [postdate]
 # [postlink]Yorum Dizilerinizi Arama Motorlarında Dizine Ekleme[/postlink]
 

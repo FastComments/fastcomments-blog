@@ -1,5 +1,5 @@
 ---
-[category:Integracije]
+[category:Integrations]
 ###### [postdate]
 # [postlink]Ugrađivanje Komentara na GatsbyJS Sajtu sa FastComments[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:教程]
-[category:介面與自訂]
+[category:Tutorials]
+[category:UI & Customization]
 {{#unless isPost}}
 ###### [postdate]
 {{/unless}}

@@ -1,6 +1,6 @@
 ---
-[category:Χαρακτηριστικά]
-[category:Τεχνητή Νοημοσύνη & Μηχανική Μάθηση]
+[category:Features]
+[category:AI & Machine Learning]
 ###### [postdate]
 # [postlink]Νέος φίλτρο spam βασισμένο σε ChatGPT 4.[/postlink]
 

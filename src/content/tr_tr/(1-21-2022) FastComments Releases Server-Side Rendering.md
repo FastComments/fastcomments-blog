@@ -1,6 +1,6 @@
 ---
-[category:Özellikler]
-[category:API & Geliştirme]
+[category:Features]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments Sunucu Tarafı Render'ı Yayınladı[/postlink]
 

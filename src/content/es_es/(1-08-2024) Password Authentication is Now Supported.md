@@ -1,6 +1,6 @@
 ---
-[category:Seguridad]
-[category:Características]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Ahora se Soporta la Autenticación por Contraseña[/postlink]
 

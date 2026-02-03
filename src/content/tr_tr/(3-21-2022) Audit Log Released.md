@@ -1,5 +1,5 @@
 ---
-[category:Güvenlik]
+[category:Security]
 
 ###### [postdate]
 # [postlink]Denetim Günlüğü Yayınlandı[/postlink]

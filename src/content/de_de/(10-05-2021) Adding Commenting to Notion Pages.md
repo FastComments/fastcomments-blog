@@ -1,5 +1,5 @@
 ---
-[category:Integrationen]
+[category:Integrations]
 [category:Tutorials]
 ###### [postdate]
 # [postlink]Kommentare zu Notion-Seiten hinzufügen[/postlink]

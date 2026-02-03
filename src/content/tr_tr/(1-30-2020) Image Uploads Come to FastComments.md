@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Görsel Yüklemeleri FastComments'a Getirdik[/postlink]

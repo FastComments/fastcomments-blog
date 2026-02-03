@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Tam Metin Arama FastComments'e Geliyor[/postlink]

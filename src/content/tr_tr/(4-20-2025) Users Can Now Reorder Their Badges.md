@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Kullanıcılar Artık Rozetlerini Yeniden Sıralayabilirler[/postlink]

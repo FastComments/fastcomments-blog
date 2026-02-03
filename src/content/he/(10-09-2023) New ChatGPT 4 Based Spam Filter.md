@@ -1,6 +1,6 @@
 ---
-[category:מאפיינים]
-[category:בינה מלאכותית ולמידת מכונה]
+[category:Features]
+[category:AI & Machine Learning]
 ###### [תאריך פוסט]
 # [postlink]מסנן דואר זבל חדש מבוסס ChatGPT 4.[/postlink]
 

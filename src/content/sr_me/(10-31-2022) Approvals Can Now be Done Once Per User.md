@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Odobrenja Sada Mogu Biti Izvršena Jednom Po Korisniku[/postlink]
 

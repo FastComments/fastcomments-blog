@@ -1,5 +1,5 @@
 ---
-[category:Moderação]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Personalize sua Blacklist de Comentários com o FastComments[/postlink]

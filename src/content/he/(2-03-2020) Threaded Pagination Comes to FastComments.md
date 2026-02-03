@@ -1,5 +1,5 @@
 ---
-[category:מאפיינים]
+[category:Features]
 
 ###### [postdate]
 # [postlink]הפניית עמודים מסודרת מגיעה ל-FastComments[/postlink]

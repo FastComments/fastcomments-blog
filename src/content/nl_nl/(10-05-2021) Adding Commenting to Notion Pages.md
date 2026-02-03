@@ -1,6 +1,6 @@
 ---
-[category:Integraties]
-[category:Handleidingen]
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Reacties Toevoegen aan Notion Pagina's[/postlink]
 

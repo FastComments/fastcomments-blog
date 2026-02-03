@@ -1,6 +1,6 @@
 ---
-[category:Tutoriais]
-[category:UI & Personalização]
+[category:Tutorials]
+[category:UI & Customization]
 {{#unless isPost}}
 ###### [postdate]
 {{/unless}}

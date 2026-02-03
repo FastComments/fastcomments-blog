@@ -1,6 +1,6 @@
 ---
-[category:Sécurité]
-[category:Fonctionnalités]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]L'authentification à deux facteurs (2FA) maintenant disponible[/postlink]
 

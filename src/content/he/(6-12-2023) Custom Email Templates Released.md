@@ -1,5 +1,5 @@
 ---
-[category:תכונות]
+[category:Features]
 ###### [postdate]
 # [postlink]הוצאת תבניות אימייל בהתאמה אישית[/postlink]
 

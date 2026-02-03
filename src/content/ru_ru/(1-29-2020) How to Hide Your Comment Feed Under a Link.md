@@ -1,6 +1,6 @@
 ---
-[category:Учебники]
-[category:Интерфейс и Настройка]
+[category:Tutorials]
+[category:UI & Customization]
 
 ###### [postdate]
 # [postlink]Как скрыть вашу ленту комментариев под ссылкой[/postlink]

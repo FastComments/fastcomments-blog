@@ -1,6 +1,6 @@
 ---
-[category:성능]
-[category:기능]
+[category:Performance]
+[category:Features]
 ###### [postdate]
 # [postlink]SEO를 위한 iframe 제거[/postlink]
 

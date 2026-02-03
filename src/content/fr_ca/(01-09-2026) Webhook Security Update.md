@@ -1,6 +1,6 @@
 ---
-[category:Sécurité]
-[category:Caractéristiques]
+[category:Security]
+[category:Features]
 [category:Webhooks]
 ###### [postdate]
 # [postlink]Mise à jour de la sécurité des Webhooks[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Moderatie]
+[category:Moderation]
 [category:Tutorials]
 ###### [postdate]
 # [postlink]Hoe spamberichten in uw opmerkingen te voorkomen[/postlink]

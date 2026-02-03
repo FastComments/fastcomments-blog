@@ -1,6 +1,6 @@
 ---
-[category:Модерация]
-[category:Учебники]
+[category:Moderation]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Как предотвратить спам в ваших комментариях[/postlink]
 

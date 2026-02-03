@@ -1,5 +1,5 @@
 ---
-[category:Tutoriales]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Depuración de Su Instalación de FastComments Hecha Más Fácil[/postlink]
 

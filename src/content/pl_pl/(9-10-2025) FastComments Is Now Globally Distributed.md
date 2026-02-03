@@ -1,7 +1,7 @@
 ---
-[category:Ogłoszenia]
-[category:Wydajność]
-[category:API i Rozwój]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments jest teraz globalnie rozdzielony[/postlink]
 

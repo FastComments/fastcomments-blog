@@ -1,6 +1,6 @@
 ---
-[category:Značajke]
-[category:Moderacija]
+[category:Features]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Piniranje komentara s FastComments[/postlink]
 

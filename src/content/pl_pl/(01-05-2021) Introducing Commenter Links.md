@@ -1,5 +1,5 @@
 ---
-[category:Cechy]
+[category:Features]
 ###### [data publikacji]
 # [link do posta]Wprowadzenie Linków Komentujących[/link do posta]
 

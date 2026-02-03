@@ -1,7 +1,7 @@
 ---
-[category:Безопасность]
-[category:Функции]
-[category:Вебхуки]
+[category:Security]
+[category:Features]
+[category:Webhooks]
 ###### [postdate]
 # [postlink]Обновление безопасности вебхуков[/postlink]
 

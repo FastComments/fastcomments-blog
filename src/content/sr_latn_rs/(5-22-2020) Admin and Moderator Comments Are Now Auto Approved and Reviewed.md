@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Komentari administratora i moderatora sada se automatski odobravaju i pregledaju[/postlink]

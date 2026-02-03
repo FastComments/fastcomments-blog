@@ -1,6 +1,6 @@
 ---
-[category:Sikkerhed]
-[category:Funktioner]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]To-faktor-autentifikation (2FA) nu tilgængelig[/postlink]
 

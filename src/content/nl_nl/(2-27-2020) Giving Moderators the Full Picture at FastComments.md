@@ -1,5 +1,5 @@
 ---
-[category:Moderatie]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Moderators Het Volledige Beeld Geven bij FastComments[/postlink]

@@ -1,5 +1,5 @@
 ---
-[category:Özellikler]
+[category:Features]
 ###### [postdate]
 # [postlink]Yorumcular Artık Yorumlarını Silebiliyor[/postlink]
 

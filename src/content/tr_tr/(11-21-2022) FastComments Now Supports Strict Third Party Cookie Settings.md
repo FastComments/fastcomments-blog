@@ -1,5 +1,5 @@
 ---
-[category:Güvenlik]
+[category:Security]
 
 ###### [postdate]
 # [postlink]FastComments Artık Katı Üçüncü Taraf Çerez Ayarlarını Destekliyor[/postlink]

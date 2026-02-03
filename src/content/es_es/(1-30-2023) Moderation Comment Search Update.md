@@ -1,6 +1,6 @@
 ---
-[category:Moderación]
-[category:Características]
+[category:Moderation]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Actualización de Búsqueda de Comentarios en Moderación[/postlink]

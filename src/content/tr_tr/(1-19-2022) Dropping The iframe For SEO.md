@@ -1,6 +1,6 @@
 ---
-[category:Performans]
-[category:Özellikler]
+[category:Performance]
+[category:Features]
 ###### [postdate]
 # [postlink]SEO için iframe'leri Kaldırma[/postlink]
 

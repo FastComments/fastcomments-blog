@@ -1,5 +1,5 @@
 ---
-[category:Χαρακτηριστικά]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Ανεβάστε Εικόνες στο FastComments[/postlink]

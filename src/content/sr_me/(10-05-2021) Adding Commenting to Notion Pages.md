@@ -1,6 +1,6 @@
 ---
-[category:Integracije]
-[category:Tutorijali]
+[category:Integrations]
+[category:Tutorials]
 ###### [postdate]
 # [postlink]Dodavanje komentara na Notion stranice[/postlink]
 

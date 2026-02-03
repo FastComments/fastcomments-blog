@@ -1,6 +1,6 @@
 ---
-[category:Integracje]
-[category:API & Rozwój]
+[category:Integrations]
+[category:API & Development]
 ###### [postdate]
 # [postlink]Dodaj Czaty na Żywo do Aplikacji Natywnych z FastComments React Native[/postlink]
 

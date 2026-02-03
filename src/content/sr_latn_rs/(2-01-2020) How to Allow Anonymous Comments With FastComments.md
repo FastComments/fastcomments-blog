@@ -1,5 +1,5 @@
 ---
-[category:Tutoriali]
+[category:Tutorials]
 
 ###### [postdate]
 # [postlink]Kako omogućiti anonimne komentare uz FastComments[/postlink]

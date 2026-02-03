@@ -1,6 +1,6 @@
 ---
-[category:Integrações]
-[category:API & Desenvolvimento]
+[category:Integrations]
+[category:API & Development]
 ###### [postdate]
 # [postlink]Adicione um Chat Ao Vivo a Aplicativos Nativos Com FastComments React Native[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:Bezbednost]
-[category:Karakteristike]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]Podrška za autentifikaciju lozinkom je sada dostupna[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:Moderacija]
+[category:Moderation]
 ###### [postdate]
 
 # [postlink]Olakšano moderisanje komentara[/postlink]

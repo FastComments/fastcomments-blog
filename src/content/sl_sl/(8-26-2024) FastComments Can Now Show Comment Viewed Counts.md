@@ -1,5 +1,5 @@
 ---
-[category:Analitika]
+[category:Analytics]
 ###### [postdate]
 # [postlink]FastComments zdaj lahko prikaže število ogledov komentarjev[/postlink]
 

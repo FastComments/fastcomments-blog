@@ -1,5 +1,5 @@
 ---
-[category:Anuncios]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]Programa de Referidos y Afiliados de FastComments[/postlink]

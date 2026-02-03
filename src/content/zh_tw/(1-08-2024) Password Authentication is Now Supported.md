@@ -1,6 +1,6 @@
 ---
-[category:安全性]
-[category:功能]
+[category:Security]
+[category:Features]
 ###### [postdate]
 # [postlink]目前支持密碼驗證[/postlink]
 

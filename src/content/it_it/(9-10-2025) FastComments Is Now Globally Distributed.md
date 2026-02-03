@@ -1,7 +1,7 @@
 ---
-[category:Annunci]
-[category:Prestazioni]
-[category:API & Sviluppo]
+[category:Announcements]
+[category:Performance]
+[category:API & Development]
 ###### [postdate]
 # [postlink]FastComments Ora È Globalmente Distribuito[/postlink]
 

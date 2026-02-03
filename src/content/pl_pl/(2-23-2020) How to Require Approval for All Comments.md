@@ -1,5 +1,5 @@
 ---
-[category:Moderacja]
+[category:Moderation]
 
 ###### [postdate]
 # [postlink]Jak wymagać zatwierdzenia dla wszystkich komentarzy[/postlink]

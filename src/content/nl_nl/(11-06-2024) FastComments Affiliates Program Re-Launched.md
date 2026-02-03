@@ -1,5 +1,5 @@
 ---
-[category:Aankondigingen]
+[category:Announcements]
 ###### [postdate]
 # [postlink]FastComments Affiliates Program opnieuw gelanceerd[/postlink]
 

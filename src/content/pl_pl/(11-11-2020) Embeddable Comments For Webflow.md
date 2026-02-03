@@ -1,5 +1,5 @@
 ---
-[category:Integracje]
+[category:Integrations]
 
 ###### [postdate]
 # [postlink]Osadzane komentarze dla Webflow[/postlink]

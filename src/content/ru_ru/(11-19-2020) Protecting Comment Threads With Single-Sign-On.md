@@ -1,5 +1,5 @@
 ---
-[category:Безопасность]
+[category:Security]
 
 ###### [postdate]
 # [postlink]Защита комментариев с помощью единой авторизации (SSO)[/postlink]

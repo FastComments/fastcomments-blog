@@ -1,5 +1,5 @@
 ---
-[category:Caractéristiques]
+[category:Features]
 
 ###### [postdate]
 # [postlink]Les téléchargements d'images arrivent sur FastComments[/postlink]

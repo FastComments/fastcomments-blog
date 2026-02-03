@@ -1,6 +1,6 @@
 ---
-[category:Özellikler]
-[category:Moderasyon]
+[category:Features]
+[category:Moderation]
 ###### [postdate]
 # [postlink]Yorumlarda Kullanılan Diller Artık Sınırlanabilir[/postlink]
 
