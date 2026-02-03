@@ -60,7 +60,7 @@
                     {{#if this.categories.length}}
                     <div class="post-categories">
                         {{#each this.categories}}
-                        <a href="/category-{{toLowerCase (replace this " " "-")}}.html" class="category-tag">{{this}}</a>
+                        <a href="/{{categoryUrl this ../../locale}}" class="category-tag">{{translateCategory this ../../t}}</a>
                         {{/each}}
                     </div>
                     {{/if}}
