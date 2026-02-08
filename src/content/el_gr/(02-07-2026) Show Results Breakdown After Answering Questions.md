@@ -1,6 +1,6 @@
 ---
-[category:Χαρακτηριστικά]
-[category:Αξιολογήσεις & Κριτικές]
+[category:Features]
+[category:Ratings & Reviews]
 ###### [postdate]
 # [postlink]Εμφάνιση Ανάλυσης Αποτελεσμάτων Μετά την Απάντηση σε Ερωτήσεις[/postlink]
 

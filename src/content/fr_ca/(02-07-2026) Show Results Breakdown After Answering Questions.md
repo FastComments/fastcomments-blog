@@ -1,6 +1,6 @@
 ---
-[category:Fonctionnalités]
-[category:Évaluations & Avis]
+[category:Features]
+[category:Ratings & Reviews]
 ###### [postdate]
 # [postlink]Afficher la répartition des résultats après avoir répondu aux questions[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:Funcionalidades]
-[category:Calificaciones y Reseñas]
+[category:Features]
+[category:Ratings & Reviews]
 ###### [postdate]
 # [postlink]Mostrar Desglose de Resultados Después de Responder Preguntas[/postlink]
 

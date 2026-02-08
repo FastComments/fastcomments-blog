@@ -1,6 +1,6 @@
 ---
-[category:Značajke]
-[category:Ocjene & Recenzije]
+[category:Features]
+[category:Ratings & Reviews]
 ###### [postdate]
 # [postlink]Prikaži raspodjelu rezultata nakon odgovaranja na pitanja[/postlink]
 

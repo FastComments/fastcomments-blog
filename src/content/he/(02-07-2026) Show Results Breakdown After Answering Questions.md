@@ -1,6 +1,6 @@
 ---
-[category:מאפיינים]
-[category:דירוגים וסקירות]
+[category:Features]
+[category:Ratings & Reviews]
 ###### [postdate]
 # [postlink]הצג פיצול תוצאות לאחר מענה על שאלות[/postlink]
 

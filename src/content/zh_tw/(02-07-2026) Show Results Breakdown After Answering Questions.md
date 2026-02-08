@@ -1,6 +1,6 @@
 ---
-[category:功能]
-[category:評價與評論]
+[category:Features]
+[category:Ratings & Reviews]
 ###### [postdate]
 # [postlink]回答問題後顯示結果分析[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:Özellikler]
-[category:Derecelendirmeler & Yorumlar]
+[category:Features]
+[category:Ratings & Reviews]
 ###### [postdate]
 # [postlink]Soruları Yanıtladıktan Sonra Sonuç Dağılımını Göster[/postlink]
 

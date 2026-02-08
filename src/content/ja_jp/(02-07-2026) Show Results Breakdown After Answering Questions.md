@@ -1,6 +1,6 @@
 ---
-[category:機能]
-[category:評価とレビュー]
+[category:Features]
+[category:Ratings & Reviews]
 ###### [postdate]
 # [postlink]質問に答えた後の結果の詳細を表示する[/postlink]
 
