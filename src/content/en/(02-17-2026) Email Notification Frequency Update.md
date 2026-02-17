@@ -4,7 +4,7 @@
 # [postlink]Email Notification Frequency Update[/postlink]
 
 {{#unless isPost}}
-Users can now control how often they receive email notifications for new comments and replies — every minute, hourly digest, or daily digest — with a single shared setting, plus per-subscription overrides.
+Users can now control how often they receive email notifications for new comments and replies, every minute, hourly digest, or daily digest, with a single shared setting, plus per-subscription overrides.
 {{/unless}}
 
 {{#isPost}}
