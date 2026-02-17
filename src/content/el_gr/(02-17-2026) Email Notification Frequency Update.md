@@ -1,6 +1,6 @@
 ---
-[category:Χαρακτηριστικά]
-[category:Ανακοινώσεις]
+[category:Features]
+[category:Announcements]
 ###### [postdate]
 # [postlink]Ενημέρωση Συχνότητας Ειδοποιήσεων μέσω Email[/postlink]
 

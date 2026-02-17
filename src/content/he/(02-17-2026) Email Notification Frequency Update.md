@@ -1,6 +1,6 @@
 ---
-[category:תכונות]
-[category:הודעות]
+[category:Features]
+[category:Announcements]
 ###### [תאריך פוסט]
 # [linkפוסט]עדכון תדירות הודעות דוא"ל[/linkפוסט]
 

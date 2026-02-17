@@ -1,6 +1,6 @@
 ---
-[category:Özellikler]
-[category:Duyurular]
+[category:Features]
+[category:Announcements]
 ###### [postdate]
 # [postlink]E-posta Bildirim Sıklığı Güncellemesi[/postlink]
 

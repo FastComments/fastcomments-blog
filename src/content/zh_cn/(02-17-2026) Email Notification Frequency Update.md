@@ -1,6 +1,6 @@
 ---
-[category:功能]
-[category:公告]
+[category:Features]
+[category:Announcements]
 ###### [发帖日期]
 # [postlink]电子邮件通知频率更新[/postlink]
 

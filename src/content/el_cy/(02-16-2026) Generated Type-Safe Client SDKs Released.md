@@ -1,7 +1,7 @@
 ---
 ---
 [category:API & Development]
-[category:Ανακοινώσεις]
+[category:Announcements]
 
 ###### [postdate]
 # [postlink]Δημοσιεύτηκαν Γεννημένες Τύπου-Ασφαλείς SDK Πελάτη[/postlink]
