@@ -2,44 +2,44 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Opdatering af e-mail notifikationsfrekvens[/postlink]
+# [postlink]Opdatering af E-mail Notifikationsfrekvens[/postlink]
 
 {{#unless isPost}}
-Brugere kan nu kontrollere, hvor ofte de modtager e-mail notifikationer for nye kommentarer og svar — hvert minut, timeoversigt eller daglig oversigt — med en enkelt fælles indstilling, plus specifikke overskrivninger pr. abonnement.
+Brugere kan nu styre, hvor ofte de modtager e-mail notifikationer for nye kommentarer og svar, hver minut, timelig opsummering eller daglig opsummering, med en enkelt delt indstilling, plus individuelle abonnementsoverride.
 {{/unless}}
 
 {{#isPost}}
 
-### Hvad er nyt
+### Hvad er Nyt
 
-Vi har tilføjet en **Ny Kommentar Notifikationsfrekvens** indstilling, der styrer, hvor ofte du modtager e-mail notifikationer for både svarnotifikationer og lejers (ny kommentar) notifikationer. De tre muligheder er:
+Vi har tilføjet en **Frekvens for Notifikationer om Nye Kommentarer** indstilling, der styrer, hvor ofte du modtager e-mail notifikationer for både svarnotifikationer og lejer (ny kommentar) notifikationer. De tre muligheder er:
 
-- **Hvert minut** - modtag en e-mail så snart nye kommentarer ankommer (tjekket hvert minut).
-- **Timeoversigt** - modtag et samlet resumé af nye kommentarer én gang i timen.
-- **Daglig oversigt** - modtag et samlet resumé af nye kommentarer én gang om dagen.
+- **Hver minut** - modtag en e-mail så snart nye kommentarer ankommer (tjekkes hver minut).
+- **Timelig opsummering** - modtag en samlet oversigt over nye kommentarer en gang i timen.
+- **Daglig opsummering** - modtag en samlet oversigt over nye kommentarer en gang om dagen.
 
-Denne indstilling er tilgængelig for både lejeradministratorer og kommentatorer og gælder for alle e-mail notifikationer om kommentarer. Bemærk, at @mention notifikationer altid sendes straks uanset denne indstilling.
+Denne indstilling er tilgængelig for både lejeradministratorer og kommentatorer, og gælder for alle kommentarnotifikations-e-mails. Bemærk, at @mention notifikationer altid sendes med det samme uanset denne indstilling.
 
-Du kan også overskrive frekvensen på et pr-abonnement basis i abonnements tabellen for mere præcis kontrol over individuelle sider.
+Du kan også overstyre frekvensen på et per-abonnement basis i abonnementstabellen, for finere kontrol over individuelle sider.
 
-### Sådan konfigureres det
+### Hvordan Man Konfigurerer Det
 
 1. Gå til dine [Notifikationsindstillinger](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Brug dropdown-menuen **Ny Kommentar Notifikationsfrekvens** til at indstille din foretrukne frekvens.
-3. Hvis ønskes, overskriv frekvensen for individuelle abonnementer i abonnements tabellen.
-4. Klik på **Gem ændringer**.
+2. Brug dropdown-menuen **Frekvens for Notifikationer om Nye Kommentarer** til at indstille din foretrukne frekvens.
+3. Valgfrit, overstyr frekvensen for individuelle abonnementer i abonnementstabellen.
+4. Klik på **Gem Ændringer**.
 
-Standard er **Hvert minut**, hvilket svarer til den tidligere adfærd.
+Standard er **Hver minut**, hvilket svarer til den tidligere adfærd.
 
 ### API Support
 
-Notifikationsfrekvensen er også tilgængelig via API'en. Brugerindstillingen er feltet <div class="code">notificationFrequency</div>, og overskrivninger pr. abonnement kan indstilles via abonnementets <div class="code">notificationFrequency</div> felt. Se [API-dokumentationen](https://docs.fastcomments.com/guide-api.html) for detaljer.
+Notifikationsfrekvensen er også tilgængelig via API'en. Bruger-niveau indstillingen er `notificationFrequency` feltet, og per-abonnement overrides kan indstilles via abonnementets `notificationFrequency` felt. Se [API dokumentationen](https://docs.fastcomments.com/guide-api.html) for detaljer.
 
-### Afslutning
+### Afslutningsvis
 
-Dette giver brugerne kontrol over deres indbakke uden at skulle afmelde sider helt. Én indstilling dækker nu både svar- og lejer-notifikationer, hvilket gør det lettere at administrere.
+Dette giver brugerne kontrol over deres indbakke uden at skulle afmelde sig fra sider helt. Én indstilling dækker nu både svar- og lejernotifikationer, hvilket gør det enklere at administrere.
 
-Lad os vide herunder, hvis du har feedback!
+Lad os vide nedenfor, hvis du har nogen feedback!
 
 Skål!
 

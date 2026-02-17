@@ -5,7 +5,7 @@
 # [postlink]Email Notification Frequency Update[/postlink]
 
 {{#unless isPost}}
-Users can now control how often they receive email notifications for new comments and replies — every minute, hourly digest, or daily digest — with a single shared setting, plus per-subscription overrides.
+Users can now control how often they receive email notifications for new comments and replies, every minute, hourly digest, or daily digest, with a single shared setting, plus per-subscription overrides.
 {{/unless}}
 
 {{#isPost}}
@@ -33,11 +33,11 @@ The default is **Every minute**, which matches the previous behavior.
 
 ### API Support
 
-The notification frequency is also available via the API. The user-level setting is the <div class="code">notificationFrequency</div> field, and per-subscription overrides can be set via the subscription's <div class="code">notificationFrequency</div> field. See the [API documentation](https://docs.fastcomments.com/guide-api.html) for details.
+The notification frequency is also available via the API. The user-level setting is the `notificationFrequency` field, and per-subscription overrides can be set via the subscription's `notificationFrequency` field. See the [API documentation](https://docs.fastcomments.com/guide-api.html) for details.
 
 ### In Conclusion
 
-This gives users control over their inbox without having to unsubscribe from pages entirely. One setting now covers both reply and tenant notifications, making it simpler to manage.
+This gives users control over their inbox without having to unsubscribe from pages entirely. One setting now covers both reply and tenant notifications, making it easier to manage.
 
 Let us know below if you have any feedback!
 

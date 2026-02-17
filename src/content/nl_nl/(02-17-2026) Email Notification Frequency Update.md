@@ -2,49 +2,47 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Update van de E-mailmeldfrequentie[/postlink]
+# [postlink]Update E-mailnotificatiefrequentie[/postlink]
 
 {{#unless isPost}}
-Gebruikers kunnen nu zelf bepalen hoe vaak ze e-mailmeldingen voor nieuwe opmerkingen en antwoorden ontvangen — elke minuut, per uursamenvatting, of per dagsamenvatting — met een enkele gedeelde instelling, plus per-abonnement overrides.
+Gebruikers kunnen nu controleren hoe vaak ze e-mailnotificaties ontvangen voor nieuwe reacties en opmerkingen, elk minuut, een uurlijkse samenvatting of een dagelijkse samenvatting, met een enkele gedeelde instelling, plus per-abonnement overrides.
 {{/unless}}
 
 {{#isPost}}
 
-### Wat is nieuw
+### Wat is Nieuw
 
-We hebben een **Instelling voor de Frequentie van Nieuwe Opmerking Meldingen** toegevoegd die bepaalt hoe vaak je e-mailmeldingen ontvangt voor zowel antwoordmeldingen als huurder (nieuwe opmerking) meldingen. De drie opties zijn:
+We hebben een **Nieuwe Reactie Notificatiefrequentie** instelling toegevoegd die bepaalt hoe vaak je e-mailnotificaties ontvangt voor zowel reactie-notificaties als tenant (nieuwe reactie) notificaties. De drie opties zijn:
 
-- **Elke minuut** - ontvang een e-mail zodra nieuwe opmerkingen binnenkomen (elke minuut gecontroleerd).
-- **Uursamenvatting** - ontvang een gebundelde samenvatting van nieuwe opmerkingen één keer per uur.
-- **Dagsamenvatting** - ontvang een gebundelde samenvatting van nieuwe opmerkingen één keer per dag.
+- **Elke minuut** - ontvang een e-mail zodra er nieuwe reacties binnenkomen (elk minuut gecontroleerd).
+- **Uurlijke samenvatting** - ontvang een gebundelde samenvatting van nieuwe reacties eenmaal per uur.
+- **Dagelijkse samenvatting** - ontvang een gebundelde samenvatting van nieuwe reacties eenmaal per dag.
 
-Deze instelling is beschikbaar voor zowel huurderbeheerders als commentatoren, en is van toepassing op alle e-mailmeldingen voor opmerkingen. Houd er rekening mee dat @vermelding meldingen altijd meteen worden verzonden, ongeacht deze instelling.
+Deze instelling is beschikbaar voor zowel tenant-beheerders als commentatoren en is van toepassing op alle e-mailnotificaties voor opmerkingen. Merk op dat @vermeldingen altijd meteen worden verzonden ongeacht deze instelling.
 
-Je kunt ook de frequentie per abonnement aanpassen in de abonnemententabel, voor fijnere controle over individuele pagina's.
+Je kunt ook de frequentie per abonnement overschrijven in de Abonnements tabel, voor fijne afstemming over individuele pagina's.
 
-### Hoe het te configureren
+### Hoe het te Configureren
 
-1. Ga naar je [Meldinstellingen](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Gebruik de dropdown voor **Frequentie van Nieuwe Opmerking Meldingen** om je voorkeurfrequentie in te stellen.
-3. Optioneel, pas de frequentie aan voor individuele abonnementen in de abonnemententabel.
-4. Klik op **Wijzigingen Opslaan**.
+1. Ga naar je [Notificatie-instellingen](https://fastcomments.com/auth/my-account/edit-notifications).
+2. Gebruik de **Nieuwe Reactie Notificatiefrequentie** dropdown om je voorkeurfrequentie in te stellen.
+3. Optioneel, overschrijf de frequentie voor individuele abonnementen in de Abonnements tabel.
+4. Klik op **Wijzigingen opslaan**.
 
-De standaardinstelling is **Elke minuut**, wat overeenkomt met het eerdere gedrag.
+De standaard is **Elke minuut**, wat overeenkomt met het eerdere gedrag.
 
-### API-ondersteuning
+### API Ondersteuning
 
-De meldfrequentie is ook beschikbaar via de API. De gebruikersniveau-instelling is het <div class="code">notificationFrequency</div> veld, en per-abonnement overrides kunnen worden ingesteld via het <div class="code">notificationFrequency</div> veld van het abonnement. Zie de [API-documentatie](https://docs.fastcomments.com/guide-api.html) voor details.
+De notificatiefrequentie is ook beschikbaar via de API. De gebruikersinstelling is het `notificationFrequency` veld, en per-abonnement overrides kunnen worden ingesteld via het `notificationFrequency` veld van het abonnement. Zie de [API documentatie](https://docs.fastcomments.com/guide-api.html) voor details.
 
-### Ter conclusie
+### Conclusie
 
-Dit geeft gebruikers controle over hun inbox zonder zich volledig van pagina's te hoeven afmelden. Één instelling dekt nu zowel antwoord- als huurdermeldingen, waardoor het eenvoudiger wordt om te beheren.
+Dit geeft gebruikers controle over hun inbox zonder dat ze zich volledig van pagina's hoeven af te melden. Eén instelling dekt nu zowel reactie- als tenant-notificaties, wat het beheren eenvoudiger maakt.
 
 Laat ons hieronder weten als je feedback hebt!
 
 Proost!
 
 {{/isPost}}
-
---- 
 
 ---

@@ -1,46 +1,48 @@
 ---
-[category:Features]
-[category:Announcements]
+[category:Özellikler]
+[category:Duyurular]
 ###### [postdate]
-# [postlink]E-posta Bildirim Sıklığı Güncellemesi[/postlink]
+# [postlink]Email Bildirim Sıklığı Güncellemesi[/postlink]
 
 {{#unless isPost}}
-Kullanıcılar artık yeni yorumlar ve cevaplar için e-posta bildirimlerini ne sıklıkla alacaklarını — her dakika, saatlik özet veya günlük özet — tek bir ortak ayar ile kontrol edebiliyorlar; ayrıca her abonelik için farklı ayar yapma imkanı da var.
+Kullanıcılar artık yeni yorumlar ve cevaplar için e-posta bildirimlerini ne sıklıkla alacaklarını kontrol edebilir; her dakika, saatlik özet veya günlük özet ile, tek bir ortak ayar ile, ayrıca abonelik bazında geçersiz kılmalar yapabilir.
 {{/unless}}
 
 {{#isPost}}
 
-### Yenilikler
+### Yeni Neler Var
 
-Cevap bildirimleri ve kiracı (yeni yorum) bildirimleri için e-posta bildirimlerini ne sıklıkla alacağınızı kontrol eden **Yeni Yorum Bildirim Sıklığı** ayarını ekledik. Üç seçenek bulunmaktadır:
+Yeni bir **Yeni Yorum Bildirim Sıklığı** ayarı ekledik, bu ayar cevap bildirimleri ve kiracı (yeni yorum) bildirimleri için e-posta bildirimlerini ne sıklıkla alacağınızı kontrol eder. Üç seçenek mevcuttur:
 
-- **Her dakika** - yeni yorumlar geldiği anda e-posta alın (her dakika kontrol edilir).
-- **Saatlik özet** - her saat başı yeni yorumların toplu özeti alın.
-- **Günlük özet** - her gün yeni yorumların toplu özeti alın.
+- **Her dakika** - yeni yorumlar geldiğinde hemen e-posta alın (her dakika kontrol edilir).
+- **Saatlik özet** - her saat yeni yorumların toplu özetini alın.
+- **Günlük özet** - her gün yeni yorumların toplu özetini alın.
 
-Bu ayar, hem kiracı yöneticilerine hem de yorumculara açıktır ve tüm yorum bildirim e-postalarına uygulanır. Bu ayar ile ilgili olarak @mention bildirimlerinin her zaman hemen gönderildiğini unutmayın.
+Bu ayar hem kiracı yöneticileri hem de yorumcular için geçerlidir ve tüm yorum bildirim e-postalarına uygulanır. Bu ayara rağmen @mention bildirimlerinin her zaman hemen gönderildiğini unutmayın.
 
-Ayrıca, bireysel sayfalar için daha ayrıntılı kontrol sağlamak adına Abonelikler tablosunda her bir abonelik için sıklığı değiştirebilirsiniz.
+Ayrıca, bireysel sayfalar üzerinde ince ayar yapmak için Abonelikler tablosunda her abonelik bazında sıklığı geçersiz kılabilirsiniz.
 
 ### Nasıl Yapılandırılır
 
 1. [Bildirim Ayarları](https://fastcomments.com/auth/my-account/edit-notifications) sayfasına gidin.
 2. Tercih ettiğiniz sıklığı ayarlamak için **Yeni Yorum Bildirim Sıklığı** açılır menüsünü kullanın.
 3. İsteğe bağlı olarak, Abonelikler tablosunda bireysel abonelikler için sıklığı geçersiz kılın.
-4. **Değişiklikleri Kaydet** butonuna tıklayın.
+4. **Değişiklikleri Kaydet**’e tıklayın.
 
-Varsayılan ayar **Her dakika**dır ve önceden mevcut olan davranışı yansıtmaktadır.
+Varsayılan ayar **Her dakika** olup, önceki davranışa eşdeğerdir.
 
 ### API Desteği
 
-Bildirim sıklığı ayrıca API aracılığıyla da kullanılabilir. Kullanıcı düzeyindeki ayar <div class="code">notificationFrequency</div> alanıdır ve her bir abonelik için geçersiz kılmalar, aboneliğin <div class="code">notificationFrequency</div> alanı aracılığıyla ayarlanabilir. Ayrıntılar için [API belgelerine](https://docs.fastcomments.com/guide-api.html) bakın.
+Bildirim sıklığı API üzerinden de mevcuttur. Kullanıcı seviyesi ayarı `notificationFrequency` alanıdır ve abonelik bazında geçersiz kılmalar, aboneliğin `notificationFrequency` alanı aracılığıyla ayarlanabilir. Detaylar için [API belgelerine](https://docs.fastcomments.com/guide-api.html) bakın.
 
-### Sonuç
+### Sonuç Olarak
 
-Bu, kullanıcıların kutularını kontrol etmelerini sağlar ve sayfalardan tamamen aboneliği iptal etme ihtiyacını ortadan kaldırır. Tek bir ayar, hem cevap hem de kiracı bildirimlerini kapsayarak yönetimi daha basit hale getirir.
+Bu, kullanıcıların posta kutularını kontrol etmesine olanak tanır ve sayfalardan tamamen abonelikten çıkmalarına gerek kalmaz. Artık tek bir ayar, hem yanıt hem de kiracı bildirimlerini kapsar, yönetimi daha basit hale getirir.
 
-Aşağıda geri bildirimlerinizi bize iletin!
+Aşağıda geri bildirimleriniz varsa lütfen bize bildirin!
 
-Sağlıcakla!
+Şerefe!
 
 {{/isPost}}
+
+---
