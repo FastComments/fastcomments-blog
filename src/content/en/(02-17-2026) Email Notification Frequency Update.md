@@ -32,7 +32,7 @@ The default is **Every minute**, which matches the previous behavior.
 
 ### API Support
 
-The notification frequency is also available via the API. The user-level setting is the <div class="code">notificationFrequency</div> field, and per-subscription overrides can be set via the subscription's <div class="code">notificationFrequency</div> field. See the [API documentation](https://docs.fastcomments.com/guide-api.html) for details.
+The notification frequency is also available via the API. The user-level setting is the `notificationFrequency` field, and per-subscription overrides can be set via the subscription's `notificationFrequency` field. See the [API documentation](https://docs.fastcomments.com/guide-api.html) for details.
 
 ### In Conclusion
 
