@@ -1,6 +1,6 @@
 ---
-[category:Fonctionnalités]
-[category:Annonces]
+[category:Features]
+[category:Announcements]
 ###### [postdate]
 # [postlink]Mise à jour de la fréquence des notifications par e-mail[/postlink]
 

@@ -1,5 +1,5 @@
 ---
-[category:Značajke]
+[category:Features]
 [category:Email]
 
 ###### [postdate]

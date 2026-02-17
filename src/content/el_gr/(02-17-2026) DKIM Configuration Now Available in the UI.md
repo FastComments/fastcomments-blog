@@ -1,6 +1,6 @@
 ---
-[category:Χαρακτηριστικά]
-[category:Ηλεκτρονικό Ταχυδρομείο]
+[category:Features]
+[category:Email]
 
 ###### [postdate]
 # [postlink]Διανομή DKIM Διαθέσιμη Πλέον στο UI[/postlink]

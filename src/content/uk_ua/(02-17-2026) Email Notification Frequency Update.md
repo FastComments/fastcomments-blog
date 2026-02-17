@@ -1,6 +1,6 @@
 ---
-[category:Особливості]
-[category:Оголошення]
+[category:Features]
+[category:Announcements]
 ###### [postdate]
 # [postlink]Оновлення частоти сповіщень на електронну пошту[/postlink]
 

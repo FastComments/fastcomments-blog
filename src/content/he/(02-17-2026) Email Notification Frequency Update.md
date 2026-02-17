@@ -1,6 +1,6 @@
 ---
-[category:מאפיינים]
-[category:הודעות]
+[category:Features]
+[category:Announcements]
 ###### [תאריך הפרסום]
 # [קישור לפוסט]עדכון תדירות הודעות דוא"ל[/קישור לפוסט]
 

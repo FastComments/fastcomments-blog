@@ -1,6 +1,6 @@
 ---
-[category:功能]
-[category:公告]
+[category:Features]
+[category:Announcements]
 ###### [postdate]
 # [postlink]電子郵件通知頻率更新[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:功能]
-[category:电子邮件]
+[category:Features]
+[category:Email]
 
 ###### [postdate]
 # [postlink]DKIM配置现已在UI中可用[/postlink]

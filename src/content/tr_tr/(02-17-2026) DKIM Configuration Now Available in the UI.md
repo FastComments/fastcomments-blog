@@ -1,6 +1,6 @@
 ---
-[category:Özellikler]
-[category:E-posta]
+[category:Features]
+[category:Email]
 
 ###### [postdate]
 # [postlink]DKIM Yapılandırması Artık Kullanıcı Arayüzünde Mevcut[/postlink]

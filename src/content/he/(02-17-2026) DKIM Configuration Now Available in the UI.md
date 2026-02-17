@@ -1,6 +1,6 @@
 ---
-[category:מאפיינים]
-[category:דוא"ל]
+[category:Features]
+[category:Email]
 
 ###### [postdate]
 # [postlink]כעת זמין כיוונון DKIM בממשק המשתמש[/postlink]
