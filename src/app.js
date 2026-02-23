@@ -11,6 +11,7 @@ const readingTime = require('reading-time');
 const {locales, defaultLocale} = require('./locales');
 const translations = require('./translations');
 
+const BASE_URL = 'https://blog.fastcomments.com';
 const BLOG_START_YEAR_STR = '2019';
 const CONTENT_DIR = path.join(__dirname, 'content');
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
@@ -62,11 +63,11 @@ function processPost(item, locale, contentDir) {
 	const urlIdRaw = title.toLowerCase().replace(/ /g, '-') + '.html';
 	const urlIdRawWithLocale = createPostUrl(urlIdRaw, locale);
 	const urlId = encodeURIComponent(urlIdRawWithLocale);
-	const fullUrl = 'https://blog.fastcomments.com/' + urlIdRawWithLocale;
-	const fullUrlRaw = 'https://blog.fastcomments.com/' + urlIdRawWithLocale;
+	const fullUrl = BASE_URL + '/' + urlIdRawWithLocale;
+	const fullUrlRaw = BASE_URL + '/' + urlIdRawWithLocale;
 	// Use stable urlId without locale for comments (shared across all languages)
 	const stableUrlId = urlIdRaw;
-	const stableUrlIdForCount = 'https://blog.fastcomments.com/' + urlIdRaw;
+	const stableUrlIdForCount = BASE_URL + '/' + urlIdRaw;
 	const commentCountHTML = `<div class="post-comment-count fast-comments-count" data-fast-comments-url-id="${stableUrlIdForCount}">...</div>`;
 
 	let fileContent = fs.readFileSync(path.join(contentDir, item), 'utf8');
@@ -276,8 +277,8 @@ function buildAvailableLocales(baseUrl, locale) {
 const feedGeneratorInstance = new feedGenerator.Feed({
 	title: 'FastComments Blog',
 	description: 'All things FastComments.com',
-	id: 'https://blog.fastcomments.com',
-	link: 'https://blog.fastcomments.com',
+	id: BASE_URL,
+	link: BASE_URL,
 	language: 'en',
 	copyright: 'All rights reserved 2019, FastComments LLC',
 	updated: posts.length > 0 ? posts[0].dateTimeObj : null,
@@ -297,6 +298,29 @@ const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 
 // Convert categories to sorted array
 const categoriesArray = Array.from(allCategories).sort();
+
+// Sitemap helpers
+function escapeXml(str) {
+	return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+}
+
+function buildSitemapAlternates(baseFileName) {
+	const alternates = [];
+	for (const loc of Object.keys(locales)) {
+		let targetFile;
+		if (loc === defaultLocale) {
+			targetFile = baseFileName;
+		} else {
+			targetFile = baseFileName.replace('.html', `-${loc}.html`);
+		}
+		alternates.push({ hreflang: locales[loc].hreflang, url: BASE_URL + '/' + targetFile });
+	}
+	// x-default points to the default locale version
+	alternates.push({ hreflang: 'x-default', url: BASE_URL + '/' + baseFileName });
+	return alternates;
+}
+
+const sitemapEntries = [];
 
 // Generate pages for each locale
 for (const locale of Object.keys(locales)) {
@@ -331,6 +355,13 @@ for (const locale of Object.keys(locales)) {
 		...localeData
 	}), 'utf8');
 
+	sitemapEntries.push({
+		loc: BASE_URL + '/' + indexUrl,
+		changefreq: 'daily',
+		priority: '1.0',
+		alternates: buildSitemapAlternates(createIndexUrl(defaultLocale))
+	});
+
 	// Generate paginated pages
 	for (let page = 2; page <= totalPages; page++) {
 		const startIndex = (page - 1) * POSTS_PER_PAGE;
@@ -352,6 +383,13 @@ for (const locale of Object.keys(locales)) {
 			currentCategory: null,
 			...localeData
 		}), 'utf8');
+
+		sitemapEntries.push({
+			loc: BASE_URL + '/' + pageUrl,
+			changefreq: 'daily',
+			priority: '0.5',
+			alternates: buildSitemapAlternates(createIndexUrl(defaultLocale, page))
+		});
 	}
 
 	// Generate category pages
@@ -382,6 +420,13 @@ for (const locale of Object.keys(locales)) {
 			...localeData
 		}), 'utf8');
 
+		sitemapEntries.push({
+			loc: BASE_URL + '/' + categoryUrl,
+			changefreq: 'weekly',
+			priority: '0.6',
+			alternates: buildSitemapAlternates(createCategoryUrl(categorySlug, defaultLocale))
+		});
+
 		// Generate paginated category pages
 		for (let page = 2; page <= categoryTotalPages; page++) {
 			const startIndex = (page - 1) * POSTS_PER_PAGE;
@@ -404,6 +449,13 @@ for (const locale of Object.keys(locales)) {
 				pageTitle: `${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`,
 				...localeData
 			}), 'utf8');
+
+			sitemapEntries.push({
+				loc: BASE_URL + '/' + pageUrl,
+				changefreq: 'weekly',
+				priority: '0.4',
+				alternates: buildSitemapAlternates(createCategoryUrl(categorySlug, defaultLocale, page))
+			});
 		}
 	});
 
@@ -431,7 +483,7 @@ for (const locale of Object.keys(locales)) {
 				id: post.fullUrl,
 				link: post.fullUrl,
 				description: `${post.title} - Size: ${post.fileSizeString}. ${post.readTime}`,
-				content: html.replace(/data-src="/g, 'src="https://blog.fastcomments.com/'),
+				content: html.replace(/data-src="/g, `src="${BASE_URL}/`),
 				author: [
 					{
 						name: 'Devon Winrick'
@@ -442,8 +494,47 @@ for (const locale of Object.keys(locales)) {
 		}
 
 		fs.writeFileSync(path.join(STATIC_GENERATED_DIR, post.urlIdRaw), html, 'utf8');
+
+		const lastmod = post.dateTimeObj.toISOString().split('T')[0];
+		sitemapEntries.push({
+			loc: BASE_URL + '/' + post.urlIdRaw,
+			lastmod: lastmod,
+			changefreq: 'monthly',
+			priority: '0.8',
+			alternates: buildSitemapAlternates(post.stableUrlId)
+		});
 	});
 }
+
+// Write sitemap
+let sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+sitemapXml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
+for (const entry of sitemapEntries) {
+	sitemapXml += '  <url>\n';
+	sitemapXml += `    <loc>${escapeXml(entry.loc)}</loc>\n`;
+	if (entry.lastmod) {
+		sitemapXml += `    <lastmod>${entry.lastmod}</lastmod>\n`;
+	}
+	sitemapXml += `    <changefreq>${entry.changefreq}</changefreq>\n`;
+	sitemapXml += `    <priority>${entry.priority}</priority>\n`;
+	for (const alt of entry.alternates) {
+		sitemapXml += `    <xhtml:link rel="alternate" hreflang="${escapeXml(alt.hreflang)}" href="${escapeXml(alt.url)}"/>\n`;
+	}
+	sitemapXml += '  </url>\n';
+}
+sitemapXml += '</urlset>\n';
+const sitemapUrlCount = sitemapEntries.length;
+const sitemapBytes = Buffer.byteLength(sitemapXml, 'utf8');
+const MAX_SITEMAP_URLS = 50000;
+const MAX_SITEMAP_BYTES = 50 * 1024 * 1024; // 50MB
+if (sitemapUrlCount > MAX_SITEMAP_URLS) {
+	throw new Error(`Sitemap exceeds max URL count: ${sitemapUrlCount} > ${MAX_SITEMAP_URLS}`);
+}
+if (sitemapBytes > MAX_SITEMAP_BYTES) {
+	throw new Error(`Sitemap exceeds max file size: ${(sitemapBytes / 1024 / 1024).toFixed(1)}MB > 50MB`);
+}
+fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
+console.log(`Sitemap: ${sitemapUrlCount} URLs (${(sitemapBytes / 1024 / 1024).toFixed(1)}MB)`);
 
 // Write RSS feed (only for default locale)
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'rss.xml'), feedGeneratorInstance.rss2(), 'utf8');
