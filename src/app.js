@@ -384,12 +384,6 @@ for (const locale of Object.keys(locales)) {
 			...localeData
 		}), 'utf8');
 
-		sitemapEntries.push({
-			loc: BASE_URL + '/' + pageUrl,
-			changefreq: 'daily',
-			priority: '0.5',
-			alternates: buildSitemapAlternates(createIndexUrl(defaultLocale, page))
-		});
 	}
 
 	// Generate category pages
@@ -450,12 +444,6 @@ for (const locale of Object.keys(locales)) {
 				...localeData
 			}), 'utf8');
 
-			sitemapEntries.push({
-				loc: BASE_URL + '/' + pageUrl,
-				changefreq: 'weekly',
-				priority: '0.4',
-				alternates: buildSitemapAlternates(createCategoryUrl(categorySlug, defaultLocale, page))
-			});
 		}
 	});
 
