@@ -2,46 +2,44 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Email Bildirim Sıklığı Güncellemesi[/postlink]
+# [postlink]E-posta Bildirim Sıklığı Güncellemesi[/postlink]
 
 {{#unless isPost}}
-Kullanıcılar artık yeni yorumlar ve cevaplar için e-posta bildirimlerini ne sıklıkla alacaklarını kontrol edebilir; her dakika, saatlik özet veya günlük özet ile, tek bir ortak ayar ile, ayrıca abonelik bazında geçersiz kılmalar yapabilir.
+Kullanıcılar artık yeni yorumlar ve cevaplar için ne sıklıkla e-posta bildirimleri alacaklarını kontrol edebilirler; her dakika, saatlik özet veya günlük özet seçenekleriyle, cevap ve yönetici bildirimleri için ayrı ayarlar ve her abonelik için özel geçersiz kılmalar ile.
 {{/unless}}
 
 {{#isPost}}
 
-### Yeni Neler Var
+### Yenilikler
 
-Yeni bir **Yeni Yorum Bildirim Sıklığı** ayarı ekledik, bu ayar cevap bildirimleri ve kiracı (yeni yorum) bildirimleri için e-posta bildirimlerini ne sıklıkla alacağınızı kontrol eder. Üç seçenek mevcuttur:
+**Cevap Bildirim Sıklığı** ve **Yönetici Bildirim Sıklığı** ayarlarını ekledik; bu ayarlar sırasıyla cevaplar ve yeni yorumlar için e-posta bildirimlerinizi ne sıklıkla alacağınızı kontrol eder. Her biri için üç seçenek mevcuttur:
 
-- **Her dakika** - yeni yorumlar geldiğinde hemen e-posta alın (her dakika kontrol edilir).
-- **Saatlik özet** - her saat yeni yorumların toplu özetini alın.
-- **Günlük özet** - her gün yeni yorumların toplu özetini alın.
+- **Her dakika** - yeni yorumlar geldiğinde hemen bir e-posta alın (her dakika kontrol edilir).
+- **Saatlik özet** - yeni yorumların bir saatlik özetini bir kez alırsınız.
+- **Günlük özet** - yeni yorumların bir günlük özetini bir kez alırsınız.
 
-Bu ayar hem kiracı yöneticileri hem de yorumcular için geçerlidir ve tüm yorum bildirim e-postalarına uygulanır. Bu ayara rağmen @mention bildirimlerinin her zaman hemen gönderildiğini unutmayın.
+Cevap Bildirim Sıklığı tüm kullanıcılar için mevcuttur ve varsayılan olarak **Her dakika** olarak ayarlanmıştır. Yönetici Bildirim Sıklığı, site yöneticileri için mevcuttur ve varsayılan olarak **Saatlik özet** olarak ayarlanmıştır. @mention bildirimlerinin bu ayarlara bakılmaksızın her zaman hemen gönderildiğini unutmayın.
 
-Ayrıca, bireysel sayfalar üzerinde ince ayar yapmak için Abonelikler tablosunda her abonelik bazında sıklığı geçersiz kılabilirsiniz.
+Bireysel sayfalar için daha ayrıntılı kontrol sağlamak adına, Abonelikler tablosunda her abonelik için sıklığı da geçersiz kılabilirsiniz.
 
-### Nasıl Yapılandırılır
+### Nasıl Yapılır
 
 1. [Bildirim Ayarları](https://fastcomments.com/auth/my-account/edit-notifications) sayfasına gidin.
-2. Tercih ettiğiniz sıklığı ayarlamak için **Yeni Yorum Bildirim Sıklığı** açılır menüsünü kullanın.
+2. Tercih ettiğiniz sıklıkları ayarlamak için **Cevap Bildirim Sıklığı** ve **Yönetici Bildirim Sıklığı** açılır menülerini kullanın.
 3. İsteğe bağlı olarak, Abonelikler tablosunda bireysel abonelikler için sıklığı geçersiz kılın.
-4. **Değişiklikleri Kaydet**’e tıklayın.
-
-Varsayılan ayar **Her dakika** olup, önceki davranışa eşdeğerdir.
+4. **Değişiklikleri Kaydet** butonuna tıklayın.
 
 ### API Desteği
 
-Bildirim sıklığı API üzerinden de mevcuttur. Kullanıcı seviyesi ayarı `notificationFrequency` alanıdır ve abonelik bazında geçersiz kılmalar, aboneliğin `notificationFrequency` alanı aracılığıyla ayarlanabilir. Detaylar için [API belgelerine](https://docs.fastcomments.com/guide-api.html) bakın.
+Kullanıcı nesnesindeki `notificationFrequency` alanı, cevap bildirim sıklığını kontrol ederken, `adminNotificationFrequency` alanı yönetici bildirim sıklığını kontrol eder. Her abonelik için geçersiz kılmalar, aboneliğin `notificationFrequency` alanı aracılığıyla ayarlanabilir. Detaylar için [API belgelerine](https://docs.fastcomments.com/guide-api.html) bakın.
 
 ### Sonuç Olarak
 
-Bu, kullanıcıların posta kutularını kontrol etmesine olanak tanır ve sayfalardan tamamen abonelikten çıkmalarına gerek kalmaz. Artık tek bir ayar, hem yanıt hem de kiracı bildirimlerini kapsar, yönetimi daha basit hale getirir.
+Bu, kullanıcılara kutularını tamamen abone olmaktan çıkarma zorunluluğu olmadan kontrol sağlar.
 
-Aşağıda geri bildirimleriniz varsa lütfen bize bildirin!
+Aşağıda herhangi bir geri bildiriminiz varsa bize bildirin!
 
-Şerefe!
+Selamlar!
 
 {{/isPost}}
 

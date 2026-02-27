@@ -2,47 +2,43 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Mise à jour de la fréquence des notifications par e-mail[/postlink]
+# [postlink]Mise à jour de la fréquence des notifications par email[/postlink]
 
 {{#unless isPost}}
-Les utilisateurs peuvent désormais contrôler la fréquence à laquelle ils reçoivent des notifications par e-mail pour les nouveaux commentaires et réponses, chaque minute, résumé horaire ou résumé quotidien, avec un seul paramètre partagé, plus des remplacements par abonnement.
+Les utilisateurs peuvent désormais contrôler la fréquence à laquelle ils reçoivent des notifications par email pour les nouveaux commentaires et réponses, toutes les minutes, résumé horaire ou résumé quotidien, avec des paramètres séparés pour les notifications de réponse et d'administration, plus des substitutions par abonnement.
 {{/unless}}
 
 {{#isPost}}
 
-### Quoi de Neuf
+### Quoi de neuf
 
-Nous avons ajouté un paramètre de **Fréquence des Notifications de Nouveaux Commentaires** qui contrôle la fréquence à laquelle vous recevez des e-mails pour les notifications de réponses et les notifications de locataires (nouveaux commentaires). Les trois options sont :
+Nous avons ajouté des paramètres de **Fréquence des notifications de réponse** et de **Fréquence des notifications d'administration** qui contrôlent la fréquence à laquelle vous recevez des notifications par email pour les réponses et les nouveaux commentaires, respectivement. Les trois options pour chacun sont :
 
-- **Chaque minute** - recevez un e-mail dès que de nouveaux commentaires arrivent (vérifié toutes les minutes).
-- **Résumé Horaire** - recevez un résumé groupé des nouveaux commentaires une fois par heure.
-- **Résumé Quotidien** - recevez un résumé groupé des nouveaux commentaires une fois par jour.
+- **Toutes les minutes** - recevez un email dès que de nouveaux commentaires arrivent (vérifié toutes les minutes).
+- **Résumé horaire** - recevez un résumé groupé des nouveaux commentaires une fois par heure.
+- **Résumé quotidien** - recevez un résumé groupé des nouveaux commentaires une fois par jour.
 
-Ce paramètre est disponible à la fois pour les administrateurs de locataires et les commentateurs, et s'applique à tous les e-mails de notification de commentaires. Notez que les notifications @mention sont toujours envoyées immédiatement, quelle que soit cette configuration.
+La Fréquence des notifications de réponse est disponible pour tous les utilisateurs et est par défaut fixée à **Toutes les minutes**. La Fréquence des notifications d'administration est disponible pour les administrateurs du site et est par défaut fixée à **Résumé horaire**. Notez que les notifications @mention sont toujours envoyées immédiatement, quelle que soit la configuration.
 
-Vous pouvez également remplacer la fréquence pour chaque abonnement dans le tableau d'abonnements, pour un contrôle plus précis sur des pages individuelles.
+Vous pouvez également remplacer la fréquence sur une base par abonnement dans le tableau des Abonnements, pour un contrôle précis sur les pages individuelles.
 
-### Comment le Configurer
+### Comment le configurer
 
-1. Allez dans vos [Paramètres de Notification](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Utilisez le menu déroulant **Fréquence des Notifications de Nouveaux Commentaires** pour définir votre fréquence préférée.
+1. Allez dans vos [Paramètres de notification](https://fastcomments.com/auth/my-account/edit-notifications).
+2. Utilisez les menus déroulants **Fréquence des notifications de réponse** et **Fréquence des notifications d'administration** pour définir vos fréquences préférées.
 3. Optionnellement, remplacez la fréquence pour des abonnements individuels dans le tableau des Abonnements.
-4. Cliquez sur **Enregistrer les Modifications**.
-
-La valeur par défaut est **Chaque minute**, ce qui correspond au comportement précédent.
+4. Cliquez sur **Enregistrer les modifications**.
 
 ### Support API
 
-La fréquence de notification est également disponible via l'API. Le paramètre au niveau utilisateur est le champ `notificationFrequency`, et les remplacements par abonnement peuvent être définis via le champ `notificationFrequency` de l'abonnement. Consultez la [documentation API](https://docs.fastcomments.com/guide-api.html) pour plus de détails.
+Le champ `notificationFrequency` sur l'objet utilisateur contrôle la fréquence des notifications de réponse, et le champ `adminNotificationFrequency` contrôle la fréquence des notifications d'administration. Les substitutions par abonnement peuvent être définies via le champ `notificationFrequency` de l'abonnement. Consultez la [documentation de l'API](https://docs.fastcomments.com/guide-api.html) pour plus de détails.
 
-### En Conclusion
+### En conclusion
 
-Cela donne aux utilisateurs le contrôle sur leur boîte de réception sans avoir à se désabonner complètement des pages. Un seul paramètre couvre désormais à la fois les notifications de réponses et les notifications de locataires, ce qui rend la gestion plus simple.
+Cela donne aux utilisateurs un contrôle sur leur boîte de réception sans avoir à se désabonner complètement des pages.
 
-Faites-nous savoir ci-dessous si vous avez des retours !
+Faites-nous savoir ci-dessous si vous avez des commentaires !
 
-Cordialement !
+Cheers!
 
 {{/isPost}}
-
----

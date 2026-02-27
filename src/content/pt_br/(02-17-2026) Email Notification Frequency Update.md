@@ -5,42 +5,42 @@
 # [postlink]Atualização da Frequência de Notificações por Email[/postlink]
 
 {{#unless isPost}}
-Agora os usuários podem controlar com que frequência recebem notificações por email sobre novos comentários e respostas, a cada minuto, boletim horário ou boletim diário, com uma única configuração compartilhada, além de substituições por assinatura.
+Os usuários agora podem controlar com que frequência recebem notificações por email para novos comentários e respostas, a cada minuto, resumo horário ou resumo diário, com configurações separadas para notificações de resposta e de administrador, além de substituições por assinatura.
 {{/unless}}
 
 {{#isPost}}
 
-### O Que Há de Novo
+### Novidades
 
-Adicionamos uma configuração de **Frequência de Notificação de Novo Comentário** que controla com que frequência você recebe notificações por email tanto para notificações de resposta quanto para notificações de inquilinos (novo comentário). As três opções são:
+Adicionamos configurações de **Frequência de Notificação de Resposta** e **Frequência de Notificação de Administrador** que controlam com que frequência você recebe notificações por email para respostas e novos comentários, respectivamente. As três opções para cada uma são:
 
 - **A cada minuto** - receba um email assim que novos comentários chegarem (verificado a cada minuto).
-- **Boletim horário** - receba um resumo agrupado de novos comentários uma vez por hora.
-- **Boletim diário** - receba um resumo agrupado de novos comentários uma vez por dia.
+- **Resumo horário** - receba um resumo agrupado de novos comentários uma vez por hora.
+- **Resumo diário** - receba um resumo agrupado de novos comentários uma vez por dia.
 
-Essa configuração está disponível tanto para administradores de inquilinos quanto para comentaristas, e se aplica a todos os emails de notificação de comentários. Observe que as notificações de @menção são sempre enviadas imediatamente, independentemente dessa configuração.
+A Frequência de Notificação de Resposta está disponível para todos os usuários e tem como padrão **A cada minuto**. A Frequência de Notificação de Administrador está disponível para administradores do site e tem como padrão **Resumo horário**. Observe que as notificações @mention são sempre enviadas imediatamente, independentemente dessas configurações.
 
-Você também pode substituir a frequência por assinatura na tabela de Assinaturas, para um controle mais granular sobre páginas individuais.
+Você também pode substituir a frequência em uma base por assinatura na tabela de Assinaturas, para um controle mais preciso sobre páginas individuais.
 
-### Como Configurá-lo
+### Como Configurar
 
 1. Vá para suas [Configurações de Notificação](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Use o menu suspenso de **Frequência de Notificação de Novo Comentário** para definir sua frequência preferida.
+2. Use os menus suspensos **Frequência de Notificação de Resposta** e **Frequência de Notificação de Administrador** para definir suas frequências preferidas.
 3. Opcionalmente, substitua a frequência para assinaturas individuais na tabela de Assinaturas.
 4. Clique em **Salvar Alterações**.
 
-O padrão é **A cada minuto**, que corresponde ao comportamento anterior.
-
 ### Suporte à API
 
-A frequência de notificação também está disponível via API. A configuração em nível de usuário é o campo `notificationFrequency`, e as substituições por assinatura podem ser definidas através do campo `notificationFrequency` da assinatura. Consulte a [documentação da API](https://docs.fastcomments.com/guide-api.html) para detalhes.
+O campo `notificationFrequency` no objeto do usuário controla a frequência de notificação de resposta, e o campo `adminNotificationFrequency` controla a frequência de notificação de administrador. Substituições por assinatura podem ser definidas através do campo `notificationFrequency` da assinatura. Veja a [documentação da API](https://docs.fastcomments.com/guide-api.html) para detalhes.
 
 ### Em Conclusão
 
-Isso dá aos usuários controle sobre sua caixa de entrada sem ter que cancelar a assinatura de páginas inteiras. Uma configuração agora cobre tanto as notificações de resposta quanto as de inquilinos, tornando mais simples a gestão.
+Isso dá aos usuários controle sobre sua caixa de entrada sem precisar cancelar a assinatura de páginas inteiramente.
 
 Deixe-nos saber abaixo se você tiver algum feedback!
 
 Saudações!
 
 {{/isPost}}
+
+---

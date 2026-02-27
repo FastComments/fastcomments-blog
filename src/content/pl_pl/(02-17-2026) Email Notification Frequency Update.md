@@ -5,39 +5,37 @@
 # [postlink]Aktualizacja częstotliwości powiadomień e-mail[/postlink]
 
 {{#unless isPost}}
-Użytkownicy mogą teraz kontrolować, jak często otrzymują powiadomienia e-mail o nowych komentarzach i odpowiedziach, co minutę, w formie podsumowania godzinnego lub dziennego, za pomocą jednego wspólnego ustawienia, plus indywidualne nadpisania dla subskrypcji.
+Użytkownicy mogą teraz kontrolować, jak często otrzymują powiadomienia e-mail o nowych komentarzach i odpowiedziach, co minutę, w formie podsumowania godzinnego lub codziennego, z osobnymi ustawieniami dla powiadomień o odpowiedziach i administracyjnych, oraz z możliwością nadpisania dla każdej subskrypcji.
 {{/unless}}
 
 {{#isPost}}
 
 ### Co nowego
 
-Dodaliśmy ustawienie **Częstotliwość powiadomień o nowych komentarzach**, które kontroluje, jak często otrzymujesz powiadomienia e-mail o powiadomieniach o odpowiedziach oraz powiadomieniach od najemców (nowy komentarz). Trzy opcje to:
+Dodaliśmy ustawienia **Częstotliwość powiadomień o odpowiedziach** i **Częstotliwość powiadomień administracyjnych**, które kontrolują, jak często otrzymujesz powiadomienia e-mail o odpowiedziach i nowych komentarzach, odpowiednio. Trzy dostępne opcje dla każdej z kategorii to:
 
-- **Co minutę** - otrzymuj e-maila, jak tylko pojawią się nowe komentarze (sprawdzane co minutę).
-- **Podsumowanie godzinne** - otrzymuj zebrane podsumowanie nowych komentarzy raz na godzinę.
-- **Podsumowanie dzienne** - otrzymuj zebrane podsumowanie nowych komentarzy raz na dzień.
+- **Co minutę** - otrzymuj e-mail natychmiast po pojawieniu się nowych komentarzy (sprawdzane co minutę).
+- **Podsumowanie godzinne** - otrzymuj podsumowanie nowych komentarzy raz na godzinę.
+- **Podsumowanie dzienne** - otrzymuj podsumowanie nowych komentarzy raz na dzień.
 
-To ustawienie jest dostępne zarówno dla administratorów najemców, jak i komentatorów, i ma zastosowanie do wszystkich e-maili powiadamiających o komentarzach. Należy pamiętać, że powiadomienia o @wzmiankach są zawsze wysyłane natychmiast, niezależnie od tego ustawienia.
+Częstotliwość powiadomień o odpowiedziach jest dostępna dla wszystkich użytkowników i domyślnie ustawiona na **Co minutę**. Częstotliwość powiadomień administracyjnych jest dostępna dla administratorów strony i domyślnie ustawiona na **Podsumowanie godzinne**. Zauważ, że powiadomienia o @wzmiankach są zawsze wysyłane natychmiast, niezależnie od tych ustawień.
 
-Możesz również nadpisać częstotliwość na poziomie poszczególnych subskrypcji w tabeli Subskrypcje, aby uzyskać precyzyjną kontrolę nad poszczególnymi stronami.
+Możesz również nadpisać częstotliwość dla poszczególnych subskrypcji w tabeli Subskrypcje, aby uzyskać precyzyjną kontrolę nad poszczególnymi stronami.
 
 ### Jak to skonfigurować
 
-1. Przejdź do ustawień [Powiadomień](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Użyj rozwijanego menu **Częstotliwość powiadomień o nowych komentarzach**, aby ustawić preferowaną częstotliwość.
+1. Przejdź do swoich [Ustawień powiadomień](https://fastcomments.com/auth/my-account/edit-notifications).
+2. Skorzystaj z rozwijanych menu **Częstotliwość powiadomień o odpowiedziach** i **Częstotliwość powiadomień administracyjnych**, aby ustawić preferowane częstotliwości.
 3. Opcjonalnie, nadpisz częstotliwość dla poszczególnych subskrypcji w tabeli Subskrypcje.
 4. Kliknij **Zapisz zmiany**.
 
-Domyślna wartość to **Co minutę**, co odpowiada wcześniejszemu zachowaniu.
-
 ### Wsparcie API
 
-Częstotliwość powiadomień jest również dostępna poprzez API. Ustawienie na poziomie użytkownika to pole `notificationFrequency`, a nadpisania dla subskrypcji można ustawić przez pole `notificationFrequency` subskrypcji. Zobacz [dokumentację API](https://docs.fastcomments.com/guide-api.html) po szczegóły.
+Pole `notificationFrequency` w obiekcie użytkownika kontroluje częstotliwość powiadomień o odpowiedziach, a pole `adminNotificationFrequency` kontroluje częstotliwość powiadomień administracyjnych. Nadpisania dla poszczególnych subskrypcji można ustawić za pomocą pola `notificationFrequency` subskrypcji. Zobacz [dokumentację API](https://docs.fastcomments.com/guide-api.html) po szczegóły.
 
-### Wnioski
+### Podsumowując
 
-To daje użytkownikom kontrolę nad swoją skrzynką odbiorczą bez konieczności całkowitego wypisywania się z stron. Jedno ustawienie teraz obejmuje zarówno powiadomienia o odpowiedziach, jak i powiadomienia od najemców, co ułatwia zarządzanie.
+Daje to użytkownikom kontrolę nad swoją skrzynką odbiorczą, bez potrzeby całkowitego wypisywania się z stron.
 
 Daj nam znać poniżej, jeśli masz jakieś uwagi!
 

@@ -2,46 +2,44 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Ažuriranje učestalosti obaveštenja putem e-pošte[/postlink]
+# [postlink]Ažuriranje frekvencije e-mail obaveštenja[/postlink]
 
 {{#unless isPost}}
-Korisnici sada mogu kontrolisati koliko često primaju obaveštenja putem e-pošte za nove komentare i odgovore, svake minute, satni pregled ili dnevni pregled, sa jednim zajedničkim podešavanjem, plus preklapanja po pretplati.
+Korisnici sada mogu kontrolisati koliko često primaju e-mail obaveštenja za nove komentare i odgovore, svake minute, satne sumarne izveštaje ili dnevne sumarne izveštaje, sa odvojenim postavkama za obaveštenja o odgovorima i obaveštenja za admina, plus preklapanja po pretplati.
 {{/unless}}
 
 {{#isPost}}
 
 ### Šta je novo
 
-Dodali smo podešavanje **Učestalost obaveštenja o novim komentarima** koje kontroliše koliko često primate obaveštenja putem e-pošte za obaveštenja o odgovorima i obaveštenja o iznajmljivačima (novim komentarima). Tri opcije su:
+Dodali smo postavke **Frekvencija obaveštenja o odgovorima** i **Frekvencija obaveštenja za admina** koje kontrolišu koliko često primate e-mail obaveštenja za odgovore i nove komentare, respektivno. Tri opcije za svaku su:
 
-- **Svake minute** - primajte e-poštu čim novi komentari stignu (proverava se svake minute).
-- **Satni pregled** - primajte grupisani pregled novih komentara jednom na sat.
-- **Dnevni pregled** - primajte grupisani pregled novih komentara jednom dnevno.
+- **Svake minute** - primite e-mail čim novi komentari stignu (proverava se svake minute).
+- **Satni sažetak** - primite grupni sažetak novih komentara jednom na sat.
+- **Dnevni sažetak** - primite grupni sažetak novih komentara jednom dnevno.
 
-Ovo podešavanje je dostupno i administratorima iznajmljivača i komentatorima, i odnosi se na sva obaveštenja o komentarima putem e-pošte. Imajte na umu da se obaveštenja o @pominjanju uvek šalju odmah, bez obzira na ovo podešavanje.
+Frekvencija obaveštenja o odgovorima je dostupna svim korisnicima i podrazumevano je **Svake minute**. Frekvencija obaveštenja za admina je dostupna adminima sajta i podrazumevano je **Satni sažetak**. Imajte na umu da se @mention obaveštenja uvek šalju odmah bez obzira na ove postavke.
 
-Takođe možete preklapati učestalost na osnovu pretplate u tabeli Pretplata, za preciznu kontrolu nad pojedinačnim stranicama.
+Takođe možete preklapati frekvenciju za svaku pojedinačnu pretplatu u tabeli Pretplate, za detaljnu kontrolu preko pojedinačnih stranica.
 
-### Kako ga konfigurisati
+### Kako to konfigurisati
 
-1. Idite na svoja [Podešavanja obaveštenja](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Iskoristite padajući meni **Učestalost obaveštenja o novim komentarima** da postavite svoju željenu učestalost.
-3. Opcionalno, preklonite učestalost za pojedinačne pretplate u tabeli Pretplata.
-4. Kliknite **Sačuvaj promene**.
-
-Podrazumevano je **Svake minute**, što odgovara prethodnom ponašanju.
+1. Idite na svoje [Postavke obaveštenja](https://fastcomments.com/auth/my-account/edit-notifications).
+2. Koristite **Frekvenciju obaveštenja o odgovorima** i **Frekvenciju obaveštenja za admina** padajuće menije da postavite svoje željene frekvencije.
+3. Opcionalno, preklapajte frekvenciju za pojedinačne pretplate u tabeli Pretplate.
+4. Kliknite na **Sačuvaj promene**.
 
 ### API podrška
 
-Učestalost obaveštenja je takođe dostupna putem API-ja. Podešavanje na nivou korisnika je polje `notificationFrequency`, a preklapanja po pretplati mogu se postaviti putem polja `notificationFrequency` pretplate. Pogledajte [API dokumentaciju](https://docs.fastcomments.com/guide-api.html) za detalje.
+Polje `notificationFrequency` na objektu korisnika kontroliše frekvenciju obaveštenja o odgovorima, a polje `adminNotificationFrequency` kontroliše frekvenciju obaveštenja za admina. Preklapanja po pretplati mogu se postaviti putem polja `notificationFrequency` pretplate. Pogledajte [API dokumentaciju](https://docs.fastcomments.com/guide-api.html) za detalje.
 
-### Na kraju
+### Zaključak
 
-Ovo daje korisnicima kontrolu nad njihovim sandučetom bez potrebe da se potpuno odjave sa stranica. Jedno podešavanje sada pokriva i obaveštenja o odgovorima i iznajmljivačima, čineći upravljanje jednostavnijim.
+Ovo omogućava korisnicima kontrolu nad svojim inboxom bez potrebe da se potpuno odjave sa stranica.
 
-javite nam u komentarima ispod ako imate povratne informacije!
+Javite nam u komentarima ispod ako imate bilo kakve povratne informacije!
 
-Živeli!
+Pozdrav!
 
 {{/isPost}}
 

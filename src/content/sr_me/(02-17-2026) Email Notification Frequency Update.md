@@ -2,44 +2,42 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Ažuriranje frekvencije email obaveštenja[/postlink]
+# [postlink]Ažuriranje učestalosti email obaveštenja[/postlink]
 
 {{#unless isPost}}
-Kor users now control how often they receive email notifications for new comments and replies, every minute, hourly digest, or daily digest, with a single shared setting, plus per-subscription overrides.
+Korisnici sada mogu kontrolisati koliko često primaju email obaveštenja o novim komentarima i odgovorima, svake minute, dnevni pregled ili satni pregled, sa posebnim podešavanjima za obaveštenja o odgovorima i admin obaveštenja, plus proširenja po pretplati.
 {{/unless}}
 
 {{#isPost}}
 
 ### Šta je novo
 
-Dodali smo **Postavku frekvencije obaveštenja o novim komentarima** koja kontroliše koliko često primate email obaveštenja za obaveštenja o odgovorima i obaveštenja o stanaru (novim komentarima). Tri opcije su:
+Dodali smo **Učestalost obaveštenja o odgovorima** i **Učestalost admin obaveštenja** podešavanja koja kontrolišu koliko često primate email obaveštenja o odgovorima i novim komentarima, redom. Tri opcije za svako su:
 
-- **Svake minute** - primite email čim novi komentari stignu (proverava se svake minute).
-- **Satni pregled** - primate grupni pregled novih komentara jednom na sat.
-- **Dnevni pregled** - primate grupni pregled novih komentara jednom dnevno.
+- **Svake minute** - primajte email čim novi komentari stignu (proverava se svake minute).
+- **Satni pregled** - primajte grupisani rezime novih komentara jednom na sat.
+- **Dnevni pregled** - primajte grupisani rezime novih komentara jednom dnevno.
 
-Ova postavka je dostupna za administratore stanara i komentatore, i važi za sve emailove sa obaveštenjima o komentarima. Imajte na umu da se @mention obaveštenja uvek šalju odmah bez obzira na ovu postavku.
+Učestalost obaveštenja o odgovorima je dostupna svim korisnicima i podrazumevano je **Svake minute**. Učestalost admin obaveštenja je dostupna za administratore sajta i podrazumevano je **Satni pregled**. Imajte na umu da se @mention obaveštenja uvek šalju odmah bez obzira na ova podešavanja.
 
-Takođe možete preinačiti frekvenciju na osnovu svake pretplate u tabeli Pretplate, za preciznu kontrolu pojedinačnih stranica.
+Takođe možete prepraviti učestalost po svakoj pretplati u tabeli Pretplate, za preciznu kontrolu nad pojedinačnim stranicama.
 
-### Kako to konfigurirati
+### Kako to konfigurisati
 
-1. Idite na svoje [Postavke obaveštenja](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Koristite **Dropdown za frekvenciju obaveštenja o novim komentarima** da postavite svoju preferiranu frekvenciju.
-3. Opcionalno, preinačite frekvenciju za pojedinačne pretplate u tabeli Pretplate.
-4. Kliknite na **Sačuvajte promene**.
+1. Idite na svoje [Podešavanja obaveštenja](https://fastcomments.com/auth/my-account/edit-notifications).
+2. Koristite **Učestalost obaveštenja o odgovorima** i **Učestalost admin obaveštenja** padajuće liste da postavite svoje željene učestalosti.
+3. Opcionalno, prepravite učestalost za pojedinačne pretplate u tabeli Pretplate.
+4. Kliknite na **Sačuvaj izmene**.
 
-Podrazumevano je **Svake minute**, što odgovara prethodnom ponašanju.
+### API podrška
 
-### API Podrška
+Polje `notificationFrequency` na korisničkom objektu kontroliše učestalost obaveštenja o odgovorima, a polje `adminNotificationFrequency` kontroliše učestalost admin obaveštenja. Proširenja po pretplati mogu se postaviti putem polja `notificationFrequency` pretplate. Pogledajte [API dokumentaciju](https://docs.fastcomments.com/guide-api.html) za detalje.
 
-Frekvencija obaveštenja je takođe dostupna putem API-ja. Postavka na nivou korisnika je `notificationFrequency` polje, a preinačenja po pretplati mogu se postaviti putem `notificationFrequency` polja pretplate. Pogledajte [API dokumentaciju](https://docs.fastcomments.com/guide-api.html) za detalje.
+### Na zaključku
 
-### U zaključku
+Ovo omogućava korisnicima kontrolu nad svojim inboxom bez potrebe da se potpuno odjave sa stranica.
 
-Ovo daje korisnicima kontrolu nad njihovim inboxom bez potrebe da se potpuno odjave sa stranica. Jedna postavka sada pokriva obaveštenja o odgovorima i stanarima, što olakšava upravljanje.
-
-Javite nam ispod ako imate bilo kakve povratne informacije!
+Javite nam u komentarima ako imate bilo kakve povratne informacije!
 
 Pozdrav!
 

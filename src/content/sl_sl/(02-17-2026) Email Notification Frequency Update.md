@@ -2,47 +2,47 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Posodobitev Frekvence Obvestil po Elektronski Pošti[/postlink]
+# [postlink]Posodobitev frekvence obvestil po elektronski pošti[/postlink]
 
 {{#unless isPost}}
-Uporabniki lahko zdaj nadzorujejo, kako pogosto prejemajo obvestila po elektronski pošti o novih komentarjih in odgovorih, vsakih minut, v urnem povzetku ali v dnevnem povzetku, z eno skupno nastavitvijo, plus prekinitvami po naročilu.
+Uporabniki lahko zdaj nadzorujejo, kako pogosto prejemajo obvestila po e-pošti o novih komentarjih in odgovorih, vsako minuto, dnevno zbirko ali tedensko zbirko, z ločenimi nastavitvami za obvestila o odgovorih in obvestila za administratorje, poleg tega pa tudi prilagoditve za posamezne naročnine.
 {{/unless}}
 
 {{#isPost}}
 
 ### Kaj je novega
 
-Dodali smo nastavitev **Frekvenca Obvestil o Novih Komentarjih**, ki nadzoruje, kako pogosto prejemate obvestila po elektronski pošti za obvestila o odgovorih in obvestila o najemnikih (novi komentarji). Tri možnosti so:
+Dodali smo nastavitve **Frekvenca obvestil o odgovorih** in **Frekvenca obvestil za administratorje**, ki nadzorujejo, kako pogosto prejemate obvestila po e-pošti za odgovore in nove komentarje, oziroma. Tri možnosti za vsako so:
 
-- **Vsako minuto** - prejemite e-pošto takoj, ko novi komentarji prispejo (preverja se vsakih minut).
-- **Urvni povzetek** - prejemite zgoščen povzetek novih komentarjev enkrat na uro.
-- **Dnevni povzetek** - prejemite zgoščen povzetek novih komentarjev enkrat na dan.
+- **Vsako minuto** - prejemite e-pošto takoj, ko prispejo novi komentarji (preverja se vsako minuto).
+- **Dnevna zbirka** - prejemite zbrano povzetek novih komentarjev enkrat na uro.
+- **Tedenska zbirka** - prejemite zbrano povzetek novih komentarjev enkrat na dan.
 
-Ta nastavitev je na voljo tako skrbnikom najemnikov kot tudi komentatorjem in se uporablja za vsa obvestila o komentarjih. Upoštevajte, da se obvestila o @omembah vedno pošljejo takoj, ne glede na to nastavitev.
+Frekvenca obvestil o odgovorih je na voljo vsem uporabnikom in privzeto nastavljena na **Vsako minuto**. Frekvenca obvestil za administratorje je na voljo adminom spletnega mesta in privzeto nastavljena na **Dnevna zbirka**. Upoštevajte, da se obvestila o @omembah vedno pošiljajo takoj, ne glede na te nastavitve.
 
-Frekvenco lahko tudi prekličete po naročilu v tabeli Naročila, za natančnejši nadzor nad posameznimi stranmi.
+Prav tako lahko prilagodite frekvenco za posamezne naročnine v tabeli Naročne, za natančen nadzor nad posameznimi stranmi.
 
-### Kako to Konfigurirati
+### Kako to konfigurirati
 
-1. Pojdite na svoje [Nastavitve Obvestil](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Uporabite spustni meni **Frekvenca Obvestil o Novih Komentarjih** za nastavitev želene frekvence.
-3. Po želji prekličite frekvenco za posamezna naročila v tabeli Naročila.
-4. Kliknite **Shrani Spremembe**.
-
-Privzeta nastavitev je **Vsako minuto**, kar se ujema s prejšnjim delovanjem.
+1. Pojdite na svoje [Nastavitve obvestil](https://fastcomments.com/auth/my-account/edit-notifications).
+2. Uporabite **Frekvenca obvestil o odgovorih** in **Frekvenca obvestil za administratorje** spustne sezname, da nastavite svoje želene frekvence.
+3. Po želji, prilagodite frekvenco za posamezne naročnine v tabeli Naročne.
+4. Kliknite **Shrani spremembe**.
 
 ### Podpora za API
 
-Frekvenca obvestil je na voljo tudi prek API-ja. Nastavitev na ravni uporabnika je polje `notificationFrequency`, prekinitve po naročilu pa se lahko nastavijo prek polja `notificationFrequency` naročila. Oglejte si [dokumentacijo API-ja](https://docs.fastcomments.com/guide-api.html) za več podrobnosti.
+Polje `notificationFrequency` na objektu uporabnika nadzoruje frekvenco obvestila o odgovorih, polje `adminNotificationFrequency` pa nadzoruje frekvenco obvestil za administratorje. Prilagoditve za posamezne naročnine lahko nastavite preko polja `notificationFrequency` naročnine. Oglejte si [dokumentacijo API](https://docs.fastcomments.com/guide-api.html) za podrobnosti.
 
-### V Zaključku
+### Na koncu
 
-To uporabnikom daje nadzor nad njihovim poštnim predalom, ne da bi se morali popolnoma odjaviti s strani. Ena nastavitev zdaj pokriva tako obvestila o odgovorih kot obvestila o najemnikih, kar poenostavi upravljanje.
+To uporabnikom daje nadzor nad njihovim prejeto pošto, ne da bi se morali popolnoma odjaviti s strani.
 
-Povejte nam spodaj, če imate kakšne povratne informacije!
+Sporočite nam spodaj, če imate kakšne povratne informacije!
 
 Na zdravje!
 
 {{/isPost}}
+
+--- 
 
 ---

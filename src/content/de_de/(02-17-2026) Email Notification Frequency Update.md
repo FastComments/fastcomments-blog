@@ -2,44 +2,42 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Aktualisierung der E-Mail-Benachrichtigungsfrequenz[/postlink]
+# [postlink]Update zur E-Mail-Benachrichtigungsfrequenz[/postlink]
 
 {{#unless isPost}}
-Benutzer können jetzt steuern, wie oft sie E-Mail-Benachrichtigungen für neue Kommentare und Antworten erhalten, jede Minute, stündlich oder täglich, mit einer einzigen gemeinsamen Einstellung, plus spezifischen Überschreibungen pro Abonnement.
+Benutzer können jetzt steuern, wie oft sie E-Mail-Benachrichtigungen über neue Kommentare und Antworten erhalten, jede Minute, stündlicher Bericht oder täglicher Bericht, mit separaten Einstellungen für Antworten und Admin-Benachrichtigungen sowie pro-Abonnement-Überschreibungen.
 {{/unless}}
 
 {{#isPost}}
 
 ### Neuigkeiten
 
-Wir haben eine **Einstellung zur Häufigkeit der Benachrichtigung über neue Kommentare** hinzugefügt, die steuert, wie oft Sie E-Mail-Benachrichtigungen für sowohl Antwortbenachrichtigungen als auch Tenant (neue Kommentar) Benachrichtigungen erhalten. Die drei Optionen sind:
+Wir haben **Antwortbenachrichtigungsfrequenz** und **Admin-Benachrichtigungsfrequenz** Einstellungen hinzugefügt, die steuern, wie oft Sie E-Mail-Benachrichtigungen für Antworten und neue Kommentare erhalten. Die drei Optionen für jede sind:
 
-- **Jede Minute** - erhalten Sie eine E-Mail, sobald neue Kommentare eintreffen (jede Minute überprüft).
-- **Stündlicher Überblick** - erhalten Sie einmal pro Stunde eine zusammengefasste Übersicht über neue Kommentare.
-- **Täglicher Überblick** - erhalten Sie einmal pro Tag eine zusammengefasste Übersicht über neue Kommentare.
+- **Jede Minute** - eine E-Mail erhalten, sobald neue Kommentare eintreffen (jede Minute überprüft).
+- **Stündlicher Bericht** - einen gebündelten Überblick über neue Kommentare einmal pro Stunde erhalten.
+- **Täglicher Bericht** - einen gebündelten Überblick über neue Kommentare einmal pro Tag erhalten.
 
-Diese Einstellung ist sowohl für Tenant-Administratoren als auch für Kommentatoren verfügbar und gilt für alle E-Mail-Benachrichtigungen zu Kommentaren. Beachten Sie, dass @mention-Benachrichtigungen immer sofort gesendet werden, unabhängig von dieser Einstellung.
+Die Antwortbenachrichtigungsfrequenz ist für alle Benutzer verfügbar und standardmäßig auf **Jede Minute** eingestellt. Die Admin-Benachrichtigungsfrequenz ist für Site-Administratoren verfügbar und standardmäßig auf **Stündlicher Bericht** eingestellt. Beachten Sie, dass @Erwähnungsbenachrichtigungen immer sofort gesendet werden, unabhängig von diesen Einstellungen.
 
-Sie können die Häufigkeit auch pro Abonnement in der Abonnementstabelle überschreiben, um eine präzisere Kontrolle über einzelne Seiten zu haben.
+Sie können auch die Frequenz pro Abonnement in der Abonnementstabelle überschreiben, um eine detaillierte Kontrolle über einzelne Seiten zu haben.
 
 ### So konfigurieren Sie es
 
 1. Gehen Sie zu Ihren [Benachrichtigungseinstellungen](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Verwenden Sie das Dropdown-Menü **Häufigkeit der Benachrichtigungen über neue Kommentare**, um Ihre bevorzugte Frequenz festzulegen.
-3. Optional können Sie die Frequenz für einzelne Abonnements in der Abonnementstabelle überschreiben.
+2. Verwenden Sie die Dropdowns für **Antwortbenachrichtigungsfrequenz** und **Admin-Benachrichtigungsfrequenz**, um Ihre bevorzugten Frequenzen festzulegen.
+3. Optional, überschreiben Sie die Frequenz für einzelne Abonnements in der Abonnementstabelle.
 4. Klicken Sie auf **Änderungen speichern**.
-
-Der Standardwert ist **Jede Minute**, was dem vorherigen Verhalten entspricht.
 
 ### API-Unterstützung
 
-Die Benachrichtigungsfrequenz ist auch über die API verfügbar. Die benutzerspezifische Einstellung ist das Feld `notificationFrequency`, und Überschreibungen pro Abonnement können über das Feld `notificationFrequency` des Abonnements festgelegt werden. Weitere Einzelheiten finden Sie in der [API-Dokumentation](https://docs.fastcomments.com/guide-api.html).
+Das Feld `notificationFrequency` im Benutzerobjekt steuert die Antwortbenachrichtigungsfrequenz, und das Feld `adminNotificationFrequency` steuert die Admin-Benachrichtigungsfrequenz. Pro-Abonnement-Überschreibungen können über das Feld `notificationFrequency` des Abonnements festgelegt werden. Siehe die [API-Dokumentation](https://docs.fastcomments.com/guide-api.html) für Details.
 
 ### Fazit
 
-Dies gibt den Benutzern die Kontrolle über ihren Posteingang, ohne dass sie sich komplett von Seiten abmelden müssen. Eine Einstellung deckt nun sowohl Antwort- als auch Tenant-Benachrichtigungen ab, was die Verwaltung einfacher macht.
+Dies gibt den Benutzern Kontrolle über ihren Posteingang, ohne dass sie von Seiten vollständig abbestellen müssen.
 
-Lassen Sie uns unten wissen, wenn Sie Feedback haben!
+Lassen Sie uns unten wissen, ob Sie Feedback haben!
 
 Prost!
 

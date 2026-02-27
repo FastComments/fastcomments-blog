@@ -2,44 +2,42 @@
 [category:Features]
 [category:Announcements]
 ###### [postdate]
-# [postlink]Update E-mailnotificatiefrequentie[/postlink]
+# [postlink]E-mailnotificatiefrequentie-update[/postlink]
 
 {{#unless isPost}}
-Gebruikers kunnen nu controleren hoe vaak ze e-mailnotificaties ontvangen voor nieuwe reacties en opmerkingen, elk minuut, een uurlijkse samenvatting of een dagelijkse samenvatting, met een enkele gedeelde instelling, plus per-abonnement overrides.
+Gebruikers kunnen nu bepalen hoe vaak ze e-mailnotificaties ontvangen voor nieuwe opmerkingen en reacties, elke minuut, een uurlijke samenvatting of dagelijkse samenvatting, met aparte instellingen voor reactie- en adminnotificaties, plus per-abonnement uitzonderingen.
 {{/unless}}
 
 {{#isPost}}
 
-### Wat is Nieuw
+### Wat is er nieuw
 
-We hebben een **Nieuwe Reactie Notificatiefrequentie** instelling toegevoegd die bepaalt hoe vaak je e-mailnotificaties ontvangt voor zowel reactie-notificaties als tenant (nieuwe reactie) notificaties. De drie opties zijn:
+We hebben **Reactie-notificatiefrequentie** en **Admin-notificatiefrequentie** instellingen toegevoegd die bepalen hoe vaak je e-mailnotificaties ontvangt voor reacties en nieuwe opmerkingen, respectievelijk. De drie opties voor elk zijn:
 
-- **Elke minuut** - ontvang een e-mail zodra er nieuwe reacties binnenkomen (elk minuut gecontroleerd).
-- **Uurlijke samenvatting** - ontvang een gebundelde samenvatting van nieuwe reacties eenmaal per uur.
-- **Dagelijkse samenvatting** - ontvang een gebundelde samenvatting van nieuwe reacties eenmaal per dag.
+- **Elke minuut** - ontvang een e-mail zodra er nieuwe opmerkingen binnenkomen (elk minuut gecontroleerd).
+- **Uurlijke samenvatting** - ontvang een samenvatting van nieuwe opmerkingen eenmaal per uur.
+- **Dagelijkse samenvatting** - ontvang een samenvatting van nieuwe opmerkingen eenmaal per dag.
 
-Deze instelling is beschikbaar voor zowel tenant-beheerders als commentatoren en is van toepassing op alle e-mailnotificaties voor opmerkingen. Merk op dat @vermeldingen altijd meteen worden verzonden ongeacht deze instelling.
+Reactie-notificatiefrequentie is beschikbaar voor alle gebruikers en is standaard ingesteld op **Elke minuut**. Admin-notificatiefrequentie is beschikbaar voor sitebeheerders en is standaard ingesteld op **Uurlijke samenvatting**. Merk op dat @mention-notificaties altijd onmiddellijk worden verzonden, ongeacht deze instellingen.
 
-Je kunt ook de frequentie per abonnement overschrijven in de Abonnements tabel, voor fijne afstemming over individuele pagina's.
+Je kunt de frequentie ook per abonnement overschrijven in de abonnements tabel, voor fijnmazige controle over individuele pagina's.
 
-### Hoe het te Configureren
+### Hoe het te configureren
 
 1. Ga naar je [Notificatie-instellingen](https://fastcomments.com/auth/my-account/edit-notifications).
-2. Gebruik de **Nieuwe Reactie Notificatiefrequentie** dropdown om je voorkeurfrequentie in te stellen.
-3. Optioneel, overschrijf de frequentie voor individuele abonnementen in de Abonnements tabel.
+2. Gebruik de dropdowns **Reactie-notificatiefrequentie** en **Admin-notificatiefrequentie** om je voorkeursfrequenties in te stellen.
+3. Optioneel, overschrijf de frequentie voor individuele abonnementen in de abonnements tabel.
 4. Klik op **Wijzigingen opslaan**.
 
-De standaard is **Elke minuut**, wat overeenkomt met het eerdere gedrag.
+### API-ondersteuning
 
-### API Ondersteuning
+Het `notificationFrequency` veld op het gebruikersobject controleert de reactie-notificatiefrequentie, en het `adminNotificationFrequency` veld controleert de admin-notificatiefrequentie. Per-abonnement uitzonderingen kunnen worden ingesteld via het `notificationFrequency` veld van het abonnement. Zie de [API-documentatie](https://docs.fastcomments.com/guide-api.html) voor meer details.
 
-De notificatiefrequentie is ook beschikbaar via de API. De gebruikersinstelling is het `notificationFrequency` veld, en per-abonnement overrides kunnen worden ingesteld via het `notificationFrequency` veld van het abonnement. Zie de [API documentatie](https://docs.fastcomments.com/guide-api.html) voor details.
+### Ter conclusie
 
-### Conclusie
+Dit geeft gebruikers controle over hun inbox zonder dat ze zich helemaal van pagina's hoeven af te melden.
 
-Dit geeft gebruikers controle over hun inbox zonder dat ze zich volledig van pagina's hoeven af te melden. Eén instelling dekt nu zowel reactie- als tenant-notificaties, wat het beheren eenvoudiger maakt.
-
-Laat ons hieronder weten als je feedback hebt!
+Laat het ons hieronder weten als je feedback hebt!
 
 Proost!
 
