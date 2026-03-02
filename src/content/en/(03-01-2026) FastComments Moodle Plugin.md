@@ -58,7 +58,7 @@ longer threaded conversations.
     <img src="images/moodle-page-comments.png" alt="Page Comments" title="Page Comments" />
 </div>
 
-### SSO That Just Works
+### Automatic SSO
 
 The plugin supports three SSO modes. **Secure SSO** is the recommended option. It signs user identity server-side with
 HMAC-SHA256 using your API Secret, so credentials are never exposed on the client. With Secure SSO, Moodle admins are
