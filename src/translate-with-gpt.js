@@ -143,6 +143,40 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
     }
 
     /**
+     * Extract [category:...] tags from content in order
+     * @param {string} content - Blog post content
+     * @returns {string[]} - Array of full category tags e.g. ['[category:Features]']
+     */
+    extractCategoryTags(content) {
+        const matches = content.match(/\[category:[^\]]+\]/g);
+        return matches || [];
+    }
+
+    /**
+     * Replace category tags in translated content with the original English ones.
+     * The model sometimes translates category values despite being told not to.
+     * @param {string} source - Original English content
+     * @param {string} translated - Translated content
+     * @returns {string} - Translated content with original category tags restored
+     */
+    restoreCategoryTags(source, translated) {
+        const sourceTags = this.extractCategoryTags(source);
+        const translatedTags = this.extractCategoryTags(translated);
+
+        if (sourceTags.length === 0) return translated;
+
+        // Replace each translated category tag with the corresponding source tag
+        let result = translated;
+        for (let i = 0; i < translatedTags.length && i < sourceTags.length; i++) {
+            if (translatedTags[i] !== sourceTags[i]) {
+                result = result.replace(translatedTags[i], sourceTags[i]);
+            }
+        }
+
+        return result;
+    }
+
+    /**
      * Call OpenAI API to translate content
      * @param {string} content - Source content
      * @param {string} locale - Target locale
@@ -176,7 +210,10 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
             }
 
             const data = await response.json();
-            const translation = data.choices?.[0]?.message?.content?.trim() || '';
+            let translation = data.choices?.[0]?.message?.content?.trim() || '';
+
+            // Restore original category tags in case the model translated them
+            translation = this.restoreCategoryTags(content, translation);
 
             console.log(`  [translated] ${locale}/${filename} (${data.usage?.total_tokens || 0} tokens)`);
 
