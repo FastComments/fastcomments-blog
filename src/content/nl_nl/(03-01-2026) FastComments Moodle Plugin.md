@@ -1,6 +1,6 @@
 ---
-[category:Integraties]
-[category:Functies]
+[category:Integrations]
+[category:Features]
 ###### [postdate]
 # [postlink]FastComments Moodle Plugin[/postlink]
 

@@ -1,6 +1,6 @@
 ---
-[category:Integraciones]
-[category:Características]
+[category:Integrations]
+[category:Features]
 ###### [postdate]
 # [postlink]Plugin FastComments para Moodle[/postlink]
 
