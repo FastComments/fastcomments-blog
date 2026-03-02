@@ -2,86 +2,91 @@
 [category:Integrations]
 [category:Features]
 ###### [postdate]
-# [postlink]FastComments Moodle Plugin[/postlink]
+# [postlink]FastComments Moodle vtičnik[/postlink]
 
 {{#unless isPost}}
-FastComments sedaj ima namenski Moodle vtičnik s SSO, podprtimi komentarji in sodelovalnim klepetom za vaše tečaje.
+FastComments zdaj ima posebni Moodle vtičnik z enotno prijavo, povezane komentarje in skupinski klepet za vaše tečaje.
 {{/unless}}
 
 {{#isPost}}
 
-### Kaj je novega
+### Novosti
 
-Z veseljem naznanjamo uradni FastComments vtičnik za Moodle. Če ste uporabljali Moodle in želite dodati žive,
-podprte komentarje ali sodelovalni klepet vašim tečajem, ta vtičnik to poenostavi. Nadomešča staro ročno PHP rešitev
-s pravim Moodle vtičnikom, ki se namesti v minuti in se integrira z obstoječimi Moodle uporabniškimi računi. Vtičnik deluje
-z Moodle 4.1 in novejšimi, koda pa je na voljo na [GitHub](https://github.com/FastComments/fastcomments-moodle).
+Navdušeni smo, da lahko napovemo uradni FastComments vtičnik za Moodle. Če ste uporabljali Moodle in želeli dodati
+življenje, povezano komentiranje ali skupinski klepet svojim tečajem, je ta vtičnik preprost za uporabo. Nadomešča staro
+ročno PHP rešitev s pravim Moodle vtičnikom, ki se namesti v nekaj minutah in se poveže z obstoječimi Moodle uporabniškimi
+računi. Vtičnik deluje z Moodle 4.1 in novejšimi različicami, izvorna koda pa je na voljo na [GitHub](https://github.com/FastComments/fastcomments-moodle).
 
-### Kako začeti
+### Začetek uporabe
 
-Da namestite, prenesite ZIP iz [GitHub repozitorija](https://github.com/FastComments/fastcomments-moodle) in ga razpakirajte
-na `<moodle-root>/local/fastcomments`. Nato se prijavite kot skrbnik spletnega mesta in obiščite **Site Administration > Notifications**.
-Moodle bo zaznal nov vtičnik in ga samodejno namestil.
+Za namestitev prenesite ZIP datoteko iz [GitHub repozitorija](https://github.com/FastComments/fastcomments-moodle) in jo
+razpakirajte v `<moodle-root>/local/fastcomments`. Nato se prijavite kot skrbnik spletne strani in obiščite
+**Sistem upravljanja > Obvestila**. Moodle bo zaznal nov vtičnik in ga samodejno namestil.
 
-Ko je nameščen, odprite **Site Administration > Plugins > Local plugins > FastComments** za konfiguracijo. Potrebovali boste svoj
-**Tenant ID** (najdete ga v vašem FastComments nadzornem plošči) in **API Secret**, če želite uporabljati Secure SSO, kar priporočamo.
+Ko je enkrat nameščen, pojdite na **Sistem upravljanja > Vtičniki > Lokalne vtičnike > FastComments** za konfiguracijo.
+Potrebovali boste svoj **ID najemnika** (najdete ga v svojem FastComments nadzornem pultu) in svoj **API skrivni ključ**, če želite
+uporabiti varno enotno prijavo, kar priporočamo.
 
-Upoštevajte, da je ročni prenos z GitHub začasen, medtem ko čakamo, da bo vtičnik odobren v imeniku Moodle vtičnikov. Ko bo odobren, ga boste lahko namestili neposredno iz vtičnika installerja Moodle.
+Upoštevajte, da je ročno prenašanje iz GitHub-a začasno, medtem ko čakamo na odobritev vtičnika v imeniku Moodle vtičnikov.
+Ko bo odobren, ga boste lahko namestili neposredno iz Moodleovega namestitvenega orodja za vtičnike.
 
 ### Slogi komentiranja
 
-Vtičnik podpira tri sloge komentiranja, tako da lahko izberete, kar najbolje deluje za vaše študente in strukturo tečaja.
+Vtičnik podpira tri sloge komentiranja, tako da lahko izberete tistega, ki najbolje ustreza vašim študentom in strukturi
+tečaja.
 
-**Komentarji** način postavi celoten komentar vtičnik pod vsebino strani. Študenti dobijo podprte odgovore, @omembe,
-glasovanje in negativno glasovanje, urejevalnik bogatega besedila ter obvestilni zvonec za naročanje na nove komentarje na strani.
+**Komentarji** način postavi celoten komentatorski vtičnik pod vsebino strani. Študenti dobijo povezane odgovore, @omembe,
+glasovanje za in proti, urejevalnik bogatega besedila, in obvestilni zvonček za naročanje na nove komentarje na strani.
 
 <div class="text-center">
     <div class="sm">Komentarji na strani tečaja</div>
-    <img src="images/moodle-course-comments.png" alt="Komentarji tečaja" title="Komentarji tečaja" />
+    <img src="images/moodle-course-comments.png" alt="Komentarji na tečaju" title="Komentarji na tečaju" />
 </div>
 
-**Collab Chat** način doda vrstico na vrhu strani, ki uporabnike poziva, da izberejo besedilo in začnejo razpravo. 
-Označeno besedilo je povezano z vsebino, tako da razprava ostane vezana na tisto, o čemer se razpravlja. Prav tako
-prikazuje spletne uporabnike in število aktivnih razprav. Ta način ne prikaže spodnjega vtičnika.
+**Collab Chat** način doda vrstico na vrhu strani, ki uporabnike spodbudi, da izberejo besedilo in začnejo razpravo. 
+Poudarjeno besedilo je pritrjeno na vsebino, tako da pogovor ostane povezan z natančno tistim, o čemer se razpravlja. 
+Prav tako prikazuje spletne uporabnike in število aktivnih razprav. Ta način ne prikaže spodnjega vtičnika.
 
 <div class="text-center">
-    <div class="sm">Sodelovalni klepet pritrjen na izbrano besedilo</div>
-    <img src="images/moodle-collab-chat.png" alt="Sodelovalni klepet" title="Sodelovalni klepet" />
+    <div class="sm">Sodelovan klepet pritrjen na izbrano besedilo</div>
+    <img src="images/moodle-collab-chat.png" alt="Sodelovan klepet" title="Sodelovan klepet" />
 </div>
 
-**Collab Chat + Komentarji** vam omogoča, da oboje hkrati. Študenti lahko označijo besedilo za razprave v besedilu in
-tudi uporabijo celoten komentar vtičnik pod vsebino. To je odlično za tečaje, kjer želite tako hitro povratno informacijo v besedilu kot
-daljše podprte razprave.
+**Collab Chat + Komentarji** vam omogoča obe funkciji hkrati. Študenti lahko izpostavijo besedilo za razprave v besedilu in
+tudi uporabijo celoten vtičnik za komentiranje pod vsebino. To je odlično za tečaje, kjer želite hitro povratno informacijo
+in daljša povezana pogovora.
 
 <div class="text-center">
     <div class="sm">Oba sloga komentiranja aktivna na strani</div>
     <img src="images/moodle-page-comments.png" alt="Komentarji na strani" title="Komentarji na strani" />
 </div>
 
-### SSO, ki preprosto deluje
+### Samodejna enotna prijava
 
-Vtičnik podpira tri SSO načine. **Secure SSO** je priporočena možnost. Uporabniška identiteta se podpisuje na strežniku z
-HMAC-SHA256 z uporabo vašega API Secret, tako da podatki nikoli niso izpostavljeni na klientu. S Secure SSO so Moodle skrbniki
-samodejno sinhronizirani kot moderatorji FastComments, kar pomeni, da lahko upravljajo komentarje brez dodatne nastavitve. 
-Avatarji uporabnikov, imena in e-poštni naslovi so vsi preneseni varno.
+Vtičnik podpira tri načine enotne prijave. **Varna enotna prijava** je priporočena možnost. Uporabniška identiteta se
+potrdi na strežniški strani z HMAC-SHA256 z uporabo vašega API skrivnega ključa, zato kredenciali nikoli niso razkriti
+na odjemalcu. Z varno enotno prijavo so Moodle skrbniki samodejno sinhronizirani kot FastComments moderatorji, kar
+pomeni, da lahko vaši skrbniki spletnih strani moderirajo komentarje brez dodatne nastavitve. Avatarji uporabnikov, imena in
+e-poštni naslovi so vsi varno preneseni.
 
-**Simple SSO** prenaša uporabniške podatke (ime, e-pošta, avatar) na klientu brez podpisa. Hitro se nastavi, vendar je manj varen
-od HMAC pristopa. Nazadnje, **Noben** popolnoma onemogoča SSO, tako da uporabniki komentirajo anonimno.
+**Preprosta enotna prijava** prenese uporabniške podatke (ime, e-pošta, avatar) na odjemalcu brez podpisa. Hitro jo je
+nastaviti, vendar je manj varna od HMAC pristopa. Nazadnje, **Brez** popolnoma onemogoči enotno prijavo, tako da uporabniki
+komentirajo anonimno.
 
-### Nastavitve obveščanja uporabnikov
+### Nastavitve obvestil uporabnika
 
-Študenti lahko upravljajo svoje nastavitve obveščanja FastComments neposredno iz svoje Moodlega profila. V razdelku **FastComments**
-lahko preklapljajo obvestila o odgovorih (prejmejo e-pošto, ko nekdo odgovori na njihov komentar) in obvestila o naročilih
-(prejmejo e-poštna sporočila za teme, na katere so se naročili). To vse drži na enem mestu in študentom daje nadzor nad tem, koliko
-e-pošte prejemajo.
+Študenti lahko upravljajo nastavitve obvestil FastComments neposredno iz svojega Moodle profila. V razdelku **FastComments**
+lahko preklapljajo obvestila o odgovorih (dobi e-pošto, ko nekdo odgovori na njihov komentar) in obvestila o naročninah (dobi
+e-pošte za teme, na katere so se naročili). To vse ohranja na enem mestu in daje študentom nadzor nad tem, koliko e-pošte
+prejmejo.
 
 ### Na koncu
 
-Moodle vtičnik je zdaj na voljo. Za celotno navodilo o nastavitvi si oglejte
-[Moodle Integration Guide](https://docs.fastcomments.com/guide-installation-moodle.html), koda pa je na voljo na
-[GitHub](https://github.com/FastComments/fastcomments-moodle). Sporočite nam spodaj, če imate kakršne koli povratne informacije!
+Moodle vtičnik je zdaj na voljo. Za celotno navodilo za nastavitev si oglejte
+[Moodle Integracijski vodič](https://docs.fastcomments.com/guide-installation-moodle.html), izvorna koda pa je na
+[GitHub](https://github.com/FastComments/fastcomments-moodle). Sporočite nam spodaj, če imate kakšne povratne informacije!
 
-Nazdravimo!
+Lep pozdrav!
 
 {{/isPost}}
 

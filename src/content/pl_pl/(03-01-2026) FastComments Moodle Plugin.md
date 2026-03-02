@@ -2,84 +2,79 @@
 [category:Integrations]
 [category:Features]
 ###### [postdate]
-# [postlink]Wtyczka FastComments do Moodle[/postlink]
+# [postlink]Wtyczka FastComments dla Moodle[/postlink]
 
 {{#unless isPost}}
-FastComments ma teraz dedykowaną wtyczkę do Moodle z SSO, wątkowymi komentarzami i wspólnym czatem dla Twoich kursów.
+FastComments ma teraz dedykowaną wtyczkę do Moodle z SSO, wątkowymi komentarzami i współpracującym czatem dla Twoich kursów.
 {{/unless}}
 
 {{#isPost}}
 
 ### Co nowego
 
-Z przyjemnością ogłaszamy oficjalną wtyczkę FastComments dla Moodle. Jeśli korzystałeś z Moodle i chciałeś dodać na żywo,
-wątkowe komentarze lub wspólny czat do swoich kursów, ta wtyczka to ułatwia. Zastępuje stary ręczny sposób PHP
-proper wtyczką do Moodle, która instaluje się w kilka minut i integruje z istniejącymi kontami użytkowników Moodle. Wtyczka działa
-z Moodle 4.1 i nowszymi, a źródło jest dostępne na [GitHub](https://github.com/FastComments/fastcomments-moodle).
+Z radością ogłaszamy oficjalną wtyczkę FastComments dla Moodle. Jeśli używasz Moodle i chcesz dodać na żywo, wątkowe komentarze lub współpracujący czat do swoich kursów, ta wtyczka to ułatwia. Zastępuje starą ręczną metodę PHP odpowiednią wtyczką Moodle, która instaluje się w kilka minut i integruje z istniejącymi kontami użytkowników Moodle. Wtyczka działa z Moodle 4.1 i późniejszymi wersjami, a kod źródłowy jest dostępny na [GitHub](https://github.com/FastComments/fastcomments-moodle).
 
-### Rozpoczęcie
+### Jak zacząć
 
 Aby zainstalować, pobierz plik ZIP z [repozytorium GitHub](https://github.com/FastComments/fastcomments-moodle) i rozpakuj go
-do `<moodle-root>/local/fastcomments`. Następnie zaloguj się jako administrator serwisu i przejdź do **Administracja serwisem > Powiadomienia**.
+do `<moodle-root>/local/fastcomments`. Następnie zaloguj się jako administrator witryny i przejdź do **Administracja witryną > Powiadomienia**.
 Moodle wykryje nową wtyczkę i uruchomi instalację automatycznie.
 
-Po zainstalowaniu przejdź do **Administracja serwisem > Wtyczki > Wtyczki lokalne > FastComments**, aby skonfigurować. Będziesz potrzebować swojego
-**Identifikatora najemcy** (znajdziesz go w swoim panelu FastComments) oraz **Tajnego klucza API**, jeśli chcesz używać Secure SSO, co zalecamy.
+Po zainstalowaniu przejdź do **Administracja witryną > Wtyczki > Wtyczki lokalne > FastComments**, aby skonfigurować. Będziesz potrzebować swojego
+**Tenant ID** (znajdziesz w swoim pulpicie FastComments) oraz **API Secret**, jeśli chcesz użyć Secure SSO, co zalecamy.
 
-Zauważ, że ręczne pobranie z GitHub jest tymczasowe, podczas gdy czekamy na zatwierdzenie wtyczki w katalogu wtyczek Moodle. Po zatwierdzeniu będziesz mógł zainstalować ją bezpośrednio z poziomu instalatora wtyczek Moodle.
+Zauważ, że ręczne pobieranie z GitHub jest tymczasowe, dopóki nie zostanie zatwierdzona wtyczka w katalogu wtyczek Moodle. Po zatwierdzeniu będziesz mógł zainstalować ją bezpośrednio z instalatora wtyczek Moodle.
 
-### Style komentarzy
+### Style komentowania
 
-Wtyczka obsługuje trzy style komentarzy, więc możesz wybrać to, co najlepiej pasuje do Twoich studentów i struktury kursu.
+Wtyczka obsługuje trzy style komentowania, dzięki czemu możesz wybrać, co działa najlepiej dla Twoich studentów i struktury kursu.
 
-**Tryb Komentarzy** umieszcza pełny widżet komentarzy poniżej treści stron. Studenci otrzymują wątkowe odpowiedzi, @wzmianki,
-głosowanie w górę i w dół, edytor tekstu oraz dzwonek powiadomień, aby subskrybować nowe komentarze na stronie.
+**Tryb Komentarzy** umieszcza pełen widget komentarzy poniżej treści strony. Studenci mogą uzyskiwać wątkowe odpowiedzi, @wzmianki,
+głosować w górę i w dół, korzystać z edytora tekstu i otrzymywać powiadomienia o nowych komentarzach na stronie.
 
 <div class="text-center">
     <div class="sm">Komentarze na stronie kursu</div>
-    <img src="images/moodle-course-comments.png" alt="Komentarze do kursu" title="Komentarze do kursu" />
+    <img src="images/moodle-course-comments.png" alt="Komentarze Kursu" title="Komentarze Kursu" />
 </div>
 
-**Tryb Czat Wspólny** dodaje pasek na górze strony, który zachęca użytkowników do zaznaczenia tekstu i rozpoczęcia dyskusji. 
-Zaznaczony tekst jest związany z treścią, więc rozmowa pozostaje związana z tym, o czym dokładnie jest mowa. Pokazuje również
-użytkowników online oraz liczbę aktywnych dyskusji. Ten tryb nie renderuje widżetu na dole.
+**Tryb Czat Współpracujący** dodaje pasek na górze strony, który zachęca użytkowników do zaznaczania tekstu i rozpoczynania dyskusji. 
+Zaznaczony tekst jest powiązany z treścią, więc rozmowa pozostaje związana z tym, co jest omawiane. Pokazuje także użytkowników online oraz liczbę aktywnych dyskusji. Ten tryb nie generuje dolnego widgetu.
 
 <div class="text-center">
-    <div class="sm">Wspólny czat związany z zaznaczonym tekstem</div>
-    <img src="images/moodle-collab-chat.png" alt="Czat Wspólny" title="Czat Wspólny" />
+    <div class="sm">Czat współpracujący powiązany z zaznaczonym tekstem</div>
+    <img src="images/moodle-collab-chat.png" alt="Czat Współpracujący" title="Czat Współpracujący" />
 </div>
 
-**Czat Wspólny + Komentarze** daje Ci oba jednocześnie. Studenci mogą zaznaczać tekst do dyskusji i korzystać
-z pełnego widżetu komentarzy poniżej treści. To świetne rozwiązanie dla kursów, w których chcesz zarówno szybkie opinie inline,
-jak i dłuższe wątkowe rozmowy.
+**Czat Współpracujący + Komentarze** daje Ci oba te elementy jednocześnie. Studenci mogą zaznaczać tekst do dyskusji inline oraz
+korzystać z pełnego widgetu komentarzy poniżej treści. To świetne rozwiązanie dla kursów, w których chcesz zarówno szybkie
+opinie inline, jak i dłuższe wątkowe rozmowy.
 
 <div class="text-center">
-    <div class="sm">Oba style komentarzy aktywne na stronie</div>
+    <div class="sm">Aktywne oba style komentowania na stronie</div>
     <img src="images/moodle-page-comments.png" alt="Komentarze na Stronie" title="Komentarze na Stronie" />
 </div>
 
-### SSO, które po prostu działa
+### Automatyczne SSO
 
-Wtyczka obsługuje trzy tryby SSO. **Bezpieczne SSO** to zalecana opcja. Podpisuje tożsamość użytkownika po stronie serwera za pomocą
-HMAC-SHA256, używając Twojego Tajnego Klucza API, więc dane logowania nigdy nie są ujawniane na kliencie. Przy Bezpiecznym SSO administratorzy Moodle
-są automatycznie synchronizowani jako moderatorzy FastComments, co oznacza, że administratorzy witryn mogą moderować komentarze bez żadnych
-dodatkowych ustawień. Awatary użytkowników, imiona i adresy e-mail są przesyłane w sposób bezpieczny.
+Wtyczka obsługuje trzy tryby SSO. **Bezpieczne SSO** jest zalecaną opcją. Uwierzytelnia tożsamość użytkowników po stronie serwera
+przy użyciu HMAC-SHA256 z Twoim API Secret, dzięki czemu dane uwierzytelniające nigdy nie są ujawniane po stronie klienta. Dzięki Bezpiecznemu SSO administratorzy Moodle są
+automatycznie synchronizowani jako moderatorzy FastComments, co oznacza, że Twoi administratorzy witryn mogą moderować komentarze bez dodatkowych ustawień. Awatary użytkowników, imiona i adresy e-mail są wszystkie przesyłane w sposób bezpieczny.
 
-**Proste SSO** przesyła dane użytkownika (imię, e-mail, avatar) po stronie klienta bez podpisu. Szybko się je konfiguruje, ale jest mniej bezpieczne
-niż podejście HMAC. Na koniec, **Brak** całkowicie dezaktywuje SSO, więc użytkownicy komentują anonimowo.
+**Proste SSO** przesyła dane użytkowników (imię, e-mail, avatar) po stronie klienta bez podpisu. Jest szybkie do skonfigurowania, ale mniej bezpieczne
+niż podejście HMAC. Na koniec, **Brak** całkowicie wyłącza SSO, dzięki czemu użytkownicy komentują anonimowo.
 
-### Preferencje powiadomień użytkownika
+### Preferencje powiadomień użytkowników
 
-Studenci mogą zarządzać swoimi ustawieniami powiadomień FastComments bezpośrednio w swoim profilu Moodle. W sekcji **FastComments**
-mogą włączać powiadomienia o odpowiedziach (otrzymują e-mail, gdy ktoś odpowiada na ich komentarz) oraz powiadomienia o subskrypcjach
-(otrzymują e-maile dla wątków, do których się subskrybują). To wszystko w jednym miejscu i daje studentom kontrolę nad tym, ile e-maili otrzymują.
+Studenci mogą zarządzać swoimi ustawieniami powiadomień FastComments bezpośrednio z ich profilu Moodle. W sekcji **FastComments**
+mogą włączyć powiadomienia o odpowiedziach (otrzymywanie e-maila, gdy ktoś odpowiada na ich komentarz) oraz powiadomienia o subskrypcjach
+(otrzymywanie e-maili o wątkach, do których się subskrybują). To utrzymuje wszystko w jednym miejscu i daje studentom kontrolę nad ilością emaili, które otrzymują.
 
 ### Podsumowanie
 
-Wtyczka Moodle jest już dostępna. Aby zapoznać się z pełnym przewodnikiem ustawień, sprawdź
-[Przewodnik Integracji Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), a kod źródłowy jest dostępny na
-[GitHub](https://github.com/FastComments/fastcomments-moodle). Daj nam znać poniżej, jeśli masz jakiekolwiek uwagi!
+Wtyczka Moodle jest już dostępna. Aby uzyskać pełny przewodnik konfiguracji, sprawdź
+[Przewodnik Integracji Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), a kod źródłowy jest na
+[GitHub](https://github.com/FastComments/fastcomments-moodle). Daj nam znać poniżej, jeśli masz jakieś uwagi!
 
-Pozdrawiamy!
+Na zdrowie!
 
 {{/isPost}}
