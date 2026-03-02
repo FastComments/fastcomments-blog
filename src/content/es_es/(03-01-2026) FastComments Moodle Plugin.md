@@ -60,7 +60,7 @@ Los estudiantes pueden gestionar sus configuraciones de notificación de FastCom
 ### En Conclusión
 
 El plugin de Moodle está disponible ahora. Para la guía completa de configuración, consulta la
-[Guía de Integración de Moodle](https://docs.fastcomments.com/guide-moodle.html), y el código fuente está en
+[Guía de Integración de Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), y el código fuente está en
 [GitHub](https://github.com/FastComments/fastcomments-moodle). ¡Háznos saber abajo si tienes algún comentario!
 
 ¡Saludos!

@@ -59,7 +59,7 @@ Eklenti üç SSO modunu destekler. **Güvenli SSO** önerilen seçenektir. Kulla
 
 ### Sonuç Olarak
 
-Moodle eklentisi artık mevcut. Tam kurulum rehberi için [Moodle Entegrasyon Kılavuzu](https://docs.fastcomments.com/guide-moodle.html)'na göz atın ve kaynak kodu [GitHub](https://github.com/FastComments/fastcomments-moodle) üzerinde mevcuttur. Feedback'iniz varsa aşağıda bize bildirin!
+Moodle eklentisi artık mevcut. Tam kurulum rehberi için [Moodle Entegrasyon Kılavuzu](https://docs.fastcomments.com/guide-installation-moodle.html)'na göz atın ve kaynak kodu [GitHub](https://github.com/FastComments/fastcomments-moodle) üzerinde mevcuttur. Feedback'iniz varsa aşağıda bize bildirin!
 
 Şerefe!
 

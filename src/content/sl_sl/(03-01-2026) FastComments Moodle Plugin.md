@@ -78,7 +78,7 @@ e-pošte prejemajo.
 ### Na koncu
 
 Moodle vtičnik je zdaj na voljo. Za celotno navodilo o nastavitvi si oglejte
-[Moodle Integration Guide](https://docs.fastcomments.com/guide-moodle.html), koda pa je na voljo na
+[Moodle Integration Guide](https://docs.fastcomments.com/guide-installation-moodle.html), koda pa je na voljo na
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Sporočite nam spodaj, če imate kakršne koli povratne informacije!
 
 Nazdravimo!

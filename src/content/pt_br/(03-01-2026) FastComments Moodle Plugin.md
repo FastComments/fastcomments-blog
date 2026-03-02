@@ -79,7 +79,7 @@ a quantidade de e-mails que recebem.
 ### Em Conclusão
 
 O plugin do Moodle já está disponível. Para o guia completo de configuração, confira o
-[Guia de Integração do Moodle](https://docs.fastcomments.com/guide-moodle.html), e o código fonte está no
+[Guia de Integração do Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), e o código fonte está no
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Deixe-nos saber abaixo se você tiver alguma feedback!
 
 Saudações!

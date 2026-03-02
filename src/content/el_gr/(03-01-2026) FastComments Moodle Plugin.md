@@ -75,7 +75,7 @@ HMAC-SHA256 χρησιμοποιώντας το API Secret σας, οπότε τ
 ### Συμπέρασμα
 
 Το plugin Moodle είναι διαθέσιμο τώρα. Για την πλήρη διαδικασία ρύθμισης, ρίξτε μια ματιά στον
-[Οδηγό Ενσωμάτωσης Moodle](https://docs.fastcomments.com/guide-moodle.html), και ο πηγαίος κώδικας βρίσκεται στο
+[Οδηγό Ενσωμάτωσης Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), και ο πηγαίος κώδικας βρίσκεται στο
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Ενημερώστε μας παρακάτω αν έχετε οποιαδήποτε ανατροφοδότηση!
 
 Στην Υγειά σας!

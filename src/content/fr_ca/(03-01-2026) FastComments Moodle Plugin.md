@@ -59,7 +59,7 @@ Les étudiants peuvent gérer leurs paramètres de notification FastComments dir
 
 ### En Conclusion
 
-Le plugin Moodle est disponible dès maintenant. Pour le guide complet de configuration, consultez le [Guide d'Intégration Moodle](https://docs.fastcomments.com/guide-moodle.html), et le code source est sur [GitHub](https://github.com/FastComments/fastcomments-moodle). Faites-nous savoir ci-dessous si vous avez des commentaires !
+Le plugin Moodle est disponible dès maintenant. Pour le guide complet de configuration, consultez le [Guide d'Intégration Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), et le code source est sur [GitHub](https://github.com/FastComments/fastcomments-moodle). Faites-nous savoir ci-dessous si vous avez des commentaires !
 
 À bientôt !
 

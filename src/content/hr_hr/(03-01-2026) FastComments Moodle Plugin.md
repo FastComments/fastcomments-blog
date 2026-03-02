@@ -77,7 +77,7 @@ dijelom mogu aktivirati obavijesti o odgovorima (primati e-poštu kada netko odg
 ### Zaključno
 
 Moodle dodatak je sada dostupan. Za cjelovito uputstvo o postavljanju, pogledajte
-[Moodle Integration Guide](https://docs.fastcomments.com/guide-moodle.html), a izvorni kod je na
+[Moodle Integration Guide](https://docs.fastcomments.com/guide-installation-moodle.html), a izvorni kod je na
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Javite nam u nastavku ako imate bilo kakve povratne informacije!
 
 Živjeli!

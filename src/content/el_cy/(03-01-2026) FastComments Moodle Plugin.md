@@ -79,7 +79,7 @@ HMAC-SHA256 χρησιμοποιώντας το API Secret σας, οπότε τ
 ### Στο Συμπέρασμα
 
 Το πρόσθετο Moodle είναι διαθέσιμο τώρα. Για τον πλήρη οδηγό ρύθμισης, ρίξτε μια ματιά στον
-[Οδηγό Ενοποίησης Moodle](https://docs.fastcomments.com/guide-moodle.html), και ο κώδικας είναι στο
+[Οδηγό Ενοποίησης Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), και ο κώδικας είναι στο
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Πείτε μας παρακάτω αν έχετε οποιαδήποτε παρατήρηση!
 
 Υγεία! 

@@ -77,7 +77,7 @@ mogą włączać powiadomienia o odpowiedziach (otrzymują e-mail, gdy ktoś odp
 ### Podsumowanie
 
 Wtyczka Moodle jest już dostępna. Aby zapoznać się z pełnym przewodnikiem ustawień, sprawdź
-[Przewodnik Integracji Moodle](https://docs.fastcomments.com/guide-moodle.html), a kod źródłowy jest dostępny na
+[Przewodnik Integracji Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), a kod źródłowy jest dostępny na
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Daj nam znać poniżej, jeśli masz jakiekolwiek uwagi!
 
 Pozdrawiamy!

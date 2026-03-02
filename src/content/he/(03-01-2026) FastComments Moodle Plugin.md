@@ -74,7 +74,7 @@ HMAC-SHA256 תוך שימוש בסוד ה-API שלך, כך שהנתונים לא
 ### לסיכום
 
 התוסף ל-Moodle זמין עכשיו. למדריך ההתקנה המלא, עיינו ב
-[מדריך האינטגרציה ל-Moodle](https://docs.fastcomments.com/guide-moodle.html), והמקור נמצא ב
+[מדריך האינטגרציה ל-Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), והמקור נמצא ב
 [GitHub](https://github.com/FastComments/fastcomments-moodle). יידעו אותנו למטה אם יש לכם משוב!
 
 לחיים!

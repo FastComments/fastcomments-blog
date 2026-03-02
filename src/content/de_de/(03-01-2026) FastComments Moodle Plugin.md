@@ -59,7 +59,7 @@ Schüler können ihre FastComments-Benachrichtigungseinstellungen direkt aus ihr
 
 ### Fazit
 
-Das Moodle-Plugin ist jetzt verfügbar. Für die vollständige Einrichtung sehen Sie sich den [Moodle Integrationsleitfaden](https://docs.fastcomments.com/guide-moodle.html) an, und der Quellcode ist auf [GitHub](https://github.com/FastComments/fastcomments-moodle) verfügbar. Lassen Sie uns unten wissen, wenn Sie Feedback haben!
+Das Moodle-Plugin ist jetzt verfügbar. Für die vollständige Einrichtung sehen Sie sich den [Moodle Integrationsleitfaden](https://docs.fastcomments.com/guide-installation-moodle.html) an, und der Quellcode ist auf [GitHub](https://github.com/FastComments/fastcomments-moodle) verfügbar. Lassen Sie uns unten wissen, wenn Sie Feedback haben!
 
 Prost!
 

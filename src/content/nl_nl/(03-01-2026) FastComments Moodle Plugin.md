@@ -79,7 +79,7 @@ de controle over hoeveel e-mail ze ontvangen.
 ### Conclusie
 
 De Moodle-plugin is nu beschikbaar. Voor de volledige installatiehandleiding, bekijk de
-[Moodle Integratiehandleiding](https://docs.fastcomments.com/guide-moodle.html), en de broncode is op
+[Moodle Integratiehandleiding](https://docs.fastcomments.com/guide-installation-moodle.html), en de broncode is op
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Laat het ons hieronder weten als je feedback hebt!
 
 Proost!

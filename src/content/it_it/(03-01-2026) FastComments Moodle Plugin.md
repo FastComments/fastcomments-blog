@@ -74,7 +74,7 @@ possono attivare le notifiche di risposta (ricevere un'email quando qualcuno ris
 ### In Conclusione
 
 Il plugin per Moodle è disponibile ora. Per la guida completa all'installazione, dai un'occhiata alla
-[Guida all'Integrazione Moodle](https://docs.fastcomments.com/guide-moodle.html), e il codice sorgente è su
+[Guida all'Integrazione Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), e il codice sorgente è su
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Faccelo sapere qui sotto se hai feedback!
 
 Saluti!

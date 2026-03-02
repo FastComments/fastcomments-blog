@@ -79,7 +79,7 @@ control over how much email they receive.
 ### In Conclusion
 
 The Moodle plugin is available now. For the full setup walkthrough, check out the
-[Moodle Integration Guide](https://docs.fastcomments.com/guide-moodle.html), and the source code is on
+[Moodle Integration Guide](https://docs.fastcomments.com/guide-installation-moodle.html), and the source code is on
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Let us know below if you have any feedback!
 
 Cheers!

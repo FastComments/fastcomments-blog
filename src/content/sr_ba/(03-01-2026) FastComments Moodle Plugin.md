@@ -79,7 +79,7 @@ kontrolu nad koliko e-pošte primaju.
 ### Na kraju
 
 Moodle dodatak je sada dostupan. Za celokupan vodič za postavljanje, pogledajte 
-[Moodle Integracijski Vodič](https://docs.fastcomments.com/guide-moodle.html), a izvorni kod je na
+[Moodle Integracijski Vodič](https://docs.fastcomments.com/guide-installation-moodle.html), a izvorni kod je na
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Javite nam u komentarima ispod ako imate bilo kakve povratne informacije!
 
 Pozdrav!

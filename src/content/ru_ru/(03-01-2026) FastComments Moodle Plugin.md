@@ -77,7 +77,7 @@ HMAC-SHA256, используя ваш Секрет API, поэтому учет
 ### В заключение
 
 Плагин для Moodle теперь доступен. Для полного руководства по настройке ознакомьтесь с
-[Руководством по интеграции Moodle](https://docs.fastcomments.com/guide-moodle.html), а исходный код доступен на
+[Руководством по интеграции Moodle](https://docs.fastcomments.com/guide-installation-moodle.html), а исходный код доступен на
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Дайте нам знать ниже, если у вас есть какие-либо отзывы!
 
 Cheers!

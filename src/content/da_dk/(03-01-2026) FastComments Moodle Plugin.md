@@ -79,7 +79,7 @@ de har abonneret på). Dette holder alt på ét sted og giver studerende kontrol
 ### Afslutningsvis
 
 Moodle-plugin'et er tilgængeligt nu. For den fulde opsætningsvejledning, tjek 
-[Moodle Integration Guide](https://docs.fastcomments.com/guide-moodle.html), og kildekoden findes på 
+[Moodle Integration Guide](https://docs.fastcomments.com/guide-installation-moodle.html), og kildekoden findes på 
 [GitHub](https://github.com/FastComments/fastcomments-moodle). Lad os vide nedenfor, hvis du har nogle kommentarer!
 
 Skål!
