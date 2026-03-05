@@ -1,59 +1,56 @@
 ---
 [category:Features]
 ###### [postdate]
-# [postlink]Kommentare Können Jetzt Mit FastComments Bearbeitet Werden[/postlink]
+# [postlink]Kommentare sind jetzt mit FastComments bearbeitbar[/postlink]
 
 {{#unless isPost}}
-Ein lang erwartetes Update – Sie können jetzt Kommentare, die mit FastComments hinterlassen wurden, bearbeiten.
+Ein lang erwartetes Update, jetzt können Kommentare, die mit FastComments hinterlassen wurden, bearbeitet werden.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Dieser Artikel Enthält Technische Fachbegriffe
+### <i class="circle">!</i> Dieser Artikel enthält Fachjargon
 
-#### Was ist Neu
+#### Was ist neu
 
-Kommentare, die mit FastComments hinterlassen wurden, können jetzt bearbeitet werden – egal, ob Sie eingeloggt sind oder nicht.
+Kommentare, die mit FastComments hinterlassen wurden, können jetzt bearbeitet werden - egal, ob Sie angemeldet sind oder nicht.
 
-<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Bearbeitungs-Demo"></video>
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Editing Demo"></video>
 
-Verständlicherweise war dies eines der am häufigsten angeforderten Features, und wir freuen uns, diesen Meilenstein mit unserer Benutzergemeinschaft erreicht zu haben.
+Verständlicherweise war dies eine unserer am häufigsten nachgefragten Funktionen, und wir freuen uns, diesen Meilenstein mit unserer Nutzerbasis zu erreichen.
 
-#### Wie es Funktioniert
+#### So funktioniert es
 
-Eingeloggte Benutzer können ihre Kommentare jederzeit bearbeiten. Für anonyme Kommentatoren stellen unsere Server ein temporäres 24-Stunden-Fenster zur Verfügung, damit sie ihren Kommentar nach dem Posten bearbeiten können, solange sie ihren Browser nicht schließen. Das bedeutet beispielsweise, dass ein anonymer Kommentator kommentieren und dann seinen Kommentar zur Behebung von Tippfehlern bearbeiten kann, ohne sich jemals einloggen zu müssen!
+Angemeldete Benutzer können ihre Kommentare jederzeit bearbeiten. Für anonyme Kommentatoren bieten unsere Server ein temporäres 24-Stunden-Fenster, in dem sie ihren Kommentar nach dem Kommentieren bearbeiten können, solange sie ihren Browser nicht schließen. Zum Beispiel bedeutet dies, dass ein anonymer Kommentator kommentieren und dann seinen Kommentar zur Korrektur von Tippfehlern bearbeiten kann, ohne sich jemals anzumelden!
 
-Wenn der anonyme Kommentator seinen Browser schließt, kann er seinen Kommentar nicht mehr bearbeiten, es sei denn, er klickt auf den magischen Link, der an seine E-Mail-Adresse gesendet wurde.
+Wenn der anonyme Kommentator seinen Browser schließt, kann er seinen Kommentar nicht mehr bearbeiten, es sei denn, er klickt auf den magischen Link, der an seine E-Mail gesendet wurde.
 
-Zu zusätzlicher Sicherheit wird der temporäre Bearbeitungsschlüssel bei jedem Versuch ungültig, den Schlüssel falsch zu erraten.
+Zur zusätzlichen Sicherheit wird der temporäre Bearbeitungsschlüssel bei jedem Versuch, den Schlüssel falsch zu erraten, ungültig.
 
-#### Warum Jetzt, nach so langer Zeit?
+#### Warum jetzt, nach so langer Zeit?
 
-Wie bei allen Änderungen am Client-Seiten-Widget müssen wir darauf achten, die Größe nicht zu erhöhen. Dieses Feature fügt dem zentralen Kommentierungscode (etwa 1kb gzipped – etwa 10% Zunahme) erheblich Größe hinzu. 
-Wir wollten sicherstellen, dass dies die Leistung von FastComments nicht verringert und dass es ordnungsgemäß mit unseren Live-Kommentierungseigenschaften funktioniert. Außerdem wollten wir, dass das Feature den häufigsten Anwendungsfall unserer Kunden unterstützt – anonymes Kommentieren.
+Wie bei allen Änderungen am Client-seitigen Widget müssen wir darauf achten, seine Größe nicht zu erhöhen. Dieses Feature fügt dem Kernkommentierungscode (etwa 1kb gzipped - etwa 10% Zunahme) erheblich Größe hinzu. Wir wollten sicherstellen, dass dies die Leistung von FastComments nicht verringert und dass es ordnungsgemäß mit unseren Live-Kommentierungsfunktionen funktioniert. Außerdem wollten wir, dass die Funktion die häufigsten Anwendungsfälle unserer Kunden - anonymes Kommentieren - unterstützt.
 
-#### Live-Kommentare Bearbeiten
+#### Bearbeiten von Live-Kommentaren
 
-Genau wie beim Kommentieren und Abstimmen – das Bearbeiten erfolgt live. Wenn zwei Benutzer auf derselben Seite sind und ein Benutzer seinen Kommentar bearbeitet, sieht der andere Benutzer die Aktualisierung.
+Genau wie beim Kommentieren und Abstimmen - das Bearbeiten geschieht in Echtzeit. Wenn zwei Benutzer auf der gleichen Seite sind und ein Benutzer seinen Kommentar bearbeitet, sieht der andere Benutzer die Aktualisierung.
 
-#### Kommentar-Bearbeitung Aktivieren
+#### Aktivierung der Kommentarbearbeitung
 
-Wir haben die Kommentar-Bearbeitung standardmäßig für alle unsere Kunden bereitgestellt. Derzeit kann sie nicht deaktiviert werden.
+Wir haben die Bearbeitung von Kommentaren standardmäßig für alle unsere Kunden implementiert. Derzeit kann sie nicht deaktiviert werden.
 
-#### Was Kommt Als Nächstes?
+#### Was kommt als Nächstes?
 
-Wir planen, in einem zukünftigen Update auch die Möglichkeit zu veröffentlichen, Kommentare zu löschen.
+Wir planen, die Möglichkeit, Kommentare zu löschen, in einem zukünftigen Update ebenfalls bereitzustellen.
 
-#### Integrationen Dritter
+#### Integrationen von Drittanbietern
 
-Das Bearbeiten eines Kommentars führt dazu, dass das Ereignis an alle Integrationen, die Sie haben – wie WordPress, propagiert wird. Wenn Sie unser WordPress-Plugin verwenden, wird das Hinzufügen eines Kommentars im Hintergrund Ihre WordPress-Installation aktualisiert, sodass Sie eine Kopie Ihrer Daten behalten. Wenn Sie einen Kommentar bearbeiten, folgen wir derselben Logik und aktualisieren die Kopie in Ihrer WordPress-Installation. Dies gilt auch für andere Integrationen, nicht nur für WordPress.
+Das Bearbeiten eines Kommentars sorgt dafür, dass das Ereignis an alle von Ihnen verwendeten Integrationen - wie WordPress - weitergegeben wird. Wenn Sie unser WordPress-Plugin verwenden, wird das Hinzufügen eines Kommentars im Hintergrund Ihre WordPress-Installation aktualisieren, damit Sie eine Kopie Ihrer Daten behalten. Wenn Sie einen Kommentar bearbeiten, folgen wir demselben Prinzip und aktualisieren die Kopie in Ihrer WordPress-Installation. Dies gilt auch für andere Integrationen, nicht nur für WordPress.
 
 #### Fazit
 
-Wir wissen, dass dieses Feature von einigen lange erwartet wurde. Wie bei allen größeren Veröffentlichungen freuen wir uns, dass wir die Zeit finden konnten, um zu optimieren, zu testen und dieses Feature ordnungsgemäß zu veröffentlichen.
+Wir wissen, dass diese Funktion von einigen lange erwartet wurde. Wie bei allen größeren Veröffentlichungen freuen wir uns, dass wir die Zeit finden konnten, diese Funktion zu optimieren, zu testen und ordnungsgemäß bereitzustellen.
 
 Prost!
 
 {{/isPost}}
-
----

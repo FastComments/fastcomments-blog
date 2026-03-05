@@ -2,9 +2,9 @@
 [category:Features]
 ###### [postdate]
 
-# [postlink]Présentation du Sélecteur de GIF[/postlink]
+# [postlink]Introduction du sélecteur de GIF[/postlink]
 
-{{#unless isPost}} Les conversations sont maintenant plus amusantes. {{/unless}}
+{{#unless isPost}} Les conversations sont désormais plus amusantes. {{/unless}}
 
 {{#isPost}}
 
@@ -12,17 +12,17 @@
 
 <div class="columns">
     <div class="left">
-        <p>Pour commencer la nouvelle année, les conversations ont été rendues plus amusantes avec des réactions animées via le Sélecteur de GIF.</p>
+        <p>Pour commencer la nouvelle année, les conversations sont rendues plus amusantes avec des réactions animées via le sélecteur de GIF.</p>
     </div>
     <div class="right text-center">
         <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 
-### Comment l’Utiliser
+### Comment l'Utiliser
 
-<p>Si le téléchargement d'images est activé, une icône GIF apparaîtra dans la barre d'outils des commentaires.</p>
-<p>Cliquez dessus pour afficher une liste de gifs tendance. Cette liste précharge un certain nombre d'images et propose un défilement infini.</p>
+<p>Si les téléchargements d'images sont activés, une icône GIF apparaîtra dans la barre d'outils de commentaire.</p>
+<p>Cliquez sur cela pour afficher une liste de gifs tendance. Cette liste précharge un certain nombre d'images et permet le défilement infini.</p>
 <div class="text-center">
     <img src="images/gif-picker-button.png" alt="Comment utiliser" style="width: 100%; max-width: 400px;" />
 </div>
@@ -33,14 +33,13 @@ Actuellement, la seule intégration que FastComments prend en charge est avec Gi
 
 ### Anonymisation des GIF
 
-Nous savons qu'une grande partie de notre base d'utilisateurs choisit FastComments en raison de la confidentialité.
+Nous savons qu'une grande partie de notre base d'utilisateurs choisit FastComments pour sa confidentialité.
 
-Tous les actifs et les appels API de Giphy sont dépouillés d'informations telles que les cookies et l'adresse IP de vos utilisateurs.
+Tous les actifs et appels API de Giphy sont dépouillés d'informations comme les cookies et l'adresse IP de vos utilisateurs.
 
-### Évaluation du Contenu des GIF
+### Classification du Contenu des GIF
 
-L'évaluation du contenu des gifs peut être personnalisée pour aller de PG à R selon votre
-auditoire. [La documentation pour personnaliser l'évaluation du contenu est ici.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
+La classification du contenu des gifs peut être personnalisée pour être de PG à noté R, selon votre audience. [La documentation pour personnaliser la classification du contenu se trouve ici.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
 
 ### Documentation
 
@@ -48,12 +47,11 @@ Il existe une documentation dédiée pour le sélecteur de GIF. Voir ici : https
 
 ### En Conclusion
 
-Nous avons fait un investissement considérable pour garantir que le Sélecteur de GIF et les fonctionnalités connexes soient rapides et ne ralentissent pas le
-reste du produit.
+Nous avons investi considérablement pour garantir que le sélecteur de GIF et la fonctionnalité associée sont rapides et ne ralentissent pas le reste du produit.
 
 Comme le reste de FastComments, nous espérons que vous trouverez cette fonctionnalité rapide, amusante et facile à utiliser.
 
-Cheers!
+À votre santé !
 
 {{/isPost}}
 

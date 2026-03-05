@@ -11,45 +11,50 @@ En meget ventet opdatering, du kan nu redigere kommentarer, der er efterladt med
 
 ### <i class="circle">!</i> Denne Artikel Indeholder Teknisk Terminologi
 
-#### Hvad Er Nyt
+#### Hvad er Nyt
 
 Kommentarer efterladt med FastComments kan nu redigeres - uanset om du er logget ind eller ej.
 
 <video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Editing Demo"></video>
 
-Forståeligt nok har det været en af vores mest efterspurgte funktioner, og vi er glade for at nå denne milepæl sammen med vores brugere.
+Forståeligt, har det været en af vores mest anmodede funktioner, og vi er glade for at nå denne milepæl med vores brugere.
 
 #### Hvordan Det Fungerer
 
-Logget ind brugere kan altid redigere deres kommentarer. For anonyme kommentatorer giver vores servere et midlertidigt 24-timers vindue for dem til at redigere deres kommentar efter at have kommenteret, så længe de ikke lukker deres browser. For eksempel betyder dette, at en anonym kommentator kan kommentere og derefter redigere sin kommentar for at rette eventuelle slåfejl uden nogensinde at logge ind!
+Logget ind brugere kan altid redigere deres kommentarer. For anonyme kommentatorer giver vores servere et midlertidigt 24-timers vindue til at redigere deres kommentar efter
+kommentering, så længe de ikke lukker deres browser. For eksempel betyder det, at en anonym kommentator kan kommentere, og derefter redigere deres kommentar for at rette eventuelle stavefejl, uden nogensinde at logge ind!
 
-Hvis den anonyme kommentator lukker deres browser, vil de ikke kunne redigere deres kommentar, medmindre de klikker på det magiske link sendt til deres email.
+Hvis den anonyme kommentator lukker deres browser, vil de ikke være i stand til at redigere deres kommentar, medmindre de klikker på det magiske link, der er sendt til deres e-mail.
 
-For yderligere sikkerhed vil den midlertidige redigeringsnøgle blive ugyldiggjort ved ethvert forsøg på at gætte nøgleforkert.
+For ekstra sikkerhed vil den midlertidige redigeringsnøgle blive ugyldiggjort ved ethvert forsøg på at gætte nøglefejl.
 
-#### Hvorfor Nu, efter så lang tid?
+#### Hvorfor Nu, efter så lang Tid?
 
-Som med alle ændringer til klienten widget, skal vi være forsigtige med ikke at forøge dens størrelse. Denne funktion tilføjer betydelig størrelse til den centrale kommenteringskodebase (omkring 1kb gzippet - ca. 10% stigning). Vi ønskede at sikre, at dette ikke mindskede ydelsen af FastComments og ønskede at sikre, at det fungerede korrekt med vores live kommenteringsfunktioner. Desuden ønskede vi, at funktionen skulle imødekomme vores kunders mest almindelige anvendelsesscenarie - anonyme kommentarer.
+Som med alle ændringer til widget'en på klientsiden skal vi være forsigtige med ikke at øge dens størrelse. Denne funktion tilføjer betydelig størrelse til kerne kommentarer codebase (omkring 1kb gzippet - omkring en 10% stigning).
+Vi ønskede at sikre, at dette ikke nedsatte præstationen af FastComments og ville sikre, at det fungerede korrekt med vores live kommentering funktioner. Desuden ønskede vi, at funktionen skulle
+imødekomme vores kunders mest almindelige brugssag - anonym kommentering.
 
-#### Redigering Af Live Kommentarer
+#### Redigering af Live Kommentarer
 
-Præcis som kommentering og afstemning - redigering sker i realtid. Hvis to brugere er på samme side, og en bruger redigerer deres kommentar, vil den anden bruger se det opdateres.
+Ligesom kommentering og afstemning - redigering foregår live. Hvis to brugere er på den samme side, og en bruger redigerer deres kommentar, vil den anden bruger se det blive opdateret.
 
-#### Aktivering Af Kommentar Redigering
+#### Aktivering af Kommentar Redigering
 
-Vi har færdiggjort udrulningen af kommentarredigering som standard for alle vores kunder. I øjeblikket kan det ikke slukkes.
+Vi er færdige med at rulle kommentar redigering ud som standard for alle vores kunder. I øjeblikket kan det ikke slås fra.
 
-#### Hvad Er Det Næste?
+#### Hvad Er Næste Skridt?
 
-Vi planlægger at frigive muligheden for at slette kommentarer også i en fremtidig opdatering.
+Vi planlægger at frigive muligheden for at slette kommentarer i en fremtidig opdatering.
 
-#### Tredjepartsintegrationer
+#### Tredjeparts Integrationer
 
-Redigering af en kommentar vil få hændelsen til at propagere til alle de integrationer, du har - som WordPress. Hvis du bruger vores WordPress-plugin, så opdaterer det tilføjelsen af en kommentar din WordPress-installation i baggrunden, så du bevarer en kopi af dine data. Hvis du redigerer en kommentar, følger vi samme logik og opdaterer kopien i din WordPress-installation. Dette gælder andre integrationer, ikke kun WordPress.
+Redigering af en kommentar vil få begivenheden til at udbrede sig til alle integrationer, du har - som WordPress. Hvis du bruger vores WordPress-plugin, opdaterer tilføjelsen af en kommentar
+din WordPress-installation i baggrunden, så du bevarer en kopi af dine data. Hvis du redigerer en kommentar, følger vi den samme logik og opdaterer kopien i din WordPress
+installation. Dette gælder for andre integrationer, ikke kun WordPress.
 
 #### Afslutningsvis
 
-Vi ved, at denne funktion har været længe ventet af nogle. Som med alle større udgivelser er vi glade for, at vi kunne tage os tid til at optimere, teste og korrekt frigive denne funktion.
+Vi ved, at denne funktion har været længe ventet af nogle. Som alle større udgivelser er vi glade for, at vi kunne tage os tid til at optimere, teste og frigive denne funktion korrekt.
 
 Skål!
 

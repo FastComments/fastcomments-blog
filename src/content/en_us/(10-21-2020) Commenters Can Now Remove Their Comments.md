@@ -17,11 +17,11 @@ As recently announced - comments left with FastComments can now be edited - whet
 
 <video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Deleting Demo"></video>
 
-As a follow-up, the ability to delete your comments has been released. Understandably, just like editing comments, this has been one of our most requested features, and we're happy to reach this milestone with our user base.
+As a follow-up, the ability to delete your comments has been released. Understandably, same as editing comments, it has been one of our most requested features, and we're happy to reach this milestone with our user base.
 
 #### How it Works
 
-Comment removal works the same way as editing - logged in users can always edit and delete their comments. For anonymous commenters, our servers provide a temporary 24-hour window for them to edit or delete their comment after commenting, as long as they don't close their browser. For example, this means an anonymous commenter can comment, and then edit their comment to fix any typos, or delete it, without ever logging in!
+Comment removal works the same way as editing - logged-in users can always edit and delete their comments. For anonymous commenters, our servers provide a temporary 24-hour window for them to edit or delete their comment after commenting as long as they don't close their browser. For example, this means an anonymous commenter can comment, and then edit their comment to fix any typos, or delete it, without ever logging in!
 
 If the anonymous commenter closes their browser, they won't be able to edit or delete their comment unless they click the magic link sent to their email.
 
@@ -29,7 +29,7 @@ For additional security, the temporary edit key will be invalidated on any attem
 
 #### Why Now, after so long?
 
-The rationale for this is the same as why editing took so long to be released. We wanted to ensure this didn't decrease the performance of FastComments and wanted to ensure that it worked properly with our live commenting features. Also, we wanted the feature to accommodate our customers' most common use case - anonymous commenting.
+The rationale for this is the same as to why editing took so long to be released. We wanted to ensure this didn't decrease the performance of FastComments and wanted to ensure that it worked properly with our live commenting features. Also, we wanted the feature to accommodate our customers' most common use case - anonymous commenting.
 
 #### Deleting Live Comments
 

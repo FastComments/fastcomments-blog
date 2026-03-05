@@ -1,58 +1,52 @@
 ---
 [category:Features]
 ###### [postdate]
-# [postlink]Komentatori sada mogu ukloniti svoje komentare[/postlink]
+# [postlink]Komentatori Sada Mogu Ukloniti Svoje Komentare[/postlink]
 
 {{#unless isPost}}
-Nakon dugo očekivane nadogradnje, sada možete obrisati svoje komentare koje ste ostavili koristeći FastComments.
+Nakon dugo očekivane nadogradnje, sada možete obrisati svoje komentare koje ste ostavili sa FastComments.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Ovaj članak sadrži tehničku terminologiju
+### <i class="circle">!</i> Ovaj Članak Sadrži Tehničke Izraze
 
-#### Šta je novo
+#### Šta je Novo
 
-Kao što je nedavno objavljeno - komentari ostavljeni uz FastComments sada mogu biti uređivani - bez obzira da li ste prijavljeni ili ne.
+Kao što je nedavno najavljeno - komentari ostavljeni sa FastComments sada mogu biti uređeni - bilo da ste prijavljeni ili ne.
 
-<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demonstracija brisanja"></video>
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demo Uklanjanja"></video>
 
-U nastavku, mogućnost brisanja vaših komentara je objavljena. Razumljivo, kao što je i uređivanje komentara, ovo je bila jedna od naših najtraženijih funkcija, i drago nam je što smo dostigli ovaj trenutak sa našom korisničkom bazom.
+Kao nastavak, omogućena je opcija da obrišete svoje komentare. Razumljivo, isto kao i uređivanje komentara, bila je jedna od naših najtraženijih karakteristika, i drago nam je što smo postigli ovaj cilj sa našom korisničkom bazom.
 
-#### Kako to funkcioniše
+#### Kako To Funkcioniše
 
-Uklanjanje komentara funkcioniše na isti način kao i uređivanje - prijavljeni korisnici uvek mogu uređivati i brisati svoje komentare. Za anonimne komentatore, naši serveri obezbeđuju privremeni 24-satni vremenski okvir za njih da urede ili obrišu svoj komentar nakon što
-su ga ostavili, pod uslovom da ne zatvore svoj pretraživač. Na primer, to znači da anonimni komentator može komentarisati, a zatim urediti svoj komentar kako bi ispravio eventualne greške, ili ga obrisati, bez ikakvog prijavljivanja!
+Uklanjanje komentara funkcioniše na isti način kao uređivanje - prijavljeni korisnici uvek mogu uređivati i brisati svoje komentare. Za anonimne komentatore, naši serveri nude privremeni prozor od 24 sata da urede ili obrišu svoj komentar nakon komentarisanja, sve dok ne zatvore svoj pretraživač. Na primer, to znači da anonimni komentator može ostaviti komentar, a zatim ga urediti da ispravi bilo kakve greške, ili ga obrisati, bez ikakvog prijavljivanja!
 
-Ako anonimni komentator zatvori svoj pretraživač, neće moći da izmeni ili obriše svoj komentar osim ako ne klikne na čarobni link poslat na njegovu email adresu.
+Ako anonimni komentator zatvori svoj pretraživač, neće moći da uređuje ili obriše svoj komentar osim ako ne klikne na čarobnu vezu poslatu na svoj email.
 
 Za dodatnu sigurnost, privremeni ključ za uređivanje biće nevažeći na svaki pokušaj pogrešnog pogađanja ključa.
 
-#### Zašto sada, posle toliko vremena?
+#### Zašto Sada, nakon toliko dugo?
 
-Razlog za ovo je isti kao i zašto je uređivanje trajalo toliko dugo da bude objavljeno. Želeli smo da obezbedimo da ovo ne smanji performanse FastComments i želeli smo da osiguramo da pravilno funkcioniše sa našim funkcijama komentarisanja u realnom vremenu. Takođe, želeli smo da funkcija
-prilagodi najčešćem slučaju upotrebe naših kupaca - anonimnom komentarisanja.
+Razlog za ovo je isti kao i zašto je uređivanje trajalo toliko dugo da se objavi. Želeli smo da se osiguramo da ovo ne smanji performanse FastComments-a i želeli smo da osiguramo da pravilno funkcioniše sa našim funkcijama komentarisanja u realnom vremenu. Takođe, želeli smo da funkcija odgovara najčešćem slučaju korišćenja naših kupaca - anonimnom komentisanju.
 
-#### Brisanje komentara uživo
+#### Uklanjanje Komentara u Realnom Vremenu
 
-Baš kao što je komentarisanje i glasanje - brisanje se dešava uživo. Ako su dva korisnika na istoj stranici, i jedan korisnik obriše svoj komentar, drugi korisnik će videti kako je uklonjen.
+Baš kao i komentarisanje i glasanje - brisanje se dešava u realnom vremenu. Ako su dva korisnika na istoj stranici, i jedan korisnik obriše svoj komentar, drugi korisnik će videti da je uklonjen.
 
-#### Omogućavanje uklanjanja komentara
+#### Omogućavanje Uklanjanja Komentara
 
-Završili smo sa implementacijom uređivanja i brisanja komentara po zadatku za sve naše kupce. Trenutno, ne može se isključiti.
+Završili smo sa uvođenjem uređivanja i brisanja komentara po defaultu za sve naše kupce. Trenutno, to ne može biti isključeno.
 
-#### Integracije trećih strana
+#### Integracije Trećih Strana
 
-Brisanje komentara će uzrokovati da se događaj prenese na sve integracije koje imate - kao što je WordPress. Ako koristite naš WordPress dodatak, tada dodavanje komentara ažurira
-vašu WordPress instalaciju u pozadini kako biste sačuvali kopiju vaših podataka. Ako uklonite komentare, pratimo istu logiku i uklanjamo ga iz vaše WordPress
-instalacije. Ovo se primenjuje na druge integracije, ne samo na WordPress.
+Uklanjanje komentara izazvaće da se događaj propagira na sve integracije koje imate - kao što je WordPress. Ako koristite naš WordPress dodatak, dodavanje komentara osvežava vašu instalaciju WordPress-a u pozadini kako biste sačuvali kopiju svojih podataka. Ako uklonite komentare, pratimo istu logiku i uklanjamo ih iz vaše WordPress instalacije. Ovo se odnosi i na druge integracije, ne samo WordPress.
 
-#### Zaključak
+#### U Zaključku
 
-Znamo da je ova funkcija dugo očekivana od strane nekih. Kao i kod svih većih izdanja, drago nam je što smo mogli da odvojimo vreme za optimizaciju, testiranje i pravilno objavljivanje ove funkcije.
+Znamo da je ova funkcija dugo čekana od nekih. Kao i svih većih izdanja, drago nam je što smo mogli odvojiti vreme da optimizujemo, testiramo i pravilno objavimo ovu funkciju.
 
 Živeli!
 
 {{/isPost}}
-
----

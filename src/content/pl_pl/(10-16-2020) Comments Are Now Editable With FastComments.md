@@ -1,59 +1,61 @@
 ---
 [category:Features]
 ###### [postdate]
-# [postlink]Komentarze są teraz edytowalne z FastComments[/postlink]
+# [postlink]Komentarze są teraz edytowane za pomocą FastComments[/postlink]
 
 {{#unless isPost}}
-Wyczekiwana aktualizacja, teraz możesz edytować komentarze pozostawione za pomocą FastComments.
+Długo oczekiwana aktualizacja, teraz możesz edytować komentarze pozostawione za pomocą FastComments.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Ten artykuł zawiera terminologię techniczną
+### <i class="circle">!</i> Ten artykuł zawiera techniczne terminy
 
 #### Co nowego
 
 Komentarze pozostawione za pomocą FastComments mogą teraz być edytowane - niezależnie od tego, czy jesteś zalogowany, czy nie.
 
-<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Edycja - demonstracja"></video>
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Demo edytowania"></video>
 
-Zrozumiale, była to jedna z najczęściej zgłaszanych funkcji i cieszymy się, że osiągnęliśmy ten kamień milowy z naszą bazą użytkowników.
+Zrozumiale, to jedna z naszych najczęściej zgłaszanych funkcji, i cieszymy się, że możemy osiągnąć ten kamień milowy z naszymi użytkownikami.
 
 #### Jak to działa
 
-Zalogowani użytkownicy zawsze mogą edytować swoje komentarze. Dla anonimowych komentatorów nasze serwery oferują tymczasowe 24-godzinne okno na edytowanie komentarza po jego złożeniu, o ile nie zamkną przeglądarki. Na przykład oznacza to, że anonimowy komentator może skomentować, a następnie edytować swój komentarz, aby poprawić wszelkie literówki, bez konieczności logowania!
+Zalogowani użytkownicy zawsze mogą edytować swoje komentarze. Dla anonimowych komentujących, nasze serwery zapewniają tymczasowy 24-godzinny okres, w którym mogą edytować swoje komentarze po
+skomentowaniu, pod warunkiem, że nie zamkną przeglądarki. Na przykład oznacza to, że anonimowy komentator może skomentować, a następnie edytować swój komentarz, aby poprawić wszelkie błędy, bez kiedykolwiek logowania się!
 
-Jeśli anonimowy komentator zamknie przeglądarkę, nie będzie mógł edytować swojego komentarza, chyba że kliknie magiczny link wysłany na ich email.
+Jeśli anonimowy komentator zamknie swoją przeglądarkę, nie będzie mógł edytować swojego komentarza, chyba że kliknie magiczny link wysłany na jego adres e-mail.
 
-Dla dodatkowego bezpieczeństwa tymczasowy klucz edycji zostanie unieważniony przy każdej próbie nieprawidłowego odgadnięcia klucza.
+Dla dodatkowego bezpieczeństwa, tymczasowy klucz edytowania zostanie unieważniony przy każdej próbie zgadnięcia klucza w sposób niepoprawny.
 
 #### Dlaczego teraz, po tak długim czasie?
 
-Jak w przypadku wszystkich zmian w widżecie po stronie klienta, musimy być ostrożni, aby nie powiększyć jego rozmiaru. Ta funkcja dodaje znaczny rozmiar do podstawowego kodu komentarzy (około 1kb po zgraniu - około 10% wzrostu).
-Chcieliśmy upewnić się, że nie wpłynie to na wydajność FastComments i że będzie działać poprawnie z naszymi funkcjami komentarzy na żywo. Ponadto chcieliśmy, aby funkcja dostosowywała się do najczęstszych doświadczeń naszych klientów - anonimowych komentarzy.
+Jak przy wszystkich zmianach w widgetach po stronie klienta, musimy uważać, aby nie zwiększać jego rozmiaru. Ta funkcja dodaje znaczną wielkość do podstawowego kodu komentarzy (około 1kb po skompresowaniu - około 10% wzrostu).
+Chcieliśmy upewnić się, że nie zmniejszy to wydajności FastComments i chcieliśmy zapewnić, że działa prawidłowo z naszymi funkcjami komentarzy na żywo. Poza tym, chcieliśmy, aby funkcja
+uwzględniała najczęstszy przypadek użycia naszych klientów - anonimowe komentowanie.
 
 #### Edytowanie komentarzy na żywo
 
-Tak jak w przypadku komentowania i głosowania - edytowanie odbywa się na żywo. Jeśli dwóch użytkowników znajduje się na tej samej stronie i jeden z nich edytuje swój komentarz, drugi użytkownik zobaczy tę aktualizację.
+Tak jak w przypadku komentowania i głosowania - edytowanie odbywa się na żywo. Jeśli dwóch użytkowników jest na tej samej stronie, a jeden z użytkowników edytuje swój komentarz, drugi użytkownik zobaczy jego aktualizację.
 
 #### Włączanie edytowania komentarzy
 
-Skończyliśmy wprowadzać edytowanie komentarzy domyślnie dla wszystkich naszych klientów. Na chwilę obecną nie można tego wyłączyć.
+Skończyliśmy wprowadzać edytowanie komentarzy domyślnie dla wszystkich naszych klientów. Obecnie nie można tego wyłączyć.
 
 #### Co dalej?
 
-Planujemy również wprowadzenie możliwości usuwania komentarzy w przyszłej aktualizacji.
+Planujemy również udostępnić możliwość usuwania komentarzy w przyszłej aktualizacji.
 
 #### Integracje zewnętrzne
 
-Edycja komentarza spowoduje, że zdarzenie rozprzestrzeni się na wszelkie integracje, które posiadasz - jak WordPress. Jeśli używasz naszego wtyczki do WordPressa, dodanie komentarza aktualizuje Twoją instalację WordPressa w tle, dzięki czemu zachowujesz kopię swoich danych. Jeśli edytujesz komentarz, stosujemy tę samą logikę i aktualizujemy kopię w Twojej instalacji WordPressa. Dotyczy to również innych integracji, nie tylko WordPressa.
+Edycja komentarza spowoduje propagację zdarzenia do wszystkich twoich integracji - takich jak WordPress. Jeśli używasz naszej wtyczki WordPress, dodanie komentarza aktualizuje
+twoją instalację WordPress w tle, abyś zachował kopię swoich danych. Jeśli edytujesz komentarz, stosujemy tę samą logikę i aktualizujemy kopię w twojej instalacji WordPress.
+To dotyczy innych integracji, nie tylko WordPressa.
 
 #### Podsumowując
 
-Wiemy, że ta funkcja była długo oczekiwana przez niektórych. Jak przy wszystkich dużych wydaniach, cieszymy się, że mogliśmy poświęcić czas na optymalizację, testowanie i prawidłowe wprowadzenie tej funkcji.
+Wiadomo, że ta funkcja była długo oczekiwana przez niektórych. Jak wszystkie ważne wydania, cieszymy się, że mogliśmy poświęcić czas na optymalizację, testowanie i właściwe wprowadzenie tej funkcji.
 
 Na zdrowie!
 
 {{/isPost}}
-
----

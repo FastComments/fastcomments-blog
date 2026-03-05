@@ -2,9 +2,9 @@
 [category:Features]
 ###### [postdate]
 
-# [postlink]GIFピッカーのご紹介[/postlink]
+# [postlink]Gif ピッカーのご紹介[/postlink]
 
-{{#unless isPost}} 会話がより楽しくなりました。 {{/unless}}
+{{#unless isPost}} 会話がもっと楽しくなりました。 {{/unless}}
 
 {{#isPost}}
 
@@ -12,7 +12,7 @@
 
 <div class="columns">
     <div class="left">
-        <p>新年を迎えるにあたり、GIFピッカーを使ったアニメーション反応で会話がより楽しくなりました。</p>
+        <p>新年のスタートとして、Gif ピッカーを通じてアニメーションリアクションで会話がより楽しくなりました。</p>
     </div>
     <div class="right text-center">
         <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
@@ -22,34 +22,34 @@
 ### 使い方
 
 <p>画像アップロードが有効になっている場合、コメントツールバーにGIFアイコンが表示されます。</p>
-<p>これをクリックすると、トレンドのGIFの一覧が表示されます。この一覧は特定の数の画像をプリロードし、無限スクロールが可能です。</p>
+<p>これをクリックすると、トレンドのGIFのリストが表示されます。このリストは一定数の画像を事前に読み込み、無限スクロールを提供します。</p>
 <div class="text-center">
     <img src="images/gif-picker-button.png" alt="使い方" style="width: 100%; max-width: 400px;" />
 </div>
 
-### GIFプロバイダー
+### GIF プロバイダー
 
-現在、FastCommentsがサポートしている統合はGiphyのみです。
+現在、FastCommentsがサポートしている唯一の統合はGiphyです。
 
-### GIF匿名化
+### GIF 匿名化
 
-ユーザーのプライバシーを重視するため、私たちは多くのユーザーがFastCommentsを選択していることを理解しています。
+私たちは、多くのユーザーがプライバシーのためにFastCommentsを選ぶ理由を理解しています。
 
-Giphyからの全てのアセットとAPI呼び出しは、クッキーやユーザーのIPアドレスなどの情報が削除されています。
+Giphyからのすべての資産とAPI呼び出しは、クッキーやユーザーのIPアドレスなどの情報が除去されています。
 
-### GIFコンテンツ評価
+### GIF コンテンツ評価
 
-GIFのコンテンツ評価は、オーディエンスに応じてPGからR指定までカスタマイズできます。 [コンテンツ評価のカスタマイズに関するドキュメントはこちらです。](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
+GIFのコンテンツ評価は、視聴者に応じてPGからR指定までカスタマイズ可能です。 [コンテンツ評価のカスタマイズに関するドキュメントはこちら。](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
 
 ### ドキュメント
 
-GIFピッカーに関する専用のドキュメントがあります。こちらをご覧ください: https://docs.fastcomments.com/guide-gifs.html
+Gif ピッカーに関する専用のドキュメントがあります。こちらをご覧ください: https://docs.fastcomments.com/guide-gifs.html
 
-### 結論
+### まとめ
 
-GIFピッカーと関連する機能が速く、製品全体を遅くしないことを確保するために、多大な投資を行いました。
+私たちは、Gif ピッカーと関連機能が迅速で、他の製品を遅くしないことを確実にするためにかなりの投資を行いました。
 
-FastCommentsの他の機能と同様に、この機能が速く、楽しく、使いやすいと感じていただけることを願っています。
+FastCommentsの他の機能と同様に、この機能も迅速で楽しく、使いやすいと感じていただけることを願っています。
 
 乾杯！
 

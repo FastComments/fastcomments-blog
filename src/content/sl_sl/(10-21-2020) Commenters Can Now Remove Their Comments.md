@@ -9,44 +9,46 @@
 
 {{#isPost}}
 
-### <i class="circle">!</i> Ta članek vsebuje tehnični jezik
+### <i class="circle">!</i> Ta članek vsebuje tehnični žargon
 
 #### Kaj je novega
 
-Kot je bilo nedavno napovedano - komentarji, ki jih pustite z FastComments, so zdaj lahko urejeni - ne glede na to, ali ste prijavljeni ali ne.
+Kot je bilo nedavno objavljeno - komentarji, puščeni z FastComments, jih je zdaj mogoče urediti - ne glede na to, ali ste prijavljeni ali ne.
 
-<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demo za brisanje"></video>
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demo brisanja"></video>
 
-Kot nadaljevanje je bila izdana možnost brisanja vaših komentarjev. Razumljivo, enako kot pri urejanju komentarjev, je to bila ena izmed naših najbolj zahtevanih funkcij in veseli smo, da smo tega mejnika dosegli z našo uporabniško bazo.
+Kot nadaljevanje je bila izdana možnost brisanja vaših komentarjev. Razumljivo, tako kot urejanje komentarjev, je bila ena od najbolj zahtevanih funkcij, in veselimo se, da smo dosegli ta mejnik z našo uporabniško bazo.
 
 #### Kako deluje
 
-Odstranjevanje komentarjev deluje enako kot urejanje - prijavljeni uporabniki lahko vedno urejajo in brišejo svoje komentarje. Za anonimne komentatorje naši strežniki zagotavljajo začasno 24-urno obdobje, v katerem lahko uredijo ali odstranijo svoj komentar po objavi, dokler ne zaprejo svojega brskalnika. Na primer, to pomeni, da lahko anonimni komentator komentira, nato pa svojo objavo uredi, da popravi morebitne tipkarske napake, ali jo izbriše, ne da bi se kdaj prijavil!
+Odstranitev komentarja deluje enako kot ureditev - prijavljeni uporabniki lahko vedno urejajo in brišejo svoje komentarje. Za anonimne komentatorje naši strežniki zagotavljajo začasno 24-urno obdobje, v katerem lahko uredijo ali odstranijo svoj komentar po komentarju, dokler ne zaprejo brskalnika. Na primer, to pomeni, da lahko anonimni komentator komentira, nato pa popravi svoj komentar, da odpravi morebitne tipkarske napake ali ga izbriše, ne da bi se kdaj prijavil!
 
-Če anonimni komentator zapre svoj brskalnik, ne bo mogel urejati ali brisati svojega komentarja, razen če klikne na magic link, poslan na njegov e-naslov.
+Če anonimni komentator zapre svoj brskalnik, ne bo mogel urediti ali izbrisati svojega komentarja, razen če klikne na čarobno povezavo, poslano na njegov elektronski naslov.
 
-Za dodatno varnost bo začasna ključna ureditev neveljavna ob vsakem poskusu napačne ugotovitve ključa.
+Za dodatno varnost bo začasna ključna funkcija za urejanje neveljavna pri vsakem poskusu napačnega ugibanja ključa.
 
-#### Zakaj zdaj, po tako dolgem času?
+#### Zakaj prav zdaj, po tako dolgem času?
 
-Razlog za to je enak razlogu, zakaj je urejanje tako dolgo trajalo do izdaje. Želeli smo zagotoviti, da to ne zniža zmogljivosti FastComments in želeli smo zagotoviti, da deluje pravilno z našimi funkcijami v živo. Prav tako smo želeli, da funkcija ustreza najpogostejšim zahtevam naših strank - anonimnemu komentiranju.
+Razlog za to je enak razlogu, zakaj je urejanje trajalo tako dolgo, da je bilo izdano. Želeli smo zagotoviti, da to ne zmanjša zmogljivosti FastComments in želeli smo se prepričati, da deluje pravilno z našimi funkcijami živih komentarjev. Prav tako smo želeli, da ta funkcija zadostuje najpogostejšemu primeru, ki ga uporabljajo naši kupci - anonimnemu komentiranju.
 
-#### Brisanje komentarjev v živo
+#### Brisanje živih komentarjev
 
-Tako kot komentiranje in glasovanje - brisanje se izvaja v živo. Če sta na isti strani dva uporabnika in uporabnik izbriše svoj komentar, bo drugi uporabnik videl, da je bil odstranjen.
+Tako kot komentiranje in glasovanje - brisanje se dogaja v živo. Če sta dva uporabnika na isti strani, in uporabnik izbriše svoj komentar, bo drugi uporabnik videl, da je bil odstranjen.
 
-#### Omogočanje odstranjevanja komentarjev
+#### Omogočanje odstranitve komentarjev
 
-Dokončali smo širjenje privzete možnosti urejanja in brisanja komentarjev za vse naše stranke. Trenutno je ni mogoče izklopiti.
+Zaključili smo z izvajanjem urejanja in brisanja komentarjev kot privzete možnosti za vse naše stranke. Trenutno ga ni mogoče izklopiti.
 
-#### Integracije s tretjimi stranmi
+#### Integracije tretjih oseb
 
-Brisanje komentarja bo povzročilo, da se dogodek prenese na vse integracije, ki jih imate - kot je WordPress. Če uporabljate naš WordPress vtičnik, nato dodajanje komentarja posodobi vašo namestitev WordPress v ozadju, tako da ohranite kopijo svojih podatkov. Če odstranite komentarje, sledimo istemu logičnemu postopku in jih odstranimo iz vaše namestitve WordPress. To velja za druge integracije, ne le za WordPress.
+Brisanje komentarja bo povzročilo, da se dogodek razširi na vse integracije, ki jih imate - kot je WordPress. Če uporabljate naš vtičnik za WordPress, potem dodajanje komentarja v ozadju posodobi vašo namestitev WordPress, tako da ohranite kopijo svojih podatkov. Če odstranite komentarje, sledimo isti logiki in jih odstranimo iz vaše namestitve WordPress. To velja tudi za druge integracije, ne le za WordPress.
 
-#### Na zaključek
+#### Na koncu
 
-Vemo, da so na to funkcijo nekateri dolgo čakali. Tako kot pri vseh pomembnih izdajah smo veseli, da smo lahko vzeli čas za optimizacijo, testiranje in pravilno izdajo te funkcije.
+Vemo, da so na to funkcijo nekateri dolgo čakali. Kot pri vseh večjih izdajah, smo veseli, da smo lahko vzeli čas za optimizacijo, testiranje in pravilno izdajo te funkcije.
 
 Na zdravje!
 
 {{/isPost}}
+
+---

@@ -4,7 +4,7 @@
 # [postlink]Les Commentateurs Peuvent Désormais Supprimer Leurs Commentaires[/postlink]
 
 {{#unless isPost}}
-Une mise à jour très attendue, vous pouvez désormais supprimer vos commentaires laissés avec FastComments.
+Une mise à jour très attendue, vous pouvez maintenant supprimer vos commentaires laissés avec FastComments.
 {{/unless}}
 
 {{#isPost}}
@@ -13,39 +13,39 @@ Une mise à jour très attendue, vous pouvez désormais supprimer vos commentair
 
 #### Quoi de Neuf
 
-Comme annoncé récemment - les commentaires laissés avec FastComments peuvent désormais être édités - que vous soyez connecté ou non.
+Comme annoncé récemment - les commentaires laissés avec FastComments peuvent désormais être modifiés - que vous soyez connecté ou non.
 
-<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Démonstration de Suppression"></video>
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Démo de Suppression"></video>
 
-En complément, la capacité de supprimer vos commentaires a été publiée. Compréhensiblement, tout comme l'édition des commentaires, cela a été l'une de nos fonctionnalités les plus demandées, et nous sommes heureux d'atteindre cette étape avec notre base d'utilisateurs.
+En complément, la possibilité de supprimer vos commentaires a été mise en ligne. De manière compréhensible, tout comme l'édition des commentaires, cela a été l'une de nos fonctionnalités les plus demandées, et nous sommes heureux d'atteindre ce jalon avec notre base d'utilisateurs.
 
-#### Comment Cela Fonctionne
+#### Comment Ça Marche
 
-La suppression de commentaires fonctionne de la même manière que l'édition - les utilisateurs connectés peuvent toujours modifier et supprimer leurs commentaires. Pour les commentateurs anonymes, nos serveurs offrent une fenêtre temporaire de 24 heures pour modifier ou supprimer leur commentaire après l'avoir laissé, tant qu'ils ne ferment pas leur navigateur. Par exemple, cela signifie qu'un commentateur anonyme peut commenter, puis modifier son commentaire pour corriger des fautes de frappe, ou le supprimer, sans jamais se connecter !
+La suppression de commentaires fonctionne de la même manière que l'édition - les utilisateurs connectés peuvent toujours éditer et supprimer leurs commentaires. Pour les commentateurs anonymes, nos serveurs fournissent une fenêtre temporaire de 24 heures pour qu'ils puissent éditer ou supprimer leur commentaire après l'avoir laissé, tant qu'ils ne ferment pas leur navigateur. Par exemple, cela signifie qu'un commentateur anonyme peut commenter, puis éditer son commentaire pour corriger des fautes de frappe, ou le supprimer, sans jamais se connecter !
 
-Si le commentateur anonyme ferme son navigateur, il ne pourra pas modifier ou supprimer son commentaire à moins de cliquer sur le lien magique envoyé à son email.
+Si le commentateur anonyme ferme son navigateur, il ne pourra pas éditer ou supprimer son commentaire à moins de cliquer sur le lien magique envoyé à son e-mail.
 
-Pour plus de sécurité, la clé temporaire d'édition sera invalidée à toute tentative de deviner la clé incorrectement.
+Pour plus de sécurité, la clé d'édition temporaire sera invalidée à toute tentative de deviner la clé de manière incorrecte.
 
-#### Pourquoi Maintenant, après tant de temps ?
+#### Pourquoi Maintenant, après tant de Temps ?
 
-La raison en est la même que celle pour laquelle l'édition a mis si longtemps à être publiée. Nous voulions nous assurer que cela n'affaiblisse pas les performances de FastComments et nous voulions garantir que cela fonctionne correctement avec nos fonctionnalités de commentaires en direct. De plus, nous voulions que la fonctionnalité réponde au cas d'utilisation le plus courant de nos clients - le commentaire anonyme.
+La raison est la même que celle pour laquelle l'édition a mis si longtemps à être publiée. Nous voulions nous assurer que cela n'affectait pas les performances de FastComments et voulions nous assurer que cela fonctionnait correctement avec nos fonctionnalités de commentaire en direct. De plus, nous voulions que la fonctionnalité s'adapte au cas d'utilisation le plus courant de nos clients - le commentaire anonyme.
 
 #### Suppression de Commentaires en Direct
 
 Tout comme commenter et voter - la suppression se fait en direct. Si deux utilisateurs sont sur la même page, et qu'un utilisateur supprime son commentaire, l'autre utilisateur verra qu'il a été retiré.
 
-#### Activation de la Suppression de Commentaires
+#### Activation de la Suppression de Commentaire
 
 Nous avons terminé le déploiement de l'édition et de la suppression de commentaires par défaut pour tous nos clients. Actuellement, cela ne peut pas être désactivé.
 
-#### Intégrations de Tiers
+#### Intégrations Tiers
 
-La suppression d'un commentaire entraînera la propagation de l'événement vers toutes les intégrations que vous avez - comme WordPress. Si vous utilisez notre plugin WordPress, alors l'ajout d'un commentaire met à jour votre installation WordPress en arrière-plan afin que vous conserviez une copie de vos données. Si vous supprimez des commentaires, nous appliquons la même logique et le supprimons de votre installation WordPress. Cela s'applique à d'autres intégrations, pas seulement WordPress.
+Supprimer un commentaire fera en sorte que l'événement se propage à toutes les intégrations que vous avez - comme WordPress. Si vous utilisez notre plugin WordPress, alors ajouter un commentaire met à jour votre installation WordPress en arrière-plan, vous permettant ainsi de conserver une copie de vos données. Si vous supprimez des commentaires, nous suivons la même logique et le supprimons de votre installation WordPress. Cela s'applique à d'autres intégrations, pas seulement à WordPress.
 
 #### En Conclusion
 
-Nous savons que cette fonctionnalité a été longtemps attendue par certains. Comme pour toutes les grandes publications, nous sommes heureux d'avoir pu prendre le temps d'optimiser, tester et publier correctement cette fonctionnalité.
+Nous savons que cette fonctionnalité a longtemps été attendue par certains. Comme toutes les grandes versions, nous sommes heureux d'avoir pu prendre le temps d'optimiser, tester, et publier correctement cette fonctionnalité.
 
 Santé !
 

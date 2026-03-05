@@ -2,17 +2,17 @@
 [category:Features]
 ###### [postdate]
 
-# [postlink]Predstavitev izbira GIF-ov[/postlink]
+# [postlink]Predstavljamo Gif Picker[/postlink]
 
 {{#unless isPost}} Pogovori so zdaj bolj zabavni. {{/unless}}
 
 {{#isPost}}
 
-### Kaj je novega
+### Novosti
 
 <div class="columns">
     <div class="left">
-        <p>Ob začetku novega leta so bili pogovori poenostavljeni z animiranimi reakcijami preko izbora GIF-ov.</p>
+        <p>Za začetek novega leta so pogovori postali bolj zabavni z animiranimi reakcijami prek Gif Pickerja.</p>
     </div>
     <div class="right text-center">
         <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
@@ -21,37 +21,37 @@
 
 ### Kako ga uporabljati
 
-<p>Če so nalaganja slik omogočena, se bo v orodni vrstici za komentarje prikazala ikona GIF.</p>
-<p>Ko kliknete nanjo, se prikaže seznam priljubljenih GIF-ov. Ta seznam prednaloži določeno število slik in omogoča neskončno pomikanje.</p>
+<p>Če so naložbe slik omogočene, se v orodni vrstici za komentarje prikaže ikona GIF.</p>
+<p>Klik na to bo pokazal seznam priljubljenih gifov. Ta seznam prednalaga določeno število slik in omogoča neskončno pomikanje.</p>
 <div class="text-center">
     <img src="images/gif-picker-button.png" alt="Kako uporabljati" style="width: 100%; max-width: 400px;" />
 </div>
 
-### Ponuja GIF-ov
+### Zagotovitelji gifov
 
-Trenutno edina integracija, ki jo FastComments podpira, je z Giphy.
+Trenutno FastComments podpira samo integracijo z Giphy.
 
-### Anonimizacija GIF-ov
+### Anonimizacija gifov
 
-Zavedamo se, da velik del naše uporabniške baze izbira FastComments zaradi zasebnosti.
+Vemo, da velik del naše uporabniške baze izbere FastComments zaradi zasebnosti.
 
-Vsi viri in API klici iz Giphy so brez informacij, kot so piškotki in IP naslov vaših uporabnikov.
+Vsi viri in API klici iz Giphy so brez informacij, kot so piškotki in IP naslovi vaših uporabnikov.
 
-### Ocena vsebine GIF-ov
+### Ocena vsebine gifov
 
-Ocena vsebine GIF-ov je lahko prilagojena in se lahko giblje od PG do R-ocenjene, odvisno od vašega
- občinstva. [Dokumentacija za prilagajanje ocene vsebine je tukaj.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
+Oceno vsebine gifov je mogoče prilagoditi, da je od PG do R-ocenjeno, odvisno od vaše
+ciljne publike. [Dokumentacija za prilagajanje ocene vsebine je tukaj.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
 
 ### Dokumentacija
 
-Na voljo je posebna dokumentacija za izbiro GIF-ov. Poglejte tukaj: https://docs.fastcomments.com/guide-gifs.html
+Obstaja posebna dokumentacija za gif picker. Poglejte tukaj: https://docs.fastcomments.com/guide-gifs.html
 
-### Na koncu
+### Zaključek
 
-Naredili smo pomembno naložbo, da zagotovimo, da je izbira GIF-ov in povezane funkcionalnosti hitra in ne upočasni
+Naredili smo znatne naložbe, da zagotovimo, da je Gif picker in z njim povezana funkcionalnost hitra in ne upočasnjuje
 ostalega dela izdelka.
 
-Kot pri drugih funkcijah FastComments upamo, da boste to funkcijo našli hitro, zabavno in enostavno za uporabo.
+Kot preostali del FastComments upamo, da boste to funkcijo našli hitro, zabavno in enostavno za uporabo.
 
 Na zdravje!
 

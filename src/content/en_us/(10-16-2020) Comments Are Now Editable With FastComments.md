@@ -4,7 +4,7 @@
 # [postlink]Comments Are Now Editable With FastComments[/postlink]
 
 {{#unless isPost}}
-This much-anticipated update allows you to edit comments left with FastComments.
+A highly anticipated update, you can now edit comments left with FastComments.
 {{/unless}}
 
 {{#isPost}}
@@ -13,23 +13,23 @@ This much-anticipated update allows you to edit comments left with FastComments.
 
 #### What's New
 
-Comments left with FastComments can now be edited - whether you're logged in or not.
+Comments left with FastComments can now be edited - whether you are logged in or not.
 
 <video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Editing Demo"></video>
 
-Understandably, this has been one of our most requested features, and we're happy to reach this milestone with our user base.
+Understandably, this has been one of our most requested features, and we're excited to reach this milestone with our user base.
 
 #### How it Works
 
-Logged-in users can always edit their comments. For anonymous commenters, our servers provide a temporary 24-hour window for them to edit their comment after commenting, as long as they don't close their browser. For example, this means an anonymous commenter can comment and then edit their comment to fix any typos, without ever logging in!
+Logged in users can always edit their comments. For anonymous commenters, our servers provide a temporary 24-hour window for them to edit their comment after commenting as long as they don't close their browser. For example, this means an anonymous commenter can comment and then edit their comment to correct any typos, without ever logging in!
 
 If the anonymous commenter closes their browser, they won't be able to edit their comment unless they click the magic link sent to their email.
 
-For additional security, the temporary edit key will be invalidated on any attempt to guess the key incorrectly.
+For additional security, the temporary edit key will be invalidated on any incorrect attempts to guess the key.
 
 #### Why Now, after so long?
 
-As with all changes to the client-side widget, we have to be careful not to inflate its size. This feature adds considerable size to the core commenting codebase (around 1kb gzipped - about a 10% increase). We wanted to ensure this didn't decrease the performance of FastComments and wanted to make sure that it worked properly with our live commenting features. Also, we aimed for the feature to accommodate our customers' most common use case - anonymous commenting.
+As with all changes to the client-side widget, we have to be careful not to inflate its size. This feature adds considerable size to the core commenting codebase (around 1kb gzipped - about a 10% increase). We wanted to ensure this didn't decrease the performance of FastComments and wanted to ensure that it worked properly with our live commenting features. Also, we wanted the feature to accommodate our customers' most common use case - anonymous commenting.
 
 #### Editing Live Comments
 
@@ -54,5 +54,3 @@ We know this feature has been long awaited by some. Like all major releases, we'
 Cheers!
 
 {{/isPost}}
-
----

@@ -1,57 +1,56 @@
----
 [category:Features]
 ###### [postdate]
-# [postlink]Yorumlar Artık FastComments ile Düzenlenebilir[/postlink]
+# [postlink]FastComments ile Yorumlar Artık Düzenlenebilir[/postlink]
 
 {{#unless isPost}}
-Uzun zamandır beklenen bir güncelleme ile, FastComments ile bırakılan yorumları artık düzenleyebilirsiniz.
+Uzun zamandır beklenen bir güncelleme olarak, artık FastComments ile bırakılan yorumları düzenleyebilirsiniz.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Bu Makale Teknik Terimler İçeriyor
+### <i class="circle">!</i> Bu Makalede Teknik Terimler Vardır
 
-#### Yeni Neler Var
+#### Yenilikler
 
-FastComments ile bırakılan yorumlar artık düzenlenebilir - ister giriş yapmış olun ister olmayın.
+FastComments ile bırakılan yorumlar artık düzenlenebilir - giriş yapıp yapmadığınız önemli değil.
 
 <video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Düzenleme Demo"></video>
 
-Anlayışla karşılanır ki, bu en çok talep edilen özelliklerimizden biri oldu ve kullanıcı tabanımızla bu dönüm noktasına ulaşmaktan mutluyuz.
+Anlayışla karşılanmalı ki, bu en çok talep edilen özelliklerimizden biri oldu ve kullanıcılarımız ile bu aşamaya gelmekten mutluyuz.
 
 #### Nasıl Çalışır
 
-Giriş yapmış kullanıcılar her zaman yorumlarını düzenleyebilir. Anonim yorumcular için, sunucularımız, anonim yorum yaptıkları sürece, tarayıcılarını kapatmadıkları takdirde, yorumlarını düzenlemeleri için geçici olarak 24 saatlik bir süre sunar. Örneğin, bu, anonim bir yorumcunun yorum yapabileceği ve sonra imla hatalarını düzeltmek için yorumunu düzenleyebileceği anlamına gelir, hatta giriş yapmadan!
+Giriş yapmış kullanıcılar her zaman yorumlarını düzenleyebilir. Ayrıca, anonim yorum yapanlar için sunucularımız, tarayıcılarını kapatmadıkları sürece, yorum yaptıktan sonra 24 saatlik geçici bir düzenleme penceresi sunar. Örneğin, bu, anonim bir yorumcunun yorum yapabileceği ve ardından giriş yapmadan yazım hatalarını düzeltmek için yorumunu düzenleyebileceği anlamına gelir!
 
-Eğer anonim yorumcu tarayıcısını kapatırsa, e-posta adresine gönderilen sihirli bağlantıya tıklamadığı takdirde yorumunu düzenleyemez.
+Eğer anonim yorumcu tarayıcısını kapatırsa, e-posta adresine gönderilen sihirli bağlantıya tıklamadıkları sürece yorumlarını düzenleyemezler.
 
-Ekstra güvenlik için, geçici düzenleme anahtarı yanlış tahmin edilmesi durumunda geçersiz kılınacaktır.
+Ek güvenlik için, geçici düzenleme anahtarı yanlış tahmin etme girişiminde geçersiz hale gelecektir.
 
-#### Neden Şimdi, bu kadar uzun bir süre sonra?
+#### Neden Şimdi, bu kadar uzun zamandan sonra?
 
-Müşteri tarafı widget’ında yapılan tüm değişikliklerde boyutunu şişirmemeye dikkat etmeliyiz. Bu özellik, temel yorumlama kod tabanına önemli bir boyut ekliyor (yaklaşık 1kb gzipped - yaklaşık %10 artış).
-Bu durumun FastComments’un performansını azaltmadığından emin olmak ve canlı yorumlama özelliklerimizle sorunsuz çalıştığını görmek istedik. Ayrıca, bu özelliğin müşterilerimizin en yaygın kullanım senaryosuna - anonim yorumlama - uygun olmasını istedik.
+İstemci tarafındaki widget'taki tüm değişikliklerde olduğu gibi, boyutunu şişirmemek için dikkatli olmalıyız. Bu özellik, çekirdek yorumlama kod tabanına önemli bir boyut ekler (yaklaşık 1kb gzipped - yaklaşık %10 artış).
+FastComments'ın performansını düşürmediğinden emin olmak istedik ve canlı yorumlama özelliklerimizle düzgün çalışmasını sağlamak istedik. Ayrıca, bu özelliğin müşterilerimizin en yaygın kullanım senaryosunu - anonim yorumlamayı - karşılayabilmesini istedik.
 
 #### Canlı Yorumları Düzenleme
 
-Yorum yapma ve oylama gibi - düzenleme canlı gerçekleşir. İki kullanıcı aynı sayfadaysa ve bir kullanıcı yorumunu düzenlerse, diğer kullanıcı güncellemeyi görecektir.
+Yorum yapma ve oylama gibi - düzenleme canlı olarak gerçekleşir. Eğer iki kullanıcı aynı sayfadaysa ve bir kullanıcı yorumunu düzenlerse, diğer kullanıcı güncellemeyi görecektir.
 
 #### Yorum Düzenlemeyi Etkinleştirme
 
-Yorum düzenlemeyi tüm müşterilerimiz için varsayılan olarak aktif hale getirdik. Şu anda kapatılamaz.
+Yorum düzenlemeyi varsayılan olarak tüm müşterilerimiz için etkinleştirmeyi tamamladık. Şu anda kapatılamaz.
 
 #### Sırada Ne Var?
 
-Gelecek bir güncellemede, yorum silme yeteneğini de yayınlamayı planlıyoruz.
+Gelecek bir güncellemede yorum silme yeteneğini de yayınlamayı planlıyoruz.
 
 #### Üçüncü Taraf Entegrasyonları
 
-Bir yorumu düzenlemek, sahip olduğunuz herhangi bir entegrasyona olayın yayılmasına neden olacaktır - örneğin WordPress. Eğer WordPress eklentimizi kullanıyorsanız, bir yorum eklemek, verilerinizin bir kopyasını saklamak için WordPress kurulumunuzu arka planda günceller. Eğer bir yorumu düzenlerseniz, aynı mantığı takip ederiz ve WordPress kurulumunuzdaki kopyayı güncelleriz. Bu, sadece WordPress için değil, diğer entegrasyonlar için de geçerlidir.
+Bir yorumu düzenlemek, sahip olduğunuz herhangi bir entegrasyona - WordPress gibi - olayı yayacaktır. Eğer WordPress eklentimizi kullanıyorsanız, yorum eklemek arka planda WordPress kurulumunuzu günceller, böylece verilerinizin bir kopyasını saklamış olursunuz. Bir yorumu düzenlediğinizde, aynı mantığı izleriz ve WordPress kurulumunuzdaki kopyayı güncelleriz. Bu, yalnızca WordPress değil diğer entegrasyonlar için de geçerlidir.
 
 #### Sonuç Olarak
 
-Bu özelliğin bazıları tarafından uzun zamandır beklenildiğini biliyoruz. Tüm büyük sürümlerde olduğu gibi, bu özelliği optimize etmek, test etmek ve düzgün bir şekilde yayınlamak için zaman ayırabildiğimiz için mutluyuz.
+Bu özelliğin bazıları tarafından uzun süredir beklediğini biliyoruz. Tüm büyük sürümlerde olduğu gibi, bu özelliği optimize etmek, test etmek ve doğru bir şekilde yayınlamak için zaman ayırabildiğimiz için mutluyuz.
 
-Şerefe!
+Sağlıklı günler!
 
 {{/isPost}}

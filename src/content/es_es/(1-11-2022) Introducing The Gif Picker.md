@@ -2,7 +2,7 @@
 [category:Features]
 ###### [postdate]
 
-# [postlink]Presentando El Selector de Gif[/postlink]
+# [postlink]Presentando El Selector de Gifs[/postlink]
 
 {{#unless isPost}} Las conversaciones ahora son más divertidas. {{/unless}}
 
@@ -12,7 +12,7 @@
 
 <div class="columns">
     <div class="left">
-        <p>Para comenzar el nuevo año, las conversaciones se han vuelto más divertidas con reacciones animadas a través del Selector de Gif.</p>
+        <p>Para comenzar el nuevo año, las conversaciones se han vuelto más divertidas con reacciones animadas a través del Selector de Gifs.</p>
     </div>
     <div class="right text-center">
         <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
@@ -21,39 +21,39 @@
 
 ### Cómo Usarlo
 
-<p>Si las cargas de imágenes están habilitadas, aparecerá un ícono de GIF en la barra de herramientas de comentarios.</p>
-<p>Hacer clic en esto mostrará una lista de gifs en tendencia. Esta lista precarga un cierto número de imágenes y proporciona un desplazamiento infinito.</p>
+<p>Si las cargas de imágenes están habilitadas, un ícono de GIF aparecerá en la barra de herramientas de comentarios.</p>
+<p>Al hacer clic en esto, se mostrará una lista de gifs populares. Esta lista precarga una cierta cantidad de imágenes y proporciona desplazamiento infinito.</p>
 <div class="text-center">
     <img src="images/gif-picker-button.png" alt="Cómo usar" style="width: 100%; max-width: 400px;" />
 </div>
 
-### Proveedores de Gif
+### Proveedores de Gifs
 
-Actualmente, la única integración que FastComments admite es con Giphy.
+Actualmente, la única integración que FastComments soporta es con Giphy.
 
-### Anonimización de Gif
+### Anonimización de Gifs
 
 Sabemos que una gran parte de nuestra base de usuarios elige FastComments debido a la privacidad.
 
 Todos los activos y llamadas API de Giphy se eliminan de información como cookies y la dirección IP de sus usuarios.
 
-### Clasificación de Contenido de Gif
+### Clasificación de Contenido de Gifs
 
-La clasificación de contenido de los gifs se puede personalizar para estar en cualquier lugar desde PG hasta clasificación R, dependiendo de su 
+La clasificación de contenido de los gifs se puede personalizar para que esté entre PG y clasificación R dependiendo de su 
 audiencia. [La documentación para personalizar la clasificación de contenido está aquí.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
 
 ### Documentación
 
-Hay documentación dedicada para el selector de gif. Véase aquí: https://docs.fastcomments.com/guide-gifs.html
+Hay documentación dedicada para el selector de gifs. Véala aquí: https://docs.fastcomments.com/guide-gifs.html
 
 ### En Conclusión
 
-Hemos realizado una inversión considerable para garantizar que el selector de Gif y la funcionalidad relacionada sean rápidos y no ralenticen el 
+Hemos realizado una inversión considerable asegurando que el selector de gifs y la funcionalidad relacionada sea rápida y no ralentice el 
 resto del producto.
 
-Como el resto de FastComments, esperamos que encuentren esta función rápida, divertida y fácil de usar.
+Como el resto de FastComments, esperamos que encuentre esta función rápida, divertida y fácil de usar.
 
-¡Saludos!
+¡Salud!
 
 {{/isPost}}
 

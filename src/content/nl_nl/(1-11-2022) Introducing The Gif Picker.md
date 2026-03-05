@@ -8,7 +8,7 @@
 
 {{#isPost}}
 
-### Wat is nieuw
+### Wat is Nieuw
 
 <div class="columns">
     <div class="left">
@@ -19,27 +19,27 @@
     </div>
 </div>
 
-### Hoe het te gebruiken
+### Hoe het Te Gebruiken
 
-<p>Als afbeeldingsuploads zijn ingeschakeld, verschijnt er een GIF-pictogram in de commentaartoolbalk.</p>
-<p>Als je hierop klikt, verschijnt er een lijst met trending gifs. Deze lijst laadt een bepaald aantal afbeeldingen vooruit en biedt oneindig scrollen.</p>
+<p>Als image uploads zijn ingeschakeld, verschijnt er een GIF-pictogram in de commentaartool.</p>
+<p>Door hierop te klikken, wordt een lijst met trending gifs weergegeven. Deze lijst laadt een bepaald aantal afbeeldingen voor en biedt oneindig scrollen.</p>
 <div class="text-center">
     <img src="images/gif-picker-button.png" alt="Hoe te gebruiken" style="width: 100%; max-width: 400px;" />
 </div>
 
-### Gif Providers
+### Gif Leveranciers
 
-Momenteel is de enige integratie die FastComments ondersteunt met Giphy.
+Momenteel ondersteunt FastComments alleen integratie met Giphy.
 
-### Gif Anonimisatie
+### Gif Anonimisering
 
 We weten dat een groot deel van onze gebruikers FastComments kiest vanwege privacy.
 
-Alle activa en API-aanroepen van Giphy worden ontdaan van informatie zoals cookies en het ip-adres van je gebruikers.
+Alle middelen en API-aanroepen van Giphy worden ontdaan van informatie zoals cookies en het IP-adres van uw gebruikers.
 
 ### Gif Inhoudsclassificatie
 
-De inhoudsclassificatie van gifs kan worden aangepast van PG tot R-gericht, afhankelijk van je
+De inhoudsclassificatie van gifs kan worden aangepast om te variëren van PG tot R-geclassificeerd, afhankelijk van uw
 publiek. [Documentatie voor het aanpassen van de inhoudsclassificatie is hier.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
 
 ### Documentatie
@@ -48,9 +48,10 @@ Er is specifieke documentatie voor de gif picker. Zie hier: https://docs.fastcom
 
 ### Conclusie
 
-We hebben aanzienlijke investeringen gedaan om ervoor te zorgen dat de Gif picker en gerelateerde functionaliteit snel zijn en de rest van het product niet vertragen.
+We hebben een aanzienlijke investering gedaan om ervoor te zorgen dat de Gif picker en gerelateerde functionaliteit snel is en de
+rest van het product niet vertraagt.
 
-Net als de rest van FastComments hopen we dat je deze functie snel, leuk en eenvoudig in gebruik vindt.
+Net als de rest van FastComments hopen we dat je deze functie snel, leuk en gemakkelijk te gebruiken vindt.
 
 Proost!
 

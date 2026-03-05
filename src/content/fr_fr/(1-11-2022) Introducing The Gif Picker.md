@@ -4,7 +4,7 @@
 
 # [postlink]Présentation du Sélecteur de GIF[/postlink]
 
-{{#unless isPost}} Les conversations sont maintenant plus amusantes. {{/unless}}
+{{#unless isPost}} Les conversations sont désormais plus amusantes. {{/unless}}
 
 {{#isPost}}
 
@@ -21,8 +21,8 @@
 
 ### Comment l'Utiliser
 
-<p>Si les téléchargements d'images sont activés, une icône GIF apparaîtra dans la barre d'outils des commentaires.</p>
-<p>Cliquer dessus affichera une liste de GIF tendance. Cette liste précharge un certain nombre d'images et fournit un défilement infini.</p>
+<p>Si le téléchargement d'images est activé, une icône GIF apparaîtra dans la barre d'outils de commentaires.</p>
+<p>Cliquez dessus pour afficher une liste de GIFs tendance. Cette liste précharge un certain nombre d'images et fournit un défilement infini.</p>
 <div class="text-center">
     <img src="images/gif-picker-button.png" alt="Comment utiliser" style="width: 100%; max-width: 400px;" />
 </div>
@@ -31,15 +31,15 @@
 
 Actuellement, la seule intégration prise en charge par FastComments est avec Giphy.
 
-### Anonimisation des GIF
+### Anonymisation des GIF
 
-Nous savons qu'une grande partie de notre base d'utilisateurs choisit FastComments en raison de la confidentialité.
+Nous savons qu'une grande partie de nos utilisateurs choisissent FastComments pour des raisons de confidentialité.
 
-Tous les actifs et les appels API de Giphy sont dépouillés d'informations comme les cookies et l'adresse IP de vos utilisateurs.
+Tous les actifs et appels API de Giphy sont dépouillés d'informations telles que les cookies et l'adresse IP de vos utilisateurs.
 
 ### Évaluation du Contenu des GIF
 
-La classification du contenu des GIF peut être personnalisée pour être classée de PG à R selon votre public. [La documentation pour personnaliser la classification du contenu est ici.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
+L'évaluation du contenu des GIF peut être personnalisée pour aller de PG à R-rated selon votre audience. [La documentation pour personnaliser l'évaluation du contenu est ici.](https://docs.fastcomments.com/guide-customizations-and-configuration.html#gif-rating)
 
 ### Documentation
 
@@ -47,11 +47,11 @@ Il existe une documentation dédiée pour le sélecteur de GIF. Voir ici : https
 
 ### En Conclusion
 
-Nous avons fait un investissement considérable pour garantir que le Sélecteur de GIF et les fonctionnalités associées soient rapides et ne ralentissent pas le reste du produit.
+Nous avons fait un investissement considérable pour garantir que le sélecteur de GIF et ses fonctionnalités associées soient rapides et ne ralentissent pas le reste du produit.
 
-Comme le reste de FastComments, nous espérons que vous trouverez cette fonctionnalité rapide, amusante et facile à utiliser.
+Comme pour le reste de FastComments, nous espérons que vous trouverez cette fonctionnalité rapide, amusante et facile à utiliser.
 
-Cheers!
+Santé !
 
 {{/isPost}}
 

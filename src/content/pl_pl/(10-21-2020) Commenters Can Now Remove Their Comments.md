@@ -4,7 +4,7 @@
 # [postlink]Komentujący mogą teraz usuwać swoje komentarze[/postlink]
 
 {{#unless isPost}}
-Wyczekiwana aktualizacja, teraz możesz usuwać swoje komentarze zostawione za pomocą FastComments.
+Oczekiwana aktualizacja, teraz możesz usunąć swoje komentarze zostawione w FastComments.
 {{/unless}}
 
 {{#isPost}}
@@ -13,42 +13,42 @@ Wyczekiwana aktualizacja, teraz możesz usuwać swoje komentarze zostawione za p
 
 #### Co nowego
 
-Jak niedawno ogłoszono - komentarze zostawione za pomocą FastComments mogą być teraz edytowane - niezależnie od tego, czy jesteś zalogowany, czy nie.
+Jak ostatnio ogłoszono - komentarze zostawione w FastComments mogą teraz być edytowane - niezależnie od tego, czy jesteś zalogowany, czy nie.
 
-<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Usuwanie Demo"></video>
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demonstracja usuwania"></video>
 
-W ramach kontynuacji, możliwość usuwania swoich komentarzy została wydana. Zrozumiałe, podobnie jak edytowanie komentarzy, była to jedna z najczęściej zgłaszanych funkcji, i cieszymy się, że osiągnęliśmy ten kamień milowy z naszą bazą użytkowników.
+W ramach kontynuacji, możliwość usuwania swoich komentarzy została wprowadzona. Zrozumiale, podobnie jak edytowanie komentarzy, była to jedna z najczęściej zgłaszanych przez nas funkcji, i cieszymy się, że osiągnęliśmy ten kamień milowy z naszą bazą użytkowników.
 
 #### Jak to działa
 
-Usuwanie komentarzy działa tak samo jak edytowanie - zalogowani użytkownicy zawsze mogą edytować i usuwać swoje komentarze. Dla anonimowych komentujących, nasze serwery zapewniają tymczasowe 24-godzinne okno, w którym mogą edytować lub usuwać swój komentarz po
-skomentowaniu, o ile nie zamkną przeglądarki. Na przykład oznacza to, że anonimowy komentator może skomentować, a następnie edytować swój komentarz, aby poprawić wszelkie literówki lub usunąć go, bez konieczności logowania się!
+Usuwanie komentarzy działa tak samo jak edytowanie - zalogowani użytkownicy zawsze mogą edytować i usuwać swoje komentarze. Dla anonimowych komentujących, nasze serwery zapewniają tymczasowe 24-godzinne okno, aby mogli edytować lub usuwać swój komentarz po
+skomentowaniu, pod warunkiem, że nie zamkną swojej przeglądarki. Na przykład oznacza to, że anonimowy komentujący może skomentować, a następnie edytować swój komentarz, aby poprawić wszelkie błędy, lub go usunąć, bez logowania się!
 
-Jeśli anonimowy komentator zamknie przeglądarkę, nie będzie mógł edytować ani usuwać swojego komentarza, chyba że kliknie magiczny link wysłany na jego adres email.
+Jeśli anonimowy komentujący zamknie swoją przeglądarkę, nie będzie mógł edytować ani usuwać swojego komentarza, chyba że kliknie magię linku wysłanego na jego adres e-mail.
 
-Dla dodatkowego bezpieczeństwa tymczasowy klucz edycyjny zostanie unieważniony przy każdej próbie jego błędnego odgadnięcia.
+Dla dodatkowego bezpieczeństwa, tymczasowy klucz edycji zostanie unieważniony przy każdej próbie błędnego odgadnięcia klucza.
 
 #### Dlaczego teraz, po tak długim czasie?
 
-Racjonalne uzasadnienie dla tego jest takie samo, jak dlaczego edytowanie zajęło tak długo, aby zostało wydane. Chcieliśmy upewnić się, że nie wpłynie to na wydajność FastComments i chcieliśmy mieć pewność, że działa to poprawnie z naszymi funkcjami komentowania na żywo. Ponadto, chcieliśmy, aby ta funkcja
-dostosowała się do najczęściej występującego przypadku użycia naszych klientów - anonimowego komentowania.
+Racjonalne uzasadnienie jest takie samo jak powód, dla którego edytowanie zajęło tak długo do wydania. Chcieliśmy upewnić się, że nie wpłynie to negatywnie na wydajność FastComments i chcieliśmy upewnić się, że działa poprawnie z naszymi funkcjami komentowania na żywo. Również chcieliśmy, aby ta funkcja
+dostosowała się do najczęstszych przypadków użycia naszych klientów - anonimowego komentowania.
 
 #### Usuwanie komentarzy na żywo
 
-Tak jak w przypadku komentowania i głosowania - usuwanie odbywa się na żywo. Jeśli dwóch użytkowników jest na tej samej stronie, a jeden użytkownik usuwa swój komentarz, drugi użytkownik zobaczy, że został on usunięty.
+Tak jak komentowanie i głosowanie - usuwanie odbywa się na żywo. Jeśli dwóch użytkowników znajduje się na tej samej stronie, a jeden użytkownik usuwa swój komentarz, drugi użytkownik zobaczy, że został usunięty.
 
 #### Włączanie usuwania komentarzy
 
-Zakończyliśmy wprowadzanie edytowania i usuwania komentarzy domyślnie dla wszystkich naszych klientów. Obecnie nie ma możliwości wyłączenia tej funkcji.
+Zakończyliśmy wprowadzanie edytowania i usuwania komentarzy domyślnie dla wszystkich naszych klientów. Obecnie nie można tego wyłączyć.
 
 #### Integracje zewnętrzne
 
-Usunięcie komentarza spowoduje propagację wydarzenia do wszystkich integracji, które masz - jak WordPress. Jeśli korzystasz z naszej wtyczki do WordPressa, dodanie komentarza aktualizuje
-twoją instalację WordPressa w tle, aby zachować kopię twoich danych. Jeśli usuwasz komentarze, stosujemy tę samą logikę i usuwamy je z twojej instalacji WordPressa. Dotyczy to innych integracji, nie tylko WordPressa.
+Usunięcie komentarza spowoduje propagację zdarzenia do wszelkich zintegrowanych systemów, które posiadasz - jak WordPress. Jeśli korzystasz z naszej wtyczki WordPress, dodanie komentarza aktualizuje
+Twoją instalację WordPress w tle, abyś zachował kopię swoich danych. Jeśli usuniesz komentarze, stosujemy tę samą logikę i usuwamy je z Twojej instalacji WordPress. Dotyczy to innych integracji, a nie tylko WordPressa.
 
-#### Na zakończenie
+#### Podsumowując
 
-Wiemy, że ta funkcja była długo oczekiwana przez niektórych. Jak w przypadku wszystkich ważnych wydań, cieszymy się, że mogliśmy poświęcić czas na optymalizację, testowanie i właściwe wydanie tej funkcji.
+Wiemy, że ta funkcja była długo oczekiwana przez niektórych. Jak to bywa w przypadku wszystkich dużych wydań, cieszymy się, że mogliśmy poświęcić czas na optymalizację, testowanie i odpowiednie wydanie tej funkcji.
 
 Na zdrowie!
 

@@ -1,61 +1,57 @@
----
 [category:Features]
 ###### [postdate]
-# [postlink]Komentari su sada uređivi sa FastComments[/postlink]
+# [postlink]Komentari su Sada Uređivani sa FastComments[/postlink]
 
 {{#unless isPost}}
-Dugo očekivana ažuriranja, sada možete uređivati komentare ostavljene sa FastComments.
+Mnogi su čekali ovu nadogradnju, sada možete uređivati komentare ostavljene sa FastComments.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Ovaj članak sadrži tehničke izraze
+### <i class="circle">!</i> Ovaj Članak Sadrži Tehničku Terminologiju
 
 #### Šta je novo
 
-Komentari ostavljeni sa FastComments sada mogu biti uređivani - bilo da ste prijavljeni ili ne.
+Komentari ostavljeni sa FastComments sada mogu da se uređuju - bez obzira da li ste prijavljeni ili ne.
 
-<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Uređivanje Demo"></video>
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Editing Demo"></video>
 
-Razumljivo, ovo je jedna od naših najtraženijih funkcija, i drago nam je što smo dostigli ovu prekretnicu sa našim korisnicima.
+Razumljivo, ovo je bila jedna od naših najtraženijih funkcija, i srećni smo što smo dostigli ovu tačku s našim korisnicima.
 
-#### Kako funkcionira
+#### Kako to funkcioniše
 
-Prijavljeni korisnici uvek mogu da uređuju svoje komentare. Za anonimne komentatore, naši serveri pružaju privremeni prozor od 24 sata za uređivanje komentara nakon
-ostavljanja, sve dok ne zatvore svoj pretraživač. Na primer, to znači da anonimni komentator može ostaviti komentar, a zatim da ga izmeni da ispravi bilo kakve greške, bez prijavljivanja!
+Prijavljeni korisnici uvek mogu da uređuju svoje komentare. Za anonimne komentatore, naši serveri pružaju privremeni 24-satni prozor da urede svoj komentar nakon što su komentarisali, sve dok ne zatvore svoj pregledač. Na primer, to znači da anonimni komentator može da komentariše, a zatim da uredi svoj komentar kako bi ispravio eventualne greške, a da nikada ne mora da se prijavi!
 
-Ako anonimni komentator zatvori svoj pretraživač, neće moći da uređuje svoj komentar osim ako ne klikne na čarobni link poslat na njihov email.
+Ako anonimni komentator zatvori svoj pregledač, ne će moći da uruči svoj komentar osim ako ne klikne na magičnu vezu poslatu na njegovu email adresu.
 
-Za dodatnu sigurnost, privremeni ključ za uređivanje će biti nevažeći na svaki pokušaj pogrešnog pogađanja ključa.
+Za dodatnu sigurnost, privremeni ključ za uređivanje će biti nevažeći pri bilo kakvom pokušaju pogrešnog pogađanja ključa.
 
-#### Zašto sada, nakon toliko dugo?
+#### Zašto sada, nakon toliko vremena?
 
-Kao i kod svih promena na klijentskom widgetu, moramo biti oprezni da ne povećamo njegovu veličinu. Ova funkcija dodaje značajnu veličinu osnovnom kodu za komentare (oko 1kb kompresovano - oko 10% povećanje).
-Želeli smo da osiguramo da to ne smanji performanse FastComments i želeli smo da osiguramo da funkcioniše ispravno sa našim live komentarima. Takođe, želeli smo da funkcija
-prilagodi najčešći slučaj korišćenja naših kupaca - anonimno komentarisanje.
+Kao i kod svih promena na korisničkoj strani, moramo biti oprezni da ne uvećamo njegovu veličinu. Ova funkcija dodaje značajnu urednost osnovnom kodu za komentare (oko 1kb zategnuto - oko 10% povećanja).
+Želeli smo da osiguramo da to ne smanji performanse FastComments i želeli smo da osiguramo da pravilno radi sa našim funkcijama uživo. Takođe, želeli smo da funkcija
+prilagodi najčešćem korišćenju naših kupaca - anonimnom komentarisanja.
 
-#### Uređivanje live komentara
+#### Uređivanje Uživljenih Komentara
 
-Baš kao i komentarisanje i glasanje - uređivanje se dešava uživo. Ako su dva korisnika na istoj stranici, a jedan korisnik uređuje svoj komentar, drugi korisnik će videti ažuriranje.
+Baš kao i komentarisanje i glasanje - uređivanje se dešava uživo. Ako su dva korisnika na istoj stranici, a jedan korisnik uređuje svoj komentar, drugi korisnik će videti da je ažuriran.
 
-#### Omogućavanje uređivanja komentara
+#### Omogućavanje Uređivanja Komentara
 
-Završili smo s uvođenjem uređivanja komentara kao podrazumevane opcije za sve naše kupce. Trenutno, to ne može biti isključeno.
+Završili smo sa uvođenjem uređivanja komentara kao podrazumevane opcije za sve naše korisnike. Trenutno, to se ne može isključiti.
 
-#### Šta je sledeće?
+#### Šta sledeće?
 
-Planiramo da u budućem ažuriranju omogućimo mogućnost brisanja komentara.
+Planiramo da uvedemo mogućnost brisanja komentara u budućoj nadogradnji.
 
-#### Integracije trećih strana
+#### Integracije Trećih Strana
 
-Uređivanje komentara će izazvati da se događaj propagira na sve integracije koje imate - kao što je WordPress. Ako koristite naš WordPress dodatak, dodavanje komentara ažurira
-vašu WordPress instalaciju u pozadini kako biste zadržali kopiju vaših podataka. Ako uredite komentar, pratimo istu logiku i ažuriramo kopiju u vašoj WordPress
-instalaciji. Ovo važi i za druge integracije, ne samo za WordPress.
+Uređivanje komentara će uzrokovati propagaciju događaja na sve integracije koje imate - poput WordPress-a. Ako koristite naš WordPress dodatak, dodavanje komentara ažurira vašu WordPress instalaciju u pozadini kako biste zadržali kopiju svojih podataka. Ako uredite komentar, pratimo istu logiku i ažuriramo kopiju u vašoj WordPress instalaciji. Ovo se odnosi na druge integracije, a ne samo na WordPress.
 
-#### U zaključku
+#### Zaključak
 
-Znamo da su neki dugo čekali ovu funkciju. Kao i svi veći izdanci, drago nam je što smo mogli da odvojimo vreme za optimizaciju, testiranje i pravilno puštanje ove funkcije.
+Znamo da su neki dugo čekali ovu funkciju. Kao i sa svim važnim izdanjima, drago nam je što smo mogli da odvojimo vreme za optimizaciju, testiranje i pravilno objavljivanje ove funkcije.
 
-Pozdrav! 
+Živeli!
 
 {{/isPost}}

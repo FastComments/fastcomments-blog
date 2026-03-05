@@ -1,52 +1,52 @@
 ---
 [category:Features]
 ###### [postdate]
-# [postlink]Agora os Comentadores Podem Remover Seus Comentários[/postlink]
+# [postlink]Os Comentários Podem Agora Ser Removidos pelos Usuários[/postlink]
 
 {{#unless isPost}}
-Uma atualização muito esperada, agora você pode deletar seus comentários feitos com o FastComments.
+Uma atualização muito aguardada, agora você pode excluir os seus comentários deixados com o FastComments.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Este Artigo Contém Jargões Técnicos
+### <i class="circle">!</i> Este Artigo Contém Jargão Técnico
 
-#### Novidades
+#### O Que Há de Novo
 
-Conforme anunciado recentemente - os comentários feitos com o FastComments agora podem ser editados - esteja você logado ou não.
+Conforme anunciado recentemente - os comentários deixados com o FastComments agora podem ser editados - seja você estar logado ou não.
 
 <video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demonstração de Exclusão"></video>
 
-Como acompanhamento, a capacidade de deletar seus comentários foi liberada. Compreensivelmente, assim como a edição de comentários, esta tem sido uma das funcionalidades mais solicitadas, e estamos felizes em atingir este marco com nossa base de usuários.
+Como uma continuação, a capacidade de excluir seus comentários foi liberada. Como era de se esperar, assim como a edição de comentários, tem sido um dos nossos recursos mais solicitados, e estamos felizes por alcançar esse marco com nossa base de usuários.
 
 #### Como Funciona
 
-A remoção de comentários funciona da mesma forma que a edição - usuários logados podem sempre editar e deletar seus comentários. Para comentadores anônimos, nossos servidores fornecem uma janela temporária de 24 horas para que eles editem ou deletem seu comentário após comentar, desde que não fechem o navegador. Por exemplo, isso significa que um comentador anônimo pode comentar, e então editar seu comentário para corrigir quaisquer erros de digitação, ou deletá-lo, sem nunca precisar fazer login!
+A remoção de comentários funciona da mesma maneira que a edição - usuários logados podem sempre editar e excluir seus comentários. Para comentaristas anônimos, nossos servidores fornecem uma janela temporária de 24 horas para que eles possam editar ou excluir seu comentário após comentarem, contanto que não fechem seu navegador. Por exemplo, isso significa que um comentarista anônimo pode comentar, e então editar seu comentário para corrigir quaisquer erros de digitação, ou excluí-lo, sem nunca fazer login!
 
-Se o comentador anônimo fechar seu navegador, ele não poderá editar ou deletar seu comentário, a menos que clique no link mágico enviado para seu email.
+Se o comentarista anônimo fechar seu navegador, ele não poderá editar ou excluir seu comentário, a menos que clique no link mágico enviado para seu e-mail.
 
-Para maior segurança, a chave de edição temporária será invalidada em qualquer tentativa de adivinhar a chave incorretamente.
+Para maior segurança, a chave de edição temporária será invalidada em qualquer tentativa de adivinhar a chave de forma incorreta.
 
 #### Por Que Agora, Depois de Tanto Tempo?
 
-A razão para isso é a mesma de por que a edição demorou tanto para ser lançada. Queríamos garantir que isso não diminuísse o desempenho do FastComments e queríamos garantir que funcionasse corretamente com nossas funcionalidades de comentários em tempo real. Além disso, queríamos que a funcionalidade acomodasse o caso de uso mais comum de nossos clientes - comentários anônimos.
+A razão para isso é a mesma de por que a edição levou tanto tempo para ser liberada. Queríamos garantir que isso não diminuísse o desempenho do FastComments e queríamos garantir que funcionasse corretamente com nossos recursos de comentários ao vivo. Além disso, queríamos que a funcionalidade acomodasse o caso de uso mais comum de nossos clientes - comentários anônimos.
 
-#### Excluindo Comentários ao Vivo
+#### Excluindo Comentários Ao Vivo
 
-Assim como comentar e votar - a exclusão acontece ao vivo. Se dois usuários estão na mesma página, e um usuário deleta seu comentário, o outro usuário verá isso ser removido.
+Assim como comentar e votar - a exclusão acontece ao vivo. Se dois usuários estiverem na mesma página e um usuário excluir seu comentário, o outro usuário verá isso ser removido.
 
 #### Habilitando a Remoção de Comentários
 
-Concluímos a liberação da edição e exclusão de comentários por padrão para todos os nossos clientes. Atualmente, não pode ser desativado.
+Concluímos a implementação da edição e exclusão de comentários como padrão para todos os nossos clientes. Atualmente, não pode ser desativada.
 
 #### Integrações de Terceiros
 
-Excluir um comentário fará com que o evento se propague para qualquer integração que você tenha - como WordPress. Se você usar nosso plugin do WordPress, então adicionar um comentário atualiza sua instalação do WordPress em segundo plano, para que você mantenha uma cópia de seus dados. Se você remover comentários, seguimos a mesma lógica e removemos da sua instalação do WordPress. Isso se aplica a outras integrações, não apenas ao WordPress.
+Excluir um comentário fará com que o evento se propague para qualquer integração que você tenha - como o WordPress. Se você usa nosso plugin do WordPress, ao adicionar um comentário, sua instalação do WordPress é atualizada em segundo plano para que você mantenha uma cópia dos seus dados. Se você remover comentários, seguimos a mesma lógica e os removemos da sua instalação do WordPress. Isso se aplica a outras integrações, não apenas ao WordPress.
 
 #### Em Conclusão
 
-Sabemos que esta funcionalidade foi muito aguardada por alguns. Como todas as grandes atualizações, estamos felizes por termos conseguido dedicar um tempo para otimizar, testar e liberar esta funcionalidade corretamente.
+Sabemos que este recurso tem sido muito aguardado por alguns. Como todas as grandes liberações, estamos felizes por podermos dedicar tempo para otimizar, testar e liberar adequadamente esse recurso.
 
-Saúde!
+Saudações!
 
 {{/isPost}}

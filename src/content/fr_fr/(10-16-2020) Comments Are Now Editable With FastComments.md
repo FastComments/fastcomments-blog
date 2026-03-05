@@ -1,59 +1,60 @@
 ---
 [category:Features]
 ###### [postdate]
-# [postlink]Les commentaires sont désormais modifiables avec FastComments[/postlink]
+# [postlink]Les Commentaires Sont Maintenant Éditables Avec FastComments[/postlink]
 
 {{#unless isPost}}
-Une mise à jour très attendue, vous pouvez maintenant modifier les commentaires laissés avec FastComments.
+Une mise à jour très attendue, vous pouvez maintenant éditer les commentaires laissés avec FastComments.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Cet article contient du jargon technique
+### <i class="circle">!</i> Cet Article Contient du Jargon Technique
 
-#### Quoi de neuf
+#### Quoi de Neuf
 
-Les commentaires laissés avec FastComments peuvent maintenant être modifiés - que vous soyez connecté ou non.
+Les commentaires laissés avec FastComments peuvent maintenant être édités - que vous soyez connecté ou non.
 
-<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Démonstration de modification"></video>
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Démonstration d'Édition"></video>
 
-Il est compréhensible que cela ait été l'une de nos fonctionnalités les plus demandées, et nous sommes heureux d'atteindre cette étape avec notre base d'utilisateurs.
+Compréhensible, cela a été l'une de nos fonctionnalités les plus demandées, et nous sommes heureux d'atteindre cette étape avec notre base d'utilisateurs.
 
-#### Comment cela fonctionne
+#### Comment Cela Fonctionne
 
-Les utilisateurs connectés peuvent toujours modifier leurs commentaires. Pour les commentateurs anonymes, nos serveurs offrent une fenêtre temporaire de 24 heures pour qu'ils puissent modifier leur commentaire après l'avoir posté, tant qu'ils ne ferment pas leur navigateur. Par exemple, cela signifie qu'un commentateur anonyme peut commenter, puis modifier son commentaire pour corriger d'éventuelles fautes de frappe, sans jamais se connecter !
+Les utilisateurs connectés peuvent toujours éditer leurs commentaires. Pour les commentateurs anonymes, nos serveurs fournissent une fenêtre temporaire de 24 heures pour qu'ils puissent éditer leur commentaire après
+avoir commenté tant qu'ils ne ferment pas leur navigateur. Par exemple, cela signifie qu'un commentateur anonyme peut commenter, puis éditer son commentaire pour corriger des fautes de frappe, sans jamais se connecter !
 
-Si le commentateur anonyme ferme son navigateur, il ne pourra pas modifier son commentaire à moins de cliquer sur le lien magique envoyé à son e-mail.
+Si le commentateur anonyme ferme son navigateur, il ne pourra pas éditer son commentaire à moins qu'il ne clique sur le lien magique envoyé à son email.
 
-Pour une sécurité supplémentaire, la clé de modification temporaire sera invalidée lors de toute tentative de deviner la clé incorrectement.
+Pour plus de sécurité, la clé d'édition temporaire sera invalidée à toute tentative de deviner la clé de manière incorrecte.
 
-#### Pourquoi maintenant, après tant de temps ?
+#### Pourquoi Maintenant, après tout ce temps ?
 
-Comme pour tous les changements apportés au widget côté client, nous devons faire attention à ne pas en gonfler la taille. Cette fonctionnalité ajoute une taille considérable à la base de code de commentaire principale (environ 1 Ko gzippé - soit une augmentation d'environ 10 %). 
-Nous voulions nous assurer que cela n'affecte pas les performances de FastComments et que cela fonctionne correctement avec nos fonctionnalités de commentaires en direct. De plus, nous voulions que la fonctionnalité réponde aux cas d'utilisation les plus courants de nos clients - les commentaires anonymes.
+Comme pour tous les changements apportés au widget côté client, nous devons faire attention à ne pas augmenter sa taille. Cette fonctionnalité ajoute une taille considérable à la base de code de commentaires principale (environ 1 Ko gzippé - environ une augmentation de 10%).
+Nous voulions nous assurer que cela n'affecte pas les performances de FastComments et nous voulions nous assurer que cela fonctionne correctement avec nos fonctionnalités de commentaires en direct. De plus, nous voulions que la fonctionnalité
+réponde au cas d'utilisation le plus courant de nos clients - le commentaire anonyme.
 
-#### Modification de commentaires en direct
+#### Édition des Commentaires en Direct
 
-Tout comme le commentaire et le vote - la modification se fait en direct. Si deux utilisateurs sont sur la même page, et qu'un utilisateur modifie son commentaire, l'autre utilisateur verra la mise à jour.
+Tout comme commenter et voter - l'édition se fait en direct. Si deux utilisateurs sont sur la même page, et qu'un utilisateur édite son commentaire, l'autre utilisateur verra la mise à jour.
 
-#### Activation de la modification des commentaires
+#### Activation de l'Édition des Commentaires
 
-Nous avons terminé le déploiement de la modification des commentaires par défaut pour tous nos clients. Actuellement, elle ne peut pas être désactivée.
+Nous avons terminé de déployer l'édition des commentaires par défaut pour tous nos clients. Actuellement, cela ne peut pas être désactivé.
 
-#### Quelles sont les prochaines étapes ?
+#### Quelles Sont les Prochaines Étapes ?
 
-Nous prévoyons de publier la possibilité de supprimer des commentaires également dans une future mise à jour.
+Nous prévoyons de publier la possibilité de supprimer des commentaires aussi dans une future mise à jour.
 
-#### Intégrations tierces
+#### Intégrations Tiers
 
-Modifier un commentaire fera en sorte que l'événement se propage à toutes les intégrations que vous avez - comme WordPress. Si vous utilisez notre plugin WordPress, alors ajouter un commentaire met à jour votre installation WordPress en arrière-plan afin que vous gardiez une copie de vos données. Si vous modifiez un commentaire, nous suivons la même logique et mettons à jour la copie dans votre installation WordPress. Cela s'applique à d'autres intégrations, pas seulement WordPress.
+L'édition d'un commentaire fera en sorte que l'événement se propage à toutes les intégrations que vous avez - comme WordPress. Si vous utilisez notre plugin WordPress, alors l'ajout d'un commentaire met à jour
+votre installation WordPress en arrière-plan afin que vous conserviez une copie de vos données. Si vous éditez un commentaire, nous suivons la même logique et mettons à jour la copie dans votre installation WordPress. Cela s'applique à d'autres intégrations, pas seulement à WordPress.
 
-#### En conclusion
+#### En Conclusion
 
-Nous savons que cette fonctionnalité a été longtemps attendue par certains. Comme pour toutes les grandes versions, nous sommes heureux d'avoir pu prendre le temps d'optimiser, de tester et de publier correctement cette fonctionnalité.
+Nous savons que cette fonctionnalité a été attendue depuis longtemps par certains. Comme toutes les grandes versions, nous sommes heureux d'avoir pu prendre le temps d'optimiser, de tester et de publier correctement cette fonctionnalité.
 
 À votre santé !
 
 {{/isPost}}
-
----

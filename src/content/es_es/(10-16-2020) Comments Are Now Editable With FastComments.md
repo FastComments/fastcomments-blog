@@ -1,7 +1,7 @@
 ---
 [category:Features]
 ###### [postdate]
-# [postlink]Los Comentarios Ahora Son Editables con FastComments[/postlink]
+# [postlink]Los Comentarios Ahora Son Editables Con FastComments[/postlink]
 
 {{#unless isPost}}
 Una actualización muy esperada, ahora puedes editar los comentarios dejados con FastComments.
@@ -13,7 +13,7 @@ Una actualización muy esperada, ahora puedes editar los comentarios dejados con
 
 #### Novedades
 
-Los comentarios dejados con FastComments ahora se pueden editar, ya sea que estés conectado o no.
+Los comentarios dejados con FastComments ahora pueden ser editados, ya sea que estés conectado o no.
 
 <video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Demostración de Edición"></video>
 
@@ -25,19 +25,20 @@ Los usuarios conectados siempre pueden editar sus comentarios. Para los comentar
 
 Si el comentarista anónimo cierra su navegador, no podrá editar su comentario a menos que haga clic en el enlace mágico enviado a su correo electrónico.
 
-Para mayor seguridad, la clave de edición temporal se invalidará en cualquier intento de adivinar la clave incorrectamente.
+Para mayor seguridad, la clave de edición temporal será invalidada en cualquier intento de adivinar la clave incorrectamente.
 
-#### ¿Por Qué Ahora, después de tanto tiempo?
+#### ¿Por Qué Ahora, Después de Tanto Tiempo?
 
-Como con todos los cambios en el widget del lado del cliente, tenemos que tener cuidado de no inflar su tamaño. Esta característica agrega un tamaño considerable a la base de código central de comentarios (alrededor de 1kb comprimido - aproximadamente un aumento del 10%). Queríamos asegurarnos de que esto no disminuyera el rendimiento de FastComments y quería asegurarme de que funcionara correctamente con nuestras funciones de comentarios en vivo. Además, queríamos que la característica se adaptara al caso de uso más común de nuestros clientes: el comentario anónimo.
+Al igual que con todos los cambios en el widget del lado del cliente, tenemos que tener cuidado de no inflar su tamaño. Esta función añade un tamaño considerable a la base de código de comentarios central (alrededor de 1kb comprimido - un aumento de aproximadamente el 10%).
+Queríamos asegurarnos de que esto no disminuyera el rendimiento de FastComments y de que funcionara correctamente con nuestras funciones de comentarios en vivo. Además, queríamos que la función pudiera acomodar el caso de uso más común de nuestros clientes: los comentarios anónimos.
 
 #### Editando Comentarios en Vivo
 
-Al igual que comentar y votar, la edición ocurre en vivo. Si dos usuarios están en la misma página y un usuario edita su comentario, el otro usuario verá la actualización.
+Al igual que comentar y votar, la edición ocurre en vivo. Si dos usuarios están en la misma página y un usuario edita su comentario, el otro usuario lo verá actualizado.
 
 #### Habilitando la Edición de Comentarios
 
-Hemos terminado de implementar la edición de comentarios de forma predeterminada para todos nuestros clientes. Actualmente, no se puede desactivar.
+Hemos terminado de implementar la edición de comentarios por defecto para todos nuestros clientes. Actualmente, no se puede desactivar.
 
 #### ¿Qué Sigue?
 
@@ -45,12 +46,11 @@ Planeamos lanzar la capacidad de eliminar comentarios también en una futura act
 
 #### Integraciones de Terceros
 
-Editar un comentario hará que el evento se propague a todas las integraciones que tengas, como WordPress. Si utilizas nuestro plugin de WordPress, entonces agregar un comentario actualiza
-tu instalación de WordPress en segundo plano para que retengas una copia de tus datos. Si editas un comentario, seguimos la misma lógica y actualizamos la copia en tu instalación de WordPress. Esto se aplica a otras integraciones, no solo a WordPress.
+Editar un comentario hará que el evento se propague a cualquier integración que tengas, como WordPress. Si usas nuestro plugin de WordPress, entonces agregar un comentario actualiza tu instalación de WordPress en segundo plano para que retengas una copia de tus datos. Si editas un comentario, seguimos la misma lógica y actualizamos la copia en tu instalación de WordPress. Esto se aplica a otras integraciones, no solo WordPress.
 
 #### En Conclusión
 
-Sabemos que esta característica ha sido muy esperada por algunos. Como todos los lanzamientos importantes, estamos contentos de haber podido tomarnos el tiempo para optimizar, probar y lanzar adecuadamente esta característica.
+Sabemos que esta función ha sido muy esperada por algunos. Al igual que con todos los lanzamientos importantes, estamos contentos de haber podido tomar el tiempo para optimizar, probar y lanzar adecuadamente esta característica.
 
 ¡Salud!
 
