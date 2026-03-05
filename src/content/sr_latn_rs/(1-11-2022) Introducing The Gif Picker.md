@@ -15,7 +15,7 @@
         <p>Kako bismo započeli novu godinu, razgovori su učinjeni zabavnijim uz animirane reakcije preko Gif Pickera.</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="Srećan pas gif" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

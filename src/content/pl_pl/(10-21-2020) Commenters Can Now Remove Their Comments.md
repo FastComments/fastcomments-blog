@@ -15,7 +15,7 @@ Wyczekiwana aktualizacja, teraz możesz usuwać swoje komentarze zostawione za p
 
 Jak niedawno ogłoszono - komentarze zostawione za pomocą FastComments mogą być teraz edytowane - niezależnie od tego, czy jesteś zalogowany, czy nie.
 
-<img src="images/fc-deleting-demo.gif" alt="Usuwanie Demo GIF (11mb)" title="Usuwanie Demo" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Usuwanie Demo"></video>
 
 W ramach kontynuacji, możliwość usuwania swoich komentarzy została wydana. Zrozumiałe, podobnie jak edytowanie komentarzy, była to jedna z najczęściej zgłaszanych funkcji, i cieszymy się, że osiągnęliśmy ten kamień milowy z naszą bazą użytkowników.
 

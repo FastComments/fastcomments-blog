@@ -15,7 +15,7 @@ Novi, dugo očekivani update, sada možete obrisati svoje komentare ostavljene u
 
 Kao što je nedavno najavljeno - komentari ostavljeni uz FastComments sada se mogu uređivati - bez obzira da li ste prijavljeni ili ne.
 
-<img src="images/fc-deleting-demo.gif" alt="Demo GIF za Brisanje (11mb)" title="Demo za Brisanje" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demo za Brisanje"></video>
 
 Kao nastavak, mogućnost da obrišete svoje komentare je puštena. Razumljivo, kao i uređivanje komentara, bila je jedna od najtraženijih funkcija, i drago nam je što smo dostigli ovu prekretnicu sa našom korisničkom bazom.
 

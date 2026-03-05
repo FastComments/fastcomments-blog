@@ -15,7 +15,7 @@
 
 최근 발표된 바와 같이 - FastComments에 남긴 댓글은 이제 로그인 여부에 관계없이 편집할 수 있습니다.
 
-<img src="images/fc-deleting-demo.gif" alt="삭제 데모 GIF (11mb)" title="삭제 데모" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="삭제 데모"></video>
 
 후속으로, 댓글을 삭제할 수 있는 기능이 출시되었습니다. 이해할 수 있듯이, 댓글 편집과 마찬가지로 가장 많은 요청을 받은 기능 중 하나였으며, 사용자들과 함께 이 이정표에 도달하게 되어 기쁩니다.
 

@@ -15,7 +15,7 @@ Ein lang erwartetes Update – Sie können jetzt Kommentare, die mit FastComment
 
 Kommentare, die mit FastComments hinterlassen wurden, können jetzt bearbeitet werden – egal, ob Sie eingeloggt sind oder nicht.
 
-<img src="images/fc-editing-demo.gif" alt="Bearbeitungs-Demo GIF (17mb)" title="Bearbeitungs-Demo" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Bearbeitungs-Demo"></video>
 
 Verständlicherweise war dies eines der am häufigsten angeforderten Features, und wir freuen uns, diesen Meilenstein mit unserer Benutzergemeinschaft erreicht zu haben.
 

@@ -15,7 +15,7 @@ Ein lang erwartetes Update, Sie können jetzt Ihre Kommentare, die Sie mit FastC
 
 Wie kürzlich angekündigt – Kommentare, die mit FastComments hinterlassen wurden, können jetzt bearbeitet werden – ob Sie angemeldet sind oder nicht.
 
-<img src="images/fc-deleting-demo.gif" alt="Löschdemo GIF (11mb)" title="Löschdemo" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Löschdemo"></video>
 
 Als Folge dessen wurde die Möglichkeit, Ihre Kommentare zu löschen, veröffentlicht. Verständlicherweise war dies, wie das Bearbeiten von Kommentaren, eine unserer am häufigsten nachgefragten Funktionen, und wir freuen uns, diesen Meilenstein mit unserer Benutzerbasis erreicht zu haben.
 

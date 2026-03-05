@@ -231,7 +231,10 @@ function createCategoryUrl(categorySlug, locale, page = 1) {
 
 // Helper function to build alternate locale links
 function buildAlternateLocales(baseUrl, locale) {
-	return Object.keys(locales).map(loc => {
+	const defaultUrl = locale === defaultLocale
+		? baseUrl
+		: baseUrl.replace(new RegExp(`-${locale}\\.html$`), '.html');
+	const result = Object.keys(locales).map(loc => {
 		let targetUrl;
 		if (locale === defaultLocale) {
 			// Current URL has no locale suffix, add one for non-default locales
@@ -239,7 +242,7 @@ function buildAlternateLocales(baseUrl, locale) {
 		} else {
 			// Current URL has a locale suffix, replace or remove it
 			targetUrl = loc === defaultLocale
-				? baseUrl.replace(new RegExp(`-${locale}\\.html$`), '.html')
+				? defaultUrl
 				: baseUrl.replace(new RegExp(`-${locale}\\.html$`), `-${loc}.html`);
 		}
 		return {
@@ -248,6 +251,19 @@ function buildAlternateLocales(baseUrl, locale) {
 			current: loc === locale
 		};
 	});
+	// Add x-default pointing to the default locale version
+	result.push({
+		hreflang: 'x-default',
+		url: defaultUrl,
+		current: false
+	});
+	// Normalize index.html to empty string so href becomes "/" matching the canonical URL
+	for (const entry of result) {
+		if (entry.url === 'index.html') {
+			entry.url = '';
+		}
+	}
+	return result;
 }
 
 // Helper function to build available locales for language selector

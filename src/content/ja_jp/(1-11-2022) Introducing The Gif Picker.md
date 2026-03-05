@@ -15,7 +15,7 @@
         <p>新年を迎えるにあたり、GIFピッカーを使ったアニメーション反応で会話がより楽しくなりました。</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="幸せな犬のGIF" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

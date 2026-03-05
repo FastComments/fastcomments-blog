@@ -15,7 +15,7 @@
 
 最近発表されたように、FastCommentsに残したコメントは、ログインしていなくても編集できるようになりました。
 
-<img src="images/fc-deleting-demo.gif" alt="削除デモ GIF (11mb)" title="削除デモ" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="削除デモ"></video>
 
 続いて、自分のコメントを削除する機能がリリースされました。コメントの編集と同様に、これはユーザーから最もリクエストの多かった機能の1つであり、ユーザーと一緒にこのマイルストーンに到達できたことを嬉しく思います。
 

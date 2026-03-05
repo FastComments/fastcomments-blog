@@ -15,7 +15,7 @@ Beklenen bir güncelleme olarak, artık FastComments ile bıraktığınız yorum
 
 Yeni duyurulduğu gibi - FastComments ile bırakılan yorumlar artık düzenlenebilir - ister giriş yapmış olun, ister olmayın.
 
-<img src="images/fc-deleting-demo.gif" alt="Silme Demo GIF (11mb)" title="Silme Demo" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Silme Demo"></video>
 
 Bir takip olarak, yorumlarınızı silme yeteneği de yayınlandı. Anlayışla karşılayacağınız üzere, yorumları düzenleme ile aynı şekilde, bu, en çok talep edilen özelliklerimizden biri oldu ve kullanıcı tabanımızla bu dönüm noktasına ulaşmaktan mutluyuz.
 

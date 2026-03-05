@@ -15,7 +15,7 @@ Une mise à jour très attendue, vous pouvez maintenant modifier les commentaire
 
 Les commentaires laissés avec FastComments peuvent maintenant être modifiés - que vous soyez connecté ou non.
 
-<img src="images/fc-editing-demo.gif" alt="Démonstration de modification GIF (17 Mo)" title="Démonstration de modification" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Démonstration de modification"></video>
 
 Il est compréhensible que cela ait été l'une de nos fonctionnalités les plus demandées, et nous sommes heureux d'atteindre cette étape avec notre base d'utilisateurs.
 

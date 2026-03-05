@@ -15,7 +15,7 @@
 
 תגובות שהושארו עם FastComments יכולות עכשיו להיות נערכות - בין אם אתם מחוברים ובין אם לא.
 
-<img src="images/fc-editing-demo.gif" alt="GIF הדגמת עריכה (17mb)" title="הדגמת עריכה" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="הדגמת עריכה"></video>
 
 כצפוי, זו אחת התכונות המבוקשות ביותר שלנו, ואנו שמחים להגיע לאבן דרך זו עם בסיס המשתמשים שלנו.
 

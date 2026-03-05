@@ -15,7 +15,7 @@
         <p>Pour commencer la nouvelle année, les conversations ont été rendues plus amusantes avec des réactions animées via le Sélecteur de GIF.</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="GIF d'un chien heureux" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

@@ -15,7 +15,7 @@
         <p>Um das neue Jahr zu beginnen, wurden Gespräche mit animierten Reaktionen über den Gif-Picker unterhaltsamer gestaltet.</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="Glücklicher Hund gif" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

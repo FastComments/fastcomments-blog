@@ -15,7 +15,7 @@ Een langverwachte update, je kunt nu je reacties die je met FastComments hebt ac
 
 Zoals onlangs aangekondigd - reacties die met FastComments zijn achtergelaten kunnen nu worden bewerkt - of je nu bent ingelogd of niet.
 
-<img src="images/fc-deleting-demo.gif" alt="Verwijderdemo GIF (11mb)" title="Verwijderdemo" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Verwijderdemo"></video>
 
 Als vervolg is de mogelijkheid om je reacties te verwijderen vrijgegeven. Begrijpelijk, net als het bewerken van reacties, is dit een van onze meest gevraagde functies en we zijn blij dat we deze mijlpaal met onze gebruikers hebben bereikt.
 

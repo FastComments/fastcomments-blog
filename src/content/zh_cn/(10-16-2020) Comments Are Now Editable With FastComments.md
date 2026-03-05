@@ -15,7 +15,7 @@
 
 使用 FastComments 留下的评论现在可以被编辑 - 无论您是否登录。
 
-<img src="images/fc-editing-demo.gif" alt="编辑演示 GIF (17mb)" title="编辑演示" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="编辑演示"></video>
 
 可以理解的是，这是我们用户最期待的功能之一，我们很高兴能够与我们的用户一起达成这个里程碑。
 

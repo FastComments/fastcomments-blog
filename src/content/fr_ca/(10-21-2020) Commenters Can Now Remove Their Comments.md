@@ -15,7 +15,7 @@ Une mise à jour très attendue, vous pouvez désormais supprimer vos commentair
 
 Comme annoncé récemment - les commentaires laissés avec FastComments peuvent désormais être édités - que vous soyez connecté ou non.
 
-<img src="images/fc-deleting-demo.gif" alt="GIF de Démonstration de Suppression (11mo)" title="Démonstration de Suppression" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Démonstration de Suppression"></video>
 
 En complément, la capacité de supprimer vos commentaires a été publiée. Compréhensiblement, tout comme l'édition des commentaires, cela a été l'une de nos fonctionnalités les plus demandées, et nous sommes heureux d'atteindre cette étape avec notre base d'utilisateurs.
 

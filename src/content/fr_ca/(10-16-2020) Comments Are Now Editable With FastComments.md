@@ -15,7 +15,7 @@ Une mise à jour très attendue, vous pouvez maintenant éditer les commentaires
 
 Les commentaires laissés avec FastComments peuvent maintenant être édités - que vous soyez connecté ou non.
 
-<img src="images/fc-editing-demo.gif" alt="Démonstration d'Édition GIF (17mb)" title="Démonstration d'Édition" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Démonstration d'Édition"></video>
 
 Compréhensiblement, cela a été l'une de nos fonctionnalités les plus demandées, et nous sommes heureux d'atteindre ce jalon avec notre base d'utilisateurs.
 

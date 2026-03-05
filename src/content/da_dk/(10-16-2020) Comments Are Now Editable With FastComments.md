@@ -15,7 +15,7 @@ En meget ventet opdatering, du kan nu redigere kommentarer, der er efterladt med
 
 Kommentarer efterladt med FastComments kan nu redigeres - uanset om du er logget ind eller ej.
 
-<img src="images/fc-editing-demo.gif" alt="Editing Demo GIF (17mb)" title="Editing Demo" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Editing Demo"></video>
 
 Forståeligt nok har det været en af vores mest efterspurgte funktioner, og vi er glade for at nå denne milepæl sammen med vores brugere.
 

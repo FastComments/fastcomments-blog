@@ -15,7 +15,7 @@ Un aggiornamento molto atteso, ora puoi eliminare i tuoi commenti lasciati con F
 
 Come annunciato di recente - i commenti lasciati con FastComments possono ora essere modificati - sia che tu sia loggato o meno.
 
-<img src="images/fc-deleting-demo.gif" alt="Demo di Cancellazione GIF (11mb)" title="Demo di Cancellazione" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demo di Cancellazione"></video>
 
 A seguito di ciò, è stata rilasciata la possibilità di eliminare i tuoi commenti. Comprensibilmente, così come la modifica dei commenti, è stata una delle funzionalità più richieste e siamo felici di raggiungere questo traguardo con la nostra base di utenti.
 

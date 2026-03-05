@@ -15,7 +15,7 @@
 
 FastComments로 남긴 댓글을 이제 편집할 수 있습니다 - 로그인 여부와 관계없이 가능합니다.
 
-<img src="images/fc-editing-demo.gif" alt="편집 데모 GIF (17mb)" title="편집 데모" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="편집 데모"></video>
 
 당연히, 이것은 우리에게 가장 요청이 많았던 기능 중 하나였으며, 우리 사용자와 함께 이 이정표에 도달하게 되어 기쁩니다.
 

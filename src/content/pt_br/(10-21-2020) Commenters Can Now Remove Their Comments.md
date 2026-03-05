@@ -15,7 +15,7 @@ Uma atualização muito esperada, agora você pode deletar seus comentários fei
 
 Conforme anunciado recentemente - os comentários feitos com o FastComments agora podem ser editados - esteja você logado ou não.
 
-<img src="images/fc-deleting-demo.gif" alt="GIF de Demonstração de Exclusão (11mb)" title="Demonstração de Exclusão" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demonstração de Exclusão"></video>
 
 Como acompanhamento, a capacidade de deletar seus comentários foi liberada. Compreensivelmente, assim como a edição de comentários, esta tem sido uma das funcionalidades mais solicitadas, e estamos felizes em atingir este marco com nossa base de usuários.
 

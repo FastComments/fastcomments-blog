@@ -15,7 +15,7 @@
 
 使用 FastComments 留下的留言現在可以編輯 - 無論您是否登入。
 
-<img src="images/fc-editing-demo.gif" alt="編輯示範 GIF (17mb)" title="編輯示範" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="編輯示範"></video>
 
 可以理解，這是我們最受擁護的功能之一，我們很高興能夠與我們的用戶基礎達成這一里程碑。
 

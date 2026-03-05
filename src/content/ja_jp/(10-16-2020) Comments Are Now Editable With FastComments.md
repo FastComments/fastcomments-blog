@@ -15,7 +15,7 @@
 
 FastCommentsで残したコメントは、ログインしているかどうかに関わらず編集できるようになりました。
 
-<img src="images/fc-editing-demo.gif" alt="編集デモGIF (17mb)" title="編集デモ" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="編集デモ"></video>
 
 当然のことながら、これは私たちのユーザーからの最も多くのリクエストの一つであり、このマイルストーンに到達できたことを嬉しく思います。
 

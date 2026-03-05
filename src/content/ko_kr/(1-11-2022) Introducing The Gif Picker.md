@@ -15,7 +15,7 @@
         <p>새해를 맞이하여 GIF 선택기를 통해 애니메이션 반응으로 대화를 더욱 재미있게 만들었습니다.</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="행복한 개 GIF" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

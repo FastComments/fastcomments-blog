@@ -15,7 +15,7 @@ Una actualización muy esperada, ahora puedes eliminar los comentarios que dejas
 
 Como se anunció recientemente, los comentarios dejados con FastComments ahora pueden ser editados, ya sea que estés conectado o no.
 
-<img src="images/fc-deleting-demo.gif" alt="GIF de Demostración de Eliminación (11mb)" title="Demostración de Eliminación" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demostración de Eliminación"></video>
 
 Como seguimiento, se ha lanzado la capacidad de eliminar tus comentarios. Comprensiblemente, al igual que la edición de comentarios, ha sido una de nuestras características más solicitadas, y estamos felices de alcanzar este hito con nuestra base de usuarios.
 

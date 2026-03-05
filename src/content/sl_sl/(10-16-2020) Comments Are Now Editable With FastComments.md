@@ -15,7 +15,7 @@ Zelo pričakovana posodobitev, zdaj lahko urejate komentarje, ki so bili p ос�
 
 Komentarji, ki so bili puščeni s FastComments, so zdaj lahko urejeni - ne glede na to, ali ste prijavljeni ali ne.
 
-<img src="images/fc-editing-demo.gif" alt="Urejevanje Demo GIF (17mb)" title="Urejevanje Demo" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Urejevanje Demo"></video>
 
 Razumljivo, je bila ena naših najbolj zahtevanih funkcij, in veselimo se, da smo dosegli to prelomnico s našo bazo uporabnikov.
 

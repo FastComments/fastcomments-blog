@@ -15,7 +15,7 @@
         <p>Για να ξεκινήσει η νέα χρονιά, οι συνομιλίες έχουν γίνει πιο διασκεδαστικές με τις animated αντιδράσεις μέσω του Επιλογέα Γκιφ.</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="Χαρούμενο γκιφ σκυλιού" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

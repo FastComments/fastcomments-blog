@@ -15,7 +15,7 @@
         <p>為了迎接新的一年，通過動態圖片選擇器使對話變得更加有趣，新增了動畫反應。</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="快樂的狗狗動態圖片" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

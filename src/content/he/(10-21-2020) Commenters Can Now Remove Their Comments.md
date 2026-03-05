@@ -15,7 +15,7 @@
 
 כפי שהוכרז לאחרונה - ניתן כעת לערוך את ההערות שהושארו עם FastComments - בין אם אתם מחוברים ובין אם לא.
 
-<img src="images/fc-deleting-demo.gif" alt="Deleting Demo GIF (11mb)" title="Deleting Demo" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Deleting Demo"></video>
 
 בהמשך לכך, שוחררה היכולת למחוק את ההערות שלכם. זו היא אחת מהתכונות שביקשו אותנו יותר מכל, ואנחנו שמחים להגיע לרגע המיוחד הזה עם בסיס המשתמשים שלנו.
 

@@ -15,7 +15,7 @@
 
 正如最近宣布的那样，FastComments 上留下的评论现在可以编辑，无论您是否登录。
 
-<img src="images/fc-deleting-demo.gif" alt="删除演示 GIF (11mb)" title="删除演示" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="删除演示"></video>
 
 作为后续，我们发布了删除评论的功能。可以理解的是，和编辑评论一样，这一直是我们最受欢迎的功能之一，我们很高兴能够与我们的用户基础达成这个里程碑。
 

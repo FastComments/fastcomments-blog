@@ -15,7 +15,7 @@ Een zeer verwachte update, je kunt nu reacties die met FastComments zijn achterg
 
 Reacties die met FastComments zijn achtergelaten kunnen nu worden bewerkt - ongeacht of je bent ingelogd of niet.
 
-<img src="images/fc-editing-demo.gif" alt="Bewerkingsdemo GIF (17mb)" title="Bewerkingsdemo" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Bewerkingsdemo"></video>
 
 Begrijpelijkerwijs is dit een van onze meest gevraagde functies, en we zijn blij dat we deze mijlpaal met onze gebruikers hebben bereikt.
 

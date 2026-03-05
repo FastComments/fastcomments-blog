@@ -15,7 +15,7 @@ Uzun zamandır beklenen bir güncelleme ile, FastComments ile bırakılan yoruml
 
 FastComments ile bırakılan yorumlar artık düzenlenebilir - ister giriş yapmış olun ister olmayın.
 
-<img src="images/fc-editing-demo.gif" alt="Düzenleme Demo GIF (17mb)" title="Düzenleme Demo" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Düzenleme Demo"></video>
 
 Anlayışla karşılanır ki, bu en çok talep edilen özelliklerimizden biri oldu ve kullanıcı tabanımızla bu dönüm noktasına ulaşmaktan mutluyuz.
 

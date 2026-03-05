@@ -15,7 +15,7 @@ Wyczekiwana aktualizacja, teraz możesz edytować komentarze pozostawione za pom
 
 Komentarze pozostawione za pomocą FastComments mogą teraz być edytowane - niezależnie od tego, czy jesteś zalogowany, czy nie.
 
-<img src="images/fc-editing-demo.gif" alt="Edycja - GIF demonstracyjny (17mb)" title="Edycja - demonstracja" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Edycja - demonstracja"></video>
 
 Zrozumiale, była to jedna z najczęściej zgłaszanych funkcji i cieszymy się, że osiągnęliśmy ten kamień milowy z naszą bazą użytkowników.
 

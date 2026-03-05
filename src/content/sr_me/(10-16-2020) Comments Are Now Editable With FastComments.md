@@ -15,7 +15,7 @@ Veoma očekivano ažuriranje, sada možete uređivati komentare ostavljene sa Fa
 
 Komentari ostavljeni sa FastComments sada mogu biti uređivani - bez obzira da li ste ulogovani ili ne.
 
-<img src="images/fc-editing-demo.gif" alt="Demonstracija Uređivanja GIF (17mb)" title="Demonstracija Uređivanja" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Demonstracija Uređivanja"></video>
 
 Razumljivo, ovo je bila jedna od naših najtraženijih funkcija, i srećni smo što smo dostigli ovu prekretnicu sa našom korisničkom bazom.
 

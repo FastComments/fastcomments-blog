@@ -15,7 +15,7 @@ Ovo je dugo očekivano ažuriranje, sada možete uređivati komentare ostavljene
 
 Komentari ostavljeni sa FastComments sada mogu biti uređivani - bez obzira da li ste prijavljeni ili ne.
 
-<img src="images/fc-editing-demo.gif" alt="Demonstracija uređivanja GIF (17mb)" title="Demonstracija uređivanja" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Demonstracija uređivanja"></video>
 
 Razumljivo je da je ovo jedna od naših najtraženijih funkcija, i srećni smo što smo dostigli ovu prekretnicu sa našom korisničkom bazom.
 

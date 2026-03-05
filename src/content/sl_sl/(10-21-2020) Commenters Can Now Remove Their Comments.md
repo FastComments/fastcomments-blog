@@ -15,7 +15,7 @@
 
 Kot je bilo nedavno napovedano - komentarji, ki jih pustite z FastComments, so zdaj lahko urejeni - ne glede na to, ali ste prijavljeni ali ne.
 
-<img src="images/fc-deleting-demo.gif" alt="Demo GIF za brisanje (11mb)" title="Demo za brisanje" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Demo za brisanje"></video>
 
 Kot nadaljevanje je bila izdana možnost brisanja vaših komentarjev. Razumljivo, enako kot pri urejanju komentarjev, je to bila ena izmed naših najbolj zahtevanih funkcij in veseli smo, da smo tega mejnika dosegli z našo uporabniško bazo.
 

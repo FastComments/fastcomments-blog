@@ -15,7 +15,7 @@
 
 Τα σχόλια που αφήνονται με το FastComments μπορούν τώρα να επεξεργάζονται - είτε είστε συνδεδεμένοι είτε όχι.
 
-<img src="images/fc-editing-demo.gif" alt="Editing Demo GIF (17mb)" title="Editing Demo" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Editing Demo"></video>
 
 Κατανοητά, έχει sido στην κορυφή των πιο ζητηθέντων χαρακτηριστικών μας και είμαστε ευτυχείς που φτάσαμε σε αυτό το ορόσημο με την βάση χρηστών μας.
 

@@ -15,7 +15,7 @@
         <p>Щоб розпочати новий рік, розмови стали ще веселішими завдяки анімаційним реакціям через Gif Picker.</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="Щасливий собака gif" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

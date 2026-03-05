@@ -15,7 +15,7 @@ En meget ventet opdatering, du kan nu slette dine kommentarer, som du har efterl
 
 Som for nylig annonceret - kommentarer efterladt med FastComments kan nu redigeres - uanset om du er logget ind eller ej.
 
-<img src="images/fc-deleting-demo.gif" alt="Deleting Demo GIF (11mb)" title="Deleting Demo" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Deleting Demo"></video>
 
 Som en opfølgning er evnen til at slette dine kommentarer blevet frigivet. Forståeligt, ligesom redigering af kommentarer, har det været en af vores mest efterspurgte funktioner, og vi er glade for at nå dette mål med vores brugere.
 

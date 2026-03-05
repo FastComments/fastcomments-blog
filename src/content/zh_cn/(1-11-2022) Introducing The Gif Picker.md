@@ -15,7 +15,7 @@
         <p>为了迎接新的一年，通过 Gif 选择器，动画反应使得对话更加有趣。</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="快乐的狗狗动图" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 

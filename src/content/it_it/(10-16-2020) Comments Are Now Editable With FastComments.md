@@ -15,7 +15,7 @@ Un aggiornamento molto atteso, ora puoi modificare i commenti lasciati con FastC
 
 I commenti lasciati con FastComments possono ora essere modificati - sia che tu sia loggato o meno.
 
-<img src="images/fc-editing-demo.gif" alt="Editing Demo GIF (17mb)" title="Editing Demo" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Editing Demo"></video>
 
 È comprensibile che sia stata una delle funzionalità più richieste, e siamo felici di raggiungere questo traguardo con la nostra base utenti.
 

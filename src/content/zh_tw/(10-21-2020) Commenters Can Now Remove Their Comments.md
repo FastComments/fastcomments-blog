@@ -15,7 +15,7 @@
 
 正如最近公告的 - 在 FastComments 上留下的評論現在可以進行編輯 - 無論您是否已登入。
 
-<img src="images/fc-deleting-demo.gif" alt="刪除示範 GIF (11mb)" title="刪除示範" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="刪除示範"></video>
 
 作為後續，刪除評論的功能已經推出。可以理解，這與編輯評論一樣，一直是我們最需要的功能之一，我們很高興能在此與我們的用戶達成這一里程碑。
 

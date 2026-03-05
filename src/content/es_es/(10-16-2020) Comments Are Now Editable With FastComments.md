@@ -15,7 +15,7 @@ Una actualización muy esperada, ahora puedes editar los comentarios dejados con
 
 Los comentarios dejados con FastComments ahora se pueden editar, ya sea que estés conectado o no.
 
-<img src="images/fc-editing-demo.gif" alt="GIF de Demostración de Edición (17mb)" title="Demostración de Edición" />
+<video src="images/fc-editing-demo.mp4" autoplay loop muted playsinline title="Demostración de Edición"></video>
 
 Entendiblemente, ha sido una de nuestras características más solicitadas, y estamos felices de alcanzar este hito con nuestra base de usuarios.
 

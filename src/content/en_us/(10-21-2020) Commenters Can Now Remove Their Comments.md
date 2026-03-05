@@ -15,7 +15,7 @@ A much-anticipated update, you can now delete your comments left with FastCommen
 
 As recently announced - comments left with FastComments can now be edited - whether you are logged in or not.
 
-<img src="images/fc-deleting-demo.gif" alt="Deleting Demo GIF (11mb)" title="Deleting Demo" />
+<video src="images/fc-deleting-demo.mp4" autoplay loop muted playsinline title="Deleting Demo"></video>
 
 As a follow-up, the ability to delete your comments has been released. Understandably, just like editing comments, this has been one of our most requested features, and we're happy to reach this milestone with our user base.
 

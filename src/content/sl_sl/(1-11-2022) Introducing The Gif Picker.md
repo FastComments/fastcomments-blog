@@ -15,7 +15,7 @@
         <p>Ob začetku novega leta so bili pogovori poenostavljeni z animiranimi reakcijami preko izbora GIF-ov.</p>
     </div>
     <div class="right text-center">
-        <img src="images/shiba-with-hat.gif" alt="Srečen pes gif" style="width: 100%; max-width: 300px;" />
+        <video src="images/shiba-with-hat.mp4" autoplay loop muted playsinline style="width: 100%; max-width: 300px;"></video>
     </div>
 </div>
 
