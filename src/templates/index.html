@@ -1,5 +1,6 @@
 <html lang="{{#if lang}}{{lang}}{{else}}en{{/if}}">
 <head>
+    <meta charset="UTF-8">
     <title>{{#if pageTitle}}{{pageTitle}} - {{/if}}FastComments Blog</title>
     <link rel="shortcut icon" href="/images/favicon.ico"/>
     <link rel="stylesheet" href="/css/blog.css">
@@ -71,13 +72,13 @@
             {{#if totalPages}}
             <div class="pagination">
                 {{#if hasPrevPage}}
-                <a href="{{prevPageUrl}}" class="pagination-btn pagination-prev">← {{t.previous}}</a>
+                <a href="{{prevPageUrl}}" class="pagination-btn pagination-prev">&larr; {{t.previous}}</a>
                 {{/if}}
 
                 <span class="pagination-info">{{t.page}} {{currentPage}} {{t.of}} {{totalPages}}</span>
 
                 {{#if hasNextPage}}
-                <a href="{{nextPageUrl}}" class="pagination-btn pagination-next">{{t.next}} →</a>
+                <a href="{{nextPageUrl}}" class="pagination-btn pagination-next">{{t.next}} &rarr;</a>
                 {{/if}}
             </div>
             {{/if}}
