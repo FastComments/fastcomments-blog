@@ -257,12 +257,7 @@ function buildAlternateLocales(baseUrl, locale) {
 		url: defaultUrl,
 		current: false
 	});
-	// Normalize index.html to empty string so href becomes "/" matching the canonical URL
-	for (const entry of result) {
-		if (entry.url === 'index.html') {
-			entry.url = '';
-		}
-	}
+	// Keep index.html as-is so hreflang self-ref matches the actual page URL
 	return result;
 }
 
@@ -368,6 +363,7 @@ for (const locale of Object.keys(locales)) {
 		categories: categoriesArray,
 		categoryCounts: categoryCounts,
 		currentCategory: null,
+		pageTitle: localeData.t.recentPosts,
 		...localeData
 	}), 'utf8');
 
@@ -397,9 +393,16 @@ for (const locale of Object.keys(locales)) {
 			categories: categoriesArray,
 			categoryCounts: categoryCounts,
 			currentCategory: null,
+			pageTitle: `${localeData.t.recentPosts} - ${localeData.t.page} ${page}`,
 			...localeData
 		}), 'utf8');
 
+		sitemapEntries.push({
+			loc: BASE_URL + '/' + pageUrl,
+			changefreq: 'daily',
+			priority: '0.8',
+			alternates: buildSitemapAlternates(createIndexUrl(defaultLocale, page))
+		});
 	}
 
 	// Generate category pages
@@ -460,6 +463,12 @@ for (const locale of Object.keys(locales)) {
 				...localeData
 			}), 'utf8');
 
+			sitemapEntries.push({
+				loc: BASE_URL + '/' + pageUrl,
+				changefreq: 'weekly',
+				priority: '0.5',
+				alternates: buildSitemapAlternates(createCategoryUrl(categorySlug, defaultLocale, page))
+			});
 		}
 	});
 
