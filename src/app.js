@@ -394,7 +394,9 @@ for (const locale of Object.keys(locales)) {
 			categoryCounts: categoryCounts,
 			currentCategory: null,
 			pageTitle: `${localeData.t.recentPosts} - ${localeData.t.page} ${page}`,
-			...localeData
+			...localeData,
+			alternateLocales: buildAlternateLocales(pageUrl, locale),
+			availableLocales: buildAvailableLocales(pageUrl, locale)
 		}), 'utf8');
 
 		sitemapEntries.push({
@@ -430,7 +432,9 @@ for (const locale of Object.keys(locales)) {
 			categoryCounts: categoryCounts,
 			currentCategory: category,
 			pageTitle: `${translatedCategory} ${localeData.t.posts}`,
-			...localeData
+			...localeData,
+			alternateLocales: buildAlternateLocales(categoryUrl, locale),
+			availableLocales: buildAvailableLocales(categoryUrl, locale)
 		}), 'utf8');
 
 		sitemapEntries.push({
@@ -460,7 +464,9 @@ for (const locale of Object.keys(locales)) {
 				categoryCounts: categoryCounts,
 				currentCategory: category,
 				pageTitle: `${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`,
-				...localeData
+				...localeData,
+				alternateLocales: buildAlternateLocales(pageUrl, locale),
+				availableLocales: buildAvailableLocales(pageUrl, locale)
 			}), 'utf8');
 
 			sitemapEntries.push({
