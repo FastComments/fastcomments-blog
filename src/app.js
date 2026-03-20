@@ -492,7 +492,7 @@ for (const locale of Object.keys(locales)) {
 			t: translations[locale] || translations[defaultLocale]
 		};
 
-		const canonicalUrl = BASE_URL + '/' + post.urlIdRaw;
+		const canonicalUrl = BASE_URL + '/' + post.stableUrlId;
 		const html = getCompiledTemplate('post.html', {
 			post: post,
 			footerYears: footerYears,
