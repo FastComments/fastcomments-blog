@@ -364,6 +364,7 @@ for (const locale of Object.keys(locales)) {
 		categoryCounts: categoryCounts,
 		currentCategory: null,
 		pageTitle: localeData.t.recentPosts,
+		canonicalUrl: BASE_URL + '/' + createIndexUrl(defaultLocale),
 		...localeData
 	}), 'utf8');
 
@@ -394,6 +395,7 @@ for (const locale of Object.keys(locales)) {
 			categoryCounts: categoryCounts,
 			currentCategory: null,
 			pageTitle: `${localeData.t.recentPosts} - ${localeData.t.page} ${page}`,
+			canonicalUrl: BASE_URL + '/' + createIndexUrl(defaultLocale, page),
 			...localeData,
 			alternateLocales: buildAlternateLocales(pageUrl, locale),
 			availableLocales: buildAvailableLocales(pageUrl, locale)
@@ -432,6 +434,7 @@ for (const locale of Object.keys(locales)) {
 			categoryCounts: categoryCounts,
 			currentCategory: category,
 			pageTitle: `${translatedCategory} ${localeData.t.posts}`,
+			canonicalUrl: BASE_URL + '/' + createCategoryUrl(categorySlug, defaultLocale),
 			...localeData,
 			alternateLocales: buildAlternateLocales(categoryUrl, locale),
 			availableLocales: buildAvailableLocales(categoryUrl, locale)
@@ -464,6 +467,7 @@ for (const locale of Object.keys(locales)) {
 				categoryCounts: categoryCounts,
 				currentCategory: category,
 				pageTitle: `${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`,
+				canonicalUrl: BASE_URL + '/' + createCategoryUrl(categorySlug, defaultLocale, page),
 				...localeData,
 				alternateLocales: buildAlternateLocales(pageUrl, locale),
 				availableLocales: buildAvailableLocales(pageUrl, locale)
@@ -488,10 +492,12 @@ for (const locale of Object.keys(locales)) {
 			t: translations[locale] || translations[defaultLocale]
 		};
 
+		const canonicalUrl = BASE_URL + '/' + post.urlIdRaw;
 		const html = getCompiledTemplate('post.html', {
 			post: post,
 			footerYears: footerYears,
 			isPost: true,
+			canonicalUrl,
 			...postLocaleData
 		});
 
