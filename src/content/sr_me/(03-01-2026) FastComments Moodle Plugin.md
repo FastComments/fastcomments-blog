@@ -5,83 +5,80 @@
 # [postlink]FastComments Moodle Plugin[/postlink]
 
 {{#unless isPost}}
-FastComments sada ima posvećen Moodle dodatak sa SSO, uvrštenim komentarima i kolaborativnim čatom za vaše kurseve.
+FastComments sada ima posvećen Moodle dodatak sa SSO, urezanim komentarima i kolaborativnim čatovima za vaše kurseve.
 {{/unless}}
 
 {{#isPost}}
 
 ### Šta je novo
 
-Sa oduševljenjem najavljujemo zvanični FastComments dodatak za Moodle. Ako ste koristili Moodle i želeli da dodate
-uživo, uvrštene komentare ili kolaborativni čat za vaše kurseve, ovaj dodatak to čini jednostavnim. Zamenjuje stari ručni PHP pristup
-sa pravim Moodle dodatkom koji se instalira za nekoliko minuta i integriše sa vašim postojećim Moodle korisničkim nalozima. Dodatak radi
-sa Moodle 4.1 i novijim verzijama, a kod je dostupan na [GitHub](https://github.com/FastComments/fastcomments-moodle).
+Sa uzbuđenjem najavljujemo zvanični FastComments dodatak za Moodle. Ako ste koristili Moodle i želeli da dodate live,
+urezane komentare ili kolaborativni čat u vaše kurseve, ovaj dodatak čini to jednostavnim. Zamenjuje stari manuelni PHP pristup
+sa pravim Moodle dodatkom koji se instalira za nekoliko minuta i integriše sa vašim postojećim Moodle korisničkim računima. Dodatak radi
+sa Moodle 4.1 i novijim verzijama, a izvor je dostupan na [GitHub](https://github.com/FastComments/fastcomments-moodle).
 
 ### Kako početi
 
-Da biste instalirali, preuzmite ZIP sa [GitHub repozitorijuma](https://github.com/FastComments/fastcomments-moodle) i izdvojite ga
-u `<moodle-root>/local/fastcomments`. Zatim se prijavite kao administrator sajta i posetite **Administracija sajta > Obaveštenja**.
-Moodle će automatski otkriti novi dodatak i pokrenuti instalaciju.
+Da biste instalirali, preuzmite dodatak iz [Moodle Plugin Directory](https://moodle.org/plugins/local_fastcomments) i instalirajte ga
+putem instalatera dodataka na vašem Moodle sajtu. Alternativno, možete ga preuzeti i raspakovati u
+`<moodle-root>/local/fastcomments`, a zatim se prijaviti kao administrator sajta i posetiti **Site Administration > Notifications**.
+Moodle će detektovati novi dodatak i automatski pokrenuti instalaciju.
 
-Kada je instaliran, idite na **Administracija sajta > Dodatci > Lokalni dodaci > FastComments** da biste ga konfigurisali. Biće vam potrebni
-**Tenant ID** (koji možete pronaći na vašem FastComments kontrolnoj tabli) i **API Secret** ako želite da koristite Secure SSO, što
-preporučujemo.
-
-Imajte na umu da je ručno preuzimanje sa GitHub-a privremeno dok čekamo da dodatak bude odobren na direktorijumu Moodle dodataka. Kada
-bude odobren, moći ćete da ga instalirate direktno iz Moodle-ovog instalatera dodataka.
+Kada se instalira, idite na **Site Administration > Plugins > Local plugins > FastComments** da biste ga konfigurisali. Biće vam potreban vaš
+**Tenant ID** (koji se nalazi na vašem FastComments kontrolnom panelu) i vaš **API Secret** ako želite da koristite Secure SSO, što preporučujemo.
 
 ### Stilovi komentarisanja
 
-Dodatak podržava tri stila komentarisanja, tako da možete izabrati ono što najbolje odgovara vašim studentima i strukturi kurseva.
+Dodatak podržava tri stilova komentarisanja, tako da možete odabrati šta najbolje odgovara vašim studentima i strukturi kursa.
 
-**Komentari** mod postavlja puni komentar widget ispod sadržaja stranice. Studenti dobijaju uvrštene odgovore, @pominjanje,
-podizanje i spuštanje ocena, editor za bogat tekst, i zvono za obaveštenja za pretplatu na nove komentare na stranici.
+**Comments** režim postavlja kompletan komentar widget ispod sadržaja stranice. Studenti dobijaju urezane odgovore, @pominjanja,
+glasanje i protivljenje, bogati editor teksta i zvono za obaveštenja za pretplatu na nove komentare na stranici.
 
 <div class="text-center">
     <div class="sm">Komentari na stranici kursa</div>
-    <img src="images/moodle-course-comments.png" alt="Komentari kursa" title="Komentari kursa" />
+    <img src="images/moodle-course-comments.png" alt="Course Comments" title="Course Comments" />
 </div>
 
-**Collab Chat** mod dodaje traku na vrhu stranice koja podstiče korisnike da selektuju tekst i započnu raspravu. 
-Izdvojeni tekst je povezan sa sadržajem, tako da razgovor ostaje vezan za ono što se tačno raspravlja. Takođe
-prikazuje korisnike koji su online i broj aktivnih rasprava. Ovaj mod ne prikazuje donji widget.
+**Collab Chat** režim dodaje traku na vrhu stranice koja poziva korisnike da selektuju tekst i započne diskusiju. 
+Istaknuti tekst je vezan za sadržaj, tako da razgovor ostaje vezan za ono što se tačno diskutuje. Takođe
+prikazuje online korisnike i broj aktivnih diskusija. Ovaj režim ne prikazuje donji widget.
 
 <div class="text-center">
-    <div class="sm">Kolaborativni čat povezan sa selektovanim tekstom</div>
+    <div class="sm">Kolaborativni čat vezan za izabrani tekst</div>
     <img src="images/moodle-collab-chat.png" alt="Collab Chat" title="Collab Chat" />
 </div>
 
-**Collab Chat + Komentari** daje vam oboje u isto vreme. Studenti mogu da istaknu tekst za inline rasprave i takođe
-koriste puni komentar widget ispod sadržaja. Ovo je sjajno za kurseve gde želite i brze inline povratne informacije i
-duže uvrštene razgovore.
+**Collab Chat + Comments** pruža vam oboje u isto vreme. Studenti mogu istaknuti tekst za inline diskusije i takođe
+koristiti kompletan komentar widget ispod sadržaja. Ovo je odlično za kurseve gde želite brzo inline povratne informacije i
+duže urezane razgovore.
 
 <div class="text-center">
     <div class="sm">Oba stila komentarisanja aktivna na stranici</div>
-    <img src="images/moodle-page-comments.png" alt="Komentari stranice" title="Komentari stranice" />
+    <img src="images/moodle-page-comments.png" alt="Page Comments" title="Page Comments" />
 </div>
 
 ### Automatski SSO
 
-Dodatak podržava tri moda SSO. **Secure SSO** je preporučena opcija. Potpisuje identitet korisnika na serverskoj strani
-sa HMAC-SHA256 koristeći vaš API Secret, tako da akreditivi nikada nisu izloženi na klijentu. Sa Secure SSO, Moodle administratori su
-automatski sinhronizovani kao FastComments moderatori, što znači da vaši administratori sajta mogu moderirati komentare bez
-bilo kakvog dodatnog podešavanja. Avatari korisnika, imena i adrese e-pošte se svi bezbedno prosleđuju.
+Dodatak podržava tri SSO režima. **Secure SSO** je preporučena opcija. Potpisuje identitet korisnika na serverskoj strani sa
+HMAC-SHA256 koristeći vaš API Secret, tako da akreditive nikada ne izlaže klijent. Sa Secure SSO, Moodle administratori
+se automatski sinhronizuju kao moderatori FastComments-a, što znači da vaši administratori sajta mogu moderirati komentare bez ikakvog
+dodatnog podešavanja. Avatari korisnika, imena i email adrese se svi bezbedno prenose.
 
-**Jednostavan SSO** prosleđuje korisničke podatke (ime, e-poštu, avatar) na klijentskoj strani bez potpisa. Brzo se postavlja, ali je manje
-bezbedan od HMAC pristupa. Na kraju, **Nema** potpuno onemogućava SSO, tako da korisnici komentarišu anonimno.
+**Simple SSO** prenosi korisničke podatke (ime, email, avatar) na klijentskoj strani bez potpisa. Brzo se postavlja, ali je manje sigurno
+od HMAC pristupa. Na kraju, **None** potpuno onemogućava SSO, tako da korisnici komentarišu anonimno.
 
-### Preferencije za obaveštenja korisnika
+### Preferencije obaveštenja korisnika
 
-Studenti mogu upravljati svojim FastComments podešavanjima obaveštenja direktno iz svog Moodle profila. U okviru sekcije **FastComments**
-mogu da uključe ili isključe obaveštenja o odgovorima (dobijaju e-poštu kada neko odgovori na njihov komentar) i obaveštenja o pretplati
-(dobijaju e-pošte za teme na koje su se pretplatili). Ovo sve drži na jednom mestu i daje studentima kontrolu nad time koliko e-pošte
-primaju.
+Studenti mogu upravljati svojim FastComments postavkama obaveštenja direktno iz svog Moodle profila. U okviru **FastComments**
+odeljka mogu uključiti obaveštenja o odgovorima (dobijaju email kada neko odgovori na njihov komentar) i obaveštenja o pretplatama
+(dobijaju email za teme na koje su se pretplatili). Ovo sve drži na jednom mestu i daje studentima kontrolu nad tim koliko
+emailova primaju.
 
 ### Na kraju
 
-Moodle dodatak je sada dostupan. Za detaljno uputstvo o postavljanju, pogledajte
-[Moodle Integration Guide](https://docs.fastcomments.com/guide-installation-moodle.html), a izvorni kod je na
-[GitHub](https://github.com/FastComments/fastcomments-moodle). Javite nam u komentarima ispod ako imate bilo kakvu povratnu informaciju!
+Moodle dodatak je sada dostupan. Za kompletan vodič za postavljanje, pogledajte 
+[Moodle Integration Guide](https://docs.fastcomments.com/guide-installation-moodle.html), a izvorni kod je na 
+[GitHub](https://github.com/FastComments/fastcomments-moodle). Javite nam u komentarima ako imate bilo kakve povratne informacije!
 
 Pozdrav!
 
