@@ -45,7 +45,7 @@ Some of this is covered in the previous section, but the TL;DR is it's CRDT-lite
 **The difference from other tools** is that this **does not tail the oplog**. Tailing the oplog, or using change streams, would not work, because they only show you the final state of the object after the write making it impossible to handle conflicts. You need to capture
 each `$set`, `$inc` operation and replicate that operation itself.
 
-This is a domain-specific solution. It would not work for all products. You could say it's domain-driven design :). It works for us because we from the beginning very carefully only `$set` the fields we change on documents - we never use Mongo's `replaceOne`, for example. Same with counters. You **never** do `SET VOTES = 5`. Instead, you would write `INCREMENT VOTES BY 5`, as this allows eventual consistency. Distributed locks are handled by **avoiding them entirely**. Only one node
+This is a domain-specific solution. It would not work for all products. You could say it's domain-driven design :). It works for us because we from the beginning very carefully only `$set` the fields we change on documents - we never use Mongo's `replaceOne`, for example. Same with counters. You **never** do `SET VOTES = 5`. Instead, you would write `INCREMENT VOTES BY 5`, as this allows eventual consistency. Distributed locks are handled by **don't**. Only one node
 per cluster has a flag set to run crons. While this may seem limited, we can buy servers with terabytes of RAM, so we can take this tradeoff to lower risk and complexity.
 
 ### Reading Your Own Writes
