@@ -19,15 +19,13 @@ with Moodle 4.1 and later, and the source is available on [GitHub](https://githu
 
 ### Getting Started
 
-To install, download the ZIP from the [GitHub repository](https://github.com/FastComments/fastcomments-moodle) and extract it
-to `<moodle-root>/local/fastcomments`. Then log in as a site administrator and visit **Site Administration > Notifications**.
+To install, get the plugin from the [Moodle Plugin Directory](https://moodle.org/plugins/local_fastcomments) and install it
+via your Moodle site's plugin installer. Alternatively, you can download it and extract it to
+`<moodle-root>/local/fastcomments`, then log in as a site administrator and visit **Site Administration > Notifications**.
 Moodle will detect the new plugin and run the install automatically.
 
 Once installed, head to **Site Administration > Plugins > Local plugins > FastComments** to configure. You will need your
 **Tenant ID** (found in your FastComments dashboard) and your **API Secret** if you want to use Secure SSO, which we recommend.
-
-Note that the manual download from GitHub is temporary while we wait for the plugin to be approved on the Moodle plugin
-directory. Once approved, you will be able to install it directly from within Moodle's plugin installer.
 
 ### Commenting Styles
 
