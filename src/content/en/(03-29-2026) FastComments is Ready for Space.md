@@ -54,6 +54,8 @@ For developers using the API, you should be able to read your own writes just as
 like us-west, then you should be able to read your own writes except in the event that between your write and your read, that node goes down **and** your
 DNS cache updates to point to the next nearest node. Provided this does not happen, reading your own writes is dependable.
 
+[You can also pin which point-of-presence you hit. More information here.](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes)
+
 ### Testing & The Migration
 
 About half the code in the system is the test harness, framework, and tests. Still, the release was a bit bumpy, taking longer downtime (1hr for EU and 20mins for us-global) than desired, but we are glad that we passed this milestone and thank you for your patience!
