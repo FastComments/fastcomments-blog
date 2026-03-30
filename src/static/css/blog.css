@@ -115,13 +115,7 @@ body {
 }
 
 body::before {
-    content: '';
-    display: block;
-    height: 3px;
-    background: var(--accent);
-    position: sticky;
-    top: 0;
-    z-index: 200;
+    display: none;
 }
 
 a {
@@ -785,7 +779,7 @@ img {
     gap: 6px;
     padding: 6px 12px;
     background: var(--bg);
-    border: 1px solid var(--border);
+    border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
@@ -795,7 +789,7 @@ img {
 }
 
 .language-selector-toggle:hover {
-    border-color: var(--text-muted);
+    background: var(--surface);
 }
 
 .language-selector-flag {
@@ -917,9 +911,6 @@ img {
 }
 
 @media (max-width: 768px) {
-    body::before {
-        height: 2px;
-    }
 
     .header {
         padding: 12px 16px;
