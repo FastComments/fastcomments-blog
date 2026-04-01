@@ -25,9 +25,6 @@ with global write availability, which ensures our FARTS are eventually consisten
 One approach we actually took early on was seeing if we could create a fork of MongoDB. One of our engineers (Sloperators) was able to actually
 accomplish this with Opus 4.6, however, we decided the risk of doing this was higher than building our own isolated system.
 
-The last thing you would want with something like FART is knowing it arrived, but you can't trace the source. We have monitoring added and diagnostics
-to monitor the active-active replication at a granular level.
-
 ## Rust at Scale
 
 Part of the motivation for creating FART was to replace some existing services written in Java. After sitting on it for a while, we decided to consolidate these into one Rust
