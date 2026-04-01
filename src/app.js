@@ -122,8 +122,19 @@ function processPost(item, locale, contentDir) {
 		isPost: true
 	});
 
+	let titleHtml = '';
+	let bodyHtml = html;
+	const h1EndIndex = html.indexOf('</h1>');
+	if (h1EndIndex !== -1) {
+		const splitIndex = h1EndIndex + 5;
+		titleHtml = html.substring(0, splitIndex);
+		bodyHtml = html.substring(splitIndex);
+	}
+
 	return {
 		html: html,
+		titleHtml: titleHtml,
+		bodyHtml: bodyHtml,
 		previewHTML: previewHTML,
 		title: title,
 		urlId: urlId,
