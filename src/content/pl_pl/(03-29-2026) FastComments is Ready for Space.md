@@ -3,10 +3,10 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments jest gotowy na kosmos![/postlink]
+# [postlink]FastComments jest gotowy na przestrzeń![/postlink]
 
 {{#unless isPost}}
-Zakończyliśmy migrację naszej bazy danych w trybie aktywnym, co wprowadza prawdziwą redundancję wieloregionalną dla FastComments.
+Zakończyliśmy naszą migrację bazy danych w trybie aktywno-aktywnym, wprowadzając prawdziwą redundancję multi-regionową do FastComments.
 {{/unless}}
 
 {{#isPost}}
@@ -15,52 +15,54 @@ Zakończyliśmy migrację naszej bazy danych w trybie aktywnym, co wprowadza pra
 
 ### Co nowego
 
-Każdy punkt obecności FastComments [point-of-presence](https://sophon.fastcomments.com/) teraz lokalnie zapisuje dane oraz asynchronicznie replikuje je
-do wszystkich innych węzłów. To zapewni większą trwałość w porównaniu do poprzedniego systemu, a także przyspieszy narzędzia moderacyjne
-dla użytkowników w niektórych regionach, z pewnymi kompromisami.
+Każdy punkt obecności FastComments [point-of-presence](https://sophon.fastcomments.com/) teraz zapisuje lokalnie i asynchronicznie replikuje
+te dane do wszystkich innych węzłów. To zapewni większą trwałość w porównaniu do poprzedniego systemu, a także przyspieszy narzędzia moderacji dla użytkowników w niektórych regionach, z pewnymi kompromisami.
 
-"Gotowy na kosmos" może brzmieć trochę optymistycznie, ale chodzi o to, że moglibyśmy wdrożyć FastComments na różnych planetach, a system ostatecznie synchronizowałby się. Użytkownicy na Plutonie musieliby jednak poczekać około dnia na zaktualizowanie zmian w ich nadchodzącej stronie faktury, ponieważ tylko jeden
-główny węzeł na region może aktualnie agregować informacje o fakturowaniu.
+"Gotowy na przestrzeń" to trochę optymistyczne stwierdzenie, ale pomysł polega na tym, że moglibyśmy wdrożyć FastComments na różnych planetach, a w końcu system byłby zsynchronizowany. Użytkownicy na Plutonie musieliby jednak poczekać około dnia, aby zobaczyć zmiany na stronie ich nadchodzących faktur, ponieważ obecnie tylko jeden
+master na region może agregować informacje o płatnościach.
 
-### Trochę historii, dlaczego zmiana
+### Trochę historii, dlaczego ta zmiana
 
-Kiedy FastComments zostało pierwotnie uruchomione, mieliśmy bardzo typową architekturę. Mieliśmy warstwę proxy, warstwę aplikacji, bazę danych, kilka replik, a później repliki w różnych regionach i dostawcach chmurowych dla dodatkowej redundancji.
+Kiedy FastComments początkowo wystartował, mieliśmy bardzo typową architekturę. Mieliśmy warstwę proxy, warstwę aplikacji, bazę danych, kilka replik, a potem później repliki w różnych regionach i dostawcach chmury dla dodatkowej redundancji.
 
-Ostatecznie przenieśliśmy repliki bazy danych do wszystkich stref, w których znajduje się większość naszych użytkowników, a także wdrożyliśmy aplikację tam, i stworzyliśmy nasz własny system DNS i proxy (opisany w późniejszym wpisie na blogu) do kierowania żądań do najbliższego węzła aplikacji. To przyspiesza odczyty, ale spowalnia zapisy, ponieważ teraz zamiast czekać na jedną podróż HTTP do backendu, czeka się na podróż HTTP do bliskiego węzła, a ten węzeł może wykonać wiele zapisów w bazie danych z powrotem do głównego. Nie jest dobrze!
+Ostatecznie przenieśliśmy repliki bazy danych do wszystkich stref, w których znajdują się większość naszych użytkowników, a także wdrożyliśmy aplikację tam, stworzyliśmy nasz własny system DNS i proxy (opisany w późniejszym wpisie na blogu), aby kierować żądania do najbliższego węzła aplikacji. To przyspiesza odczyty, ale spowalnia zapisy, ponieważ teraz zamiast czekać na jedno okrążenie HTTP do backendu, czeka się na okrążenie HTTP do najbliższego węzła, a ten węzeł może dokonać wielu zapisów bazy danych z powrotem do głównego węzła. To nie jest dobre!
 
-Aby to zwalczyć, przekształciliśmy wiele obszarów aplikacji, aby przyjmowały `readPreference` w argumentach funkcji, dzięki czemu wywołujący mogą zdecydować, jak
-stare są dla nich odczyty, a ponadto sprawiliśmy, że więcej zapisów (takich jak zapis statystyk moderatorów w wyniku działań moderatorów) odbywa się w trybie fire-and-forget. Nie jest to idealne, ale znacząco przyspieszyło działanie.
+Aby zwalczyć ten problem, przeorganizowaliśmy wiele obszarów aplikacji, aby przyjmowały `readPreference` w argumentach funkcji, aby wywołujący mógł zdecydować, jak
+stare mogą być ich odczyty, a oprócz tego sprawiliśmy, że więcej zapisów (jak zapisywanie statystyk moderatorów na działaniach moderatorów) działa w trybie fire-and-forget. Nie jest to idealne, ale znacząco przyspieszyło procesy.
 
-Jednym z problemów, na które natrafiliśmy podczas działania Mongo globalnie, są rozdzielenia sieci. Jeśli wystarczająca liczba węzłów zostanie odcięta, odczyty zatrzymują się, ponieważ każdy węzeł staje się niepewny, czy
-może obsługiwać odczyty. Istnieje kilka sposobów na to, ale przypadki brzegowe stają się chaotyczne. To nie jest problem teoretyczny - zdarzyło się to wystarczająco często, powodując powiadomienia o 3 nad ranem, że mieliśmy tego dosyć, nawet próbując dostroić Mongo, aby radzić sobie z niepewnością wyboru replikatu do minuty różnicy. Niestety sieci na trasie Sao Paulo do Falkenstein były, w tym przypadku, po prostu niezbyt dobre wśród niektórych z naszych dostawców hostingu. Dostosowanie kontroli przeciążenia i tym podobnych pomogło, ale nie rozwiązało problemu.
+Jednym z problemów, z jakim spotkaliśmy się podczas działania Mongo globalnie, są podziały sieci. Jeśli wystarczająca liczba węzłów zostanie odłączona, odczyty zatrzymują się, ponieważ każdy węzeł staje się niepewny, czy
+akceptowalne jest serwowanie odczytów. Istnieją pewne sposoby na obejście tego, ale przypadki brzegowe są skomplikowane. To nie jest teoretyczny problem - zdarzyło się to wystarczająco wiele razy, by wywołać alarmy o 3:00 w nocy, co stało się dla nas uciążliwe, nawet próbując dostroić Mongo do tolerowania niepewności w wyborze repliki przez minutę. Niestety, sieci z Sao Paulo do Falkenstein, na przykład, po prostu nie były zbyt dobre wśród niektórych naszych dostawców hostingu. Strojenie kontroli tłumienia i tym podobne pomogło, ale nie rozwiązało problemu.
 
-Świętym Graalem rozwiązania, zakładając, że akceptujesz pewne kompromisy, jest możliwość lokalnego przyjmowania zapisów na tym węźle (który ma przyzwoity sprzęt, RAID itp., co ma mało prawdopodobne, aby się zepsuło) i informowanie użytkownika, że jego dane zostały zapisane. Możesz również w tym punkcie obecności mieć drugi węzeł jako gorącą replikę dla trwałości.
+Świętym Graalem rozwiązania, zakładając, że akceptujesz pewne kompromisy, jest możliwość akceptacji zapisów lokalnie w tym węźle (który ma przyzwoity sprzęt, RAID, itd., co jest mało prawdopodobne, aby się zepsuło) i poinformowanie użytkownika, że jego dane zostały zapisane. Możesz również w tym punkcie obecności mieć drugi węzeł jako gorącą replikę dla trwałości.
 
-Więc to jest miejsce, w którym skończyliśmy. Oregon, Virginia, Falkenstein, Sao Paulo, Singapur, to wszystko są własne zbiory replik i akceptują zapisy. Wdrożenie w UE (choć tylko trzy PoPs) ma to samo zachowanie.
+Więc do tego doszliśmy. Oregon, Virginia, Falkenstein, Sao Paulo, Singapore to wszystko ich własne zestawy replik i akceptują zapisy. Wdrażanie w UE
+(chociaż tylko trzy PoPs) ma to samo zachowanie.
 
 ### Jak to działa
 
-Niektóre z tego są poruszone w poprzedniej sekcji, ale TL;DR to CRDT-lite. Stworzyliśmy proxy (w Rust, bo oczywiście) które znajduje się pomiędzy aplikacją a Mongo i sprawia, że jest wielomistrzowskie. Proxy jest świadome peerów, zarządza punktami kontrolnymi, replikacją, monitorowaniem i początkową synchronizacją. Jest to wielomistrzowska alternatywa dla systemu replikacji Mongo, obejmująca niektóre komendy DDL.
+Niektóre z tego są omówione w poprzedniej sekcji, ale TL;DR to CRDT-lite. Stworzyliśmy proxy (w Rust, bo oczywiście), które znajduje się między aplikacją a Mongo i czyni je multi-master. Proxy jest świadome równorzędności, zarządza punktami kontrolnymi, replikacją, monitorowaniem i początkową synchronizacją. Jest to zastąpienie multi-master dla systemu replikacji Mongo, w tym dla niektórych poleceń DDL.
 
-**Różnicą w porównaniu do innych narzędzi** jest to, że **nie korzysta z taila oplog**. Korzystanie z taila oplog lub używanie strumieni zmian nie działałoby, ponieważ pokazują one tylko finalny stan obiektu po zapisie, co uniemożliwia obsługę konfliktów. Musisz uchwycić
-każdą operację `$set`, `$inc` i zreplikować tę operację.
+**Różnica w porównaniu do innych narzędzi** polega na tym, że **nie śledzi logu operacji**. Śledzenie logu operacji lub korzystanie z strumieni zmian nie działa, ponieważ pokazują one tylko ostateczny stan obiektu po zapisie, co uniemożliwia obsługę konfliktów. Musisz uchwycić
+każą `$set`, `$inc` operację i zreplikować tę operację samą w sobie.
 
-To jest rozwiązanie specyficzne dla domeny. Nie sprawdziłoby się dla wszystkich produktów. Można by powiedzieć, że to projektowanie napędzane domeną :). Działa dla nas, ponieważ od samego początku bardzo ostrożnie tylko `$set`ujemy pola, które zmieniamy w dokumentach - nigdy nie używamy `replaceOne` Mongo, na przykład. To samo dotyczy liczników. **Nigdy** nie robisz `SET VOTES = 5`. Zamiast tego zapisujesz `INCREMENT VOTES BY 5`, ponieważ to pozwala na ostateczną spójność. Rozproszone blokady są obsługiwane poprzez **całkowite ich unikanie**. Tylko jeden węzeł
-na klasterze ma ustawioną flagę do uruchamiania crontabów. Choć może się to wydawać ograniczone, możemy kupić serwery z terabajtami RAM, więc możemy zaakceptować ten kompromis, aby zmniejszyć ryzyko i złożoność.
+To jest rozwiązanie specyficzne dla domeny. Nie działałoby dla wszystkich produktów. Można powiedzieć, że to podejście oparte na projektowaniu zorientowanym na domenę :). Działa dla nas, ponieważ od samego początku bardzo starannie tylko `$set`ujemy pola, które zmieniamy w dokumentach - nigdy nie używamy `replaceOne` Mongo, na przykład. To samo dotyczy liczników. **Nigdy** nie robisz `SET VOTES = 5`. Zamiast tego zapisałbyś `INCREMENT VOTES BY 5`, ponieważ to pozwala na eventual consistency. Rozproszone blokady są obsługiwane przez **don't**. Tylko jeden węzeł
+na klastra ma ustawioną flagę do uruchamiania crons. Choć może się to wydawać ograniczone, możemy kupić serwery z terabajtami RAM-u, więc możemy przyjąć ten kompromis w celu obniżenia ryzyka i złożoności.
 
 ### Odczytywanie własnych zapisów
 
-Dla programistów korzystających z API, powinieneś być w stanie odczytać własne zapisy tak jak wcześniej (wykonaj wywołanie API, aby utworzyć komentarz, a następnie wypisz komentarze i zobacz nowy wpis na tej liście). **Zastrzeżenie** polega na tym, że nie możesz tego zrobić w różnych regionach. Jeśli twój backend działa tylko w jednym regionie,
-takim jak us-west, to powinieneś być w stanie odczytać swoje własne zapisy z wyjątkiem sytuacji, gdy pomiędzy twoim zapisem a twoim odczytem, ten węzeł ulegnie awarii **i** twoja
-pamięć podręczna DNS zaktualizuje się, aby wskazać na następny najbliższy węzeł. O ile to się nie stanie, odczytywanie własnych zapisów jest niezawodne.
+Dla deweloperów korzystających z API, powinniście być w stanie odczytać własne zapisy tak jak wcześniej (wykonać wywołanie API, aby utworzyć komentarz, a następnie wymienić komentarze i zobaczyć nowy wpis na tej liście). **Zastrzeżenie** jest takie, że nie można tego zrobić w różnych regionach. Jeśli wasz backend działa tylko w jednym regionie,
+jak us-west, wtedy powinniście być w stanie odczytać swoje własne zapisy, z wyjątkiem sytuacji, gdy pomiędzy waszym zapisem a odczytem ten węzeł padnie **i** wasza
+pamięć podręczna DNS zaktualizuje się, aby wskazywać na następny najbliższy węzeł. Pod warunkiem, że to się nie zdarzy, odczytywanie własnych zapisów jest niezawodne.
+
+[Możesz również przypiąć, który punkt obecności trafiasz. Więcej informacji tutaj.](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes)
 
 ### Testowanie i migracja
 
-Około połowa kodu w systemie to zestaw testów, framework i testy. Mimo to, wydanie było nieco wyboiste, z dłuższym czasem przestoju (1 godzina dla UE i 20 minut dla globalnego us) niż pożądano, ale cieszymy się, że pokonaliśmy ten kamień milowy i dziękujemy za twoją cierpliwość!
+Około połowa kodu w systemie to wdrożenia testowe, framework i testy. Nadal wydanie było trochę wyboiste, trwało dłużej niż oczekiwano (1 godzina dla UE i 20 minut dla us-global), ale cieszymy się, że przeszliśmy ten kamień milowy i dziękujemy za waszą cierpliwość!
 
-### Podsumowując i co to oznacza dla Ciebie
+### Na zakończenie i co to oznacza dla Ciebie
 
-FastComments powinno być teraz szybsze i bardziej trwałe niż kiedykolwiek, a teraz możemy wrócić do pracy nad nowymi funkcjami :)
+FastComments powinny być teraz szybsze i bardziej trwałe niż kiedykolwiek wcześniej, a teraz możemy wrócić do pracy nad nowymi funkcjami :)
 
 Na zdrowie!
 

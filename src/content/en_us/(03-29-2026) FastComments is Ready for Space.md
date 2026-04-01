@@ -46,7 +46,7 @@ Some of this is covered in the previous section, but the TL;DR is it's CRDT-lite
 **The difference from other tools** is that this **does not tail the oplog**. Tailing the oplog, or using change streams, would not work, because they only show you the final state of the object after the write making it impossible to handle conflicts. You need to capture
 each `$set`, `$inc` operation and replicate that operation itself.
 
-This is a domain-specific solution. It would not work for all products. You could say it's domain-driven design :). It works for us because we from the beginning very carefully only `$set` the fields we change on documents - we never use Mongo's `replaceOne`, for example. Same with counters. You **never** do `SET VOTES = 5`. Instead, you would write `INCREMENT VOTES BY 5`, as this allows eventual consistency. Distributed locks are handled by **avoiding them entirely**. Only one node
+This is a domain-specific solution. It would not work for all products. You could say it's domain-driven design :). It works for us because from the beginning we very carefully only `$set` the fields we change on documents - we never use Mongo's `replaceOne`, for example. Same with counters. You **never** do `SET VOTES = 5`. Instead, you would write `INCREMENT VOTES BY 5`, as this allows eventual consistency. Distributed locks are handled by **don't**. Only one node
 per cluster has a flag set to run crons. While this may seem limited, we can buy servers with terabytes of RAM, so we can take this tradeoff to lower risk and complexity.
 
 ### Reading Your Own Writes
@@ -54,6 +54,8 @@ per cluster has a flag set to run crons. While this may seem limited, we can buy
 For developers using the API, you should be able to read your own writes just as before (make an API call to create a comment, then list comments and see the new entry in that list). **The caveat** is that you can't do this across regions. If your backend runs in just one region,
 like us-west, then you should be able to read your own writes except in the event that between your write and your read, that node goes down **and** your
 DNS cache updates to point to the next nearest node. Provided this does not happen, reading your own writes is dependable.
+
+[You can also pin which point-of-presence you hit. More information here.](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes)
 
 ### Testing & The Migration
 
