@@ -1,5 +1,3 @@
----
----
 [category:Announcements]
 [category:Serious Posts]
 ###### [postdate]
@@ -59,5 +57,3 @@ Like all major releases, we're glad that we could take the time to optimize, tes
 FastComments should scale better and have better uptime in the long run with this work. As the FART runbook says: "If you smell something, say something". Let us know below if you discover any issues.
 
 {{/isPost}}
-
----
