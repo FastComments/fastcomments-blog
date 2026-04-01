@@ -22,7 +22,7 @@ replication, SSL cert management, reverse proxy, and CDN that uses an on-disk LR
 The latest version of FART contains a built-in proxy and replication layer for our database. This allows FastComments to be Active-Active
 with global write availability, which ensures our FARTS are eventually consistent. [More details here](https://blog.fastcomments.com/(03-29-2026)-fastcomments-is-ready-for-space.html).
 
-One approach we actually took early on was seeing if we could create an active-active fork of MongoDB. One of our engineers (Sloperators) was able to actually accomplish this with Opus 4.6, however, we decided the risk of doing this was higher than building our own isolated system.
+An approach we actually took early on was seeing if we could create an active-active fork of MongoDB. One of our engineers (Sloperators) was able to actually accomplish this with Opus 4.6, however, we decided the risk of doing this was higher than building our own isolated system.
 
 ## Rust at Scale
 
