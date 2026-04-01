@@ -39,14 +39,14 @@ Each deployment contains its own FART Master. The master is responsible for orch
 
 ## Customer Impact
 
-The FART system has been in production for about a year now. Only recently did we do the migration to the Active-Active deployment. The new
-system gives us increased visibility into latency across the system, as well as a lower maintenance burden so we can now spend more time on features.
+The FART system has been in production for about a year now. Only recently did we do the migration to the Active-Active deployment.
+There is some impact for reading your own writes across regions, which is covered in the above linked blog post and [in the docs](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes).
 
 FART works quietly in the background, though its presence is always felt. We hope that you find our systems are faster for your use cases (mostly user actions that result in changes in data will be faster in some regions).
 
 ## Deployments
 
-Deployment uses the same global orchestration system we use for deploying the services themselves. The FARTS documentation recommends Sloperators never trust a deploy, always verify the payload before releasing.
+Deployment uses the same global orchestration system we use for deploying the services themselves. The FART documentation recommends Sloperators never trust a deploy, always verify the payload before releasing.
 
 Post deployment FART alerts follow an escalation policy: first the room, then the floor, then the building.
 
@@ -54,6 +54,8 @@ Post deployment FART alerts follow an escalation policy: first the room, then th
 
 Like all major releases, we're glad that we could take the time to optimize, test, and properly release this change. We're excited about what's coming down the pipeline.
 FastComments should scale better and have better uptime in the long run with this work. As the FART runbook says: "If you smell something, say something". Let us know below if you discover any issues.
+
+<small>Yes FART is a real service in our infrastructure now. Sorry for the low effort jokes.</small>
 
 {{/isPost}}
 
