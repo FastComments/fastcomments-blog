@@ -15,8 +15,7 @@ Introducing The FastComments Automatic Routing Transport System!
 
 The FastComments Automatic Routing Transport System (FARTS) is our transport and service layer. FARTS help with congestion, routing
 traffic based on user location and potentially load in the future. It consists of several different systems, a geo-aware DNS layer, a DB proxy, DB
-replication, SSL cert management, reverse proxy, and CDN that uses an on-disk LRU cache to cache assets at the edge. The system supports both silent and loud failover modes.
-Silent is preferred in production.
+replication, SSL cert management, reverse proxy, and CDN that uses an on-disk LRU cache to cache assets at the edge.
 
 ## Active-Active
 
