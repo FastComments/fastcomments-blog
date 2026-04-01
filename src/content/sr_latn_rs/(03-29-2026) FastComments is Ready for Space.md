@@ -3,68 +3,66 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments je spreman za prostor![postlink]
+# [postlink]FastComments je spreman za svemir![/postlink]
 
 {{#unless isPost}}
-Završili smo migraciju naše aktivno-aktivne baze podataka, donoseći pravu višeregionalnu redundantnost u FastComments.
+Završili smo našu aktivnu migraciju baze podataka, donoseći pravu višeregionalnu redundanciju u FastComments.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Ovaj članak sadrži tehnički žargon
+### <i class="circle">!</i> Ovaj članak sadrži tehničke termine
 
 ### Šta je novo
 
-Svaki FastComments [point-of-presence](https://sophon.fastcomments.com/) sada upisuje lokalno i asinkrono replicira te podatke
-na sve druge čvorove. Ovo će obezbediti povećanu otpornost u odnosu na prethodni sistem, a istovremeno će moderacione alate učiniti bržim
-za korisnike u nekim regionima, uz određene kompromise.
+Svaki FastComments [point-of-presence](https://sophon.fastcomments.com/) sada lokalno prihvata zapise i asimetrično ih replicira
+na sve ostale čvorove. Ovo će obezbediti veću izdržljivost u odnosu na prethodni sistem, zajedno sa bržim alatima za moderaciju
+za korisnike u nekim regionima, uz neke kompromise.
 
-"Spreman za prostor" je pomalo optimističan, ali ideja je da bismo mogli implementirati FastComments na različitim planetama i da bi sistem na kraju bio usklađen. Korisnici na Plutonu, međutim, morali bi da sačekaju oko dan da vide promene na svojoj stranici sa nadolazećim fakturama, budući da trenutno samo jedan
-master po regionu može da agregira informacija o naplati.
+"Spreman za svemir" zvuči malo optimistično, ali ideja je da možemo implementirati FastComments na različitim planetama i na kraju bi sistem bio sinhronizovan. Korisnici na Plutonu, međutim, bi morali da sačekaju oko jednog dana da bi videli promene na svojoj stranici računa, jer samo jedan
+master po regionu trenutno može da agregira informacije o naplatama.
 
 ### Neka istorija, zašto promena
 
-Kada je FastComments prvobitno lansiran, imali smo veoma tipičnu arhitekturu. Imali smo sloj proksi-ja, sloj aplikacije, bazu podataka, neke replike, a kasnije i replike širom regiona i provajdera u oblaku za dodatnu redundantnost.
+Kada je FastComments prvobitno pokrenut, imali smo veoma tipičnu arhitekturu. Imali smo proxy sloj, aplikativni sloj, bazu podataka, nekoliko replika, a zatim kasnije replike širom regiona i cloud provajdera za dodatnu redundanciju.
 
-Na kraju smo premestili replikacije baze podataka u sve zone u kojima su većina naših korisnika i takođe implementirali aplikaciju tamo, i kreirali smo sopstveni DNS i proksi sistem (opisano u kasnijem blog postu) za usmeravanje zahteva ka najbližem čvoru aplikacije. Ovo čini čitanja bržim, ali upisima sporijim, budući da umesto da čekate na jedan HTTP round trip do pozadine, čekate na jedan HTTP round trip do bliskog čvora, a taj čvor može da izvrši više upisa u bazu podataka nazad ka primarnom. Nije dobro!
+Na kraju smo premestili replike baze podataka u sve zone gde je većina naših korisnika i takođe primenili aplikaciju tamo, i kreirali naš vlastiti DNS i proxy sistem (opisan u kasnijem blog postu) kako bismo usmerili zahteve ka najbližem aplikativnom čvoru. Ovo čini čitanje bržim, ali pisanje sporijim, jer umesto da čekate jedno HTTP putovanje do backenda, čekate HTTP putovanje do bližeg čvora, a taj čvor može da vrati više pisanja nazad ka primarnom. Nije dobro!
 
-Kako bismo se borili protiv ovoga, restrukturisali smo mnoge oblasti aplikacije da prihvate `readPreference` u argumentima funkcije, tako da pozivaoci mogu odlučiti koliko
-stare podatke su u redu sa svojim čitanjima, a povrh toga smo učinili više upisa (kao što je pisanje statistike moderatora pri akcijama moderatora) fire-and-forget. Nije idealno, ali je značajno ubrzalo stvari.
+Da bismo se borili protiv ovog problema, prestrukturirali smo mnoga područja aplikacije da prihvate `readPreference` u argumentima funkcije, tako da pozivaoci mogu odlučiti koliko su spremni da podnesu da njihova čitanja budu zastarela, a osim toga, napravili smo više pisanja (poput pisanja statistike moderatora na akcije moderatora) kao fire-and-forget. Nije idealno, ali je značajno ubrzalo proces.
 
-Jedan problem na koji smo naišli tokom globalnog rada sa Mongo su mrežne pregrade. Ako se dovoljno čvorova isključi, čitanja se zaustavljaju jer svaki čvor postaje nesiguran da li
-je prihvatljivo da služi čitanja. Postoje neki načini oko ovoga, ali ivice slučajevi postaju složeni. Ovo nije teoretski problem - događalo se dovoljno puta da smo dobili 3AM obaveštenja, što nas je jako umorilo, čak smo pokušavali da podesimo Mongo da bude u redu sa nesigurnostima kod izbora replikaseta do minuta razlike. Nažalost, mreže između Sao Paula i Falkenštajna, na primer, jednostavno nisu bile dobre kod nekih naših provajdera hostinga. Podesavanje kontrole saobraćaja itd. je pomoglo, ali nije rešilo problem.
+Jedan problem sa kojim smo se susreli tokom globalnog korišćenja Mongo su mrežni prekidi. Ako dovoljno čvorova bude isključeno, čitanja prestaju jer svaki čvor postaje nesiguran da li je prihvatljivo da pruža čitanja. Ima načina da se ovo reši, ali ivice slučajeva postaju komplikovane. Ovo nije teorijski problem - desilo se dovoljno puta uzrokujući probudna obaveštenja u 3 ujutro da smo se umorili od toga, čak pokušavajući da optimizujemo Mongo da bude u redu sa nesigurnostima izbora replikaseta do jednog minuta. Nažalost, mreže između Sao Paula i Falkensteina, na primer, jednostavno nisu bile dobre kod nekih naših provajdera hostinga. Podešavanje kontrole zagušenja i slično je pomoglo, ali nije rešilo problem.
 
-Sveti gral rešenje, pod uslovom da ste u redu sa određenim kompromisima, je mogućnost da prihvatite upise lokalno na tom čvoru (koji ima pristojan hardver, RAID itd., što je malo verovatno da će se pokvariti) i obavestite korisnika da su njegovi podaci sačuvani. Takođe možete u tom point-of-presence imati još jedan čvor kao vruću replikaciju za otpornost.
+Sveti gral rešenja, pod uslovom da ste spremni na određene kompromise, je sposobnost da prihvatite zapise lokalno na tom čvoru (koji ima dobar hardver, RAID, itd., što je malo verovatno da će se pokvariti) i da obavestite korisnika da su njegovi podaci sačuvani. Takođe možete u tom point-of-presence imati drugi čvor kao vruću repliku za izdržljivost.
 
-Dakle, ovo je ono do čega smo došli. Oregon, Virginia, Falkenštajn, Sao Paulo, Singapur, su svi svoje replike i prihvataju upise. EU
-implementacija (iako samo tri PoP-a) ima isto ponašanje.
+Dakle, ovo je ono što smo postigli. Oregon, Virginia, Falkenstein, Sao Paulo, Singapur, svi su svoja replikaseta i prihvataju zapise. EU
+implementacija (iako ima samo tri PoP-a) ima isto ponašanje.
 
 ### Kako to funkcioniše
 
-Neki od ovoga su pokriveni u prethodnoj sekciji, ali TL;DR je da je to CRDT-lite. Napravili smo proksi (u Rustu, jer naravno) koji sedi između aplikacije i Mongo i čini ga višemaster. Proksi je svestan peer-ova, upravlja tačkama, replikacijom, monitoringom i inicijalnom sinhronizacijom. To je višemaster zamena za Mongo-ov sistem replikacije, uključujući za neke DDL komande.
+Neki deo ovoga je pokriven u prethodnom odeljku, ali TL;DR je da je to CRDT-lite. Kreirali smo proxy (u Rustu, jer naravno) koji se nalazi između aplikacije i Mongo i čini ga multi-master. Proxy je svestan čvorova, upravlja kontrolnim tačkama, replikacijom, praćenjem i prvobitnom sinhronizacijom. To je multi-master zamena za Mongo-ov replikacijski sistem, uključujući neke DDL komande.
 
-**Razlika od drugih alata** je u tome što **ne prati oplog**. Praćenje oploga, ili korišćenje promena strimova, ne bi funkcionisalo, jer vam samo prikazuje konačno stanje objekta nakon pisanja, što otežava rešavanje sukoba. Potrebno je uhvatiti
-svaku `$set`, `$inc` operaciju i replicirati tu operaciju.
+**Razlika od drugih alata** je u tome što **ne prati oplog**. Praćenje oploga, ili korišćenje promena strimova, ne bi radilo, jer prikazuje samo konačno stanje objekta nakon pisanja, što čini nemogućim rešavanje konflikata. Potrebno je uhvatiti
+svaku `$set`, `$inc` operaciju i replicirati tu operaciju samu.
 
-Ovo je rešenje specifično za domen. Ne bi funkcionisalo za sve proizvode. Možete reći da je to dizajn vođen domenom :). Funkcioniše za nas jer od samog početka veoma pažljivo koristimo samo `$set` za polja koja menjamo na dokumentima - nikada ne koristimo Mongo-ov `replaceOne`, na primer. Isto važi i za brojače. **Nikada** ne radite `SET VOTES = 5`. Umesto toga, napisali biste `INCREMENT VOTES BY 5`, jer to omogućava eventualnu doslednost. Distribuirane brave se rešavaju **izbegavanjem potpuno**. Samo jedan čvor
-po klasteru ima oznaku za pokretanje cronova. Iako ovo može delovati ograničeno, možemo kupiti servere sa terabajtima RAM-a, tako da možemo uzeti ovaj kompromis da smanjimo rizik i složenost.
+Ovo je rešenje specifično za domen. Ne bi radilo za sve proizvode. Moglo bi se reći da je to dizajn vođen domenom :). Radi za nas jer od početka vrlo pažljivo samo `$set`-ujemo polja koja menjamo na dokumentima - nikada ne koristimo Mongo-ovu `replaceOne`, na primer. Isto važi i za brojače. **Nikada** ne radite `SET VOTES = 5`. Umesto toga, pisali biste `INCREMENT VOTES BY 5`, jer ovo omogućava eventualnu konzistentnost. Distribuirane brave se rešavaju pomoću **ne**. Samo jedan čvor
+po klasteru ima oznaku postavljenu za pokretanje cronova. Iako ovo može delovati ograničeno, možemo kupiti servere sa terabajtima RAM-a, tako da možemo preuzeti ovaj kompromis kako bismo smanjili rizik i složenost.
 
-### Čitanje svojih upisa
+### Čitanje sopstvenih zapisa
 
-Za programere koji koriste API, trebali biste moći da čitate svoje upise kao i ranije (napravite API poziv za kreiranje komentara, zatim listajte komentare i vidite novi unos u toj listi). **Upozorenje** je da to ne možete raditi širom regiona. Ako vaš backend radi u samo jednoj regiji,
-kao što je us-west, tada biste trebali moći da čitate svoje upise osim u slučaju da između vašeg upisa i vašeg čitanja, taj čvor otkaže **i** vaša
-DNS keširanja se ažurira da pokaže na sledeći najbliži čvor. Ukoliko se to ne dogodi, čitanje vaših upisa je pouzdano.
+Za programere koji koriste API, trebali biste moći da čitate svoje vlastite zapise baš kao i ranije (napravite API poziv da kreirate komentar, zatim navedite komentare i vidite novi unos u toj listi). **Napomena** je da ovo ne možete raditi preko regiona. Ako vaš backend radi u samo jednom regionu,
+poput us-west, tada biste trebali moći da čitate svoje sopstvene zapise osim u slučaju da između vašeg pisanja i vašeg čitanja, taj čvor padne **i** vaša
+DNS keširanja se ažurira da usmeri ka sledećem najbližem čvoru. Pod uslovom da se to ne dogodi, čitanje vaših vlastitih zapisa je pouzdano.
 
-### Testiranje & Migracija
+[Možete takođe odrediti koji point-of-presence koristite. Više informacija ovde.](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes)
 
-Otprilike polovina koda u sistemu je testna oprema, framework i testovi. Ipak, izdanje je bilo malo nerazmjerno, uzimajući dužu prekid (1 sat za EU i 20 minuta za us-global) nego što je željeno, ali smo srećni što smo prošli ovaj korak i zahvaljujemo vam na strpljenju!
+### Testiranje i migracija
 
-### U zaključku & što to znači za vas
+Oko polovine koda u sistemu je testni okvir, infrastruktura i testovi. Ipak, izdanje je bilo malo problematično, što je zahtevalo duže vreme nedostupnosti (1 sat za EU i 20 minuta za us-global) nego što je bilo poželjno, ali smo srećni što smo prošli ovu prekretnicu i hvala vam na strpljenju!
 
-FastComments bi sada trebao biti brži i otporniji nego ikad, a sada se možemo vratiti radu na funkcijama :)
+### Na kraju i šta ovo znači za vas
+
+FastComments bi sada trebali biti brži i izdržljiviji nego ikada, a sada se možemo vratiti radu na funkcionalnostima :)
 
 Živeli!
 
 {{/isPost}}
-
----

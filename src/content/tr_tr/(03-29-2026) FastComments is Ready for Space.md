@@ -3,10 +3,10 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments Uzaya Hazır![/postlink]
+# [postlink]FastComments Uzay İçin Hazır![/postlink]
 
 {{#unless isPost}}
-Aktif-aktif veritabanı göçümüzü tamamladık ve FastComments'a gerçek çok bölgeli yedeklilik getirdik.
+Aktif-aktif veritabanı geçişimizi tamamladık, böylece FastComments'a gerçek çok bölge yedekliliği getirdik.
 {{/unless}}
 
 {{#isPost}}
@@ -15,43 +15,45 @@ Aktif-aktif veritabanı göçümüzü tamamladık ve FastComments'a gerçek çok
 
 ### Yenilikler
 
-Her FastComments [nokta-nüfuzu](https://sophon.fastcomments.com/) artık yazıları yerel olarak alıyor ve onları diğer tüm düğümlere asenkron bir şekilde kopyalıyor. Bu, önceki sisteme göre artan dayanıklılık sağlayacak ve bazı bölgelerde moderasyon araçlarının kullanıcılar için daha hızlı olmasını sağlayacaktır, ama bazı trade-off'lar ile birlikte.
+Her FastComments [ulaşım noktası](https://sophon.fastcomments.com/) artık yerel yazma işlemleri yapıyor ve bunları diğer düğümlere asenkron olarak çoğaltıyor. Bu, önceki sisteme göre artan dayanıklılık sağlayacak ve bazı bölgelerde kullanıcılar için moderasyon araçlarını daha hızlı hale getirecek, beraberinde bazı ticari kazanımlar da getirecektir.
 
-"Uzaya Hazır" biraz iyimser bir tanım, ancak fikir şu: FastComments'ı farklı gezegenlere dağıtabiliriz ve sonunda sistem senkronize olur. Ancak, Plüton'daki kullanıcıların, yalnızca bir bölgedeki bir ana düğümün faturalama bilgilerini toplaması mümkün olduğundan, değişikliklerin gelecek fatura sayfalarında yansımasını görmek için yaklaşık bir gün beklemeleri gerekecek.
+"Uzay için hazır" biraz iyimser bir ifade, ama fikir, FastComments'ı farklı gezegenlere dağıtabileceğimiz ve nihayetinde sistemin senkron hale geleceğidir. Ancak, Pluto'daki kullanıcıların, yalnızca bir bölge başına bir ana bilgisayarın fatura bilgilerini toplamasına izin verildiğinden, önümüzdeki fatura sayfasında değişiklikleri görmeleri için yaklaşık bir gün beklemeleri gerekecek.
 
-### Biraz Tarih, Neden Değişiklik
+### Geçmişteki Bazı Bilgiler, Neden Değişiklik
 
-FastComments ilk başlatıldığında çok tipik bir mimarimiz vardı. Bir proxy katmanı, bir uygulama katmanı, bir veritabanı, bazı kopyalar ve daha sonra ekstra yedeklilik için bölgeler ve bulut sağlayıcıları arasında kopyalarımız vardı.
+FastComments ilk olarak piyasaya çıktığında oldukça tipik bir mimariye sahiptik. Bir proxy katmanı, bir uygulama katmanı, bir veritabanı, bazı kopyalar ve daha sonra ek yedeklilik için bölgeler ve bulut sağlayıcıları arasında kopyalar vardı.
 
-Sonunda veritabanı kopyalarını kullanıcılarımızın çoğunun bulunduğu tüm bölgelere taşımış ve uygulamayı da burada dağıtmıştık. Ayrıca, istekleri en yakın uygulama düğümüne yönlendirmek için kendi DNS ve proxy sistemimizi oluşturduk (ilerideki bir blog yazısında açıklanacaktır). Bu, okuma işlemlerini hızlı hale getiriyor ancak yazma işlemlerini yavaşlatıyor, çünkü artık bir HTTP gidiş dönüş yolculuğu yerine yakındaki bir düğüme gidiş dönüş yolculuğu beklemeniz gerekiyor ve bu düğüm, birincil veritabanına birden fazla yazma işlemi yapabilir. Bu pek iyi değil!
+Sonunda veritabanı kopyalarını kullanıcılarımızın çoğunun bulunduğu tüm bölgelerde taşıdık ve uygulamayı oraya da dağıttık, ayrıca talepleri en yakın uygulama düğümüne yönlendirmek için kendi DNS ve proxy sistemimizi oluşturduk (ileride bir blog yazısında açıklanacaktır). Bu, okuma işlemlerini hızlı hale getirirken, yazma işlemlerini yavaşlatmaktadır; çünkü artık arka uçta bir HTTP gidiş-dönüş beklemek yerine, yakındaki bir düğüm için bir HTTP gidiş-dönüş bekliyorsunuz ve o düğüm, birincil veritabanına geri çoklu yazma işlemleri yapabilir. Kötü!
 
-Bu sorunu aşmak için, uygulamanın birçok alanını `readPreference` fonksiyon argümanında alacak şekilde yeniden yapılandırdık, böylece çağrıcılar okuma işlemlerinin ne kadar eski olmasına tolerans gösterdiklerine karar verebiliyorlar. Ayrıca, yazma işlemlerini (moderasyon istatistiklerini moderatör işlemleriyle yazmak gibi) ateşle ve unut türünde yapacak şekilde düzenledik. İdeal değil, ama bu, işleri önemli ölçüde hızlandırdı.
+Bunu aşmak için uygulamanın birçok bölümünü yeniden yapılandırdık, böylece çağrıcılar okuma işlemlerinin ne kadar eskimiş olacağını belirleyebiliyor. Ayrıca daha fazla yazma işlemini (örneğin moderatör eylemleri üzerine moderatör istatistiklerini yazmak gibi) ateşle ve unut yöntemiyle gerçekleştirdik. İdeal değil, ama işleri önemli ölçüde hızlandırdı.
 
-Mongo'yu global olarak çalıştırdığımızda karşılaştığımız bir sorun, ağ bölünmeleridir. Yeterince düğüm kesildiğinde, her düğüm okuyucu sunmanın kabul edilebilir olup olmadığında belirsizlik yaşadığı için okumalar durur. Bu durumun etraflarında bazı çözümler var, ancak kenar vakaları karmaşık hale geliyor. Bu, teorik bir sorun değil - 3AM bildirimlerine neden olacak kadar sık gerçekleştiği için bu durumdan bıktık, Mongo'yu bir dakikalık replikasyon seçim belirsizliğine tolerans gösterecek şekilde ayarlamaya bile çalıştık. Maalesef örneğin Sao Paulo'dan Falkenstein'e giden ağlar, bazı barındırma sağlayıcılarımız arasında çok iyi değildi. Trafik kontrolünü ayarlamak yardımcı oldu ama sorunu çözmedi.
+Mongo'yu küresel olarak kullanırken karşılaştığımız bir sorun, ağ bölünmeleridir. Yeterince düğüm kesilirse, her düğüm okumaların kabul edilebilir olup olmadığını bilmediğinden okumalar durur. Bunun etrafında bazı çözümler var, ancak kenar durumları karmaşık hale geliyor. Bu teorik bir sorun değil - bu, birçok kez 3AM'te sayfa bildirimleriyle sonuçlandı, bu yüzden bundan bıktık, hatta Mongo'yu bir dakikalık çoğaltım ekibi seçimi belirsizliğine toleranslı olabilmesi için ayarlamaya çalıştık. Maalesef, örneğin Sao Paulo'dan Falkenstein'e olan ağlar, bazı barındırma sağlayıcılarımız arasında pek iyi değildi. Sıkışıklık kontrolü ve benzeri ayarların yapılması yardımcı oldu ancak sorunu çözmedi.
 
-Kutsal kâse çözümü, belirli trade-off'larla razı olduğunuz varsayımıyla, o düğümde yerel olarak yazıları kabul etme yeteneğidir (decent donanımı, RAID, vb. olan ve patlama ihtimali düşük). Kullanıcıya verilerinin kaydedildiğini bildirebilirsiniz. Ayrıca bu noktadaki bir nokta-nüfuzunda, dayanıklılık için sıcak bir kopya olarak ikinci bir düğüm de bulundurabilirsiniz.
+Kutsal kâse çözüm, belirli ticari kazanımlarla çalışmaya istekliyseniz, o düğümde yerel yazmaları kabul etme yeteneğidir (iyi bir donanıma, RAID'e vb. sahip olup patlaması olası olmayan) ve kullanıcıya verilerinin kaydedildiğini bildirmektir. O ulaşım noktasında ayrıca dayanıklılık için sıcak bir kopya olarak ikinci bir düğüm de bulundurabilirsiniz.
 
-Sonuç olarak buraya ulaştık. Oregon, Virginia, Falkenstein, Sao Paulo, Singapur tümü kendi replikasetlerine sahip ve yazıları kabul ediyor. AB dağıtımı (sadece üç PoP olmasına rağmen) aynı davranışı sergiler.
+Sonuç olarak buraya ulaştık. Oregon, Virginia, Falkenstein, Sao Paulo, Singapur, kendi kopyalarının bulunduğu ve yazma işlemlerini kabul eden tüm bölgeleridir. AB dağıtımı (sadece üç PoP olmasına rağmen) aynı davranışa sahiptir.
 
 ### Nasıl Çalışır
 
-Bunun bazı kısımları önceki bölümde geçildi, ama kısaca, CRDT-lite. Uygulama ile Mongo arasında oturan bir proxy (elbette Rust’ta) oluşturduk ve bunu çoklu-master yapıyoruz. Proxy, akran bilgisiyle çalışır, kontrol noktalarını yönetir, replikasyonu, izlemeyi ve başlangıç senkronizasyonunu yönetir. Mongo'nun replikasyon sisteminin bir çoklu-master yerine geçmektedir, bazı DDL komutları için de geçerlidir.
+Bunun bazı kısımları önceki bölümde ele alındı, ancak kısacası, bu CRDT-lite'tır. Uygulama ile Mongo arasında bulunan ve çoklu ana makine yapan bir proxy geliştirdik (tabii ki Rust'ta). Proxy, akran bilincine sahiptir, kontrol noktalarını, çoğaltmayı, izlemeyi ve başlangıç senkronizasyonunu yönetir. Mongo'nun çoğaltım sistemi için çoklu ana makine yerine geçmektedir, bazı DDL komutları da dahil.
 
-**Diğer araçlardan farkı** ise **oplog'ı takip etmemesidir**. Oplog’ı takip etmek veya değişim akışları kullanmak işe yaramaz çünkü sadece yazım sonrasında nesnenin nihai durumunu gösterir ve bu da çelişkileri yönetmeyi imkansız hale getirir. Her `$set`, `$inc` işlemini yakalamalı ve o işlemi kendisini çoğaltmalısınız.
+**Diğer araçlardan farkı**, **oplog'u takip etmemesidir**. Oplog'un takip edilmesi veya değişim akışlarının kullanılması işe yaramaz, çünkü yalnızca yazım sonrasında nesnenin nihai durumunu gösterir, bu da çatışmaları yönetmeyi imkansız kılar. Her `$set`, `$inc` işlemini yakalamanız ve bu işlemi kendisini çoğaltmanız gerekir.
 
-Bu, alan spesifik bir çözümdür. Tüm ürünler için çalışmaz. Alan odaklı tasarım olarak adlandırılabilir :). Bizim için çalışıyor çünkü baştan itibaren sadece değiştirdiğimiz belgelerde `$set` kullanarak çok dikkatli davrandık - örneğin Mongo'nun `replaceOne`'ını asla kullanmıyoruz. Sayaçlar için de aynı durum geçerli. Asla `SET VOTES = 5` yapmazsınız. Bunun yerine, `INCREMENT VOTES BY 5` yazarsınız, çünkü bu, nihai tutarlılığı sağlar. Dağıtık kilitler **tamamen kaçınarak** yönetilmektedir. Küme başına sadece bir düğüm, cronları çalıştırmak için bir bayrak ayarına sahiptir. Bu sınırlı gibi görünse de, terabaytlarca RAM'e sahip sunucular satın alabiliyoruz, bu nedenle bu trade-off'u risk ve karmaşıklığı azaltmak için alabiliriz.
+Bu, alanına özgü bir çözümdür. Tüm ürünler için çalışmaz. Alan odaklı tasarım diyebilirsiniz :). Bizim için işe yarıyor çünkü başlangıçtan itibaren belgelerde değişiklik yaptığımız alanları çok dikkatli bir şekilde yalnızca `$set` yapıyoruz - örneğin Mongo'nun `replaceOne` özelliğini asla kullanmıyoruz. Sayacılarla da aynı şekilde. **Asla** `SET VOTES = 5` yapmazsınız. Bunun yerine, sonunda tutarlılığı sağladığı için `INCREMENT VOTES BY 5` yazarsınız. Dağıtılmış kilitler **yapmayarak** işlenir. Küme başına yalnızca bir düğüm crons'u çalıştırma bayrağına sahiptir. Bu sınırlı gibi görünse de, terabaytlarca RAM'e sahip sunucular satın alabiliriz, bu nedenle bu ticari kazanımı riski ve karmaşıklığı azaltmak için alabiliriz.
 
-### Kendi Yazılarınızı Okumak
+### Kendi Yazmalarınızı Okumak
 
-API'yi kullanan geliştiricilerin, daha önce olduğu gibi kendi yazılarını okuyabilmesi gerekir (bir yorum oluşturmak için bir API çağrısı yapın, sonra yorumları listeleyin ve bu listedeki yeni girişi görün). **Uyarı** ise, bunu bölgeler arasında yapamayacağınızdır. Arka uç sisteminiz sadece bir bölgede çalışıyorsa, örneğin us-west, o zaman kendi yazılarınızı okuyabilmelisiniz, yalnızca yazmanız ile okumanız arasında, o düğüm çöker ve DNS cache’iniz bir sonraki en yakın düğüme yönlendirilirse bu durum dışında. Bu durum gerçekleşmediği sürece, kendi yazılarınızı okumak güvenilirdir.
+API'yi kullanan geliştiriciler için, kendi yazmalarınızı önceden olduğu gibi okuyabilmeniz gerekir (bir yorum oluşturmak için bir API çağrısı yapın, ardından yorumları listeleyin ve bu listede yeni girişi görün). **Ayrıca** bunu bölgeler arasında yapamayacağınızdır. Arka ucunuz yalnızca bir bölgede çalışıyorsa, bizim gibi batı ABD bölgesinde, kendi yazmalarınızı okuyabilmeniz gerekir; yalnızca yazım ile okuma arasındaki düğüm kapandığında **ve** DNS önbelleğiniz bir sonraki en yakın düğüme işaret ettiğinde bu durum geçerlidir. Böyle bir durum yaşanmadığı sürece, kendi yazmalarınızı okumak güvenilir bir işlemdir.
+
+[Ayrıca hangi ulaşım noktasını kullandığınızı sabitleyebilirsiniz. Daha fazla bilgi burada.](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes)
 
 ### Test Etme & Göç
 
-Sistemin kodunun yaklaşık yarısı test sargı, çerçeve ve testlerden oluşmaktadır. Yine de, sürüm biraz sarsıntılı oldu ve beklenenden daha uzun bir kesinti süresi aldı (AB için 1 saat, genel olarak 20 dakika), ancak bu aşamayı geçtiğimiz için mutluyuz ve sabrınız için teşekkür ederiz!
+Sistemdeki kodun yaklaşık yarısı test şeması, çerçeve ve testlerden oluşmaktadır. Yine de, sürüm biraz sarsıntılı geçti, beklediğimizden daha uzun kesinti süresi (AB için 1 saat ve küresel için 20 dakika) aldı, ancak bu aşamayı geçtiğimiz için mutluyuz ve sabrınız için teşekkür ederiz!
 
-### Sonuç ve Sizin İçin Anlamı
+### Sonuç & Bu Sizin İçin Ne Anlama Geliyor
 
-FastComments artık daha hızlı ve dayanıklı olmalıdır ve şimdi özellikler üzerinde çalışmaya geri dönebiliriz :)
+FastComments şimdi daha hızlı ve daha dayanıklı olmalı ve artık özellikler üzerinde çalışmaya dönebiliriz :)
 
 Şerefe!
 

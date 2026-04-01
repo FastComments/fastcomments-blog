@@ -13,49 +13,48 @@ Concluímos nossa migração de banco de dados ativo-ativo, trazendo verdadeira 
 
 ### <i class="circle">!</i> Este Artigo Contém Jargão Técnico
 
-### O que Há de Novo
+### O Que Há de Novo
 
-Cada [point-of-presence](https://sophon.fastcomments.com/) do FastComments agora realiza gravações localmente e as replica assíncronamente para todos os outros nós. Isso proporcionará maior durabilidade em relação ao sistema anterior, além de tornar as ferramentas de moderação mais rápidas para os usuários em algumas regiões, com algumas compensações.
+Cada [ponto de presença](https://sophon.fastcomments.com/) do FastComments agora grava localmente e replica essas gravações de forma assíncrona para todos os outros nós. Isso proporcionará maior durabilidade em relação ao sistema anterior, além de tornar as ferramentas de moderação mais rápidas para usuários em algumas regiões, com algumas compensações.
 
-"Pronto para o Espaço" é um pouco otimista, mas a ideia é que poderíamos implantar o FastComments em diferentes planetas e eventualmente o sistema acabaria sincronizado. Os usuários em Plutão, no entanto, teriam que esperar cerca de um dia para ver as mudanças refletidas na página de faturas, já que atualmente apenas um
-mestre por região pode agregar informações de cobrança.
+"Pronto para o Espaço" é um pouco otimista, mas a ideia é que poderíamos implantar o FastComments em diferentes planetas e, eventualmente, o sistema acabaria em sincronia. Os usuários em Plutão, no entanto, teriam que esperar cerca de um dia para ver as alterações refletidas em sua página de fatura futura, já que atualmente apenas um mestre por região pode agregar informações de faturamento.
 
 ### Um Pouco de História, Por Que a Mudança
 
-Quando o FastComments foi lançado originalmente, tínhamos uma arquitetura muito típica. Tínhamos uma camada de proxy, uma camada de aplicativo, um banco de dados, algumas réplicas, e depois mais tarde réplicas em regiões e provedores de nuvem para redundância extra.
+Quando o FastComments foi lançado originalmente, tínhamos uma arquitetura muito típica. Tínhamos uma camada de proxy, uma camada de aplicativo, um banco de dados, algumas réplicas e, mais tarde, réplicas através de regiões e provedores de nuvem para redundância extra.
 
-Eventualmente, movemos as réplicas de DB para todas as zonas onde a maioria dos nossos usuários está e também implantamos o aplicativo lá, e criamos nosso próprio sistema de DNS e proxy (descrito em um post de blog posterior) para direcionar solicitações ao nó de aplicativo mais próximo. Isso torna as leituras rápidas, mas as gravações mais lentas, já que agora, em vez de esperar por uma ida e volta HTTP para o backend, você espera por uma ida e volta HTTP para um nó próximo, e esse nó pode fazer várias gravações no banco de dados de volta ao primário. Não é bom!
+Eventualmente, movemos as réplicas do banco de dados para todas as zonas onde a maioria dos nossos usuários está e também implementamos o aplicativo lá, e criamos nosso próprio sistema de DNS e proxy (descrito em um post no blog posterior) para direcionar as solicitações ao nó de aplicativo mais próximo. Isso torna as leituras rápidas, mas as gravações mais lentas, já que agora, em vez de esperar por uma viagem de ida e volta HTTP para o backend, você espera por uma viagem de ida e volta HTTP para um nó próximo, e esse nó pode fazer múltiplas gravações no banco de dados de volta ao primário. Não é bom!
 
-Então, para combater isso, reestruturamos muitas áreas da aplicação para aceitar um `readPreference` nos argumentos das funções, para que os chamadores pudessem decidir quão obsoletas estavam OK em suas leituras, e além disso fizemos mais gravações (como gravar estatísticas de moderador em ações de moderador) serem fire-and-forget. Não é o ideal, mas isso acelerou as coisas significativamente.
+Assim, para combater isso, reestruturamos muitas áreas da aplicação para aceitar um `readPreference` nos argumentos da função, para que os chamadores possam decidir quão obsoletas estão dispostos a aceitar suas leituras, e além disso, fizemos mais gravações (como gravar estatísticas de moderadores em ações de moderador) como fire-and-forget. Não é ideal, mas acelerou as coisas significativamente.
 
-Um problema que encontramos ao rodar o Mongo globalmente são as divisões de rede. Se nós suficientes forem cortados, as leituras param à medida que cada nó se torna incerto se pode ou não servir as leituras. Existem algumas maneiras de contornar isso, mas os casos extremos ficam confusos. Isso não é uma questão teórica - ocorreu tantas vezes causando páginas às 3 da manhã que ficamos cansados disso, mesmo tentando ajustar o Mongo para ficar ok com incertezas de eleição de replicaset de até um minuto. Infelizmente, as redes de São Paulo a Falkenstein, por exemplo, simplesmente não eram muito boas em alguns dos nossos provedores de hospedagem. Ajustar o controle de congestionamento e similares ajudou, mas não resolveu o problema.
+Um problema que encontramos ao rodar o Mongo globalmente são as divisões de rede. Se um número suficiente de nós ficar desconectado, as leituras param, já que cada nó se torna incerto sobre se é aceitável servir leituras. Existem algumas maneiras de contornar isso, mas os casos extremos ficam complicados. Isso não é um problema teórico - aconteceu o suficiente causando páginas às 3 da manhã que nos cansamos disso, até tentamos ajustar o Mongo para lidar com a incerteza da eleição do replicaset até um minuto de diferença. Infelizmente, as redes de São Paulo a Falkenstein, por exemplo, simplesmente não eram muito boas em alguns dos nossos provedores de hospedagem. Ajustar o controle de congestão e coisas assim ajudou, mas não resolveu o problema.
 
-A solução graal, assumindo que você está ok com certas compensações, é a capacidade de aceitar as gravações localmente naquele nó (que tem hardware decente, RAID, etc, que é improvável que quebre) e informar ao usuário que seus dados estão salvos. Você pode também, naquele point-of-presence, ainda ter um segundo nó como uma réplica quente para durabilidade.
+A solução ideal, assumindo que você aceita certas compensações, é a capacidade de aceitar as gravações localmente naquele nó (que tem um hardware decente, RAID, etc., que é improvável de falhar) e informar ao usuário que seus dados estão salvos. Você também pode ter, naquele ponto de presença, um segundo nó como uma réplica quente para durabilidade.
 
-Então, isso é onde chegamos. Oregon, Virginia, Falkenstein, São Paulo, Singapura, são todos seus próprios conjuntos de réplicas e aceitam gravações. A implantação da UE (embora tenha apenas três PoPs) tem o mesmo comportamento.
+Então, isso é o que acabamos fazendo. Oregon, Virginia, Falkenstein, São Paulo, Cingapura, são todos seus próprios replicaset e aceitam gravações. O deployment da UE (embora com apenas três PoPs) tem o mesmo comportamento.
 
 ### Como Funciona
 
-Algumas dessas informações estão cobertas na seção anterior, mas o resumo é que é CRDT-lite. Criamos um proxy (em Rust, porque claro) que fica entre a aplicação e o Mongo e torna-o multi-mestre. O proxy é ciente dos pares, gerencia pontos de verificação, replicação, monitoramento e sincronização inicial. Ele é uma substituição multi-mestre para o sistema de replicação do Mongo, incluindo para alguns comandos DDL.
+Algumas disso é abordado na seção anterior, mas o resumo é que é CRDT-lite. Criamos um proxy (em Rust, porque claro) que fica entre a aplicação e o Mongo e torna-o multi-mestre. O proxy é ciente dos pares, gerencia checkpoints, replicação, monitoramento e sincronização inicial. É uma substituição multi-mestre para o sistema de replicação do Mongo, incluindo alguns comandos DDL.
 
-**A diferença em relação a outras ferramentas** é que isso **não segue o oplog**. Seguir o oplog, ou usar fluxos de mudança, não funcionaria, porque eles apenas mostram o estado final do objeto após a gravação, tornando impossível lidar com conflitos. Você precisa capturar cada operação `$set`, `$inc` e replicar essa operação em si.
+**A diferença de outras ferramentas** é que isso **não observa o oplog**. Observar o oplog, ou usar fluxos de alterações, não funcionaria, porque eles mostram apenas o estado final do objeto após a gravação, tornando impossível lidar com conflitos. Você precisa capturar cada operação `$set`, `$inc` e replicar essa operação em si.
 
-Esta é uma solução específica de domínio. Não funcionaria para todos os produtos. Você poderia dizer que é design dirigido por domínio :). Funciona para nós porque desde o início temos muito cuidado em apenas `$set` os campos que mudamos em documentos - nunca usamos `replaceOne` do Mongo, por exemplo. O mesmo vale para contadores. Você **nunca** faz `SET VOTES = 5`. Em vez disso, você escreveria `INCREMENT VOTES BY 5`, pois isso permite consistência eventual. Locks distribuídos são tratados por **evitá-los completamente**. Apenas um nó por cluster tem uma flag definida para executar crons. Embora isso possa parecer limitado, podemos comprar servidores com terabytes de RAM, então podemos fazer essa compensação para reduzir risco e complexidade.
+Esta é uma solução específica de domínio. Não funcionaria para todos os produtos. Você poderia dizer que é design orientado a domínio :). Funciona para nós porque desde o início fomos muito cuidadosos ao apenas `$set` os campos que mudamos nos documentos - nunca usamos o `replaceOne` do Mongo, por exemplo. O mesmo vale para contadores. Você **nunca** faz `SET VOTES = 5`. Em vez disso, você escreveria `INCREMENT VOTES BY 5`, pois isso permite consistência eventual. Travamentos distribuídos são manejados por **don't**. Apenas um nó por cluster tem uma bandeira marcada para executar crons. Embora isso possa parecer limitado, podemos comprar servidores com terabytes de RAM, então podemos aceitar essa compensação para reduzir riscos e complexidade.
 
-### Lendo Suas Próprias Gravações
+### Lendo Seus Próprios Registros
 
-Para desenvolvedores que usam a API, você deve ser capaz de ler suas próprias gravações assim como antes (faça uma chamada API para criar um comentário, depois liste os comentários e veja a nova entrada nessa lista). **A ressalva** é que você não pode fazer isso entre regiões. Se seu backend roda em apenas uma região, como us-west, então você deve ser capaz de ler suas próprias gravações, exceto no caso de que entre sua gravação e sua leitura, aquele nó fique fora do ar **e** seu cache DNS se atualize para apontar para o próximo nó mais próximo. Desde que isso não aconteça, ler suas próprias gravações é confiável.
+Para desenvolvedores usando a API, você deve ser capaz de ler suas próprias gravações exatamente como antes (faça uma chamada de API para criar um comentário, depois liste comentários e veja a nova entrada nessa lista). **A ressalva** é que você não pode fazer isso entre regiões. Se seu backend opera em apenas uma região, como us-west, então você deve ser capaz de ler suas próprias gravações, exceto no caso de que entre sua gravação e sua leitura, aquele nó fique fora do ar **e** o cache DNS atualize para apontar para o próximo nó mais próximo. Desde que isso não aconteça, ler suas próprias gravações é confiável.
+
+[Você também pode fixar qual ponto de presença você acessa. Mais informações aqui.](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes)
 
 ### Testando & A Migração
 
-Cerca de metade do código no sistema é o suporte a testes, framework e testes. Ainda assim, o lançamento foi um pouco acidentado, levando mais tempo de inatividade (1h para a UE e 20min para nós-global) do que o desejado, mas estamos felizes por termos passado por esse marco e agradecemos pela sua paciência!
+Cerca de metade do código no sistema é o suporte de testes, framework e testes. Ainda assim, o lançamento foi um pouco turbulento, levando mais tempo de inatividade (1h para a UE e 20min para o us-global) do que desejado, mas estamos felizes por termos passado por esse marco e agradecemos sua paciência!
 
-### Em Conclusão & O Que Isso Significa Para Você
+### Em Conclusão & O Que Isso Significa para Você
 
-O FastComments deve agora ser mais rápido e mais durável do que nunca, e agora podemos voltar a trabalhar em novos recursos :)
+O FastComments deve agora ser mais rápido e mais durável do que nunca, e agora podemos voltar a trabalhar em recursos :)
 
 Saudações!
 
 {{/isPost}}
-
----
