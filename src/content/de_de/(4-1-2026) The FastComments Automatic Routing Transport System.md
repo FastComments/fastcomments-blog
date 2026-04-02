@@ -1,54 +1,53 @@
 ---
----
 [category:Announcements]
 [category:Serious Posts]
 ###### [postdate]
 # [postlink]Das FastComments Automatische Routing-Transport-System[/postlink]
 
 {{#unless isPost}}
-Einführung in das FastComments Automatische Routing-Transport-System!
+Einführung des FastComments Automatischen Routing-Transport-Systems!
 {{/unless}}
 
 {{#isPost}}
 
 ## Einführung
 
-Das FastComments Automatische Routing-Transport-System (FARTS) ist unsere Transport- und Servicelagere. FARTs helfen bei Stau, indem sie den Verkehr basierend auf dem Standort des Benutzers und möglicherweise in Zukunft auf der Last leiten. Es besteht aus mehreren verschiedenen Systemen, einer geo-bewussten DNS-Schicht, einem DB-Proxy, DB-Replikation, SSL-Zertifikatsverwaltung, Reverse Proxy und CDN, das einen Inaktivspeicher (LRU) verwendet, um Assets am Rand zu cachen. Das System unterstützt sowohl stille als auch laute Failover-Modi. Still ist in der Produktion bevorzugt.
+Das FastComments Automatische Routing-Transport-System (FARTS) ist unsere Transport- und Dienstleistungsschicht. FARTS hilft bei der Stauvermeidung, indem der Verkehr basierend auf dem Standort des Nutzers und potenziell zukünftiger Lasten geroutet wird. Es besteht aus mehreren verschiedenen Systemen, einer geo-bewussten DNS-Schicht, einem DB-Proxy, DB-Replikation, SSL-Zertifikatverwaltung, Reverse Proxy und CDN, das einen auf der Festplatte befindlichen LRU-Cache verwendet, um Ressourcen am Edge zu cachen.
 
 ## Aktiv-Aktiv
 
-Die neueste Version von FART enthält eine integrierte Proxy- und Replikationsschicht für unsere Datenbank. Dies ermöglicht FastComments, aktiv-aktiv zu sein mit globaler Schreibverfügbarkeit, was unsere FARTS letztendlich konsistent machen lässt. [Mehr Details hier](https://blog.fastcomments.com/(03-29-2026)-fastcomments-is-ready-for-space.html).
+Die neueste Version von FART enthält eine integrierte Proxy- und Replikationsschicht für unsere Datenbank. Dies ermöglicht es FastComments, Aktiv-Aktiv mit globaler Schreibverfügbarkeit zu sein, was sicherstellt, dass unsere FARTS letztendlich konsistent sind. [Mehr Details hier](https://blog.fastcomments.com/(03-29-2026)-fastcomments-is-ready-for-space.html).
 
-Ein Ansatz, den wir tatsächlich frühzeitig verfolgten, war zu prüfen, ob wir einen Fork von MongoDB erstellen könnten. Einer unserer Ingenieure (Sloperators) konnte dies tatsächlich mit Opus 4.6 erreichen, jedoch entschieden wir, dass das Risiko, dies zu tun, höher war als der Aufbau unseres eigenen isolierten Systems.
+Ein Ansatz, den wir tatsächlich frühzeitig verfolgten, war zu prüfen, ob wir einen aktiv-aktuellen Fork von MongoDB erstellen könnten. Einer unserer Ingenieure (Sloperators) konnte dies tatsächlich mit Opus 4.6 erreichen, jedoch entschieden wir, dass das Risiko, dies zu tun, höher war als der Aufbau unseres eigenen isolierten Systems.
 
-Das Letzte, was Sie mit etwas wie FART wollen würden, ist zu wissen, dass es angekommen ist, aber Sie die Quelle nicht zurückverfolgen können. Wir haben Überwachung hinzugefügt und Diagnosen zur Überwachung der aktiv-aktiven Replikation auf granularer Ebene.
+## Rust im Maßstab
 
-## Rust in der Skalierung
+Ein Teil der Motivation für die Schaffung von FART war es, einige bestehende Dienste, die in Java geschrieben wurden, zu ersetzen. Nachdem wir eine Weile darüber nachgedacht hatten, beschlossen wir, diese in einen Rust-Dienst zu konsolidieren, um den Laufzeitaufwand zu reduzieren. Dies war ein akzeptabler Kompromiss, da wir FART nicht oft bereitstellen. FART wird mit LTO kompiliert, sodass wir es wirklich loslassen können.
 
-Ein Teil der Motivation zur Erstellung von FART war es, einige bestehende Dienste, die in Java geschrieben wurden, zu ersetzen. Nachdem wir eine Weile darüber nachgedacht hatten, entschieden wir uns, diese in einen Rust-Service zu konsolidieren, um den Laufzeitaufwand zu senken. Dies war ein akzeptabler Kompromiss, da wir FART nicht oft bereitstellen. FART wird mit LTO kompiliert, sodass wir es wirklich ausreizten.
+Wir hatten viel Zeit damit verbracht, das alte Java-System mit verschiedenen GCs usw. zu optimieren, und entschieden schließlich, dass asynchrones Rust + Mimalloc auf derselben Hardware erheblich besser abschnitt und dabei viel geringere Speicheranforderungen hatte, weshalb der Wechsel eine gute Entscheidung war.
 
-Wir hatten viel Zeit damit verbracht, das alte Java-System mit unterschiedlichen GC usw. zu optimieren, und letztendlich entschieden, dass asynchrones Rust + Mimalloc erheblich besser auf derselben Hardware mit viel niedrigeren Speicheranforderungen funktionierte, sodass der Wechsel ein Kinderspiel war.
+Rust stellte sich als wirklich großartig für netzwerkbezogene Codes heraus, die freigegebene Heaps und Locks verwenden. Es ist jedoch nicht unempfindlich gegenüber Laufzeitproblemen. Es ist vielleicht erwähnenswert, dass von LLMs in Rust geschriebener Code ziemlich anfällig für Deadlocks ist, und ein Weg darum herum besteht darin, Systeme als leicht verständliche zustandsmaschinen zu entwerfen, anstatt nur als Stapel von async/await.
 
 ## Der FART Master
 
-Jede Bereitstellung enthält ihren eigenen FART Master. Der Master ist verantwortlich für die Orchestrierung von Cronjobs, Webhooks usw.
+Jede Bereitstellung enthält ihren eigenen FART Master. Der Master ist verantwortlich für die Orchestrierung von Cron-Jobs, Webhooks usw.
 
-## Kundenwirkung
+## Kundenauswirkungen
 
-Das FART-System ist seit etwa einem Jahr in Betrieb. Erst kürzlich haben wir die Migration zur aktiv-aktiven Bereitstellung durchgeführt. Das neue System gibt uns einen erhöhten Einblick in die Latenz im gesamten System sowie eine geringere Wartungsbelastung, sodass wir jetzt mehr Zeit für Funktionen aufwenden können.
+Das FART-System ist nun seit etwa einem Jahr in Produktion. Erst kürzlich haben wir die Migration zur Aktiv-Aktiv-Bereitstellung durchgeführt. Es gibt einige Auswirkungen auf das Lesen Ihrer eigenen Schreibvorgänge über Regionen hinweg, die im oben verlinkten Blogbeitrag und [in den Dokumenten](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes) behandelt werden.
 
-FART arbeitet leise im Hintergrund, obwohl seine Präsenz immer spürbar ist. Wir hoffen, dass Sie unsere Systeme für Ihre Anwendungsfälle schneller finden (hauptsächlich Benutzeraktionen, die zu Änderungen in den Daten führen, werden in einigen Regionen schneller sein).
+FART arbeitet leise im Hintergrund, obwohl seine Präsenz immer spürbar ist. Wir hoffen, dass Sie feststellen, dass unsere Systeme für Ihre Anwendungsfälle schneller sind (in den meisten Fällen werden Benutzeraktionen, die zu Datenänderungen führen, in einigen Regionen schneller erfolgen).
 
 ## Bereitstellungen
 
-Die Bereitstellung verwendet dasselbe globale Orchestrierungssystem, das wir für die Bereitstellung der Dienste selbst verwenden. Die FARTS-Dokumentation empfiehlt, dass sloperators niemals einer Bereitstellung vertrauen, sondern immer die Nutzlast vor der Freigabe überprüfen.
+Die Bereitstellung verwendet dasselbe globale Orchestrierungssystem, das wir zum Bereitstellen der Dienste selbst verwenden. Die FART-Dokumentation empfiehlt, dass Sloperators niemals einer Bereitstellung vertrauen, sondern immer das Payload verifizieren, bevor sie freigegeben wird.
 
-Nach der Bereitstellung folgen die FART-Warnungen einer Eskalationsrichtlinie: zuerst der Raum, dann die Etage, dann das Gebäude.
+Nach der Bereitstellung folgen FART-Alerts einer Eskalationspolitik: zuerst der Raum, dann die Etage, dann das Gebäude.
 
 ## Fazit
 
-Wie bei allen größeren Versionen freuen wir uns, dass wir die Zeit nutzen konnten, um zu optimieren, zu testen und diese Änderung ordnungsgemäß freizugeben. Wir sind gespannt auf das, was in der Pipeline kommt. FastComments sollte langfristig besser skalieren und eine bessere Betriebszeit mit dieser Arbeit haben. Wie das FART-Runbook sagt: "Wenn Sie etwas riechen, sagen Sie etwas". Lassen Sie es uns unten wissen, wenn Sie Probleme entdecken.
+Man sagt, das Internet sei eine Reihe von Rohren, aber es ist tatsächlich eine Reihe von Winden. 
+
+Wie bei allen größeren Freigaben sind wir froh, dass wir uns die Zeit nehmen konnten, diese Änderung zu optimieren, zu testen und ordnungsgemäß zu veröffentlichen. Wir sind auf das, was noch kommt, gespannt. FastComments sollte mit dieser Arbeit besser skalieren und langfristig eine bessere Verfügbarkeit haben. Wie das FART-Runbook sagt: "Wenn Sie etwas riechen, sagen Sie etwas". Lassen Sie es uns unten wissen, wenn Sie irgendwelche Probleme entdecken.
 
 {{/isPost}}
-
----
