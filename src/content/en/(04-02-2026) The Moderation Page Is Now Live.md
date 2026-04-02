@@ -21,7 +21,7 @@ The "new comments for your filters" message should be near instantaneous in most
 ### Filter Evaluation
 
 The transport layer evaluates all moderation filters server-side. This includes status filters (needs review, needs approval, spam, flagged,
-banned), string filters (user ID, page URL, domain), and even text search. Quoted text like <div class="code">"exact phrase"</div> does an
+banned), string filters (user ID, page URL, domain), and even text search. Quoted text like `"exact phrase"` does an
 exact case-insensitive substring match, while unquoted terms do fuzzy case-insensitive matching.
 
 This means if you're filtering for spam comments, you won't get notified about approved comments. If you're searching for comments
