@@ -51,7 +51,7 @@ Post deployment FART alerts follow an escalation policy: first the room, then th
 
 ## In Conclusion
 
-They say the internet is a series of tubes, but it's actually a series of farts.
+They say the internet is a series of tubes, but it's actually a series of toots.
 
 Like all major releases, we're glad that we could take the time to optimize, test, and properly release this change. We're excited about what's coming down the pipeline.
 FastComments should scale better and have better uptime in the long run with this work. As the FART runbook says: "If you smell something, say something". Let us know below if you discover any issues.
