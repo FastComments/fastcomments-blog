@@ -12,40 +12,51 @@ FastComments moderasyon sayfası, artık mevcut filtrelerinize uyan yeni yorumla
 
 ### Yenilikler
 
-Moderasyon sayfası, yorumları yönetmek için her zaman güçlü bir araç olmuştur. Durumuna göre filtreleyebilir, metne göre arama yapabilir, sayfa
-veya kullanıcı bazında filtreleyebilir ve toplu işlemler gerçekleştirebilirsiniz. Ancak yeni yorumları görmek için sayfayı yenilemeniz gerekiyordu.
+Moderasyon sayfası, yorumları yönetmek için her zaman güçlü bir araç olmuştur. Duruma göre filtreleyebilir, metne göre arama yapabilir, sayfa
+veya kullanıcıya göre filtreleme yapabilir ve toplu işlemler gerçekleştirebilirsiniz. Ancak yeni yorumları görmek için sayfayı yenilemeniz
+gerekirdi.
 
-Artık böyle değil! Moderasyon sayfası, mevcut filtrelerinize uyan yeni yorumlar geldiğinde bunu gösteriyor. Yorum listesine yeni yorumların beklediğini belirten bir banner ekranda görünür ve üzerine tıkladığınızda, tam sayfa yenilemesine ihtiyaç duymadan yorumları yükler.
+Artık değil! Moderasyon sayfası, mevcut filtrelerinize uyan yeni yorumlar geldiğinde bunu gösteriyor. Yorum listesi üstünde,
+bekleyen yeni yorum sayısını bildiren bir banner beliriyor ve üzerine tıkladığınızda, sayfayı tamamen yenilemeden bunları satır içi
+olarak yüklüyor.
 
-"Filtreleriniz için yeni yorumlar" mesajı çoğu durumda anlık olarak görünmelidir.
+"Filtreleriniz için yeni yorumlar" mesajı, çoğu durumda neredeyse anlık olarak görünmelidir.
 
 ### Filtre Değerlendirmesi
 
-Taşıma katmanı, tüm moderasyon filtrelerini sunucu tarafında değerlendirir. Bu, durum filtrelerini (gözden geçirilmesi gerek, onaylanması gerek, spam, işaretlenmiş,
-yasaklı), metin filtrelerini (kullanıcı kimliği, sayfa URL'si, alan adı) ve hatta metin aramasını içerir. Alıntılanmış metinler <div class="code">"tam ifade"</div> gibi, tam büyük/küçük harf duyarsız alt dize eşleşmesi yaparken, alıntılanmamış terimler bulanık büyük/küçük harf duyarsız eşleşme yapar.
+Taşıma katmanı tüm moderasyon filtrelerini sunucu tarafında değerlendirir. Bu, durum filtrelerini (inceleme gerektirir, onay gerektirir, spam, işaretli,
+yasaklı), dize filtrelerini (kullanıcı ID'si, sayfa URL'si, alan adı) ve hatta metin aramasını içerir. `"tam ifade"` gibi alıntılanmış metinler
+tam eşleşme ve büyük/küçük harf duyarsız alt dize eşleşmesi yaparken, alıntılanmamış terimler belirsiz büyük/küçük harf duyarsız eşleşme yapar.
 
-Bu, spam yorumlar için filtreleme yapıyorsanız, onaylanmış yorumlar hakkında bildirim almayacağınız anlamına gelir. Belirli bir ifadeyi içeren yorumlar arıyorsanız, yalnızca eşleşen yorumlar banner'ı tetikler.
+Bu, spam yorumları için filtreleme yapıyorsanız, onaylanmış yorumlar hakkında bildirim almayacağınız anlamına gelir. Belirli bir ifadeyi
+içeren yorumları arıyorsanız, yalnızca eşleşen yorumlar bannerı tetikler.
 
 ### Moderasyon Grupları
 
-Hesabınız, hangi moderatörlerin hangi yorumları görebileceğini kısıtlamak için moderasyon grupları kullanıyorsa, bu kısıtlamalar canlı bildirimler için tamamen uygulanır. Taşıma katmanı, moderatörün atandığı gruplara dayanan grup kısıtlamalarını içeren filtreyi oluşturmak için uygulama sunucusuna geri çağırır. Bu filtre, WebSocket bağlantısının süresi boyunca önbelleğe alınır ve moderatör filtrelerini değiştirdiğinde güncellenir.
+Hesabınız, moderatörlerin hangi yorumları görebileceğini kısıtlamak için moderasyon gruplarını kullanıyorsa, bu kısıtlamalar canlı
+bildirimler için tam olarak uygulanır. Taşıma katmanı, moderatörün atandığı gruplara dayanan grup kısıtlamalarını içeren filtreyi oluşturmak
+için uygulama sunucusuna geri çağrılar yapar. Bu filtre, WebSocket bağlantısı süresince önbelleğe alınır ve moderatör filtreleri değiştiğinde
+güncellenir.
 
 ### Kaçırılan Olaylar
 
-Eğer bir moderatörün bağlantısı geçici olarak kesilirse (ağ sorunları, dizüstü bilgisayarın uykuda olması vb.), sistem otomatik olarak yeniden bağlandığında eski duruma geri döner, böylece hiçbir işinizi kaçırmazsınız.
+Bir moderatörün bağlantısı geçici olarak kesilirse (ağ sorunları, dizüstü bilgisayar uykuya geçmesi vb.), sistem otomatik olarak yeniden
+bağlandığında eski durumu yakalar, böylece işinizi kaçırmazsınız.
 
 ### Performans
 
-Bu özelliği moderasyon sayfası yükleme süresi üzerinde minimum etki olacak şekilde tasarladık.
+Bu özelliği, moderasyon sayfası yükleme süresi üzerinde minimum etkiye sahip olacak şekilde tasarladık.
 
-### Çoklu Bölge
+### Çok Bölge
 
-Bu özellik, dünya genelinde dağıtılmış mimarimizle sorunsuz çalışır, böylece dünya genelinde dağıtılmış moderasyon ekipleri aynı canlı görünümü elde eder.
+Bu özellik, küresel dağılmış mimarimizle sorunsuz bir şekilde çalışır, böylece küresel dağıtılmış moderasyon ekipleri de aynı canlı görünümü
+alır.
 
-### Sonuç Olarak
+### Sonuç
 
-Umarız bu özellik, moderatörlerin zamanını tasarruf ettirir ve moderasyon deneyimini daha hızlı hale getirir. Her zamanki gibi, geri bildirimleri ve destekleri için müşterilerimize teşekkür ederiz.
+Bu özelliğin moderatörlere zaman kazandırmasını ve moderasyon deneyimini daha yanıt verici hale getirmesini umuyoruz. Her zamanki gibi,
+geribildiriminiz ve desteğiniz için müşterilerimize teşekkür ederiz.
 
-Şerefe!
+Sağlıkla!
 
 {{/isPost}}

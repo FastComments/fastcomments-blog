@@ -2,55 +2,55 @@
 [category:Features]
 [category:Moderation]
 ###### [postdate]
-# [postlink]Stran za moderiranje je zdaj v živo[/postlink]
+# [postlink]Stran za moderacijo je zdaj aktivna[/postlink]
 
 {{#unless isPost}}
-Stran za moderiranje FastComments zdaj prikazuje obvestilo v realnem času, ko prispejo novi komentarji, ki ustrezajo vašim trenutnim filtriranjem.
+Stran za moderacijo FastComments zdaj prikazuje obvestilo v živo, ko prispejo novi komentarji, ki ustrezajo vašim trenutnim filtrom.
 {{/unless}}
 
 {{#isPost}}
 
 ### Kaj je novega
 
-Stran za moderiranje je vedno bila močno orodje za upravljanje komentarjev. Lahko ste filtrirali po statusu, iskanju po besedilu, filtrirali po strani
-ali uporabniku ter izvajali množične akcije. Vendar pa ste za ogled novih komentarjev morali osvežiti stran.
+Stran za moderacijo je bila vedno močno orodje za upravljanje komentarjev. Lahko ste filtrirali glede na status, iskali po besedilu, filtrirali po strani
+ali uporabniku ter izvajali množične akcije. A da bi videli nove komentarje, ste morali osvežiti stran.
 
-To več ne drži! Stran za moderiranje zdaj prikazuje, ko prispejo novi komentarji, ki ustrezajo vašim trenutnim filtriranjem. Na vrhu seznama komentarjev se prikaže pasica, ki vam sporoča, koliko novih komentarjev čaka, in ko kliknete nanjo, se ti naložijo v vrstico brez popolne osvežitve strani.
+Ne več! Stran za moderacijo zdaj prikazuje, ko novi komentarji prispejo in ustrezajo vašim trenutnim filtrom. Na vrhu seznama komentarjev se prikaže pasica, ki vam pove, koliko novih komentarjev čaka, in klik nanjo jih naloži v vrstici brez popolne osvežitve strani.
 
 Sporočilo "novi komentarji za vaše filtre" bi moralo biti skoraj takojšnje v večini okoliščin.
 
-### Ocena filtriranja
+### Ocena filtrov
 
-Prevozna plast ocenjuje vse filtre moderiranja na strani strežnika. To vključuje filtre statusa (potrebuje pregled, potrebuje odobritev, spam, označeno,
-prepovedano), filtre nizov (ID uporabnika, URL strani, domena) in celo iskanje po besedilu. Citirano besedilo, kot je <div class="code">"natančna fraza"</div>, izvaja
-natančno iskanje podniza brez upoštevanja velikosti črk, medtem ko necitirana izraza izvajata nejasno iskanje brez upoštevanja velikosti črk.
+Transportna plast ocenjuje vse filtre moderacije na strežniški strani. To vključuje filtre po statusu (potrebuje pregled, potrebuje odobritev, spam, označeno,
+prepovedano), filtre po nizu (ID uporabnika, URL strani, domena) in celo iskanje po besedilu. Citat besedila, kot je `"natančna fraza"`, izvaja
+natančno iskanje podniza brez upoštevanja velikih in malih črk, medtem ko ne-citirana izraza izvajata neurejeno iskanje brez upoštevanja velikih in malih črk.
 
-To pomeni, da če filtrirate sporočila o spamu, ne boste obveščeni o odobrenih komentarjih. Če iščete komentarje,
-ki vsebujejo določeno frazo, samo ujemajoči se komentarji sprožijo pasico.
+To pomeni, da če filtrirate za spam komentarje, ne boste obveščeni o odobrenih komentarjih. Če iščete komentarje,
+ki vsebujejo določeno frazo, samo ustrezni komentarji sprožijo pasico.
 
-### Skupine moderiranja
+### Skupine moderacije
 
-Če vaš račun uporablja skupine moderiranja za omejevanje, kateri moderatorji lahko vidijo katere komentarje, so te omejitve popolnoma izvršene
-za obvestila v živo. Prevozna plast se vrne na aplikacijski strežnik, da ustvari filtriranje, ki vključuje omejitve skupin
-na podlagi dodeljenih skupin moderatorja. Ta filter se predpomni za čas trajanja povezave WebSocket in se posodobi, kadar koli
+Če vaš račun uporablja skupine moderacije za omejevanje, kateri moderatorji lahko vidijo katere komentarje, so te omejitve v celoti uveljavljene
+za obvestila v živo. Transportna plast se vrne k aplikacijski strežnik, da sestavi filter, ki vključuje omejitve skupin
+na podlagi dodeljenih skupin moderatorja. Ta filter se shrani v predpomnilnik za trajanje povezave WebSocket in se posodobi, kadar
 moderator spremeni filtre.
 
-### Zamujeni dogodki
+### Zgrešeni dogodki
 
-Če se povezava moderatorja začasno prekine (težave z omrežjem, spanje prenosnika itd.), se sistem avtomatično posodobi ob ponovni povezavi, tako da
+Če se povezava moderaterja začasno prekine (težave z omrežjem, spanje prenosnega računalnika itd.), se sistem samodejno posodobi ob ponovni povezavi, tako da
 ne zamudite nobenega dela.
 
 ### Učinkovitost
 
-To funkcionalnost smo zasnovali tako, da ima minimalen vpliv na čas nalaganja strani za moderiranje.
+To funkcijo smo zasnovali tako, da ima minimalen vpliv na čas nalaganja strani za moderacijo.
 
-### Več-regionalno
+### Več regij
 
-Ta funkcionalnost brezhibno deluje z našo globalno distribuirano arhitekturo, tako da globalno distribuirane moderacijske ekipe dobijo enak videnje v živo.
+Ta funkcija brez težav deluje z našo globalno distribuirano arhitekturo, tako da globalno distribuirane moderacijske ekipe dobijo enak videnje v živo.
 
-### Na koncu
+### V zaključku
 
-Upamo, da ta funkcionalnost moderatorjem prihrani čas in naredi izkušnjo moderiranja bolj odzivno. Kot vedno se zahvaljujemo našim strankam za
+Upamo, da ta funkcija moderatorjem prihrani čas in omogoča bolj odzivno izkušnjo moderiranja. Kot vedno se zahvaljujemo našim strankam za
 njihovo povratno informacijo in podporo.
 
 Na zdravje!
