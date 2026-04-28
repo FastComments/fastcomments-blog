@@ -1,59 +1,59 @@
----
 [category:Announcements]
 [category:Serious Posts]
 ###### [postdate]
-# [postlink]Avtomatski transportni sistem za usmerjanje FastComments[/postlink]
+# [postlink]HitroKomentarji Samodejni Usmerjevalni Transportni Sistem[/postlink]
 
 {{#unless isPost}}
-Predstavljamo Avtomatski transportni sistem za usmerjanje FastComments!
+Predstavljamo HitroKomentarji Samodejni Usmerjevalni Transportni Sistem!
 {{/unless}}
 
 {{#isPost}}
 
 ## Uvod
 
-Avtomatski transportni sistem za usmerjanje FastComments (FARTS) je naša transportna in servisna plast. FARTS pomaga pri zastoju, usmerja
-promet na osnovi uporabnikove lokacije in potencialno obremenitve v prihodnosti. Sestavljen je iz več različnih sistemov, geo-zavedne DNS plasti, DB proxyja, replikacije DB,
-upravljanja SSL certifikatov, obratnega proxyja in CDN, ki uporablja LRU predpomnilnik na diskih za predpomnjenje sredstev na robu.
+HitroKomentarji Samodejni Usmerjevalni Transportni Sistem (FARTS) je naša transportna in servisna plast. FARTS pomagajo pri zastoju, usmerjajo
+promet na podlagi lokacije uporabnika in potencialno obremenitve v prihodnosti. Sestavljen je iz več različnih sistemov, geo-ozaveščene DNS plasti, DB proxyja, DB
+replikacije, upravljanja SSL certifikatov, obratnega proxyja in CDN, ki uporablja na disku shranjen LRU predpomnilnik za shranjevanje sredstev na robu.
 
 ## Aktivno-Aktivno
 
-Najnovejša različica FART vsebuje vgrajen proxy in replikačno plast za našo bazo podatkov. To omogoča FastComments, da je Aktivno-Aktivno
-z globalno pisno dostopnostjo, kar zagotavlja, da so naši FARTS na koncu dosledni. [Več podrobnosti tukaj](https://blog.fastcomments.com/(03-29-2026)-fastcomments-is-ready-for-space.html).
+Zadnja različica FART vsebuje vgrajen proxy in replikacijsko plast za našo bazo podatkov. To omogoča HitroKomentarjem, da delujejo v načinu Aktivno-Aktivno
+z globalno dostopnostjo pisanja, kar zagotavlja, da so naši FARTS na koncu dosledni. [Več podrobnosti tukaj](https://blog.fastcomments.com/(03-29-2026)-fastcomments-is-ready-for-space.html).
 
-Pristop, ki smo ga dejansko sprejeli na začetku, je bil, da ugotovimo, ali lahko ustvarimo aktivno-aktiven razvod MongoDB. Eden naših inženirjev (Sloperators) je to dejansko uspel s Opus 4.6, vendar smo se odločili, da je tveganje za to višje od izdelave našega lastnega izoliranega sistema.
+Ena od pristopov, ki smo jih dejansko sprejeli na začetku, je bila, da preverimo, ali lahko ustvarimo aktivno-aktivno različico MongoDB. Eden naših inženirjev (Sloperators) je to dejansko uspel doseči s Opus 4.6, vendar smo se odločili, da je tveganje ob tem višje od gradnje lastnega izoliranega sistema.
 
-## Rust na večjih obsegu
+## Rust na Veliko
 
-Del motivacije za ustvarjanje FART je bil zamenjati nekatere obstoječe storitve napisane v Javi. Po tem, ko smo o tem razmišljali nekaj časa, smo se odločili, da to združimo v eno storitev v Rustu, da bi zmanjšali obremenitev med izvajanjem. To je bila sprejemljiva zamenjava, saj FART ne uvajamo pogosto. FART je preveden z LTO, tako da ga lahko resnično "spustimo".
+Del motivacije za ustvarjanje FART je bilo nadomestiti nekatere obstoječe storitve, napisane v Javi. Po tem, ko so se pojavili, smo se odločili, da jih združimo v eno Rust storitev, da zmanjšamo obremenitev pri zagonu. To je bila sprejemljiva kompenzacija, saj FART ne nameščamo pogosto. FART je preveden z LTO, tako da ga lahko resnično pustimo, da se "raztrga".
 
-Porabili smo veliko časa za poskušanje optimizacije starega sistema v Javi z različnimi GC-ji itd., in na koncu smo se odločili, da async Rust + Mimalloc deluje precej bolje na istem strojni opremi z bistveno nižjimi zahtevami po pomnilniku, tako da je bila menjava očitna.
+Porabili smo veliko časa za prilagajanje starega Java sistema z različnimi GC-ji itd., in na koncu smo se odločili, da async Rust + Mimalloc deluje bistveno
+bolje na isti strojni opremi z veliko manjšimi pomnilniškimi zahtevami, tako da je prehod bil samoumeven.
 
-Rust se je izkazal za res odličnega za kodo, povezano z omrežjem, ki uporablja deljene kupčke in zaklepanje. Ni pa neobčutljiv na težave med izvajanjem.
-Morda je vredno omeniti, da je koda, napisano s strani LLM-ov v Rustu, precej nagnjena k mrtvim zaklepanjem, in način, da to obidemo, je zasnovati sisteme kot enostavno razumljive strojne modele, namesto da bi bili le kupi async/await.
+Izkazalo se je, da je Rust res odličen za kodo, povezano z omrežjem, ki uporablja deljene kupčke in zaklepe. Vendar pa ni neprepustna za težave pri izvajanju.
+Morda je vredno omeniti, da je koda, napisana z LLM-ji v Rustu, precej nagnjena k mrtvim zaklepom, pot okoli tega pa je oblikovanje sistemov kot enostavno razumljivih stanja strojev, namesto preprosto kupov async/await.
 
-## FART Master
+## FART Mojster
 
-Vsaka namestitev vsebuje svoj FART Master. Master je odgovoren za usklajevanje cronov, webhooksov in podobno.
+Vsaka namestitev vsebuje svoj FART Mojster. Mojster je odgovoren za usklajevanje cronov, webhookov in tako naprej.
 
-## Vpliv na stranke
+## Vpliv na Stranke
 
-Sistem FART deluje v produkciji že približno eno leto. Šele nedavno smo opravili migracijo na aktivno-aktivno namestitev.
-Obstaja določeni vpliv pri branju vaših lastnih zapisov čez regije, kar je obravnavano v zgoraj povezanem blogu in [v dokumentaciji](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes).
+Sistem FART je v produkciji približno eno leto. Šele nedavno smo izvedli migracijo na Aktivno-Aktivno namestitev.
+Obstaja nek vpliv pri branju svojih lastnih zapisov čez regije, kar je pokrito v zgoraj povezani blog objavi in [v dokumentaciji](https://docs.fastcomments.com/guide-api.html#reading-your-own-writes).
 
-FART deluje tiho v ozadju, čeprav je njegova prisotnost vedno čutiti. Upamo, da boste našli naše sisteme hitrejše za vaše primere uporabe (večinoma uporabniške akcije, ki vodijo do sprememb v podatkih, bodo hitrejše v nekaterih regijah).
+FART deluje tiho v ozadju, čeprav je njegova prisotnost vedno občutena. Upamo, da boste našli naše sisteme hitrejše za vaše primere uporabe (večinoma uporabniške akcije, ki vodijo do sprememb v podatkih, bodo hitrejše v nekaterih regijah).
 
 ## Namestitve
 
-Namestitev uporablja isti globalni usklajevalni sistem, ki ga uporabljamo za namestitev samih storitev. Dokumentacija FART priporoča, da Sloperators nikoli ne zaupa namestitvi, vedno preverite payload pred izdajo.
+Namestitev uporablja isti globalni usklajevalni sistem, ki ga uporabljamo za nameščanje samih storitev. Dokumentacija FART priporoča Sloperators, da nikoli ne zaupajo namestitvi, vedno preverijo tovor pred sprostitvijo.
 
-Po namestitvi FART opozorila sledijo politiki eskalacije: najprej soba, nato nadstropje, nato zgradba.
+Po namestitvi FART opozorila sledijo politiki eskalacije: najprej soba, nato nadstropje, nato stavba.
 
-## Na koncu
+## Na Koncu
 
-Pravijo, da je internet serija cevi, vendar je dejansko serija vetrov.
+Pravijo, da je internet serija cevi, ampak je pravzaprav serija zvokov.
 
-Kot pri vseh velikih izdajah, smo veseli, da smo lahko vzeli čas za optimizacijo, testiranje in pravilno izdajo te spremembe. Navdušeni smo nad tem, kar prihaja.
-FastComments bi morale bolje rasti in imeti boljšo dostopnost dolgo časa s tem delom. Kot pravi FART runbook: "Če zavohate nekaj, povejte nekaj". Sporočite nam spodaj, če odkrijete kakšne težave.
+Kot pri vseh večjih izdajah smo veseli, da smo lahko našli čas za optimizacijo, testiranje in pravilno izdajo te spremembe. Navdušeni smo nad prihodnjimi novostmi.
+HitroKomentarji bi morali bolje skalirati in imeti boljšo razpoložljivost na dolgi rok s tem delom. Kot pravi FART priročnik: "Če zaznaš nekaj, povej nekaj". Sporočite nam spodaj, če odkrijete kakršne koli težave.
 
 {{/isPost}}

@@ -2,56 +2,57 @@
 [category:Features]
 [category:Moderation]
 ###### [postdate]
-# [postlink]Stranica za Moderaciju Sada Je Aktivna[/postlink]
+# [postlink]Stranica za moderaciju je sada aktivna[/postlink]
 
 {{#unless isPost}}
-Stranica za moderaciju FastComments sada prikazuje obaveštenje u realnom vremenu kada novi komentari stignu koji odgovaraju vašim trenutnim filtrima.
+Stranica za moderaciju FastComments sada prikazuje live obaveštenje kada nove komentare koji odgovaraju vašim trenutnim filtrima stignu.
 {{/unless}}
 
 {{#isPost}}
 
-### Šta je Novo
+### Šta je novo
 
 Stranica za moderaciju je oduvek bila moćan alat za upravljanje komentarima. Mogli ste filtrirati po statusu, pretraživati po tekstu, filtrirati po stranici
-ili korisniku, i izvoditi grupne akcije. Ali da biste videli nove komentare, morali ste da osvežite stranicu.
+ili korisniku i izvršavati masovne radnje. No, da biste videli nove komentare, morali ste osvežiti stranicu.
 
-Više ne! Stranica za moderaciju sada prikazuje kada novi komentari stignu koji odgovaraju vašim trenutnim filtrima. Baner se pojavljuje na vrhu liste komentara i obaveštava vas koliko novih komentara čeka, a klikom na njega učitava ih inline bez potpunog osvežavanja stranice.
+Ne više! Stranica za moderaciju sada prikazuje kada nove komentare koji odgovaraju vašim trenutnim filtrima stignu. Traka se pojavljuje na vrhu liste komentara i informiše vas koliko novih komentara čeka, a klikom na nju učitavaju se unutar stranice bez potpunog osvežavanja.
 
-Poruka "novi komentari za vaše filtre" bi trebala biti gotovo trenutna u većini slučajeva.
+Poruka "nove komentare za vaše filtriranje" treba biti skoro trenutna u većini slučajeva.
 
-### Evaluacija Filtra
+### Evaluacija filtra
 
-Transportni sloj evaluira sve filtre za moderaciju na serverskoj strani. Ovo uključuje filtre statusa (treba pregled, treba odobrenje, spam, označeno,
-zabranjeno), string filtre (ID korisnika, URL stranice, domen), pa čak i pretragu teksta. Citirani tekst kao što je <div class="code">"tačna fraza"</div> radi
-tačno poklapanje bez obzira na velika i mala slova, dok ne-citirani termini rade zasmetanje bez obzira na velika i mala slova.
+Transportni sloj ocenjuje sve filtere za moderaciju na serverskoj strani. Ovo uključuje filtere po statusu (potrebno pregledati, potrebno odobrenje, spam, označeno,
+zabranjeno), string filtere (ID korisnika, URL stranice, domen) i čak pretragu teksta. Citirani tekst poput `"tačan izraz"` vrši
+tačno neosetljivo podudaranje podstringa, dok necitirani pojmovi vrše fuzzy neosetljivo podudaranje.
 
-To znači da ako filtrirate za spam komentare, nećete biti obavešteni o odobrenim komentarima. Ako tražite komentare
-koji sadrže određenu frazu, samo poklapanje komentara aktivira baner.
+To znači da, ako filtrirate spam komentare, nećete biti obavešteni o odobrenim komentarima. Ako tražite komentare
+koji sadrže određenu frazu, samo podudarajući komentari aktiviraju traku.
 
-### Grupe Moderacije
+### Grupe za moderaciju
 
-Ako vaš nalog koristi grupe moderacije da ograniči koje moderatore mogu videti koje komentare, ova ograničenja se u potpunosti primenjuju
-za obaveštenja u realnom vremenu. Transportni sloj poziva aplikacijski server da izgradi filter, koji uključuje ograničenja za grupe
-na osnovu dodeljenih grupa moderatora. Ovaj filter se kešira tokom trajanja WebSocket veze i ažurira svaki put kada
-moderator promeni filtre.
+Ako vaš nalog koristi grupe za moderaciju da ograniči koje moderatore mogu da vide koje komentare, ova ograničenja se potpuno sprovode
+za live obaveštenja. Transportni sloj poziva aplikacioni server da izgradi filter, koji uključuje grupna ograničenja
+na osnovu dodeljenih grupa moderatora. Ovaj filter se čuva u kešu tokom trajanja WebSocket veze i ažurira se svaki put
+kada moderator menja filtere.
 
-### Propušteni Dogadjaji
+### Propušteni događaji
 
-Ako veza moderatora privremeno ispadne (problemi sa mrežom, san laptopa, itd), sistem automatski nadoknađuje pri ponovnom povezivanju tako da
-ne propustite nijedan rad.
+Ako veza nekog moderatora privremeno padne (problemi sa mrežom, uspavljivanje laptopa, itd.), sistem automatski nadoknađuje propušteno prilikom ponovne veze
+tako da ne propuštate ni jedan rad.
 
 ### Performanse
 
-Dizajnirali smo ovu funkcionalnost da ima minimalan uticaj na vreme učitavanja stranice za moderaciju.
+Ovu funkciju smo dizajnirali da ima minimalan uticaj na vreme učitavanja stranice za moderaciju.
 
-### Više Regiona
+### Multi-Region
 
-Ova funkcionalnost besprekorno radi sa našom globalno distribuiranom arhitekturom, tako da globalno distribuirani timovi za moderaciju dobijaju isti prikaz uživo.
+Ova funkcija neometano radi sa našom globalno distribuiranom arhitekturom, tako da tima za moderaciju koji su globalno distribuirani dobijaju
+isti live prikaz.
 
 ### Zaključak
 
-Nadamo se da će ova funkcionalnost uštedeti vreme moderatorima i učiniti iskustvo moderacije responzivnijim. Kao i uvek, zahvaljujemo našim
-kupcima na njihovim povratnim informacijama i podršci.
+Nadamo se da ova funkcija štedi vreme moderatorima i čini iskustvo moderacije responzivnijim. Kao i uvek, zahvaljujemo našim kupcima na
+njihovim povratnim informacijama i podršci.
 
 Živeli!
 

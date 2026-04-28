@@ -2,57 +2,48 @@
 [category:Features]
 [category:Moderation]
 ###### [postdate]
-# [postlink]Strona Moderacji Jest Teraz Aktywna[/postlink]
+# [postlink]Strona Moderacji Jest Już Dostępna[/postlink]
 
 {{#unless isPost}}
-Strona moderacji FastComments teraz wyświetla powiadomienie na żywo, gdy pojawią się nowe komentarze, które pasują do twoich aktualnych filtrów.
+Strona moderacji FastComments teraz pokazuje powiadomienie na żywo, gdy przychodzą nowe komentarze, które pasują do Twoich aktualnych filtrów.
 {{/unless}}
 
 {{#isPost}}
 
-### Co nowego
+### Co Nowego
 
-Strona moderacji zawsze była potężnym narzędziem do zarządzania komentarzami. Można było filtrować według statusu, szukać według tekstu, filtrować według strony
-lub użytkownika oraz wykonywać masowe akcje. Ale, aby zobaczyć nowe komentarze, musiałeś odświeżyć stronę.
+Strona moderacji była zawsze potężnym narzędziem do zarządzania komentarzami. Można było filtrować według statusu, wyszukiwać według tekstu, filtrować według strony lub użytkownika oraz wykonywać operacje masowe. Ale aby zobaczyć nowe komentarze, trzeba było odświeżyć stronę.
 
-Nie więcej! Strona moderacji teraz pokazuje, kiedy przychodzą nowe komentarze, które pasują do twoich aktualnych filtrów. Na górze listy komentarzy pojawia się baner informujący, ile nowych komentarzy czeka, a kliknięcie na niego ładuje je w trybie inline bez pełnego odświeżania strony.
+Już nie! Strona moderacji teraz pokazuje, kiedy przychodzą nowe komentarze, które pasują do Twoich aktualnych filtrów. Na górze listy komentarzy pojawia się baner informujący o tym, ile nowych komentarzy czeka, a kliknięcie go ładuje je w linii bez pełnego odświeżenia strony.
 
-Wiadomość "nowe komentarze dla twoich filtrów" powinna być niemal natychmiastowa w większości przypadków.
+Wiadomość "nowe komentarze dla Twoich filtrów" powinna być praktycznie natychmiastowa w większości przypadków.
 
 ### Ocena Filtrów
 
-Warstwa transportowa ocenia wszystkie filtry moderacji po stronie serwera. Obejmuje to filtry statusu (wymaga przeglądu, wymaga zatwierdzenia, spam, zgłoszone,
-zablokowane), filtry ciągów (ID użytkownika, URL strony, domena), a nawet wyszukiwanie tekstu. Cytowany tekst, taki jak <div class="code">"dokładna fraza"</div>, przeprowadza
-dokładne, niezróżnicowane wielkościowo dopasowanie podciągu, podczas gdy terminy niecytowane wykonują zbliżone dopasowanie, które nie różnicuje wielkości liter.
+Warstwa transportowa ocenia wszystkie filtry moderacji po stronie serwera. Obejmuje to filtry statusu (wymaga przeglądu, wymaga zatwierdzenia, spam, oznaczone, zbanowane), filtry stringów (ID użytkownika, URL strony, domena), a nawet wyszukiwanie tekstowe. Cytowany tekst jak `"dokładna fraza"` wykonuje dokładne dopasowanie podciągu bez względu na wielkość liter, podczas gdy terminy bez cudzysłowu wykonują nieściśle sugestywne dopasowanie bez względu na wielkość liter.
 
-Oznacza to, że jeśli filtrujesz komentarze dotyczące spamu, nie będziesz informowany o zatwierdzonych komentarzach. Jeśli szukasz komentarzy
-zawierających określoną frazę, tylko pasujące komentarze uruchamiają baner.
+To oznacza, że jeśli filtrujesz komentarze spamowe, nie będziesz powiadamiany o zatwierdzonych komentarzach. Jeśli szukasz komentarzy zawierających określoną frazę, tylko pasujące komentarze uruchomią baner.
 
 ### Grupy Moderacji
 
-Jeśli twoje konto używa grup moderacyjnych do ograniczenia, którzy moderatorzy mogą widzieć które komentarze, te ograniczenia są w pełni egzekwowane
-dla powiadomień na żywo. Warstwa transportowa odwołuje się do serwera aplikacji, aby zbudować filtr, który obejmuje ograniczenia grupowe
-w oparciu o przypisane grupy moderatorów. Ten filtr jest buforowany przez czas trwania połączenia WebSocket i aktualizowany, gdy
-moderator zmienia filtry.
+Jeśli Twoje konto używa grup moderacyjnych, aby ograniczyć, którzy moderatorzy mogą widzieć które komentarze, te ograniczenia są w pełni egzekwowane dla powiadomień na żywo. Warstwa transportowa wywołuje aplikację serwera, aby zbudować filtr, który obejmuje ograniczenia grupowe w oparciu o przypisane grupy moderatora. Ten filtr jest przechowywany w pamięci podręcznej przez czas trwania połączenia WebSocket i aktualizowany zawsze, gdy moderator zmienia filtry.
 
-### Przegapione Wydarzenia
+### Utracone Wydarzenia
 
-Jeśli połączenie moderatora zostanie tymczasowo przerwane (problemy z siecią, uśpienie laptopa itp.), system automatycznie uzupełnia straty po ponownym połączeniu, aby
-nie przegapić żadnej pracy.
+Jeśli połączenie moderatora chwilowo się zerwie (problemy z siecią, uśpienie laptopa itp.), system automatycznie nadrobi zaległości po ponownym połączeniu, aby nie przegapić żadnej pracy.
 
 ### Wydajność
 
-Zaprojektowaliśmy tę funkcję tak, aby miała minimalny wpływ na czas ładowania strony moderacji.
+Zaprojektowaliśmy tę funkcję, aby miała minimalny wpływ na czas ładowania strony moderacji.
 
-### Wiele Regionów
+### Wieloregionowe
 
-Ta funkcja działa płynnie w naszej globalnie rozproszonej architekturze, dzięki czemu globalnie rozproszone zespoły moderacyjne zyskują ten sam widok na żywo.
+Ta funkcja działa bezproblemowo w naszej globalnie rozproszonej architekturze, więc globalnie rozproszone zespoły moderacyjne mają ten sam widok na żywo.
 
-### Na zakończenie
+### Na Zakończenie
 
-Mamy nadzieję, że ta funkcja pozwoli moderatorom zaoszczędzić czas i uczyni doświadczenie moderacji bardziej responsywnym. Jak zawsze, dziękujemy naszym klientom za
-ich opinie i wsparcie.
+Mamy nadzieję, że ta funkcja zaoszczędzi czas moderatorów i uczyni doświadczenie moderacji bardziej responsywnym. Jak zawsze, dziękujemy naszym klientom za ich opinie i wsparcie.
 
-Na zdrowie!
+Pozdrawiamy!
 
 {{/isPost}}
