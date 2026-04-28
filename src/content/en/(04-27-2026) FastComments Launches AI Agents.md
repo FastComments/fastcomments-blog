@@ -24,7 +24,7 @@ Now with that out of the way :)
 
 FastComments now provides automated agents which can perform moderation tasks, pin comments, summarize comment threads, and more.
 
-You can find them under [Account, then AI Agents](https://fastcomments.com/auth/my-account/ai-agents).
+You can find them under [Customize, then AI Agents](https://fastcomments.com/auth/my-account/ai-agents).
 
 ### Triggers and Tools
 
