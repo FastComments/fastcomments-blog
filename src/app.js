@@ -67,8 +67,7 @@ function processPost(item, locale, contentDir) {
 	const fullUrlRaw = BASE_URL + '/' + urlIdRawWithLocale;
 	// Use stable urlId without locale for comments (shared across all languages)
 	const stableUrlId = urlIdRaw;
-	const stableUrlIdForCount = BASE_URL + '/' + urlIdRaw;
-	const commentCountHTML = `<div class="post-comment-count fast-comments-count" data-fast-comments-url-id="${stableUrlIdForCount}">...</div>`;
+	const commentCountHTML = `<div class="post-comment-count fast-comments-count" data-fast-comments-url-id="${stableUrlId}">...</div>`;
 
 	let fileContent = fs.readFileSync(path.join(contentDir, item), 'utf8');
 
