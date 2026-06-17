@@ -57,7 +57,7 @@ SDK първоначално държеше дървото от коментар
 Това означава, че промените на стиловете стават с един пропс:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Тъмният режим е на един комплект токени разстояние:
@@ -75,7 +75,7 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 Добавихме `FastCommentsLiveChat`, предварително зададен чат върху същия двигател, който отразява чата на нашия Android SDK: хронологични съобщения с най-новите отдолу, композитор под списъка, жива лента с заглавие с точка за връзка и брой потребители, автоматично превъртане, което паузира докато четете по-стари съобщения, и неограничена история, докато превъртате нагоре. Всеки предварително зададен вариант може да бъде заменен чрез `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Сега и на уеб

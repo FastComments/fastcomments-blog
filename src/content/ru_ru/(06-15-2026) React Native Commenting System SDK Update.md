@@ -57,7 +57,7 @@
 Это означает, что изменение стиля — это всего одна пропс:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Темный режим — это всего лишь набор токенов:
@@ -75,7 +75,7 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 Мы добавили `FastCommentsLiveChat`, преднастройку чата на том же движке, который дублирует представление чата нашего Android SDK: хронологические сообщения с самыми новыми внизу, композитор под списком, живая шапка с точкой соединения и количеством пользователей, авто-прокрутка, которая приостанавливается, пока вы читаете старые сообщения, и бесконечный архив при прокрутке вверх. Каждая преднастройка может быть переопределена через `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Теперь и в вебе

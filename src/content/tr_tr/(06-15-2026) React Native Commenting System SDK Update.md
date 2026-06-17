@@ -57,7 +57,7 @@ Eski görünüm, sabit kodlanmış stillerden oluşan bir yığını andırıyor
 Bu, yeniden stillendirmenin tek bir prop ile mümkün olduğu anlamına gelir:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Karanlık mod, tek bir token seti kadar yakındır:
@@ -75,7 +75,7 @@ Yeniden tasarım, temiz, modern-nötr bir görünümdür: ince ayrımlar, yuvarl
 `FastCommentsLiveChat` olarak adlandırdığımız, Android SDK'ımızın sohbet görünümünü yansıtan bir sohbet preset'i ekledik: en yenisi en altta olmak üzere kronolojik mesajlar, listenin altında bir bileşim alanı, bağlantı noktası ve kullanıcı sayısıyla birlikte bir canlı başlık şeridi, eski mesajları okuduğunuz sırada duraklayan otomatik kaydırma ve yukarı kaydırırken sonsuz bir geçmiş. Her preset, `config` aracılığıyla değiştirilebilir.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Artık Web'de de Var

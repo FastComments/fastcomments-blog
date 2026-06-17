@@ -57,7 +57,7 @@ Det gamle udseende var en bunke hardkodede stilarter. Den nye standard genereres
 Det betyder, at omstilning kun er én prop:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Mørk tilstand er kun ét tokensæt væk:
@@ -75,7 +75,7 @@ Redesignet er selv et renere, moderne neutralt udseende: hårfine separatorer, p
 Vi tilføjede `FastCommentsLiveChat`, et chatprædefineret over samme motor, der spejler vores Android SDK's chatvisning: kronologiske meddelelser med de nyeste nederst, komponisten under listen, et live header-strip med en forbindelsespunkt og brugerantal, auto-scroll der pauser, mens du læser ældre meddelelser, og uendelig historik, når du scroller op. Hver prædefinition kan overskrives gennem `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Nu Også På Web

@@ -57,7 +57,7 @@ L'ancienne apparence était un tas de styles codés en dur. Le nouveau défaut e
 Cela signifie que la mise en forme est un seul prop :
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Le mode sombre est à un ensemble de tokens près :
@@ -75,7 +75,7 @@ Le redesign lui-même a une apparence plus propre et moderne : séparateurs fins
 Nous avons ajouté `FastCommentsLiveChat`, un preset de chat basé sur le même moteur qui reflète la vue de chat de notre SDK Android : messages chronologiques avec les plus récents en bas, le compositeur en dessous de la liste, une barre supérieure en direct avec un point de connexion et un compte d'utilisateurs, un défilement automatique qui pause pendant que vous lisez les messages anciens, et un historique infini à mesure que vous faites défiler vers le haut. Chaque preset est personnalisable via `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Maintenant Sur le Web Aussi

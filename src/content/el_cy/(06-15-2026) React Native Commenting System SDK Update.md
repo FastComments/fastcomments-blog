@@ -57,7 +57,7 @@
 Αυτό σημαίνει ότι η επανασχεδίαση είναι μια ιδιότητα:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Η νυχτερινή λειτουργία είναι ένα σύνολο tokens μακριά:
@@ -75,7 +75,7 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 Προσθέσαμε το `FastCommentsLiveChat`, μια προεπιλεγμένη συνομιλία πάνω από την ίδια μηχανή που αντικατοπτρίζει την προβολή συνομιλίας του Android SDK μας: χρονολογημένα μηνύματα με το πιο πρόσφατο στο κάτω μέρος, τον συνθέτη κάτω από τη λίστα, μια ζωντανή ταινία κεφαλίδας με μια κουκίδα σύνδεσης και αριθμό χρηστών, αυτόματη κύλιση που σταματάει ενώ διαβάζετε παλιότερα μηνύματα, και άπειρη ιστορία καθώς κάνετε κύλιση προς τα πάνω. Κάθε προεπιλεγμένη ρύθμιση είναι ανατρέψιμη μέσω του `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Τώρα και στον Ιστό

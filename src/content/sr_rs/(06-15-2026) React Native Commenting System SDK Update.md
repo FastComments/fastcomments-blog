@@ -57,7 +57,7 @@ Stari izgled je bio gomila hardkodiranih stilova. Novi podrazumevani izgled gene
 To znači da je preuređenje samo jedan prop:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Tamni režim je samo jedan set tokena daleko:
@@ -75,7 +75,7 @@ Sam redizajn je čišći, moderan neutralan izgled: tanki razdavači, glasovi du
 Dodali smo `FastCommentsLiveChat`, chat predložak iznad istog motora koji odražava chat prikaz našeg Android SDK-a: hronološke poruke sa najnovijim na dnu, komponotor ispod liste, traka sa uživo zaglavljem sa tačkom veze i brojem korisnika, automatsko skrolovanje koje se zaustavlja dok čitate starije poruke, i beskonačna istorija dok se krećete nagore. Svaki predložak se može zameniti preko `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Sada i na Webu

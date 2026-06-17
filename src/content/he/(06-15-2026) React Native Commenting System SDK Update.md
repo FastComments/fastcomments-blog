@@ -58,7 +58,7 @@
 זה אומר שעיצוב מחדש הוא פרופ אחד:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 מצב כהה הוא רחוק סט טוקנים אחד:
@@ -76,7 +76,7 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 הוספנו את `FastCommentsLiveChat`, ווידג'ט צ'אט על אותו מנוע שמחזיר את תצוגת הצ'אט של ה-SDK שלנו לאנדרואיד: הודעות כרונולוגיות עם החדשות ביותר בתחתית, מחבר למטה ברשימה, רצועת כותרת חיה עם נקודת חיבור ומניין משתמשים, גלילה אוטומטית שנעצרת בזמן שאתה קורא הודעות ישנות, והיסטוריה אינסופית ככל שגללים למעלה. כל ווידג'ט ניתן לשינוי דרך `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### עכשיו גם באינטרנט

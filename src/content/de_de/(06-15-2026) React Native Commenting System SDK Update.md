@@ -57,7 +57,7 @@ Das alte Aussehen war ein Haufen harter Stile. Das neue Standarddesign wird aus 
 Das bedeutet, dass das Neugestalten nur ein Prop ist:  
 
 ```tsx  
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>  
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>  
 ```  
 
 Der Dunkelmodus ist nur ein Token-Set entfernt:  
@@ -75,7 +75,7 @@ Die Neugestaltung selbst hat ein saubereres, modern-neutrales Aussehen: feine Tr
 Wir haben `FastCommentsLiveChat` hinzugefügt, ein Chat-Preset über demselben Engine, das unsere Android-SDK-Chatansicht spiegelt: chronologische Nachrichten mit den neuesten unten, der Composer unter der Liste, ein Live-Kopfzeilen-Streifen mit einem Verbindungspunkt und Benutzeranzahl, Auto-Scroll, das pausiert, während du ältere Nachrichten liest, und unendliche Historie, während du nach oben scrollst. Jedes Preset ist durch `config` überschreibbar.  
 
 ```tsx  
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>  
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>  
 ```  
 
 ### Jetzt auch im Web  

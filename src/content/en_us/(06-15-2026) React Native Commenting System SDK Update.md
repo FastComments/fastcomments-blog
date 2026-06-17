@@ -57,7 +57,7 @@ The old look was a pile of hardcoded styles. The new default is generated from a
 That means restyling is one prop:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Dark mode is one token set away:
@@ -75,7 +75,7 @@ The redesign itself is a cleaner, modern-neutral look: hairline separators, pill
 We added `FastCommentsLiveChat`, a chat preset over the same engine that mirrors our Android SDK's chat view: chronological messages with the newest at the bottom, the composer below the list, a live header strip with a connection dot and user count, auto-scroll that pauses while you read older messages, and infinite history as you scroll up. Every preset is overridable through `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Now on the Web Too

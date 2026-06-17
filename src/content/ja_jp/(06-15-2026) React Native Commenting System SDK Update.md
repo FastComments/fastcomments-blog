@@ -57,7 +57,7 @@ SDK は元々、Hookstate にコメントツリーを保持していました。
 つまり、スタイル変更は1つのプロップで行えます：
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 ダークモードは1つのトークンセットで実現できます：
@@ -75,7 +75,7 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 私たちは `FastCommentsLiveChat` を追加しました。同じエンジン上のチャットプリセットで、Android SDK のチャットビューを反映します：最新のメッセージが下部にある時間順のメッセージ、リストの下に作成者、接続ドットとユーザー数を示すライブヘッダー、古いメッセージを読む間に一時停止する自動スクロール、スクロールアップ中の無限履歴。すべてのプリセットは `config` を通じてオーバーライド可能です。
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### ウェブでも利用可能

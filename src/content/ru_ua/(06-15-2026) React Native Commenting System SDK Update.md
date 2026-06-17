@@ -57,7 +57,7 @@
 Это означает, что переоформление осуществляется с помощью одного пропса:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Темная тема — всего лишь набор токенов:
@@ -75,7 +75,7 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 Мы добавили `FastCommentsLiveChat`, пресет чата на основе того же движка, который дублирует вид чата нашего Android SDK: хронологические сообщения с новыми внизу, составитель под списком, живая шапка с точкой подключения и количеством пользователей, авто-прокрутка, которая приостанавливается, пока вы читаете более старые сообщения, и бесконечная история при прокрутке вверх. Каждый пресет можно переопределить через `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Теперь и в вебе

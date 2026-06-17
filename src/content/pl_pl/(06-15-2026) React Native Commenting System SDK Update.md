@@ -57,7 +57,7 @@ Stary wygląd był zbiorem twardo zakodowanych stylów. Nowy domyślny styl jest
 Oznacza to, że stylizacja jest jednym atrybutem:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Tryb ciemny jest tylko jedną parą tokenów od:
@@ -75,7 +75,7 @@ Sam redesign to czystszy, nowoczesny neutralny wygląd: cienkie separatory, przy
 Dodaliśmy `FastCommentsLiveChat`, preset czatu działający na tym samym silniku, co nasz widok czatu SDK dla Androida: chronologiczne wiadomości z najnowszymi na dole, kompozytor poniżej listy, pasek nagłówka na żywo z punktem połączenia i liczbą użytkowników, automatyczne przewijanie, które zatrzymuje się podczas czytania starszych wiadomości, oraz nieskończona historia podczas przewijania w górę. Każdy preset jest możliwy do nadpisania przez `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Teraz także w Sieci

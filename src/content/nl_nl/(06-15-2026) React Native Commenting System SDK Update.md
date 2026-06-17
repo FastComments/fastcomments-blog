@@ -57,7 +57,7 @@ Het oude uiterlijk was een verzameling hardcoded stijlen. De nieuwe standaard wo
 Dat betekent dat herstyling met één prop kan:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Donkere modus is één token set verwijderd:
@@ -75,7 +75,7 @@ Het herontwerp zelf heeft een schoner, modern-neutraal uiterlijk: hairline schei
 We hebben `FastCommentsLiveChat` toegevoegd, een chatpreset over dezelfde engine die de chatweergave van onze Android SDK spiegelt: chronologische berichten met de nieuwste onderaan, de composer onder de lijst, een live headerstrook met een verbindingspunt en gebruikersaantal, automatische scroll die pauzeert terwijl je oudere berichten leest, en oneindige geschiedenis terwijl je omhoog scrolt. Elke preset is overschrijfbaar via `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Nu ook op het web

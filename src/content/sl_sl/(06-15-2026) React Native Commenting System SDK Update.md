@@ -58,7 +58,7 @@ Stari videz je bil kupa hardkodiranih stilov. Novi privzeti videz je generiran i
 To pomeni, da je preoblikovanje ena lastnost:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Temni način je ena nastavitev tokenov stran:
@@ -76,7 +76,7 @@ Prenova sama po sebi je bolj čista, moderna nevtralna podoba: tanki separatorji
 Dodali smo `FastCommentsLiveChat`, prednastavljeno klepetalnico, ki deluje na isti osnovi in odraža klepetalni pogled našega Android SDK: kronološke slike sporočil z najnovejšimi na dnu, ustvarjalec pod seznamom, živi glavni trak s točko povezave in številom uporabnikov, samodejno pomikanje, ki se ustavi, ko berete starejša sporočila, in neskončna zgodovina, ko se pomikate navzgor. Vsaka prednastavitev je mogoče prekiniti preko `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Zdaj tudi na spletu

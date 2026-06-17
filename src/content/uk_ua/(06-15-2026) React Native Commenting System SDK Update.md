@@ -57,7 +57,7 @@
 Це означає, что перегрупування стилів – це один пропс:
 
 ```tsx
-<FastCommentsLiveCommenting config={config} theme={{ colors: { primary: '#FF5500' } }}/>
+<FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
 Темний режим – за один набір токенів:
@@ -75,7 +75,7 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 Ми додали `FastCommentsLiveChat`, чат-пресет на тому ж рушії, який відображає чат-погляд нашого Android SDK: хронологічні повідомлення з найновішими внизу, композитор під списком, стрічка живого заголовка з індикатором підключення та кількістю користувачів, автоматичний скролл, який зупиняється, поки ви читаєте старі повідомлення, та безкінечна історія при прокрутці вгору. Кожен пресет може бути переопрацьований через `config`.
 
 ```tsx
-<FastCommentsLiveChat config={{ tenantId: 'demo', urlId: 'my-room' }}/>
+<FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
 ### Тепер також на вебі
