@@ -45,6 +45,10 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
 
   mkdir -p src/static/generated/
   node src/app
+  if [ $? -ne 0 ]; then
+    echo "Build failed: site generation (src/app) errored"
+    exit 1
+  fi
   cp -rv src/static/css src/static/generated/
   cp -rv src/static/images src/static/generated/
   cp -rv src/static/js src/static/generated/
