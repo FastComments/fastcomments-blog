@@ -82,6 +82,8 @@ We added `FastCommentsLiveChat`, a chat preset over the same engine that mirrors
 
 The same SDK now runs on the web through `react-native-web`. The rich text composer (powered by `react-native-enriched`) renders the same way on iOS, Android, and the browser, so the editing experience is consistent everywhere with a single implementation. Overlays that the comment list would otherwise clip (menus, the GIF picker, the notification list) are anchored under their triggers on the web build.
 
+You can try every widget yourself in the live <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">component browser</a>, which is this SDK running in the browser via `react-native-web`.
+
 ### Keeping Current With React Native
 
 5.0 is built and tested against React Native 0.81 and React 19, and it targets the New Architecture (Fabric), which the native rich text editor requires. Keeping current here is not busywork: the editor, the gesture handling, and the rendering all get faster and more correct as React Native moves forward, and we would rather take those upgrades steadily than fall years behind.
@@ -90,7 +92,7 @@ The same SDK now runs on the web through `react-native-web`. The rich text compo
 
 This rewrite was about giving the React Native SDK the same first-class footing as our other libraries: a fast and predictable data model, a look you can theme in one prop, a chat widget, and web support, all on a modern React Native foundation.
 
-You can find the SDK on <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a> and the source, with examples, on <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>. Let us know below if you run into anything.
+You can find the SDK on <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a>, the source, with examples, on <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>, and every widget running live in the <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">component browser</a>. Let us know below if you run into anything.
 
 Cheers!
 
