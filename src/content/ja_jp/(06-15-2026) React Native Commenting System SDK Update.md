@@ -4,63 +4,63 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]React Native コメントシステム SDK のアップデート[/postlink]
+# [postlink]React Native コメントシステム SDK アップデート[/postlink]
 
 {{#unless isPost}}
-私たちは fastcomments-react-native-sdk をゼロから再構築しました：新しく、より効率的なステート管理、デザイントークンを使用した再設計、専用のライブチャットウィジェット、そして一流のウェブサポートです。
+私たちは fastcomments-react-native-sdk を一から再構築しました：新しい、より効率的な状態管理、デザイントークンを利用した再設計、専用のライブチャットウィジェット、そして一級のウェブサポート。
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> この記事には専門用語が含まれています
+### <i class="circle">!</i> この記事には技術用語が含まれています
 
 ### 新機能
 
-私たちは、コメントやチャットをリアルネイティブコンポーネントでレンダリングする React Native ライブラリ `fastcomments-react-native-sdk` のバージョン 5.1 を出荷しました。
+私たちは、コメントとチャットを実際のネイティブコンポーネントで表示する React Native ライブラリ `fastcomments-react-native-sdk` のバージョン 5.1 をリリースしました。
 
-内部を再構築し、全体の見た目を再デザインし、ライブチャットウィジェットを追加し、SDK をウェブに持ち込み、最新の React Native と React にアップグレードしました。
+内部を再構築し、全体の外観を再設計し、ライブチャットウィジェットを追加し、SDK をウェブに対応させ、最新の React Native と React にアップグレードしました。
 
 <div class="text-center">
     <img src="images/rn-sdk-light.png" alt="FastComments React Native SDK, light theme" title="FastComments React Native SDK" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
     <img src="images/rn-sdk-dark.png" alt="FastComments React Native SDK, dark theme" title="FastComments React Native SDK, dark theme" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
 </div>
 
-### なぜ2つのReact Nativeライブラリがあるのか？
+### なぜ二つの React Native ライブラリ？
 
-この質問を受けることが多いので、お知らせします。私たちは2つのオプションを提供しています：
+この質問をよく受けるので、簡単に説明します。私たちは二つのオプションを提供しています：
 
-- `fastcomments-react-native` は、ウェブウィジェットを WebView で実行するための薄いラッパーです。これがすべての機能を瞬時に得る最速の方法であり、自動的にウェブの修正を享受できます。
-- `fastcomments-react-native-sdk`（これです）は、WebViewなしでネイティブの React Native コンポーネントで UI をレンダリングします。より柔軟で、テーマ設定が可能で、ネイティブであるため、ネイティブのように感じます。
+- `fastcomments-react-native` は、WebView で実行されるウェブウィジェットの薄いラッパーです。すべての機能を即座に利用できる最も速い方法で、ウェブ修正から自動的に恩恵を受けます。
+- `fastcomments-react-native-sdk` （これです）は、WebViewなしでネイティブ React Native コンポーネントを用いて UI をレンダリングします。より柔軟で、完全にテーマ化可能で、ネイティブなのでネイティブな感覚が得られます。
 
-最高の体験のために SDK を推奨します。この投稿の残りは、5.0 での変更点についてです。
+最高の体験のために SDK をお勧めします。この投稿の残りは、5.0 での変更内容についてです。
 
-### 新しいステート管理
+### 新しい状態管理
 
-この変更の主な理由は、私たちのライブラリが名前に忠実であり続け、高速であることです。いくつかの顧客がそのパフォーマンスについて不満を述べたので、これが修正されました。
+この変更の主な目的は、私たちのライブラリが私たちの名前にふさわしく、Fast であり続けることを保証することです。いくつかの顧客からパフォーマンスについて苦情があったため、これが修正されました。
 
-SDK は元々、Hookstate にコメントツリーを保持していました。動作はしましたが、スレッドやライブアップデートが増えると、物事が遅くなり始めました。
+SDK は元々、Hookstate にコメントツリーを保持していました。動作はしていましたが、スレッドやライブ更新が増えるにつれて、物事が遅くなり始めました。
 
-私たちは Hookstate を Zustand とフラットなインデックス付きストアに置き換えました。コメントは現在、ステートに入ったツリーの中にネストされるのではなく、`byId` マップと `childrenByParent`、`rootOrder`、および `pinnedIds` インデックスの横に存在します。
+私たちは Hookstate を Zustand とフラットなインデックスストアに置き換えました。コメントは、状態内にネストされたツリーではなく、`byId` マップと `childrenByParent`、`rootOrder`、`pinnedIds` インデックスに存在します。
 
 その結果：
 
-- ライブイベント（新しいコメント、投票、編集）は、ツリーを歩いて複製するのではなく O(1) の突然変異になりました。
-- 毎回のフェッチで実行されていた2つのフルツリー JSON 深いクローンを削除しました。
-- コンポーネントは、標準的なセレクターモデルとして、読み取るスライスに正確にサブスクライブします。したがって、1つのコメントへの投票は、1つのコメントにのみ影響を与えます。
+- ライブイベント（新しいコメント、投票、編集）は O(1) 変異になり、ツリーを歩いたり複製したりする必要がなくなりました。
+- 従来のすべてのフェッチで実行されていたフルツリー JSON ディープクローンを二つ削除しました。
+- コンポーネントは、自分が読むスライスに正確に購読します。標準的なセレクタモデルにより、一つのコメントへの投票が一つのコメントに影響します。
 
-最後のポイントは、それほど単純ではありません。セレクターベースのサブスクリプションでは、行は自身のデータが変更されたときのみ再描画されます。
+最後のポイントは、思っている以上に重要です。セレクタベースの購読を使用すると、行は自分のデータが変更されたときのみ再レンダリングされます。
 
 ### トークンベースの再設計
 
-古い見た目は、ハードコードされたスタイルの山でした。新しいデフォルトは、セマンティックデザイントークンのセット（`FastCommentsTheme`）から生成されます：色、間隔、半径、フォントサイズ、フォントウェイト、およびアバターサイズ。スタイルツリー全体はこれらのトークンから導かれます。
+古い外観はハードコーディングされたスタイルの山でした。新しいデフォルトは、意味のあるデザイントークン（`FastCommentsTheme`）から生成されます：色、スペーシング、半径、フォントサイズ、フォントの太さ、アバターサイズ。スタイルツリー全体がこれらのトークンから導出されています。
 
-つまり、スタイル変更は1つのプロップで行えます：
+つまり、再スタイリングは一つのプロップで行えます：
 
 ```tsx
 <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-ダークモードは1つのトークンセットで実現できます：
+ダークモードは一つのトークンセットで対応できます：
 
 ```tsx
 import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -68,11 +68,11 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-再設計自体は、よりクリーンで現代的な中立的な見た目になります：細いセパレーター、ピル型の投票ボタンとチップ、満たされたプライマリボタン、丸みを帯びたアバター、一貫したタイポグラフィスケール。`styles` プロップは、外科的なオーバーライドのためにまだ存在しており、既存の統合は引き続き機能します。
+再設計自体は、クリーンで現代的なニュートラルな外観です：線状のセパレーター、ピル型の投票ボタンとチップ、塗りつぶされたプライマリボタン、丸みを帯びたアバター、一貫したタイプスケール。`styles` プロップは、手術的なオーバーライドのためにまだ存在しているので、既存の統合はそのまま機能します。
 
 ### 専用のライブチャットウィジェット
 
-私たちは `FastCommentsLiveChat` を追加しました。同じエンジン上のチャットプリセットで、Android SDK のチャットビューを反映します：最新のメッセージが下部にある時間順のメッセージ、リストの下に作成者、接続ドットとユーザー数を示すライブヘッダー、古いメッセージを読む間に一時停止する自動スクロール、スクロールアップ中の無限履歴。すべてのプリセットは `config` を通じてオーバーライド可能です。
+`FastCommentsLiveChat` を追加しました。これは、私たちの Android SDK のチャットビューを反映したチャットプリセットです：時系列メッセージは最新が下、リストの下に作成フォーム、接続ドットとユーザー数を表示するライブヘッダー、古いメッセージを読む間に一時停止する自動スクロール、上にスクロールする際の無限の履歴です。すべてのプリセットは `config` を通じてオーバーライド可能です。
 
 ```tsx
 <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
@@ -80,18 +80,22 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 
 ### ウェブでも利用可能
 
-同じ SDK が `react-native-web` を通じてウェブ上で動作します。リッチテキストコンポーザー（`react-native-enriched` によって駆動）は、iOS、Android、およびブラウザで同じようにレンダリングされるため、編集体験は一貫しており、単一の実装で整えられています。コメントリストがクリップするようなオーバーレイ（メニュー、GIF ピッカー、通知リスト）は、ウェブビルドでトリガーの下に配置されています。
+同じ SDK が今や `react-native-web` を通じてウェブ上で動作します。リッチテキスト作成ツール（`react-native-enriched` によって強化済み）は、iOS、Android、ブラウザのいずれでも同じようにレンダリングされるため、編集体験が一貫しています。コメントリストが通常はクリップするオーバーレイ（メニュー、GIF ピッカー、通知リスト）は、ウェブビルド上のトリガーの下に固定されています。
 
-### React Native に追いつく
+ライブでのすべてのウィジェットを試すことができる <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">コンポーネントブラウザ</a> では、この SDK がブラウザ上で `react-native-web` を通じて動作しています。
 
-5.0 は React Native 0.81 と React 19 に対してビルドおよびテストされており、ネイティブリッチテキストエディタが必要とする新しいアーキテクチャ（Fabric）をターゲットにしています。ここで最新の状態を維持することは単なる作業ではありません：エディタ、ジェスチャ処理、レンダリングはすべて、React Native が前進するにつれてより高速かつ正確になります。私たちは、何年も遅れを取るよりも、これらのアップグレードを着実に受け取る方が良いと考えています。
+### React Native に最新情報を保持
+
+5.0 は React Native 0.81 と React 19 に対して構築され、テストされています。そして、ネイティブリッチテキストエディタが必要とする新しいアーキテクチャ（ファブリック）をターゲットにしています。ここで最新の状態を保つことは単なる雑務ではありません：エディタ、ジェスチャー処理、レンダリングはすべて、React Native が進化するにつれて、より速く、より正確になります。そして、私たちは何年も遅れるよりも、着実にそのアップグレードを受け入れたいと考えています。
 
 ### 結論
 
-この書き換えは、React Native SDK に他のライブラリと同じ一流の地位を与えることを目的としていました：迅速で予測可能なデータモデル、1つのプロップでテーマ設定できる外観、チャットウィジェット、そしてウェブサポート、すべて現代の React Native 基盤の上にあります。
+この書き換えは、React Native SDK に私たちの他のライブラリと同様の一流の地位を与えることに関するものでした：速くて予測可能なデータモデル、一つのプロップでテーマ化可能な外観、チャットウィジェット、ウェブサポート、すべてが現代の React Native の基盤の上に存在します。
 
-SDK は <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a> で見つけることができ、例と共にソースは <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a> で入手できます。問題があれば、下記でお知らせください。
+SDK は <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a> で入手可能で、ソースとサンプルは <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a> にあり、すべてのウィジェットは <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">コンポーネントブラウザ</a> でライブ運用中です。何か問題があれば、下にお知らせください。
 
 乾杯！
 
 {{/isPost}}
+
+---

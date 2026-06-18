@@ -4,21 +4,21 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]React Native Kommentar System SDK Opdatering[/postlink]
+# [postlink]React Native Kommentarsystem SDK Opdatering[/postlink]
 
 {{#unless isPost}}
-Vi har genopbygget fastcomments-react-native-sdk fra bunden: ny, mere effektiv tilstandsmanagement, et redesign ved hjælp af Design Tokens, en dedikeret widget til live chat og førsteklasses websupport.
+Vi har genopbygget fastcomments-react-native-sdk fra grunden: ny, mere effektiv tilstandshåndtering, et redesign ved hjælp af Design Tokens, et dedikeret live chat-widget og førsteklasses websupport.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Denne Artikel Indeholder Teknisk Jargon
+### <i class="circle">!</i> Denne Artikel Indeholder Teknisk Fagsprog
 
 ### Hvad er Nyt
 
-Vi har lige sendt version 5.1 af `fastcomments-react-native-sdk`, vores React Native-bibliotek, der gengiver kommentarer og chat med ægte native komponenter i stedet for et WebView.
+Vi har lige sendt version 5.1 af `fastcomments-react-native-sdk`, vores React Native-bibliotek, der viser kommentarer og chat med ægte native komponenter i stedet for en WebView.
 
-Vi har skrevet internals om, redesignet hele udseendet, tilføjet en widget til live chat, bragt SDK'en til web, og opgraderet den til den nyeste React Native og React.
+Vi har genkodet internals, redesignede hele udseendet, tilføjet et live chat-widget, bragt SDK'en til weben og opgraderet den til den nyeste React Native og React.
 
 <div class="text-center">
     <img src="images/rn-sdk-light.png" alt="FastComments React Native SDK, lys tema" title="FastComments React Native SDK" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
@@ -27,40 +27,40 @@ Vi har skrevet internals om, redesignet hele udseendet, tilføjet en widget til 
 
 ### Hvorfor To React Native Biblioteker?
 
-En hurtig bemærkning, fordi vi får dette spørgsmål. Vi leverer to muligheder:
+Et hurtigt notat, fordi vi får dette spørgsmål. Vi sender to muligheder:
 
-- `fastcomments-react-native` er en tynd wrapper omkring vores webwidget, der kører i et WebView. Det er den hurtigste måde at få alle funktioner straks, og det drager fordel af webrettelser automatisk.
-- `fastcomments-react-native-sdk` (denne) gengiver UI'en med native React Native-komponenter uden et webview. Den er mere fleksibel, fuldt tematisk, og føles native, fordi den er native.
+- `fastcomments-react-native` er et tyndt lag omkring vores web-widget, der kører i en WebView. Det er den hurtigste måde at få alle funktioner øjeblikkeligt, og det drager automatisk fordel af webrettelser.
+- `fastcomments-react-native-sdk` (denne) renderer UI'en med native React Native komponenter uden en webview. Det er mere fleksibelt, helt tematiserbart og føles native, fordi det er native.
 
 For den bedste oplevelse anbefaler vi SDK'en. Resten af dette indlæg handler om, hvad der ændrede sig i 5.0.
 
-### Ny Tilstandsmanagement
+### Ny Tilstandshåndtering
 
-Den primære drivkraft bag denne ændring er at sikre, at vores bibliotek forbliver tro mod vores navn og forbliver Hurtigt. Vi havde flere kunder, der klagede over ydeevnen, så dette er nu løst.
+Den primære drivkraft bag denne ændring er at sikre, at vores bibliotek forbliver tro mod vores navn og forbliver Hurtigt. Vi har haft flere kunder, der har klaget over dets ydeevne, så dette er nu rettet.
 
-SDK'en opbevarede oprindeligt sit kommentartræ i Hookstate. Det fungerede, men efterhånden som tråde og liveopdateringer voksede, begyndte tingene at gå langsommere.
+SDK'en holdt oprindeligt sin kommentartræ i Hookstate. Det fungerede, men som tråde og live opdateringer voksede, begyndte tingene at blive langsommere.
 
-Vi erstattede Hookstate med Zustand og et fladt, indekseret lager. Kommentarer lever nu i et `byId` kort sammen med `childrenByParent`, `rootOrder` og `pinnedIds` indekser i stedet for et træ, der er indlejret i tilstanden.
+Vi erstattede Hookstate med Zustand og en flad, indekseret butik. Kommentarer lever nu i et `byId` kort ved siden af `childrenByParent`, `rootOrder` og `pinnedIds` indekser, i stedet for et træ indlejret i tilstanden.
 
-Udbetalingen:
+Udvindingen:
 
-- Livebegivenheder (en ny kommentar, en stemme, en redigering) blev O(1) mutationer i stedet for at gå og klone et træ.
-- Vi droppede to dybe kloner af hele træet i JSON, der plejede at køre ved hver hentning.
-- Komponenter abonnerer på præcis de skiver, de læser, den standard selector-model, så en stemme på én kommentar berører én kommentar.
+- Live begivenheder (en ny kommentar, en stemme, en redigering) blev O(1) mutationer i stedet for at gå og klone et træ.
+- Vi droppede to fuldt-træ JSON dybdekloner, der plejede at køre ved hver hentning.
+- Komponenter abonnerer kun på de skiver, de læser, den standard selector-model, så en stemme på én kommentar berører én kommentar.
 
-Det sidste punkt betyder mere, end det lyder. Med selector-baserede abonnementer bliver en række kun genrendret, når dens egne data ændres.
+Det sidste punkt betyder mere, end det lyder. Med selector-baserede abonnementer, så bliver en række kun genrendret, når dens egne data ændres.
 
 ### Et Token-Baseret Redesign
 
-Det gamle udseende var en bunke hardkodede stilarter. Den nye standard genereres fra et sæt semantiske designtokens (`FastCommentsTheme`): farver, afstand, radius, skrifttyper, skrifttypernes tykkelse og avatarstørrelser. Hele stiltræet er afledt fra disse tokens.
+Det gamle udseende var en bunke hardcodede stilarter. Den nye standard genereres fra et sæt semantiske design tokens (`FastCommentsTheme`): farver, spacing, radius, skriftstørrelser, skriftvægte og avatarstørrelser. Hele stiltræet er afledt fra disse tokens.
 
-Det betyder, at omstilning kun er én prop:
+Det betyder, at genstilning kun er en prop:
 
 ```tsx
 <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-Mørk tilstand er kun ét tokensæt væk:
+Mørkt tema er kun et token-sæt væk:
 
 ```tsx
 import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -68,11 +68,11 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-Redesignet er selv et renere, moderne neutralt udseende: hårfine separatorer, pille-stemmeknapper og chips, fyldte primære knapper, afrundede avatarer og en konsekvent typografi. `styles`-proppen er stadig der for kirurgiske overrides, så eksisterende integrationer fungerer fortsat.
+Redesignet i sig selv har et renere, moderne neutrale udseende: hårde separatorer, pille stemme knapper og chips, fyldte primære knapper, afrundede avatarer og en konsistent typografi skala. `styles`-proppen er stadig der til kirurgiske overskrivninger, så eksisterende integrationer fortsætter med at fungere.
 
-### En Dedikeret Widget til Live Chat
+### Et Dedikeret Live Chat Widget
 
-Vi tilføjede `FastCommentsLiveChat`, et chatprædefineret over samme motor, der spejler vores Android SDK's chatvisning: kronologiske meddelelser med de nyeste nederst, komponisten under listen, et live header-strip med en forbindelsespunkt og brugerantal, auto-scroll der pauser, mens du læser ældre meddelelser, og uendelig historik, når du scroller op. Hver prædefinition kan overskrives gennem `config`.
+Vi tilføjede `FastCommentsLiveChat`, et chat-setup over den samme motor, der spejler vores Android SDK's chat-visning: kronologiske meddelelser med den nyeste nederst, komponisten under listen, et live header strip med en forbindelsespunkt og brugertælling, auto-scrolling, der pauser, mens du læser ældre beskeder, og ubegribelig historie, efterhånden som du ruller op. Hver preset kan overskrives via `config`.
 
 ```tsx
 <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
@@ -80,17 +80,19 @@ Vi tilføjede `FastCommentsLiveChat`, et chatprædefineret over samme motor, der
 
 ### Nu Også På Web
 
-Den samme SDK kører nu på web gennem `react-native-web`. Den rige tekstkomponist (drevet af `react-native-enriched`) gengiver på samme måde på iOS, Android og browseren, så redigeringsoplevelsen er ensartet overalt med en enkelt implementering. Overlejringer, som kommentarlisterne ellers ville klippe (menuer, GIF-vælgeren, meddelelseslisten) er forankret under deres triggere på webbygningen.
+Det samme SDK kører nu på weben gennem `react-native-web`. Den rige tekstkomponist (drevet af `react-native-enriched`) renderer på samme måde på iOS, Android og browseren, så redigeringsoplevelsen er konsekvent overalt med en enkelt implementering. Overlays, som kommentarliste ellers ville klippe (menuer, GIF-vælgeren, notifikationslisten) er forankret under deres triggere i webbygningen.
 
-### Holde Sig Aktuel Med React Native
+Du kan selv prøve hver widget i den live <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">komponentbrowser</a>, som er denne SDK, der kører i browseren via `react-native-web`.
 
-5.0 er bygget og testet mod React Native 0.81 og React 19, og den retter sig mod den nye arkitektur (Fabric), som den native rige teksteditor kræver. At holde sig aktuel her er ikke bare travlhed: editoren, gestusbehandlingen og rendering bliver alle hurtigere og mere korrekte, efterhånden som React Native bevæger sig fremad, og vi ville hellere tage disse opgraderinger jævnt end at falde mange år bagud.
+### Holde Aktuel Med React Native
 
-### Afslutningsvis
+5.0 er bygget og testet mod React Native 0.81 og React 19, og det sigter mod den nye arkitektur (Fabric), som den native rige teksteditor kræver. At holde sig aktuel her er ikke dødt arbejde: editoren, gestusbehandlingen og rendering bliver alle hurtigere og mere korrekte, efterhånden som React Native bevæger sig fremad, og vi ville hellere tage disse opgraderinger stabilt end at komme flere år bagud.
 
-Denne omskrivning handlede om at give React Native SDK'en samme førsteklasses grundlag som vores andre biblioteker: en hurtig og forudsigelig datamodel, et udseende, du kan tema i én prop, en chat-widget og websupport, alt sammen på en moderne React Native-fundament.
+### Afslutning
 
-Du kan finde SDK'en på <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a> og kilden, med eksempler, på <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>. Lad os vide nedenfor, hvis du støder på noget.
+Denne omskrivning handlede om at give React Native SDK samme førsteklasses grundlag som vores andre biblioteker: en hurtig og forudsigelig datamodel, et udseende, du kan tema i én prop, et chat-widget og websupport, alt på en moderne React Native-basis.
+
+Du kan finde SDK'en på <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a>, kilden, med eksempler, på <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>, og hver widget kørende live i <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">komponentbrowseren</a>. Lad os vide nedenfor, hvis du støder på noget.
 
 Skål!
 

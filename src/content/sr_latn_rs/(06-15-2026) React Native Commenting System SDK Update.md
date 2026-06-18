@@ -4,21 +4,21 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]Ažuriranje React Native Commenting System SDK[/postlink]
+# [postlink]Ažuriranje SDK-a za sistem komentara u React Native[/postlink]
 
 {{#unless isPost}}
-Ponovo smo izgradili fastcomments-react-native-sdk od osnova: novo, efikasnije upravljanje stanjem, redizajn korišćenjem dizajn tokena, posvećen live chat vidžet, i podrška za web.
+Ponovo smo izgradili fastcomments-react-native-sdk od temelja: nova, efikasnija upravljanja stanjem, redizajn koristeći Design Tokens, posvećen widget za razgovor uživo, i podrška za web prve klase.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Ovaj Članak Sadrži Tehničke Terminologije
+### <i class="circle">!</i> Ovaj Članak Sadrži Tehnički Žargon
 
 ### Šta je Novo
 
-Upravo smo objavili verziju 5.1 `fastcomments-react-native-sdk`, naše React Native biblioteke koja prikazuje komentare i chat sa pravim native komponentama umesto WebView-a.
+Upravo smo objavili verziju 5.1 `fastcomments-react-native-sdk`, našu React Native biblioteku koja prikazuje komentare i chat sa pravim nativnim komponentama umesto WebView-a.
 
-Prepisali smo interne delove, redizajnirali čitav izgled, dodali live chat vidžet, doneli SDK na web, i unapredili ga na najnoviji React Native i React.
+Ponovno smo napisali unutrašnjost, redizajnirali ceo izgled, dodali widget za razgovor uživo, doneli SDK na web, i unapredili ga na najnoviji React Native i React.
 
 <div class="text-center">
     <img src="images/rn-sdk-light.png" alt="FastComments React Native SDK, svetla tema" title="FastComments React Native SDK" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
@@ -27,40 +27,41 @@ Prepisali smo interne delove, redizajnirali čitav izgled, dodali live chat vid�
 
 ### Zašto Dve React Native Biblioteke?
 
-Brza napomena, jer često dobijamo ovo pitanje. Nudimo dve opcije:
+Brza napomena, zato što dobijamo ovo pitanje. Izrađujemo dve opcije:
 
-- `fastcomments-react-native` je tanak omotač oko našeg web vidžeta koji se pokreće u WebView-u. To je najbrži način da odmah dobijete sve funkcije, i automatski se koristi ispravkama sa weba.
-- `fastcomments-react-native-sdk` (ovaj) prikazuje UI sa native React Native komponentama bez webview-a. To je fleksibilnije, potpuno prilagodljivo, i deluje native jer je native.
+- `fastcomments-react-native` je tanak omotač oko našeg web widgeta koji se izvršava u WebView-u. To je najbrži način da dobijete svaki feature odmah, i automatski koristi web ispravke.
+- `fastcomments-react-native-sdk` (ovaj) prikazuje UI sa nativnim React Native komponentama bez webview-a. To je fleksibilnije, potpuno prilagodljivo, i deluje nativno jer je nativno.
 
 Za najbolje iskustvo preporučujemo SDK. Ostatak ovog posta govori o tome šta se promenilo u 5.0.
 
 ### Novo Upravljanje Stanjem
 
-Glavni cilj ove promene je da osigura da naša biblioteka ostane verna svom imenu i ostane brza. Imali smo nekoliko klijenata koji su se žalili na performanse, tako da je ovo sada ispravljeno.
+Glavni motiv ove promene je da se osigura da naša biblioteka ostane verna svom imenu i ostane brza. Imali smo nekoliko kupaca koji su se žalili
+na njene performanse, pa je ovo sada ispravljeno.
 
-SDK je prvobitno čuvao svoj komentar drvo u Hookstate. Radilo je, ali kako su se niti i live ažuriranja povećavala, stvari su počele da usporavaju.
+SDK je prvobitno čuvao svoju strukturu komentara u Hookstate-u. Radilo je, ali kako su se niti i live ažuriranja povećavala, stvari su počele da usporavaju.
 
-Zamenili smo Hookstate sa Zustand-om i ravnim, indeksiranim skladištem. Komentari sada žive u `byId` mapi uz `childrenByParent`, `rootOrder`, i `pinnedIds` indekse, umesto u stablu ugnježdenom unutar stanja.
+Zamenili smo Hookstate sa Zustand-om i ravnim, indeksiranim skladištem. Komentari sada žive u `byId` mapi zajedno sa `childrenByParent`, `rootOrder`, i `pinnedIds` indeksima, umesto u stablu koje je bilo ugnježdeno unutar stanja.
 
 Isplata:
 
-- Događaji uživo (novi komentar, glas, izmena) postali su O(1) mutacije umesto prolaska i kloniranja stabla.
-- Odbacili smo dva puna stabla JSON dubokih klonova koji su se koristili na svakoj dohvatu.
-- Komponente se pretplate tačno na one delove koje čitaju, standardni model selektora, pa glas na jednom komentaru dodiruje jedan komentar.
+- Live događaji (novi komentar, glasanje, izmena) postali su O(1) mutacije umesto hodanja i kloniranja stabla.
+- Odbacili smo dva puna JSON duboka kloniranja stabla koja su se izvršavala pri svakom preuzimanju.
+- Komponente se pretplaćuju tačno na one delove koje čitaju, standardni model selektora, tako da glasanje na jednom komentaru utiče samo na jedan komentar.
 
-Ta poslednja tačka je važnija nego što zvuči. Sa pretplatama zasnovanim na selektorima, red se ponovo prikazuje samo kada se podaci ljudi menjaju.
+Ta poslednja tačka je važnija nego što zvuči. Sa pretplatom zasnovanom na selektorima, red se ponovo prikazuje samo kada se podaci o njemu promene.
 
-### Redizajn Zasnovan na Tokenima
+### Redizajn na Bazi Tokena
 
-Stari izgled bio je gomila hardkodiranih stilova. Novi podrazumevani izgled generisan je iz skupa semantičkih dizajn tokena (`FastCommentsTheme`): boje, razmaku, radijusi, veličine fonta, težine fonta, i veličine avatare. Cela struktura stila se proizašla iz tih tokena.
+Stari izgled bio je gomila hardkodiranih stilova. Novi podrazumevani izgled se generiše iz skupa semantičkih dizajn tokena (`FastCommentsTheme`): boje, razmak, radius, veličine fontova, težine fontova, i veličine avatara. Cela struktura stilova proizašla je iz tih tokena.
 
-To znači da je preoblikovanje samo jedna svojstvo:
+To znači da je ponovno stilizovanje samo jedan prop:
 
 ```tsx
 <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-Tamni režim je udaljen samo jedan set tokena:
+Tamni režim je na dohvat jedne postavke tokena:
 
 ```tsx
 import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -68,11 +69,11 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-Sam redizajn je čišći, moderan-neutralan izgled: tanki separatori, dugmadi za glasanje i čipsovi u obliku tableta, popunjena primarna dugmad, zaobljeni avatare, i konzistentna tipografija. `styles` svojstvo je još uvek tu za hirurške preinake, tako da postojeće integracije nastavljaju raditi.
+Sam redizajn ima čistiji, moderni neutralni izgled: tanke razdavače, dugmadi za glasanje i čipsa, popunjena glavna dugmad, zaobljeni avatari, i dosledna tipografiija. `styles` prop je i dalje prisutan za hirurške override-ove, tako da postojeće integracije i dalje funkcionišu.
 
-### Posvećen Live Chat Vidžet
+### Posvećen Widget za Razgovor Uživo
 
-Dodali smo `FastCommentsLiveChat`, chat preset nad istim motorom koji odražava chat prikaz našeg Android SDK-a: hronološke poruke sa najnovijim na dnu, kompozitor ispod liste, traka uživo sa tačkom veze i brojem korisnika, automatski skrol koji se pauzira dok čitate starije poruke, i beskonačna istorija dok skrolujete nagore. Svaki preset se može prepisivati kroz `config`.
+Dodali smo `FastCommentsLiveChat`, preset za chat preko istog motora koji odražava chat prikaz našeg Android SDK-a: hronološke poruke sa najnovijima na dnu, composer ispod liste, uživo glavni trak sa tačkom veze i brojem korisnika, automatsko skrolovanje koje se pauzira dok čitate starije poruke, i beskonačna istorija dok se pomerate ka gore. Svaki preset se može prepraviti putem `config`.
 
 ```tsx
 <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
@@ -80,17 +81,19 @@ Dodali smo `FastCommentsLiveChat`, chat preset nad istim motorom koji odražava 
 
 ### Sada i na Webu
 
-Isti SDK sada radi na webu kroz `react-native-web`. Rich text kompozitor (pokretan sa `react-native-enriched`) prikazuje se na isti način na iOS-u, Android-u, i pretraživaču, tako da je iskustvo uređivanja konzistentno svuda sa jednom implementacijom. Preklapanja koja bi lista komentara inače zanemarila (meni, GIF birac, lista obaveštenja) su vezana ispod njihovih okidača na web verziji.
+Isti SDK sada radi na webu preko `react-native-web`. Rich text composer (potpomognut sa `react-native-enriched`) prikazuje se na isti način na iOS-u, Android-u, i browser-u, tako da je iskustvo uređivanja konzistentno svuda uz jednu implementaciju. Preklapanja koja bi inače ograničila listu komentara (meni, GIF birač, lista obaveštenja) su vezana ispod njihovih okidača na web verziji.
 
-### Održavanje Trenutačnosti sa React Native
+Možete testirati svaki widget sami u uživo <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">browser-u komponenti</a>, koji je ovaj SDK u browser-u putem `react-native-web`.
 
-5.0 je izgrađena i testirana na React Native 0.81 i React 19, i cilja na Novu Arhitekturu (Fabric), koju zahteva native rich text editor. Održavanje trenutačnosti ovde nije unos posla: editor, upravljanje gestama, i renderisanje postaju brži i tačniji kako React Native napreduje, i radije bismo uzeli te nadogradnje postepeno nego da zaostanemo godinama.
+### Održavanje Aktuelnosti sa React Native
+
+5.0 je izgrađen i testiran protiv React Native 0.81 i React 19, i cilja na Novu Arhitekturu (Fabric), što je neophodno za nativni rich text editor. Održavanje aktuelnosti ovde nije besposlen posao: editor, rukovanje gestovima, i renderovanje postaju brži i tačniji kako React Native napreduje, i više bismo voleli da te nadogradnje uzimamo postepeno nego da ostanemo godinama iza.
 
 ### Na Zaključak
 
-Ova prepravka je bila o tome da se React Native SDK pruži istu prvorazrednu osnovu kao i naše druge biblioteke: brz i predvidljiv model podataka, izgled koji možete prilagoditi u jednom svojstvu, chat vidžet, i podrška za web, sve na modernoj React Native osnovi.
+Ovo ponovno pisanje je bilo o davanju React Native SDK-ju istu prvu klasu kao našim drugim bibliotekama: brz i predvidiv model podataka, izgled koji možete tematski postaviti u jednom prop-u, widget za chat, i podrška za web, sve na modernoj React Native osnovi.
 
-SDK možete pronaći na <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a> i izvor, sa primerima, na <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>. Javite nam u komentarima ispod ako naiđete na nešto.
+Možete pronaći SDK na <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a>, izvor, s primerima, na <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>, i svaki widget koji radi uživo u <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">browser-u komponenti</a>. Javite nam u nastavku ako naiđete na bilo šta.
 
 Živeli!
 

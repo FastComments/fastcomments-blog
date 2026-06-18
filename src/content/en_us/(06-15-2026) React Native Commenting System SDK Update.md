@@ -18,7 +18,7 @@ We rebuilt fastcomments-react-native-sdk from the ground up: new, more efficient
 
 We just shipped version 5.1 of `fastcomments-react-native-sdk`, our React Native library that renders comments and chat with real native components instead of a WebView.
 
-We rewrote the internals, redesigned the whole look, added a live chat widget, brought the SDK to the web, and upgraded it to the latest React Native and React.
+We rewrote the internals, redesigned the entire appearance, added a live chat widget, brought the SDK to the web, and upgraded it to the latest React Native and React.
 
 <div class="text-center">
     <img src="images/rn-sdk-light.png" alt="FastComments React Native SDK, light theme" title="FastComments React Native SDK" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
@@ -38,15 +38,15 @@ For the best experience we recommend the SDK. The rest of this post is about wha
 
 The primary driver of this change is to ensure our library stays true to our name and remains Fast. We had several customers complain about its performance, so this is now fixed.
 
-The SDK originally kept its comment tree in Hookstate. It worked, but as threads and live updates grew, things started to slow down.
+The SDK originally kept its comment tree in Hookstate. It worked, but as threads and live updates grew things started to slow down.
 
-We replaced Hookstate with Zustand and a flat, indexed store. Comments now live in a `byId` map alongside `childrenByParent`, `rootOrder`, and `pinnedIds` indexes, instead of a tree nested inside state.
+We replaced Hookstate with Zustand and a flat, indexed store. Comments now reside in a `byId` map alongside `childrenByParent`, `rootOrder`, and `pinnedIds` indexes, instead of a tree nested inside state.
 
 The payoff:
 
 - Live events (a new comment, a vote, an edit) became O(1) mutations instead of walking and cloning a tree.
 - We dropped two full-tree JSON deep-clones that used to run on every fetch.
-- Components subscribe to exactly the slices they read, the standard selector model, so a vote on one comment touches one comment.
+- Components subscribe to exactly the slices they read, the standard selector model, so a vote on one comment touches only that comment.
 
 That last point matters more than it sounds. With selector-based subscriptions, a row only re-renders when its own data changes.
 
@@ -82,6 +82,8 @@ We added `FastCommentsLiveChat`, a chat preset over the same engine that mirrors
 
 The same SDK now runs on the web through `react-native-web`. The rich text composer (powered by `react-native-enriched`) renders the same way on iOS, Android, and the browser, so the editing experience is consistent everywhere with a single implementation. Overlays that the comment list would otherwise clip (menus, the GIF picker, the notification list) are anchored under their triggers on the web build.
 
+You can try every widget yourself in the live <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">component browser</a>, which is this SDK running in the browser via `react-native-web`.
+
 ### Keeping Current With React Native
 
 5.0 is built and tested against React Native 0.81 and React 19, and it targets the New Architecture (Fabric), which the native rich text editor requires. Keeping current here is not busywork: the editor, the gesture handling, and the rendering all get faster and more correct as React Native moves forward, and we would rather take those upgrades steadily than fall years behind.
@@ -90,7 +92,7 @@ The same SDK now runs on the web through `react-native-web`. The rich text compo
 
 This rewrite was about giving the React Native SDK the same first-class footing as our other libraries: a fast and predictable data model, a look you can theme in one prop, a chat widget, and web support, all on a modern React Native foundation.
 
-You can find the SDK on <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a> and the source, with examples, on <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>. Let us know below if you run into anything.
+You can find the SDK on <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a>, the source, with examples, on <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>, and every widget running live in the <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">component browser</a>. Let us know below if you run into anything.
 
 Cheers!
 

@@ -7,60 +7,60 @@
 # [postlink]Aktualizacja SDK systemu komentarzy React Native[/postlink]
 
 {{#unless isPost}}
-Przebudowaliśmy fastcomments-react-native-sdk od podstaw: nowe, bardziej wydajne zarządzanie stanem, nowy design wykorzystujący Design Tokens, dedykowany widget czatu na żywo oraz wsparcie dla przeglądarki na najwyższym poziomie.
+Przebudowaliśmy fastcomments-react-native-sdk od podstaw: nowa, bardziej efektywna obsługa stanu, redesign z użyciem tokenów projektu, dedykowany widget czatu na żywo oraz wsparcie dla sieci na najwyższym poziomie.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Ten artykuł zawiera techniczne żargon
+### <i class="circle">!</i> Ten artykuł zawiera terminologię techniczną
 
-### Co Nowego
+### Co nowego
 
-Właśnie wydaliśmy wersję 5.1 `fastcomments-react-native-sdk`, naszej biblioteki React Native, która renderuje komentarze i czat za pomocą prawdziwych komponentów natywnych zamiast WebView.
+Właśnie wypuściliśmy wersję 5.1 `fastcomments-react-native-sdk`, naszej biblioteki React Native, która renderuje komentarze i czat za pomocą prawdziwych komponentów natywnych zamiast WebView.
 
-Przepisaśmy wnętrzności, zredesignowaliśmy cały wygląd, dodaliśmy widget czatu na żywo, wprowadziliśmy SDK do sieci i zaktualizowaliśmy go do najnowszego React Native i React.
+Przepisaliśmy wewnętrzną logikę, zaprojektowaliśmy cały wygląd na nowo, dodaliśmy widget czatu na żywo, przenieśliśmy SDK do sieci i zaktualizowaliśmy do najnowszego React Native oraz React.
 
 <div class="text-center">
-    <img src="images/rn-sdk-light.png" alt="FastComments React Native SDK, jasny motyw" title="FastComments React Native SDK" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
-    <img src="images/rn-sdk-dark.png" alt="FastComments React Native SDK, ciemny motyw" title="FastComments React Native SDK, ciemny motyw" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
+    <img src="images/rn-sdk-light.png" alt="FastComments React Native SDK, jasny temat" title="FastComments React Native SDK" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
+    <img src="images/rn-sdk-dark.png" alt="FastComments React Native SDK, ciemny temat" title="FastComments React Native SDK, ciemny temat" style="max-width:280px;display:inline-block;margin:8px;vertical-align:top" />
 </div>
 
-### Dlaczego Dwie Biblioteki React Native?
+### Dlaczego dwie biblioteki React Native?
 
-Krótka uwaga, ponieważ zadawano nam to pytanie. Wydajemy dwie opcje:
+Szybka uwaga, ponieważ otrzymujemy to pytanie. Wydajemy dwie opcje:
 
-- `fastcomments-react-native` to cienki wrapper wokół naszego widgetu webowego działającego w WebView. To najszybszy sposób na uzyskanie każdej funkcji natychmiastowo, a także korzysta z poprawek webowych automatycznie.
-- `fastcomments-react-native-sdk` (ten) renderuje interfejs użytkownika za pomocą natywnych komponentów React Native bez WebView. Jest bardziej elastyczny, w pełni dostosowywalny do stylów i działa natywnie, ponieważ jest natywny.
+- `fastcomments-react-native` to cienki wrapper wokół naszego widgetu internetowego działającego w WebView. To najszybszy sposób na natychmiastowe uzyskanie wszystkich funkcji i automatyczne korzystanie z poprawek internetowych.
+- `fastcomments-react-native-sdk` (ten) renderuje UI za pomocą natywnych komponentów React Native bez WebView. Jest bardziej elastyczny, w pełni konfigurowalny i działa natywnie, ponieważ jest natywny.
 
-Dla najlepszych doświadczeń zalecamy SDK. Reszta tego posta dotyczy zmian w wersji 5.0.
+Dla najlepszych wrażeń polecamy SDK. Reszta tego wpisu dotyczy zmian w wersji 5.0.
 
-### Nowe Zarządzanie Stanem
+### Nowe zarządzanie stanem
 
-Głównym celem tej zmiany jest upewnienie się, że nasza biblioteka pozostaje wierna naszej nazwie i pozostaje szybka. Mieliśmy kilka skarg od klientów dotyczących jej wydajności, więc to teraz naprawiliśmy.
+Głównym celem tej zmiany jest upewnienie się, że nasza biblioteka pozostaje wierna naszej nazwie i pozostaje szybka. Mieliśmy kilku klientów, którzy skarżyli się na jej wydajność, więc teraz to zostało naprawione.
 
-SDK pierwotnie przechowywało swoje drzewo komentarzy w Hookstate. Działało, ale w miarę wzrostu liczby wątków i aktualizacji na żywo zaczęło zwalniać.
+SDK początkowo przechowywało drzewo komentarzy w Hookstate. Działało, ale gdy wątki i aktualizacje na żywo rosły, sprawy zaczęły zwalniać.
 
-Zamieniliśmy Hookstate na Zustand i płaski, indeksowy magazyn. Komentarze teraz żyją w mapie `byId` razem z indeksami `childrenByParent`, `rootOrder` i `pinnedIds`, zamiast w drzewie zagnieżdżonym wewnątrz stanu.
+Zastąpiliśmy Hookstate Zustand oraz płaskim, indeksowanym magazynem. Komentarze teraz znajdują się w mapie `byId` obok indeksów `childrenByParent`, `rootOrder` i `pinnedIds`, zamiast w drzewie zagnieżdżonym w stanie.
 
-Korzyści:
+Zysk:
 
-- Wydarzenia na żywo (nowy komentarz, głos, edycja) stały się mutacjami O(1) zamiast przechodzić przez drzewo i klonować je.
-- Porzuciliśmy dwa pełne klony JSON drzewa, które uruchamiały się przy każdym pobraniu.
-- Komponenty subskrybują dokładnie te fragmenty, które odczytują, według standardowego modelu selektora, więc głos na jednym komentarzu dotyczy tylko jednego komentarza.
+- Wydarzenia na żywo (nowy komentarz, głosowanie, edytowanie) stały się mutacjami O(1) zamiast przechodzenia i klonowania drzewa.
+- Zredukowaliśmy dwa pełne klony JSON głębokiego drzewa, które działały przy każdym pobraniu.
+- Komponenty subskrybują dokładnie te fragmenty, które czytają, zgodnie z standardowym modelem selektora, więc głosowanie na jeden komentarz dotyka jednego komentarza.
 
-Ten ostatni punkt ma większe znaczenie, niż się wydaje. Dzięki subskrypcjom opartym na selektorach, wiersz jest ponownie renderowany tylko wtedy, gdy zmieniają się jego własne dane.
+Ostatni punkt ma większe znaczenie, niż się wydaje. Dzięki subskrypcjom opartym na selektorach, wiersz ponownie renderuje się tylko wtedy, gdy zmieniają się jego dane.
 
-### Redesign oparty na Tokenach
+### Redesign oparty na tokenach
 
-Stary wygląd był zbiorem twardo zakodowanych stylów. Nowy domyślny styl jest generowany z zestawu semantycznych tokenów projektowych (`FastCommentsTheme`): kolory, odstępy, promienie, rozmiary czcionek, wagi czcionek oraz rozmiary awatarów. Całe drzewo stylów pochodzi z tych tokenów.
+Stary wygląd to był zbiór zakodowanych stylów. Nowy domyślny styl jest generowany z zestawu semantycznych tokenów projektowych (`FastCommentsTheme`): kolory, odstępy, promienie, rozmiary czcionek, wagi czcionek i rozmiary awatarów. Całe drzewo stylów pochodzi z tych tokenów.
 
-Oznacza to, że stylizacja jest jednym atrybutem:
+Oznacza to, że zmiana stylu to jedna właściwość:
 
 ```tsx
 <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-Tryb ciemny jest tylko jedną parą tokenów od:
+Ciemny tryb jest o jeden zestaw tokenów dalej:
 
 ```tsx
 import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -68,29 +68,31 @@ import { getDarkTheme } from 'fastcomments-react-native-sdk';
 <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-Sam redesign to czystszy, nowoczesny neutralny wygląd: cienkie separatory, przyciski głosów w kształcie pigułek i chipów, wypełnione przyciski główne, zaokrąglone awatary i spójny rozmiar czcionki. Atrybut `styles` wciąż tam jest do precyzyjnych nadpisań, więc istniejące integracje wciąż działają.
+Redesign sam w sobie to czystszy, nowoczesny wygląd neutralny: cienkie separatory, przyciski głosowania i chipy w kształcie pigułki, wypełnione główne przyciski, zaokrąglone awatary oraz spójna skala typograficzna. Właściwość `styles` nadal istnieje dla precyzyjnych nadpisań, więc istniejące integracje działają.
 
-### Dedykowany Widget Czatowy na Żywo
+### Dedykowany widget czatu na żywo
 
-Dodaliśmy `FastCommentsLiveChat`, preset czatu działający na tym samym silniku, co nasz widok czatu SDK dla Androida: chronologiczne wiadomości z najnowszymi na dole, kompozytor poniżej listy, pasek nagłówka na żywo z punktem połączenia i liczbą użytkowników, automatyczne przewijanie, które zatrzymuje się podczas czytania starszych wiadomości, oraz nieskończona historia podczas przewijania w górę. Każdy preset jest możliwy do nadpisania przez `config`.
+Dodaliśmy `FastCommentsLiveChat`, preset czatu oparty na tym samym silniku, który odzwierciedla widok czatu naszego SDK na Androida: chronologiczne wiadomości z najnowszymi na dole, kompozytor poniżej listy, pasek nagłówka na żywo z kropką połączenia i liczbą użytkowników, automatyczne przewijanie, które zatrzymuje się podczas czytania starszych wiadomości, i nieskończona historia podczas przewijania w górę. Każdy preset można nadpisać przez `config`.
 
 ```tsx
 <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
-### Teraz także w Sieci
+### Teraz także w sieci
 
-To samo SDK działa teraz w przeglądarce dzięki `react-native-web`. Kompozytor tekstu bogatego (napędzany przez `react-native-enriched`) renderuje się w ten sam sposób na iOS, Androidzie i w przeglądarce, więc doświadczenie edycji jest spójne wszędzie z jedną implementacją. Nakładki, które w przeciwnym razie przycinają listę komentarzy (menu, wybór GIF-ów, lista powiadomień) są zakotwiczone pod swoimi wyzwalaczami w wersji sieciowej.
+To samo SDK teraz działa w sieci poprzez `react-native-web`. Edytor tekstu (zasilany przez `react-native-enriched`) renderuje się w ten sam sposób na iOS, Androidzie i w przeglądarce, więc doświadczenie edytorskie jest spójne wszędzie dzięki jednej implementacji. Nakładki, które w przeciwnym razie zostałyby przycięte przez listę komentarzy (menu, wybór GIF-ów, lista powiadomień) są zakotwiczone pod ich wyzwalaczami w wersji webowej.
 
-### Utrzymywanie Aktualności z React Native
+Możesz samodzielnie wypróbować każdy widget w na żywo <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">przeglądarki komponentów</a>, co jest tym SDK działającym w przeglądarce za pośrednictwem `react-native-web`.
 
-Wersja 5.0 jest zbudowana i testowana na React Native 0.81 i React 19, i jest ukierunkowana na Nową Architekturę (Fabric), którą wymaga natywny edytor tekstu wzbogaconego. Utrzymywanie aktualności w tym zakresie nie jest bezsensowne: edytor, obsługa gestów i renderowanie stają się szybsze i bardziej poprawne w miarę postępu React Native, i wolimy podejmować te aktualizacje stopniowo, niż ugrzęznąć z latami w tyle.
+### Utrzymywanie aktualności z React Native
+
+5.0 jest zbudowane i testowane z React Native 0.81 i React 19, a jego celem jest Nowa Architektura (Fabric), której wymaga natywny edytor tekstu. Utrzymywanie aktualności nie jest pracą bez celu: edytor, obsługa gestów i renderowanie stają się szybsze i bardziej poprawne, gdy React Native się rozwija, a my wolimy stopniowo wprowadzać te aktualizacje niż zostać w tyle na lata.
 
 ### Podsumowanie
 
-To przepisywanie miało na celu zapewnienie SDK React Native tego samego pierwszorzędnego statusu, co nasze inne biblioteki: szybki i przewidywalny model danych, wygląd, który można dostosować w jednym atrybucie, widget czatu i wsparcie dla sieci, wszystko na nowoczesnej podstawie React Native.
+Ta przeróbka miała na celu zapewnienie SDK React Native takiego samego pierwszorzędnego statusu jak nasze inne biblioteki: szybki i przewidywalny model danych, wygląd, który można stylizować jedną właściwością, widget czatu oraz wsparcie dla sieci, wszystko na nowoczesnej bazie React Native.
 
-Możesz znaleźć SDK na <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a> oraz kod źródłowy z przykładami na <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHub</a>. Daj nam znać poniżej, jeśli napotykasz na jakiekolwiek problemy.
+Możesz znaleźć SDK na <a href="https://www.npmjs.com/package/fastcomments-react-native-sdk" target="_blank">NPM</a>, źródło, z przykładami, na <a href="https://github.com/FastComments/fastcomments-react-native-sdk" target="_blank">GitHubie</a>, a każdy widget działa na żywo w <a href="https://fastcomments.com/commenting-system-for-react-native" target="_blank">przeglądarce komponentów</a>. Daj nam znać poniżej, jeśli napotkasz jakiekolwiek problemy.
 
 Na zdrowie!
 
