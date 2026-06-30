@@ -20,7 +20,7 @@ In our [TypeScript migration post](/blog/fastcomments-typescript-migration-compl
 FastComments now ships official, type-safe SDKs for **ten languages**:
 
 - TypeScript / JavaScript (npm)
-- Python (PyPI)
+- Python (GitHub)
 - Rust (crates.io)
 - Go (Go modules)
 - Java (Maven)
