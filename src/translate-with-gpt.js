@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 
 /**
- * Script to translate missing blog posts using OpenAI GPT API.
+ * Script to translate missing blog posts using an LLM chat-completions API.
  * Uses check-translations.js to identify missing translations.
  * Uses snapshot mechanism to detect when source files have changed.
  *
  * Usage: node src/translate-with-gpt.js [--locale <locale>] [--concurrency <n>] [--dry-run] [--force]
  *
  * Environment variables:
- *   OPENAI_API_KEY - Required. Your OpenAI API key.
- *   OPENAI_MODEL - Optional. Model to use (default: gpt-4o-mini).
+ *   LLM_API_KEY - Required. Your LLM provider API key.
+ *   LLM_MODEL - Optional. Model to use (default: openai/gpt-oss-120b-Turbo).
+ *   LLM_BASE_URL - Optional. Chat-completions API base (default DeepInfra).
  */
 
 const fs = require('fs');
@@ -26,8 +27,10 @@ const {
 
 const { hashContent } = require('./translation-snapshot');
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+const LLM_API_KEY = process.env.LLM_API_KEY;
+const LLM_MODEL = process.env.LLM_MODEL || 'openai/gpt-oss-120b-Turbo';
+const LLM_BASE_URL = process.env.LLM_BASE_URL || 'https://api.deepinfra.com/v1/openai';
+const LLM_ENDPOINT = `${LLM_BASE_URL.replace(/\/+$/, '')}/chat/completions`;
 const CACHE_FILE = path.join(__dirname, 'translation-cache.json');
 
 /**
@@ -86,12 +89,12 @@ function updateCache(cache, key, sourceHash) {
 }
 
 /**
- * Translation client using OpenAI API
+ * Translation client using an LLM chat-completions API
  */
 class TranslationClient {
     constructor() {
-        this.apiKey = OPENAI_API_KEY;
-        this.model = OPENAI_MODEL;
+        this.apiKey = LLM_API_KEY;
+        this.model = LLM_MODEL;
     }
 
     /**
@@ -177,7 +180,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
     }
 
     /**
-     * Call OpenAI API to translate content
+     * Call the LLM chat-completions API to translate content
      * @param {string} content - Source content
      * @param {string} locale - Target locale
      * @param {string} filename - For logging
@@ -188,7 +191,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
         const systemMessage = this.getSystemMessage(locale);
 
         try {
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            const response = await fetch(LLM_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -200,13 +203,13 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
                         { role: 'system', content: systemMessage },
                         { role: 'user', content: prompt }
                     ],
-                    max_completion_tokens: 16000
+                    max_tokens: 16000
                 })
             });
 
             if (!response.ok) {
                 const errorText = await response.text();
-                throw new Error(`OpenAI API error: ${response.status} ${errorText}`);
+                throw new Error(`LLM API error: ${response.status} ${errorText}`);
             }
 
             const data = await response.json();
@@ -362,8 +365,9 @@ Options:
   --help                 Show this help message
 
 Environment variables:
-  OPENAI_API_KEY         Required. Your OpenAI API key.
-  OPENAI_MODEL           Optional. Model to use (default: gpt-4o-mini).
+  LLM_API_KEY            Required. Your LLM provider API key.
+  LLM_MODEL              Optional. Model to use (default: openai/gpt-oss-120b-Turbo).
+  LLM_BASE_URL           Optional. Chat-completions API base (default DeepInfra).
 
 Examples:
   node src/translate-with-gpt.js
@@ -381,13 +385,13 @@ Examples:
 async function main() {
     const options = parseArgs();
 
-    if (!OPENAI_API_KEY) {
-        console.error('Error: OPENAI_API_KEY environment variable is required');
+    if (!LLM_API_KEY) {
+        console.error('Error: LLM_API_KEY environment variable is required');
         process.exit(1);
     }
 
     console.log(`Translation Script`);
-    console.log(`Model: ${OPENAI_MODEL}`);
+    console.log(`Model: ${LLM_MODEL}`);
     console.log(`Concurrency: ${options.concurrency}`);
     if (options.locale) console.log(`Filter locale: ${options.locale}`);
     if (options.dryRun) console.log(`Mode: DRY RUN`);
