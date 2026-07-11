@@ -130,12 +130,18 @@ function processPost(item, locale, contentDir) {
 		bodyHtml = html.substring(splitIndex);
 	}
 
+	// Derive the plain-text title from the (translated) <h1> so the HTML <title>
+	// element is localized too. Fall back to the filename-derived title if there's no h1.
+	const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+	const titleText = h1Match ? h1Match[1].replace(/<[^>]+>/g, '').trim() : title;
+
 	return {
 		html: html,
 		titleHtml: titleHtml,
 		bodyHtml: bodyHtml,
 		previewHTML: previewHTML,
 		title: title,
+		titleText: titleText,
 		urlId: urlId,
 		urlIdRaw: urlIdRawWithLocale,
 		fullUrl: fullUrl,
