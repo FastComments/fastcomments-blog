@@ -4,24 +4,24 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]生成的类型安全客户端SDK已发布[/postlink]
+# [postlink]Generated Type-Safe Client SDKs Released[/postlink]
 
 {{#unless isPost}}
-在我们的TypeScript迁移帖子中提到过，我们为十种编程语言发布了生成的类型安全客户端SDK。
+正如我们在 TypeScript 迁移文章中预告的那样，我们已经发布了针对十种编程语言的生成式、类型安全的客户端 SDK。
 {{/unless}}
 
 {{#isPost}}
 
 ### <i class="circle">!</i> 本文包含技术术语
 
-### 最新动态
+### 新功能
 
-在我们的[TypeScript迁移帖子](/blog/fastcomments-typescript-migration-completed)中，我们提到过生成的客户端SDK即将推出。现在它们已经到来了。
+在我们的[TypeScript migration post](/blog/fastcomments-typescript-migration-completed)中，我们提到生成式客户端 SDK 即将推出。它们现在已经发布。
 
-FastComments现在提供**十种语言**的官方类型安全SDK：
+FastComments 现在提供官方的、类型安全的 SDK，支持 **十种语言**：
 
 - TypeScript / JavaScript (npm)
-- Python (PyPI)
+- Python (GitHub)
 - Rust (crates.io)
 - Go (Go modules)
 - Java (Maven)
@@ -31,39 +31,39 @@ FastComments现在提供**十种语言**的官方类型安全SDK：
 - C++ (CMake)
 - Nim (Nimble)
 
-每个SDK都是基于我们的服务器生成的相同OpenAPI规范生成的。类型、方法签名和请求/响应模型与实际API保持同步。你的编译器可以在代码发起网络请求之前捕获字段名称的拼写错误和缺失的参数。
+每个 SDK 都是基于我们服务器生成的相同 OpenAPI 规范生成的。类型、方法签名以及请求/响应模型会自动与实际 API 保持同步。编译器会在代码发起网络请求之前捕获字段名拼写错误和缺少参数的问题。
 
 ### 工作原理
 
-TypeScript迁移是这个的前提条件。现在我们的服务器代码完全类型化，我们使用[我们对TSOA的分支](https://github.com/FastComments/tsoa)直接从我们的路由控制器生成OpenAPI 3.0规范。该规范输入到[OpenAPI Generator](https://openapi-generator.tech/)中，以生成每种语言的客户端库。
+TypeScript 迁移是实现此功能的前提。现在我们的服务器代码已全部使用类型标注，我们使用[our fork of TSOA](https://github.com/FastComments/tsoa)直接从路由控制器生成 OpenAPI 3.0 规范。该规范随后被输入到[OpenAPI Generator](https://openapi-generator.tech/)中，以生成各语言的客户端库。
 
-当API发生变化时，我们的工具会检测规范中的差异，重新生成受影响的SDK，为每种语言运行测试，并自动打开拉取请求。我们在Nim中构建了一个小型管理工具，协调十个仓库之间的更新-测试-发布周期。
+当 API 发生变化时，我们的工具会检测规范的差异，重新生成受影响的 SDK，针对每种语言运行测试，并自动打开 Pull Request。我们使用 Nim 构建了一个小型管理工具，负责在所有十个仓库中协调更新‑测试‑发布的整个流程。
 
-### 每个SDK的内容
+### 每个 SDK 包含什么
 
-每个SDK提供两个API类：
+每个 SDK 提供两个 API 类：
 
-- **`DefaultApi`**：需要你的API密钥的经过身份验证的端点。在服务器端使用这些接口进行内容审核、用户管理、分析和批量操作。
-- **`PublicApi`**：可以安全从浏览器和移动应用调用的未经过身份验证的端点。这些覆盖获取评论、发布、投票和其他客户端面对的操作。
+- **`DefaultApi`**：需要使用 API 密钥进行身份验证的端点。请在服务器端用于审核、用户管理、分析以及批量操作。
+- **`PublicApi`**：无需身份验证即可调用的端点，适用于浏览器和移动应用。这些端点涵盖获取评论、发布、投票以及其他面向客户端的操作。
 
-所有SDK还包括用于与现有身份验证系统集成的SSO工具。TypeScript SDK还提供实时事件订阅，以支持实时评论。
+所有 SDK 还包含用于集成现有身份验证系统的 SSO 工具。TypeScript SDK 额外提供实时事件订阅，以实现即时评论功能。
 
 ### 文档
 
-完整的API文档可在[docs.fastcomments.com](https://docs.fastcomments.com/guide-api.html)访问。每个SDK仓库还包括涵盖每个可用方法和模型的生成文档。
+完整的 API 文档可在[docs.fastcomments.com](https://docs.fastcomments.com/guide-api.html)查看。每个 SDK 仓库也包含生成的文档，覆盖所有可用的方法和模型。
 
-有关SSO集成，请参阅我们的[SSO指南](https://docs.fastcomments.com/guide-sso.html)。所有十个SDK都包括使用其本地加密库的SSO助手。
+有关 SSO 集成，请参阅我们的[SSO guide](https://docs.fastcomments.com/guide-sso.html)。所有十个 SDK 都提供使用其原生加密库的 SSO 辅助工具。
 
-### 总结
+### 结论
 
-拥有一个完全类型化的服务器使得生成一个可靠的OpenAPI规范变得简单，从而为十种（未来更多！）语言生成客户端主要是构建自动化并改善我们的类型定义，以使其可消费，而不增加过多的抽象来降低FastComments的速度！
+拥有完整类型标注的服务器使得生成可靠的 OpenAPI 规范变得轻而易举，进而为十种（未来甚至更多！）语言生成客户端主要是构建自动化流程并改进我们的类型定义，使其易于使用，同时避免添加过多抽象导致 FastComments 变慢。
 
-与所有重大发布一样，我们很高兴能够抽出时间来优化、测试和正确发布这些SDK。如果你有任何反馈或希望我们添加一种语言，请在下方告诉我们。
+和所有重要发布一样，我们很高兴能够抽出时间对这些 SDK 进行优化、测试并正式发布。如果您有任何反馈，或希望我们添加某种语言，请在下方告诉我们。
 
-干杯！
+干杯!
 
 {{/isPost}}
 
---- 
+---
 
 ---
