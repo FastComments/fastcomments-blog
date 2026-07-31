@@ -10,7 +10,7 @@ FastComments, çeşitli platformlar ve özel entegrasyonlar için SSO çözümle
 
 {{#isPost}}
 
-# Genel Bakış
+## Genel Bakış
 
 ## SSO Nedir?
 

@@ -10,7 +10,7 @@ FastComments proporciona soluciones de SSO para varias plataformas e integracion
 
 {{#isPost}}
 
-# Descripción general
+## Descripción general
 
 ## ¿Qué es SSO?
 

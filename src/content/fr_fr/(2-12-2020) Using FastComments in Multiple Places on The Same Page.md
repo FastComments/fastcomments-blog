@@ -50,7 +50,7 @@ Cela signifie que nous pouvons avoir autant de fils de discussion sur une page q
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Discuter des Chats</h1>',
+        headerHTML: '<h2>Discuter des Chats</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ Cela signifie que nous pouvons avoir autant de fils de discussion sur une page q
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Discuter des Chiens</h1>',
+        headerHTML: '<h2>Discuter des Chiens</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ passer n'importe quel élément DOM interrogé de la manière qui vous convient.
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Discuter des Chats&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Discuter des Chats&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Discuter des Chiens&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Discuter des Chiens&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

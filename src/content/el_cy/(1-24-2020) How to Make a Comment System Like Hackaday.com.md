@@ -51,7 +51,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Σχόλια';
         },
-        headerHTML: '<h1>Άφησε μια Απάντηση</h1>',
+        headerHTML: '<h2>Άφησε μια Απάντηση</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

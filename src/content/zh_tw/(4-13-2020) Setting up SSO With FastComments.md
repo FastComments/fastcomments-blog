@@ -10,7 +10,7 @@ FastComments 提供了各種平台及自訂整合的 SSO 解決方案。
 
 {{#isPost}}
 
-# 概述
+## 概述
 
 ## 什麼是 SSO？
 

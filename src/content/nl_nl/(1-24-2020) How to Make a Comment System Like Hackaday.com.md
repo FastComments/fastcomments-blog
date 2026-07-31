@@ -51,7 +51,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Reacties';
         },
-        headerHTML: '<h1>Laat een reactie achter</h1>',
+        headerHTML: '<h2>Laat een reactie achter</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

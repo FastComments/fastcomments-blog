@@ -50,7 +50,7 @@ FastComments є гнучким. Він прикріплюється до зви�
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Обговорення Котів</h1>',
+        headerHTML: '<h2>Обговорення Котів</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ FastComments є гнучким. Він прикріплюється до зви�
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Обговорення Псів</h1>',
+        headerHTML: '<h2>Обговорення Псів</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ FastComments є гнучким. Він прикріплюється до зви�
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Обговорення Котів&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Обговорення Котів&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Обговорення Псів&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Обговорення Псів&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

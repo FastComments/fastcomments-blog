@@ -51,7 +51,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Kommentarer';
         },
-        headerHTML: '<h1>Efterlad et svar</h1>',
+        headerHTML: '<h2>Efterlad et svar</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

@@ -51,7 +51,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' תגובות';
         },
-        headerHTML: '<h1>השאר תגובה</h1>',
+        headerHTML: '<h2>השאר תגובה</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

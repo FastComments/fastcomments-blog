@@ -51,7 +51,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Comentarios';
         },
-        headerHTML: '<h1>Deja una Respuesta</h1>',
+        headerHTML: '<h2>Deja una Respuesta</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

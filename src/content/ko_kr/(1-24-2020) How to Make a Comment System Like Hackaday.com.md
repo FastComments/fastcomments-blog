@@ -50,7 +50,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' 댓글';
         },
-        headerHTML: '<h1>답변 남기기</h1>',
+        headerHTML: '<h2>답변 남기기</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

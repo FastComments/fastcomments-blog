@@ -10,7 +10,7 @@ FastComments pruža SSO rešenja za razne platforme i prilagođene integracije.
 
 {{#isPost}}
 
-# Pregled
+## Pregled
 
 ## Šta je SSO?
 

@@ -50,7 +50,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Comments';
         },
-        headerHTML: '<h1>返信を残す</h1>',
+        headerHTML: '<h2>返信を残す</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

@@ -19,8 +19,8 @@ Se sammenligningen nedenfor (træk skyderen for at sammenligne):
 
 <div class="text-center">
     <div class="screenshot-comparison twentytwenty-container">
-      <img src="images/fc-redesign-old.png" />
-      <img src="images/fc-redesign-new.png" />
+      <img src="images/fc-redesign-old.png" alt="FastComments old design" />
+      <img src="images/fc-redesign-new.png" alt="FastComments new design" />
     </div>
 </div>
 

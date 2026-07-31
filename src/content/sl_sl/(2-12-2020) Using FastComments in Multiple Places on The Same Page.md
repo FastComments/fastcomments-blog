@@ -50,7 +50,7 @@ To pomeni, da imamo lahko na strani toliko tem, kolikor želimo. Na primer, tuka
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Razprava o mačkah</h1>',
+        headerHTML: '<h2>Razprava o mačkah</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ To pomeni, da imamo lahko na strani toliko tem, kolikor želimo. Na primer, tuka
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Razprava o psih</h1>',
+        headerHTML: '<h2>Razprava o psih</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ posredujete kateri koli DOM element, ki ga poizveste na kakršen koli način, ki
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Razprava o mačkah&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Razprava o mačkah&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Razprava o psih&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Razprava o psih&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

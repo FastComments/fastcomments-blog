@@ -50,7 +50,7 @@ Dette betyder, at vi kan have så mange tråde på en side, som vi ønsker. For 
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Diskuter Katte</h1>',
+        headerHTML: '<h2>Diskuter Katte</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ Dette betyder, at vi kan have så mange tråde på en side, som vi ønsker. For 
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Diskuter Hunde</h1>',
+        headerHTML: '<h2>Diskuter Hunde</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ videregive ethvert DOM-element, der er forespurgt på enhver måde, du ønsker.
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Diskuter Katte&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Diskuter Katte&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Diskuter Hunde&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Diskuter Hunde&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

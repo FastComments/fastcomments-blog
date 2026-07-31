@@ -51,7 +51,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Komentara';
         },
-        headerHTML: '<h1>Ostavite Odgovor</h1>',
+        headerHTML: '<h2>Ostavite Odgovor</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

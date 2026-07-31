@@ -50,7 +50,7 @@ FastCommentsは柔軟性があります。ページ上の通常の要素に接�
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>猫について話す</h1>',
+        headerHTML: '<h2>猫について話す</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ FastCommentsは柔軟性があります。ページ上の通常の要素に接�
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>犬について話す</h1>',
+        headerHTML: '<h2>犬について話す</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ FastCommentsは柔軟性があります。ページ上の通常の要素に接�
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;猫について話す&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;猫について話す&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;犬について話す&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;犬について話す&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

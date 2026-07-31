@@ -50,7 +50,7 @@ FastComments גמיש. הוא מחובר לאלמנט רגיל בדף כך שה�
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>שיחת על חתולים</h1>',
+        headerHTML: '<h2>שיחת על חתולים</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ FastComments גמיש. הוא מחובר לאלמנט רגיל בדף כך שה�
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>שיחת על כלבים</h1>',
+        headerHTML: '<h2>שיחת על כלבים</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ FastComments גמיש. הוא מחובר לאלמנט רגיל בדף כך שה�
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;שיחת על חתולים&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;שיחת על חתולים&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;שיחת על כלבים&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;שיחת על כלבים&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

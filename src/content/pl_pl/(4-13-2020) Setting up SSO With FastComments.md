@@ -10,7 +10,7 @@ FastComments oferuje rozwiązania SSO dla różnych platform i niestandardowych 
 
 {{#isPost}}
 
-# Przegląd
+## Przegląd
 
 ## Czym jest SSO?
 

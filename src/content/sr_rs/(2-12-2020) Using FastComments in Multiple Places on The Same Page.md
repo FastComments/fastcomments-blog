@@ -50,7 +50,7 @@ To znači da možemo imati onoliko diskusija na stranici koliko želimo. Na prim
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Diskutujte o mačkama</h1>',
+        headerHTML: '<h2>Diskutujte o mačkama</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ To znači da možemo imati onoliko diskusija na stranici koliko želimo. Na prim
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Diskutujte o psima</h1>',
+        headerHTML: '<h2>Diskutujte o psima</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -79,14 +79,14 @@ proslijediti bilo koji DOM element kako god želite.
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Diskutujte o mačkama&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Diskutujte o mačkama&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Diskutujte o psima&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Diskutujte o psima&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

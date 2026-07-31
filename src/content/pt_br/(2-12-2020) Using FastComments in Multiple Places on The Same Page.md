@@ -50,7 +50,7 @@ Isso significa que podemos ter quantos threads quisermos em uma página. Por exe
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Discutir Gatos</h1>',
+        headerHTML: '<h2>Discutir Gatos</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ Isso significa que podemos ter quantos threads quisermos em uma página. Por exe
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Discutir Cães</h1>',
+        headerHTML: '<h2>Discutir Cães</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -79,14 +79,14 @@ passar qualquer elemento DOM consultado da maneira que preferir.
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Discutir Gatos&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Discutir Gatos&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Discutir Cães&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Discutir Cães&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

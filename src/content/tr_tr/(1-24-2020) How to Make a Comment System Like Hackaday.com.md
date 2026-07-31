@@ -50,7 +50,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' Yorum';
         },
-        headerHTML: '<h1>Bir Cevap Bırak</h1>',
+        headerHTML: '<h2>Bir Cevap Bırak</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

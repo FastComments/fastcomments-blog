@@ -49,7 +49,7 @@ This means we can have as many threads on a page as we want. For example, here a
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Discuss Cats</h1>',
+        headerHTML: '<h2>Discuss Cats</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -57,7 +57,7 @@ This means we can have as many threads on a page as we want. For example, here a
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Discuss Dogs</h1>',
+        headerHTML: '<h2>Discuss Dogs</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ pass in any DOM element queried in any manner you like.
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Discuss Cats&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Discuss Cats&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Discuss Dogs&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Discuss Dogs&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

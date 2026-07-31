@@ -50,7 +50,7 @@ FastComments 是灵活的。它可以附加到页面上的一个常规元素，�
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>讨论猫</h1>',
+        headerHTML: '<h2>讨论猫</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ FastComments 是灵活的。它可以附加到页面上的一个常规元素，�
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>讨论狗</h1>',
+        headerHTML: '<h2>讨论狗</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ FastComments 是灵活的。它可以附加到页面上的一个常规元素，�
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;讨论猫&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;讨论猫&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;讨论狗&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;讨论狗&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

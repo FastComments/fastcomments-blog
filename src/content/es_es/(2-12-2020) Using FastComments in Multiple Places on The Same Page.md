@@ -50,7 +50,7 @@ Esto significa que podemos tener tantos hilos en una página como queramos. Por 
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Discutir Gatos</h1>',
+        headerHTML: '<h2>Discutir Gatos</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ Esto significa que podemos tener tantos hilos en una página como queramos. Por 
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Discutir Perros</h1>',
+        headerHTML: '<h2>Discutir Perros</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ pasar cualquier elemento del DOM consultado de la manera que desees.
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Discutir Gatos&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Discutir Gatos&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Discutir Perros&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Discutir Perros&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

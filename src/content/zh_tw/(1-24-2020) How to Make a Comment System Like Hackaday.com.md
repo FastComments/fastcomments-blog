@@ -51,7 +51,7 @@ document.getElementById('code').innerText = `
         commentCountUpdated: function(count) {
             document.getElementById('post-header-comment-count').innerHTML = Number(count).toLocaleString() + ' 條評論';
         },
-        headerHTML: '<h1>留下回覆</h1>',
+        headerHTML: '<h2>留下回覆</h2>',
         hideAvatars: true,
         inputAfterComments: true,
         absoluteDates: true,

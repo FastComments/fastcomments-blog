@@ -50,7 +50,7 @@ Oznacza to, że na stronie możemy mieć tyle wątków, ile chcemy. Na przykład
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Omówmy koty</h1>',
+        headerHTML: '<h2>Omówmy koty</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ Oznacza to, że na stronie możemy mieć tyle wątków, ile chcemy. Na przykład
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Omówmy psy</h1>',
+        headerHTML: '<h2>Omówmy psy</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ przekazać dowolny element DOM, który został zapytany w sposób, jaki chcesz.
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Omówmy koty&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Omówmy koty&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Omówmy psy&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Omówmy psy&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

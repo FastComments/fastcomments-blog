@@ -113,9 +113,11 @@ function processPost(item, locale, contentDir) {
 
 	html = html.replace('[postdate]', ctime.toDateString() + '<br>' + commentCountHTML);
 
+	// On listing pages each card renders a post preview; demote the preview's
+	// title <h1> to <h2> so a listing page has one <h1> (its section heading).
 	const previewHTML = getCompiledPost(html, {
 		isPost: false
-	});
+	}).replace(/<h1\b/gi, '<h2').replace(/<\/h1>/gi, '</h2>');
 
 	html = getCompiledPost(html, {
 		isPost: true
@@ -135,6 +137,26 @@ function processPost(item, locale, contentDir) {
 	const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
 	const titleText = h1Match ? h1Match[1].replace(/<[^>]+>/g, '').trim() : title;
 
+	// Meta description: first substantive body paragraph, tags stripped, entities decoded, capped for SERP length.
+	let description = '';
+	const paragraphs = bodyHtml.match(/<p[^>]*>[\s\S]*?<\/p>/gi) || [];
+	for (const p of paragraphs) {
+		const text = p.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+		if (text.length >= 40) {
+			description = text;
+			break;
+		}
+	}
+	if (!description) {
+		description = titleText;
+	}
+	description = description
+		.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+		.replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+	if (description.length > 155) {
+		description = description.slice(0, 155).replace(/\s+\S*$/, '').trim() + '…';
+	}
+
 	return {
 		html: html,
 		titleHtml: titleHtml,
@@ -142,6 +164,7 @@ function processPost(item, locale, contentDir) {
 		previewHTML: previewHTML,
 		title: title,
 		titleText: titleText,
+		description: description,
 		urlId: urlId,
 		urlIdRaw: urlIdRawWithLocale,
 		fullUrl: fullUrl,
@@ -266,13 +289,15 @@ function buildAlternateLocales(baseUrl, locale) {
 			url: targetUrl,
 			current: loc === locale
 		};
-	});
-	// Add x-default pointing to the default locale version
-	result.push({
-		hreflang: 'x-default',
-		url: defaultUrl,
-		current: false
-	});
+	}).filter(entry => generatedUrls.has(entry.url));
+	// Add x-default pointing to the default locale version (only if it exists)
+	if (generatedUrls.has(defaultUrl)) {
+		result.push({
+			hreflang: 'x-default',
+			url: defaultUrl,
+			current: false
+		});
+	}
 	// Keep index.html as-is so hreflang self-ref matches the actual page URL
 	return result;
 }
@@ -298,7 +323,7 @@ function buildAvailableLocales(baseUrl, locale) {
 			url: targetUrl,
 			current: loc === locale
 		};
-	});
+	}).filter(entry => generatedUrls.has(entry.url));
 }
 
 const feedGeneratorInstance = new feedGenerator.Feed({
@@ -340,11 +365,42 @@ function buildSitemapAlternates(baseFileName) {
 		} else {
 			targetFile = baseFileName.replace('.html', `-${loc}.html`);
 		}
-		alternates.push({ hreflang: locales[loc].hreflang, url: BASE_URL + '/' + targetFile });
+		if (generatedUrls.has(targetFile)) {
+			alternates.push({ hreflang: locales[loc].hreflang, url: BASE_URL + '/' + targetFile });
+		}
 	}
-	// x-default points to the default locale version
-	alternates.push({ hreflang: 'x-default', url: BASE_URL + '/' + baseFileName });
+	// x-default points to the default locale version (only if it exists)
+	if (generatedUrls.has(baseFileName)) {
+		alternates.push({ hreflang: 'x-default', url: BASE_URL + '/' + baseFileName });
+	}
 	return alternates;
+}
+
+// Precompute every page URL that will actually be generated, so hreflang, the
+// language selector, and sitemap alternates never point at a locale variant that
+// does not exist (e.g. a post not yet translated into every locale).
+const generatedUrls = new Set();
+for (const gLocale of Object.keys(locales)) {
+	const gPosts = postsByLocale[gLocale] || [];
+	if (gPosts.length === 0) continue;
+	const gTotalPages = Math.ceil(gPosts.length / POSTS_PER_PAGE);
+	generatedUrls.add(createIndexUrl(gLocale));
+	for (let page = 2; page <= gTotalPages; page++) {
+		generatedUrls.add(createIndexUrl(gLocale, page));
+	}
+	categoriesArray.forEach(function (category) {
+		const categorySlug = category.toLowerCase().replace(/\s+/g, '-');
+		const categoryPosts = gPosts.filter(post => post.categories.includes(category));
+		if (categoryPosts.length === 0) return;
+		const categoryTotalPages = Math.ceil(categoryPosts.length / POSTS_PER_PAGE);
+		generatedUrls.add(createCategoryUrl(categorySlug, gLocale));
+		for (let page = 2; page <= categoryTotalPages; page++) {
+			generatedUrls.add(createCategoryUrl(categorySlug, gLocale, page));
+		}
+	});
+	gPosts.forEach(function (post) {
+		generatedUrls.add(post.urlIdRaw);
+	});
 }
 
 const sitemapEntries = [];
@@ -380,7 +436,8 @@ for (const locale of Object.keys(locales)) {
 		categoryCounts: categoryCounts,
 		currentCategory: null,
 		pageTitle: localeData.t.recentPosts,
-		canonicalUrl: BASE_URL + '/' + createIndexUrl(defaultLocale),
+		pageDescription: localeData.t.recentPosts,
+		canonicalUrl: BASE_URL + '/' + createIndexUrl(locale),
 		...localeData
 	}), 'utf8');
 
@@ -411,7 +468,8 @@ for (const locale of Object.keys(locales)) {
 			categoryCounts: categoryCounts,
 			currentCategory: null,
 			pageTitle: `${localeData.t.recentPosts} - ${localeData.t.page} ${page}`,
-			canonicalUrl: BASE_URL + '/' + createIndexUrl(defaultLocale, page),
+			pageDescription: `${localeData.t.recentPosts} - ${localeData.t.page} ${page}`,
+			canonicalUrl: BASE_URL + '/' + createIndexUrl(locale, page),
 			...localeData,
 			alternateLocales: buildAlternateLocales(pageUrl, locale),
 			availableLocales: buildAvailableLocales(pageUrl, locale)
@@ -450,7 +508,8 @@ for (const locale of Object.keys(locales)) {
 			categoryCounts: categoryCounts,
 			currentCategory: category,
 			pageTitle: `${translatedCategory} ${localeData.t.posts}`,
-			canonicalUrl: BASE_URL + '/' + createCategoryUrl(categorySlug, defaultLocale),
+			pageDescription: `${translatedCategory} ${localeData.t.posts}`,
+			canonicalUrl: BASE_URL + '/' + createCategoryUrl(categorySlug, locale),
 			...localeData,
 			alternateLocales: buildAlternateLocales(categoryUrl, locale),
 			availableLocales: buildAvailableLocales(categoryUrl, locale)
@@ -483,7 +542,8 @@ for (const locale of Object.keys(locales)) {
 				categoryCounts: categoryCounts,
 				currentCategory: category,
 				pageTitle: `${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`,
-				canonicalUrl: BASE_URL + '/' + createCategoryUrl(categorySlug, defaultLocale, page),
+				pageDescription: `${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`,
+				canonicalUrl: BASE_URL + '/' + createCategoryUrl(categorySlug, locale, page),
 				...localeData,
 				alternateLocales: buildAlternateLocales(pageUrl, locale),
 				availableLocales: buildAvailableLocales(pageUrl, locale)
@@ -508,7 +568,7 @@ for (const locale of Object.keys(locales)) {
 			t: translations[locale] || translations[defaultLocale]
 		};
 
-		const canonicalUrl = BASE_URL + '/' + post.stableUrlId;
+		const canonicalUrl = BASE_URL + '/' + post.urlIdRaw;
 		const html = getCompiledTemplate('post.html', {
 			post: post,
 			footerYears: footerYears,
@@ -576,6 +636,10 @@ if (sitemapBytes > MAX_SITEMAP_BYTES) {
 }
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
 console.log(`Sitemap: ${sitemapUrlCount} URLs (${(sitemapBytes / 1024 / 1024).toFixed(1)}MB)`);
+
+// Write robots.txt pointing at the sitemap (served from the generated root).
+fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'robots.txt'),
+	`User-agent: *\nAllow: /\nSitemap: ${BASE_URL}/sitemap.xml\n`, 'utf8');
 
 // Write RSS feed (only for default locale)
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'rss.xml'), feedGeneratorInstance.rss2(), 'utf8');

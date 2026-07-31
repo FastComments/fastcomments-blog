@@ -50,7 +50,7 @@ FastComments는 유연합니다. 페이지의 일반 요소에 붙여서 모든 
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>고양이에 대한 이야기</h1>',
+        headerHTML: '<h2>고양이에 대한 이야기</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ FastComments는 유연합니다. 페이지의 일반 요소에 붙여서 모든 
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>개에 대한 이야기</h1>',
+        headerHTML: '<h2>개에 대한 이야기</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ FastComments는 유연합니다. 페이지의 일반 요소에 붙여서 모든 
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;고양이에 대한 이야기&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;고양이에 대한 이야기&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;개에 대한 이야기&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;개에 대한 이야기&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 

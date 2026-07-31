@@ -50,7 +50,7 @@ Dit betekent dat we zoveel threads op een pagina kunnen hebben als we willen. Bi
     window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?cats',
-        headerHTML: '<h1>Bespreek Katten</h1>',
+        headerHTML: '<h2>Bespreek Katten</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -58,7 +58,7 @@ Dit betekent dat we zoveel threads op een pagina kunnen hebben als we willen. Bi
     window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
         tenantId: 'L177BUDVvSe',
         urlId: window.location.href + '?dogs',
-        headerHTML: '<h1>Bespreek Honden</h1>',
+        headerHTML: '<h2>Bespreek Honden</h2>',
         customCSS: '.footer { display: none }'
     });
 </script>
@@ -78,14 +78,14 @@ elke DOM-element doorzoeken op de manier die je wilt.
  window.FastCommentsUI(document.getElementById('fastcomments-widget2'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?cats',
-   headerHTML: '&lt;h1&gt;Bespreek Katten&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Bespreek Katten&lt;/h2&gt;'
  });
 &lt;/script&gt;
 &lt;script&gt;
  window.FastCommentsUI(document.getElementById('fastcomments-widget3'), {
    tenantId: 'L177BUDVvSe',
    urlId: window.location.href + '?dogs',
-   headerHTML: '&lt;h1&gt;Bespreek Honden&lt;/h1&gt;'
+   headerHTML: '&lt;h2&gt;Bespreek Honden&lt;/h2&gt;'
  });
 &lt;/script&gt;</div>
 
