@@ -214,42 +214,55 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
     async translate(content, locale, filename) {
         const prompt = this.buildPrompt(content, locale);
         const systemMessage = this.getSystemMessage(locale);
+        const MAX_ATTEMPTS = 4;
+        let lastError = null;
 
-        try {
-            const response = await fetch(LLM_ENDPOINT, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.apiKey}`
-                },
-                body: JSON.stringify({
-                    model: this.model,
-                    messages: [
-                        { role: 'system', content: systemMessage },
-                        { role: 'user', content: prompt }
-                    ],
-                    max_tokens: 16000
-                })
-            });
+        for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+            try {
+                const response = await fetch(LLM_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${this.apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: this.model,
+                        messages: [
+                            { role: 'system', content: systemMessage },
+                            { role: 'user', content: prompt }
+                        ],
+                        max_tokens: 16000
+                    })
+                });
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`LLM API error: ${response.status} ${errorText}`);
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`LLM API error: ${response.status} ${errorText}`);
+                }
+
+                const data = await response.json();
+                let translation = data.choices?.[0]?.message?.content?.trim() || '';
+                if (!translation) throw new Error('empty translation response');
+
+                // Restore original category tags in case the model translated them
+                translation = this.restoreCategoryTags(content, translation);
+
+                console.log(`  [translated] ${locale}/${filename} (${data.usage?.total_tokens || 0} tokens)${attempt > 1 ? ` [attempt ${attempt}]` : ''}`);
+
+                return translation;
+            } catch (error) {
+                lastError = error;
+                console.error(`  [warn] ${locale}/${filename} attempt ${attempt}/${MAX_ATTEMPTS}: ${error.message}`);
+                // Transient failures (rate limits, timeouts, blips) should not fail the
+                // whole build. Back off and retry before giving up.
+                if (attempt < MAX_ATTEMPTS) {
+                    await new Promise(resolve => setTimeout(resolve, 1000 * attempt * attempt));
+                }
             }
-
-            const data = await response.json();
-            let translation = data.choices?.[0]?.message?.content?.trim() || '';
-
-            // Restore original category tags in case the model translated them
-            translation = this.restoreCategoryTags(content, translation);
-
-            console.log(`  [translated] ${locale}/${filename} (${data.usage?.total_tokens || 0} tokens)`);
-
-            return translation;
-        } catch (error) {
-            console.error(`  [error] ${locale}/${filename}: ${error.message}`);
-            return null;
         }
+
+        console.error(`  [error] ${locale}/${filename}: giving up after ${MAX_ATTEMPTS} attempts: ${lastError?.message}`);
+        return null;
     }
 }
 
