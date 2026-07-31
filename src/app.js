@@ -57,6 +57,48 @@ function createPostUrl(urlIdRaw, locale) {
 	return urlIdRaw;
 }
 
+// Approximate SERP-rendered width (px) of description text at 13px Arial: ASCII
+// glyphs average ~0.5em, non-ASCII (CJK/Cyrillic/etc.) ~1em; 1em = 13px. The
+// crawler flags descriptions under ~320px (too short) or over ~985px (too long).
+function serpDescPx(text) {
+	let px = 0;
+	for (let i = 0; i < text.length; i++) px += text.charCodeAt(i) <= 126 ? 6.5 : 13;
+	return px;
+}
+
+function decodeEntities(text) {
+	return text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+		.replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+}
+
+// Trim text under maxPx on a word boundary, adding an ellipsis when trimmed.
+function clampDescPx(text, maxPx) {
+	if (serpDescPx(text) <= maxPx) return text;
+	let out = '';
+	for (const w of text.split(' ')) {
+		const cand = out ? out + ' ' + w : w;
+		if (serpDescPx(cand + '…') > maxPx) break;
+		out = cand;
+	}
+	return (out || text.slice(0, 60)) + '…';
+}
+
+// Build a listing/category description from its heading plus the titles of the
+// posts shown, so it is unique per page, localized, and wide enough for SERP.
+function listingDescription(heading, postsShown) {
+	let d = heading;
+	const titles = (postsShown || []).map(p => p.titleText).filter(Boolean);
+	if (titles.length) {
+		const parts = [];
+		for (const t of titles) {
+			parts.push(t);
+			if (serpDescPx(heading + ': ' + parts.join(', ')) >= 360) break;
+		}
+		d = heading + ': ' + parts.join(', ');
+	}
+	return clampDescPx(d, 950);
+}
+
 // Helper function to process a single post file
 function processPost(item, locale, contentDir) {
 	const title = item.replace('\.md', '');
@@ -137,25 +179,18 @@ function processPost(item, locale, contentDir) {
 	const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
 	const titleText = h1Match ? h1Match[1].replace(/<[^>]+>/g, '').trim() : title;
 
-	// Meta description: first substantive body paragraph, tags stripped, entities decoded, capped for SERP length.
+	// Meta description: accumulate body paragraphs until wide enough for SERP (~360px),
+	// then clamp under ~950px. Falls back to the title for a near-empty body.
 	let description = '';
-	const paragraphs = bodyHtml.match(/<p[^>]*>[\s\S]*?<\/p>/gi) || [];
-	for (const p of paragraphs) {
-		const text = p.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-		if (text.length >= 40) {
-			description = text;
-			break;
-		}
+	const paragraphs = (bodyHtml.match(/<p[^>]*>[\s\S]*?<\/p>/gi) || [])
+		.map(p => p.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
+		.filter(Boolean);
+	for (const t of paragraphs) {
+		description = description ? description + ' ' + t : t;
+		if (serpDescPx(description) >= 360) break;
 	}
-	if (!description) {
-		description = titleText;
-	}
-	description = description
-		.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-		.replace(/&quot;/g, '"').replace(/&#39;/g, "'");
-	if (description.length > 155) {
-		description = description.slice(0, 155).replace(/\s+\S*$/, '').trim() + '…';
-	}
+	if (!description) description = titleText;
+	description = clampDescPx(decodeEntities(description), 950);
 
 	return {
 		html: html,
@@ -436,7 +471,7 @@ for (const locale of Object.keys(locales)) {
 		categoryCounts: categoryCounts,
 		currentCategory: null,
 		pageTitle: localeData.t.recentPosts,
-		pageDescription: localeData.t.recentPosts,
+		pageDescription: listingDescription(localeData.t.recentPosts, localePosts.slice(0, POSTS_PER_PAGE)),
 		canonicalUrl: BASE_URL + '/' + createIndexUrl(locale),
 		...localeData
 	}), 'utf8');
@@ -468,7 +503,7 @@ for (const locale of Object.keys(locales)) {
 			categoryCounts: categoryCounts,
 			currentCategory: null,
 			pageTitle: `${localeData.t.recentPosts} - ${localeData.t.page} ${page}`,
-			pageDescription: `${localeData.t.recentPosts} - ${localeData.t.page} ${page}`,
+			pageDescription: listingDescription(`${localeData.t.recentPosts} - ${localeData.t.page} ${page}`, localePosts.slice(startIndex, endIndex)),
 			canonicalUrl: BASE_URL + '/' + createIndexUrl(locale, page),
 			...localeData,
 			alternateLocales: buildAlternateLocales(pageUrl, locale),
@@ -508,7 +543,7 @@ for (const locale of Object.keys(locales)) {
 			categoryCounts: categoryCounts,
 			currentCategory: category,
 			pageTitle: `${translatedCategory} ${localeData.t.posts}`,
-			pageDescription: `${translatedCategory} ${localeData.t.posts}`,
+			pageDescription: listingDescription(`${translatedCategory} ${localeData.t.posts}`, categoryPosts.slice(0, POSTS_PER_PAGE)),
 			canonicalUrl: BASE_URL + '/' + createCategoryUrl(categorySlug, locale),
 			...localeData,
 			alternateLocales: buildAlternateLocales(categoryUrl, locale),
@@ -542,7 +577,7 @@ for (const locale of Object.keys(locales)) {
 				categoryCounts: categoryCounts,
 				currentCategory: category,
 				pageTitle: `${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`,
-				pageDescription: `${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`,
+				pageDescription: listingDescription(`${translatedCategory} ${localeData.t.posts} - ${localeData.t.page} ${page}`, categoryPosts.slice(startIndex, endIndex)),
 				canonicalUrl: BASE_URL + '/' + createCategoryUrl(categorySlug, locale, page),
 				...localeData,
 				alternateLocales: buildAlternateLocales(pageUrl, locale),
@@ -640,6 +675,18 @@ console.log(`Sitemap: ${sitemapUrlCount} URLs (${(sitemapBytes / 1024 / 1024).to
 // Write robots.txt pointing at the sitemap (served from the generated root).
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'robots.txt'),
 	`User-agent: *\nAllow: /\nSitemap: ${BASE_URL}/sitemap.xml\n`, 'utf8');
+
+// Remove stale generated HTML (e.g. pages from removed locales) so a deploy never
+// serves orphans. Keep everything we just generated plus the copied static pages.
+const keepHtml = new Set([...generatedUrls, ...fs.readdirSync(STATIC_DIR).filter(f => f.endsWith('.html'))]);
+let removedStale = 0;
+for (const f of fs.readdirSync(STATIC_GENERATED_DIR)) {
+	if (f.endsWith('.html') && !keepHtml.has(f)) {
+		fs.unlinkSync(path.join(STATIC_GENERATED_DIR, f));
+		removedStale++;
+	}
+}
+if (removedStale > 0) console.log(`Removed ${removedStale} stale generated HTML file(s).`);
 
 // Write RSS feed (only for default locale)
 fs.writeFileSync(path.join(STATIC_GENERATED_DIR, 'rss.xml'), feedGeneratorInstance.rss2(), 'utf8');
