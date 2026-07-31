@@ -162,6 +162,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
         lines.push('5. PRESERVE all markdown formatting (headers, lists, bold, links, etc.)');
         lines.push('6. Translate ONLY the natural language text (descriptions, explanations)');
         lines.push('7. Keep the same line structure and paragraph breaks');
+        lines.push('8. Preserve HTML entities and character references (e.g. &#123; &#125; &amp; &lt; &gt; &quot;) EXACTLY as written. Never convert them into the characters they represent - they are intentionally escaped so template braces are not parsed.');
         lines.push('');
         lines.push('SOURCE CONTENT:');
         lines.push('---');

@@ -33,7 +33,7 @@
     <img src="images/fc-bigcommerce-editor-post-file.png" alt="Editor Post File Location" title="Editor Post File Location" class="lozad" />
 </div>
 
-Ваш FastComments код снипет, који можете добити <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">овде</a>, треба да налепите одмах после линије 48, која садржи текст "{{>components/common/share}}".
+Ваш FastComments код снипет, који можете добити <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">овде</a>, треба да налепите одмах после линије 48, која садржи текст "&#123;{>components/common/share}&#125;".
 
 <div class="text-center">
     <img src="images/fc-bigcommerce-blog-post-script-location.png" alt="Place to insert FastComments" title="Place to insert FastComments" class="lozad" />
