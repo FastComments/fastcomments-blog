@@ -105,11 +105,32 @@ class TranslationClient {
     getSystemMessage(locale) {
         const localeInfo = locales[locale];
         const localeName = localeInfo ? localeInfo.nativeName : locale;
+        const script = this.scriptDirective(locale);
 
         return `You are an expert technical translator specializing in blog content.
-You translate from English to ${localeName} (${locale}).
+You translate from English to ${localeName} (${locale}).${script ? '\n' + script : ''}
 You maintain the exact same formatting, structure, and technical accuracy.
 You preserve all markdown formatting and special tags exactly as they appear.`;
+    }
+
+    /**
+     * Explicit writing-system instruction for locales the model gets wrong.
+     * Serbian (sr-RS/BA/ME) is Cyrillic but the model defaults to Latin unless told.
+     * @param {string} locale
+     * @returns {string|null}
+     */
+    scriptDirective(locale) {
+        switch (locale) {
+            case 'sr_rs':
+            case 'sr_ba':
+            case 'sr_me':
+                return 'CRITICAL: Write the Serbian translation in CYRILLIC script (ћирилица) ONLY. '
+                    + 'Never use Latin letters for Serbian words (e.g. write "Вебхукови долазе", not the Latin "Webhooks dolaze").';
+            case 'sr_latn_rs':
+                return 'Write the Serbian translation in LATIN script (latinica).';
+            default:
+                return null;
+        }
     }
 
     /**
@@ -127,6 +148,10 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
         lines.push(`Translate the following FastComments blog post from English to ${localeName}.`);
         lines.push('');
         lines.push('CRITICAL RULES:');
+        const script = this.scriptDirective(locale);
+        if (script) {
+            lines.push('0. ' + script);
+        }
         lines.push('1. DO NOT translate code blocks (\`\`\`...\`\`\`) or inline code (\`...\`)');
         lines.push('2. DO NOT translate URLs, API endpoints, variable names, or technical identifiers');
         lines.push('3. DO NOT translate special tags like [postlink], [/postlink], [filesize], [readtime], [postdate]');
