@@ -16,7 +16,7 @@
 
 ### Τι νέο
 
-Στην [TypeScript migration post](/blog/fastcomments-typescript-migration-completed), αναφέραμε ότι θα κυκλοφορούσαν παραγόμενα client SDKs. Είναι εδώ.
+Στην [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-el_gr.html), αναφέραμε ότι θα κυκλοφορούσαν παραγόμενα client SDKs. Είναι εδώ.
 
 Το FastComments τώρα παρέχει επίσημα, τύπου-ασφαλή SDKs για **δέκα γλώσσες**:
 

@@ -16,7 +16,7 @@ Kao što smo najavili u našem TypeScript migracijskom postu, objavili smo gener
 
 ### Što je novo
 
-U našem [TypeScript migration post](/blog/fastcomments-typescript-migration-completed), spomenuli smo da će stići generirani klijentski SDK‑ovi. Evo ih.
+U našem [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-hr_hr.html), spomenuli smo da će stići generirani klijentski SDK‑ovi. Evo ih.
 
 FastComments sada isporučuje službene, tip‑sigurne SDK‑ove za **deset jezika**:
 

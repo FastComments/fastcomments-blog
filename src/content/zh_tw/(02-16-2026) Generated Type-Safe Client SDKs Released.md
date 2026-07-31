@@ -16,7 +16,7 @@
 
 ### 新功能
 
-在我們的 [TypeScript migration post](/blog/fastcomments-typescript-migration-completed) 中，我們提到會推出產生式的客戶端 SDK。它們現在已經上線。
+在我們的 [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-zh_tw.html) 中，我們提到會推出產生式的客戶端 SDK。它們現在已經上線。
 
 FastComments 現在提供官方、型別安全的 SDK，支援 **十種語言**：
 

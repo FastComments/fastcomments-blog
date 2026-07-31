@@ -16,7 +16,7 @@
 
 ### 新功能
 
-在我们的[TypeScript migration post](/blog/fastcomments-typescript-migration-completed)中，我们提到生成式客户端 SDK 即将推出。它们现在已经发布。
+在我们的[TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-zh_cn.html)中，我们提到生成式客户端 SDK 即将推出。它们现在已经发布。
 
 FastComments 现在提供官方的、类型安全的 SDK，支持 **十种语言**：
 

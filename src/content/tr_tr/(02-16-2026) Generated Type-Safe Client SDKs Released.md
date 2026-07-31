@@ -16,7 +16,7 @@ TypeScript geçiş gönderimizde ipucu verdiğimiz gibi, on programlama dili iç
 
 ### Neler Yeni
 
-Bizim [TypeScript migration post](/blog/fastcomments-typescript-migration-completed) gönderimizde, oluşturulmuş istemci SDK'larının geleceğini belirtmiştik. İşte burada.
+Bizim [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-tr_tr.html) gönderimizde, oluşturulmuş istemci SDK'larının geleceğini belirtmiştik. İşte burada.
 
 FastComments artık resmi, tip güvenli SDK'ları **on dil** için sunuyor:
 

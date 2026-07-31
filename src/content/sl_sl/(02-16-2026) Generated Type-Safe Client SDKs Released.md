@@ -16,7 +16,7 @@ Kot smo namignili v našem prispevku o selitvi na TypeScript, smo izdali generir
 
 ### Kaj je novega
 
-V našem [TypeScript migration post](/blog/fastcomments-typescript-migration-completed) smo omenili, da bodo na voljo generirani odjemalski SDK-ji. So tukaj.
+V našem [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-sl_sl.html) smo omenili, da bodo na voljo generirani odjemalski SDK-ji. So tukaj.
 
 FastComments zdaj ponuja uradne, tipno varne SDK-je za **deset jezikov**:
 

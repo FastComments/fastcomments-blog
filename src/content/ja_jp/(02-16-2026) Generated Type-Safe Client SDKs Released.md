@@ -16,7 +16,7 @@ TypeScript 移行記事で予告した通り、10 のプログラミング言語
 
 ### 新機能
 
-私たちの[TypeScript 移行記事](/blog/fastcomments-typescript-migration-completed)で、生成されたクライアント SDK が登場することを言及しました。今、リリースされています。
+私たちの[TypeScript 移行記事](/(1-31-2025)-fastcomments-typescript-migration-completed-ja_jp.html)で、生成されたクライアント SDK が登場することを言及しました。今、リリースされています。
 
 FastComments は現在、公式の型安全 SDK を **10 の言語** 向けに提供しています:
 

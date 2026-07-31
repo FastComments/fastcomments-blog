@@ -16,7 +16,7 @@
 
 ### What's New
 
-У нашому [TypeScript migration post](/blog/fastcomments-typescript-migration-completed) ми згадали, що згенеровані клієнтські SDK з'являться. Вони вже тут.
+У нашому [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-uk_ua.html) ми згадали, що згенеровані клієнтські SDK з'являться. Вони вже тут.
 
 FastComments тепер постачає офіційні, типобезпечні SDK для **десяти мов**:
 

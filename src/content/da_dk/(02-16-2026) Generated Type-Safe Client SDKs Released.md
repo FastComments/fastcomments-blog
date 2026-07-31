@@ -16,7 +16,7 @@ Som nævnt i vores TypeScript-migrationsindlæg, har vi frigivet genererede, typ
 
 ### Hvad er nyt
 
-I vores [TypeScript migration post](/blog/fastcomments-typescript-migration-completed), nævnte vi, at genererede klient‑SDK'er var på vej. De er her.
+I vores [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-da_dk.html), nævnte vi, at genererede klient‑SDK'er var på vej. De er her.
 
 FastComments udgiver nu officielle, typesikre SDK'er for **ti sprog**:
 

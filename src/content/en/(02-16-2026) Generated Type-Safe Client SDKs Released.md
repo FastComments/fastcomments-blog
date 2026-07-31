@@ -15,7 +15,7 @@ As teased in our TypeScript migration post, we've released generated, type-safe 
 
 ### What's New
 
-In our [TypeScript migration post](/blog/fastcomments-typescript-migration-completed), we mentioned that generated client SDKs were coming. They're here.
+In our [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed.html), we mentioned that generated client SDKs were coming. They're here.
 
 FastComments now ships official, type-safe SDKs for **ten languages**:
 

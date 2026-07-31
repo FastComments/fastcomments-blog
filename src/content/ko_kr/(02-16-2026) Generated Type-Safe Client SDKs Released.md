@@ -16,7 +16,7 @@
 
 ### What's New
 
-우리의 [TypeScript migration post](/blog/fastcomments-typescript-migration-completed)에서 생성된 클라이언트 SDK가 곧 출시될 것이라고 언급했습니다. 이제 제공됩니다.
+우리의 [TypeScript migration post](/(1-31-2025)-fastcomments-typescript-migration-completed-ko_kr.html)에서 생성된 클라이언트 SDK가 곧 출시될 것이라고 언급했습니다. 이제 제공됩니다.
 
 FastComments는 이제 **열 개의 언어**에 대해 공식적인 타입 안전 SDK를 제공합니다:
 

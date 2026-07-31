@@ -16,7 +16,7 @@ Jak wspomniano w naszym poście o migracji do TypeScript, wydaliśmy wygenerowan
 
 ### Co nowego
 
-W naszym [post o migracji do TypeScript](/blog/fastcomments-typescript-migration-completed) wspomnieliśmy, że pojawią się wygenerowane SDK klienta. Są już tutaj.
+W naszym [post o migracji do TypeScript](/(1-31-2025)-fastcomments-typescript-migration-completed-pl_pl.html) wspomnieliśmy, że pojawią się wygenerowane SDK klienta. Są już tutaj.
 
 FastComments teraz udostępnia oficjalne, typowo‑bezpieczne SDK dla **dziesięciu języków**:
 
