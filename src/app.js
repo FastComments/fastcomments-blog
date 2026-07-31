@@ -36,7 +36,7 @@ handlebars.registerHelper('translateCategory', function(category, t) {
 });
 
 handlebars.registerHelper('categoryUrl', function(category, locale) {
-	const categorySlug = category.toLowerCase().replace(/\s+/g, '-');
+	const categorySlug = slugifyCategory(category);
 	return createCategoryUrl(categorySlug, locale);
 });
 
@@ -71,6 +71,12 @@ function decodeEntities(text) {
 		.replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 }
 
+// Category URL slug. Replace '&' with 'and' so category URLs never contain a raw
+// '&' (which breaks URL parsing / crawlers), then spaces to hyphens.
+function slugifyCategory(category) {
+	return category.toLowerCase().replace(/&/g, 'and').replace(/\s+/g, '-');
+}
+
 // Trim text under maxPx on a word boundary, adding an ellipsis when trimmed.
 function clampDescPx(text, maxPx) {
 	if (serpDescPx(text) <= maxPx) return text;
@@ -102,13 +108,17 @@ function listingDescription(heading, postsShown) {
 // Helper function to process a single post file
 function processPost(item, locale, contentDir) {
 	const title = item.replace('\.md', '');
-	const urlIdRaw = title.toLowerCase().replace(/ /g, '-') + '.html';
+	const rawSlug = title.toLowerCase().replace(/ /g, '-') + '.html';
+	// The URL/filename slug must not contain '&' (a raw '&' in a path breaks URL
+	// parsing and trips crawlers). Sanitize it for the URL, but keep the original
+	// slug as the stable comment id so existing comments are never orphaned.
+	const urlIdRaw = rawSlug.replace(/&/g, 'and');
 	const urlIdRawWithLocale = createPostUrl(urlIdRaw, locale);
 	const urlId = encodeURIComponent(urlIdRawWithLocale);
 	const fullUrl = BASE_URL + '/' + urlIdRawWithLocale;
 	const fullUrlRaw = BASE_URL + '/' + urlIdRawWithLocale;
 	// Use stable urlId without locale for comments (shared across all languages)
-	const stableUrlId = urlIdRaw;
+	const stableUrlId = rawSlug;
 	const commentCountHTML = `<div class="post-comment-count fast-comments-count" data-fast-comments-url-id="${stableUrlId}">...</div>`;
 
 	let fileContent = fs.readFileSync(path.join(contentDir, item), 'utf8');
@@ -424,7 +434,7 @@ for (const gLocale of Object.keys(locales)) {
 		generatedUrls.add(createIndexUrl(gLocale, page));
 	}
 	categoriesArray.forEach(function (category) {
-		const categorySlug = category.toLowerCase().replace(/\s+/g, '-');
+		const categorySlug = slugifyCategory(category);
 		const categoryPosts = gPosts.filter(post => post.categories.includes(category));
 		if (categoryPosts.length === 0) return;
 		const categoryTotalPages = Math.ceil(categoryPosts.length / POSTS_PER_PAGE);
@@ -520,7 +530,7 @@ for (const locale of Object.keys(locales)) {
 
 	// Generate category pages
 	categoriesArray.forEach(function(category) {
-		const categorySlug = category.toLowerCase().replace(/\s+/g, '-');
+		const categorySlug = slugifyCategory(category);
 		const categoryPosts = localePosts.filter(post => post.categories.includes(category));
 		const categoryTotalPages = Math.ceil(categoryPosts.length / POSTS_PER_PAGE);
 

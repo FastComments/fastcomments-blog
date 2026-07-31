@@ -34,7 +34,7 @@ Administrator-Tools angezeigt.
 
 Die URL-ID ist eine Zeichenkette, die entweder eine URL oder eine ID ist – sie kann jeden Wert haben, solange sie die aktuelle Seite darstellt. Wenn Sie eine Beitrags-, Artikel- oder Seiten-ID haben, können Sie diese anstelle der Seiten-URL für diesen Wert verwenden. Der Grund, warum die URL-ID separat ist, liegt darin, dass Sie möglicherweise zusätzliche Informationen in der URL speichern möchten, die die URL nicht einzigartig für die Seite machen würden.
 
-Bitte beachten Sie, dass wir die vollständige Konfiguration, die das Widget in TypeScript unterstützt, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">auf GitHub</a> dokumentiert haben.
+Bitte beachten Sie, dass wir die vollständige Konfiguration, die das Widget in TypeScript unterstützt, <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">auf GitHub</a> dokumentiert haben.
 
 #### Spezifitäten und ein echtes Demo
 

@@ -35,7 +35,7 @@ strumenti di amministrazione.
 L'ID URL è una stringa che è sia un URL che un ID - può essere qualsiasi valore purché rappresenti la pagina corrente. Se hai un post, un articolo o un ID pagina, puoi utilizzare quello
 invece dell'URL della pagina per questo valore. Il motivo per cui l'ID URL è separato è che potresti voler memorizzare informazioni extra nell'URL che renderebbero l'URL non unico per la pagina.
 
-Nota che abbiamo documentato la configurazione completa che il widget supporta in TypeScript <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">su GitHub</a>.
+Nota che abbiamo documentato la configurazione completa che il widget supporta in TypeScript <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">su GitHub</a>.
 
 #### Specifiche e una Demo Reale
 

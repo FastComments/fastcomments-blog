@@ -96,8 +96,8 @@ Da predstavite neavtoriziranega uporabnika, preprosto ne napolnite userDataJSONB
 
 #### Neposredni primeri za serializacijo in hasiranje podatkov uporabnika
 
-Več podrobnosti in primeri <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">tukaj (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">tukaj (java)</a> in
+Več podrobnosti in primeri <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">tukaj (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">tukaj (java)</a> in
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">tukaj (php)</a>.
 
 

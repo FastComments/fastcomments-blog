@@ -96,8 +96,8 @@ Para representar um usuário não autenticado, simplesmente não preencha userDa
 
 #### Exemplos Diretos para Serializar e Hashing Dados de Usuário
 
-Mais detalhes como exemplos <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">aqui (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">aqui (java)</a> e
+Mais detalhes como exemplos <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">aqui (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">aqui (java)</a> e
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">aqui (php)</a>.
 
 

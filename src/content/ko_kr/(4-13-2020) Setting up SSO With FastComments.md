@@ -96,8 +96,8 @@ SSO를 활성화하려면 새 "sso" 객체를 전달하세요. 이 객체는 다
 
 #### 사용자 데이터 직렬화 및 해싱을 위한 직접 예제
 
-자세한 내용은 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">여기 (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">여기 (java)</a> 및
+자세한 내용은 <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">여기 (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">여기 (java)</a> 및
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">여기 (php)</a>에서 확인하세요.
 
 

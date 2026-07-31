@@ -101,8 +101,8 @@ Da biste predstavili neautoriziranog korisnika, jednostavno ne popunite userData
 
 #### Direktni primjeri za serijalizaciju i hashe korisničkih podataka
 
-Više detalja kao primjeri <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">ovdje (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">ovdje (java)</a> i
+Više detalja kao primjeri <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">ovdje (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">ovdje (java)</a> i
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ovdje (php)</a>.
 
 

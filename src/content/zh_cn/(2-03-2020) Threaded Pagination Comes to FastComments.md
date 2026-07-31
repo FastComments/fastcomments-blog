@@ -8,6 +8,6 @@ FastComments 现在支持不折叠内容的分页！此外，如果您想快速�
 
 这意味着如果您在页面上有数百条回复，我们不会一次性加载所有内容，从而导致您的网站变得缓慢。当用户滚动到您的评论区，并在最初加载的 30 条评论之后继续阅读时，他们可以点击“显示下一组 30 条评论”来快速加载下一组内容并继续阅读。
 
-一如既往，这也进行了良好的优化。如果您对此类内容感兴趣，可以在我们的<a href="https://blog.winricklabs.com/(2-03-2020)-how-optimized-threaded-pagination-works.html" target="_blank">工程博客</a>上阅读相关信息。
+一如既往，这也进行了良好的优化。如果您对此类内容感兴趣，可以在我们的<a href="https://blog.fastcomments.com" target="_blank">工程博客</a>上阅读相关信息。
 
 这不需要您进行额外的设置！现有客户将会获得此功能。享受 FastComments。

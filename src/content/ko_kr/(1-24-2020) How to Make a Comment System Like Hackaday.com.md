@@ -67,7 +67,7 @@ document.getElementById('code').innerText = `
 - absoluteDates = 기본 날짜 형식(예: "11분 전")을 절대 날짜로 변경합니다.
 - customCSS = 사용자 정의 스타일링
 
-모든 구성 옵션은 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">여기</a>에 문서화되어 있습니다.
+모든 구성 옵션은 <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">여기</a>에 문서화되어 있습니다.
 
 <style>
     body, .content {

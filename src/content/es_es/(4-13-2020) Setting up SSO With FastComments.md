@@ -96,8 +96,8 @@ Para representar a un usuario no autenticado, simplemente no llenes userDataJSON
 
 #### Ejemplos directos para serializar y hash de datos del usuario
 
-Más detalles como ejemplos <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">aquí (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">aquí (java)</a> y
+Más detalles como ejemplos <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">aquí (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">aquí (java)</a> y
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">aquí (php)</a>.
 
 

@@ -19,7 +19,7 @@ Dit opent veel mogelijkheden - inclusief het integreren van FastComments met Gat
 
 #### Als Je Je Eigen Wrapper Hebt Geschreven
 
-Als je je eigen React-wrapper voor FastComments hebt geschreven - overweeg dan om deze te vervangen door de onze. Wij onderhouden deze abstractie voor je - en het bevat veel handige dingen zoals <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">automatisch herladen bij configuratiewijzigingen</a>.
+Als je je eigen React-wrapper voor FastComments hebt geschreven - overweeg dan om deze te vervangen door de onze. Wij onderhouden deze abstractie voor je - en het bevat veel handige dingen zoals <a href="https://github.com/FastComments/fastcomments-react" target="_blank">automatisch herladen bij configuratiewijzigingen</a>.
 
 #### Hoe het Werkt
 
@@ -33,7 +33,7 @@ We zijn begonnen met het opzetten van voorbeelden, die je <a href="https://githu
 
 #### Nachtmodus
 
-Een van de voorbeelden die we hebben is "nachtmodus" - FastComments weergeven op een site met een zwarte (of zeer donkere) achtergrond: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Een van de voorbeelden die we hebben is "nachtmodus" - FastComments weergeven op een site met een zwarte (of zeer donkere) achtergrond: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Bovendien, aangezien de widget reageert op configuratiewijzigingen, betekent dit dat je een modus kunt hebben om het thema van je site te schakelen en snel fastcomments-react kunt vertellen om te updaten.
 

@@ -20,7 +20,7 @@ Questo apre molte opportunità - inclusa l'integrazione di FastComments con Gats
 #### Se Hai Scritto il Tuo Wrapper
 
 Se hai scritto il tuo wrapper React per FastComments - considera di sostituirlo con il nostro nuovo. Ci occuperemo di mantenere questa astrazione per te - e contiene molte cose
-interessanti come <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">il riavvio automatico in caso di cambiamenti alla configurazione</a>.
+interessanti come <a href="https://github.com/FastComments/fastcomments-react" target="_blank">il riavvio automatico in caso di cambiamenti alla configurazione</a>.
 
 #### Come Funziona
 
@@ -34,7 +34,7 @@ Abbiamo iniziato a configurare esempi, che puoi trovare <a href="https://github.
 
 #### Modalità Notturna
 
-Uno degli esempi che abbiamo è "modalità notturna" - rendendo FastComments su un sito con uno sfondo nero (o molto scuro): <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Uno degli esempi che abbiamo è "modalità notturna" - rendendo FastComments su un sito con uno sfondo nero (o molto scuro): <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Inoltre, poiché il widget risponde ai cambiamenti di configurazione, ciò significa che puoi avere una modalità per attivare il tema del tuo sito e facilmente dire a fastcomments-react di aggiornarsi.
 

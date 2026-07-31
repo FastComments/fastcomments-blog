@@ -68,7 +68,7 @@ document.getElementById('code').innerText = `
 - absoluteDates = משנה את פורמט התאריך ברירת המחדל (כלומר, "לפני 11 דקות") לתאריך מוחלט.
 - customCSS = עיצוב מותאם אישית
 
-כל האפשרויות להגדרה מתועדות <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">כאן</a>.
+כל האפשרויות להגדרה מתועדות <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">כאן</a>.
 
 <style>
     body, .content {

@@ -96,7 +96,7 @@ FastComments SSO 使用 HMAC-SHA256 加密作为实现 SSO 的机制。首先，
 
 #### 序列化和哈希用户数据的直接示例
 
-有关示例的更多详细信息，<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">请点击这里 (js)</a>，<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">请点击这里 (java)</a> 和 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">请点击这里 (php)</a>。
+有关示例的更多详细信息，<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">请点击这里 (js)</a>，<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">请点击这里 (java)</a> 和 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">请点击这里 (php)</a>。
 
 ### 从 Disqus SSO 迁移
 

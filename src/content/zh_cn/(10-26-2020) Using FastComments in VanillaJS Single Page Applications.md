@@ -34,7 +34,7 @@ URL 是评论小部件的 URL。理想情况下，你应该能够从应用程序
 URL ID 是一个字符串，可以是 URL 或 ID - 只要它表示当前页面，它可以是任何值。如果你有文章、帖子或页面 ID，你可以使用它
 作为这个值，而不是页面 URL。URL ID 之所以独立，是因为你可能希望在 URL 中存储额外信息，这会使该 URL 对页面不唯一。
 
-请注意，我们已在 TypeScript 中记录了小部件支持的完整配置 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">在 GitHub 上</a>。
+请注意，我们已在 TypeScript 中记录了小部件支持的完整配置 <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">在 GitHub 上</a>。
 
 #### 具体内容和真实演示
 

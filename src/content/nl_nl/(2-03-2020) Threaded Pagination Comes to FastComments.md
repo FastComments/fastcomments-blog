@@ -10,7 +10,7 @@ heeft FastComments een "Laad Alle Reacties" knop op lange threads (zoals <a href
 Dit betekent dat als je honderden antwoorden op een pagina hebt, we je site niet zullen vertragen door ze allemaal tegelijk te laden. Zodra de gebruiker naar beneden scrolt naar
 jouw opmerkingensectie en verder leest dan de 30 opmerkingen die we in eerste instantie laden, kunnen ze op "Toon Volgende 30 Reacties" klikken om snel de volgende set te laden en verder te lezen.
 
-Het is ook goed geoptimaliseerd, zoals gewoonlijk. Als je in dat soort dingen geïnteresseerd bent, lees erover op onze <a href="https://blog.winricklabs.com/(2-03-2020)-how-optimized-threaded-pagination-works.html" target="_blank">engineering blog</a>.
+Het is ook goed geoptimaliseerd, zoals gewoonlijk. Als je in dat soort dingen geïnteresseerd bent, lees erover op onze engineering blog.
 
 Dit vereist geen extra setup van jouw kant! Bestaande klanten krijgen deze functie.
 Geniet van FastComments.

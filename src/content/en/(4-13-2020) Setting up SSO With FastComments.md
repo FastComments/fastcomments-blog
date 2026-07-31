@@ -100,8 +100,8 @@ To represent an unauthenticated user, simply do not populate userDataJSONBase64,
 
 #### Direct Examples for Serializing and Hashing User Data
 
-More details as an examples <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">here (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">here (java)</a> and
+More details as an examples <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">here (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">here (java)</a> and
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">here (php)</a>.
 
 

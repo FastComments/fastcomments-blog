@@ -20,7 +20,7 @@ To otvara brojne mogućnosti - uključujući integraciju FastComments s Gatsbyje
 #### Ako ste napisali vlastiti omotač
 
 Ako ste napisali vlastiti React omotač za FastComments - razmislite o zamjeni s našim novim. Održavat ćemo ovu apstrakciju za vas - a ona sadrži puno
-korisnih stvari poput <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">automatskog ponovnog učitavanja prilikom promjena konfiguracije</a>.
+korisnih stvari poput <a href="https://github.com/FastComments/fastcomments-react" target="_blank">automatskog ponovnog učitavanja prilikom promjena konfiguracije</a>.
 
 #### Kako to funkcionira
 
@@ -34,7 +34,7 @@ Počeli smo postavljati primjere, koje možete pronaći <a href="https://github.
 
 #### Noćni način
 
-Jedan od primjera koji imamo je "noćni način" - prikazivanje FastComments na web stranici s crnom (ili vrlo tamnom) pozadinom: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Jedan od primjera koji imamo je "noćni način" - prikazivanje FastComments na web stranici s crnom (ili vrlo tamnom) pozadinom: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Osim toga, budući da widget reagira na promjene konfiguracije, to znači da možete imati mod za prebacivanje teme vaše web stranice i lako reći fastcomments-react da ažurira.
 

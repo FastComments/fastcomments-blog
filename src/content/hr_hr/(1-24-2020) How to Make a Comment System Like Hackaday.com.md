@@ -69,7 +69,7 @@ vrhu stranice.
 - absoluteDates = Mijenja zadani format datuma (npr. "Prije 11 minuta") na apsolutni datum.
 - customCSS = Prilagođeni stil.
 
-Sve opcije konfiguracije su dokumentirane <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">ovdje</a>.
+Sve opcije konfiguracije su dokumentirane <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">ovdje</a>.
 
 <style>
     body, .content {

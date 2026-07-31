@@ -19,7 +19,7 @@
 
 #### אם כתבתם עטיפה משלכם
 
-אם כתבתם עטיפת React משלכם עבור FastComments - שקלו להחליף אותה בעטיפה החדשה שלנו. אנחנו נשמור על הה抽象 הזאת עבורכם - והיא מכילה הרבה דברים שימושיים כמו <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">הפעלה אוטומטית של עדכון על שינויים בהגדרות</a>.
+אם כתבתם עטיפת React משלכם עבור FastComments - שקלו להחליף אותה בעטיפה החדשה שלנו. אנחנו נשמור על הה抽象 הזאת עבורכם - והיא מכילה הרבה דברים שימושיים כמו <a href="https://github.com/FastComments/fastcomments-react" target="_blank">הפעלה אוטומטית של עדכון על שינויים בהגדרות</a>.
 
 #### איך זה עובד
 
@@ -33,7 +33,7 @@
 
 #### מצב לילה
 
-אחת מהדוגמאות שיש לנו היא "מצב לילה" - הצגת FastComments באתר עם רקע שחור (או מאוד כהה): <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+אחת מהדוגמאות שיש לנו היא "מצב לילה" - הצגת FastComments באתר עם רקע שחור (או מאוד כהה): <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 בנוסף, מכיוון שהווידג'ט מגיב לשינויים בהגדרות, זה אומר שאתם יכולים שיהיה לכם מצב להחליף את ערכת הנושא של האתר שלכם וליידע בקלות את fastcomments-react לעדכן.
 

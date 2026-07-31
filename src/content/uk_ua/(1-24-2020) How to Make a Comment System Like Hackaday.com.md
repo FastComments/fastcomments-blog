@@ -69,7 +69,7 @@ document.getElementById('code').innerText = `
 - absoluteDates = Змінює стандартний формат дати (тобто "11 хвилин тому") на абсолютну дату.
 - customCSS = Користувацький стиль.
 
-Усі параметри конфігурації документовані <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">тут</a>.
+Усі параметри конфігурації документовані <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">тут</a>.
 
 <style>
     body, .content {

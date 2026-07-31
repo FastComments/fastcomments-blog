@@ -8,7 +8,7 @@ FastComments prend maintenant en charge la pagination sans effondrer le contenu 
 
 Cela signifie que si vous avez des centaines de réponses sur une page, nous n'allons pas ralentir votre site en les chargeant toutes d'un coup. Lorsque l'utilisateur fait défiler vers le bas jusqu'à votre section de commentaires et lit au-delà des 30 commentaires que nous chargeons initialement, il peut cliquer sur "Afficher les 30 commentaires suivants" pour charger rapidement le prochain ensemble et continuer à lire.
 
-C'est également bien optimisé, comme d'habitude. Si cela vous intéresse, lisez à ce sujet sur notre <a href="https://blog.winricklabs.com/(2-03-2020)-how-optimized-threaded-pagination-works.html" target="_blank">blog d'ingénierie</a>.
+C'est également bien optimisé, comme d'habitude. Si cela vous intéresse, lisez à ce sujet sur notre <a href="https://blog.fastcomments.com" target="_blank">blog d'ingénierie</a>.
 
 Cela ne nécessite aucune configuration supplémentaire de votre part ! Les clients existants bénéficieront de cette fonctionnalité.
 Profitez de FastComments.

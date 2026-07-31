@@ -96,8 +96,8 @@
 
 #### Άμεσες Ενδεικτικές Σειρές για Σειριοποίηση και Χάραξη Δεδομένων Χρήστη 
 
-Περισσότερες λεπτομέρειες ως παραδείγματα <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">εδώ (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">εδώ (java)</a> και
+Περισσότερες λεπτομέρειες ως παραδείγματα <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">εδώ (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">εδώ (java)</a> και
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">εδώ (php)</a>.
 
 

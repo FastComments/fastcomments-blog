@@ -34,7 +34,7 @@ URL 是評論小工具的 URL。理想情況下，你應該能夠從應用程式
 URL ID 是一個字符串，可以是 URL 或 ID - 它可以是任何值，只要它代表當前頁面。如果你有文章、文章或頁面的 ID，你可以使用該值
 來替代此值中的頁面 URL。URL ID 分開的原因是，你可能希望在 URL 中存儲額外的信息，這會使 URL 對頁面來說不唯一。
 
-請注意，我們已在 TypeScript 中記錄了小工具支持的完整配置 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">在 GitHub 上</a>。
+請注意，我們已在 TypeScript 中記錄了小工具支持的完整配置 <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">在 GitHub 上</a>。
 
 #### 具體內容和實際演示
 

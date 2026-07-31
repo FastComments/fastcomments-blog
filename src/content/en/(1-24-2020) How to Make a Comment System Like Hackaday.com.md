@@ -68,7 +68,7 @@ top of the page
 - absoluteDates = Changes the default date format (ie, "11 Minutes Ago") to an absolute date.
 - customCSS = Custom styling
 
-All configuration options are documented <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">here</a>.
+All configuration options are documented <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">here</a>.
 
 <style>
     body, .content {

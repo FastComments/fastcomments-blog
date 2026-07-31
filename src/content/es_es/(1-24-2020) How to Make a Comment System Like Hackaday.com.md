@@ -69,7 +69,7 @@ parte superior de la página.
 - absoluteDates = Cambia el formato de fecha predeterminado (es decir, "Hace 11 minutos") a una fecha absoluta.
 - customCSS = Estilo personalizado
 
-Todas las opciones de configuración están documentadas <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">aquí</a>.
+Todas las opciones de configuración están documentadas <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">aquí</a>.
 
 <style>
     body, .content {

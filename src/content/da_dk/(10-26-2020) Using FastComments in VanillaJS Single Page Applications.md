@@ -35,7 +35,7 @@ administratorværktøjer.
 URL-ID'et er en streng, der enten er en URL eller et ID - det kan være enhver værdi, så længe det repræsenterer den nuværende side. Hvis du har et opslag, en artikel eller et side-id, kan du bruge det
 i stedet for side-URL'en for denne værdi. Grunden til, at URL-ID'et er separat, er, at du måske vil gemme ekstra oplysninger i URL'en, der ville gøre URL'en ikke unik for siden.
 
-Bemærk, at vi har dokumenteret den komplette konfiguration, som widgeten understøtter i TypeScript <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">på GitHub</a>.
+Bemærk, at vi har dokumenteret den komplette konfiguration, som widgeten understøtter i TypeScript <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">på GitHub</a>.
 
 #### Detaljer og en rigtig demo
 

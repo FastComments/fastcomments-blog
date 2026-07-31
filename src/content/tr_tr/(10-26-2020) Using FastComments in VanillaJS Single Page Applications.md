@@ -31,7 +31,7 @@ URL, yorum widget'ının URL'sidir. İdeal olarak, bu URL'ye uygulamanızın dı
 
 URL ID, bir URL veya bir ID olan bir dizedir - mevcut sayfayı temsil ettiği sürece herhangi bir değer olabilir. Bir gönderi, makale veya sayfa ID'sine sahipseniz, bu değeri sayfa URL'si yerine kullanabilirsiniz. URL ID'sinin ayrı olmasının nedeni, URL'de sayfaya özgü olmayan ekstra bilgileri depolamak isteyebileceğinizdir.
 
-Widget'ın desteklediği tam yapılandırmayı TypeScript'te <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">GitHub'da</a> belgelerle sağlamış olduğumuzu unutmayın.
+Widget'ın desteklediği tam yapılandırmayı TypeScript'te <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">GitHub'da</a> belgelerle sağlamış olduğumuzu unutmayın.
 
 #### Özellikler ve Gerçek Bir Demo
 

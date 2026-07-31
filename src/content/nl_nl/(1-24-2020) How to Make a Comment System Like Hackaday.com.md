@@ -68,7 +68,7 @@ Wat betekenen deze opties?
 - absoluteDates = Verandert de standaard datumindeling (d.w.z. "11 Minuten Geleden") naar een absolute datum.
 - customCSS = Aangepaste stijl
 
-Alle configuratie-opties zijn gedocumenteerd <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">hier</a>.
+Alle configuratie-opties zijn gedocumenteerd <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">hier</a>.
 
 <style>
     body, .content {

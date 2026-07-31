@@ -59,7 +59,7 @@
 <div class="content">
     <div class="blog-container">
         <div class="blog-main">
-            <h1 class="content-subhead">{{#if currentCategory}}{{translateCategory currentCategory t}} {{t.posts}}{{else}}{{#if pageTitle}}{{pageTitle}}{{else}}{{t.recentPosts}}{{/if}}{{/if}}</h1>
+            <h1 class="content-subhead">{{#if pageTitle}}{{pageTitle}}{{else}}{{t.recentPosts}}{{/if}}</h1>
             <script src="https://cdn.fastcomments.com/js/widget-comment-count-bulk.min.js"></script>
 
             {{#each posts}}

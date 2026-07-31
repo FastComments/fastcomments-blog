@@ -96,8 +96,8 @@ Per rappresentare un utente non autenticato, non devi semplicemente popolare use
 
 #### Esempi diretti per serializzare e hashare i dati dell'utente
 
-Maggiori dettagli come esempi <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">qui (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">qui (java)</a> e
+Maggiori dettagli come esempi <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">qui (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">qui (java)</a> e
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">qui (php)</a>.
 
 

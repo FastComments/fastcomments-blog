@@ -19,7 +19,7 @@ This opens up a lot of opportunities - including integrating FastComments with G
 #### If You Wrote Your Own Wrapper
 
 If you wrote your own React wrapper for FastComments - consider replacing it with our new one. We'll maintain this abstraction for you - and it contains a lot of
-nifty things like <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">auto reload on config changes</a>.
+nifty things like <a href="https://github.com/FastComments/fastcomments-react" target="_blank">auto reload on config changes</a>.
 
 #### How it Works
 
@@ -33,7 +33,7 @@ We've started to setup examples, which you can find <a href="https://github.com/
 
 #### Night Mode
 
-One of the examples we have is "night mode" - rendering FastComments on a site with a black (or very dark) background: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+One of the examples we have is "night mode" - rendering FastComments on a site with a black (or very dark) background: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Additionally, since the widget responds to configuration changes this means you can have a mode to toggle your sites theme and easily tell fastcomments-react to update.
 

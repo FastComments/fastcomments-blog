@@ -69,7 +69,7 @@ document.getElementById('code').innerText = `
 - absoluteDates = Αλλάζει τη διάρκεια ημερομηνίας από προεπιλογή (π.χ., "11 Λεπτά Πριν") σε απόλυτη ημερομηνία.
 - customCSS = Προσαρμοσμένο στυλ
 
-Όλες οι επιλογές ρύθμισης είναι τεκμηριωμένες <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">εδώ</a>.
+Όλες οι επιλογές ρύθμισης είναι τεκμηριωμένες <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">εδώ</a>.
 
 <style>
     body, .content {

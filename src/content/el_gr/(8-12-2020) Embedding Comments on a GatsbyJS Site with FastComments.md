@@ -19,7 +19,7 @@
 
 #### Αν Έχετε Δημιουργήσει Το Δικό Σας Wrapper
 
-Αν έχετε δημιουργήσει το δικό σας wrapper React για το FastComments - σκεφτείτε να το αντικαταστήσετε με το νέο μας. Θα διατηρούμε αυτή την αφαίρεση για εσάς - και περιέχει πολλά χρήσιμα πράγματα όπως <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">αυτόματη ανανέωση κατά τις αλλαγές ρυθμίσεων</a>.
+Αν έχετε δημιουργήσει το δικό σας wrapper React για το FastComments - σκεφτείτε να το αντικαταστήσετε με το νέο μας. Θα διατηρούμε αυτή την αφαίρεση για εσάς - και περιέχει πολλά χρήσιμα πράγματα όπως <a href="https://github.com/FastComments/fastcomments-react" target="_blank">αυτόματη ανανέωση κατά τις αλλαγές ρυθμίσεων</a>.
 
 #### Πώς Λειτουργεί
 
@@ -33,7 +33,7 @@
 
 #### Νυχτερινή Λειτουργία
 
-Ένα από τα παραδείγματα που έχουμε είναι η "νυχτερινή λειτουργία" - απεικονίζοντας το FastComments σε έναν ιστότοπο με μαύρο (ή πολύ σκούρο) φόντο: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Ένα από τα παραδείγματα που έχουμε είναι η "νυχτερινή λειτουργία" - απεικονίζοντας το FastComments σε έναν ιστότοπο με μαύρο (ή πολύ σκούρο) φόντο: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Επιπλέον, καθώς το widget ανταποκρίνεται σε αλλαγές ρυθμίσεων αυτό σημαίνει ότι μπορείτε να έχετε μια λειτουργία για να αλλάξετε το θέμα του ιστότοπού σας και να πείτε εύκολα στο fastcomments-react να ενημερωθεί.
 

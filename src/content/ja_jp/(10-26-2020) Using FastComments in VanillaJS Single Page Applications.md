@@ -31,7 +31,7 @@ URLはコメントウィジェットへのURLです。理想的には、このUR
 
 URL IDは、URLまたはIDである文字列です - 現在のページを表す限り、任意の値を使用できます。投稿、記事、またはページIDがある場合は、この値のページURLの代わりにそれを利用できます。URL IDが別になっている理由は、ページに固有でないURLを作成するための追加情報をURLに保存したい場合があるからです。
 
-ウィジェットがサポートする完全な設定がTypeScript<a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">でGitHubに文書化されていることに注意してください</a>。
+ウィジェットがサポートする完全な設定がTypeScript<a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">でGitHubに文書化されていることに注意してください</a>。
 
 #### 詳細と実際のデモ
 

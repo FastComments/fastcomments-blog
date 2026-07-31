@@ -34,7 +34,7 @@ URL은 댓글 위젯의 URL입니다. 이상적으로, 이 URL은 애플리케�
 
 URL ID는 문자열로 URL이거나 ID입니다 - 현재 페이지를 나타내기만 하면 됩니다. 게시물, 기사 또는 페이지 ID가 있는 경우 이 값에 대한 페이지 URL 대신 사용할 수 있습니다. URL ID가 별도로 있는 이유는 URL에 페이지에 고유하지 않은 추가 정보를 저장하고 싶을 수 있기 때문입니다.
 
-이 위젯이 지원하는 전체 구성에 대한 문서는 TypeScript <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">GitHub에서</a> 문서화되어 있습니다.
+이 위젯이 지원하는 전체 구성에 대한 문서는 TypeScript <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">GitHub에서</a> 문서화되어 있습니다.
 
 #### 세부 사항 및 실제 데모
 

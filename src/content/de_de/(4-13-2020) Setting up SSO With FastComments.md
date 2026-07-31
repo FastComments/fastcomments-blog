@@ -101,8 +101,8 @@ Um einen unauthentifizierten Nutzer darzustellen, füllen Sie einfach userDataJS
 
 #### Direkte Beispiele für die Serialisierung und das Hashen von Nutzerdaten
 
-Weitere Details und Beispiele finden Sie <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">hier (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">hier (java)</a> und
+Weitere Details und Beispiele finden Sie <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">hier (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">hier (java)</a> und
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier (php)</a>.
 
 

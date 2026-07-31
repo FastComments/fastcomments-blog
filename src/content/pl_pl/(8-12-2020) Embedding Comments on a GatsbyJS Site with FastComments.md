@@ -20,7 +20,7 @@ Otwiera to wiele możliwości - w tym integrację FastComments z Gatsby.
 #### Jeśli napisałeś własny wrapper
 
 Jeśli napisałeś własny wrapper React dla FastComments - rozważ zastąpienie go naszym nowym. Będziemy dbać o tę abstrakcję za Ciebie - i zawiera ona wiele
-ciekawych funkcji, takich jak <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">automatyczne przeładowanie przy zmianach w konfiguracji</a>.
+ciekawych funkcji, takich jak <a href="https://github.com/FastComments/fastcomments-react" target="_blank">automatyczne przeładowanie przy zmianach w konfiguracji</a>.
 
 #### Jak to działa
 
@@ -34,7 +34,7 @@ Zaczęliśmy przygotowywać przykłady, które możesz znaleźć <a href="https:
 
 #### Tryb nocny
 
-Jednym z przykładów, które mamy, jest "tryb nocny" - renderowanie FastComments na stronie z czarnym (lub bardzo ciemnym) tłem: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Jednym z przykładów, które mamy, jest "tryb nocny" - renderowanie FastComments na stronie z czarnym (lub bardzo ciemnym) tłem: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Dodatkowo, ponieważ widget reaguje na zmiany konfiguracji, oznacza to, że możesz mieć tryb do przełączania motywu swojej strony i łatwo poprosić fastcomments-react o aktualizację.
 

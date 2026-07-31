@@ -96,8 +96,8 @@ Om een niet-geauthenticeerde gebruiker weer te geven, vul je eenvoudigweg userDa
 
 #### Directe Voorbeelden voor het Serialiseren en Hashen van Gebruikersgegevens
 
-Meer details als voorbeelden <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">hier (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">hier (java)</a> en
+Meer details als voorbeelden <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">hier (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">hier (java)</a> en
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier (php)</a>.
 
 

@@ -96,8 +96,8 @@ For at repræsentere en uautoriseret bruger, skal du blot undlade at udfylde use
 
 #### Direkte eksempler på serialisering og hashing af brugerdata
 
-Mere detaljer som eksempler <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">her (js)</a>, 
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">her (java)</a> og 
+Mere detaljer som eksempler <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">her (js)</a>, 
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">her (java)</a> og 
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">her (php)</a>.
 
 

@@ -20,7 +20,7 @@
 #### Ако сте написали свой собствен обвивка
 
 Ако сте написали своя собствена React обвивка за FastComments - помислете за замяната й с нашата нова. Ние ще поддържаме тази абстракция за вас - и тя съдържа много
-интересни неща като <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">автоматично презареждане при промени в конфигурацията</a>.
+интересни неща като <a href="https://github.com/FastComments/fastcomments-react" target="_blank">автоматично презареждане при промени в конфигурацията</a>.
 
 #### Как работи
 
@@ -34,7 +34,7 @@
 
 #### Нощен режим
 
-Един от примерите, които имаме, е "нощен режим" - рендериране на FastComments на сайт с черен (или много тъмен) фон: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Един от примерите, които имаме, е "нощен режим" - рендериране на FastComments на сайт с черен (или много тъмен) фон: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Освен това, тъй като уиджетът реагира на промени в конфигурацията, това означава, че можете да имате режим за превключване на темата на вашия сайт и лесно да инструктирате fastcomments-react да се актуализира.
 

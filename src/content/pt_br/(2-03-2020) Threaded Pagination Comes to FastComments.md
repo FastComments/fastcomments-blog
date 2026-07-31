@@ -10,7 +10,7 @@ o FastComments tem um botão "Carregar Todos os Comentários" em tópicos longos
 Isso significa que se você tiver centenas de respostas em uma página, não vamos sobrecarregar seu site carregando todas de uma vez. Quando o usuário rolar para
 sua seção de comentários e ler além dos 30 comentários que carregamos inicialmente, ele pode clicar em "Mostrar Próximos 30 Comentários" para carregar rapidamente o próximo conjunto e continuar lendo.
 
-Está também bem otimizado, como de costume. Se você se interessa por esse tipo de coisa, leia sobre isso em nosso <a href="https://blog.winricklabs.com/(2-03-2020)-how-optimized-threaded-pagination-works.html" target="_blank">blog de engenharia</a>.
+Está também bem otimizado, como de costume. Se você se interessa por esse tipo de coisa, leia sobre isso em nosso <a href="https://blog.fastcomments.com" target="_blank">blog de engenharia</a>.
 
 Isso não requer nenhuma configuração adicional de sua parte! Clientes existentes terão esse recurso.
 Aproveite o FastComments.

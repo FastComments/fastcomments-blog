@@ -35,7 +35,7 @@ narzędziach administracyjnych.
 Identyfikator URL to ciąg, który jest albo adresem URL, albo identyfikatorem - może to być dowolna wartość, pod warunkiem, że reprezentuje bieżącą stronę. Jeśli masz identyfikator posta, artykułu lub strony, możesz go użyć
 zamiast adresu URL strony dla tej wartości. Powód, dla którego identyfikator URL jest oddzielny, to fakt, że możesz chcieć przechować dodatkowe informacje w adresie URL, które uczyniłyby ten adres URL nieunikalnym dla strony.
 
-Zauważ, że udokumentowaliśmy pełną konfigurację, którą widget obsługuje w TypeScript <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">na GitHubie</a>.
+Zauważ, że udokumentowaliśmy pełną konfigurację, którą widget obsługuje w TypeScript <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">na GitHubie</a>.
 
 #### Szczegóły i prawdziwa demonstracja
 

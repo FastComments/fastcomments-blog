@@ -101,8 +101,8 @@ Da biste prikazali neautentifikovanog korisnika, jednostavno nemojte popunjavati
 
 #### Direktni primeri za serijalizaciju i heširanje korisničkih podataka
 
-Više detalja kao primeri <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">ovde (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">ovde (java)</a> i
+Više detalja kao primeri <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">ovde (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">ovde (java)</a> i
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ovde (php)</a>.
 
 

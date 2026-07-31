@@ -20,7 +20,7 @@ Dette åbner mange muligheder - herunder at integrere FastComments med Gatsby.
 #### Hvis du har skrevet din egen wrapper
 
 Hvis du har skrevet din egen React-wrapper til FastComments - overvej at erstatte den med vores nye. Vi vil vedligeholde denne abstraktion for dig - og den indeholder mange 
-smarte funktioner som <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">auto-opdatering ved konfigurationsændringer</a>.
+smarte funktioner som <a href="https://github.com/FastComments/fastcomments-react" target="_blank">auto-opdatering ved konfigurationsændringer</a>.
 
 #### Sådan fungerer det
 
@@ -34,7 +34,7 @@ Vi er begyndt at opsætte eksempler, som du kan finde <a href="https://github.co
 
 #### Nattens tilstand
 
-Et af de eksempler, vi har, er "nattens tilstand" - rendering af FastComments på en side med en sort (eller meget mørk) baggrund: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Et af de eksempler, vi har, er "nattens tilstand" - rendering af FastComments på en side med en sort (eller meget mørk) baggrund: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Desuden, da værktøjet reagerer på konfigurationsændringer, betyder det, at du kan have en tilstand til at skifte dit sites tema og nemt fortælle fastcomments-react at opdatere.
 

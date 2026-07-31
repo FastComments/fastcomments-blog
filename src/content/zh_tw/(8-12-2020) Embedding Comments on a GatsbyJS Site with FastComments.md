@@ -20,7 +20,7 @@
 #### 如果您編寫了自己的包裝器
 
 如果您為 FastComments 編寫了自己的 React 包裝器 - 考慮用我們的新版本替換它。我們將為您維護這個抽象 - 並且它包含許多
-巧妙的功能，例如 <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">配置變更時自動重載</a>。
+巧妙的功能，例如 <a href="https://github.com/FastComments/fastcomments-react" target="_blank">配置變更時自動重載</a>。
 
 #### 它是如何工作的
 
@@ -34,7 +34,7 @@
 
 #### 夜間模式
 
-我們有一個範例是「夜間模式」 - 在背景為黑色 (或非常暗) 的網站上渲染 FastComments: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>。
+我們有一個範例是「夜間模式」 - 在背景為黑色 (或非常暗) 的網站上渲染 FastComments: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>。
 
 此外，由於小部件會根據配置變更而回應，這意味著您可以有一種模式來切換網站主題，並輕鬆告訴 fastcomments-react 更新。
 

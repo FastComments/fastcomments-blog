@@ -96,8 +96,8 @@ SSOを有効にするには、新しい「sso」オブジェクトを渡しま�
 
 #### ユーザーデータの直列化とハッシュ化の直接例
 
-詳細および例は<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">こちら (js)</a>、
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">こちら (java)</a>および
+詳細および例は<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">こちら (js)</a>、
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">こちら (java)</a>および
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">こちら (php)</a>で確認できます。
 
 

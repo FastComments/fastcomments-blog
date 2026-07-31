@@ -101,8 +101,8 @@ FastComments SSO използва HMAC-SHA256 криптиране като ме
 
 #### Примери за сериализиране и хеширане на потребителски данни
 
-Повече детайли с примери <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">тук (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">тук (java)</a> и
+Повече детайли с примери <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">тук (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">тук (java)</a> и
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">тук (php)</a>.
 
 

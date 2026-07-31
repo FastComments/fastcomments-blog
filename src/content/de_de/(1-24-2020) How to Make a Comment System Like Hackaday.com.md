@@ -67,7 +67,7 @@ Was bedeuten diese Punkte?
 - absoluteDates = Ändert das Standarddatumsformat (d.h. "Vor 11 Minuten") in ein absolutes Datum.
 - customCSS = Benutzerdefinierte Gestaltung
 
-Alle Konfigurationsoptionen sind <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">hier</a> dokumentiert.
+Alle Konfigurationsoptionen sind <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">hier</a> dokumentiert.
 
 <style>
     body, .content {

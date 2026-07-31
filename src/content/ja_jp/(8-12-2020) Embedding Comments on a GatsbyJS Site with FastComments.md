@@ -20,7 +20,7 @@
 #### 自分でラッパーを書いた場合
 
 FastCommentsのために独自のReactラッパーを作成した場合は、新しいものに置き換えることを検討してください。この抽象化を維持し、多くの
-便利な機能（例えば<a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">設定変更時の自動リロード</a>など）が含まれています。
+便利な機能（例えば<a href="https://github.com/FastComments/fastcomments-react" target="_blank">設定変更時の自動リロード</a>など）が含まれています。
 
 #### どのように機能するのか
 
@@ -34,7 +34,7 @@ FastCommentsは、コアウィジェットの周りにReactコンポーネント
 
 #### ナイトモード
 
-私たちが持っている例の一つは「ナイトモード」で、黒（または非常に暗い）背景のサイトでFastCommentsをレンダリングします：<a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>。
+私たちが持っている例の一つは「ナイトモード」で、黒（または非常に暗い）背景のサイトでFastCommentsをレンダリングします：<a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>。
 
 さらに、ウィジェットは設定変更に応じて反応するため、サイトのテーマを切り替えるモードを持ち、fastcomments-reactに簡単に更新を指示することができます。
 

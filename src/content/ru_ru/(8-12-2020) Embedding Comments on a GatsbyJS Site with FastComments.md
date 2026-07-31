@@ -19,7 +19,7 @@
 
 #### Если вы создали свою обертку
 
-Если вы создали свою собственную React обертку для FastComments - подумайте о том, чтобы заменить её нашей новой. Мы будем поддерживать эту абстракцию для вас - и в ней много интересных вещей, таких как <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">автообновление при изменениях конфигурации</a>.
+Если вы создали свою собственную React обертку для FastComments - подумайте о том, чтобы заменить её нашей новой. Мы будем поддерживать эту абстракцию для вас - и в ней много интересных вещей, таких как <a href="https://github.com/FastComments/fastcomments-react" target="_blank">автообновление при изменениях конфигурации</a>.
 
 #### Как это работает
 
@@ -33,7 +33,7 @@
 
 #### Ночной режим
 
-Один из примеров, который у нас есть, - это "ночной режим" - отображение FastComments на сайте с черным (или очень темным) фоном: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Один из примеров, который у нас есть, - это "ночной режим" - отображение FastComments на сайте с черным (или очень темным) фоном: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Кроме того, поскольку виджет реагирует на изменения конфигурации, это означает, что вы можете иметь режим для переключения темы вашего сайта и легко сказать fastcomments-react обновиться.
 

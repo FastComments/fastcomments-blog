@@ -67,7 +67,7 @@ document.getElementById('code').innerText = `
 - absoluteDates = 将默认日期格式（即“11分钟前”）更改为绝对日期。
 - customCSS = 自定义样式
 
-所有配置选项都在<a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">这里</a>有详细文档。
+所有配置选项都在<a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">这里</a>有详细文档。
 
 <style>
     body, .content {

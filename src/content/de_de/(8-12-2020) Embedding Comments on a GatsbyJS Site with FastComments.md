@@ -20,7 +20,7 @@ Das eröffnet viele Möglichkeiten - einschließlich der Integration von FastCom
 #### Wenn du deinen eigenen Wrapper geschrieben hast
 
 Wenn du deinen eigenen React-Wrapper für FastComments geschrieben hast - ziehe in Betracht, ihn durch unseren neuen zu ersetzen. Wir werden diese Abstraktion für dich pflegen - und sie enthält viele
-nützliche Dinge wie <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">automatische Aktualisierung bei Konfigurationsänderungen</a>.
+nützliche Dinge wie <a href="https://github.com/FastComments/fastcomments-react" target="_blank">automatische Aktualisierung bei Konfigurationsänderungen</a>.
 
 #### So funktioniert es
 
@@ -34,7 +34,7 @@ Wir haben damit begonnen, Beispiele einzurichten, die du <a href="https://github
 
 #### Nachtmodus
 
-Eines der Beispiele, das wir haben, ist der "Nachtmodus" - Rendering von FastComments auf einer Website mit einem schwarzen (oder sehr dunklen) Hintergrund: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Eines der Beispiele, das wir haben, ist der "Nachtmodus" - Rendering von FastComments auf einer Website mit einem schwarzen (oder sehr dunklen) Hintergrund: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Zusätzlich, da das Widget auf Änderungen der Konfiguration reagiert, bedeutet dies, dass du einen Modus haben kannst, um das Thema deiner Website umzuschalten und fastcomments-react leicht zu sagen, dass es aktualisiert werden soll.
 

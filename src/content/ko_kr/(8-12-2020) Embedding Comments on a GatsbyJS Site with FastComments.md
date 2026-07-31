@@ -19,7 +19,7 @@
 
 #### 자신만의 래퍼를 작성한 경우
 
-FastComments를 위한 자신만의 React 래퍼를 작성한 경우 - 새 래퍼로 교체하는 것을 고려해 보세요. 우리는 이 추상화를 유지해 드리며 - 그리고 <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">구성 변경 시 자동 새로 고침</a>과 같은 많은 유용한 기능을 포함하고 있습니다.
+FastComments를 위한 자신만의 React 래퍼를 작성한 경우 - 새 래퍼로 교체하는 것을 고려해 보세요. 우리는 이 추상화를 유지해 드리며 - 그리고 <a href="https://github.com/FastComments/fastcomments-react" target="_blank">구성 변경 시 자동 새로 고침</a>과 같은 많은 유용한 기능을 포함하고 있습니다.
 
 #### 작동 방식
 
@@ -33,7 +33,7 @@ FastComments는 핵심 위젯 주위에 React 컴포넌트를 래퍼로 사용�
 
 #### 나이트 모드
 
-우리가 가지고 있는 예시 중 하나는 "나이트 모드"로, 검은색(또는 매우 어두운) 배경을 가진 사이트에 FastComments를 렌더링하는 것입니다: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+우리가 가지고 있는 예시 중 하나는 "나이트 모드"로, 검은색(또는 매우 어두운) 배경을 가진 사이트에 FastComments를 렌더링하는 것입니다: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 또한, 위젯이 구성 변경에 반응하므로 사이트의 테마를 전환할 수 있는 모드를 가질 수 있으며 fastcomments-react에게 쉽게 업데이트하도록 지시할 수 있습니다.
 

@@ -35,7 +35,7 @@ beheertools.
 De URL ID is een string die ofwel een URL of een ID is - het kan elke waarde zijn zolang het de huidige pagina vertegenwoordigt. Als je een post, artikel of pagina-id hebt, kun je dat
 in plaats van de pagina-URL voor deze waarde gebruiken. De reden dat de URL ID afzonderlijk is, is dat je mogelijk extra informatie in de URL wilt opslaan die de URL niet uniek voor de pagina zou maken.
 
-Let op dat we de complete configuratie die de widget ondersteunt hebben gedocumenteerd in TypeScript <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">op GitHub</a>.
+Let op dat we de complete configuratie die de widget ondersteunt hebben gedocumenteerd in TypeScript <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">op GitHub</a>.
 
 #### Specificaties en een Werkende Demo
 

@@ -67,7 +67,7 @@ Peki, bunların her biri ne anlama geliyor?
 - absoluteDates = Varsayılan tarih formatını (yani, "11 Dakika Önce") mutlak bir tarihe değiştirir.
 - customCSS = Özel stil
 
-Tüm yapılandırma seçenekleri <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">burada</a> belgelenmiştir.
+Tüm yapılandırma seçenekleri <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">burada</a> belgelenmiştir.
 
 <style>
     body, .content {

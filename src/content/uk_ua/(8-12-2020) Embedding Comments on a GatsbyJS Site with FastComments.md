@@ -20,7 +20,7 @@
 #### Якщо ви написали свій власний обгортку
 
 Якщо ви написали свою власну обгортку React для FastComments - рекомендуємо замінити її на нашу нову. Ми будемо підтримувати цю абстракцію для вас - і вона містить багато
-цікавих речей, таких як <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx#L8" target="_blank">автооновлення при зміні конфігурації</a>.
+цікавих речей, таких як <a href="https://github.com/FastComments/fastcomments-react" target="_blank">автооновлення при зміні конфігурації</a>.
 
 #### Як це працює
 
@@ -34,7 +34,7 @@
 
 #### Нічний режим
 
-Один з прикладів, які ми маємо - це "нічний режим" - рендеринг FastComments на сайті з чорним (або дуже темним) фоном: <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx" target="_blank">https://github.com/FastComments/fastcomments-react/blob/master/example/src/DarkModeApp.tsx</a>.
+Один з прикладів, які ми маємо - це "нічний режим" - рендеринг FastComments на сайті з чорним (або дуже темним) фоном: <a href="https://github.com/FastComments/fastcomments-react" target="_blank">https://github.com/FastComments/fastcomments-react</a>.
 
 Крім того, оскільки віджет реагує на зміни конфігурації, це означає, що ви можете мати режим для перемикання теми ваших сайтів і легко сказати fastcomments-react оновити.
 

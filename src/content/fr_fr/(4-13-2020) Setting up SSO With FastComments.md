@@ -96,8 +96,8 @@ Pour représenter un utilisateur non authentifié, il suffit de ne pas renseigne
 
 #### Exemples directs pour la sérialisation et le hachage des données utilisateur
 
-Plus de détails sous forme d'exemples <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">ici (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">ici (java)</a> et
+Plus de détails sous forme d'exemples <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">ici (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">ici (java)</a> et
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ici (php)</a>.
 
 

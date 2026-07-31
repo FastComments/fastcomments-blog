@@ -68,7 +68,7 @@ Alors, que signifie chacune de ces options ?
 - absoluteDates = Change le format de date par défaut (c'est-à-dire "Il y a 11 minutes") en une date absolue.
 - customCSS = Style personnalisé
 
-Toutes les options de configuration sont documentées <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">ici</a>.
+Toutes les options de configuration sont documentées <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">ici</a>.
 
 <style>
     body, .content {

@@ -68,7 +68,7 @@ Så hvad betyder hver af disse?
 - absoluteDates = Ændrer det standard datoformat (dvs. "11 minutter siden") til en absolut dato.
 - customCSS = Tilpasset styling
 
-Alle konfigurationsmuligheder er dokumenteret <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts" target="_blank">her</a>.
+Alle konfigurationsmuligheder er dokumenteret <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">her</a>.
 
 <style>
     body, .content {

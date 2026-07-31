@@ -96,8 +96,8 @@ Kimlik doğrulaması yapılmamış bir kullanıcıyı temsil etmek için userDat
 
 #### Kullanıcı Verilerini Seri Hale Getirme ve Hashleme için Doğrudan Örnekler
 
-Daha fazla detay ve örnekler için <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">burada (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">burada (java)</a> ve
+Daha fazla detay ve örnekler için <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">burada (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">burada (java)</a> ve
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">burada (php)</a>.
 
 ### Disqus SSO'dan Geçiş Yapma

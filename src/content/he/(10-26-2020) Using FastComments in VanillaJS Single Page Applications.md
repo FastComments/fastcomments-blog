@@ -31,7 +31,7 @@
 
 מזהה ה-URL הוא מיתר שהוא או כתובת URL או מזהה - זה יכול להיות כל ערך כל עוד הוא מייצג את הדף הנוכחי. אם יש לך מזהה לפוסט, מאמר או דף, תוכל להשתמש בו במקום בכתובת ה-URL עבור ערך זה. הסיבה לכך שמזהה ה-URL נפרד היא שאתה עשוי לרצות לאחסן מידע נוסף בכתובת ה-URL שיגרום לכתובת לא להיות ייחודית לדף.
 
-שים לב שתיעדנו את ההגדרה המלאה שהווודג'ט תומך בה ב-TypeScript <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">ב-GitHub</a>.
+שים לב שתיעדנו את ההגדרה המלאה שהווודג'ט תומך בה ב-TypeScript <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">ב-GitHub</a>.
 
 #### פרטים ודemo אמיתי
 

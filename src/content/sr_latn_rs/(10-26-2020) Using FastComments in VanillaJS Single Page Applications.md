@@ -35,7 +35,7 @@ alatima za administraciju.
 URL ID je string koji je ili URL ili ID - može biti bilo koja vrednost sve dok predstavlja trenutnu stranicu. Ako imate id posta, članka ili stranice, možete koristiti to
 umesto URL-a stranice za ovu vrednost. Razlog što je URL ID odvojen je da možda želite da čuvate dodatne informacije u URL-u koje bi napravile da URL nije jedinstven za stranicu.
 
-Imajte na umu da smo dokumentovali kompletnu konfiguraciju koju widget podržava u TypeScript-u <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">na GitHub-u</a>.
+Imajte na umu da smo dokumentovali kompletnu konfiguraciju koju widget podržava u TypeScript-u <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">na GitHub-u</a>.
 
 #### Specifikacije i stvarna demonstracija
 

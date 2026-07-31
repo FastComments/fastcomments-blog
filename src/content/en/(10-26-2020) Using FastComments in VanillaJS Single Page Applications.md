@@ -34,7 +34,7 @@ administrator tools.
 The URL ID is string that is either a URL or an ID - it can be any value as long as it represents the current page. If you have a post, article, or page id, you may use that
 instead of the page URL for this value. The reason that URL ID is separate is that you may want to store extra information in the URL that would make the URL not unique to the page.
 
-Note that we've documented the complete configuration the widget supports in TypeScript <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">on GitHub</a>.
+Note that we've documented the complete configuration the widget supports in TypeScript <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">on GitHub</a>.
 
 #### Specifics and a Real Demo
 

@@ -97,8 +97,8 @@ SSO, או כניסה יחידה, היא מכלול של conventions המאפשר
 
 #### דוגמאות ישירות לסידור והאשטת נתוני משתמש
 
-פרטים נוספים כדוגמות <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">כאן (js)</a>,
-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">כאן (java)</a> ו
+פרטים נוספים כדוגמות <a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">כאן (js)</a>,
+<a href="https://github.com/fastcomments/fastcomments-code-examples" target="_blank">כאן (java)</a> ו
 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">כאן (php)</a>.
 
 

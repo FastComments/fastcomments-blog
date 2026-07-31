@@ -35,7 +35,7 @@ administratorjevih orodjih.
 URL ID je niz, ki je bodisi URL bodisi ID - lahko je katera koli vrednost, dokler predstavlja trenutno stran. Če imate ID objave, članka ali strani, ga lahko uporabite
 namesto URL strani za to vrednost. Razlog, da je URL ID ločen, je, da želite lahko shraniti dodatne informacije v URL, ki bi URL naredile nepridobljen za stran.
 
-Upoštevajte, da smo dokumentirali popolno konfiguracijo, ki jo widget podpira v TypeScript <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fastcomments-config.ts#L14" target="_blank">na GitHub</a>.
+Upoštevajte, da smo dokumentirali popolno konfiguracijo, ki jo widget podpira v TypeScript <a href="https://github.com/FastComments/fastcomments-typescript" target="_blank">na GitHub</a>.
 
 #### Specifikacije in Pravi Demos
 
