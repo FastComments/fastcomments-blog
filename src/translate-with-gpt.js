@@ -124,8 +124,11 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
             case 'sr_rs':
             case 'sr_ba':
             case 'sr_me':
-                return 'CRITICAL: Write the Serbian translation in CYRILLIC script (ћирилица) ONLY. '
-                    + 'Never use Latin letters for Serbian words (e.g. write "Вебхукови долазе", not the Latin "Webhooks dolaze").';
+                return 'CRITICAL: Write the ENTIRE Serbian translation in CYRILLIC script (ћирилица) ONLY — '
+                    + 'including the post title between [postlink] and [/postlink]. Never use Latin letters for '
+                    + 'Serbian words (e.g. write the title "Вебхукови долазе на FastComments", not the Latin '
+                    + '"Webhooks dolaze" and not the untranslated English "Webhooks Come to FastComments"). '
+                    + 'Keep only brand/product names like FastComments in their original form.';
             case 'sr_latn_rs':
                 return 'Write the Serbian translation in LATIN script (latinica).';
             default:
@@ -154,7 +157,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
         }
         lines.push('1. DO NOT translate code blocks (\`\`\`...\`\`\`) or inline code (\`...\`)');
         lines.push('2. DO NOT translate URLs, API endpoints, variable names, or technical identifiers');
-        lines.push('3. DO NOT translate special tags like [postlink], [/postlink], [filesize], [readtime], [postdate]');
+        lines.push('3. Keep the tags [postlink], [/postlink], [filesize], [readtime], [postdate] EXACTLY as-is, but you MUST translate the title text that appears BETWEEN [postlink] and [/postlink]. The first line is the post title, formatted `# [postlink]Title[/postlink]` — translate the title (keeping brand/product names such as FastComments as-is), and never leave the title in English.');
         lines.push('4. DO NOT translate the values inside [category:...] tags - keep them exactly as they appear in the source (e.g., [category:Features] must remain [category:Features], NOT be translated)');
         lines.push('5. PRESERVE all markdown formatting (headers, lists, bold, links, etc.)');
         lines.push('6. Translate ONLY the natural language text (descriptions, explanations)');
