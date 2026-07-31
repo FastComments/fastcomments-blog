@@ -4,24 +4,24 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]生成的類型安全客戶端 SDK 已發布[/postlink]
+# [postlink]Generated Type-Safe Client SDKs Released[/postlink]
 
 {{#unless isPost}}
-在我們的 TypeScript 遷移文章中提到，我們已經為十種程式語言發布了生成的類型安全客戶端 SDK。
+在我們的 TypeScript 移植文章中預告過，我們已發布針對十種程式語言的產生式、型別安全的客戶端 SDK。
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> 本文包含技術術語
+### <i class="circle">!</i> 此文章包含技術術語
 
-### 新聞內容
+### 新功能
 
-在我們的 [TypeScript 遷移文章](/blog/fastcomments-typescript-migration-completed) 中，我們提到生成的客戶端 SDK 即將推出。它們已經來了。
+在我們的 [TypeScript migration post](/blog/fastcomments-typescript-migration-completed) 中，我們提到會推出產生式的客戶端 SDK。它們現在已經上線。
 
-FastComments 現在提供官方的、類型安全的 SDK，支持 **十種語言**：
+FastComments 現在提供官方、型別安全的 SDK，支援 **十種語言**：
 
 - TypeScript / JavaScript (npm)
-- Python (PyPI)
+- Python (GitHub)
 - Rust (crates.io)
 - Go (Go modules)
 - Java (Maven)
@@ -31,36 +31,36 @@ FastComments 現在提供官方的、類型安全的 SDK，支持 **十種語言
 - C++ (CMake)
 - Nim (Nimble)
 
-每個 SDK 都是根據我們的伺服器生成的相同 OpenAPI 規範生成的。類型、方法簽名以及請求/回應模型會自動與實際 API 保持同步。您的編譯器會在您的程式碼發出網路請求之前捕捉到字段名稱錯誤和遺漏的參數。
+每個 SDK 都是根據我們伺服器產生的相同 OpenAPI 規格生成的。型別、方法簽名以及請求/回應模型會自動與實際 API 保持同步。編譯器會在程式碼發出網路請求之前，捕捉欄位名稱拼寫錯誤與缺少參數的問題。
 
-### 運作方式
+### 運作原理
 
-TypeScript 的遷移是這一切的前提。現在我們的伺服器代碼完全類型化，我們使用 [我們的 TSOA 分支](https://github.com/FastComments/tsoa) 直接從我們的路由控制器生成 OpenAPI 3.0 規範。然後將該規範輸入到 [OpenAPI Generator](https://openapi-generator.tech/) 中，為每種語言生成客戶端庫。
+TypeScript 移植是此工作的前置條件。現在我們的伺服器程式碼已完整型別化，我們使用 [our fork of TSOA](https://github.com/FastComments/tsoa) 從路由控制器直接產生 OpenAPI 3.0 規格。再將該規格交給 [OpenAPI Generator](https://openapi-generator.tech/) ，為每種語言產生客戶端函式庫。
 
-當 API 發生變更時，我們的工具會檢測規範中的差異，重新生成受影響的 SDK，為每種語言運行測試，並自動提交拉取請求。我們在 Nim 中構建了一個小型管理工具，用以協調所有十個儲存庫的更新-測試-發佈周期。
+當 API 變更時，我們的工具會偵測規格的差異，重新產生受影響的 SDK，為每種語言執行測試，並自動開立 Pull Request。我們在 Nim 中打造了一個小型管理工具，協調所有十個儲存庫的更新、測試與發布週期。
 
 ### 每個 SDK 包含什麼
 
-每個 SDK 提供兩個 API 類：
+每個 SDK 提供兩個 API 類別：
 
-- **`DefaultApi`**: 需要您的 API 金鑰的身份驗證端點。用於伺服器端的內容管理、用戶管理、分析和批量操作。
-- **`PublicApi`**: 可以安全地從瀏覽器和移動應用調用的未經身份驗證端點。這些涵蓋了獲取評論、發表、投票和其他面向客戶的操作。
+- **`DefaultApi`**：需要 API 金鑰的驗證端點。請在伺服器端使用，適用於審查、使用者管理、分析與批次操作。
+- **`PublicApi`**：不需驗證的端點，可安全於瀏覽器與行動應用呼叫。涵蓋取得評論、發表、投票及其他面向客戶端的操作。
 
-所有 SDK 也包括用於與您現有身份驗證系統整合的 SSO 工具。TypeScript SDK 額外提供即時事件訂閱以實現即時評論功能。
+所有 SDK 也都包含 SSO 工具，用於與您現有的驗證系統整合。TypeScript SDK 另提供即時事件訂閱，以支援即時評論功能。
 
-### 文件
+### 文件說明
 
-完整的 API 文件可在 [docs.fastcomments.com](https://docs.fastcomments.com/guide-api.html) 獲得。每個 SDK 儲存庫也包括涵蓋每個可用方法和模型的生成文件。
+完整的 API 文件可於 [docs.fastcomments.com](https://docs.fastcomments.com/guide-api.html) 取得。每個 SDK 的儲存庫也都包含產生的文件，說明所有可用的方法與模型。
 
-有關 SSO 整合的資訊，請參閱我們的 [SSO 指南](https://docs.fastcomments.com/guide-sso.html)。所有十個 SDK 都包含使用其本地加密庫的 SSO 助手。
+欲了解 SSO 整合，請參考我們的 [SSO guide](https://docs.fastcomments.com/guide-sso.html)。所有十個 SDK 都提供使用其原生加密函式庫的 SSO 輔助工具。
 
 ### 結論
 
-擁有完全類型化的伺服器使生成可靠的 OpenAPI 規範變得簡單，從這裡出發，為十種（將來可能更多！）語言生成客戶端大多是構建自動化和改善我們的類型定義的問題，以便於消費，而不會添加太多抽象來拖慢 FastComments 的運行速度！
+擁有完整型別化的伺服器，使得產生可靠的 OpenAPI 規格變得相當直接，進而為十種（未來甚至更多！）語言生成客戶端主要只需要建置自動化流程，並改進我們的型別定義，使其可被使用，而不必加入過多抽象層，避免拖慢 FastComments 的效能！
 
-像所有主要版本一樣，我們很高興能夠花時間來優化、測試和妥善發布這些 SDK。如果您有任何反饋或希望我們添加的語言，請在下方告訴我們。
+如同所有重要的發佈，我們很高興能花時間優化、測試並正式釋出這些 SDK。請在下方告訴我們您的回饋，或是您希望我們加入的語言。
 
-乾杯！
+敬祝安好！
 
 {{/isPost}}
 

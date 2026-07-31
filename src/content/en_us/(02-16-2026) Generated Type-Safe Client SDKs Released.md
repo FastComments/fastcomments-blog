@@ -16,12 +16,12 @@ As teased in our TypeScript migration post, we've released generated, type-safe 
 
 ### What's New
 
-In our [TypeScript migration post](/blog/fastcomments-typescript-migration-completed), we mentioned that generated client SDKs were on the way. They're here.
+In our [TypeScript migration post](/blog/fastcomments-typescript-migration-completed), we mentioned that generated client SDKs were coming. They're here.
 
-FastComments now includes official, type-safe SDKs for **ten languages**:
+FastComments now ships official, type-safe SDKs for **ten languages**:
 
 - TypeScript / JavaScript (npm)
-- Python (PyPI)
+- Python (GitHub)
 - Rust (crates.io)
 - Go (Go modules)
 - Java (Maven)
@@ -31,13 +31,13 @@ FastComments now includes official, type-safe SDKs for **ten languages**:
 - C++ (CMake)
 - Nim (Nimble)
 
-Each SDK is generated from the same OpenAPI specification that our server produces. Types, method signatures, and request/response models stay in sync with the actual API automatically. Your compiler identifies field name typos and missing parameters before your code ever makes a network request.
+Every SDK is generated from the same OpenAPI specification that our server produces. Types, method signatures, and request/response models stay in sync with the actual API automatically. Your compiler catches field name typos and missing parameters before your code ever makes a network request.
 
 ### How It Works
 
 The TypeScript migration was a prerequisite for this. Now that our server code is fully typed, we use [our fork of TSOA](https://github.com/FastComments/tsoa) to generate an OpenAPI 3.0 spec directly from our route controllers. That spec is fed into [OpenAPI Generator](https://openapi-generator.tech/) to produce client libraries for each language.
 
-When the API changes, our tooling detects the difference in the spec, regenerates the affected SDKs, runs tests for each language, and opens pull requests automatically. We built a small manager tool in Nim that orchestrates the update-test-release cycle across all ten repositories.
+When the API changes, our tooling detects the diff in the spec, regenerates the affected SDKs, runs tests for each language, and opens pull requests automatically. We built a small manager tool in Nim that orchestrates the update-test-release cycle across all ten repositories.
 
 ### What's in Each SDK
 
@@ -56,9 +56,11 @@ For SSO integration, see our [SSO guide](https://docs.fastcomments.com/guide-sso
 
 ### In Conclusion
 
-Having a fully typed server made it straightforward to generate a reliable OpenAPI spec, and from there, generating clients for ten (and someday more!) languages was mostly a matter of building the automation and improving our type definitions so they can be consumable, without adding too much abstraction that would slow down FastComments!
+Having a fully typed server made it straightforward to generate a reliable OpenAPI spec, and from there, generating clients for ten (and someday more!) languages was mostly a matter of building the automation
+and improving our type definitions so they can be consumable, without adding too much abstraction that would slow down FastComments!
 
-Like all major releases, we're pleased that we could take the time to optimize, test, and properly release these SDKs. Let us know below if you have any feedback or if there's a language you'd like us to add.
+Like all major releases, we're pleased that we could take the time to **optimize**, test, and properly release these SDKs. Let us know
+below if you have any feedback or if there's a language you'd like us to add.
 
 Cheers!
 

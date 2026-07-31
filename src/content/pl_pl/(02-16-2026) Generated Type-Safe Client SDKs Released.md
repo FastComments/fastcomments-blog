@@ -4,24 +4,24 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]Wydano wygenerowane typowo bezpieczne SDK klientów[/postlink]
+# [postlink]Generated Type-Safe Client SDKs Released[/postlink]
 
 {{#unless isPost}}
-Jak wspomniano w naszym poście o migracji do TypeScript, wydaliśmy wygenerowane, typowo bezpieczne SDK klientów dla dziesięciu języków programowania.
+Jak wspomniano w naszym poście o migracji do TypeScript, wydaliśmy wygenerowane, typowo‑bezpieczne SDK klienta dla dziesięciu języków programowania.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> Artykuł zawiera terminologię techniczną
+### <i class="circle">!</i> Ten artykuł zawiera żargon techniczny
 
 ### Co nowego
 
-W naszym [poście o migracji do TypeScript](/blog/fastcomments-typescript-migration-completed) wspomnieliśmy, że zbliżają się wygenerowane SDK klientów. Są już tutaj.
+W naszym [post o migracji do TypeScript](/blog/fastcomments-typescript-migration-completed) wspomnieliśmy, że pojawią się wygenerowane SDK klienta. Są już tutaj.
 
-FastComments teraz dostarcza oficjalne, typowo bezpieczne SDK dla **dziesięciu języków**:
+FastComments teraz udostępnia oficjalne, typowo‑bezpieczne SDK dla **dziesięciu języków**:
 
 - TypeScript / JavaScript (npm)
-- Python (PyPI)
+- Python (GitHub)
 - Rust (crates.io)
 - Go (Go modules)
 - Java (Maven)
@@ -31,35 +31,40 @@ FastComments teraz dostarcza oficjalne, typowo bezpieczne SDK dla **dziesięciu 
 - C++ (CMake)
 - Nim (Nimble)
 
-Każde SDK jest generowane z tej samej specyfikacji OpenAPI, którą produkuje nasz serwer. Typy, sygnatury metod oraz modele żądań/odpowiedzi pozostają w synchronizacji z rzeczywistym API automatycznie. Twój kompilator wychwytuje literówki w nazwach pól i brakujące parametry, zanim twój kod wykona jakiekolwiek żądanie sieciowe.
+Każde SDK jest generowane z tej samej specyfikacji OpenAPI, którą produkuje nasz serwer. Typy, sygnatury metod i modele żądań/odpowiedzi są automatycznie synchronizowane z rzeczywistym API. Twój kompilator wykrywa literówki w nazwach pól oraz brakujące parametry, zanim Twój kod wykona jakiekolwiek żądanie sieciowe.
 
 ### Jak to działa
 
-Migracja do TypeScript była wymogiem wstępnym dla tego. Teraz, gdy nasz kod serwera jest w pełni typowany, używamy [naszego fork'a TSOA](https://github.com/FastComments/tsoa) do generowania specyfikacji OpenAPI 3.0 bezpośrednio z naszych kontrolerów tras. Ta specyfikacja jest podawana do [OpenAPI Generator](https://openapi-generator.tech/), aby produkować biblioteki klienckie dla każdego języka.
+Migracja do TypeScript była warunkiem wstępnym dla tego. Teraz, gdy nasz kod serwera jest w pełni typowany, używamy [naszego fork'a TSOA](https://github.com/FastComments/tsoa), aby wygenerować specyfikację OpenAPI 3.0 bezpośrednio z naszych kontrolerów tras. Ta specyfikacja jest przekazywana do [OpenAPI Generator](https://openapi-generator.tech/), aby wygenerować biblioteki klienckie dla każdego języka.
 
-Gdy API się zmienia, nasze narzędzia wykrywają różnice w specyfikacji, regenerują dotknięte SDK, uruchamiają testy dla każdego języka i automatycznie otwierają pull requesty. Stworzyliśmy małe narzędzie zarządzające w Nim, które orkiestruje cykl aktualizacji-testów-wydania w dziesięciu repozytoriach.
+Gdy API się zmienia, nasze narzędzia wykrywają różnicę w specyfikacji, regenerują dotknięte SDK, uruchamiają testy dla każdego języka i automatycznie otwierają pull requesty. Zbudowaliśmy małe narzędzie zarządzające w Nim, które koordynuje cykl aktualizacji‑test‑wydania we wszystkich dziesięciu repozytoriach.
 
-### Co zawiera każde SDK
+### Co znajduje się w każdym SDK
 
-Każde SDK dostarcza dwie klasy API:
+Każde SDK udostępnia dwie klasy API:
 
-- **`DefaultApi`**: autoryzowane punkty końcowe, które wymagają twojego klucza API. Używaj ich po stronie serwera do moderacji, zarządzania użytkownikami, analizy i działań masowych.
-- **`PublicApi`**: nieautoryzowane punkty końcowe, które można wywołać z przeglądarek i aplikacji mobilnych. Obejmują one pobieranie komentarzy, publikowanie, głosowanie i inne operacje skierowane do klientów.
+- **`DefaultApi`**: uwierzytelnione endpointy wymagające Twojego klucza API. Używaj ich po stronie serwera do moderacji, zarządzania użytkownikami, analityki i operacji zbiorczych.
+- **`PublicApi`**: nieuwierzytelnione endpointy bezpieczne do wywoływania z przeglądarek i aplikacji mobilnych. Obejmują pobieranie komentarzy, publikowanie, głosowanie i inne operacje skierowane do klienta.
 
-Wszystkie SDK zawierają również narzędzia SSO do integracji z istniejącym systemem uwierzytelniania. SDK TypeScript dodatkowo zapewnia subskrypcje zdarzeń w czasie rzeczywistym do komentowania na żywo.
+Wszystkie SDK zawierają również narzędzia SSO do integracji z istniejącym systemem uwierzytelniania. SDK TypeScript dodatkowo oferuje subskrypcje zdarzeń w czasie rzeczywistym dla komentarzy na żywo.
 
 ### Dokumentacja
 
-Pełna dokumentacja API jest dostępna pod adresem [docs.fastcomments.com](https://docs.fastcomments.com/guide-api.html). Każde repozytorium SDK zawiera również wygenerowaną dokumentację pokrywającą każdą dostępną metodę i model.
+Pełna dokumentacja API jest dostępna pod adresem [docs.fastcomments.com](https://docs.fastcomments.com/guide-api.html). Każde repozytorium SDK zawiera również wygenerowaną dokumentację obejmującą wszystkie dostępne metody i modele.
 
-Dla integracji SSO, zapraszamy do zapoznania się z naszym [przewodnikiem SSO](https://docs.fastcomments.com/guide-sso.html). Wszystkie dziesięć SDK zawierają narzędzia SSO korzystające z ich natywnych bibliotek kryptograficznych.
+W celu integracji SSO, zobacz nasz [przewodnik SSO](https://docs.fastcomments.com/guide-sso.html). Wszystkie dziesięć SDK zawiera pomocniki SSO korzystające z natywnych bibliotek kryptograficznych.
 
-### Podsumowując
+### Podsumowanie
 
-Posiadanie w pełni typowanego serwera ułatwiło generowanie niezawodnej specyfikacji OpenAPI, a stamtąd generowanie klientów dla dziesięciu (a w przyszłości więcej!) języków było głównie kwestią zbudowania automatyzacji i poprawienia definicji typów, aby mogły być konsumowane, bez dodawania zbyt dużej abstrakcji, która spowolniłaby FastComments!
+Posiadanie w pełni typowanego serwera ułatwiło generowanie niezawodnej specyfikacji OpenAPI, a następnie generowanie klientów dla dziesięciu (i kiedyś więcej!) języków było w dużej mierze kwestią zbudowania automatyzacji
+i ulepszenia naszych definicji typów, aby były użyteczne, bez dodawania zbyt dużej abstrakcji, która spowolniłaby FastComments!
 
-Jak w przypadku wszystkich dużych wydań, cieszymy się, że mogliśmy poświęcić czas na optymalizację, testowanie i właściwe wydanie tych SDK. Daj nam znać poniżej, jeśli masz jakiekolwiek uwagi lub jeśli jest język, który chciałbyś, abyśmy dodali.
+Jak przy wszystkich dużych wydaniach, cieszymy się, że mogliśmy poświęcić czas na optymalizację, testowanie i właściwe udostępnienie tych SDK. Daj nam znać
+poniżej, jeśli masz jakiekolwiek uwagi lub jeśli jest język, który chciałbyś, abyśmy dodali.
 
-Na zdrowie!
+Pozdrawiamy!
 
 {{/isPost}}
+
+---
+---

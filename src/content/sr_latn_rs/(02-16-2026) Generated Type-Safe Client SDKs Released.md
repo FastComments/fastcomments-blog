@@ -4,10 +4,10 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]Objavljeni generisani klijentski SDK-ovi bezbednih tipova[/postlink]
+# [postlink]Generated Type-Safe Client SDKs Released[/postlink]
 
 {{#unless isPost}}
-Kako smo napomenuli u našem postu o migraciji na TypeScript, objavili smo generisane, klijentske SDK-ove bezbednih tipova za deset programskih jezika.
+Kao što smo najavili u našem postu o TypeScript migraciji, objavili smo generisane, tip‑sigurne klijentske SDK‑ove za deset programskih jezika.
 {{/unless}}
 
 {{#isPost}}
@@ -16,12 +16,12 @@ Kako smo napomenuli u našem postu o migraciji na TypeScript, objavili smo gener
 
 ### Šta je novo
 
-U našem [postu o migraciji na TypeScript](/blog/fastcomments-typescript-migration-completed) spomenuli smo da dolaze generisani klijentski SDK-ovi. Sada su tu.
+U našem [TypeScript migration post](/blog/fastcomments-typescript-migration-completed), spomenuli smo da dolaze generisani klijentski SDK‑ovi. Evo ih.
 
-FastComments sada nudi zvanične, klijentske SDK-ove bezbednih tipova za **deset jezika**:
+FastComments sada isporučuje zvanične, tip‑sigurne SDK‑ove za **deset jezika**:
 
 - TypeScript / JavaScript (npm)
-- Python (PyPI)
+- Python (GitHub)
 - Rust (crates.io)
 - Go (Go modules)
 - Java (Maven)
@@ -31,40 +31,39 @@ FastComments sada nudi zvanične, klijentske SDK-ove bezbednih tipova za **deset
 - C++ (CMake)
 - Nim (Nimble)
 
-Svaki SDK je generisan iz iste OpenAPI specifikacije koju proizvodi naš server. Tipovi, potpis metode i modeli zahteva/odgovora ostaju u skladu sa stvarnim API-jem automatski. Vaš kompajler otkriva greške u imenu polja i nedostajuće parametre pre nego što vaš kod ikada pošalje mrežni zahtev.
+Svaki SDK se generiše iz iste OpenAPI specifikacije koju naš server proizvodi. Tipovi, potpisi metoda i modeli zahteva/odgovora automatski ostaju sinhronizovani sa stvarnim API‑jem. Vaš kompajler hvata tipografske greške u imenima polja i nedostajuće parametre pre nego što vaš kod ikada pošalje mrežni zahtev.
 
-### Kako to funkcioniše
+### Kako funkcioniše
 
-Migracija na TypeScript bila je preduslov za ovo. Sada kada je naš serverski kod potpuno tipizovan, koristimo [naš fork TSOA](https://github.com/FastComments/tsoa) da generišemo OpenAPI 3.0 specifikaciju direktno iz naših rutnih kontrolera. Ta specifikacija se prosledi [OpenAPI Generatoru](https://openapi-generator.tech/) da proizvede klijentske biblioteke za svaki jezik.
+TypeScript migracija je bila preduslov za ovo. Sada kada je naš serverski kod potpuno tipizovan, koristimo [our fork of TSOA](https://github.com/FastComments/tsoa) da generišemo OpenAPI 3.0 specifikaciju direktno iz naših kontrolera ruta. Ta specifikacija se prosleđuje [OpenAPI Generator](https://openapi-generator.tech/) da proizvede klijentske biblioteke za svaki jezik.
 
-Kada se API menja, naši alati detektuju razliku u specifikaciji, regenerišu pogođene SDK-ove, pokreću testove za svaki jezik i automatski otvaraju pull zahteve. Izgradili smo mali menadžerski alat u Nimu koji orkestrira ciklus ažuriranja-testiranja-objavljivanja kroz svih deset repozitorijuma.
+Kada se API promeni, naš alat otkriva razliku u specifikaciji, regeneriše pogođene SDK‑ove, pokreće testove za svaki jezik i automatski otvara pull zahteve. Napravili smo mali upravljački alat u Nim‑u koji orkestrira ciklus ažuriranja‑testiranja‑izdavanja kroz svih deset repozitorijuma.
 
-### Šta se nalazi u svakom SDK-u
+### Šta se nalazi u svakom SDK‑u
 
 Svaki SDK pruža dve API klase:
 
-- **`DefaultApi`**: autentifikovani krajnji tački koji zahtevaju vaš API ključ. Koristite ih na serverskoj strani za moderaciju, upravljanje korisnicima, analitiku i masovne operacije.
-- **`PublicApi`**: neautentifikovani krajnji tački koje je bezbedno pozivati iz pretraživača i mobilnih aplikacija. Ove pokrivaju preuzimanje komentarâ, objavljivanje, glasanje i druge operacije usmerene na klijente.
+- **`DefaultApi`**: autentifikovani krajnji tačke koje zahtevaju vaš API ključ. Koristite ih na serveru za moderaciju, upravljanje korisnicima, analitiku i masovne operacije.
+- **`PublicApi`**: neautentifikovane krajnje tačke koje je sigurno pozivati iz pregledača i mobilnih aplikacija. One pokrivaju preuzimanje komentara, objavljivanje, glasanje i druge operacije usmerene ka klijentu.
 
-Svi SDK-ovi takođe uključuju SSO alate za integraciju sa vašim postojećim sistemom autentifikacije. TypeScript SDK dodatno pruža pretplate na događaje u realnom vremenu za komentarisanje uživo.
+Svi SDK‑ovi takođe uključuju SSO alate za integraciju sa vašim postojećim sistemom autentifikacije. TypeScript SDK dodatno pruža pretplate na događaje u realnom vremenu za live komentarisanje.
 
 ### Dokumentacija
 
-Puna API dokumentacija dostupna je na [docs.fastcomments.com](https://docs.fastcomments.com/guide-api.html). Svaki SDK repozitorijum takođe sadrži generisanu dokumentaciju koja pokriva svaku dostupnu metodu i model.
+Puna API dokumentacija je dostupna na [docs.fastcomments.com](https://docs.fastcomments.com/guide-api.html). Svaki SDK repozitorijum takođe sadrži generisanu dokumentaciju koja pokriva svaku dostupnu metodu i model.
 
-Za SSO integraciju, pogledajte naš [SSO vodič](https://docs.fastcomments.com/guide-sso.html). Svi deset SDK-ova uključuju SSO alate koje koriste njihove nativne biblioteke za kriptografiju.
+Za SSO integraciju, pogledajte naš [SSO guide](https://docs.fastcomments.com/guide-sso.html). Svi deset SDK‑ova uključuju SSO pomoćnike koji koriste njihove native biblioteke kriptografije.
 
 ### Zaključak
 
-Imajući potpuno tipizovan server, bilo je jednostavno generisati pouzdanu OpenAPI specifikaciju, a odatle, generisanje klijenata za deset (i jednog dana više!) jezika bilo je uglavnom pitanje izgradnje automatizacije i poboljšanja naših tip definicija tako da budu konzumabilni, bez dodavanja previše apstrakcije koja bi usporila FastComments!
+Imati potpuno tipizovan server učinilo je jednostavnim generisanje pouzdane OpenAPI specifikacije, a odatle generisanje klijenata za deset (i jednog dana više!) jezika bilo je uglavnom pitanje izgradnje automatizacije i unapređenja naših tip definicija kako bi bile upotrebljive, bez dodavanja previše apstrakcije koja bi usporila FastComments!
 
-Kao i kod svih glavnih izdanja, zadovoljni smo što smo mogli da odvojimo vreme za optimizaciju, testiranje i pravilno objavljivanje ovih SDK-ova. Javite nam 
-ispod ako imate bilo kakvih komentara ili ako postoji jezik koji biste želeli da dodamo.
+Kao i kod svih velikih izdanja, zadovoljni smo što smo mogli odvojiti vreme za optimizaciju, testiranje i pravilno izdavanje ovih SDK‑ova. Javite nam ispod ako imate bilo kakve povratne informacije ili ako postoji jezik koji biste želeli da dodamo.
 
-Pozdrav!
+Živeli!
 
 {{/isPost}}
 
---- 
+---
 
 ---
