@@ -34,7 +34,7 @@ Nur Kunden, die auf ein kostenpflichtiges Konto umsteigen, führen zu einer Prov
 
 ### Wie bekomme ich das?
 
-[Hier anmelden](https://fastcomments.getrewardful.com/signup) für das Empfehlungsprogramm.
+[Hier anmelden](/(11-06-2024)-fastcomments-affiliates-program-re-launched-de_de.html) für das Empfehlungsprogramm.
 
 Prost!
 

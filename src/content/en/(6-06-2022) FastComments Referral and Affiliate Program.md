@@ -33,7 +33,7 @@ Only customers that convert to a paid account result in commission.
 
 ### How do I get it?
 
-[Sign up here](https://fastcomments.getrewardful.com/signup) for the referral program.
+[Sign up here](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) for the referral program.
 
 Cheers!
 

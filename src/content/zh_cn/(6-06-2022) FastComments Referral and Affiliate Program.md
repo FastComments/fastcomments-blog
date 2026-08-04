@@ -34,7 +34,7 @@ FastComments 现在为联属营销人员提供联属计划，以及一次性的�
 
 ### 我该如何获得？
 
-[在此注册](https://fastcomments.getrewardful.com/signup)推荐计划。
+[在此注册](/(11-06-2024)-fastcomments-affiliates-program-re-launched-zh_cn.html)推荐计划。
 
 干杯！
 

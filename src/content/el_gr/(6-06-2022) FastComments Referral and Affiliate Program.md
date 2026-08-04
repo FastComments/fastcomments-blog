@@ -34,7 +34,7 @@
 
 ### Πώς το αποκτώ;
 
-[Εγγραφείτε εδώ](https://fastcomments.getrewardful.com/signup) για το πρόγραμμα παραπομπής.
+[Εγγραφείτε εδώ](/(11-06-2024)-fastcomments-affiliates-program-re-launched-el_gr.html) για το πρόγραμμα παραπομπής.
 
 Υγεία!
 

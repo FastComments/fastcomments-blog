@@ -34,7 +34,7 @@ Alleen klanten die zich omzetten naar een betaald account resulteren in commissi
 
 ### Hoe krijg ik het?
 
-[Meld je hier aan](https://fastcomments.getrewardful.com/signup) voor het verwijzingsprogramma.
+[Meld je hier aan](/(11-06-2024)-fastcomments-affiliates-program-re-launched-nl_nl.html) voor het verwijzingsprogramma.
 
 Proost!
 

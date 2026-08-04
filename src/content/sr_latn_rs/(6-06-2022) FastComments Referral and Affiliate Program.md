@@ -34,7 +34,7 @@ Samo kupci koji se konvertuju u plaćeni račun donose proviziju.
 
 ### Kako da se prijavim?
 
-[Prijavite se ovde](https://fastcomments.getrewardful.com/signup) za program preporuka.
+[Prijavite se ovde](/(11-06-2024)-fastcomments-affiliates-program-re-launched-sr_latn_rs.html) za program preporuka.
 
 Zdravstveno!
 

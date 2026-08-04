@@ -34,7 +34,7 @@ FastComments тепер пропонує програму аффіліатів �
 
 ### Як це отримати?
 
-[Зареєструйтесь тут](https://fastcomments.getrewardful.com/signup) для участі в програмі рефералів.
+[Зареєструйтесь тут](/(11-06-2024)-fastcomments-affiliates-program-re-launched-uk_ua.html) для участі в програмі рефералів.
 
 На здоров'я!
 

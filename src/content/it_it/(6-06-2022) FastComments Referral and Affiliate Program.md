@@ -34,7 +34,7 @@ Solo i clienti che si convertono in un account a pagamento generano commissione.
 
 ### Come posso ottenerlo?
 
-[Registrati qui](https://fastcomments.getrewardful.com/signup) per il programma di referral.
+[Registrati qui](/(11-06-2024)-fastcomments-affiliates-program-re-launched-it_it.html) per il programma di referral.
 
 Saluti!
 

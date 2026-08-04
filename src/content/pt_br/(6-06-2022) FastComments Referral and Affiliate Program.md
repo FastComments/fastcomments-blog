@@ -34,7 +34,7 @@ Apenas clientes que se convertem em uma conta paga geram comissão.
 
 ### Como eu faço para obter?
 
-[Inscreva-se aqui](https://fastcomments.getrewardful.com/signup) para o programa de referência.
+[Inscreva-se aqui](/(11-06-2024)-fastcomments-affiliates-program-re-launched-pt_br.html) para o programa de referência.
 
 Cheers!
 

@@ -34,7 +34,7 @@ Solo los clientes que se convierten en cuentas de pago resultan en comisión.
 
 ### ¿Cómo obtengo esto?
 
-[Regístrate aquí](https://fastcomments.getrewardful.com/signup) para el programa de referidos.
+[Regístrate aquí](/(11-06-2024)-fastcomments-affiliates-program-re-launched-es_es.html) para el programa de referidos.
 
 ¡Salud!
 

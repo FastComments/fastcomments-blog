@@ -34,7 +34,7 @@ Kun kunder, der konverterer til en betalt konto, giver kommission.
 
 ### Hvordan får jeg det?
 
-[Tilmeld dig her](https://fastcomments.getrewardful.com/signup) til henvisningsprogrammet.
+[Tilmeld dig her](/(11-06-2024)-fastcomments-affiliates-program-re-launched-da_dk.html) til henvisningsprogrammet.
 
 Skål!
 

@@ -34,7 +34,7 @@ FastComments теперь предлагает партнерскую прогр
 
 ### Как мне это получить?
 
-[Зарегистрируйтесь здесь](https://fastcomments.getrewardful.com/signup) для программы рекомендаций.
+[Зарегистрируйтесь здесь](/(11-06-2024)-fastcomments-affiliates-program-re-launched-ru_ru.html) для программы рекомендаций.
 
 Ура!
 

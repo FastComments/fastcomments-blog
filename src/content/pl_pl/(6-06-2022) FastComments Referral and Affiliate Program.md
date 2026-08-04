@@ -34,7 +34,7 @@ Tylko klienci, którzy przekształcą konto na płatne, przynoszą prowizję.
 
 ### Jak mogę to uzyskać?
 
-[Zarejestruj się tutaj](https://fastcomments.getrewardful.com/signup) do programu poleceń.
+[Zarejestruj się tutaj](/(11-06-2024)-fastcomments-affiliates-program-re-launched-pl_pl.html) do programu poleceń.
 
 Na zdrowie!
 

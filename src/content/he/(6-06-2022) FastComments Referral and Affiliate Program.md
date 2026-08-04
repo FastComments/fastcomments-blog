@@ -34,7 +34,7 @@ FastComments מציעה כעת תוכנית שותפויות למשווקים ש
 
 ### איך אני מקבל את זה?
 
-[הירשמו כאן](https://fastcomments.getrewardful.com/signup) לתוכנית ההפניות.
+[הירשמו כאן](/(11-06-2024)-fastcomments-affiliates-program-re-launched-he.html) לתוכנית ההפניות.
 
 בברכה!
 

@@ -34,7 +34,7 @@ FastCommentsは、アフィリエイトマーケター向けにアフィリエ�
 
 ### どのようにすればよいですか？
 
-[こちらからサインアップ](https://fastcomments.getrewardful.com/signup)してリファラルプログラムに参加してください。
+[こちらからサインアップ](/(11-06-2024)-fastcomments-affiliates-program-re-launched-ja_jp.html)してリファラルプログラムに参加してください。
 
 乾杯！
 

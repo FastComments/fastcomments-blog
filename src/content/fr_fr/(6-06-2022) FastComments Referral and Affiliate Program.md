@@ -34,7 +34,7 @@ Seuls les clients qui passent à un compte payant donnent lieu à une commission
 
 ### Comment l'obtenir ?
 
-[Inscrivez-vous ici](https://fastcomments.getrewardful.com/signup) pour le programme de référence.
+[Inscrivez-vous ici](/(11-06-2024)-fastcomments-affiliates-program-re-launched-fr_fr.html) pour le programme de référence.
 
 Santé !
 

@@ -33,7 +33,7 @@ FastComments сада нуди партнерски програм за марк
 
 ### Како да се пријавим?
 
-[Региструјте се овде](https://fastcomments.getrewardful.com/signup) за референтни програм.
+[Региструјте се овде](/(11-06-2024)-fastcomments-affiliates-program-re-launched-sr_rs.html) за референтни програм.
 
 Поздрав!
 

@@ -34,7 +34,7 @@ FastComments 또는 FastComments + **term**를 광고 키워드로 사용할 수
 
 ### 어떻게 얻을 수 있나요?
 
-[여기에서 등록](https://fastcomments.getrewardful.com/signup)하여 추천 프로그램에 참여하세요.
+[여기에서 등록](/(11-06-2024)-fastcomments-affiliates-program-re-launched-ko_kr.html)하여 추천 프로그램에 참여하세요.
 
 감사합니다!
 

@@ -34,7 +34,7 @@ FastComments 現在為聯盟行銷者以及一次性推薦提供聯盟計劃。�
 
 ### 我該如何獲得？
 
-[在此註冊](https://fastcomments.getrewardful.com/signup)以參加推薦計劃。
+[在此註冊](/(11-06-2024)-fastcomments-affiliates-program-re-launched-zh_tw.html)以參加推薦計劃。
 
 謝謝！
 

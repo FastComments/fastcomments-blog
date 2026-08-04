@@ -34,7 +34,7 @@ Samo stranke, ki preidejo na plačano naročnino, prinašajo provizijo.
 
 ### Kako jo dobim?
 
-[Prijavite se tukaj](https://fastcomments.getrewardful.com/signup) za program napotitev.
+[Prijavite se tukaj](/(11-06-2024)-fastcomments-affiliates-program-re-launched-sl_sl.html) za program napotitev.
 
 Na zdravje!
 

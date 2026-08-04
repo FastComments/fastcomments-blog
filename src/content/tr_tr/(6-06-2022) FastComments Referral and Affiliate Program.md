@@ -34,7 +34,7 @@ Sadece ücretli bir hesaba dönüşen müşteriler komisyon anlamına gelir.
 
 ### Nasıl alırım?
 
-Yönlendirme programı için [buradan kaydolun](https://fastcomments.getrewardful.com/signup).
+Yönlendirme programı için [buradan kaydolun](/(11-06-2024)-fastcomments-affiliates-program-re-launched-tr_tr.html).
 
 Şerefe!
 

@@ -34,7 +34,7 @@ Samo kupci koji pređu na plaćeni račun rezultiraju provizijom.
 
 ### Kako da se prijavim?
 
-[Prijavite se ovdje](https://fastcomments.getrewardful.com/signup) za referral program.
+[Prijavite se ovdje](/(11-06-2024)-fastcomments-affiliates-program-re-launched-hr_hr.html) za referral program.
 
 Živjeli!
 
