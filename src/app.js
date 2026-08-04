@@ -331,6 +331,13 @@ function createCategoryUrl(categorySlug, locale, page = 1) {
 }
 
 // Helper function to build alternate locale links
+// The default-locale homepage is served at the site root "/" (from index.html),
+// so reference it as "" (-> "/") in canonical/hreflang/sitemap links. Otherwise the
+// root URL has no self-referencing hreflang and reciprocals point to /index.html.
+function homeUrl(fileUrl) {
+	return fileUrl === 'index.html' ? '' : fileUrl;
+}
+
 function buildAlternateLocales(baseUrl, locale) {
 	const defaultUrl = locale === defaultLocale
 		? baseUrl
@@ -351,16 +358,16 @@ function buildAlternateLocales(baseUrl, locale) {
 			url: targetUrl,
 			current: loc === locale
 		};
-	}).filter(entry => generatedUrls.has(entry.url));
+	}).filter(entry => generatedUrls.has(entry.url))
+	  .map(entry => ({ ...entry, url: homeUrl(entry.url) }));
 	// Add x-default pointing to the default locale version (only if it exists)
 	if (generatedUrls.has(defaultUrl)) {
 		result.push({
 			hreflang: 'x-default',
-			url: defaultUrl,
+			url: homeUrl(defaultUrl),
 			current: false
 		});
 	}
-	// Keep index.html as-is so hreflang self-ref matches the actual page URL
 	return result;
 }
 
@@ -385,7 +392,8 @@ function buildAvailableLocales(baseUrl, locale) {
 			url: targetUrl,
 			current: loc === locale
 		};
-	}).filter(entry => generatedUrls.has(entry.url));
+	}).filter(entry => generatedUrls.has(entry.url))
+	  .map(entry => ({ ...entry, url: homeUrl(entry.url) }));
 }
 
 const feedGeneratorInstance = new feedGenerator.Feed({
@@ -428,12 +436,12 @@ function buildSitemapAlternates(baseFileName) {
 			targetFile = baseFileName.replace('.html', `-${loc}.html`);
 		}
 		if (generatedUrls.has(targetFile)) {
-			alternates.push({ hreflang: locales[loc].hreflang, url: BASE_URL + '/' + targetFile });
+			alternates.push({ hreflang: locales[loc].hreflang, url: BASE_URL + '/' + homeUrl(targetFile) });
 		}
 	}
 	// x-default points to the default locale version (only if it exists)
 	if (generatedUrls.has(baseFileName)) {
-		alternates.push({ hreflang: 'x-default', url: BASE_URL + '/' + baseFileName });
+		alternates.push({ hreflang: 'x-default', url: BASE_URL + '/' + homeUrl(baseFileName) });
 	}
 	return alternates;
 }
@@ -499,12 +507,12 @@ for (const locale of Object.keys(locales)) {
 		currentCategory: null,
 		pageTitle: localeData.t.recentPosts,
 		pageDescription: listingDescription(localeData.t.recentPosts, localePosts.slice(0, POSTS_PER_PAGE)),
-		canonicalUrl: BASE_URL + '/' + createIndexUrl(locale),
+		canonicalUrl: BASE_URL + '/' + homeUrl(createIndexUrl(locale)),
 		...localeData
 	}), 'utf8');
 
 	sitemapEntries.push({
-		loc: BASE_URL + '/' + indexUrl,
+		loc: BASE_URL + '/' + homeUrl(indexUrl),
 		changefreq: 'daily',
 		priority: '1.0',
 		alternates: buildSitemapAlternates(createIndexUrl(defaultLocale))
@@ -525,7 +533,7 @@ for (const locale of Object.keys(locales)) {
 			hasNextPage: page < totalPages,
 			hasPrevPage: page > 1,
 			nextPageUrl: page < totalPages ? '/' + createIndexUrl(locale, page + 1) : null,
-			prevPageUrl: page > 1 ? (page === 2 ? '/' + createIndexUrl(locale) : '/' + createIndexUrl(locale, page - 1)) : null,
+			prevPageUrl: page > 1 ? (page === 2 ? '/' + homeUrl(createIndexUrl(locale)) : '/' + createIndexUrl(locale, page - 1)) : null,
 			categories: categoriesArray,
 			categoryCounts: categoryCounts,
 			currentCategory: null,
