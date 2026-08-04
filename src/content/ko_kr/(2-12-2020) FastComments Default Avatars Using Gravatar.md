@@ -10,7 +10,7 @@
 
 ### Gravatar란 무엇인가요?
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a>는 "전 세계적으로 인정받는 아바타"로 브랜드화됩니다.
+<a href="https://gravatar.com/" target="_blank">Gravatar</a>는 "전 세계적으로 인정받는 아바타"로 브랜드화됩니다.
 이 서비스에서는 특정 이메일에 대한 아바타를 정의할 수 있습니다. 그 이메일을 사용하여 가입하는 모든 제품들은 
 이 아바타를 사용할 수 있습니다. 이는 FastComments에 가입하는 사람들이 아바타를 자동으로 설정하게 하여 
 단계를 제거합니다.

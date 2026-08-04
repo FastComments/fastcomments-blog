@@ -10,7 +10,7 @@ Avatar je ikona profila povezana sa svakim nalogom i prikazana pored svakog kome
 
 ### Šta je Gravatar?
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a> se predstavlja kao "Globalno Prepoznat Avatar".
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> se predstavlja kao "Globalno Prepoznat Avatar".
 To je usluga gde možete definisati avatar za dati email. Svi proizvodi na koje se prijavite koristeći taj email mogu zatim
 koristiti taj avatar. To uklanja jedan korak za ljude koji se prijavljuju za FastComments, pošto je njihov avatar postavljen automatski.
 

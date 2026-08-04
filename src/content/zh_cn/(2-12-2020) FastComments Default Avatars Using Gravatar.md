@@ -10,7 +10,7 @@
 
 ### 什么是 Gravatar？
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a> 自称为“全球公认的头像”。
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> 自称为“全球公认的头像”。
 这是一个服务，您可以为特定电子邮件定义一个头像。您使用该电子邮件注册的任何产品都可以使用该头像。这为注册 FastComments 的人省去了一个步骤，因为他们的头像会自动设置。
 
 ### 那么，这有什么变化？

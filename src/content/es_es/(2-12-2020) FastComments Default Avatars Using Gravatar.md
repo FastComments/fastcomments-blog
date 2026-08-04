@@ -10,7 +10,7 @@ Un avatar es el icono de perfil asociado con cada cuenta y que se muestra junto 
 
 ### ¿Qué es Gravatar?
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a> se presenta como "Un Avatar Reconocido Globalmente".
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> se presenta como "Un Avatar Reconocido Globalmente".
 Es un servicio donde puedes definir un avatar para un correo electrónico determinado. Cualquier producto al que te inscribas usando ese correo electrónico puede entonces
 usar ese avatar. Esto elimina un paso para las personas que se inscriben en FastComments, ya que su avatar se configura automáticamente.
 

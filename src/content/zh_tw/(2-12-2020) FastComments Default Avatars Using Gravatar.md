@@ -10,7 +10,7 @@
 
 ### 什麼是 Gravatar？
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a> 自我宣傳為「全球認可的頭像」。
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> 自我宣傳為「全球認可的頭像」。
 這是一項服務，您可以為給定的電子郵件定義一個頭像。使用該電子郵件註冊的任何產品都可以使用該頭像。這樣可以為註冊 FastComments 的人省去一個步驟，因為他們的頭像會自動設置。
 
 ### 那麼，這有什麼變化？

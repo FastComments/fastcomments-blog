@@ -10,7 +10,7 @@ Een avatar is het profielpictogram dat aan elk account is gekoppeld en naast elk
 
 ### Wat is Gravatar?
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a> positioneert zichzelf als "Een wereldwijd erkende avatar".
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> positioneert zichzelf als "Een wereldwijd erkende avatar".
 Het is een dienst waar je een avatar kunt definiëren voor een bepaald e-mailadres. Alle producten waarvoor je je registreert met dat e-mailadres kunnen deze avatar vervolgens gebruiken. Dit verwijdert een stap voor mensen die zich aanmelden bij FastComments, aangezien hun avatar automatisch wordt ingesteld.
 
 ### Wat is de verandering?

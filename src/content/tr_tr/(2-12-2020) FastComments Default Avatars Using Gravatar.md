@@ -10,7 +10,7 @@ Avatar, her hesapla ilişkilendirilmiş olan profil simgesidir ve her yorumun ya
 
 ### Gravatar Nedir?
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a>, kendini "Küresel Olarak Tanınan Avatar" olarak tanıtır.
+<a href="https://gravatar.com/" target="_blank">Gravatar</a>, kendini "Küresel Olarak Tanınan Avatar" olarak tanıtır.
 Bu, belirli bir e-posta için bir avatar tanımlayabileceğiniz bir hizmettir. O e-posta ile kaydolduğunuz herhangi bir ürün bu avatarı kullanabilir. Bu, FastComments'a kaydolan kişiler için bir adımı ortadan kaldırır çünkü avatarları otomatik olarak ayarlanır.
 
 ### Peki değişiklik nedir?

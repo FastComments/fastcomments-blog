@@ -10,7 +10,7 @@ Awatar to ikona profilu związana z każdym kontem i wyświetlana obok każdego 
 
 ### Czym jest Gravatar?
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a> przedstawia siebie jako "Globalnie Rozpoznawalny Awatara".
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> przedstawia siebie jako "Globalnie Rozpoznawalny Awatara".
 To usługa, w której możesz zdefiniować awatar dla danego adresu e-mail. Wszystkie produkty, do których się zapiszesz używając tego adresu e-mail, mogą następnie korzystać z tego awatara. To eliminuje krok dla osób rejestrujących się w FastComments, ponieważ ich awatar jest konfigurowany automatycznie.
 
 ### A więc co się zmienia?

@@ -10,7 +10,7 @@ Ein Avatar ist das Profilbild, das mit jedem Konto verbunden ist und neben jedem
 
 ### Was ist Gravatar?
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a> bezeichnet sich selbst als "Ein weltweit anerkannter Avatar".
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> bezeichnet sich selbst als "Ein weltweit anerkannter Avatar".
 Es ist ein Dienst, bei dem Sie ein Avatar für eine bestimmte E-Mail definieren können. Alle Produkte, für die Sie sich mit dieser E-Mail anmelden, können dann
 dieses Avatar verwenden. Dies entfernt einen Schritt für Personen, die sich bei FastComments anmelden, da ihr Avatar automatisch eingerichtet wird.
 

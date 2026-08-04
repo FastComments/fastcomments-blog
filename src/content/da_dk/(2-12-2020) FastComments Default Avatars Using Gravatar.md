@@ -10,7 +10,7 @@ Et avatar er ikonprofilen, der er tilknyttet hver konto og vist ved siden af hve
 
 ### Hvad er Gravatar?
 
-<a href="https://en.gravatar.com/" target="_blank">Gravatar</a> brander sig som "En Globalt Anerkendt Avatar".
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> brander sig som "En Globalt Anerkendt Avatar".
 Det er en tjeneste, hvor du kan definere et avatar for en given e-mail. Eventuelle produkter, du tilmelder dig med den e-mail, kan derefter
 bruge det avatar. Dette fjerner et skridt for folk, der tilmelder sig FastComments, da deres avatar sættes op automatisk.
 
