@@ -77,16 +77,22 @@ function slugifyCategory(category) {
 	return category.toLowerCase().replace(/&/g, 'and').replace(/\s+/g, '-');
 }
 
-// Trim text under maxPx on a word boundary, adding an ellipsis when trimmed.
+// Trim text under maxPx, adding an ellipsis when trimmed. Truncates per-character
+// (so scripts without spaces like CJK truncate correctly), then backs off to the
+// last word boundary only when the cut lands in the middle of a Latin word.
 function clampDescPx(text, maxPx) {
 	if (serpDescPx(text) <= maxPx) return text;
 	let out = '';
-	for (const w of text.split(' ')) {
-		const cand = out ? out + ' ' + w : w;
-		if (serpDescPx(cand + '…') > maxPx) break;
-		out = cand;
+	for (const ch of text) {
+		if (serpDescPx(out + ch + '…') > maxPx) break;
+		out += ch;
 	}
-	return (out || text.slice(0, 60)) + '…';
+	const lastCh = out.charAt(out.length - 1);
+	const nextCh = text.charAt(out.length);
+	if (/[A-Za-z0-9]/.test(lastCh) && /[A-Za-z0-9]/.test(nextCh) && out.includes(' ')) {
+		out = out.slice(0, out.lastIndexOf(' '));
+	}
+	return out.trim() + '…';
 }
 
 // Build a listing/category description from its heading plus the titles of the
@@ -165,6 +171,13 @@ function processPost(item, locale, contentDir) {
 
 	html = html.replace('[postdate]', ctime.toDateString() + '<br>' + commentCountHTML);
 
+	// Capture the hand-written excerpt ({{#unless isPost}} block) - a real per-post
+	// summary - for use as the meta description.
+	const excerptMatch = html.match(/\{\{#unless isPost\}\}([\s\S]*?)\{\{\/unless\}\}/);
+	const excerptText = excerptMatch
+		? decodeEntities(excerptMatch[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
+		: '';
+
 	// On listing pages each card renders a post preview; demote the preview's
 	// title <h1> to <h2> so a listing page has one <h1> (its section heading).
 	const previewHTML = getCompiledPost(html, {
@@ -189,18 +202,22 @@ function processPost(item, locale, contentDir) {
 	const h1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
 	const titleText = h1Match ? h1Match[1].replace(/<[^>]+>/g, '').trim() : title;
 
-	// Meta description: accumulate body paragraphs until wide enough for SERP (~360px),
-	// then clamp under ~950px. Falls back to the title for a near-empty body.
-	let description = '';
-	const paragraphs = (bodyHtml.match(/<p[^>]*>[\s\S]*?<\/p>/gi) || [])
-		.map(p => p.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
-		.filter(Boolean);
-	for (const t of paragraphs) {
-		description = description ? description + ' ' + t : t;
-		if (serpDescPx(description) >= 360) break;
+	// Meta description: prefer the hand-written excerpt (unique, summary-length).
+	// For posts without one (or a very short one), accumulate body paragraphs to
+	// reach a usable width, then clamp to the SERP width window.
+	let description = excerptText;
+	if (serpDescPx(description) < 320) {
+		const paragraphs = (bodyHtml.match(/<p[^>]*>[\s\S]*?<\/p>/gi) || [])
+			.map(p => decodeEntities(p.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()))
+			.filter(Boolean);
+		for (const t of paragraphs) {
+			if (description.includes(t)) continue;
+			description = description ? description + ' ' + t : t;
+			if (serpDescPx(description) >= 360) break;
+		}
 	}
 	if (!description) description = titleText;
-	description = clampDescPx(decodeEntities(description), 950);
+	description = clampDescPx(description, 950);
 
 	return {
 		html: html,
