@@ -1,21 +1,20 @@
----
 [category:Features]
 
 ###### [postdate]
-# [postlink]Domyślne Awatary FastComments Wykorzystujące Gravatar[/postlink]
+# [postlink]Domyślne awatary FastComments przy użyciu Gravatara[/postlink]
 
-### Czym jest Awatar?
+### Co to jest awatar?
 
-Awatar to ikona profilu związana z każdym kontem i wyświetlana obok każdego komentarza.
+Awatar to ikona profilowa powiązana z każdym kontem i wyświetlana obok każdego komentarza.
 
-### Czym jest Gravatar?
+### Co to jest Gravatar?
 
-<a href="https://gravatar.com/" target="_blank">Gravatar</a> przedstawia siebie jako "Globalnie Rozpoznawalny Awatara".
-To usługa, w której możesz zdefiniować awatar dla danego adresu e-mail. Wszystkie produkty, do których się zapiszesz używając tego adresu e-mail, mogą następnie korzystać z tego awatara. To eliminuje krok dla osób rejestrujących się w FastComments, ponieważ ich awatar jest konfigurowany automatycznie.
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> reklamuje się jako "A Globally Recognized Avatar".  
+Jest to usługa, w której możesz zdefiniować awatar dla określonego adresu e‑mail. Wszystkie produkty, do których rejestrujesz się przy użyciu tego e‑maila, mogą następnie używać tego awatara. Usuwa to jeden krok dla osób rejestrujących się w FastComments, ponieważ ich awatar jest ustawiany automatycznie.
 
-### A więc co się zmienia?
+### Jaka jest więc zmiana?
 
-FastComments teraz pobiera domyślne awatary z Gravatar. Ty lub Twoi użytkownicy nie musicie nic robić, aby skorzystać z tej funkcji.
+FastComments będzie teraz pobierać domyślne awatary z Gravatara. Ty ani użytkownicy nie musicie nic robić, aby uzyskać tę funkcję.
 
-Jeśli Twoi istniejący użytkownicy już zdefiniowali swój własny awatar - nie ma problemu - nie zamierzamy nadpisywać ich niestandardowych awatarów.
-Dodatkowo, użytkownicy mogą wciąż nadpisywać awatar Gravatar w FastComments.
+Jeśli Twoi istniejący użytkownicy już zdefiniowali własny awatar – nie martw się – nie nadpiszemy ich niestandardowych awatarów.  
+Użytkownicy nadal mogą nadpisać awatar z Gravatara w FastComments.

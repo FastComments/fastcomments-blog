@@ -1,22 +1,18 @@
----
 [category:Features]
 
 ###### [postdate]
-# [postlink]FastComments Podrazumevani Avatari Koristeći Gravatar[/postlink]
+# [postlink]FastComments podrazumevani avatari koristeći Gravatar[/postlink]
 
-### Šta je Avatar?
+### Šta je avatar?
 
 Avatar je ikona profila povezana sa svakim nalogom i prikazana pored svakog komentara.
 
 ### Šta je Gravatar?
 
-<a href="https://gravatar.com/" target="_blank">Gravatar</a> se predstavlja kao "Globalno Prepoznat Avatar".
-To je usluga gde možete definisati avatar za dati email. Svi proizvodi na koje se prijavite koristeći taj email mogu zatim
-koristiti taj avatar. To uklanja jedan korak za ljude koji se prijavljuju za FastComments, pošto je njihov avatar postavljen automatski.
+<a href="https://gravatar.com/" target="_blank">Gravatar</a> sebe brendiraju kao "Globalno prepoznatljiv avatar". To je usluga gde možete definisati avatar za određenu e‑mail adresu. Bilo koji proizvod na koji se prijavite koristeći tu e‑mail adresu može potom koristiti taj avatar. Ovo uklanja jedan korak za ljude koji se prijavljuju na FastComments jer je njihov avatar postavljen automatski.
 
-### Dakle, koja je promena?
+### Koja je promena?
 
-FastComments će sada povlačiti podrazumevane avatare sa Gravatar-a. Vi ili vaši korisnici ne morate ništa da uradite da biste dobili ovu funkciju.
+FastComments će sada preuzimati podrazumevane avatare sa Gravatara. Vi ili korisnici ne morate ništa da radite da biste dobili ovu funkcionalnost.
 
-Ako vaši postojeći korisnici već imaju definisan svoj avatar - nema brige - nećemo prepisivati njihove prilagođene avatare.
-Takođe, korisnici i dalje mogu da prepišu Gravatar avatar u FastComments.
+Ako su vaši postojeći korisnici već definisali svoj avatar – nema brige – nećemo prepisati njihove prilagođene avatare. Takođe, korisnici i dalje mogu prepisati Gravatar avatar u FastComments.

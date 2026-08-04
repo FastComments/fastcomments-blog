@@ -1,41 +1,42 @@
----
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments Yönlendirme ve Ortaklık Programı[/postlink]
+# [postlink]FastComments Referans ve Ortaklık Programı[/postlink]
 
 {{#unless isPost}}
-Müşterileri yönlendirin ve tekrarlayan bir komisyon kazanın!
+Müşterileri yönlendirin ve sürekli bir komisyon kazanın!
 {{/unless}}
 
 {{#isPost}}
 
-FastComments artık ortak pazarlamacılar için bir ortaklık programı ve tek seferlik yönlendirmeler sunmaktadır. 2022 yılı için yönlendirmeler, müşterinin **ömrü** boyunca **%30** komisyon kazanacaktır. 
+FastComments artık bağlı pazarlamacılar için bir ortaklık programı ve tek seferlik yönlendirmeler sunuyor. 2022 yılı için yönlendirmeler, müşterinin **ömür boyu** **%30** komisyon alacak. 
 
-### Ortaklık programı hangi katmanlara uygulanıyor?
+### Ortaklık programı hangi katmanlara uygulanır?
 
-Tüm FastComments katmanları - Flex, Creators ($5.99) ve Pro ($399/ay) - komisyon almaya uygundur.
+Tüm FastComments katmanları - Flex, Creators ($5.99) ve Pro ($399/ay) - komisyon almaya hak kazanır.
 
-### %30 Yüksek Değil mi?
+### %30 Yüksek mi?
 
-Sektör açısından, %30 bulabileceğiniz en yüksek oranlardan biridir. Bu komisyon oranını yeni ortakları ve partnerleri çekmek için seçtik. 
+Sektör açısından, %30 bulabileceğiniz en yüksek oranlardan biridir. Bu komisyon oranını yeni ortaklar ve iş ortakları çekmek için seçtik. 
 
-### Reklam Kuralları
+### Reklam Rehberi
 
-Reklam anahtar kelimelerinizde FastComments veya FastComments + **terim** kullanamazsınız. Bu, markamızı korumaya yardımcı olmak içindir. Bunu yapmak isterseniz, potansiyel bir ortaklık görüşmek için destek ekibiyle iletişime geçin.
+FastComments veya FastComments + **term** ifadesini reklam anahtar kelimelerinizde kullanamazsınız. Bu, markamızı korumak içindir. Bunu yapmak isterseniz, olası bir ortaklığı görüşmek için destek ekibiyle iletişime geçin.
 
-Markamızı veya yaptıklarımızı yanlış bir şekilde temsil edemezsiniz. Hızlı, canlı, gömülü yorum çözümleri sunuyoruz.
+Markamızı veya ne yaptığımızı yanlış temsil edemezsiniz. Hızlı, canlı, gömülü yorum çözümleri sunuyoruz.
 
-### Dönüşüm Süresi ve Denemeler
+### Dönüşüm Süresi ve Deneme Süreleri
 
-Dönüşüm sistemi 60 günlük bir takip çerezi kullanmaktadır. Müşterilerin ürünü test etmeleri için 30 günlük bir ücretsiz denemeleri vardır.
+Dönüşüm sistemi 60 günlük izleme çerezi kullanır. Müşteriler, ürünü test etmek için 30 günlük ücretsiz deneme süresine sahiptir.
 
-Sadece ücretli bir hesaba dönüşen müşteriler komisyon anlamına gelir.
+Sadece ücretli hesaba geçen müşteriler komisyon getirir.
 
-### Nasıl alırım?
+### Bunu Nasıl Alabilirim?
 
-Yönlendirme programı için [buradan kaydolun](/(11-06-2024)-fastcomments-affiliates-program-re-launched-tr_tr.html).
+[Buradan kaydolun](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) yönlendirme programı için.
 
-Şerefe!
+Sağlıklı günler!
 
 {{/isPost}}
+
+---

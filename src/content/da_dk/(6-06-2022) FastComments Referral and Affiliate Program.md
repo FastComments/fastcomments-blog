@@ -1,43 +1,40 @@
----
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments Henvisnings- og Affiliateprogram[/postlink]
+# [postlink]FastComments henvisnings- og affiliateprogram[/postlink]
 
 {{#unless isPost}}
-Henvis kunder og få tilbagevendende kommission!
+Refer customers and get a recurring commission!
 {{/unless}}
 
 {{#isPost}}
 
-FastComments tilbyder nu et affiliateprogram for affiliate-markedsførere samt engangs-henvisninger. I 2022 vil henvisninger give **30%** kommission for **kundens livstid**.
+FastComments tilbyder nu et affiliateprogram for affiliate‑markedsførere såvel som engangs‑henvisninger. For året 2022 vil henvisninger tjene **30%** provision for **kundens levetid**. 
 
 ### Hvilke niveauer gælder affiliateprogrammet for?
 
-Alle FastComments niveauer - Flex, Creators ($5.99), og Pro ($399/måned) - er kvalificerede til kommission.
+Alle FastComments‑niveauer – Flex, Creators ($5.99) og Pro ($399/md) – er berettigede til provision.
 
-### Er 30% ikke højt?
+### Er ikke 30% højt?
 
-I forhold til branchen er 30% lige så højt, som du vil finde. Vi valgte denne kommissionssats for at tiltrække nye affiliate-partnere.
+I forhold til branchen er 30% så højt som du vil finde. Vi valgte denne provisionssats for at tiltrække nye affiliates og partnere. 
 
-### Rejsevejledning for annoncering
+### Retningslinjer for annoncering
 
-Du må ikke bruge FastComments eller FastComments + **term** i dine annonceringssøgeord. Dette er for at beskytte vores brand. Hvis du ønsker at gøre dette, kontakt support for at drøfte et muligt partnerskab.
+Du må ikke bruge FastComments eller FastComments + **term** i dine annoncerings‑søgeord. Dette er for at beskytte vores brand. Hvis du ønsker at gøre dette, så kontakt support for at drøfte et potentielt partnerskab.
 
-Du må ikke misrepræsentere vores brand eller hvad vi gør. Vi tilbyder hurtige, live, indlejrede kommentarløsninger.
+Du må ikke fejlagtigt fremstille vores brand eller hvad vi gør. Vi tilbyder hurtige, live, indlejrede kommentarløsninger.
 
-### Konverteringstid og prøver
+### Konverteringstid og prøveperioder
 
-Konverteringssystemet anvender en 60-dages tracking-cookie. Kunder har en 30-dages gratis prøveperiode til at teste produktet.
+Konverteringssystemet bruger en 60‑dages sporings‑cookie. Kunder har en 30‑dages gratis prøveperiode til at teste produktet.
 
-Kun kunder, der konverterer til en betalt konto, giver kommission.
+Kun kunder, der konverterer til en betalt konto, giver provision.
 
 ### Hvordan får jeg det?
 
-[Tilmeld dig her](/(11-06-2024)-fastcomments-affiliates-program-re-launched-da_dk.html) til henvisningsprogrammet.
+[Tilmeld dig her](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) til henvisningsprogrammet.
 
 Skål!
 
 {{/isPost}}
-
----

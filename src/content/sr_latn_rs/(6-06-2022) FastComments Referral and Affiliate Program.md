@@ -1,41 +1,42 @@
----
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments Program Preporuka i Partnerstva[/postlink]
+# [postlink]FastComments Referral i Affiliate Program[/postlink]
 
 {{#unless isPost}}
-Preporučite kupce i dobijajte ponavljajuću proviziju!
+Preporučite kupce i ostvarite ponavljajuću proviziju!
 {{/unless}}
 
 {{#isPost}}
 
-FastComments sada nudi program partnerstva za marketere, kao i jednokratne preporuke. Za 2022. godinu, preporuke će zarađivati **30%** provizije za **celokupno** vreme trajanja kupca. 
+FastComments sada nudi affiliate program za affiliate marketere, kao i jednokratne preporuke. Za 2022. godinu, preporuke će zaraditi **30%** provizije za **cijeli životni vijek** kupca. 
 
-### Na koje nivoe se program partnerstva odnosi?
+### Na koje nivoe se odnosi affiliate program?
 
-Svi FastComments nivoi - Flex, Creators ($5.99) i Pro ($399/mo) - su kvalifikovani za proviziju.
+Svi FastComments nivoi - Flex, Creators ($5.99) i Pro ($399/mo) - su podobni za proviziju.
 
-### Nije li 30% visoko?
+### Da li je 30% visoko?
 
-U odnosu na industriju, 30% je otprilike koliko ćete naći. Odabrali smo ovu stopu provizije da privučemo nove partnere i saradnike. 
+U odnosu na industriju, 30% je otprilike najviša stopa koju ćete naći. Odabrali smo ovu proviziju da privučemo nove affiliate partnere. 
 
-### Pravila oglašavanja
+### Smjernice za oglašavanje
 
-Ne možete koristiti FastComments ili FastComments + **pojam** u vašim oglasnim ključnim rečima. Ovo je da pomogne u zaštiti našeg brenda. Ako želite to da uradite, obratite se podršci da razgovarate o mogućem partnerstvu.
+Ne smete koristiti FastComments ili FastComments + **term** u svojim ključnim riječima za oglašavanje. Ovo je da zaštitimo naš brend. Ako želite to učiniti, kontaktirajte podršku da razgovaramo o mogućem partnerstvu.
 
-Ne možete pogrešno prikazivati naš brend ili ono što radimo. Nudimo brza, uživo, ugrađena rešenja za komentarisanje.
+Ne smete pogrešno predstavljati naš brend ili ono što radimo. Nudimo brza, uživo, ugrađena rješenja za komentarisanje.
 
-### Vreme konverzije i testiranja
+### Vrijeme konverzije i probni periodi
 
-Sistem konverzije koristi kolačić za praćenje koji traje 60 dana. Kupci imaju 30-dnevno besplatno probno razdoblje da testiraju proizvod.
+Sistem konverzije koristi kolačić za praćenje od 60 dana. Kupci imaju 30‑dnevni besplatni probni period za testiranje proizvoda.
 
-Samo kupci koji se konvertuju u plaćeni račun donose proviziju.
+Samo kupci koji pređu na plaćeni račun generišu proviziju.
 
 ### Kako da se prijavim?
 
-[Prijavite se ovde](/(11-06-2024)-fastcomments-affiliates-program-re-launched-sr_latn_rs.html) za program preporuka.
+[Sign up here](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) za program preporuka.
 
-Zdravstveno!
+Živeli!
 
 {{/isPost}}
+
+---

@@ -1,4 +1,3 @@
----
 [category:Announcements]
 
 ###### [postdate]
@@ -10,7 +9,7 @@
 
 {{#isPost}}
 
-FastComments ahora ofrece un programa de afiliados para afiliados de marketing, así como referencias únicas. Para el año 2022, las referencias ganarán un **30%** de comisión durante la **duración** del cliente.
+FastComments ahora ofrece un programa de afiliados para comercializadores afiliados, así como referidos únicos. Para el año 2022, los referidos ganarán una comisión del **30%** durante la **vida** del cliente. 
 
 ### ¿A qué niveles se aplica el programa de afiliados?
 
@@ -18,25 +17,25 @@ Todos los niveles de FastComments - Flex, Creators ($5.99) y Pro ($399/mes) - so
 
 ### ¿No es 30% alto?
 
-En términos de la industria, 30% es casi lo más alto que encontrarás. Elegimos esta tasa de comisión para atraer nuevos afiliados y socios.
+En términos de la industria, el 30% es tan alto como encontrarás. Elegimos esta tasa de comisión para atraer nuevos afiliados y socios. 
 
 ### Directrices de Publicidad
 
-No puedes usar FastComments o FastComments + **término** en tus palabras clave publicitarias. Esto es para ayudar a proteger nuestra marca. Si quieres hacerlo, contacta con el soporte para discutir una posible colaboración.
+No puedes usar FastComments o FastComments + **term** en tus palabras clave publicitarias. Esto es para ayudar a proteger nuestra marca. Si deseas hacerlo, contacta al soporte para discutir una posible asociación.
 
-No puedes tergiversar nuestra marca ni lo que hacemos. Ofrecemos soluciones de comentarios incrustados, rápidos y en vivo.
+No puedes tergiversar nuestra marca o lo que hacemos. Ofrecemos soluciones de comentarios rápidas, en vivo y embebidas.
 
 ### Tiempo de Conversión y Pruebas
 
 El sistema de conversión utiliza una cookie de seguimiento de 60 días. Los clientes tienen una prueba gratuita de 30 días para probar el producto.
 
-Solo los clientes que se convierten en cuentas de pago resultan en comisión.
+Solo los clientes que convierten a una cuenta paga generan comisión.
 
-### ¿Cómo obtengo esto?
+### ¿Cómo lo obtengo?
 
-[Regístrate aquí](/(11-06-2024)-fastcomments-affiliates-program-re-launched-es_es.html) para el programa de referidos.
+[Regístrate aquí](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) para el programa de referidos.
 
-¡Salud!
+¡Saludos!
 
 {{/isPost}}
 

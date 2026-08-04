@@ -1,42 +1,41 @@
----
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]Programme de Référence et d'Affiliation FastComments[/postlink]
+# [postlink]Programme de parrainage et d'affiliation FastComments[/postlink]
 
 {{#unless isPost}}
-Référez des clients et obtenez une commission récurrente !
+Référez des clients et obtenez une commission récurrente !
 {{/unless}}
 
 {{#isPost}}
 
-FastComments propose désormais un programme d'affiliation pour les affiliés ainsi que des références uniques. Pour l'année 2022, les références gagneront une commission de **30%** pour la **durée de vie** du client. 
+FastComments propose désormais un programme d'affiliation pour les marketeurs affiliés ainsi que des parrainages ponctuels. Pour l'année 2022, les parrainages rapporteront **30 %** de commission pendant **la durée de vie** du client. 
 
-### Quels niveaux le programme d'affiliation concerne-t-il ?
+### À quels niveaux le programme d'affiliation s'applique-t-il ?
 
-Tous les niveaux de FastComments - Flex, Creators (5,99 $) et Pro (399 $/mois) - sont éligibles à la commission.
+Tous les niveaux FastComments - Flex, Creators (5,99 $), et Pro (399 $/mo) - sont éligibles à la commission.
 
-### 30% n'est-il pas élevé ?
+### 30 % n'est‑il pas élevé ?
 
-En termes de l'industrie, 30% est à peu près le maximum que vous trouverez. Nous avons choisi ce taux de commission pour attirer de nouveaux affiliés et partenaires. 
+En termes d'industrie, 30 % est à peu près le plus élevé que vous trouverez. Nous avons choisi ce taux de commission pour attirer de nouveaux affiliés et partenaires. 
 
-### Directives Publicitaires
+### Directives publicitaires
 
-Vous ne pouvez pas utiliser FastComments ou FastComments + **terme** dans vos mots-clés publicitaires. Cela vise à protéger notre marque. Si vous souhaitez le faire, contactez le support pour discuter d'un partenariat potentiel.
+Vous ne devez pas utiliser FastComments ou FastComments + **term** dans vos mots‑clés publicitaires. Cela vise à protéger notre marque. Si vous souhaitez le faire, contactez le support pour discuter d'un partenariat potentiel.
 
-Vous ne pouvez pas déformer notre marque ou ce que nous faisons. Nous offrons des solutions de commentaires intégrés, rapides et en direct.
+Vous ne devez pas déformer notre marque ou ce que nous faisons. Nous proposons des solutions de commentaires rapides, en direct et intégrées.
 
-### Temps de Conversion et Essais
+### Temps de conversion et essais
 
-Le système de conversion utilise un cookie de suivi de 60 jours. Les clients bénéficient d'un essai gratuit de 30 jours pour tester le produit.
+Le système de conversion utilise un cookie de suivi de 60 jours. Les clients bénéficient d'un essai gratuit de 30 jours pour tester le produit.
 
-Seuls les clients qui passent à un compte payant donnent lieu à une commission.
+Seuls les clients qui passent à un compte payant génèrent une commission.
 
-### Comment l'obtenir ?
+### Comment l'obtenir ?
 
-[Inscrivez-vous ici](/(11-06-2024)-fastcomments-affiliates-program-re-launched-fr_fr.html) pour le programme de référence.
+[Inscrivez‑vous ici](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) pour le programme de parrainage.
 
-Santé !
+Cordialement !
 
 {{/isPost}}
 

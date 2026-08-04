@@ -1,42 +1,41 @@
----
 [category:Announcements]
 
 ###### [postdate]
 # [postlink]Program poleceń i afiliacyjny FastComments[/postlink]
 
 {{#unless isPost}}
-Polecaj klientów i zdobij prowizję cykliczną!
+Refer customers and get a recurring commission!
 {{/unless}}
 
 {{#isPost}}
 
-FastComments obecnie oferuje program afiliacyjny dla marketerów afiliacyjnych oraz jednorazowe polecenia. W roku 2022, polecenia będą zarabiać **30%** prowizji przez **cały okres** korzystania z usług klienta. 
+FastComments teraz oferuje program afiliacyjny dla marketerów afiliacyjnych, a także jednorazowe polecenia. W roku 2022 polecenia będą zarabiać **30%** prowizji przez **cały okres trwania** klienta. 
 
-### Do jakich tierów odnosi się program afiliacyjny?
+### What tiers does the affiliate program apply to?
 
-Wszystkie poziomy FastComments - Flex, Creators ($5.99) oraz Pro ($399/miesiąc) - kwalifikują się do prowizji.
+All FastComments tiers - Flex, Creators ($5.99), and Pro ($399/mo) - are eligible for commission.
 
-### Czy 30% to nie za dużo?
+### Isn't 30% High?
 
-W skali branży, 30% to jedna z najwyższych stawek. Wybraliśmy tę stawkę prowizji, aby przyciągnąć nowych afiliantów i partnerów. 
+In terms of the industry, 30% is about as high as you'll find. We picked this commission rate to attract new affiliates and partners. 
 
-### Zasady reklamy
+### Advertising Guidelines
 
-Nie możesz używać FastComments ani FastComments + **term** w słowach kluczowych w swojej reklamie. Ma to na celu ochronę naszej marki. Jeśli chciałbyś to zrobić, skontaktuj się z działem wsparcia, aby omówić potencjalne partnerstwo.
+You may not use FastComments or FastComments + **term** in your advertising keywords. This is to help protect our brand. If you'd like to do this, reach out to support to discuss a potential partnership.
 
-Nie możesz wprowadzać w błąd w kwestii naszej marki ani tego, co robimy. Oferujemy szybkie, na żywo, osadzone rozwiązania do komentowania.
+You may not misrepresent our brand or what we do. We offer fast, live, embedded commenting solutions.
 
-### Czas konwersji i okresy próbne
+### Conversion Time and Trials
 
-System konwersji wykorzystuje 60-dniowy cookie śledzący. Klienci mają 30 dni na bezpłatny okres próbny, aby przetestować produkt.
+The conversion system utilizes a 60-day tracking cookie. Customers have a 30-day free trial to test the product.
 
-Tylko klienci, którzy przekształcą konto na płatne, przynoszą prowizję.
+Only customers that convert to a paid account result in commission.
 
-### Jak mogę to uzyskać?
+### How do I get it?
 
-[Zarejestruj się tutaj](/(11-06-2024)-fastcomments-affiliates-program-re-launched-pl_pl.html) do programu poleceń.
+[Sign up here](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) for the referral program.
 
-Na zdrowie!
+Cheers!
 
 {{/isPost}}
 

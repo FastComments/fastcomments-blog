@@ -1,42 +1,41 @@
----
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments Referral and Affiliate Program[/postlink]
+# [postlink]FastComments program napotitev in partnerski program[/postlink]
 
 {{#unless isPost}}
-Spoznajte stranke in pridobite ponavljajočo provizijo!
+Napravite napotitve strank in prejmite ponavljajočo provizijo!
 {{/unless}}
 
 {{#isPost}}
 
-FastComments zdaj ponuja partnerski program za partnerske tržnike, pa tudi enkratne napotitve. Za leto 2022, napotitve zaslužijo **30%** provizije za **celotno** dobo stranke.
+FastComments zdaj ponuja partnerski program za partnerske tržnike ter tudi enkratne napotitve. Za leto 2022 bodo napotitve zaslužile **30%** provizije za **življenjsko dobo** stranke. 
 
-### Na katere ravni se partnerski program nanaša?
+### Na katere nivoje se nanaša partnerski program?
 
-Vse ravni FastComments - Flex, Creators ($5.99) in Pro ($399/mo) - so upravičene do provizije.
+Vsi nivoji FastComments – Flex, Creators ($5.99), in Pro ($399/mo) – so upravičeni do provizije.
 
-### Ali ni 30% visoko?
+### Ali 30% ni visoko?
 
-V smislu industrije je 30% približno najvišja raven, ki jo boste našli. To stopnjo provizije smo izbrali, da bi pritegnili nove partnerje in sodelavce.
+Glede na industrijo je 30% približno najvišja stopnja, ki jo lahko najdete. Izbrali smo to provizijsko stopnjo, da privabimo nove partnerje in sodelavce. 
 
-### Navodila za oglaševanje
+### Smernice za oglaševanje
 
-FastComments ali FastComments + **term** ne smete uporabljati v svojih oglaševalskih ključnih besedah. To je za zaščito naše blagovne znamke. Če želite to narediti, se obrnite na podporo, da se pogovorite o morebitnem partnerstvu.
+Ne smete uporabljati FastComments ali FastComments + **term** v vaših oglasnih ključnih besedah. To je zato, da zaščitimo našo blagovno znamko. Če to želite storiti, se obrnite na podporo, da se pogovorimo o morebitnem partnerstvu.
 
-Ne smete zavajati glede naše blagovne znamke ali naših storitev. Nudimo hitro, živo, vgrajeno rešitev za komentiranje.
+Ne smete napačno predstavljati naše blagovne znamke ali tega, kar počnemo. Ponujamo hitre, žive, vdelane rešitve za komentiranje.
 
-### Čas konverzije in preizkušnje
+### Čas pretvorbe in preizkusi
 
-Sistem konverzije uporablja 60-dnevni piškotek za sledenje. Stranke imajo 30-dnevno brezplačno preizkusno obdobje za testiranje izdelka.
+Sistem pretvorbe uporablja sledilno piškotko, ki traja 60 dni. Stranke imajo 30-dnevno brezplačno preizkusno obdobje za testiranje izdelka.
 
-Samo stranke, ki preidejo na plačano naročnino, prinašajo provizijo.
+Le stranke, ki preidejo na plačani račun, prinesejo provizijo.
 
-### Kako jo dobim?
+### Kako ga dobim?
 
-[Prijavite se tukaj](/(11-06-2024)-fastcomments-affiliates-program-re-launched-sl_sl.html) za program napotitev.
+[Sign up here](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) za program napotitev.
 
-Na zdravje!
+Lep pozdrav!
 
 {{/isPost}}
 

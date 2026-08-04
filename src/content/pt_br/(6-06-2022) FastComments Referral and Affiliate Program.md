@@ -1,4 +1,3 @@
----
 [category:Announcements]
 
 ###### [postdate]
@@ -10,33 +9,33 @@ Indique clientes e receba uma comissão recorrente!
 
 {{#isPost}}
 
-FastComments agora oferece um programa de afiliados para marketers afiliados, além de referências únicas. Para o ano de 2022, as referências ganharão **30%** de comissão durante a **vida toda** do cliente. 
+FastComments agora oferece um programa de afiliados para profissionais de marketing afiliado, bem como indicações únicas. Para o ano de 2022, as indicações ganharão comissão de **30%** pelo **tempo de vida** do cliente. 
 
-### Quais níveis se aplicam ao programa de afiliados?
+### A quais planos o programa de afiliados se aplica?
 
-Todos os níveis do FastComments - Flex, Creators ($5,99) e Pro ($399/mês) - são elegíveis para comissão.
+Todos os planos FastComments - Flex, Creators (US$5.99), e Pro (US$399/mo) - são elegíveis para comissão.
 
-### Não é 30% Alto?
+### 30% não é alto?
 
-Em termos de indústria, 30% é praticamente o máximo que você encontrará. Escolhemos essa taxa de comissão para atrair novos afiliados e parceiros. 
+Em termos de mercado, 30% é quase o máximo que você encontrará. Escolhemos essa taxa de comissão para atrair novos afiliados e parceiros. 
 
 ### Diretrizes de Publicidade
 
-Você não pode usar FastComments ou FastComments + **termo** em suas palavras-chave de publicidade. Isso é para ajudar a proteger nossa marca. Se você gostaria de fazer isso, entre em contato com o suporte para discutir uma parceria potencial.
+Você não pode usar FastComments ou FastComments + **term** em suas palavras‑chave de publicidade. Isso ajuda a proteger nossa marca. Se quiser fazer isso, entre em contato com o suporte para discutir uma parceria potencial.
 
-Você não pode deturpar nossa marca ou o que fazemos. Nós oferecemos soluções de comentários rápidos, ao vivo e incorporadas.
+Você não pode deturpar nossa marca ou o que fazemos. Oferecemos soluções de comentários rápidas, ao vivo e incorporadas.
 
 ### Tempo de Conversão e Testes
 
-O sistema de conversão utiliza um cookie de rastreamento de 60 dias. Os clientes têm um teste gratuito de 30 dias para testar o produto.
+O sistema de conversão utiliza um cookie de rastreamento de 60 dias. Os clientes têm um teste gratuito de 30 dias para experimentar o produto.
 
-Apenas clientes que se convertem em uma conta paga geram comissão.
+Somente clientes que convertem para uma conta paga geram comissão.
 
-### Como eu faço para obter?
+### Como faço para obter?
 
-[Inscreva-se aqui](/(11-06-2024)-fastcomments-affiliates-program-re-launched-pt_br.html) para o programa de referência.
+[Inscreva‑se aqui](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) para o programa de indicação.
 
-Cheers!
+Saúde!
 
 {{/isPost}}
 

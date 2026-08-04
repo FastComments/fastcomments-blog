@@ -1,8 +1,7 @@
----
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments Empfehlungs- und Partnerprogramm[/postlink]
+# [postlink]FastComments Referral und Affiliate-Programm[/postlink]
 
 {{#unless isPost}}
 Empfehlen Sie Kunden und erhalten Sie eine wiederkehrende Provision!
@@ -10,33 +9,33 @@ Empfehlen Sie Kunden und erhalten Sie eine wiederkehrende Provision!
 
 {{#isPost}}
 
-FastComments bietet nun ein Partnerprogramm für Affiliate-Marketer sowie einmalige Empfehlungen an. Im Jahr 2022 erhalten Empfehlungen **30%** Provision für die **Lebensdauer** des Kunden. 
+FastComments bietet jetzt ein Affiliate-Programm für Affiliate‑Vermarkter sowie einmalige Empfehlungen an. Für das Jahr 2022 erhalten Empfehlungen **30%** Provision für die **Lebensdauer** des Kunden. 
 
-### Auf welche Stufen gilt das Partnerprogramm?
+### Für welche Tarife gilt das Affiliate-Programm?
 
-Alle FastComments-Stufen - Flex, Creators ($5.99) und Pro ($399/Monat) - sind für die Provision berechtigt.
+Alle FastComments‑Tarife - Flex, Creators ($5.99), und Pro ($399/mo) - sind provisionsberechtigt.
 
-### Ist 30% hoch?
+### Sind 30% nicht hoch?
 
-In Bezug auf die Branche ist 30% so hoch, wie man es findet. Wir haben diesen Provisionssatz gewählt, um neue Affiliates und Partner zu gewinnen. 
+Im Branchenvergleich ist 30% so hoch, wie man finden kann. Wir haben diesen Provisionssatz gewählt, um neue Affiliates und Partner zu gewinnen. 
 
 ### Werberichtlinien
 
-Sie dürfen FastComments oder FastComments + **begriff** nicht in Ihren WerbeKeywords verwenden. Dies dient dem Schutz unserer Marke. Wenn Sie dies tun möchten, wenden Sie sich an den Support, um eine mögliche Partnerschaft zu besprechen.
+Sie dürfen FastComments oder FastComments + **term** nicht in Ihren Werbe‑Keywords verwenden. Dies dient dem Schutz unserer Marke. Wenn Sie dies tun möchten, kontaktieren Sie den Support, um eine mögliche Partnerschaft zu besprechen.
 
-Sie dürfen unsere Marke oder das, was wir tun, nicht falsch darstellen. Wir bieten schnelle, live integrierte Kommentarlösungen an.
+Sie dürfen unsere Marke oder unser Angebot nicht falsch darstellen. Wir bieten schnelle, Live, eingebettete Kommentarlösungen.
 
-### Umwandlungszeit und Testversionen
+### Konversionszeit und Testphasen
 
-Das Umwandlungssystem verwendet ein 60-tägiges Tracking-Cookie. Kunden haben eine 30-tägige Testversion, um das Produkt zu testen.
+Das Konversionssystem verwendet ein 60‑Tage‑Tracking‑Cookie. Kunden haben eine 30‑tägige kostenlose Testphase, um das Produkt zu testen.
 
-Nur Kunden, die auf ein kostenpflichtiges Konto umsteigen, führen zu einer Provision.
+Nur Kunden, die zu einem kostenpflichtigen Konto konvertieren, führen zu einer Provision.
 
 ### Wie bekomme ich das?
 
-[Hier anmelden](/(11-06-2024)-fastcomments-affiliates-program-re-launched-de_de.html) für das Empfehlungsprogramm.
+[Sign up here](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) für das Empfehlungsprogramm.
 
-Prost!
+Viele Grüße!
 
 {{/isPost}}
 

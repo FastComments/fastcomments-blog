@@ -1,8 +1,7 @@
----
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]FastComments Referral and Affiliate Program[/postlink]
+# [postlink]FastComments Referral- en Affiliateprogramma[/postlink]
 
 {{#unless isPost}}
 Verwijs klanten en ontvang een terugkerende commissie!
@@ -10,31 +9,31 @@ Verwijs klanten en ontvang een terugkerende commissie!
 
 {{#isPost}}
 
-FastComments biedt nu een affiliateprogramma voor affiliate marketeers, evenals eenmalige verwijzingen. Voor het jaar 2022 ontvangen verwijzingen **30%** commissie voor de **levensduur** van de klant.
+FastComments biedt nu een affiliateprogramma voor affiliate‑marketingspecialisten evenals eenmalige verwijzingen. Voor het jaar 2022 verdienen verwijzingen **30%** commissie voor de **levensduur** van de klant. 
 
-### Voor welke niveaus geldt het affiliateprogramma?
+### Op welke niveaus is het affiliateprogramma van toepassing?
 
-Alle FastComments-niveaus - Flex, Creators ($5.99) en Pro ($399/maand) - komen in aanmerking voor commissie.
+Alle FastComments‑tiers - Flex, Creators ($5.99) en Pro ($399/maand) - komen in aanmerking voor commissie.
 
 ### Is 30% niet hoog?
 
-In termen van de industrie is 30% ongeveer zo hoog als je zult vinden. We hebben dit commissietarief gekozen om nieuwe affiliates en partners aan te trekken.
+Wat de industrie betreft, is 30% ongeveer zo hoog als je kunt vinden. We hebben dit commissietarief gekozen om nieuwe affiliates en partners aan te trekken. 
 
-### Advertentierichtlijnen
+### Richtlijnen voor adverteren
 
-Je mag FastComments of FastComments + **term** niet gebruiken in je advertentieteksten. Dit is om ons merk te beschermen. Als je dit wilt doen, neem dan contact op met de ondersteuning om een mogelijke samenwerking te bespreken.
+Je mag FastComments of FastComments + **term** niet gebruiken in je advertentie‑keywords. Dit is om ons merk te beschermen. Als je dit wilt doen, neem dan contact op met support om een mogelijke samenwerking te bespreken.
 
-Je mag ons merk of wat we doen niet verkeerd voorstellen. We bieden snelle, live, ingebedde commentaarsystemen.
+Je mag ons merk of wat we doen niet verkeerd voorstellen. We bieden snelle, live, ingebedde commentaaroplossingen.
 
-### Conversietijd en Proefperiodes
+### Conversietijd en proefversies
 
-Het conversiesysteem maakt gebruik van een trackingcookie van 60 dagen. Klanten hebben een gratis proefperiode van 30 dagen om het product te testen.
+Het conversiesysteem maakt gebruik van een tracking‑cookie van 60 dagen. Klanten hebben een gratis proefperiode van 30 dagen om het product te testen.
 
-Alleen klanten die zich omzetten naar een betaald account resulteren in commissie.
+Alleen klanten die overstappen naar een betaald account leveren commissie op.
 
 ### Hoe krijg ik het?
 
-[Meld je hier aan](/(11-06-2024)-fastcomments-affiliates-program-re-launched-nl_nl.html) voor het verwijzingsprogramma.
+[Meld je hier aan](/(11-06-2024)-fastcomments-affiliates-program-re-launched.html) voor het referral‑programma.
 
 Proost!
 
