@@ -21,11 +21,11 @@ There are three controls: **Search By** picks the field, **Match** picks Contain
 
 **Search By** offers five options:
 
-- **Any Field** – searches everything below at once
-- **Email** – the banned address
-- **Name** – the name recorded on the ban
-- **Banned By** – the moderator who issued the ban
-- **Banned For Saying** – the text of the comment that got the user banned
+- **Any Field** - searches everything below at once
+- **Email** - the banned address
+- **Name** - the commenter's name
+- **Banned By** - the moderator who issued the ban
+- **Banned For Saying** - the text of the comment that got the user banned
 
 The last four line up with the columns of the same name in the table, so the dropdown reads the same as the thing it filters.
 
@@ -43,7 +43,7 @@ Both are case-insensitive on every field. This matters more than it sounds like 
 comment, only the domain half of the address gets lowercased, so a ban can genuinely be stored as `MixedCase@Example.com`.
 Searching for `mixedcase@example.com` finds it.
 
-### Dva iskanja, ki sta vredna poznavanja
+### Dve iskanji, ki ju je vredno poznati
 
 **Banned For Saying** searches the comment text that triggered the ban. If a particular phrase or link has been going
 around, you can pull up everyone who was banned over it in one query.
@@ -57,18 +57,9 @@ The search lives in the page URL, so paging through results keeps it applied and
 moderator by copying the URL, the same way you already share moderation links. Starting a new search takes you back to the
 first page, and **Clear** drops you back to the full list.
 
-### Iskanje po imenu se ujema s tem, kar vidite
-
-A ban stores the name the user had when you banned them, but the table shows the name they have now. Those aren't always
-the same, and a ban you created by typing in an email address has no name stored on it at all.
-
-So the Name search resolves the user behind each ban and matches on the name the table is actually showing you. If someone
-was banned as "OldHandle" and has since renamed to "NewHandle", both find them. If you banned an address and the table
-shows a name for it, searching that name works.
-
 ### Dokumentacija
 
-<a href="https://docs.fastcomments.com/guide-moderation.html#banning-users" target="_blank">Oddelek o prepovedi uporabnikov v vodniku za moderiranje</a> covers the search row in detail.
+<a href="https://docs.fastcomments.com/guide-moderation.html#banning-users" target="_blank">The Banning Users section of the Moderation Guide</a> covers the search row in detail.
 
 ### Zaključek
 
@@ -77,7 +68,7 @@ to find a specific one and there's no way to do it. Now there is.
 
 Let us know below if there's a field you'd like to be able to search that isn't in the list.
 
-Cheers!
+Lep pozdrav!
 
 {{/isPost}}
 

@@ -5,78 +5,70 @@
 # [postlink]Забранените потребители вече могат да се търсят[/postlink]
 
 {{#unless isPost}}
-Страницата Забранени потребители вече има ред за търсене, така че можете да намерите забрана по имейл, име, кой я е издал, или коментара, който я е предизвикал.
+The Banned Users page now has a search row, so you can find a ban by email, name, who issued it, or the comment that caused it.
 {{/unless}}
 
 {{#isPost}}
 
-### Какво ново
+### What's New
 
-Страницата Забранени потребители в раздел „Модериране на коментари“ сега има ред за търсене над таблицата. До сега единственият начин за преглед на този списък беше чрез контролите „Страница“ и „Брой на страница“, което е удобно, когато имате десетка забрани, но болезнено, когато имате няколко хиляди.
+The Banned Users page under Moderate Comments now has a search row above the table. Until now the only way through that
+list was the Page and Count Per Page controls, which is fine when you have a dozen bans and painful when you have a few thousand.
 
-Има три контрола: **Search By** избира полето, **Match** избира „Contains“ или „Equals“, а **Value** е това, което търсите.
+There are three controls: **Search By** picks the field, **Match** picks Contains or Equals, and **Value** is what you're looking for.
 
-### Какво можете да търсите
+### What You Can Search
 
-**Search By** предлага пет опции:
+**Search By** offers five options:
 
-- **Any Field** - търси всичко по-долу наведнъж
-- **Email** - забраненият имейл адрес
-- **Name** - името, записано при забраната
-- **Banned By** - модераторът, който е издал забраната
-- **Banned For Saying** - текстът на коментара, който е довел до забраната
+- **Any Field** – търси всичко по-долу наведнъж
+- **Email** – забраненият адрес
+- **Name** – името на коментатора
+- **Banned By** – модераторът, който е издал забраната
+- **Banned For Saying** – текста на коментара, който е довел до забраната
 
-Последните четири съвпадат с колоните със същото име в таблицата, така че падащото меню чете същото като това, което филтрира.
+The last four line up with the columns of the same name in the table, so the dropdown reads the same as the thing it filters.
 
 ### Contains vs Equals
 
-**Contains** намира вашата стойност навсякъде в полето. **Equals** съвпада с цялото поле.
+**Contains** finds your value anywhere in the field. **Equals** matches the whole field.
 
-Contains е това, което обикновено искате. Търсене за `bademail.com` намира всяка забрана за този домейн, включително
-wildcard `*@bademail.com` забраната, защото wildcard забраните се съхраняват със звездичката запазена.
+Contains is the one you want most of the time. Searching `bademail.com` finds every ban on that domain, including the
+wildcard `*@bademail.com` ban, because wildcard bans are stored with their asterisk intact.
 
-Equals е за случаите, когато имате точната стойност и не искате близки съвпадения. Търсене в Email за `spammer@example.com` с
-Equals връща само тази една забрана и нищо друго.
+Equals is for when you have the exact value and don't want near misses. Searching Email for `spammer@example.com` with
+Equals returns that one ban and nothing else.
 
-И двете са нечувствителни към регистъра за всяко поле. Това е по-важно, отколкото може да изглежда: когато забрана се създава от
-коментар, само домейнната част от адреса се превръща в малки букви, така че забрана може истински да бъде съхранена като `MixedCase@Example.com`.
-Търсене за `mixedcase@example.com` я намира.
+Both are case-insensitive on every field. This matters more than it sounds like it should: when a ban is created from a
+comment, only the domain half of the address gets lowercased, so a ban can genuinely be stored as `MixedCase@Example.com`.
+Searching for `mixedcase@example.com` finds it.
 
-### Два търсения, които си заслужава да знаете
+### Two Searches Worth Knowing About
 
-**Banned For Saying** търси текста на коментара, който е предизвикал забраната. Ако определена фраза или връзка се разпространява,
-можете да изведете всички, които са били забранени заради нея с една заявка.
+**Banned For Saying** searches the comment text that triggered the ban. If a particular phrase or link has been going
+around, you can pull up everyone who was banned over it in one query.
 
-**Banned By** търси модератора, който е издал забраната. Ако искате да прегледате решенията на конкретен модератор, или
-въвеждате нов член и искате да видите какво е правил, това е само едно търсене разстояние.
+**Banned By** searches the moderator who issued the ban. If you want to review a specific moderator's decisions, or you're
+onboarding someone and want to see what they've been doing, that's one search away.
 
-### Работи с пагинация и споделяне
+### It Works With Paging and Sharing
 
-Търсенето се записва в URL адреса на страницата, така че при превъртане на резултатите то остава приложено и можете да изпратите филтриран списък на друг
-модератор, като копирате URL адреса, по същия начин, по който вече споделяте линкове за модериране. Започването на ново търсене ви връща към
-първата страница, а **Clear** ви връща към пълния списък.
+The search lives in the page URL, so paging through results keeps it applied and you can send a filtered list to another
+moderator by copying the URL, the same way you already share moderation links. Starting a new search takes you back to the
+first page, and **Clear** drops you back to the full list.
 
-### Търсенето по име съвпада с това, което виждате
+### Documentation
 
-Забраната съхранява името, което потребителят е имал, когато сте го забранили, но таблицата показва името, което има сега. Те не винаги
-са едно и също, и забрана, създадена чрез въвеждане на имейл адрес, изобщо няма съхранено име.
+<a href="https://docs.fastcomments.com/guide-moderation.html#banning-users" target="_blank">Разделът за забраняване на потребители от ръководството за модериране</a> covers the search row in detail.
 
-Така че търсенето по име определя потребителя зад всяка забрана и съвпада с името, което таблицата всъщност показва. Ако някой
-е бил забранен като „OldHandle“ и оттогава е променил името на „NewHandle“, и двете ще го намерят. Ако сте забранили адрес и таблицата
-показва име за него, търсенето по това име работи.
+### In Conclusion
 
-### Документация
+This one came out of watching how the page actually gets used. Bans accumulate quietly for years, and then one day you need
+to find a specific one and there's no way to do it. Now there is.
 
-<a href="https://docs.fastcomments.com/guide-moderation.html#banning-users" target="_blank">Разделът „Banning Users“ от ръководството за модериране</a> обхваща реда за търсене в детайли.
+Let us know below if there's a field you'd like to be able to search that isn't in the list.
 
-### В заключение
-
-Това идва от наблюдението как страницата се използва на практика. Забраните се натрупват тихо в продължение на години, и след това един ден трябва
-да намерите конкретна и няма начин да го направите. Сега има.
-
-Уведомете ни по-долу, ако има поле, което бихте искали да можете да търсите, но не е в списъка.
-
-Наздраве!
+Cheers!
 
 {{/isPost}}
 

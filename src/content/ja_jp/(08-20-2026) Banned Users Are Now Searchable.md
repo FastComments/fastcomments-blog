@@ -23,7 +23,7 @@ There are three controls: **Search By** picks the field, **Match** picks Contain
 
 - **Any Field** - searches everything below at once
 - **Email** - the banned address
-- **Name** - the name recorded on the ban
+- **Name** - the commenter's name
 - **Banned By** - the moderator who issued the ban
 - **Banned For Saying** - the text of the comment that got the user banned
 
@@ -56,15 +56,6 @@ onboarding someone and want to see what they've been doing, that's one search aw
 The search lives in the page URL, so paging through results keeps it applied and you can send a filtered list to another
 moderator by copying the URL, the same way you already share moderation links. Starting a new search takes you back to the
 first page, and **Clear** drops you back to the full list.
-
-### Name Search Matches What You See
-
-A ban stores the name the user had when you banned them, but the table shows the name they have now. Those aren't always
-the same, and a ban you created by typing in an email address has no name stored on it at all.
-
-So the Name search resolves the user behind each ban and matches on the name the table is actually showing you. If someone
-was banned as "OldHandle" and has since renamed to "NewHandle", both find them. If you banned an address and the table
-shows a name for it, searching that name works.
 
 ### Documentation
 
