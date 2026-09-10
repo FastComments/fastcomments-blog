@@ -2,67 +2,71 @@
 [category:Moderation]
 
 ###### [postdate]
-# [postlink]차단된 사용자를 이제 검색할 수 있습니다[/postlink]
+# [postlink]금지된 사용자를 이제 검색할 수 있습니다[/postlink]
 
 {{#unless isPost}}
-차단된 사용자 페이지에 이제 검색 행이 추가되어 이메일, 이름, 차단을 수행한 사람, 또는 차단을 일으킨 댓글을 통해 차단을 찾을 수 있습니다.
+금지된 사용자 페이지에 이제 검색 행이 추가되어 이메일, 이름, 차단을 수행한 사람, 또는 차단을 일으킨 댓글을 통해 차단을 찾을 수 있습니다.
 {{/unless}}
 
 {{#isPost}}
 
 ### 새로운 기능
 
-Moderate Comments 아래의 차단된 사용자 페이지에 이제 테이블 위에 검색 행이 있습니다. 지금까지 해당 목록을 탐색할 수 있는 유일한 방법은 페이지 및 페이지당 항목 수 제어였으며, 이는 몇십 개의 차단이 있을 때는 괜찮지만 수천 개가 되면 고통스러웠습니다.
+The Banned Users page under Moderate Comments now has a search row above the table. Until now the only way through that
+list was the Page and Count Per Page controls, which is fine when you have a dozen bans and painful when you have a few thousand.
 
-세 가지 제어가 있습니다: **Search By**는 필드를 선택하고, **Match**는 포함(Contains) 또는 일치(Equals)를 선택하며, **Value**는 찾고자 하는 값입니다.
+There are three controls: **Search By** picks the field, **Match** picks Contains or Equals, and **Value** is what you're looking for.
 
 ### 검색할 수 있는 항목
 
-**Search By**는 다섯 가지 옵션을 제공합니다:
+**Search By** offers five options:
 
-- **Any Field** - 아래 모든 항목을 한 번에 검색합니다
-- **Email** - 차단된 주소
-- **Name** - 차단에 기록된 이름
-- **Banned By** - 차단을 수행한 관리자
-- **Banned For Saying** - 사용자를 차단하게 만든 댓글 텍스트
+- **Any Field** - searches everything below at once
+- **Email** - the banned address
+- **Name** - the commenter's name
+- **Banned By** - the moderator who issued the ban
+- **Banned For Saying** - the text of the comment that got the user banned
 
-마지막 네 항목은 테이블의 동일한 이름을 가진 열과 일치하므로, 드롭다운은 필터링하는 항목과 동일하게 표시됩니다.
+The last four line up with the columns of the same name in the table, so the dropdown reads the same as the thing it filters.
 
-### 포함 vs 일치
+### Contains와 Equals
 
-**Contains**는 필드 내 어디에서든 값을 찾습니다. **Equals**는 전체 필드와 정확히 일치합니다.
+**Contains** finds your value anywhere in the field. **Equals** matches the whole field.
 
-대부분의 경우에는 **Contains**를 사용합니다. `bademail.com`을 검색하면 해당 도메인에 대한 모든 차단을 찾으며, 와일드카드 `*@bademail.com` 차단도 포함됩니다. 와일드카드 차단은 별표가 그대로 저장되기 때문입니다.
+Contains is the one you want most of the time. Searching `bademail.com` finds every ban on that domain, including the
+wildcard `*@bademail.com` ban, because wildcard bans are stored with their asterisk intact.
 
-**Equals**는 정확한 값을 가지고 있고 근접 일치를 원하지 않을 때 사용합니다. 이메일을 `spammer@example.com`으로 **Equals** 검색하면 해당 차단 하나만 반환되고 다른 것은 없습니다.
+Equals is for when you have the exact value and don't want near misses. Searching Email for `spammer@example.com` with
+Equals returns that one ban and nothing else.
 
-두 옵션 모두 모든 필드에서 대소문자를 구분하지 않습니다. 이것은 겉보기에 생각보다 중요합니다: 댓글에서 차단이 생성될 때 주소의 도메인 부분만 소문자로 변환되므로, 차단이 실제로 `MixedCase@Example.com`처럼 저장될 수 있습니다. `mixedcase@example.com`을 검색하면 해당 차단을 찾을 수 있습니다.
+Both are case-insensitive on every field. This matters more than it sounds like it should: when a ban is created from a
+comment, only the domain half of the address gets lowercased, so a ban can genuinely be stored as `MixedCase@Example.com`.
+Searching for `mixedcase@example.com` finds it.
 
 ### 알아두면 좋은 두 가지 검색
 
-**Banned For Saying**은 차단을 유발한 댓글 텍스트를 검색합니다. 특정 문구나 링크가 퍼져 있다면, 해당 내용으로 차단된 모든 사용자를 한 번에 조회할 수 있습니다.
+**Banned For Saying** searches the comment text that triggered the ban. If a particular phrase or link has been going
+around, you can pull up everyone who was banned over it in one query.
 
-**Banned By**는 차단을 수행한 관리자를 검색합니다. 특정 관리자의 결정들을 검토하고 싶거나, 새로운 직원을 교육하면서 그들의 활동을 확인하고 싶을 때 한 번의 검색으로 가능합니다.
+**Banned By** searches the moderator who issued the ban. If you want to review a specific moderator's decisions, or you're
+onboarding someone and want to see what they've been doing, that's one search away.
 
 ### 페이지네이션 및 공유와 함께 작동
 
-검색은 페이지 URL에 포함되므로, 결과를 페이지 넘기면서도 검색이 유지됩니다. URL을 복사하여 다른 관리자에게 필터링된 목록을 보낼 수 있으며, 이는 기존에 모더레이션 링크를 공유하던 방식과 동일합니다. 새 검색을 시작하면 첫 페이지로 돌아가며, **Clear**를 누르면 전체 목록으로 돌아갑니다.
-
-### 이름 검색은 표시되는 내용과 일치
-
-차단은 사용자를 차단했을 때의 이름을 저장하지만, 테이블에는 현재 이름이 표시됩니다. 이 두 이름은 항상 일치하지 않으며, 이메일 주소만 입력해 만든 차단은 이름이 전혀 저장되지 않습니다.
-
-따라서 이름 검색은 각 차단 뒤에 있는 사용자를 확인하고 테이블에 실제로 표시되는 이름과 일치합니다. 사용자가 "OldHandle"로 차단된 후 "NewHandle"로 이름을 바꿨다면 두 경우 모두 찾을 수 있습니다. 주소로 차단했지만 테이블에 이름이 표시된다면 해당 이름을 검색해도 작동합니다.
+The search lives in the page URL, so paging through results keeps it applied and you can send a filtered list to another
+moderator by copying the URL, the same way you already share moderation links. Starting a new search takes you back to the
+first page, and **Clear** drops you back to the full list.
 
 ### 문서
 
-<a href="https://docs.fastcomments.com/guide-moderation.html#banning-users" target="_blank">모더레이션 가이드의 사용자 차단 섹션</a> 은 검색 행에 대해 자세히 다룹니다.
+<a href="https://docs.fastcomments.com/guide-moderation.html#banning-users" target="_blank">모더레이션 가이드의 사용자 차단 섹션</a> covers the search row in detail.
 
 ### 결론
 
-이 기능은 페이지가 실제로 어떻게 사용되는지를 관찰하면서 탄생했습니다. 차단은 수년간 조용히 쌓이고, 어느 날 특정 차단을 찾아야 할 때 방법이 없었습니다. 이제는 가능합니다.
+This one came out of watching how the page actually gets used. Bans accumulate quietly for years, and then one day you need
+to find a specific one and there's no way to do it. Now there is.
 
-목록에 없는 검색하고 싶은 필드가 있다면 아래에 알려 주세요.
+Let us know below if there's a field you'd like to be able to search that isn't in the list.
 
 감사합니다!
 
