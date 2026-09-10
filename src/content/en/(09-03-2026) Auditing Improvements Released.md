@@ -81,7 +81,8 @@ The `/api/v1/audit-logs` endpoint gained matching filters: `username`, `ip`, `cr
 for the substring search, and `includeManagedTenants`. Responses now include `targetId`, `targetLabel` and `ua`.
 
 Two changes worth noting if you already call this endpoint. `before` now works on its own, where previously it was ignored
-unless you also passed `after`. And `limit` is now capped at 10k with a default of 5k. It was previously unbounded.
+unless you also passed `after`. And `limit` is now capped at 10k, where before it had no ceiling. The default is unchanged
+at 1k.
 
 ### Documentation
 
