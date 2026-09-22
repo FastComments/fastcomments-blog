@@ -123,8 +123,12 @@ function processPost(item, locale, contentDir) {
 	const urlId = encodeURIComponent(urlIdRawWithLocale);
 	const fullUrl = BASE_URL + '/' + urlIdRawWithLocale;
 	const fullUrlRaw = BASE_URL + '/' + urlIdRawWithLocale;
-	// Use stable urlId without locale for comments (shared across all languages)
-	const stableUrlId = rawSlug;
+	// Stable comment id: no locale suffix (all languages share one thread) and the unsanitized
+	// slug (posts whose title had an '&' keep their thread). It must stay a full URL - FastComments
+	// normalizes anything starting with http through cleanURL (https -> http, etc), so this maps
+	// onto the ids every pre-2026 comment was stored under. A bare slug is an opaque id that
+	// normalizes to nothing and silently starts an empty thread.
+	const stableUrlId = BASE_URL + '/' + rawSlug;
 	const commentCountHTML = `<div class="post-comment-count fast-comments-count" data-fast-comments-url-id="${stableUrlId}">...</div>`;
 
 	let fileContent = fs.readFileSync(path.join(contentDir, item), 'utf8');
