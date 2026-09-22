@@ -6,98 +6,77 @@
 # [postlink]Подобрения в одита публикувани[/postlink]
 
 {{#unless isPost}}
-The audit log now shows who or what each event affected by name, and you can search on it. There's also now date range, sub-tenant search, field-level diffs on updates, and matching API filters.
+Одитният журнал сега показва кой или какво е засегнато от всяко събитие по име и можете да търсите в него. Също така вече има диапазон от дати, търсене по поднаематели, разлики на ниво полета при актуализации и съответстващи API филтри.
 {{/unless}}
 
 {{#isPost}}
 
 ### Какво ново
 
-The audit log has always recorded who performed an action and what it was performed on. This release is about making that 
-record readable and searchable without leaving the page.
+Одитният журнал винаги е записвал кой е извършил действие и върху какво е било извършено. Това издание се фокусира върху правенето на този запис четим и търсим без да напускате страницата.
 
-If you wanted to know what happened to a particular moderator, you first had to find their ID, and if that 
-moderator had since been removed, there was nothing left to look the ID up against. The event said something was deleted,
-by whom, and when, but for some reasoures the names were missing.
+Ако искате да разберете какво се е случило с конкретен модератор, първо трябваше да намерите неговото ID, а ако този модератор вече е бил премахнат, нямаше нищо, към което да сравните ID‑то. Събитието казваше, че нещо е изтрито, от кого и кога, но за някои ресурси имената липсваха.
 
-Now the name is captured alongside the ID at the moment of the event, so it survives the delete and you can search on it.
+Сега името се записва заедно с ID‑то в момента на събитието, така че то остава след изтриването и можете да търсите по него.
 
 ### Колоната **Affected**
 
-There’s a new **Affected** column in the table showing the person or object the event acted on, by name. For a person it
-reads like `jsmith (jsmith@example.com)`. For a widget customization or a moderation group it's the name you gave it. For a
-media file it's the filename you uploaded.
+Има нова колона **Affected** в таблицата, която показва лицето или обекта, върху който е действало събитието, по име. За лице тя изглежда като `jsmith (jsmith@example.com)`. За персонализиране на уиджет или модерационна група това е името, което сте задали. За медиа файл това е името на файла, който сте качили.
 
-Above the table there's a matching search box, **Who or what was changed**. Type a name, an email address, or an ID, and it
-finds events affecting that person or object. You don't have to know which of the three you have, and you don't have to look
-up an internal ID first.
+Над таблицата има съответно поле за търсене, **Who or what was changed**. Въведете име, имейл адрес или ID и то ще намери събития, засегнали това лице или обект. Не е нужно да знаете кой от трите е вашият и не е нужно първо да търсите вътрешно ID.
 
-Events written before this release don't have a name attached, but they still have the ID they always had, so the same
-search box finds them by ID.
+Събития, записани преди това издание, нямат прикачено име, но все още имат ID‑то, което винаги е имало, така че същото поле за търсене ги намира по ID.
 
 ### Диапазон от дати
 
-The filter row now has a **Date Range** dropdown with Last 30 Days, Last 90 Days, Last Year, All Time, and **Custom range**,
-which reveals From and To date pickers.
+Редът с филтри сега има падащо меню **Date Range** с опции Последните 30 дни, Последните 90 дни, Последната година, Цялото време и **Custom range**, което разкрива полета за избор на дата От и До.
 
-A date range is by far the easiest way to narrow a search, and pairing one with the other filters is the fastest way
-to find something.
+Диапазонът от дати е най-лесният начин за стесняване на търсенето, а комбинирането му с другите филтри е най-бързият начин да намерите нещо.
 
 ### Управлявани акаунти
 
-If your account manages other tenants, there's an **Include sub-tenants** checkbox. Checking it searches your account and
-every tenant it manages in one pass, with a **Tenant** column showing which account each event came from.
+Ако вашият акаунт управлява други наематели, има отметка **Include sub-tenants**. Поставянето ѝ търси вашия акаунт и всеки наемател, който управлява, в едно търсене, като в колоната **Tenant** се показва от кой акаунт е дошло събитието.
 
-Until now each tenant's log could only be read on its own, so answering "did anyone touch any of our properties this week"
-meant switching into each one in turn.
+До сега журналът на всеки наемател можеше да се чете само самостоятелно, така че отговорът на въпроса „докой докосна някоя от нашите свойства тази седмица“ изискваше превключване към всеки от тях поотделно.
 
 ### Актуализациите сега записват какво е променено
 
-Editing a team member used to record the resulting set of permissions. That tells you what the permissions are now, but not
-what they were, so "who removed this person's billing access, and when" was unanswerable.
+Редактирането на член от екипа преди това записваше получения набор от разрешения. Това ви казва какви са разрешенията сега, но не какви са били, така че въпросът „кой премахна достъпа до фактуриране на това лице и кога“ оставаше без отговор.
 
-Update events now include a `changes` map of just the fields that actually changed, each with its previous and new value.
-Unchanged fields are left out, so a permission change reads as one line rather than a wall of booleans.
+Събитията за актуализация сега включват карта `changes` само с полетата, които действително са се променили, всяко със своята предишна и нова стойност. Непроменените полета се пропускат, така че промяната на разрешения се показва като един ред вместо стена от булеви стойности.
 
 ### Описания и устройството зад промяната
 
-Destructive events now carry a plain sentence describing what happened, like "Removed user from the account." Page views had
-descriptions and deletes did not, which was backwards.
+Деструктивните събития сега носят простото изречение, описващо какво се е случило, например „Премахнат потребител от акаунта.“ Прегледите на страници имаха описания, а изтритията – не, което беше обратно.
 
-Events that change something also record the browser that made the change. Sessions are recorded as a hash so one person's
-actions can be correlated without the log storing anything that could be replayed.
+Събитията, които променят нещо, също записват браузъра, който е направил промяната. Сесиите се записват като хеш, така че действията на един човек могат да се корелират, без журналът да съхранява нещо, което може да бъде възпроизведено.
 
 ### Други подобрения
 
-- Some fixes with pagination and filter combinations.
-- Login events showed a blank **Who** column. The username was in the record the whole time and the page wasn't reading it.
-- The action column rendered login events as N/A, because Login was missing from the list of action names.
-- Audit log pages could not name SSO users, showing "Missing User" instead. They're now resolved properly.
-- The page is much faster on accounts with long histories.
+- Някои поправки при пагинацията и комбинациите от филтри.
+- Събитията за вход показваха празна колонка **Who**. Потребителското име беше в записа през цялото време, но страницата не го чете.
+- Колоната за действие изобразяваше събития за вход като N/A, защото Login липсваше в списъка с имена на действия.
+- Страниците на одитния журнал не можеха да покажат имена на SSO потребители, показвайки „Missing User“ вместо. Сега те се разрешават правилно.
+- Страницата е много по-бърза при акаунти с дълга история.
 
 ### За API
 
-The `/api/v1/audit-logs` endpoint gained matching filters: `username`, `ip`, `crudType`, `resourceName`, `targetId`, `target`
-for the substring search, and `includeManagedTenants`. Responses now include `targetId`, `targetLabel` and `ua`.
+Крайната точка `/api/v1/audit-logs` получи съответстващи филтри: `username`, `ip`, `crudType`, `resourceName`, `targetId`, `target` за търсене по подниз и `includeManagedTenants`. Отговорите сега включват `targetId`, `targetLabel` и `ua`.
 
-Two changes worth noting if you already call this endpoint. `before` now works on its own, where previously it was ignored
-unless you also passed `after`. And `limit` is now capped at 10k with a default of 5k. It was previously unbounded.
+Две промени, които заслужават внимание, ако вече използвате тази крайна точка. `before` сега работи самостоятелно, докато преди беше игнориран, освен ако не подадете и `after`. И `limit` сега е ограничен до 10 000, докато преди нямаше горна граница. По подразбиране остава 1 000.
 
 ### Документация
 
-<a href="https://docs.fastcomments.com/guide-api.html#audit-logs-get" target="_blank">Ръководството за AuditLogs API</a> covers the
-new query parameters, and <a href="https://docs.fastcomments.com/guide-api.html#audit-log-structure" target="_blank">the
-AuditLog structure reference</a> covers the new fields.
+<a href="https://docs.fastcomments.com/guide-api.html#audit-logs-get" target="_blank">The AuditLogs API guide</a> covers the new query parameters, and <a href="https://docs.fastcomments.com/guide-api.html#audit-log-structure" target="_blank">the AuditLog structure reference</a> covers the new fields.
 
-If you haven't used the audit log before, [the original release post](/(3-21-2022)-audit-log-released.html) walks through
-where it lives, who can read it, and how long entries are kept. All of that is unchanged.
+Ако досега не сте използвали одитния журнал, [the original release post](/(3-21-2022)-audit-log-released.html) обяснява къде се намира, кой може да го чете и колко дълго се съхраняват записите. Всичко това остава непроменено.
 
 ### В заключение
 
-We're glad we can continue to improve FastComments.
-If you go looking for something in your log and can't find it, tell us below.
+Радваме се, че можем да продължим да подобряваме FastComments.
+Ако търсите нещо в журнала си и не можете да го намерите, кажете ни по-долу.
 
-Cheers!
+Наздраве!
 
 {{/isPost}}
 

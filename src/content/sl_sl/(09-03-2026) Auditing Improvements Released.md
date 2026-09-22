@@ -6,77 +6,96 @@
 # [postlink]Izboljšave revizije objavljene[/postlink]
 
 {{#unless isPost}}
-Dnevnik revizije zdaj prikazuje, kdo ali kaj je vsak dogodek prizadel po imenu, in lahko po tem iščete. Na voljo je tudi časovno obdobje, iskanje po podnajemnikih, razlike na ravni polj pri posodobitvah in ustrezni filtri API-ja.
+The audit log now shows who or what each event affected by name, and you can search on it. There's also now date range, sub-tenant search, field-level diffs on updates, and matching API filters.
 {{/unless}}
 
 {{#isPost}}
 
-### Kaj je novega
+### What's New
 
-Dnevnik revizije je vedno beležil, kdo je izvedel dejanje in na čem je bilo izvedeno. Ta izdaja je namenjena temu, da je ta zapis berljiv in preiskljiv, ne da bi zapustili stran.
+The audit log has always recorded who performed an action and what it was performed on. This release is about making that
+record readable and searchable without leaving the page.
 
-Če ste želeli izvedeti, kaj se je zgodilo z določenim moderatorjem, ste najprej morali poiskati njihov ID, in če je bil ta moderator od takrat odstranjen, ni bilo več česa, na kar bi ID preverili. Dogodek je povedal, da je bilo nekaj izbrisano, kdo je to storil in kdaj, vendar so bila za nekatere vire imena manjkala.
+If you wanted to know what happened to a particular moderator, you first had to find their ID, and if that
+moderator had since been removed, there was nothing left to look the ID up against. The event said something was deleted,
+by whom, and when, but for some reasoures the names were missing.
 
-Zdaj je ime zajeto poleg ID-ja v trenutku dogodka, zato preživi brisanje in po njem lahko iščete.
+Now the name is captured alongside the ID at the moment of the event, so it survives the delete and you can search on it.
 
-### Stolpec Vplivano
+### The Affected Column
 
-V tabeli je nov stolpec **Affected**, ki prikazuje osebo ali predmet, na katerega je dogodek deloval, po imenu. Za osebo se prikaže kot `jsmith (jsmith@example.com)`. Za prilagoditev gradnika ali skupino moderacije je to ime, ki ste ga dali. Za medijsko datoteko je to ime datoteke, ki ste jo naložili.
+There's a new **Affected** column in the table showing the person or object the event acted on, by name. For a person it
+reads like `jsmith (jsmith@example.com)`. For a widget customization or a moderation group it's the name you gave it. For a
+media file it's the filename you uploaded.
 
-Nad tabelo je ustrezno iskalno polje, **Kdo ali kaj je bilo spremenjeno**. Vnesite ime, e‑naslov ali ID, in najde dogodke, ki vplivajo na to osebo ali predmet. Ni treba vedeti, katero od teh treh imate, in ni treba najprej poiskati notranjega ID-ja.
+Above the table there's a matching search box, **Who or what was changed**. Type a name, an email address, or an ID, and it
+finds events affecting that person or object. You don't have to know which of the three you have, and you don't have to look
+up an internal ID first.
 
-Dogodki, ustvarjeni pred to izdajo, nimajo priloženega imena, vendar še vedno imajo ID, ki so ga vedno imeli, zato jih isto iskalno polje najde po ID-ju.
+Events written before this release don't have a name attached, but they still have the ID they always had, so the same
+search box finds them by ID.
 
-### Časovno obdobje
+### Date Range
 
-Vrstica filtrov ima zdaj spustni meni **Date Range** z možnostmi Zadnjih 30 dni, Zadnjih 90 dni, Prejšnje leto, Vse čase in **Custom range**, ki razkrije izbirnike datumov Od in Do.
+The filter row now has a **Date Range** dropdown with Last 30 Days, Last 90 Days, Last Year, All Time, and **Custom range**,
+which reveals From and To date pickers.
 
-Časovno obdobje je po vseh merilih najlažji način za zožitev iskanja, kombiniranje tega z drugimi filtri pa je najhitrejši način za najdbo.
+A date range is by far the easiest way to narrow a search, and pairing one with the other filters is the fastest way
+to find something.
 
-### Upravljani računi
+### Managed Accounts
 
-Če vaš račun upravlja druge najemnike, je na voljo potrditveno polje **Include sub-tenants**. Označitev omogoča iskanje po vašem računu in vseh najemnikih, ki jih upravlja, v enem koraku, s stolpcem **Tenant**, ki prikazuje, iz katerega računa je vsak dogodek prišel.
+If your account manages other tenants, there's an **Include sub-tenants** checkbox. Checking it searches your account and
+every tenant it manages in one pass, with a **Tenant** column showing which account each event came from.
 
-Do sedaj je bilo dnevniško zapisovanje vsakega najemnika mogoče brati le posebej, zato je bilo odgovarjanje na vprašanje „ali je kdo ta teden posegel po katerikoli naši lastnini“ pomenilo preklapljanje med njimi.
+Until now each tenant's log could only be read on its own, so answering "did anyone touch any of our properties this week"
+meant switching into each one in turn.
 
-### Posodobitve zdaj beležijo, kaj se je spremenilo
+### Updates Now Record What Changed
 
-Urejanje člana ekipe je prej beležilo končni nabor dovoljenj. To vam pove, kakšna so dovoljenja zdaj, ne pa, kakšna so bila prej, zato je bilo vprašanje „kdo je odstranil temu uporabniku dostop do obračunavanja in kdaj“ neodgovorljivo.
+Editing a team member used to record the resulting set of permissions. That tells you what the permissions are now, but not
+what they were, so "who removed this person's billing access, and when" was unanswerable.
 
-Dogodki posodobitev zdaj vključujejo zemljevid `changes` le s polji, ki so se dejansko spremenila, vsako z njegovo prejšnjo in novo vrednostjo. Nespremenjena polja so izpuščena, zato se sprememba dovoljenja prikaže v eni vrstici namesto v zidu logičnih vrednosti.
+Update events now include a `changes` map of just the fields that actually changed, each with its previous and new value.
+Unchanged fields are left out, so a permission change reads as one line rather than a wall of booleans.
 
-### Opisi in naprava za spremembo
+### Descriptions, and the Device Behind a Change
 
-Uničujoči dogodki zdaj vsebujejo preprost stavek, ki opisuje, kaj se je zgodilo, npr. „Odstranjen uporabnik iz računa.“ Ogledi strani so imeli opise, brisanja pa ne, kar je bilo obratno.
+Destructive events now carry a plain sentence describing what happened, like "Removed user from the account." Page views had
+descriptions and deletes did not, which was backwards.
 
-Dogodki, ki nekaj spremenijo, tudi beležijo brskalnik, ki je izvedel spremembo. Seje so zabeležene kot hash, tako da je mogoče povezati dejanja ene osebe, ne da bi dnevnik shranil karkoli, kar bi se lahko ponovno predvajalo.
+Events that change something also record the browser that made the change. Sessions are recorded as a hash so one person's actions can be
+correlated without the log storing anything that could be replayed.
 
-### Ostala izboljšanja
+### Other Improvements
 
-- Nekaj popravkov pri paginaciji in kombinacijah filtrov.
-- Dogodki prijave so prikazovali prazen stolpec **Who**. Uporabniško ime je bilo v zapisu ves čas, stran pa ga ni brala.
-- Stolpec akcije je prikazoval dogodke prijave kot N/A, ker je bila prijava manjkajoča na seznamu imen akcij.
-- Strani dnevnika revizije niso lahko poimenovale SSO uporabnikov, prikazovale so »Missing User«. Zdaj so pravilno razrešeni.
-- Stran je veliko hitrejša pri računih z dolgotrajno zgodovino.
+- Some fixes with pagination and filter combinations.
+- Login events showed a blank **Who** column. The username was in the record the whole time and the page wasn't reading it.
+- The action column rendered login events as N/A, because Login was missing from the list of action names.
+- Audit log pages could not name SSO users, showing "Missing User" instead. They're now resolved properly.
+- The page is much faster on accounts with long histories.
 
-### Za API
+### For the API
 
-`/api/v1/audit-logs` končna točka je dobila ustrezne filtre: `username`, `ip`, `crudType`, `resourceName`, `targetId`, `target` za iskanje podniza in `includeManagedTenants`. Odzivi zdaj vključujejo `targetId`, `targetLabel` in `ua`.
+The `/api/v1/audit-logs` endpoint gained matching filters: `username`, `ip`, `crudType`, `resourceName`, `targetId`, `target`
+for the substring search, and `includeManagedTenants`. Responses now include `targetId`, `targetLabel` and `ua`.
 
-Dve spremembi, ki sta vredni opazovanja, če že kličete to končno točko. `before` zdaj deluje samostojno, prej pa je bil prezrt, razen če ste hkrati poslali `after`. In `limit` je zdaj omejen na 10 000 z privzeto vrednostjo 5 000. Prej ni bil omejen.
+Two changes worth noting if you already call this endpoint. `before` now works on its own, where previously it was ignored
+unless you also passed `after`. And `limit` is now capped at 10k, where before it had no ceiling. The default is unchanged
+at 1k.
 
-### Dokumentacija
+### Documentation
 
-<a href="https://docs.fastcomments.com/guide-api.html#audit-logs-get" target="_blank">The AuditLogs API guide</a> covers the new query parameters, and <a href="https://docs.fastcomments.com/guide-api.html#audit-log-structure" target="_blank">the AuditLog structure reference</a> covers the new fields.
+<a href="https://docs.fastcomments.com/guide-api.html#audit-logs-get" target="_blank">The AuditLogs API guide</a> pokriva nove parametre poizvedbe, in <a href="https://docs.fastcomments.com/guide-api.html#audit-log-structure" target="_blank">the AuditLog structure reference</a> pokriva nova polja.
 
-Če še niste uporabljali dnevnika revizije, [originalni objave izdaje](/(3-21-2022)-audit-log-released.html) vas popelje skozi, kje se nahaja, kdo ga lahko bere in kako dolgo se hramijo vnosi. Vse to ostaja nespremenjeno.
+If you haven't used the audit log before, [izvirni objavi](/(3-21-2022)-audit-log-released.html) walks through
+where it lives, who can read it, and how long entries are kept. All of that is unchanged.
 
-### Zaključek
+### In Conclusion
 
-Veseli nas, da lahko nadaljujemo z izboljšavami FastComments. Če iščete nekaj v vašem dnevniku in tega ne najdete, nam to sporočite spodaj.
+We're glad we can continue to improve FastComments.
+If you go looking for something in your log and can't find it, tell us below.
 
-Na zdravje!
+Cheers!
 
 {{/isPost}}
-
----

@@ -3,80 +3,77 @@
 [category:API & Development]
 
 ###### [postdate]
-# [postlink]שחרור שיפורי ביקורת[/postlink]
+# [postlink]שיפורי ביקורת שוחררו[/postlink]
 
 {{#unless isPost}}
-יומן הביקורת כעת מציג מי או מה כל אירוע השפיע על ידי שם, ואתה יכול לחפש בו. בנוסף, יש כעת טווח תאריכים, חיפוש תת-שוכרים, הבדלים ברמת השדה בעדכונים, ומסננים תואמים של API.
+The audit log now shows who or what each event affected by name, and you can search on it. There's also now date range, sub-tenant search, field-level diffs on updates, and matching API filters.
 {{/unless}}
 
 {{#isPost}}
 
 ### מה חדש
 
-יומן הביקורת תמיד רשם מי ביצע פעולה ומה היא בוצעה עליו. שחרור זה נועד להפוך את הרשומה לקריאה ולניתוח חיפוש ללא צורך לעזוב את העמוד.
+The audit log has always recorded who performed an action and what it was performed on. This release is about making that record readable and searchable without leaving the page.
 
-אם רצית לדעת מה קרה למפקח מסוים, ראשית היה עליך למצוא את המזהה שלו, ואם המפקח הוסר מאז, לא נותר דבר לחפש את המזהה מולו. האירוע ציין שמשהו נמחק, על ידי מי ומתי, אך בחלק מהמשאבים השמות היו חסרים.
+If you wanted to know what happened to a particular moderator, you first had to find their ID, and if that moderator had since been removed, there was nothing left to look the ID up against. The event said something was deleted, by whom, and when, but for some reasoures the names were missing.
 
-כעת השם נלכד יחד עם המזהה ברגע האירוע, ולכן הוא נשאר גם לאחר המחיקה ואתה יכול לחפש לפי שם.
+Now the name is captured alongside the ID at the moment of the event, so it survives the delete and you can search on it.
 
 ### העמודה המושפעת
 
-קיימת עמודת **Affected** חדשה בטבלה המציגה את האדם או האובייקט שעליו פעל האירוע, לפי שם. עבור אדם זה מוצג כ‑`jsmith (jsmith@example.com)`. עבור התאמה אישית של וידג'ט או קבוצת מודרציה זהו השם שהקצית. עבור קובץ מדיה זהו שם הקובץ שהעלית.
+There's a new **Affected** column in the table showing the person or object the event acted on, by name. For a person it reads like `jsmith (jsmith@example.com)`. For a widget customization or a moderation group it's the name you gave it. For a media file it's the filename you uploaded.
 
-מעל הטבלה יש תיבת חיפוש תואמת, **מי או מה השתנה**. הקלד שם, כתובת אימייל או מזהה, והיא תמצא אירועים המשפיעים על האדם או האובייקט. אינך צריך לדעת איזו מהשלוש יש ברשותך, ולא צריך לחפש מזהה פנימי תחילה.
+Above the table there's a matching search box, **Who or what was changed**. Type a name, an email address, or an ID, and it finds events affecting that person or object. You don't have to know which of the three you have, and you don't have to look up an internal ID first.
 
-אירועים שנכתבו לפני שחרור זה אינם כוללים שם, אך הם עדיין מכילים את המזהה שהיה להם תמיד, ולכן תיבת החיפוש הזו מוצאת אותם לפי מזהה.
+Events written before this release don't have a name attached, but they still have the ID they always had, so the same search box finds them by ID.
 
 ### טווח תאריכים
 
-שורת המסננים כוללת כעת תפריט נפתח **Date Range** עם אפשרויות של 30 הימים האחרונים, 90 הימים האחרונים, השנה האחרונה, כל הזמן, ו‑**Custom range**, שמגלה בחירות תאריך מ‑**From** ועד **To**.
+The filter row now has a **Date Range** dropdown with Last 30 Days, Last 90 Days, Last Year, All Time, and **Custom range**, which reveals From and To date pickers.
 
-טווח תאריכים הוא ללא ספק הדרך הקלה ביותר לצמצם חיפוש, ושילובו עם שאר המסננים הוא הדרך המהירה ביותר למצוא משהו.
+A date range is by far the easiest way to narrow a search, and pairing one with the other filters is the fastest way to find something.
 
 ### חשבונות מנוהלים
 
-אם החשבון שלך מנהל שוכרים אחרים, יש תיבת סימון **Include sub-tenants**. סימון תיבה זו מחפש בחשבון שלך ובכל שוכר שהוא מנהל בפעם אחת, עם עמודת **Tenant** המציגה מאיזה חשבון הגיע כל אירוע.
+If your account manages other tenants, there's an **Include sub-tenants** checkbox. Checking it searches your account and every tenant it manages in one pass, with a **Tenant** column showing which account each event came from.
 
-עד כה יומן של כל שוכר ניתן היה לקרוא רק בנפרד, ולכן מענה על השאלה "האם מישהו נגע באחת מהנכסים שלנו השבוע" דרש מעבר לכל אחד בתורו.
+Until now each tenant's log could only be read on its own, so answering "did anyone touch any of our properties this week" meant switching into each one in turn.
 
 ### עדכונים כעת מתעדים מה השתנה
 
-עריכת חבר צוות הייתה מתעדת את קבוצת ההרשאות המתקבלת. זה מציג את ההרשאות הנוכחיות, אך לא את הקודמות, ולכן השאלה "מי הסיר את גישת החיוב של אדם זה, ומתי" הייתה בלתי ניתנת למענה.
+Editing a team member used to record the resulting set of permissions. That tells you what the permissions are now, but not what they were, so "who removed this person's billing access, and when" was unanswerable.
 
-אירועי עדכון כוללים כעת מפת `changes` של השדות שהשתנו בפועל בלבד, כל אחד עם הערך הקודם והחדש שלו. שדות שלא השתנו מושמטות, ולכן שינוי הרשאה מוצג כשורה אחת במקום קיר של ערכי בוליאן.
+Update events now include a `changes` map of just the fields that actually changed, each with its previous and new value. Unchanged fields are left out, so a permission change reads as one line rather than a wall of booleans.
 
-### תיאורים וההתקן מאחורי שינוי
+### תיאורים וההתקן שמאחורי שינוי
 
-אירועים הרסניים כעת נושאים משפט פשוט המתאר מה קרה, כגון "הוסר משתמש מהחשבון". צפיות בדף היו בעלות תיאורים ומחיקות לא היו, מה שהיה הפוך.
+Destructive events now carry a plain sentence describing what happened, like "Removed user from the account." Page views had descriptions and deletes did not, which was backwards.
 
-אירועים המשנים משהו מתעדים גם את הדפדפן שביצע את השינוי. סשנים מתועדים כהאש כך שניתן לקשר בין פעולות של אדם אחד מבלי שהיומן יאחסן משהו שניתן לשחזר.
+Events that change something also record the browser that made the change. Sessions are recorded as a hash so one person's actions can be correlated without the log storing anything that could be replayed.
 
 ### שיפורים נוספים
 
-- תיקונים מסוימים עם דפדוף ושילובי מסננים.
-- אירועי כניסה הציגו עמודת **Who** ריקה. שם המשתמש היה ברשומה כל הזמן והדף לא קרא אותו.
-- עמודת הפעולה הציגה אירועי כניסה כ‑N/A, מכיוון שהפעולה Login הייתה חסרה ברשימת שמות הפעולות.
-- דפי יומן הביקורת לא יכלו לשמות משתמשי SSO, והציגו "Missing User" במקום. הם כעת נפתרים כראוי.
-- הדף מהיר הרבה יותר בחשבונות עם היסטוריות ארוכות.
+- Some fixes with pagination and filter combinations.
+- Login events showed a blank **Who** column. The username was in the record the whole time and the page wasn't reading it.
+- The action column rendered login events as N/A, because Login was missing from the list of action names.
+- Audit log pages could not name SSO users, showing "Missing User" instead. They're now resolved properly.
+- The page is much faster on accounts with long histories.
 
 ### עבור ה‑API
 
-הקצה `/api/v1/audit-logs` קיבל מסננים תואמים: `username`, `ip`, `crudType`, `resourceName`, `targetId`, `target` לחיפוש תת‑מחרוזת, ו‑`includeManagedTenants`. תגובות כעת כוללות `targetId`, `targetLabel` ו‑`ua`.
+The `/api/v1/audit-logs` endpoint gained matching filters: `username`, `ip`, `crudType`, `resourceName`, `targetId`, `target` for the substring search, and `includeManagedTenants`. Responses now include `targetId`, `targetLabel` and `ua`.
 
-שני שינויים שכדאי לציין אם אתה כבר קורא לקצה זה. `before` כעת פועל לבד, בעוד שבעבר הוא היה מתעלם אלא אם העברת גם `after`. ו‑`limit` מוגבל כעת ל‑10 אלף עם ברירת מחדל של 5 אלף. בעבר הוא היה ללא גבול.
+Two changes worth noting if you already call this endpoint. `before` now works on its own, where previously it was ignored unless you also passed `after`. And `limit` is now capped at 10k, where before it had no ceiling. The default is unchanged at 1k.
 
 ### תיעוד
 
-<a href="https://docs.fastcomments.com/guide-api.html#audit-logs-get" target="_blank">מדריך ה‑API של AuditLogs</a> מכסה את פרמטרי השאילתה החדשים, ו‑<a href="https://docs.fastcomments.com/guide-api.html#audit-log-structure" target="_blank">הפנייה למבנה AuditLog</a> מכסה את השדות החדשים.
+<a href="https://docs.fastcomments.com/guide-api.html#audit-logs-get" target="_blank">The AuditLogs API guide</a> מכסה את פרמטרי השאילתה החדשים, ו‑<a href="https://docs.fastcomments.com/guide-api.html#audit-log-structure" target="_blank">the AuditLog structure reference</a> מכסה את השדות החדשים.
 
-אם לא השתמשת ביומן הביקורת לפני כן, [הפוסט המקורי של השחרור](/(3-21-2022)-audit-log-released.html) מסביר היכן הוא נמצא, מי יכול לקרוא אותו, וכמה זמן נשמרים הרישומים. כל זה ללא שינוי.
+If you haven't used the audit log before, [the original release post](/(3-21-2022)-audit-log-released.html) walks through where it lives, who can read it, and how long entries are kept. All of that is unchanged.
 
 ### לסיכום
 
-אנו שמחים שאנו יכולים להמשיך לשפר את FastComments. אם אתה מחפש משהו ביומן שלך ולא מצליח למצוא, ספר לנו למטה.
+We're glad we can continue to improve FastComments.
+If you go looking for something in your log and can't find it, tell us below.
 
-לחיים!
-
-{{/isPost}}
-
----
+Cheers!

@@ -17,9 +17,9 @@ Le journal d'audit a toujours enregistré qui a effectué une action et sur quoi
 
 Si vous vouliez savoir ce qui était arrivé à un modérateur particulier, vous deviez d'abord trouver son ID, et si ce modérateur avait depuis été supprimé, il n'y avait plus rien contre quoi vérifier l'ID. L'événement indiquait qu'un élément avait été supprimé, par qui et quand, mais pour certaines ressources les noms manquaient.
 
-Désormais le nom est capturé en même temps que l'ID au moment de l'événement, il survit donc à la suppression et vous pouvez le rechercher.
+Désormais le nom est capturé avec l'ID au moment de l'événement, il survit donc à la suppression et vous pouvez le rechercher.
 
-### La colonne **Affected**
+### La colonne Affected
 
 Il y a une nouvelle colonne **Affected** dans le tableau affichant la personne ou l'objet sur lequel l'événement a agi, par nom. Pour une personne, cela ressemble à `jsmith (jsmith@example.com)`. Pour une personnalisation de widget ou un groupe de modération, c'est le nom que vous lui avez donné. Pour un fichier média, c'est le nom de fichier que vous avez téléversé.
 
@@ -37,25 +37,25 @@ Une plage de dates est de loin la façon la plus simple de restreindre une reche
 
 Si votre compte gère d'autres locataires, il y a une case à cocher **Include sub-tenants**. En la cochant, la recherche s'effectue sur votre compte et sur chaque locataire qu'il gère en une seule passe, avec une colonne **Tenant** indiquant de quel compte provient chaque événement.
 
-Jusqu'à présent, le journal de chaque locataire ne pouvait être lu que séparément, donc répondre à « quelqu'un a-t-il touché l'une de nos propriétés cette semaine » impliquait de passer d'un locataire à l'autre successivement.
+Jusqu'à présent, le journal de chaque locataire ne pouvait être lu que séparément, donc répondre à « quelqu'un a-t-il touché l'une de nos propriétés cette semaine » signifiait basculer dans chacun d'eux à tour de rôle.
 
 ### Les mises à jour enregistrent maintenant ce qui a changé
 
-Modifier un membre d'équipe enregistrait auparavant l'ensemble des permissions résultantes. Cela indique quelles sont les permissions maintenant, mais pas ce qu'elles étaient, de sorte que « qui a retiré l'accès à la facturation de cette personne, et quand » était impossible à répondre.
+Modifier un membre d'équipe enregistrait auparavant l'ensemble des autorisations résultantes. Cela indique quelles sont les autorisations maintenant, mais pas ce qu'elles étaient, ainsi la question « qui a retiré l'accès à la facturation de cette personne, et quand » était sans réponse.
 
-Les événements de mise à jour incluent désormais une carte `changes` contenant uniquement les champs qui ont réellement changé, chacun avec sa valeur précédente et nouvelle. Les champs non modifiés sont omis, de sorte qu'un changement de permission s'affiche sur une seule ligne plutôt que comme un mur de booléens.
+Les événements de mise à jour incluent désormais une carte `changes` contenant uniquement les champs réellement modifiés, chacun avec sa valeur précédente et nouvelle. Les champs non modifiés sont omis, de sorte qu'un changement d'autorisation s'affiche sur une seule ligne plutôt que comme un mur de booléens.
 
-### Descriptions et l'appareil derrière un changement
+### Descriptions, et le dispositif derrière un changement
 
-Les événements destructifs portent désormais une phrase simple décrivant ce qui s'est passé, comme « Removed user from the account. ». Les vues de page avaient des descriptions et les suppressions n'en avaient pas, ce qui était inversé.
+Les événements destructifs contiennent désormais une phrase simple décrivant ce qui s'est passé, comme « Removed user from the account. ». Les vues de page avaient des descriptions et les suppressions n'en avaient pas, ce qui était inversé.
 
-Les événements qui modifient quelque chose enregistrent également le navigateur qui a effectué le changement. Les sessions sont enregistrées sous forme de hachage afin que les actions d'une même personne puissent être corrélées sans que le journal ne stocke quoi que ce soit pouvant être rejoué.
+Les événements qui modifient quelque chose enregistrent également le navigateur qui a effectué le changement. Les sessions sont enregistrées sous forme de hachage afin que les actions d'une personne puissent être corrélées sans que le journal ne stocke quoi que ce soit qui pourrait être rejoué.
 
 ### Autres améliorations
 
 - Quelques correctifs concernant la pagination et les combinaisons de filtres.
 - Les événements de connexion affichaient une colonne **Who** vide. Le nom d'utilisateur était présent dans l'enregistrement tout le temps, mais la page ne le lisait pas.
-- La colonne d'action affichait les événements de connexion comme N/A, car « Login » manquait dans la liste des noms d'action.
+- La colonne d'action affichait les événements de connexion comme N/A, car Login était absent de la liste des noms d'action.
 - Les pages du journal d'audit ne pouvaient pas nommer les utilisateurs SSO, affichant « Missing User » à la place. Ils sont maintenant résolus correctement.
 - La page est beaucoup plus rapide sur les comptes avec de longues historiques.
 
@@ -63,13 +63,13 @@ Les événements qui modifient quelque chose enregistrent également le navigate
 
 Le point de terminaison `/api/v1/audit-logs` a reçu des filtres correspondants : `username`, `ip`, `crudType`, `resourceName`, `targetId`, `target` pour la recherche de sous‑chaîne, et `includeManagedTenants`. Les réponses incluent désormais `targetId`, `targetLabel` et `ua`.
 
-Deux changements à noter si vous appelez déjà ce point de terminaison. `before` fonctionne maintenant seul, alors qu'auparavant il était ignoré à moins que vous ne passiez également `after`. Et `limit` est maintenant limité à 10 k avec une valeur par défaut de 5 k. Il était auparavant illimité.
+Deux changements à noter si vous appelez déjà ce point de terminaison. `before` fonctionne maintenant seul, alors qu'auparavant il était ignoré à moins de passer également `after`. Et `limit` est maintenant limité à 10 k, alors qu'auparavant il n'avait pas de plafond. La valeur par défaut reste à 1 k.
 
 ### Documentation
 
-Le <a href="https://docs.fastcomments.com/guide-api.html#audit-logs-get" target="_blank">guide API AuditLogs</a> couvre les nouveaux paramètres de requête, et <a href="https://docs.fastcomments.com/guide-api.html#audit-log-structure" target="_blank">la référence de la structure AuditLog</a> couvre les nouveaux champs.
+<a href="https://docs.fastcomments.com/guide-api.html#audit-logs-get" target="_blank">Le guide API AuditLogs</a> couvre les nouveaux paramètres de requête, et <a href="https://docs.fastcomments.com/guide-api.html#audit-log-structure" target="_blank">la référence de la structure AuditLog</a> couvre les nouveaux champs.
 
-Si vous n'avez pas encore utilisé le journal d'audit, [the original release post](/(3-21-2022)-audit-log-released.html) explique où il se trouve, qui peut le lire et pendant combien de temps les entrées sont conservées. Tout cela reste inchangé.
+Si vous n'avez jamais utilisé le journal d'audit auparavant, [l'article de sortie original](/(3-21-2022)-audit-log-released.html) explique où il se trouve, qui peut le lire, et pendant combien de temps les entrées sont conservées. Tout cela reste inchangé.
 
 ### En conclusion
 
