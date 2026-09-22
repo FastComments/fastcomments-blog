@@ -68,6 +68,24 @@ function getCacheKey(locale, filename) {
 }
 
 /**
+ * Posts are compiled as handlebars templates, so a translation that drops a {{#isPost}} /
+ * {{/isPost}} marker takes the whole site build down with a parse error that names no file.
+ * The markers are structure, not prose, so the translation must repeat them exactly.
+ * @param {string} source - Default-locale content
+ * @param {string} translation - Translated content
+ * @returns {string|null} - Error description, or null when the structure matches
+ */
+function findTemplateStructureError(source, translation) {
+    const BLOCK_TAG = /\{\{[#/][^}]*\}\}/g;
+    const sourceTags = source.match(BLOCK_TAG) || [];
+    const translationTags = translation.match(BLOCK_TAG) || [];
+    if (sourceTags.join('') === translationTags.join('')) {
+        return null;
+    }
+    return `handlebars blocks do not match the source (expected ${JSON.stringify(sourceTags)}, got ${JSON.stringify(translationTags)})`;
+}
+
+/**
  * Check if translation is cached with matching source hash
  * @param {Object} cache - Cache object
  * @param {string} key - Cache key
@@ -315,6 +333,15 @@ async function processTranslations(tasks, client, options = {}) {
                     continue;
                 }
 
+                // Never write a translation that would break the site build. Leaving it unsaved
+                // and uncached means the next run retries it instead of baking the damage in.
+                const structureError = findTemplateStructureError(source, translation);
+                if (structureError) {
+                    console.error(`  [error] ${locale}/${filename}: ${structureError}`);
+                    results.failed++;
+                    continue;
+                }
+
                 // Save translation
                 saveTranslation(locale, filename, translation);
 
@@ -511,5 +538,6 @@ if (require.main === module) {
 module.exports = {
     TranslationClient,
     processTranslations,
-    buildTaskList
+    buildTaskList,
+    findTemplateStructureError
 };

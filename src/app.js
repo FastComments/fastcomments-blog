@@ -44,8 +44,15 @@ function getCompiledTemplate(templateName, data) {
 	return handlebars.compile(fs.readFileSync(path.join(TEMPLATE_DIR, templateName), 'utf8'))(data);
 }
 
-function getCompiledPost(html, data) {
-	return handlebars.compile(html)(data);
+function getCompiledPost(html, data, sourceLabel) {
+	try {
+		return handlebars.compile(html)(data);
+	} catch (e) {
+		// Handlebars only reports a line number, so without the file name an unbalanced
+		// {{#isPost}} in one of 23 locales is a needle in a haystack.
+		e.message = `${sourceLabel || 'post'}: ${e.message}`;
+		throw e;
+	}
 }
 
 // Helper function to create post URL with locale
@@ -186,11 +193,11 @@ function processPost(item, locale, contentDir) {
 	// title <h1> to <h2> so a listing page has one <h1> (its section heading).
 	const previewHTML = getCompiledPost(html, {
 		isPost: false
-	}).replace(/<h1\b/gi, '<h2').replace(/<\/h1>/gi, '</h2>');
+	}, path.join(contentDir, item)).replace(/<h1\b/gi, '<h2').replace(/<\/h1>/gi, '</h2>');
 
 	html = getCompiledPost(html, {
 		isPost: true
-	});
+	}, path.join(contentDir, item));
 
 	let titleHtml = '';
 	let bodyHtml = html;
