@@ -52,7 +52,7 @@ Luckily we didn't have automated renewal, but I am not a fan of this policy.
 
 #### 6. Nonsense Negative Reviews
 
-Sometimes people would leave a non-verified negative review with literal nonsense (like face on keyboard) that TP won't remove.
+Sometimes people would leave a non-verified negative review with literal nonsense (like face on keyboard) that TP<sup>*1</sup> won't remove.
 
 #### 7. Review Ownership
 
@@ -68,5 +68,7 @@ widgets or integrations.
 We appreciate everyone who took the time to leave us a review, and we hope you continue to enjoy using our platform. :)
 
 Cheers!
+
+- *<sup>1</sup> Not toilet paper
 
 {{/isPost}}
