@@ -27,7 +27,7 @@ Here are a few reasons for this decision:
 #### 1. Using LLMs for Support
 
 At FastComments, a real person answers all support channels, always. So I don't really tolerate companies trying to save money by using LLMs for support, especially when they hide it. For a while we had, who we'll call Debra, to reach out to for renewal discussions. This year it was clearly
-an LLM. I'm not sure if they fired Debra, but I wouldn't be surprised don't really want to support this kind of excessive optimization, especially when the resulting experience is worse.
+an LLM. I'm not sure if they fired Debra, but I wouldn't be surprised and don't really want to support this kind of excessive optimization, especially when the resulting experience is worse.
 
 Also, the LLMs got things wrong during the renewal discussion, and I had to cite their own TOS *for them*.
 
