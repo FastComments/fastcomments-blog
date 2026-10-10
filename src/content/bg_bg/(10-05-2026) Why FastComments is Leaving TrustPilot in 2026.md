@@ -4,72 +4,68 @@
 # [postlink]Защо FastComments напуска TrustPilot през 2026[/postlink]
 
 {{#unless isPost}}
-FastComments has been a TrustPilot customer since 2022. In 2026 we are ending this partnership.
+FastComments е клиент на TrustPilot от 2022 г. През 2026 г. прекратяваме това партньорство.
 {{/unless}}
 
 {{#isPost}}
 
-### What's Happening
+### Какво се случва
 
-FastComments has been a TrustPilot customer since 2022. In 2026 we are ending this partnership.
+FastComments е клиент на TrustPilot от 2022 г. През 2026 г. прекратяваме това партньорство.
 
-Our homepage review widget has been replaced with our own rating system, and we launched our [/reviews page](https://fastcomments.com/reviews)
-which is the new place to see what people think of FastComments.
+Нашият уиджет за отзиви на началната страница беше заменен със собствена система за оценяване и стартирахме нашата [/reviews page](https://fastcomments.com/reviews), която е новото място за виждане какво мислят хората за FastComments.
 
-### Why We're Leaving
+### Защо напускаме
 
-This is written personally by the person that runs FastComments, so this will sound very personal, because it is.
+Това е написано лично от човека, който управлява FastComments, затова ще звучи много лично, защото така е.
 
-I like to use and work with companies that don't irritate me. TrustPilot has, over the entirety of our partnership, been irritating.
+Обичам да използвам и работя с компании, които не ме дразнят. TrustPilot, през цялото ни партньорство, беше дразнещ.
 
-Here are a few reasons for this decision:
+Ето няколко причини за това решение:
 
-#### 1. Using LLMs for Support
+#### 1. Използване на LLM за поддръжка
 
-At FastComments, a real person answers all support channels, always. So I don't really tolerate companies trying to save money by using LLMs for support, especially when they hide it. For a while we had, who we'll call Debra, to reach out to for renewal discussions. This year it was clearly
-an LLM. I'm not sure if they fired Debra, but I wouldn't be surprised don't really want to support this kind of excessive optimization, especially when the resulting experience is worse.
+В FastComments истински човек отговаря на всички канали за поддръжка, винаги. Затова не толерирам компании, които се опитват да спестят пари, като използват LLM за поддръжка, особено когато го скриват. За известно време имахме, когото ще наречем Дебра, за да се свържем с нея относно обсъждане на подновяването. Тази година беше явно LLM. Не съм сигурен дали са уволнили Дебра, но не бих се изненадал и не искам да подкрепям този вид прекомерна оптимизация, особено когато полученото преживяване е по-лошо.
 
-Also, the LLMs got things wrong during the renewal discussion, and I had to cite their own TOS *for them*.
+Също така, LLM‑те сгрешиха по време на обсъждането на подновяването и трябваше да цитирам техните собствени Условия за ползване *за тях*.
 
-#### 2. Unclear Which Widgets Are Available on Which Plans
+#### 2. Неясно кои уиджети са налични за кои планове
 
-As the title says, it's unclear which widgets are available on which plans, and to access all the widgets is hundreds of dollars a month.
+Както заглавието казва, не е ясно кои уиджети са налични за кои планове, а достъпът до всички уиджети струва стотици долари на месец.
 
-#### 3. No Downgrade Path
+#### 3. Няма път за понижаване
 
-If you're on a higher plan, they won't let you downgrade.
+Ако сте на по-висок план, те няма да ви позволят да се понижите.
 
-#### 4. You Can't Remove Your Payment Method
+#### 4. Не можете да премахнете вашия метод за плащане
 
-There is no way to remove your payment method in their system.
+Няма начин да премахнете вашия метод за плащане в тяхната система.
 
-#### 5. 30 Day Cancel Clause
+#### 5. 30‑дневен клауза за анулиране
 
-If you have automated renewals, you need to notify them 30 days in advance prior to renewal for cancellation. If they start the talks at day 40, and
-at day 20 you decide you don't want to renew, too bad, they're gonna charge you.
+Ако имате автоматични подновявания, трябва да ги уведомите 30 дни предварително преди подновяването за анулиране. Ако те започнат разговорите на 40‑ти ден, а на 20‑ти ден решите, че не искате да подновявате, съжалявам, те ще ви таксуват.
 
-Luckily we didn't have automated renewal, but I am not a fan of this policy.
+За щастие, нямаме автоматично подновяване, но не съм привърженик на тази политика.
 
-#### 6. Nonsense Negative Reviews
+#### 6. Безсмислени отрицателни отзиви
 
-Sometimes people would leave a non-verified negative review with literal nonsense (like face on keyboard) that TP<sup>*1</sup> won't remove.
+Понякога хора оставят непроверен отрицателен отзив с буквален безсмисъл (като лице върху клавиатура), който TP<sup>*1</sup> не премахва.
 
-#### 7. Review Ownership
+#### 7. Собственост на отзивите
 
-This one isn't their fault so much as the design of the "partnership". You don't own the reviews, the reviewers do, but it's on TrustPilot... So if you want to ever do anything with that data, it's pretty difficult. Having it in our own platform, and collecting the reviews ourselves long term, is best for us. We can still try to incentivize people to also review on TP, but it's secondary now.
+Това не е толкова тяхна вина, колкото дизайнът на „партньорството“. Вие не притежавате отзивите, а рецензентите ги притежават, но това е в TrustPilot... Така че ако искате някога да направите нещо с тези данни, е доста трудно. Да ги имаме в нашата собствена платформа и да събираме отзивите сами в дългосрочен план е най-добре за нас. Все още можем да се опитаме да стимулираме хората да оставят отзиви и в TP, но сега това е второстепенно.
 
-### What This Means For You
+### Какво означава това за вас
 
-You can now leave a review on the /reviews page easily. You can still review us on TrustPilot or G2, we just don't have a partnership for their
-widgets or integrations.
+Сега можете лесно да оставите отзив на страницата /reviews. Все още можете да ни оцените в TrustPilot или G2, просто нямаме партньорство за техните уиджети или интеграции.
 
-### In Conclusion
+### В заключение
 
-We appreciate everyone who took the time to leave us a review, and we hope you continue to enjoy using our platform. :)
+Благодарим на всички, които отделиха време да ни оставят отзив, и се надяваме да продължите да се наслаждавате на използването на нашата платформа. :)
 
-Cheers!
+Наздраве!
 
-- *<sup>1</sup> Not toilet paper
+- *<sup>1</sup> Не тоалетна хартия
 
 {{/isPost}}
 

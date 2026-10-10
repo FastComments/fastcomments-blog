@@ -13,19 +13,19 @@ FastComments har været en TrustPilot-kunde siden 2022. I 2026 afslutter vi dett
 
 FastComments har været en TrustPilot-kunde siden 2022. I 2026 afslutter vi dette partnerskab.
 
-Vores anmeldelses-widget på hjemmesiden er blevet erstattet med vores eget vurderingssystem, og vi lancerede vores [/reviews page](https://fastcomments.com/reviews) som er det nye sted at se, hvad folk synes om FastComments.
+Vores anmeldelses-widget på hjemmesiden er blevet erstattet med vores eget ratingsystem, og vi lancerede vores [/reviews page](https://fastcomments.com/reviews) som er det nye sted at se, hvad folk synes om FastComments.
 
 ### Hvorfor vi forlader
 
-Dette er skrevet personligt af den person, der driver FastComments, så det vil lyde meget personligt, fordi det er.
+Dette er skrevet personligt af personen, der driver FastComments, så det vil lyde meget personligt, fordi det er.
 
-Jeg kan lide at bruge og arbejde med virksomheder, der ikke irriterer mig. TrustPilot har, gennem hele vores partnerskab, været irriterende.
+Jeg kan lide at bruge og arbejde med virksomheder, der ikke irriterer mig. TrustPilot har i hele vores partnerskab været irriterende.
 
 Her er nogle få grunde til denne beslutning:
 
 #### 1. Brug af LLM'er til support
 
-Hos FastComments svarer en rigtig person på alle supportkanaler, altid. Så jeg tolererer virkelig ikke virksomheder, der prøver at spare penge ved at bruge LLM'er til support, især når de skjuler det. I et stykke tid havde vi, som vi vil kalde Debra, at kontakte for fornyelsesdiskussioner. I år var det tydeligt en LLM. Jeg er ikke sikker på, om de fyrede Debra, men jeg ville ikke blive overrasket, da jeg virkelig ikke vil støtte denne form for overdreven optimering, især når den resulterende oplevelse er værre.
+Hos FastComments svarer en rigtig person på alle supportkanaler, altid. Så jeg tolererer ikke virksomheder, der prøver at spare penge ved at bruge LLM'er til support, især når de skjuler det. I et stykke tid havde vi, som vi vil kalde Debra, at kontakte for fornyelsesdiskussioner. I år var det tydeligt en LLM. Jeg er ikke sikker på, om de fyrede Debra, men jeg ville ikke blive overrasket og vil ikke rigtig støtte denne form for overdreven optimering, især når den resulterende oplevelse er dårligere.
 
 Desuden kom LLM'erne til at tage fejl under fornyelsesdiskussionen, og jeg måtte citere deres egen TOS *for dem*.
 
@@ -43,13 +43,13 @@ Der er ingen måde at fjerne din betalingsmetode i deres system.
 
 #### 5. 30-dages annulleringsklausul
 
-Hvis du har automatiske fornyelser, skal du give dem besked 30 dage i forvejen før fornyelsen for at annullere. Hvis de starter forhandlingerne på dag 40, og på dag 20 beslutter du, at du ikke vil forny, så er det ærgerligt, de vil opkræve dig.
+Hvis du har automatiske fornyelser, skal du give dem besked 30 dage i forvejen før fornyelsen for at annullere. Hvis de starter samtalerne på dag 40, og på dag 20 beslutter du, at du ikke vil forny, så er det ærgerligt, de vil opkræve dig.
 
-Heldigvis havde vi ikke automatiske fornyelser, men jeg er ikke fan af denne politik.
+Heldigvis havde vi ingen automatiske fornyelser, men jeg er ikke fan af denne politik.
 
 #### 6. Nonsens negative anmeldelser
 
-Nogle gange ville folk efterlade en ikke-verificeret negativ anmeldelse med bogstavelig nonsens (som ansigt på tastatur), som TP<sup>*1</sup> ikke vil fjerne.
+Nogle gange ville folk efterlade en ikke-verificeret negativ anmeldelse med bogstavelig nonsens (som ansigt på tastatur), som TP<sup>*1</sup> ikke fjerner.
 
 #### 7. Ejerskab af anmeldelser
 
@@ -61,12 +61,10 @@ Du kan nu nemt efterlade en anmeldelse på /reviews-siden. Du kan stadig anmelde
 
 ### Afslutningsvis
 
-Vi værdsætter alle, der tog sig tid til at efterlade en anmeldelse, og vi håber, at du fortsat nyder at bruge vores platform. :)
+Vi værdsætter alle, der har taget sig tid til at efterlade en anmeldelse, og vi håber, at du fortsat nyder at bruge vores platform. :)
 
 Skål!
 
 - *<sup>1</sup> Ikke toiletpapir
 
 {{/isPost}}
-
----

@@ -1,75 +1,71 @@
 [category:Announcements]
 
 ###### [postdate]
-# [postlink]Γιατί το FastComments Αποχωρεί από το TrustPilot το 2026[/postlink]
+# [postlink]Γιατί το FastComments φεύγει από το TrustPilot το 2026[/postlink]
 
 {{#unless isPost}}
-FastComments has been a TrustPilot customer since 2022. In 2026 we are ending this partnership.
+Το FastComments είναι πελάτης του TrustPilot από το 2022. Το 2026 τερματίζουμε αυτή τη συνεργασία.
 {{/unless}}
 
 {{#isPost}}
 
 ### Τι Συμβαίνει
 
-FastComments has been a TrustPilot customer since 2022. In 2026 we are ending this partnership.
+Το FastComments είναι πελάτης του TrustPilot από το 2022. Το 2026 τερματίζουμε αυτή τη συνεργασία.
 
-Our homepage review widget has been replaced with our own rating system, and we launched our [/reviews σελίδα](https://fastcomments.com/reviews)
-which is the new place to see what people think of FastComments.
+Το widget αξιολογήσεων της αρχικής σελίδας μας έχει αντικατασταθεί με το δικό μας σύστημα βαθμολόγησης, και λανσάραμε τη σελίδα [/reviews](https://fastcomments.com/reviews) η οποία είναι το νέο μέρος για να δείτε τι σκέφτονται οι άνθρωποι για το FastComments.
 
-### Γιατί Αποχωρούμε
+### Γιατί Φεύγουμε
 
-This is written personally by the person that runs FastComments, so this will sound very personal, because it is.
+Αυτό γράφεται προσωπικά από το άτομο που διαχειρίζεται το FastComments, οπότε θα ακούγεται πολύ προσωπικό, επειδή είναι.
 
-I like to use and work with companies that don't irritate me. TrustPilot has, over the entirety of our partnership, been irritating.
+Μου αρέσει να χρησιμοποιώ και να συνεργάζομαι με εταιρείες που δεν με ενοχλούν. Το TrustPilot, σε όλη τη διάρκεια της συνεργασίας μας, ήταν ενοχλητικό.
 
-Here are a few reasons for this decision:
+Ακολουθούν μερικοί λόγοι για αυτή την απόφαση:
 
-#### 1. Χρήση LLMs για Υποστήριξη
+#### 1. Χρήση LLM για Υποστήριξη
 
-At FastComments, a real person answers all support channels, always. So I don't really tolerate companies trying to save money by using LLMs for support, especially when they hide it. For a while we had, who we'll call Debra, to reach out to for renewal discussions. This year it was clearly
-an LLM. I'm not sure if they fired Debra, but I wouldn't be surprised don't really want to support this kind of excessive optimization, especially when the resulting experience is worse.
+Στο FastComments, ένα πραγματικό άτομο απαντά σε όλα τα κανάλια υποστήριξης, πάντα. Έτσι δεν ανεχθώ εταιρείες που προσπαθούν να εξοικονομήσουν χρήματα χρησιμοποιώντας LLM για υποστήριξη, ειδικά όταν το κρύβουν. Για κάποιο διάστημα είχαμε, που θα την ονομάσουμε Debra, για να επικοινωνούμε σχετικά με συζητήσεις ανανέωσης. Φέτος ήταν σαφώς ένα LLM. Δεν είμαι σίγουρος αν απέλυσαν τη Debra, αλλά δεν θα ήμουν έκπληκτος και δεν θέλω να υποστηρίξω αυτό το είδος υπερβολικής βελτιστοποίησης, ειδικά όταν η προκύπτουσα εμπειρία είναι χειρότερη.
 
-Also, the LLMs got things wrong during the renewal discussion, and I had to cite their own TOS *for them*.
+Επίσης, τα LLM έκαναν λάθη κατά τη διάρκεια της συζήτησης ανανέωσης, και έπρεπε να αναφέρω τους δικούς τους Όρους Χρήσης *για αυτούς*.
 
 #### 2. Ασάφεια για το Ποια Widgets Διατίθενται σε Ποια Πλάνα
 
-As the title says, it's unclear which widgets are available on which plans, and to access all the widgets is hundreds of dollars a month.
+Όπως λέει ο τίτλος, δεν είναι σαφές ποια widgets διατίθενται σε ποια πλάνα, και η πρόσβαση σε όλα τα widgets κοστίζει εκατοντάδες δολάρια το μήνα.
 
-#### 3. Δεν Υπάρχει Διαδρομή Υποβάθμισης
+#### 3. Καμία Διαδρομή Υποβάθμισης
 
-If you're on a higher plan, they won't let you downgrade.
+Αν βρίσκεστε σε υψηλότερο πλάνο, δεν θα σας επιτρέψουν να υποβαθμίσετε.
 
 #### 4. Δεν Μπορείτε να Αφαιρέσετε τη Μέθοδο Πληρωμής Σας
 
-There is no way to remove your payment method in their system.
+Δεν υπάρχει τρόπος να αφαιρέσετε τη μέθοδο πληρωμής σας στο σύστημά τους.
 
 #### 5. Ρήτρα Ακύρωσης 30 Ημερών
 
-If you have automated renewals, you need to notify them 30 days in advance prior to renewal for cancellation. If they start the talks at day 40, and
-at day 20 you decide you don't want to renew, too bad, they're gonna charge you.
+Αν έχετε αυτοματοποιημένες ανανεώσεις, πρέπει να τους ενημερώσετε 30 ημέρες νωρίτερα πριν από την ανανέωση για ακύρωση. Αν ξεκινήσουν τις συζητήσεις στην ημέρα 40, και στην ημέρα 20 αποφασίσετε ότι δεν θέλετε να ανανεώσετε, λυπάμαι, θα σας χρεώσουν.
 
-Luckily we didn't have automated renewal, but I am not a fan of this policy.
+Ευτυχώς δεν είχαμε αυτοματοποιημένη ανανέωση, αλλά δεν είμαι φίλος αυτής της πολιτικής.
 
 #### 6. Ανοησίες σε Αρνητικές Κριτικές
 
-Sometimes people would leave a non-verified negative review with literal nonsense (like face on keyboard) that TP<sup>*1</sup> won't remove.
+Μερικές φορές οι άνθρωποι αφήνουν μια μη επαληθευμένη αρνητική κριτική με κυριολεκτική ανοησία (όπως πρόσωπο στο πληκτρολόγιο) που το TP<sup>*1</sup> δεν θα αφαιρέσει.
 
 #### 7. Ιδιοκτησία Κριτικών
 
-This one isn't their fault so much as the design of the "partnership". You don't own the reviews, the reviewers do, but it's on TrustPilot... So if you want to ever do anything with that data, it's pretty difficult. Having it in our own platform, and collecting the reviews ourselves long term, is best for us. We can still try to incentivize people to also review on TP, but it's secondary now.
+Αυτό δεν είναι τόσο δικό τους λάθος όσο το σχεδιασμό της «συνεργασίας». Δεν κατέχετε τις κριτικές, οι κριτές τις κατέχουν, αλλά είναι στο TrustPilot... Έτσι, αν θέλετε ποτέ να κάνετε κάτι με αυτά τα δεδομένα, είναι αρκετά δύσκολο. Το να το έχουμε στη δική μας πλατφόρμα και να συλλέγουμε τις κριτικές μόνοι μας μακροπρόθεσμα, είναι το καλύτερο για εμάς. Μπορούμε ακόμα να προσπαθήσουμε να ενθαρρύνουμε τους ανθρώπους να κρίνουν επίσης στο TP, αλλά είναι δευτερεύον τώρα.
 
 ### Τι Σημαίνει Αυτό Για Εσάς
 
-You can now leave a review on the /reviews page easily. You can still review us on TrustPilot or G2, we just don't have a partnership for their
-widgets or integrations.
+Μπορείτε τώρα να αφήσετε μια κριτική εύκολα στη σελίδα /reviews. Μπορείτε ακόμα να μας κρίνετε στο TrustPilot ή στο G2, απλώς δεν έχουμε συνεργασία για τα widgets ή τις ενσωματώσεις τους.
 
 ### Συμπερασματικά
 
-We appreciate everyone who took the time to leave us a review, and we hope you continue to enjoy using our platform. :)
+Εκτιμούμε όλους όσους αφιέρωσαν χρόνο για να μας αφήσουν μια κριτική, και ελπίζουμε να συνεχίσετε να απολαμβάνετε τη χρήση της πλατφόρμας μας. :)
 
-Cheers!
+Στην υγειά σας!
 
-- *<sup>1</sup> Δεν είναι χαρτί υγείας
+- *<sup>1</sup> Όχι χαρτί τουαλέτας
 
 {{/isPost}}
 

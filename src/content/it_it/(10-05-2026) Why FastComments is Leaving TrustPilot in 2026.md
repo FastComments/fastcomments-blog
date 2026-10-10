@@ -4,72 +4,68 @@
 # [postlink]Perché FastComments sta lasciando TrustPilot nel 2026[/postlink]
 
 {{#unless isPost}}
-FastComments has been a TrustPilot customer since 2022. In 2026 we are ending this partnership.
+FastComments è stato un cliente di TrustPilot dal 2022. Nel 2026 concluderemo questa partnership.
 {{/unless}}
 
 {{#isPost}}
 
 ### Cosa sta succedendo
 
-FastComments has been a TrustPilot customer since 2022. In 2026 we are ending this partnership.
+FastComments è stato un cliente di TrustPilot dal 2022. Nel 2026 concluderemo questa partnership.
 
-Our homepage review widget has been replaced with our own rating system, and we launched our [/reviews page](https://fastcomments.com/reviews)
-which is the new place to see what people think of FastComments.
+Il widget di recensione della nostra homepage è stato sostituito con il nostro sistema di valutazione, e abbiamo lanciato la nostra [/reviews page](https://fastcomments.com/reviews) che è il nuovo luogo per vedere cosa pensano le persone di FastComments.
 
 ### Perché ce ne andiamo
 
-This is written personally by the person that runs FastComments, so this will sound very personal, because it is.
+Questo è scritto personalmente dalla persona che gestisce FastComments, quindi suonerà molto personale, perché lo è.
 
-I like to use and work with companies that don't irritate me. TrustPilot has, over the entirety of our partnership, been irritating.
+Mi piace usare e collaborare con aziende che non mi irritano. TrustPilot è stata, per tutta la durata della nostra partnership, irritante.
 
-Here are a few reasons for this decision:
+Ecco alcune ragioni per questa decisione:
 
 #### 1. Utilizzare LLM per il supporto
 
-At FastComments, a real person answers all support channels, always. So I don't really tolerate companies trying to save money by using LLMs for support, especially when they hide it. For a while we had, who we'll call Debra, to reach out to for renewal discussions. This year it was clearly
-an LLM. I'm not sure if they fired Debra, but I wouldn't be surprised don't really want to support this kind of excessive optimization, especially when the resulting experience is worse.
+In FastComments, una persona reale risponde a tutti i canali di supporto, sempre. Quindi non tollero davvero le aziende che cercano di risparmiare denaro usando LLM per il supporto, soprattutto quando lo nascondono. Per un po' abbiamo avuto, che chiameremo Debra, a cui rivolgerci per le discussioni di rinnovo. Quest'anno era chiaramente un LLM. Non sono sicuro se abbiano licenziato Debra, ma non sarei sorpreso e non voglio davvero supportare questo tipo di ottimizzazione eccessiva, soprattutto quando l'esperienza risultante è peggiore.
 
-Also, the LLMs got things wrong during the renewal discussion, and I had to cite their own TOS *for them*.
+Inoltre, gli LLM hanno sbagliato durante la discussione di rinnovo, e ho dovuto citare i loro stessi TOS *per loro*.
 
 #### 2. Non è chiaro quali widget sono disponibili su quali piani
 
-As the title says, it's unclear which widgets are available on which plans, and to access all the widgets is hundreds of dollars a month.
+Come dice il titolo, non è chiaro quali widget sono disponibili su quali piani, e accedere a tutti i widget costa centinaia di dollari al mese.
 
 #### 3. Nessun percorso di downgrade
 
-If you're on a higher plan, they won't let you downgrade.
+Se sei su un piano più alto, non ti permettono di effettuare il downgrade.
 
 #### 4. Non puoi rimuovere il tuo metodo di pagamento
 
-There is no way to remove your payment method in their system.
+Non c'è modo di rimuovere il tuo metodo di pagamento nel loro sistema.
 
-#### 5. Clausola di cancellazione di 30 giorni
+#### 5. Clausola di cancellazione a 30 giorni
 
-If you have automated renewals, you need to notify them 30 days in advance prior to renewal for cancellation. If they start the talks at day 40, and
-at day 20 you decide you don't want to renew, too bad, they're gonna charge you.
+Se hai rinnovi automatici, devi avvisarli con 30 giorni di anticipo prima del rinnovo per la cancellazione. Se iniziano le trattative al giorno 40, e al giorno 20 decidi di non rinnovare, peccato, ti addebiteranno comunque.
 
-Luckily we didn't have automated renewal, but I am not a fan of this policy.
+Fortunatamente non avevamo il rinnovo automatico, ma non sono un fan di questa politica.
 
 #### 6. Recensioni negative senza senso
 
-Sometimes people would leave a non-verified negative review with literal nonsense (like face on keyboard) that TP<sup>*1</sup> won't remove.
+A volte le persone lasciano una recensione negativa non verificata con nonsense letterale (come una faccia sulla tastiera) che TP<sup>*1</sup> non rimuove.
 
 #### 7. Proprietà delle recensioni
 
-This one isn't their fault so much as the design of the "partnership". You don't own the reviews, the reviewers do, but it's on TrustPilot... So if you want to ever do anything with that data, it's pretty difficult. Having it in our own platform, and collecting the reviews ourselves long term, is best for us. We can still try to incentivize people to also review on TP, but it's secondary now.
+Questo non è tanto colpa loro quanto del design della "partnership". Non possiedi le recensioni, i recensori le possiedono, ma è su TrustPilot... Quindi se vuoi fare qualcosa con quei dati, è piuttosto difficile. Avere le recensioni nella nostra piattaforma e raccoglierle noi stessi a lungo termine è la soluzione migliore per noi. Possiamo ancora cercare di incentivare le persone a recensire anche su TP, ma ora è secondario.
 
 ### Cosa significa per te
 
-You can now leave a review on the /reviews page easily. You can still review us on TrustPilot or G2, we just don't have a partnership for their
-widgets or integrations.
+Ora puoi lasciare una recensione sulla pagina /reviews facilmente. Puoi ancora recensirci su TrustPilot o G2, semplicemente non abbiamo una partnership per i loro widget o integrazioni.
 
 ### In conclusione
 
-We appreciate everyone who took the time to leave us a review, and we hope you continue to enjoy using our platform. :)
+Apprezziamo tutti coloro che hanno dedicato del tempo a lasciarci una recensione, e speriamo che continuiate a godervi l'uso della nostra piattaforma. :)
 
-Cheers!
+Saluti!
 
-- *<sup>1</sup> Not toilet paper
+- *<sup>1</sup> Non carta igienica
 
 {{/isPost}}
 

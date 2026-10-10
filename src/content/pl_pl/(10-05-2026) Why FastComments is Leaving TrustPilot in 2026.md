@@ -4,70 +4,67 @@
 # [postlink]Dlaczego FastComments opuszcza TrustPilot w 2026[/postlink]
 
 {{#unless isPost}}
-FastComments był klientem TrustPilot od 2022 roku. W 2026 kończymy tę współpracę.
+FastComments jest klientem TrustPilot od 2022 roku. W 2026 roku kończymy tę współpracę.
 {{/unless}}
 
 {{#isPost}}
 
-### What's Happening
+### Co się dzieje
 
-FastComments był klientem TrustPilot od 2022 roku. W 2026 kończymy tę współpracę.
+FastComments jest klientem TrustPilot od 2022 roku. W 2026 roku kończymy tę współpracę.
 
-Nasze widgety recenzji na stronie głównej zostały zastąpione własnym systemem ocen, a także uruchomiliśmy naszą [/reviews page](https://fastcomments.com/reviews),
-która jest nowym miejscem, aby zobaczyć, co ludzie myślą o FastComments.
+Nasz widget recenzji na stronie głównej został zastąpiony własnym systemem ocen, i uruchomiliśmy naszą [/strona recenzji](https://fastcomments.com/reviews), która jest nowym miejscem, aby zobaczyć, co ludzie myślą o FastComments.
 
-### Why We're Leaving
+### Dlaczego odchodzimy
 
-To jest napisane osobiście przez osobę prowadzącą FastComments, więc będzie to brzmiało bardzo osobisto, bo tak jest.
+To jest napisane osobiście przez osobę prowadzącą FastComments, więc będzie to brzmiało bardzo osobisto, ponieważ tak jest.
 
-Lubię korzystać i współpracować z firmami, które mnie nie irytują. TrustPilot, przez całą naszą współpracę, był irytujący.
+Lubię korzystać i współpracować z firmami, które mnie nie irytują. TrustPilot był irytujący przez całą naszą współpracę.
 
 Oto kilka powodów tej decyzji:
 
-#### 1. Using LLMs for Support
+#### 1. Używanie LLM do wsparcia
 
-W FastComments prawdziwa osoba odpowiada na wszystkie kanały wsparcia, zawsze. Dlatego nie toleruję firm, które próbują oszczędzać pieniądze, używając LLM‑ów do wsparcia, zwłaszcza gdy to ukrywają. Przez pewien czas mieliśmy, kogo nazwzemy Debrą, do kontaktu w sprawie dyskusji o odnowieniu. W tym roku to wyraźnie był LLM. Nie jestem pewien, czy zwolnili Debrę, ale nie byłbym zdziwiony – nie chcę wspierać takiej nadmiernej optymalizacji, zwłaszcza gdy wynikające z tego doświadczenie jest gorsze.
+W FastComments prawdziwa osoba odpowiada na wszystkie kanały wsparcia, zawsze. Dlatego nie toleruję firm, które próbują oszczędzać pieniądze, używając LLM do wsparcia, szczególnie gdy to ukrywają. Przez pewien czas mieliśmy, kogo nazwijmy Debrą, do kontaktu w sprawie dyskusji o odnowieniu. W tym roku to był wyraźnie LLM. Nie jestem pewien, czy zwolnili Debrę, ale nie byłbym zdziwiony i nie chcę wspierać takiej nadmiernej optymalizacji, zwłaszcza gdy wynikające z tego doświadczenie jest gorsze.
 
-Ponadto LLM‑y popełniły błędy podczas dyskusji o odnowieniu i musiałem przytoczyć ich własne TOS *dla nich*.
+Ponadto LLM popełniły błędy podczas dyskusji o odnowieniu i musiałem przytoczyć ich własne warunki usługi *dla nich*.
 
-#### 2. Unclear Which Widgets Are Available on Which Plans
+#### 2. Niejasne, które widgety są dostępne w których planach
 
-Jak wskazuje tytuł, nie jest jasne, które widgety są dostępne w których planach, a dostęp do wszystkich widgetów kosztuje setki dolarów miesięcznie.
+Jak mówi tytuł, nie jest jasne, które widgety są dostępne w których planach, a dostęp do wszystkich widgetów kosztuje setki dolarów miesięcznie.
 
-#### 3. No Downgrade Path
+#### 3. Brak możliwości obniżenia planu
 
-Jeśli jesteś na wyższym planie, nie pozwolą ci obniżyć go.
+Jeśli jesteś na wyższym planie, nie pozwolą ci go obniżyć.
 
-#### 4. You Can't Remove Your Payment Method
+#### 4. Nie możesz usunąć metody płatności
 
-Nie ma możliwości usunięcia metody płatności w ich systemie.
+W ich systemie nie ma możliwości usunięcia metody płatności.
 
-#### 5. 30 Day Cancel Clause
+#### 5. Klauzula anulowania 30-dniowa
 
-Jeśli masz automatyczne odnowienia, musisz powiadomić ich 30 dni przed odnowieniem, aby anulować. Jeśli rozpoczną rozmowy w dniu 40, a w dniu 20 zdecydujesz, że nie chcesz odnawiać, cóż, będą cię obciążać.
+Jeśli masz automatyczne odnowienia, musisz powiadomić ich 30 dni przed odnowieniem, aby anulować. Jeśli rozpoczną rozmowy w dniu 40, a w dniu 20 zdecydujesz, że nie chcesz odnowić, cóż, będą cię obciążać.
 
 Na szczęście nie mieliśmy automatycznego odnowienia, ale nie jestem fanem tej polityki.
 
-#### 6. Nonsense Negative Reviews
+#### 6. Nonsensowne negatywne recenzje
 
-Czasami ludzie zostawiają niezweryfikowaną negatywną recenzję z dosłownym nonsenssem (np. twarz na klawiaturze), której TP<sup>*1</sup> nie usuwa.
+Czasami ludzie zostawiają niezweryfikowaną negatywną recenzję z dosłownym nonsensami (np. twarz na klawiaturze), które TP<sup>*1</sup> nie usunie.
 
-#### 7. Review Ownership
+#### 7. Własność recenzji
 
-To nie jest tak bardzo ich wina, co raczej projekt „partnerstwa”. Nie własnościsz recenzji, właścicielami są recenzenci, ale to leży po stronie TrustPilot… Więc jeśli kiedykolwiek chcesz coś zrobić z tymi danymi, jest to dość trudne. Posiadanie ich na naszej własnej platformie i zbieranie recenzji samodzielnie w dłuższej perspektywie jest dla nas najlepsze. Nadal możemy zachęcać ludzi do recenzowania nas na TP, ale to teraz drugorzędne.
+To nie jest tak bardzo ich wina, a raczej projekt „partnerstwa”. Nie jesteś właścicielem recenzji, właścicielami są recenzenci, ale to leży po stronie TrustPilot... Więc jeśli kiedykolwiek chcesz coś zrobić z tymi danymi, jest to dość trudne. Posiadanie ich w naszej własnej platformie i zbieranie recenzji samodzielnie na dłuższą metę jest dla nas najlepsze. Wciąż możemy zachęcać ludzi do recenzowania nas na TP, ale to teraz drugorzędne.
 
-### What This Means For You
+### Co to oznacza dla Ciebie
 
-Możesz teraz łatwo zostawić recenzję na stronie /reviews. Nadal możesz recenzować nas na TrustPilot lub G2, po prostu nie mamy partnerstwa w zakresie ich widgetów czy integracji.
+Możesz teraz łatwo zostawić recenzję na stronie /reviews. Nadal możesz recenzować nas na TrustPilot lub G2, po prostu nie mamy partnerstwa w zakresie ich widgetów lub integracji.
 
-### In Conclusion
+### Podsumowanie
 
-Doceniamy wszystkich, którzy poświęcili czas, aby zostawić nam recenzję, i mamy nadzieję, że nadal będziecie cieszyć się korzystaniem z naszej platformy. :)
+Doceniamy wszystkich, którzy poświęcili czas, aby zostawić nam recenzję i mamy nadzieję, że nadal będziecie cieszyć się korzystaniem z naszej platformy. :)
 
-Cheers!
+Pozdrawiam!
 
 - *<sup>1</sup> Nie papier toaletowy
 
 {{/isPost}}
-
----
