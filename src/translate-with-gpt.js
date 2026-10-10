@@ -253,7 +253,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
                             { role: 'system', content: systemMessage },
                             { role: 'user', content: prompt }
                         ],
-                        max_tokens: 16000
+                        max_tokens: 32000
                     })
                 });
 
@@ -265,9 +265,14 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
                 const data = await response.json();
                 let translation = data.choices?.[0]?.message?.content?.trim() || '';
                 if (!translation) throw new Error('empty translation response');
+                // A long post cut off at max_tokens loses its closing {{/isPost}}; retry instead of failing the build.
+                if (data.choices?.[0]?.finish_reason === 'length') throw new Error('translation truncated at max_tokens');
 
                 // Restore original category tags in case the model translated them
                 translation = this.restoreCategoryTags(content, translation);
+
+                const structureError = findTemplateStructureError(content, translation);
+                if (structureError) throw new Error(structureError);
 
                 console.log(`  [translated] ${locale}/${filename} (${data.usage?.total_tokens || 0} tokens)${attempt > 1 ? ` [attempt ${attempt}]` : ''}`);
 
