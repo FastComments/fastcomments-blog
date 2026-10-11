@@ -18,7 +18,7 @@ This guide is for product and engineering leads and community managers who run O
 
 On September 30, 2026 the Tel Aviv District Court ordered the appointment of a temporary receiver over OpenWeb at the request of its lender, Mars Growth Capital, which holds a first-priority lien over the company's assets and accounts and is moving to enforce it against OpenWeb's Israeli assets, bank accounts and intellectual property (<a href="https://www.calcalistech.com/ctechnews/article/aaji32ku3" target="_blank">Calcalist, Sept 30</a>). A temporary trustee, Adv. Ehud Gindes, was appointed the following day (<a href="https://www.calcalistech.com/ctechnews/article/rmmk2cphu" target="_blank">Calcalist, Oct 4</a>). Earlier in 2026 Microsoft, one of OpenWeb's largest customers, ended its engagement and withheld payments over a traffic dispute that OpenWeb rejects (<a href="https://www.calcalistech.com/ctechnews/article/s1kfnxo5mx" target="_blank">Calcalist, Sept 28</a>).
 
-OpenWeb says the platform continues to operate. Court supervision, a lender enforcing liens on the IP your comment widget depends on, and a trustee whose job is to preserve asset value are not conditions a publisher wants under a core engagement surface. If you have not already pulled a full data export, do that first, today, before anything else in this guide.
+OpenWeb says the platform continues to operate. Court supervision, a lender enforcing liens on the IP your comment widget depends on, and a trustee whose job is to preserve asset value are not conditions you want as a publisher for a core engagement surface. If you have not already pulled a full data export, do that first, today, before anything else in this guide.
 
 ### What You Need Before You Start
 
@@ -32,6 +32,10 @@ Collect these before touching any code:
 - **Custom CSS and theme settings.** Export anything you have in the Admin Panel so you can rebuild it in the FastComments widget customization page.
 - **Where the launcher lives in your templates**, including any pages that run Reactions, Topic Tracker, Spotlight, the Notification Bell or a Standalone Ad without a Conversation.
 
+### AI Assisted Migration
+
+FastComments provides an [LLM Kit and MCP server to speed up the migration](https://docs.fastcomments.com/guide-llm-kit.html).
+
 ### How OpenWeb Post IDs Map to FastComments URL IDs
 
 FastComments ties a comment thread to a `urlId`. By default the URL ID is the cleaned page URL, but you can set it to any string, and that is exactly what the OpenWeb importer does: it reads the `post_id` column and uses it as the FastComments URL ID for every comment on that article. It also stores the `url` column as the display URL so moderation links and notification emails point at the right page.
@@ -42,12 +46,14 @@ If you prefer to key threads by URL going forward instead of by post ID, import 
 
 ### The Feature Map
 
+<div class="pretty-table wide-table">
+
 | OpenWeb | FastComments | Notes |
 | --- | --- | --- |
 | Conversation with real-time updates | Comment widget with live commenting | Live by default. New comments collapse behind a "Show N New Comments" button, or appear instantly with `showLiveRightAway`. |
 | Likes and dislikes on comments | Up and down votes | Import preserves `likes_count` and `dislikes_count`. Heart style and "disable voting" are config options. |
 | Reactions (article-level icons) | Page Reacts | Configurable icon set on the page, remembered per user. |
-| Replies and threading | Threaded replies, unlimited depth | `maxReplyDepth` caps nesting. See the import note on threads below. |
+| Replies and threading | Threaded replies, unlimited depth | `maxReplyDepth` caps nesting. |
 | Sorting: best, newest, oldest | Most Relevant, Newest First, Oldest First | `defaultSortDirection` sets the default per site or per URL pattern. |
 | User profiles | User profiles | Avatar, bio, badges, karma, activity, DMs. Works for SSO users. |
 | Author Badge | `displayLabel`, `isAdmin`, `isModerator`, badges | Set in the SSO payload. No backend lookup call needed. |
@@ -62,8 +68,8 @@ If you prefer to key threads by URL going forward instead of by post ID, import 
 | Third-party SSO (Auth0, Gigya, Piano) | Secure SSO after your provider authenticates | Same payload. Your backend signs it once the user is logged in. |
 | Identity (OpenWeb registration screens) | Magic-link login, Simple SSO | Readers log in with an email link. No passwords. |
 | Moderation policy per article | Customization rules per URL ID pattern | Approval mode, spam filter and more vary by `*/section/*` patterns. |
-| Aida AI moderation | Spam classifiers, ChatGPT 4 option, image moderation, AI Agents | Agents start in dry run and can require human approval. |
-| Restricted words | Word blacklist | ~450 default phrases, editable. |
+| Aida AI moderation | Spam classifiers, LLM based filters, image moderation, AI Agents | Agents start in dry run and can require human approval. |
+| Restricted words | Word blacklist customizable by locale | ~450 default phrases, editable. |
 | User muting | Block User | Per-reader block from the comment menu. |
 | Bans | Bans | Permanent, timed, shadow, IP-hashed, plus-alias aware. |
 | Moderation Panel | Moderate Comments dashboard | Filters, bulk actions with undo, moderation groups, digest emails with one-click approve. |
@@ -77,6 +83,8 @@ If you prefer to key threads by URL going forward instead of by post ID, import 
 | Export and Delete User Data (GDPR/CCPA) | Account and data deletion, EU region | eu.fastcomments.com keeps data in the EU. DPA available. |
 | Android, iOS, React Native SDKs | Android, iOS, React Native SDKs | Native UI, SSO, live updates, threading, moderation actions. |
 | Launcher, Virtual Pages, React SDK | Embed script, `fcConfigs`, React, Vue, Angular, SolidJS libraries | `update()` and `destroy()` for SPAs. |
+
+</div>
 
 The rest of this section goes through each group in detail.
 
@@ -94,7 +102,7 @@ Sorting maps directly. OpenWeb's `data-sort-by` values best, newest and oldest c
 
 ### Replies and Threading
 
-FastComments supports unlimited nesting by default; `maxReplyDepth` limits it (`1` gives a flat two-level structure). The OpenWeb CSV includes `parent_id` and `parent_comment_id` columns. The current importer imports every row as a top-level comment on its page, in date order, with author, timestamp, votes, flag count and approval state intact. It does not rebuild the parent-child tree. If your threads are reply-heavy, tell us when you send the export and we will handle threading as part of the import rather than leaving you with a flattened thread.
+FastComments supports unlimited nesting by default; `maxReplyDepth` limits it (`1` gives a flat two-level structure). The OpenWeb CSV includes `parent_id` and `parent_comment_id` columns. The importer reads `parent_comment_id` and rebuilds the reply tree at full depth, so a reply to a reply stays nested under its direct parent, with author, timestamp, votes, flag count and approval state intact. Replies are linked even when they appear before their parent in the file, or when the parent was imported from an earlier export window. A reply whose parent is missing from every export becomes a top-level comment. The OpenWeb message ID is stored on each comment, so a re-import of an older flat import threads it in place.
 
 ### User Profiles and Badges
 
@@ -120,7 +128,7 @@ What FastComments offers for live coverage is the reader side: a Live Chat widge
 
 ### Topic Tracker, Notifications and Email
 
-OpenWeb's Topic Tracker lets a reader follow topics and authors drawn from page metadata and get notified when new articles match (<a href="https://developers.openweb.com/docs/topic-tracker" target="_blank">OpenWeb docs</a>). FastComments has no topic or author follow across articles. Readers subscribe to a page from the notification bell and receive updates for that thread, with the frequency chosen per subscription: every minute, hourly digest or daily digest. If cross-article following matters to your retention numbers, this is a feature you lose.
+OpenWeb's Topic Tracker lets a reader follow topics and authors drawn from page metadata and get notified when new articles match (<a href="https://developers.openweb.com/docs/topic-tracker" target="_blank">OpenWeb docs</a>). FastComments has no topic or author follow across articles. Readers subscribe to a page from the notification bell and receive updates for that thread, with the frequency chosen per subscription: every minute, hourly digest or daily digest. If cross-article following matters to your retention numbers, let us know as this feature is on our roadmap.
 
 Everything else in the Notification Bell maps. The widget has a bell that turns red with the unread count and lists: replies to you, replies in a thread you commented in, mentions, upvotes on your comments, activity on subscribed pages, badge awards and direct messages (<a href="https://docs.fastcomments.com/guide-notifications.html" target="_blank">docs</a>). In-app notifications are real time over a WebSocket. Reply and mention emails go out every minute for approved comments only.
 
@@ -174,9 +182,9 @@ Import carries moderation state across. OpenWeb `message_status` of `approved` i
 Automated moderation on FastComments is layered rather than a single system like Aida:
 
 - A spam classifier, continuously trained, available as a shared model across all tenants or isolated to your tenant, with a trust factor that relaxes filtering for long-standing or often-pinned users.
-- An optional ChatGPT 4 spam check on Flex billing.
+- An optional LLM spam check on Flex billing (open weight models like GLM-5.3 are available)
 - Image content moderation at low, medium or high sensitivity for uploaded images.
-- A word blacklist of roughly 450 default phrases, editable, that masks matches with asterisks. This is where your OpenWeb restricted words go.
+- A localized word blacklist of roughly 450 default phrases, editable, that masks matches with asterisks. This is where your OpenWeb restricted words go.
 - Flag thresholds that auto-hide a comment after N reports.
 - Repeated and near-duplicate message prevention, always on.
 - AI Agents: event-driven agents with an explicit tool allowlist (mark spam, approve, lock, pin, warn by DM, ban, award badge, reply). Every agent starts in dry run, sensitive tools can be gated behind human approval, and every action is logged with a justification and confidence score.
@@ -203,7 +211,7 @@ All comment data exports from the FastComments dashboard as CSV at any time, wit
 
 For GDPR and CCPA, OpenWeb provides an export and delete API where deleted users' comments remain attached to a random guest account (<a href="https://developers.openweb.com/docs/export-and-delete-user-data" target="_blank">OpenWeb docs</a>). FastComments supports data export and deletion requests, offers a Data Processing Agreement, and runs a separate EU deployment at <a href="https://eu.fastcomments.com" target="_blank">eu.fastcomments.com</a> with data replicated only within EU points of presence. Create your account there if your readers are in Europe. In the EU region, AI agent bans always require human approval to satisfy DSA Article 17.
 
-Comment data in the global deployment is replicated across regions including a Singapore node, and the widget is served from FastComments' own DNS and CDN. The embed script is under 30 KB on disk and about 6 KB compressed on the wire.
+Comment data in the global deployment is replicated across regions including a Singapore node, and the widget is served from FastComments' own DNS and CDN. The embed script is about 35kb compressed on the wire.
 
 ### Mobile SDKs
 
@@ -235,7 +243,7 @@ The FastComments equivalent:
     &lt;/script&gt;
 </div>
 
-Your tenant ID is on the <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">embed code page</a> once you have an account. `data-article-tags` has no equivalent since there is no topic following; hashtags inside comments are a different feature.
+Your tenant ID is on the <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">credentials page</a> once you have an account. `data-article-tags` has no equivalent since there is no topic following; hashtags inside comments are a different feature.
 
 For infinite scroll and single-page apps, OpenWeb's Virtual Pages approach is one container per article. In FastComments you call `FastCommentsUI(element, config)` per thread and later `instance.update(newConfig)` to swap the URL ID or `instance.destroy()` to remove it (<a href="https://docs.fastcomments.com/guide-dynamic-comment-widget.html" target="_blank">docs</a>). The React, Vue, Angular and SolidJS libraries handle this when the config prop changes. Lifecycle callbacks (`onInit`, `onRender`, `commentCountUpdated`, `onReplySuccess`, `onVoteSuccess`, `onAuthenticationChange`, `onCommentSubmitStart`) replace the `spot-im-*` DOM events you were listening for.
 
@@ -279,10 +287,9 @@ Being direct about the gaps:
 - **Community Spotlight.** No CTA card product. `headerHTML` gives you a message above the composer, not an email capture.
 - **Ad revenue.** None. The widget is ad-free by design.
 - **Notification webhook.** Webhooks are on comment events, not per-user notification events.
-- **Threading on import.** The current importer flattens replies to top-level comments on the same page. Tell us if you need the tree rebuilt.
-- **Reactions history.** Article-level reaction counts are not in the comment export and start fresh.
-- **Polls history.** Poll definitions and votes are not in the comment export; the poll's comment text imports, the poll does not.
-- **Login model.** Readers without SSO log in by magic link instead of a password or a social login button.
+- **Reactions history.** Article-level reaction counts are not in the comment export and start fresh. We can sometimes scrape these from your site.
+- **Polls history.** Poll definitions and votes are not in the comment export; the poll's comment text imports, the poll does not. We can sometimes scrape these from your site.
+- **Login model.** Readers without SSO log in by magic link instead of a password or a social login button by default.
 - **Human moderation staff.** OpenWeb bundles a moderation team with Aida. FastComments provides tooling, classifiers and agents; the humans are yours.
 
 What you gain, in the same spirit: a widget that adds one small script and no ad requests, moderation that one person can run for a large site with bulk actions and agents, SSO that is a signing function rather than a protocol, and a vendor that is not under court supervision.
@@ -293,11 +300,11 @@ Plan one to two weeks for a publisher with one SSO integration and a few hundred
 
 FastComments imports your OpenWeb CSV export for free, helps you run OpenWeb and FastComments in parallel during the cutover, and helps with the migration itself, including threading and user matching questions. Enterprise plans include an SLA, support replies within one hour during business hours, and the option of an Isolated Cloud deployment in your own cloud account (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Flex usage-based pricing is available for sites that want to start without a contract.
 
-Write to <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> with your export size and your SSO setup and we will come back with a plan.
+a href="https://fastcomments.com/contact-us">Write to us</a> with your export size and your SSO setup and we will come back with a plan.
 
 ### In Conclusion
 
-Pull your export today. The rest of the migration is mechanical: the same post IDs become URL IDs, the same usernames claim their comments through SSO, moderation state carries over, and the embed is a straight swap. The places where FastComments differs are listed above so you can decide with the facts in front of you.
+Pull your export today. Remember: the same post IDs become URL IDs, moderation state carries over, and the embed is a straight swap. The places where FastComments differs are listed above so you can decide with the facts in front of you. :)
 
 Cheers!
 
