@@ -17,6 +17,9 @@ const CONTENT_DIR = path.join(__dirname, 'content');
 const TEMPLATE_DIR = path.join(__dirname, 'templates');
 const STATIC_GENERATED_DIR = path.join(__dirname, 'static/generated');
 const STATIC_DIR = path.join(__dirname, 'static');
+// Fast dev mode (see watch-dev-fast.js): ONLY_POST=<en .md file name> renders just that
+// post's English page. Listings, translations, the sitemap, RSS and stale cleanup are skipped.
+const ONLY_POST = process.env.ONLY_POST ? path.basename(process.env.ONLY_POST) : null;
 
 // Register Handlebars helpers
 handlebars.registerHelper('toLowerCase', function(str) {
@@ -262,6 +265,7 @@ var categoryCounts = {};
 
 // Process each locale
 for (const locale of Object.keys(locales)) {
+	if (ONLY_POST && locale !== defaultLocale) continue;
 	postsByLocale[locale] = [];
 
 	// Check if locale directory exists
@@ -294,7 +298,7 @@ for (const locale of Object.keys(locales)) {
 
 	// Only process if the directory exists and has .md files
 	if (fs.existsSync(contentDirToUse)) {
-		const items = fs.readdirSync(contentDirToUse).filter(item => item.endsWith('.md'));
+		const items = fs.readdirSync(contentDirToUse).filter(item => item.endsWith('.md') && (!ONLY_POST || item === ONLY_POST));
 
 		items.forEach(function(item) {
 			const post = processPost(item, locale, contentDirToUse);
@@ -461,6 +465,10 @@ function buildSitemapAlternates(baseFileName) {
 // language selector, and sitemap alternates never point at a locale variant that
 // does not exist (e.g. a post not yet translated into every locale).
 const generatedUrls = new Set();
+if (ONLY_POST) {
+	// Only one post is built, so take the other pages (translations etc) from the last full build.
+	fs.readdirSync(STATIC_GENERATED_DIR).filter(f => f.endsWith('.html')).forEach(f => generatedUrls.add(f));
+}
 for (const gLocale of Object.keys(locales)) {
 	const gPosts = postsByLocale[gLocale] || [];
 	if (gPosts.length === 0) continue;
@@ -482,6 +490,31 @@ for (const gLocale of Object.keys(locales)) {
 	gPosts.forEach(function (post) {
 		generatedUrls.add(post.urlIdRaw);
 	});
+}
+
+function renderPostPage(post, locale) {
+	return getCompiledTemplate('post.html', {
+		post: post,
+		footerYears: footerYears,
+		isPost: true,
+		canonicalUrl: BASE_URL + '/' + post.urlIdRaw,
+		locale: locale,
+		lang: locales[locale].hreflang,
+		alternateLocales: buildAlternateLocales(post.urlIdRaw, locale),
+		availableLocales: buildAvailableLocales(post.urlIdRaw, locale),
+		t: translations[locale] || translations[defaultLocale]
+	});
+}
+
+if (ONLY_POST) {
+	const post = posts[0];
+	if (!post) {
+		console.error(`ONLY_POST: ${ONLY_POST} not found in ${path.join(CONTENT_DIR, defaultLocale)}`);
+		process.exit(1);
+	}
+	fs.writeFileSync(path.join(STATIC_GENERATED_DIR, post.urlIdRaw), renderPostPage(post, defaultLocale), 'utf8');
+	console.log(`Built ${post.urlIdRaw} in ${Date.now() - startTime}ms`);
+	process.exit(0);
 }
 
 const sitemapEntries = [];
@@ -641,22 +674,7 @@ for (const locale of Object.keys(locales)) {
 
 	// Generate post pages
 	localePosts.forEach(function(post) {
-		const postLocaleData = {
-			locale: locale,
-			lang: locales[locale].hreflang,
-			alternateLocales: buildAlternateLocales(post.urlIdRaw, locale),
-			availableLocales: buildAvailableLocales(post.urlIdRaw, locale),
-			t: translations[locale] || translations[defaultLocale]
-		};
-
-		const canonicalUrl = BASE_URL + '/' + post.urlIdRaw;
-		const html = getCompiledTemplate('post.html', {
-			post: post,
-			footerYears: footerYears,
-			isPost: true,
-			canonicalUrl,
-			...postLocaleData
-		});
+		const html = renderPostPage(post, locale);
 
 		// Only add to RSS feed from default locale
 		if (locale === defaultLocale) {
