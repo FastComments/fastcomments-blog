@@ -5,134 +5,142 @@
 # [postlink]OpenWeb'ten FastComments'a 2026'da Nasıl Geçiş Yapılır[/postlink]
 
 {{#unless isPost}}
-A feature-by-feature guide for publishers moving off OpenWeb (formerly Spot.IM): what maps 1:1, what is different, how the CSV import works, how the SSO handshake changes, and a step-by-step cutover plan.
+OpenWeb'ten (eski adı Spot.IM) ayrılan yayıncılar için özellik bazlı bir rehber: 1:1 eşleşenler, farklı olanlar, CSV içe aktarma nasıl çalışır, SSO el sıkışması nasıl değişir ve adım adım bir geçiş planı.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> This Article Contains Technical Jargon
+### <i class="circle">!</i> Bu Makale Teknik Jargon İçerir
 
-This guide is for product and engineering leads and community managers who run OpenWeb today and need a plan to move. It goes through each OpenWeb surface, names the FastComments equivalent, and says plainly where there is no 1:1 match.
+Bu rehber, bugün OpenWeb'i yöneten ürün ve mühendislik liderleri ve topluluk yöneticileri için bir geçiş planına ihtiyaç duyanlar içindir. Her OpenWeb yüzeyini inceler, FastComments eşdeğerini adlandırır ve 1:1 eşleşmenin olmadığı yerleri açıkça söyler.
 
-### Why Now
+### Neden Şimdi
 
-On September 30, 2026 the Tel Aviv District Court ordered the appointment of a temporary receiver over OpenWeb at the request of its lender, Mars Growth Capital, which holds a first-priority lien over the company's assets and accounts and is moving to enforce it against OpenWeb's Israeli assets, bank accounts and intellectual property (<a href="https://www.calcalistech.com/ctechnews/article/aaji32ku3" target="_blank">Calcalist, Sept 30</a>). A temporary trustee, Adv. Ehud Gindes, was appointed the following day (<a href="https://www.calcalistech.com/ctechnews/article/rmmk2cphu" target="_blank">Calcalist, Oct 4</a>). Earlier in 2026 Microsoft, one of OpenWeb's largest customers, ended its engagement and withheld payments over a traffic dispute that OpenWeb rejects (<a href="https://www.calcalistech.com/ctechnews/article/s1kfnxo5mx" target="_blank">Calcalist, Sept 28</a>).
+30 Eylül 2026'da Tel Aviv Bölge Mahkemesi, alacaklısı Mars Growth Capital'ın talebi üzerine OpenWeb üzerinde geçici bir alacaklı atamasını emretti; bu alacaklı şirketin varlıkları ve hesapları üzerinde birinci öncelikli bir rehin tutuyor ve OpenWeb'in İsrail varlıkları, banka hesapları ve fikri mülkiyeti üzerinde bunu uygulamaya çalışıyor (<a href="https://www.calcalistech.com/ctechnews/article/aaji32ku3" target="_blank">Calcalist, Sept 30</a>). Ertesi gün geçici bir mütevelli, Adv. Ehud Gindes, atandı (<a href="https://www.calcalistech.com/ctechnews/article/rmmk2cphu" target="_blank">Calcalist, Oct 4</a>). 2026'nın başlarında Microsoft, OpenWeb'in en büyük müşterilerinden biri, bir trafik anlaşmazlığı nedeniyle katılımını sonlandırdı ve ödemeleri tuttu (<a href="https://www.calcalistech.com/ctechnews/article/s1kfnxo5mx" target="_blank">Calcalist, Sept 28</a>).
 
-OpenWeb says the platform continues to operate. Court supervision, a lender enforcing liens on the IP your comment widget depends on, and a trustee whose job is to preserve asset value are not conditions a publisher wants under a core engagement surface. If you have not already pulled a full data export, do that first, today, before anything else in this guide.
+OpenWeb platformunun çalışmaya devam ettiğini söylüyor. Mahkeme denetimi, yorum widget'ınızın dayandığı bir IP üzerindeki bir alacaklının rehin uygulaması ve varlık değerini korum korumakla görevli bir mütevelli, bir yayıncı için temel etkileşim yüzeyi olarak istenmeyen koşullardır. Henüz tam bir veri dışa aktarımı yapmadıysanız, önce bunu bugün, bu rehberdeki başka bir şeye başlamadan yapın.
 
-### What You Need Before You Start
+### Başlamadan Önce Gerekenler
 
 Collect these before touching any code:
 
-- **Your OpenWeb comment export.** OpenWeb exposes an Export API (v4) that produces zipped CSV files, at most 100,000 comments per file, with date-range windows of up to one month and download links that expire after a week (<a href="https://developers.openweb.com/docs/export-comments-v4" target="_blank">OpenWeb docs</a>). Request every window you need and keep the files somewhere safe. If your OpenWeb contact has provided an Admin Panel CSV export in the past, keep that too. The FastComments importer reads the OpenWeb CSV with columns such as `id`, `post_id`, `parent_comment_id`, `user_name`, `user_display_name`, `content`, `written_at`, `message_status`, `likes_count`, `dislikes_count`, `reports_count` and `url`.
-- **Your Spot ID and the list of post IDs.** Every `data-post-id` you pass to the launcher becomes a FastComments URL ID. If your post IDs are CMS article IDs, note how they are generated so you can emit the same values on the FastComments side.
-- **Your SSO user list.** Specifically the `primary_key` and `user_name` values you registered with OpenWeb. Comment authorship is matched on username during import, so you want to pass the same usernames in the FastComments SSO payload.
-- **Your moderator list and roles.** Admin, moderator and journalist accounts, and which sections each moderates.
-- **Your moderation configuration.** Site-wide policy (approve all, publish and moderate, require approval), per-article overrides, restricted word list, muted and banned users.
-- **Custom CSS and theme settings.** Export anything you have in the Admin Panel so you can rebuild it in the FastComments widget customization page.
-- **Where the launcher lives in your templates**, including any pages that run Reactions, Topic Tracker, Spotlight, the Notification Bell or a Standalone Ad without a Conversation.
+- **OpenWeb yorum dışa aktarımınız.** OpenWeb, bir Export API (v4) sunar ve sıkıştırılmış CSV dosyaları üretir, dosya başına en fazla 100.000 yorum, bir ayı geçmeyen tarih aralıkları ve bir hafta sonra süresi dolan indirme bağlantıları (<a href="https://developers.openweb.com/docs/export-comments-v4" target="_blank">OpenWeb docs</a>). İhtiyacınız olan her pencereyi isteyin ve dosyaları güvenli bir yerde saklayın. OpenWeb temasınız geçmişte bir Admin Panel CSV dışa aktarımı sağladıysa, onu da saklayın. FastComments içe aktarıcı, `id`, `post_id`, `parent_comment_id`, `user_name`, `user_display_name`, `content`, `written_at`, `message_status`, `likes_count`, `dislikes_count`, `reports_count` ve `url` gibi sütunları olan OpenWeb CSV'sini okur.
+- **Spot ID'niz ve gönderi ID'lerinin listesi.** Gönderdiğiniz her `data-post-id` başlatıcıda bir FastComments URL ID'si olur. Gönderi ID'leriniz CMS makale ID'leri ise, aynı değerleri FastComments tarafında da üretebilmek için nasıl üretildiklerini not edin.
+- **SSO kullanıcı listeniz.** Özellikle OpenWeb ile kaydettiğiniz `primary_key` ve `user_name` değerleri. Yorum yazarları içe aktarma sırasında kullanıcı adıyla eşleşir, bu yüzden FastComments SSO yükünde aynı kullanıcı adlarını göndermek istersiniz.
+- **Moderatör listeniz ve rolleri.** Admin, moderatör ve gazeteci hesapları ve her birinin moderasyon yaptığı bölümler.
+- **Moderatör yapılandırmanız.** Site genelinde politika (tümünü onayla, yayınla ve denetle, onay gerektir), makale bazlı geçersiz kılmalar, kısıtlı kelime listesi, sessize alınan ve yasaklanan kullanıcılar.
+- **Özel CSS ve tema ayarları.** Admin Panel'de dışa aktardığınız her şeyi FastComments widget özelleştirme sayfasında yeniden oluşturmak için alın.
+- **Başlatıcının şablonlarınızda bulunduğu yer**, Reactions, Topic Tracker, Spotlight, Notification Bell veya Conversation olmadan bir Standalone Ad içeren sayfalar dahil.
 
-### How OpenWeb Post IDs Map to FastComments URL IDs
+### AI Destekli Geçiş
 
-FastComments ties a comment thread to a `urlId`. By default the URL ID is the cleaned page URL, but you can set it to any string, and that is exactly what the OpenWeb importer does: it reads the `post_id` column and uses it as the FastComments URL ID for every comment on that article. It also stores the `url` column as the display URL so moderation links and notification emails point at the right page.
+FastComments, geçişi hızlandırmak için bir [LLM Kit ve MCP server](https://docs.fastcomments.com/guide-llm-kit.html) sağlar.
 
-So the rule for your templates is: wherever you passed `data-post-id="POST_ID"` and `data-post-url="ARTICLE_URL"` to OpenWeb, pass `urlId: 'POST_ID'` and `url: 'ARTICLE_URL'` to FastComments. Imported threads line up with live threads with no redirects and no URL rewriting. See <a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#url-id" target="_blank">the URL ID docs</a>.
+### OpenWeb'in Gönderi ID'leri FastComments URL ID'lerine Nasıl Eşlenir
 
-If you prefer to key threads by URL going forward instead of by post ID, import first and then use the Migrate Comments tool under Manage Data to move threads from the post ID to the URL in bulk.
+FastComments, bir yorum dizisini bir `urlId`'ye bağlar. Varsayılan olarak URL ID, temizlenmiş sayfa URL'sidir, ancak istediğiniz herhangi bir dizeye ayarlayabilirsiniz ve OpenWeb içe aktarıcı tam olarak bunu yapar: `post_id` sütununu okur ve o makaledeki her yorum için FastComments URL ID'si olarak kullanır. Ayrıca `url` sütununu görüntü URL'si olarak saklar, böylece moderasyon bağlantıları ve bildirim e-postaları doğru sayfaya yönlendirilir.
 
-### The Feature Map
+Dolayısıyla şablonlarınız için kural şudur: OpenWeb'e `data-post-id="POST_ID"` ve `data-post-url="ARTICLE_URL"` gönderdiğiniz her yerde, FastComments'e `urlId: 'POST_ID'` ve `url: 'ARTICLE_URL'` gönderin. İçeri aktarılan diziler, yönlendirme ve URL yeniden yazma olmadan canlı dizilerle eşleşir. <a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#url-id" target="_blank">URL ID belgelerine</a> bakın.
 
-| OpenWeb | FastComments | Notlar |
+İleride dizileri URL ile değil gönderi ID'si ile anahtarlamayı tercih ederseniz, önce içe aktarın ve ardından Manage Data altında bulunan Migrate Comments aracını kullanarak dizileri toplu olarak gönderi ID'sinden URL'ye taşıyın.
+
+### Özellik Haritası
+
+<div class="pretty-table wide-table">
+
+| OpenWeb | FastComments | Notes |
 | --- | --- | --- |
-| Conversation with real-time updates | Comment widget with live commenting | Live by default. New comments collapse behind a "Show N New Comments" button, or appear instantly with `showLiveRightAway`. |
-| Likes and dislikes on comments | Up and down votes | Import preserves `likes_count` and `dislikes_count`. Heart style and "disable voting" are config options. |
-| Reactions (article-level icons) | Page Reacts | Configurable icon set on the page, remembered per user. |
-| Replies and threading | Threaded replies, unlimited depth | `maxReplyDepth` caps nesting. See the import note on threads below. |
-| Sorting: best, newest, oldest | Most Relevant, Newest First, Oldest First | `defaultSortDirection` sets the default per site or per URL pattern. |
-| User profiles | User profiles | Avatar, bio, badges, karma, activity, DMs. Works for SSO users. |
-| Author Badge | `displayLabel`, `isAdmin`, `isModerator`, badges | Set in the SSO payload. No backend lookup call needed. |
-| Pinned Live Blog updates, highlighted comments | Pin and Unpin on any comment | Moderators pin from the widget or dashboard. An AI agent template pins top-voted comments. |
-| In Conversation Polls | Polls on comments | 2 to 10 options, close dates, privacy modes, creator restrictions. |
-| Ask Me Anything formats | No dedicated product | Run as a thread with the author's SSO user labeled and the question pinned. |
-| Live Blog | No 1:1 equivalent | Live Chat widget and chat-mode comments exist. Editorial live blogging stays in your CMS. |
-| Topic Tracker (follow topics and authors) | Page subscriptions | Users follow a page, not a topic or author. No cross-article follow. |
-| Notification Bell | Notification bell in the widget | Replies, mentions, thread activity, votes, subscriptions, badges, DMs. |
-| Email notifications | Email notifications with templates | Per-user opt-in via SSO flags. Custom templates, branded sender. |
-| SSO handshake (codeA/codeB) | Secure SSO (HMAC-SHA256 payload) | No register-user call. Sign a payload server-side, pass it to the widget. |
-| Third-party SSO (Auth0, Gigya, Piano) | Secure SSO after your provider authenticates | Same payload. Your backend signs it once the user is logged in. |
-| Identity (OpenWeb registration screens) | Magic-link login, Simple SSO | Readers log in with an email link. No passwords. |
-| Moderation policy per article | Customization rules per URL ID pattern | Approval mode, spam filter and more vary by `*/section/*` patterns. |
-| Aida AI moderation | Spam classifiers, ChatGPT 4 option, image moderation, AI Agents | Agents start in dry run and can require human approval. |
-| Restricted words | Word blacklist | ~450 default phrases, editable. |
-| User muting | Block User | Per-reader block from the comment menu. |
-| Bans | Bans | Permanent, timed, shadow, IP-hashed, plus-alias aware. |
-| Moderation Panel | Moderate Comments dashboard | Filters, bulk actions with undo, moderation groups, digest emails with one-click approve. |
-| Notification Webhook | Webhooks | Comment created, updated, deleted. No per-user notification webhook. |
-| Engagement dashboard | Analytics | Live users online, top pages, page loads, comments, votes, accounts by day. No ad revenue reporting. |
-| In-conversation ads, Standalone Ad | None | FastComments runs no ads. You keep your own ad stack around the widget. |
-| Social Reviews (star ratings) | Ratings and Reviews | Separate product on the same account. |
-| Popular in the Community | Recent Discussions and Top Pages widgets | Recirculation driven by comment activity. |
-| Comment Counter | Comment count widgets | Single and bulk. |
-| Export Comments API | CSV export, API, webhooks | Export from the dashboard any time. |
-| Export and Delete User Data (GDPR/CCPA) | Account and data deletion, EU region | eu.fastcomments.com keeps data in the EU. DPA available. |
-| Android, iOS, React Native SDKs | Android, iOS, React Native SDKs | Native UI, SSO, live updates, threading, moderation actions. |
-| Launcher, Virtual Pages, React SDK | Embed script, `fcConfigs`, React, Vue, Angular, SolidJS libraries | `update()` and `destroy()` for SPAs. |
+| Gerçek zamanlı güncellemelerle Konuşma | Canlı yorumlama ile Yorum widget'ı | Varsayılan olarak canlı. Yeni yorumlar "Show N New Comments" düğmesinin arkasına gizlenir veya `showLiveRightAway` ile anında görünür. |
+| Yorumlarda beğeniler ve beğenilmeme | Yukarı ve aşağı oylar | İçe aktarma `likes_count` ve `dislikes_count` değerlerini korur. Kalp stili ve "oylamayı devre dışı bırak" yapılandırma seçenekleridir. |
+| Reaksiyonlar (makalevel simgeler) | Sayfa Reaksiyonları | Sayfada yapılandırılabilir simge seti, kullanıcı başına hatırlanır. |
+| Yanıtlar ve diziler | Dizili yanıtlar, sınırsız derinlik | `maxReplyDepth` iç içe geçmeyi sınırlar. |
+| Sıralama: en iyi, en yeni, en eski | En İlgili, En Yeni Önce, En Eski Önce | `defaultSortDirection` site bazında veya URL deseni bazında varsayılanı ayarlar. |
+| Kullanıcı profilleri | Kullanıcı profilleri | Avatar, biyografi, rozetler, karma, etkinlik, DM'ler. SSO kullanıcıları için çalışır. |
+| Yazar Rozeti | `displayLabel`, `isAdmin`, `isModerator`, rozetler | SSO yükünde ayarlanır. Backend sorgulama çağrısına gerek yok. |
+| Sabitlemiş Canlı Blog güncellemeleri, vurgulanan yorumlar | Herhangi bir yorumu Sabitle ve Sabitlemeyi Kaldır | Moderatörler widget'tan veya kontrol panelinden sabitleyebilir. Bir AI Agents şablonu en çok oy alan üst düzey bir yorumu sabitler. |
+| Konuşma İçindeki Anketler | Yorumlarda Anketler | 2 ila 10 seçenek, isteğe bağlı kapanış tarihleri, sonuç gizliliği (anonim, sadece adminler, herkes) ve "sonuçları görmek için oy ver" modu. Anketi kimlerin oluşturabileceğini (devre dışı, adminler ve moderatörler, herkes) ve anonim okuyucuların oy verip veremeyeceğini seçersiniz. Anketler ayrıca CMS'nizden oluşturmak için genel API'de sunulur. |
+| Ask Me Anything formatları | Ayrı bir ürün yok | Yazarın SSO kullanıcısı bir `displayLabel` taşır, giriş yorumunu sabitlersiniz, okuyucular üst düzey yorumlarda sorar, konuk dizede yanıt verir ve bahsetme ve yanıt bildirimleri insanları geri çeker. `noNewRootComments` pencere kapandıktan sonra sadece yanıtların devam etmesi için ayarlayın. |
+| Canlı Blog | 1:1 eşdeğer yok | Canlı Sohbet widget'ı ve sohbet modu yorumları mevcuttur. Editöryel canlı blog tutma CMS'nizde kalır. |
+| Konu İzleyici (konuları ve yazarları takip et) | Sayfa abonelikleri | Kullanıcılar bir sayfayı takip eder, konu veya yazar değil. Makaleler arası takip yok. |
+| Bildirim Zili | Widget'ta bildirim zili | Yanıtlar, bahsedenler, dize etkinliği, oylar, abonelikler, rozet ödülleri ve doğrudan mesajlar. |
+| E-posta bildirimleri | Şablonlu e-posta bildirimleri | Kullanıcı başına SSO bayraklarıyla opt-in. Özel şablonlar, markalı gönderici. |
+| SSO el sıkışması (codeA/codeB) | Güvenli SSO (HMAC-SHA256 yükü) | Kayıt kullanıcı çağrısı yok. Sunucu tarafında bir yük imzalanır, widget'a gönderilir. |
+| Üçüncü taraf SSO (Auth0, Gigya, Piano) | Sağlayıcınız kimlik doğruladıktan sonra Güvenli SSO | Aynı yük. Backend, kullanıcı oturum açtığında imzalar. |
+| Kimlik (OpenWeb kayıt ekranları) | Sihirli bağlantı girişi, Basit SSO | Okuyucular e-posta bağlantısıyla giriş yapar. Şifre yok. |
+| Makale bazlı moderasyon politikası | URL ID deseni başına özelleştirme kuralları | Onay modu, spam filtresi ve daha fazlası `*/section/*` desenlerine göre değişir. |
+| Aida AI moderasyonu | Spam sınıflandırıcıları, LLM tabanlı filtreler, görüntü moderasyonu, AI Ajanları | Ajanlar deneme modunda başlar ve insan onayı gerektirebilir. |
+| Kısıtlanmış kelimeler | Yerelleştirilmiş kelime kara listesi | ~450 varsayılan ifade, düzenlenebilir. |
+| Kullanıcı sessize alma | Kullanıcıyı Engelle | Yorum menüsünden okuyucu başına engelleme. |
+| Yasaklamalar | Yasaklamalar | Kalıcı, zamanlı, gölge, IP-şifreli, plus-alias aware. |
+| Moderatör Paneli | Yorumları Moderasyon panosu | Filtreler, geri alma ile toplu eylemler, moderasyon grupları, bir tık onaylı özet e-postalar. |
+| Bildirim Webhook'u | Webhooks | Yorum oluşturuldu, güncellendi, silindi. Kullanıcı başına bildirim webhook'u yok. |
+| Etkileşim panosu | Analitik | Canlı kullanıcılar, en popüler sayfalar, sayfa yüklemeleri, yorumlar, oylar, günlük hesaplar. Reklam geliri raporlaması yok. |
+| Konuşma içi reklamlar, Bağımsız Reklam | Yok | FastComments reklam çalıştırmaz. Widget etrafındaki kendi reklam yığınıınızı tutarsınız. |
+| Sosyal İncelemeler (yıldız puanları) | Puanlar ve İncelemeler | Aynı hesapta ayrı bir ürün. |
+| Toplulukta Popüler | Son Tartışmalar ve En İyi Sayfalar widget'ları | Yorum etkinliğiyle yönlendirilen yeniden dolaşım. |
+| Yorum Sayacı | Yorum sayısı widget'ları | Tek ve toplu. |
+| Yorumları Dışa Aktarma API | CSV dışa aktarım, API, webhooks | Kontrol panelinden istediğiniz zaman dışa aktarım. |
+| Kullanıcı Verilerini Dışa Aktarma ve Silme (GDPR/CCPA) | Hesap ve veri silme, AB bölgesi | eu.fastcomments.com verileri AB içinde tutar. DPA mevcut. |
+| Android, iOS, React Native SDK'ları | Android, iOS, React Native SDK'ları | Yerel UI, SSO, canlı güncellemeler, dizileme, moderasyon eyle. |
+| Başlatıcı, Sanal Sayfalar, React SDK | Gömme betiği, `fcConfigs`, React, Vue, Angular, SolidJS kütüphaneleri | SPA'lar için `update()` ve `destroy()`. |
 
-The rest of this section goes through each group in detail.
+</div>
 
-### Conversation, Votes and Reactions
+Bu bölümün geri kalanı her grubu ayrıntılı olarak inceler.
 
-OpenWeb's Conversation is a real-time thread. The FastComments comment widget is too: comments, edits, deletions, votes and moderation actions are pushed to everyone viewing the thread (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#disable-live-commenting" target="_blank">docs</a>). By default new comments from other people appear behind a "Show 2 New Comments" button so the page does not jump under the reader. For live events set `showLiveRightAway` so they render immediately, and `newCommentsToBottom` if you want them to flow downward like a chat.
+### Konuşma, Oylar ve Reaksiyonlar
 
-Likes and dislikes become up and down votes. The importer keeps both counts per comment. If your community is used to a single like, switch the vote style to hearts in the widget customization page. Voting can also be turned off entirely.
+OpenWeb'in Konuşması gerçek zamanlı bir dizedir. FastComments yorum widget'ı da öyle: yorumlar, düzenlemeler, silmeler, oylar ve moderasyon eylemleri dizeyi izleyen herkese gönderilir (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#disable-live-commenting" target="_blank">docs</a>). Varsayılan olarak diğer kişilerden gelen yeni yorumlar "Show 2 New Comments" düğmesinin arkasına gizlenir, böylece sayfa okuyucu altında atlamaz. Canlı etkinlikler için `showLiveRightAway` ayarlayın, böylece anında render edilir, ve `newCommentsToBottom` ayarlarsanız yorumlar aşağı doğru akış gibi akar.
 
-OpenWeb Reactions is a separate widget with two to four labeled icons on the article (<a href="https://developers.openweb.com/docs/reactions" target="_blank">OpenWeb docs</a>). The FastComments equivalent is Page Reacts: a configurable set of reaction images attached to the comment widget, remembered per page and per user (<a href="https://docs.fastcomments.com/guide-page-reacts.html" target="_blank">docs</a>). Reaction counts are not part of the OpenWeb comment export, so they start from zero.
+Beğeniler ve beğenilmeme, yukarı ve aşağı oylar haline gelir. İçeri aktarıcı her yorum için her iki sayacı da korur. Topluluğunuz tek bir beğeniye alışkınsa, widget özelleştirme sayfasında oy stilini kalplere değiştirin. Oylama tamamen kapatılabilir.
 
-Sorting maps directly. OpenWeb's `data-sort-by` values best, newest and oldest correspond to Most Relevant, Newest First and Oldest First. Set the default with `defaultSortDirection` (`MR`, `NF`, `OF`) in code or in a customization rule. Readers can switch in the widget.
+OpenWeb Reaksiyonları, makalede iki ila dört etiketli simge içeren ayrı bir widget'tır (<a href="https://developers.openweb.com/docs/reactions" target="_blank">OpenWeb docs</a>). FastComments eşdeğeri Page Reacts'tur: yorum widget'ına eklenen, sayfa ve kullanıcı başına hatırlanan yapılandırılabilir bir reaksiyon görseli seti (<a href="https://docs.fastcomments.com/guide-page-reacts.html" target="_blank">docs</a>). Reaksiyon sayıları OpenWeb yorum dışa aktarımının bir parçası değildir, bu yüzden sıfırdan başlar.
 
-`data-read-only="true"` becomes `readonly: true`, which blocks new comments, votes, edits and deletes. `data-post-staleness-days` has no direct equivalent, but a customization rule can apply `readonly` to a URL ID pattern, and you can also flip it from your templates based on article age. `data-messages-count` is the page size, set in the widget customization page anywhere from 10 to 200 comments.
+Sıralama doğrudan eşlenir. OpenWeb'in `data-sort-by` değerleri best, newest ve oldest, FastComments'ta Most Relevant, Newest First ve Oldest First karşılık gelir. Varsayılanı kodda veya bir özelleştirme kuralında `defaultSortDirection` (`MR`, `NF`, `OF`) ile ayarlayın. Okuyucular widget içinde değiştirebilir.
 
-### Replies and Threading
+`data-read-only="true"` `readonly: true` olur, bu da yeni yorumları, oyları, düzenlemeleri ve silmeleri engeller. `data-post-staleness-days` için doğrudan bir eşdeğer yok, ancak bir özelleştirme kuralı URL ID desenine `readonly` uygulayabilir ve şablonlarınızdan makale yaşına göre de değiştirebilirsiniz. `data-messages-count` sayfa boyutudur, widget özelleştirme sayfasında 10 ile 200 yorum arasında ayarlanabilir.
 
-FastComments supports unlimited nesting by default; `maxReplyDepth` limits it (`1` gives a flat two-level structure). The OpenWeb CSV includes `parent_id` and `parent_comment_id` columns. The current importer imports every row as a top-level comment on its page, in date order, with author, timestamp, votes, flag count and approval state intact. It does not rebuild the parent-child tree. If your threads are reply-heavy, tell us when you send the export and we will handle threading as part of the import rather than leaving you with a flattened thread.
+### Yanıtlar ve Dizileme
 
-### User Profiles and Badges
+FastComments varsayılan olarak sınırsız iç içe geçmeyi destekler; `maxReplyDepth` bunu sınırlar (`1` düz iki seviyeli bir yapı verir). OpenWeb CSV'si `parent_id` ve `parent_comment_id` sütunlarını içerir. İçeri aktarıcı `parent_comment_id`'yi okur ve yanıt ağacığı tam derinlikte yeniden oluşturur, böylece bir yanıtın yanıtı doğrudan ebeveyni altında kalır, yazar, zaman damgası, oylar, işaret sayısı ve onay durumu korunur. Yanıtlar, dosyada ebeveynlerinden önce görünseler bile, ya da ebeveyn daha önceki bir dışa aktarım penceresinden içe aktarılmış olsa bile bağlanır. Her dışa aktarımda ebeveyni eksik olan bir yanıt üst düzey yorum olur. OpenWeb mesaj ID'si her yorumda saklanır, böylece eski bir düz içe aktarma yeniden içe aktarıldığında aynı yerde dizileri oluşturur.
 
-FastComments users, including SSO users, get a profile with avatar, display name, bio, social links, badges, karma, comment count, a public activity feed, and direct messages (<a href="https://docs.fastcomments.com/guide-user-profiles.html" target="_blank">docs</a>). Each of the activity, profile comments and DM surfaces can be disabled per user in the SSO payload or globally in configuration.
+### Kullanıcı Profilleri ve Rozetler
 
-OpenWeb's Author Badge requires you to call `GET /sso/v1/user/{primary_key}` for the author and place the returned ID in `data-author-id`. In FastComments you set `displayLabel: 'Author'` (or any label up to 100 characters) in the user's SSO payload, and `isAdmin` or `isModerator` for staff. The label renders next to their name on every comment. For a richer system, configure badges under Customize, Badges: image or text badges, awarded automatically on thresholds (comment count, upvotes, pinned comments, veteran status, reply speed) or manually, and assignable from the SSO payload with `badgeConfig` (<a href="https://docs.fastcomments.com/guide-badges.html" target="_blank">docs</a>).
+FastComments kullanıcıları, SSO kullanıcıları dahil, avatar, görünen ad, biyografi, sosyal bağlantılar, rozetler, karma, yorum sayısı, herkese açık bir etkinlik akışı ve doğrudan mesajlar içeren bir profil alır (<a href="https://docs.fastcomments.com/guide-user-profiles.html" target="_blank">docs</a>). Etkinlik, profil yorumları ve DM yüzeylerinin her biri SSO yükünde kullanıcı başına veya genel yapılandırmada devre dışı bırakılabilir.
 
-### Pinned Comments, Polls and Q&A
+OpenWeb'in Yazar Rozeti, yazar için `GET /sso/v1/user/{primary_key}` çağrısı yapmanızı ve dönen ID'yi `data-author-id` içine yerleştirmenizi gerektirir. FastComments'ta, kullanıcının SSO yükünde `displayLabel: 'Author'` (veya 100 karaktere kadar herhangi bir etiket) ve personel için `isAdmin` veya `isModerator` ayarlarsınız. Etiket, her yorumda adlarının yanında gösterilir. Daha zengin bir sistem için, Customize altında Badges bölümünde rozetleri yapılandırın: görüntü veya metin rozetleri, eşiklerde (yorum sayısı, oylar, sabitlenmiş yorumlar, veteran durumu, yanıt hızı) otomatik olarak verilir veya manuel olarak, ve SSO yükünden `badgeConfig` ile atanabilir (<a href="https://docs.fastcomments.com/guide-badges.html" target="_blank">docs</a>).
 
-Any moderator can Pin or Unpin a comment from the comment menu in the widget or from the moderation dashboard. Pinned comments are pushed live to everyone on the thread. If you want this automated, the AI Agents feature ships a Top Comment Pinner template that pins a top-level comment once it crosses a vote threshold (<a href="https://docs.fastcomments.com/guide-ai-agents.html" target="_blank">docs</a>).
+### Sabitlenmiş Yorumlar, Anketler ve Soru-Cevap
 
-OpenWeb's In Conversation Polls let staff attach a 2 to 4 option poll to a top-level comment. FastComments polls also attach to a comment, with 2 to 10 options, an optional close date, result privacy (anonymous, admins only, everyone), and a "vote to see results" mode. You choose who can create polls (disabled, admins and moderators, everyone) and whether anonymous readers can vote. Polls are also exposed in the public API for creating them from your CMS.
+Herhangi bir moderatör, widget'taki yorum menüsünden veya moderasyon kontrol panelinden bir yorumu Sabitleyebilir veya Sabitlemeyi Kaldırabilir. Sabitlenmiş yorumlar dizedeki herkese canlı olarak gönderilir. Bunu otomatikleştirmek isterseniz, AI Agents özelliği bir Top Comment Pinner şablonu sunar; bu şablon oy eşiğini aşan üst düzey bir yorumu sabitler (<a href="https://docs.fastcomments.com/guide-ai-agents.html" target="_blank">docs</a>).
 
-OpenWeb has run Ask Me Anything formats on its platform. FastComments has no separate Q&A product. The practical replacement is a normal thread on a dedicated URL ID: the guest's SSO user carries a `displayLabel`, you pin the intro comment, readers ask in top-level comments, the guest replies in-thread, and mention and reply notifications pull people back. Set `noNewRootComments` after the window closes so only replies continue.
+OpenWeb'in Konuşma İçindeki Anketleri, personelin üst düzey bir yoruma 2 ila 4 seçenekli anket eklemesine izin verir. FastComments anketleri de bir yoruma eklenir, 2 ila 10 seçenek, isteğe bağlı kapanış tarihi, sonuç gizliliği (anonim, sadece adminler, herkes) ve "sonuçları görmek için oy ver" modu. Anketi kimlerin oluşturabileceğini (devre dışı, adminler ve moderatörler, herkes) ve anonim okuyucuların oy verip veremeyeceğini seçersiniz. Anketler ayrıca CMS'nizden oluşturmak için genel API'de sunulur.
 
-Community Spotlight (OpenWeb's email collector, counter and redirect cards) has no equivalent. The widget supports custom header HTML above the comment input via `headerHTML`, which covers a call to action but not an email capture form.
+OpenWeb, platformunda Ask Me Anything formatları yürütmüştür. FastComments ayrı bir Soru-Cevap ürünü sunmaz. Pratik bir çözüm, özel bir URL ID üzerinde normal bir dizedir: konukun SSO kullanıcısı bir `displayLabel` taşır, giriş yorumunu sabitlersiniz, okuyucular üst düzey yorumlarda sorar, konuk dizede yanıt verir ve bahsetme ve yanıt bildirimleri insanları geri çeker. `noNewRootComments` pencere kapandıktan sonra sadece yanıtların devam etmesi için ayarlayın.
 
-### Live Blog
+Community Spotlight (OpenWeb'in e-posta toplayıcı, sayaç ve yönlendirme kartları) eşdeğeri yok. Widget, `headerHTML` aracılığıyla yorum girişinin üstünde özel bir başlık HTML'sini destekler; bu bir eylem çağrısı verir ancak e-posta yakalama formu değildir.
 
-There is no FastComments Live Blog. OpenWeb's Live Blog is an editorial product: reporters assigned in the Admin Panel post updates with embedded links, tweets and video, and readers follow along (<a href="https://developers.openweb.com/docs/live-blog" target="_blank">OpenWeb docs</a>).
+### Canlı Blog
 
-What FastComments offers for live coverage is the reader side: a Live Chat widget (`embed-live-chat.min.js`) for streaming chat, and the comment widget in chat mode (`showLiveRightAway` plus `newCommentsToBottom`) alongside your live coverage. For the editorial updates themselves, publishers moving off OpenWeb keep them in their CMS or a dedicated live blog tool and embed FastComments below for discussion. Media embeds (YouTube, SoundCloud and others) are supported inside comments, so staff updates posted as comments do carry rich media.
+FastComments'ta Canlı Blog yoktur. OpenWeb'in Canlı Blogu editöryel bir üründür: Admin Panel'de atanan muhaberciler gömülü linkler, tweet'ler ve video ile güncellemeler gönderir ve okuyucular takip eder (<a href="https://developers.openweb.com/docs/live-blog" target="_blank">OpenWeb docs</a>).
 
-### Topic Tracker, Notifications and Email
+FastComments'ın canlı kapsama sunduğu şey okuyucu tarafıdır: akış sohbeti için bir Live Chat widget'ı (`embed-live-chat.min.js`) ve sohbet modunda yorum widget'ı (`showLiveRightAway` ve `newCommentsToBottom`) canlı kapsamanızın yanında. Editöryel güncellemeler için, OpenWeb'ten ayrılan yayıncılar bunları CMS'lerinde veya özel bir canlı blog aracında tutar ve FastComments'ı altına gömer. Medya gömmeleri (YouTube, SoundCloud ve diğerleri) yorumların içinde desteklenir, böylece personel güncellemeleri yorum olarak gönderildiğinde zengin medya taşır.
 
-OpenWeb's Topic Tracker lets a reader follow topics and authors drawn from page metadata and get notified when new articles match (<a href="https://developers.openweb.com/docs/topic-tracker" target="_blank">OpenWeb docs</a>). FastComments has no topic or author follow across articles. Readers subscribe to a page from the notification bell and receive updates for that thread, with the frequency chosen per subscription: every minute, hourly digest or daily digest. If cross-article following matters to your retention numbers, this is a feature you lose.
+### Konu İzleyici, Bildirimler ve E-posta
 
-Everything else in the Notification Bell maps. The widget has a bell that turns red with the unread count and lists: replies to you, replies in a thread you commented in, mentions, upvotes on your comments, activity on subscribed pages, badge awards and direct messages (<a href="https://docs.fastcomments.com/guide-notifications.html" target="_blank">docs</a>). In-app notifications are real time over a WebSocket. Reply and mention emails go out every minute for approved comments only.
+OpenWeb'in Konu İzleyicisi, okuyucunun sayfa meta verilerinden alınan konuları ve yazarları takip etmesini ve yeni makaleler eşleştiğinde bildirim almasını sağlar (<a href="https://developers.openweb.com/docs/topic-tracker" target="_blank">OpenWeb docs</a>). FastComments, makaleler arasında konu veya yazar takibi sunmaz. Okuyucular bildirim zilinden bir sayfaya abone olur ve o dize için güncellemeler alır; sıklık aboneliğe göre seçilir: her dakika, saatlik özet veya günlük özet. Makale çapraz takibi tutma oranlarınız için önemliyse, bu özelliğin yol haritasında olduğunu bize bildirin.
 
-For SSO users, pass `optedInNotifications` and `optedInSubscriptionNotifications` in the payload and FastComments updates their preferences on the next page load. Emails need an email address in the payload. Email templates are editable per type and per locale under Customize, Email Templates, and sending from your own domain with DKIM is supported. Moderators and admins get a daily, weekly or monthly digest with one-click approve, respond and spam links.
+Bildirim Zili'ndeki diğer tüm öğeler eşleşir. Widget, okunmamış sayısı kırmızıya dönen bir zil ve şu listeleri gösterir: size gelen yanıtlar, yorum yaptığınız dizedeki yanıtlar, bahsedenler, yorumlarınıza gelen oylar, abone olunan sayfalardaki etkinlik, rozet ödülleri ve doğrudan mesajlar (<a href="https://docs.fastcomments.com/guide-notifications.html" target="_blank">docs</a>). Uygulama içi bildirimler WebSocket üzerinden gerçek zamanlıdır. Yanıt ve bahsetme e-postaları sadece onaylı yorumlar için her dakika gönderilir.
 
-OpenWeb's Notification Webhook posts per-user notification events (`replied-message`, `liked-message`, `topic-by-keyword` and so on) to your endpoint. FastComments webhooks cover the comment resource: created, updated and removed, with as many subscribing endpoints as you want (<a href="https://docs.fastcomments.com/guide-webhooks.html" target="_blank">docs</a>). If you were using the notification webhook to feed your own email system, you will rebuild that logic on comment events, or let FastComments send the emails.
+SSO kullanıcıları için, yükte `optedInNotifications` ve `optedInSubscriptionNotifications` gönderin; FastComments bir sonraki sayfa yüklemesinde tercihlerini günceller. E-postalar için yükte bir e-posta adresi gerekir. E-posta şablonları, Customize altında Email Templates bölümünde tip ve bölge bazında düzenlenebilir ve DKIM ile kendi alan adınızdan gönderim desteklenir. Moderatörler ve adminler, tek tık onay, yanıt ve spam bağlantıları içeren günlük, haftalık veya aylık bir özet alır.
 
-### SSO: From codeA/codeB to a Signed Payload
+OpenWeb'in Bildirim Webhook'u, kullanıcı başına bildirim olaylarını (`replied-message`, `liked-message`, `topic-by-keyword` vb.) uç noktanıza gönderir. FastComments webhooks yorum kaynakları üzerine odaklanır: oluşturuldu, güncellendi ve silindi, istediğiniz kadar abone uç nokta ile (<a href="https://docs.fastcomments.com/guide-webhooks.html" target="_blank">docs</a>). Bildirim webhook'unu kendi e-posta sisteminizi beslemek için kullanıyorsanız, bu mantığı yorum olayları üzerine yeniden oluşturacaksınız veya FastComments'un e-postaları göndermesine izin vereceksiniz.
 
-OpenWeb's handshake has six steps: wait for `spot-im-api-ready`, OpenWeb mints `codeA`, your client sends it to your backend, your backend confirms the user and calls `GET https://www.spot.im/api/sso/v1/register-user?code_a=...&access_token=...&primary_key=...&user_name=...`, OpenWeb returns `codeB`, and your client hands `codeB` back to OpenWeb (<a href="https://developers.openweb.com/docs/single-sign-on" target="_blank">OpenWeb docs</a>). Logout calls `window.SPOTIM.logout()`.
+### SSO: codeA/codeB'den İmzalı Yük'e
 
-FastComments Secure SSO has no round trip and no new endpoint on your side. When you render the page for a logged-in user, your backend serializes the user, Base64-encodes it, and signs it with HMAC-SHA256 using your API secret. The widget sends the payload with its requests and FastComments verifies the signature (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso-secure" target="_blank">docs</a>). In Node:
+OpenWeb'in el sıkışması altı adımdan oluşur: `spot-im-api-ready` bekleyin, OpenWeb `codeA` üretir, istemciniz bunu backend'inize gönderir, backend kullanıcıyı doğrular ve `GET https://www.spot.im/api/sso/v1/register-user?code_a=...&access_token=...&primary_key=...&user_name=...` çağrısını yapar, OpenWeb `codeB` döner ve istemciniz `codeB`'yi OpenWeb'e geri verir (<a href="https://developers.openweb.com/docs/single-sign-on" target="_blank">OpenWeb docs</a>). Çıkış `window.SPOTIM.logout()` çağrısı yapar.
+
+FastComments Güvenli SSO, bir dönüş yoluna ve tarafınızda yeni bir uç noktaya ihtiyaç duymaz. Oturum açmış bir kullanıcı için sayfayı render ettiğinizde, backend kullanıcıyı serileştirir, Base64 kodlar ve API gizlinizle HMAC-SHA256 ile imzalar. Widget, istekleriyle birlikte yükü gönderir ve FastComments imzayı doğrular (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso-secure" target="_blank">docs</a>). Node'da:
 
 <div class="code">    const crypto = require('crypto');
     const user = {
@@ -155,63 +163,63 @@ FastComments Secure SSO has no round trip and no new endpoint on your side. When
     //        loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout' }
 </div>
 
-The timestamp is epoch milliseconds and is rejected if it is more than two days old. For a logged-out reader, omit the three signed fields and pass only `loginURL` (or a `loginCallback` function) and the widget shows a login prompt instead of a composer. Full working examples in Node, Java and PHP are in the <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">code examples repository</a>.
+Zaman damgası epoch milisaniyesidir ve iki günden daha eskiyse reddedilir. Çıkış yapmış bir okuyucu için üç imzalı alanı atlayın ve sadece `loginURL` (veya bir `loginCallback` fonksiyonu) gönderin; widget bir kompozitör yerine giriş istemi gösterir. Node, Java ve PHP'de tam çalışan örnekler <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">kod örnekleri deposunda</a> bulunur.
 
-Users are created on first page load. You do not bulk-register anyone. Because the OpenWeb importer matches comment authors by `user_name`, a user whose SSO payload carries the same `username` claims their imported comments the first time they load a thread and can edit or delete them from then on. There is also an SSO user API if you want to pre-create users.
+Kullanıcılar ilk sayfa yüklemesinde oluşturulur. Kimseyi toplu olarak kaydetmezsiniz. OpenWeb içe aktarıcı yorum yazarlarını `user_name` ile eşleştirdiği için, SSO yükünde aynı `username` taşıyan bir kullanıcı, bir dizeyi ilk kez yüklediğinde içe aktarılan yorumlarını talep eder ve o zamandan itibaren düzenleyebilir veya silebilir. Önceden kullanıcı oluşturmak isterseniz bir SSO kullanıcı API'si de vardır.
 
-Each time the payload is sent, FastComments updates the user record from it, so a changed display name or avatar on your side propagates on the next page view. Set a field to `null` to clear it.
+Yük her gönderildiğinde, FastComments kullanıcı kaydını ondan günceller; böylece tarafınızdaki değişen görünen ad veya avatar bir sonraki sayfa görüntülemesinde yayılır. Bir alanı temizlemek için `null` olarak ayarlayın.
 
-If you used OpenWeb's third-party SSO with Auth0, Gigya or Piano via `window.SPOTIM.startSSOForProvider`, the FastComments flow is the same as above: once your provider has authenticated the user, your backend builds and signs the payload. There is no provider-specific integration to configure on the FastComments side.
+OpenWeb'in Auth0, Gigya veya Piano ile `window.SPOTIM.startSSOForProvider` üzerinden üçüncü taraf SSO'sunu kullandıysanız, FastComments akışı yukarıdakiyle aynıdır: sağlayıcınız kullanıcıyı kimlik doğruladıktan sonra backend yükü oluşturur ve imzalar. FastComments tarafında sağlayıcıya özgü bir entegrasyon yapılandırması yoktur.
 
-Two other options exist. Simple SSO passes the user object unsigned from the client, for platforms without a backend, and marks activity as verified when an email is present (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso-simple" target="_blank">docs</a>). SAML 2.0 signs your staff into the FastComments dashboard itself through Okta, Azure AD or ADFS, with role mapping, and is available on enterprise plans (<a href="https://docs.fastcomments.com/guide-saml.html" target="_blank">docs</a>).
+İki başka seçenek vardır. Simple SSO, backend'i olmayan platformlar için kullanıcı nesnesini imzasız olarak istemciden geçirir ve e-posta mevcut olduğunda etkinliği doğrulanmış olarak işaretler (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso-simple" target="_blank">docs</a>). SAML 2.0, Okta, Azure AD veya ADFS üzerinden FastComments kontrol paneline rol eşlemesiyle giriş yapar ve kurumsal planlarda mevcuttur (<a href="https://docs.fastcomments.com/guide-saml.html" target="_blank">docs</a>).
 
-### Moderation
+### Moderasyon
 
-OpenWeb's per-article Moderation Policy API has four values: `spot_policy`, `approve_all`, `publish_and_moderate` and `require_approval`. FastComments configures the same behaviors in Moderation Settings: automatic approval on or off, approval required only for a user's first comment, and auto-approve only verified (logged-in or SSO) comments. Rules apply site-wide or to a URL ID pattern such as `*/politics/*`, which is how you reproduce per-section policy. Every comment, approved or not, lands in the Moderate Comments dashboard, so the publish-then-review model is the default view there (<a href="https://docs.fastcomments.com/guide-moderation.html" target="_blank">docs</a>).
+OpenWeb'in makale bazlı Moderasyon Politikası API'si dört değer içerir: `spot_policy`, `approve_all`, `publish_and_moderate` ve `require_approval`. FastComments, Moderasyon Ayarları'nda aynı davranışları yapılandırır: otomatik onay açık veya kapalı, onay yalnızca bir kullanıcının ilk yorumunda gerekir ve yalnızca doğrulanmış (oturum açmış veya SSO) yorumlar otomatik onaylanır. Kurallar site genelinde veya `*/politics/*` gibi bir URL ID deseni için uygulanır; bu, bölüm bazlı politikayı yeniden üretmenin yoludur. Her yorum, onaylı olsun ya da olmasın, Moderate Comments kontrol paneline düşer, bu yüzden yayınla-sonra-gözden geçir modeli orada varsayılan görünümdür (<a href="https://docs.fastcomments.com/guide-moderation.html" target="_blank">docs</a>).
 
-Import carries moderation state across. OpenWeb `message_status` of `approved` imports as approved and reviewed; `rejected` imports as spam and reviewed; anything else imports unapproved and unreviewed so it appears in your moderation queue. `reports_count` becomes the comment's flag count.
+İçe aktarma moderasyon durumunu taşır. OpenWeb `message_status` `approved` ise onaylı ve incelenmiş olarak içe aktarılır; `rejected` ise spam ve incelenmiş; diğerleri onaysız ve incelenmemiş olarak içe aktarılır ve moderasyon kuyruğunuzda görünür. `reports_count` yorumun işaret sayısı olur.
 
-Automated moderation on FastComments is layered rather than a single system like Aida:
+FastComments'ta otomatik moderasyon, Aida gibi tek bir sistem yerine katmanlıdır:
 
-- A spam classifier, continuously trained, available as a shared model across all tenants or isolated to your tenant, with a trust factor that relaxes filtering for long-standing or often-pinned users.
-- An optional ChatGPT 4 spam check on Flex billing.
-- Image content moderation at low, medium or high sensitivity for uploaded images.
-- A word blacklist of roughly 450 default phrases, editable, that masks matches with asterisks. This is where your OpenWeb restricted words go.
-- Flag thresholds that auto-hide a comment after N reports.
-- Repeated and near-duplicate message prevention, always on.
-- AI Agents: event-driven agents with an explicit tool allowlist (mark spam, approve, lock, pin, warn by DM, ban, award badge, reply). Every agent starts in dry run, sensitive tools can be gated behind human approval, and every action is logged with a justification and confidence score.
+- Sürekli eğitilen bir spam sınıflandırıcı, tüm kiracılar arasında paylaşılan bir model ya da kiracınıza özel, uzun süredir aktif veya sık sabitlenen kullanıcılar için filtrelemeyi gevşeten bir güven faktörü.
+- Flex faturalandırmasında isteğe bağlı bir LLM spam kontrolü (GLM-5.3 gibi açık ağırlıklı modeller mevcuttur).
+- Yüklenen görseller için düşük, orta veya yüksek hassasiyette görüntü içerik moderasyonu.
+- Yaklaşık 450 varsayılan ifadeyi içeren, düzenlenebilir, eşleşmeleri yıldızlarla gizleyen yerelleştirilmiş bir kelime kara listesi. OpenWeb kısıtlı kelimeleriniz burada yer alır.
+- N rapor sonrası bir yorumu otomatik gizleyen işaret eşik değerleri.
+- Tekrarlanan ve neredeyse aynı mesajların önlenmesi, her zaman açık.
+- AI Ajanları: belirli bir araç izin listesine sahip olay odaklı ajanlar (spam işaretle, onayla, kilitle, sabitle, DM ile uyar, yasakla, rozet ver, yanıtla). Her ajan deneme modunda başlar, hassas araçlar insan onayı onaylayabilir ve her eylem gerekçe ve güven puanı ile kaydedilir.
 
-OpenWeb's User Muting API lets one SSO reader mute another. The FastComments equivalent is Block User in the comment menu, available to any logged-in reader. Bans are a moderator action: permanent or for a set duration, optionally a shadow ban (the user sees their comment post but nobody else does), optionally by hashed IP, with plus-aliases of an email treated as one address. The banned users list is searchable by email, name, moderator and the comment that triggered the ban.
+OpenWeb'in Kullanıcı Sessize Alma API'si bir SSO okuyucunun diğerini sessize almasını sağlar. FastComments eşdeğeri, yorum menüsünde Block User'dır ve oturum açmış herhangi bir okuyucu tarafından kullanılabilir. Yasaklamalar moderatör eylemidir: kalıcı veya belirli bir süreli, isteğe bağlı gölge yasak (kullanıcı yorumunu görür ancak başkaları görmez), isteğe bağlı olarak şifreli IP, e-posta bir adres olarak ele alındığında artı takma adlarla. Yasaklı kullanıcı listesi e-posta, ad, moderatör ve yasaklamaya neden olan yorumla aranabilir.
 
-The Moderate Comments dashboard supports filters (needing review, needing approval, spam, flagged, from banned users) and text search, bulk actions with undo and pause, "select all matching" for very large queues, moderation groups so your sports desk only sees sports threads, per-comment logs that show why an email did or did not go out, and shareable filtered links. Moderators have the dashboard only; they cannot change settings or import data.
+Moderate Comments kontrol paneli, filtreleri (inceleme gerektiren, onay gerektiren, spam, işaretli, yasaklı kullanıcılardan) ve metin aramayı, geri alma ve duraklatma ile toplu eylemleri, çok büyük kuyruklar için "tüm eşleşenleri seç" özelliğini, moderasyon gruplarını (örneğin spor ekibiniz sadece spor dizilerini görür) ve her yorumun neden e-posta gönderildiğini veya gönderilmediğini gösteren günlükleri ve paylaşılabilir filtreli bağlantıları destekler. Moderatörler sadece kontrol paneline sahiptir; ayarları değiştiremez veya veri içe aktaramaz.
 
-### Analytics
+### Analitik
 
-FastComments Analytics shows users online right now across your sites and per page, top pages by comments or by live readers, and per-day series for page loads, comments, votes and accounts created (<a href="https://docs.fastcomments.com/guide-analytics.html" target="_blank">docs</a>). Moderator statistics are separate. Counts are near real time, delayed by at most a minute, and every page load is counted rather than sampled.
+FastComments Analitik, siteleriniz ve sayfa bazında şu anda çevrimiçi kullanıcıları, en popüler sayfaları yorum veya canlı okuyucu sayısına göre ve sayfa yüklemeleri, yorumlar, oylar ve oluşturulan hesaplar için günlük serileri gösterir (<a href="https://docs.fastcomments.com/guide-analytics.html" target="_blank">docs</a>). Moderatör istatistikleri ayrı. Sayımlar gerçek zamanlıya yakındır, en fazla bir dakikalık gecikme vardır ve her sayfa yüklemesi örneklenmek yerine sayılır.
 
-What you will not find is anything about ad fill, CPM or revenue, because there are no ads. If OpenWeb's dashboard was your source for engagement-to-revenue reporting, that reporting moves to your own ad stack.
+Reklam doldurma, CPM veya gelirle ilgili hiçbir şey bulamazsınız, çünkü reklam yok. OpenWeb'in kontrol paneli etkileşim-gelir raporlaması için kaynağınız ise, bu raporlama kendi reklam yığınıza geçer.
 
-### Monetization
+### Paraya Çevirme
 
-OpenWeb places ads inside and around the Conversation and offers a Standalone Ad unit, with campaigns set up through your OpenWeb contact (<a href="https://developers.openweb.com/docs/standalone-ad" target="_blank">OpenWeb docs</a>). FastComments does not run ads in the widget, does not run a revenue share, and does not load third-party ad or tracking scripts. The widget is an iframe you place; the ad slots above and below it are yours and run through whatever you already use.
+OpenWeb, Conversation içinde ve çevresinde reklamlar yerleştirir ve Standalone Ad birimi sunar; kampanyalar OpenWeb temasınız aracılığıyla ayarlanır (<a href="https://developers.openweb.com/docs/standalone-ad" target="_blank">OpenWeb docs</a>). FastComments widget içinde reklam çalıştırmaz, gelir paylaşımı yapmaz ve üçüncü taraf reklam veya izleme betikleri yüklemez. Widget, yerleştirdiğiniz bir iframe'dir; onun üstündeki ve altındaki reklam alanları sizin olup zaten kullandığınız sistemle çalışır.
 
-The trade-off is explicit: you lose whatever OpenWeb paid you, and you gain a fixed, predictable cost and a widget that does not add ad requests to your page. Branding is removed on Flex and Pro plans, and white labeling is available on Pro and Enterprise.
+Takas açık: OpenWeb'in size ödediği her şeyi kaybedersiniz ve sabit, öngörülebilir bir maliyet ve sayfanıza reklam isteği eklemeyen bir widget kazanırsınız. Flex ve Pro planlarda marka kaldırılır, ve Pro ve Enterprise planlarda beyaz etiketleme mevcuttur.
 
-### Data Export and Privacy
+### Veri Dışa Aktarma ve Gizlilik
 
-All comment data exports from the FastComments dashboard as CSV at any time, with dates in UTC ISO format, and the same data is available over the API. Webhooks cover ongoing sync. Import files are deleted from FastComments as soon as the import completes.
+FastComments kontrol panelinden tüm yorum veri dışa aktarımları CSV olarak istediğiniz zaman, tarihleri UTC ISO formatında ve aynı veriler API üzerinden de mevcuttur. Webhooks sürekli senkronizasyonu kapsar. İçe aktarma dosyaları, içe aktarma tamamlanır tamamlanır FastComments'tan silinir.
 
-For GDPR and CCPA, OpenWeb provides an export and delete API where deleted users' comments remain attached to a random guest account (<a href="https://developers.openweb.com/docs/export-and-delete-user-data" target="_blank">OpenWeb docs</a>). FastComments supports data export and deletion requests, offers a Data Processing Agreement, and runs a separate EU deployment at <a href="https://eu.fastcomments.com" target="_blank">eu.fastcomments.com</a> with data replicated only within EU points of presence. Create your account there if your readers are in Europe. In the EU region, AI agent bans always require human approval to satisfy DSA Article 17.
+GDPR ve CCPA için OpenWeb, silinen kullanıcıların yorumlarını rastgele bir misafir hesabına ekli tutan bir dışa aktarma ve silme API'si sağlar (<a href="https://developers.openweb.com/docs/export-and-delete-user-data" target="_blank">OpenWeb docs</a>). FastComments veri dışa aktarma ve silme isteklerini destekler, bir Veri İşleme Anlaşması sunar ve <a href="https://eu.fastcomments.com" target="_blank">eu.fastcomments.com</a> adresinde yalnızca AB içinde veri çoğaltılan ayrı bir AB dağıtımı çalıştırır. Okuyucularınız Avrupa'da ise orada hesabınızı oluşturun. AB bölgesinde, AI ajan yasaklamaları DSA Madde 17'yi karşılamak için her zaman insan onayı gerektirir.
 
-Comment data in the global deployment is replicated across regions including a Singapore node, and the widget is served from FastComments' own DNS and CDN. The embed script is under 30 KB on disk and about 6 KB compressed on the wire.
+Küresel dağıtımdaki yorum verileri Singapur düğümü dahil olmak üzere bölgeler arasında çoğaltılır ve widget FastComments'un kendi DNS ve CDN'sinden sunulur. Gömme betiç yaklaşık 35kb sıkıştırılmıştır.
 
-### Mobile SDKs
+### Mobil SDK'lar
 
-OpenWeb ships Android, iOS and React Native SDKs with Conversation, Articles, Authentication, Notifications, Reactions and In Conversation Polls. FastComments ships native <a href="https://docs.fastcomments.com/guide-lib-android.html" target="_blank">Android</a>, <a href="https://docs.fastcomments.com/guide-lib-ios.html" target="_blank">iOS</a> and <a href="https://docs.fastcomments.com/guide-lib-react-native-sdk.html" target="_blank">React Native</a> libraries with threaded comments, live updates over WebSocket, Secure SSO, voting, mentions, image uploads, moderation actions (flag, pin, lock, block), theming, a live chat mode and a social feed component. EU region is a configuration flag. There is no separate ad SDK because there are no ads.
+OpenWeb, Conversation, Articles, Authentication, Notifications, Reactions ve In Conversation Polls ile Android, iOS ve React Native SDK'ları sunar. FastComments, yerel <a href="https://docs.fastcomments.com/guide-lib-android.html" target="_blank">Android</a>, <a href="https://docs.fastcomments.com/guide-lib-ios.html" target="_blank">iOS</a> ve <a href="https://docs.fastcomments.com/guide-lib-react-native-sdk.html" target="_blank">React Native</a> kütüphaneleriyle dizili yorumlar, WebSocket üzerinden canlı güncellemeler, Güvenli SSO, oy verme, bahsetme, görsel yükleme, moderasyon eylemleri (işaret, sabitle, kilitle, engelle), tema, canlı sohbet modu ve sosyal akış bileşeni sunar. AB bölgesi bir yapılandırma bayrağıdır. Reklam olmadığı için ayrı bir reklam SDK'sı yoktur.
 
-### Embed and SPA Integration
+### Gömme ve SPA Entegrasyonu
 
-The OpenWeb launcher and container:
+OpenWeb başlatıcı ve konteyner:
 
 <div class="code">    &lt;script async src="https://launcher.spot.im/spot/SPOT_ID" data-spotim-module="spotim-launcher"&gt;&lt;/script&gt;
     &lt;div data-spotim-module="conversation"
@@ -220,7 +228,7 @@ The OpenWeb launcher and container:
          data-article-tags="TOPIC1, TOPIC2"&gt;&lt;/div&gt;
 </div>
 
-The FastComments equivalent:
+FastComments eşdeğeri:
 
 <div class="code">    &lt;script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"&gt;&lt;/script&gt;
     &lt;div id="fastcomments-widget"&gt;&lt;/div&gt;
@@ -235,72 +243,67 @@ The FastComments equivalent:
     &lt;/script&gt;
 </div>
 
-Your tenant ID is on the <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">embed code page</a> once you have an account. `data-article-tags` has no equivalent since there is no topic following; hashtags inside comments are a different feature.
+Kira kimliğiniz, bir hesabınız olduğunda <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">kimlik bilgileri sayfasında</a> bulunur. `data-article-tags` için eşdeğer yoktur çünkü konu takibi yok; yorum içindeki hashtag'ler farklı bir özelliktir.
 
-For infinite scroll and single-page apps, OpenWeb's Virtual Pages approach is one container per article. In FastComments you call `FastCommentsUI(element, config)` per thread and later `instance.update(newConfig)` to swap the URL ID or `instance.destroy()` to remove it (<a href="https://docs.fastcomments.com/guide-dynamic-comment-widget.html" target="_blank">docs</a>). The React, Vue, Angular and SolidJS libraries handle this when the config prop changes. Lifecycle callbacks (`onInit`, `onRender`, `commentCountUpdated`, `onReplySuccess`, `onVoteSuccess`, `onAuthenticationChange`, `onCommentSubmitStart`) replace the `spot-im-*` DOM events you were listening for.
+Sonsuz kaydırma ve tek sayfa uygulamaları için, OpenWeb'in Virtual Pages yaklaşımı makale başına bir konteynerdir. FastComments'ta her dize için `FastCommentsUI(element, config)` çağırırsınız ve daha sonra URL ID'yi değiştirmek için `instance.update(newConfig)` ya da kaldırmak için `instance.destroy()` kullanırsınız (<a href="https://docs.fastcomments.com/guide-dynamic-comment-widget.html" target="_blank">docs</a>). React, Vue, Angular ve SolidJS kütüphaneleri, konfigürasyon özelliği değiştiğinde bunu yönetir. Yaşam döngüsü geri çağrıları (`onInit`, `onRender`, `commentCountUpdated`, `onReplySuccess`, `onVoteSuccess`, `onAuthenticationChange`, `onCommentSubmitStart`) dinlediğiniz `spot-im-*` DOM olaylarını değiştirir.
 
-Comment counts on index pages use the comment count widget, single or bulk. For SEO, comments are rendered directly into the page for search engine crawlers rather than inside the iframe, so there is no SEO API call to configure.
+İndeks sayfalarındaki yorum sayıları, tek veya toplu yorum sayısı widget'ı kullanır. SEO için, yorumlar iframe içinde değil arama motoru tarayıcıları için doğrudan sayfaya render edilir, bu yüzden yapılandırılacak bir SEO API çağrısı yoktur.
 
-### Step-by-Step Cutover
+### Adım Adım Geçiş
 
-**1. Create the account and configure the basics.** Sign up on fastcomments.com or eu.fastcomments.com. Set your moderation settings, word blacklist, vote style, default sort, and custom CSS in the widget customization page. Add moderators and moderation groups. If you have many admin users, support imports them for you.
+**1. Hesabı oluşturun ve temel ayarları yapılandırın.** fastcomments.com veya eu.fastcomments.com'da kaydolun. Moderasyon ayarlarınızı, kelime kara listesini, oy stilini, varsayılan sıralamayı ve widget özelleştirme sayfasında özel CSS'i ayarlayın. Moderatörler ve moderasyon grupları ekleyin. Çok sayıda admin kullanıcınız varsa, içe aktarma onlar için yapılır.
 
-**2. Run a first import.** Go to <a href="https://fastcomments.com/auth/my-account/manage-data/import" target="_blank">Manage Data, Import</a>, choose OpenWeb (.csv) and upload. The import runs as a background job; the page shows row counts and status, and you receive an email when it completes (<a href="https://docs.fastcomments.com/guide-migrations.html" target="_blank">docs</a>). Each OpenWeb message ID becomes the FastComments comment ID, so re-running an import does not create duplicates.
+**2. İlk içe aktarmayı çalıştırın.** <a href="https://fastcomments.com/auth/my-account/manage-data/import" target="_blank">Manage Data, Import</a> sayfasına gidin, OpenWeb (.csv) seçin ve yükleyin. İçe aktarma arka planda çalışır; sayfa satır sayısını ve durumu gösterir ve tamamlandığında bir e-posta alırsınız (<a href="https://docs.fastcomments.com/guide-migrations.html" target="_blank">docs</a>). Her yorum OpenWeb mesaj ID'sini dış kimlik olarak tutar, böylece içe aktarmayı yeniden çalıştırmak mevcut yorumları günceller, yeni kopyalar oluşturmaz.
 
-**3. Verify counts.** Compare the job's row count against your export. Open a few high-traffic URL IDs in the moderation dashboard and spot check authors, dates, vote totals and approval states. Confirm rejected comments show as spam and pending ones sit in the queue.
+**3. Sayıları doğrulayın.** İşin satır sayısını dışa aktarımınızla karşılaştırın. Moderasyon panosunda birkaç yüksek trafikli URL ID'yi açın ve yazarları, tarihleri, oy toplamlarını ve onay durumlarını kontrol edin. Reddedilen yorumların spam olarak, bekleyenlerin kuyrukta olduğunu doğrulayın.
 
-**4. Build the SSO payload.** Implement the signing code above in your backend, using the same `id` and `username` you used with OpenWeb. Test with a staff account on a staging page: the user's imported comments show as theirs, and edit and delete appear in their comment menu.
+**4. SSO yükünü oluşturun.** Yukarıdaki imzalama kodunu backend'inizde uygulayın, OpenWeb'de kullandığınız aynı `id` ve `username` değerlerini kullanın. Bir personel hesabıyla bir sahne sayfasında test edin: kullanıcının içe aktarılan yorumları onun olarak gösterilir ve düzenleme ve silme yorum menüsünde görünür.
 
-**5. Swap the embed on a staging template.** Replace the launcher and container with the FastComments snippet, mapping `data-post-id` to `urlId` and `data-post-url` to `url`. Remove `window.SPOTIM.logout()` and `spot-im-*` listeners, or map them to the callbacks. Apply your CSS in a customization rule rather than in code so it is tested on every FastComments release.
+**5. Staging şablonunda gömme kodunu değiştirin.** Başlatıcı ve konteynerı FastComments snippet'i ekleyerek değiştirin, `data-post-id`'yi `urlId`'ye ve `data-post-url`'yi `url`'ye eşleştirin. `window.SPOTIM.logout()` ve `spot-im-*` dinleyicilerini kaldırın veya geri çağrılara eşleyin. CSS'inizi bir özelleştirme kuralı olarak uygulayın, böylece her FastComments sürümünde test edilir.
 
-**6. Run in parallel.** Put FastComments on a section or a percentage of articles while OpenWeb stays on the rest. Nothing on the OpenWeb side needs to change. Watch the moderation queue and the analytics page. Readers commenting on FastComments pages during this window are not in your OpenWeb export, so plan the final import before they start, not after.
+**6. Paralel çalıştırın.** FastComments'u bir bölümde veya makalelerin bir yüzdesinde kullanın, OpenWeb geri kalanında kalır. OpenWeb tarafında hiçbir şey değiştirmeniz gerekmez. Moderasyon kuyruğunu ve analitik sayfasını izleyin. Bu pencere sırasında FastComments sayfalarında yorum yapan okuyucular OpenWeb dışa aktarımınızda yer almaz, bu yüzden son içe aktarmayı başlamadan önce planlayın, sonrasında değil.
 
-**7. CSP and DNS.** If you run a Content-Security-Policy, allow `cdn.fastcomments.com` and `fastcomments.com` (or `eu.fastcomments.com`) for `script-src`, `frame-src` and `connect-src`, and remove the `spot.im` and `openweb.com` entries once the launcher is gone. Nothing changes on your own DNS. No redirects are needed because the URL IDs match.
+**7. CSP ve DNS.** İçerik Güvenliği Politikası (CSP) kullanıyorsanız, `cdn.fastcomments.com` ve `fastcomments.com` (veya `eu.fastcomments.com`) adreslerini `script-src`, `frame-src` ve `connect-src` için izin verin, ve `spot.im` ve `openweb.com` girdilerini başlatıcı kaldırıldığında kaldırın. DNS'inizde hiçbir şey değişmez. URL ID'ler eşleştiği için yönlendirme gerekmez.
 
-**8. Final import and go live.** Pull one more OpenWeb export covering the parallel-run window, upload it (re-import is safe), then deploy the template change across all pages and remove the launcher, Reactions, Topic Tracker, Spotlight, bell and ad containers.
+**8. Son içe aktarma ve yayına geçiş.** Paralel çalışma penceresini kapsayan bir OpenWeb dışa aktarımını daha bir kez alın, yükleyin (yeniden içe aktarma güvenlidir), ardından şablon değişikliğini tüm sayfalara dağıtın ve başlatıcıyı, Reactions, Topic Tracker, Spotlight, bell ve reklam konteynerlarını kaldırın.
 
-**9. Go-live checklist.**
+**9. Yayına geçiş kontrol listesi.**
 
-- Live commenting visible on a production article from two browsers.
-- SSO login, logout and a comment under a real subscriber account.
-- Moderators receive the digest and can approve from it.
-- Reply and mention emails arrive and link to the correct page.
-- Bans list and word blacklist populated.
-- Page Reacts and comment counts rendering where Reactions and the counter used to be.
-- CSP reports clean.
-- One last comment-count comparison between your export and the dashboard.
+- Canlı yorumlama, iki tarayıcıda bir üretim makalesinde görünür.
+- SSO giriş, çıkış ve gerçek bir abone hesabı altında bir yorum.
+- Moderatörler özeti alır ve onaylayabilir.
+- Yanıt ve bahsetme e-postaları gelir ve doğru sayfaya bağlanır.
+- Yasak listesi ve kelime kara listesi doldurulmuş.
+- Page Reacts ve yorum sayısı, Reactions ve sayaçın olduğu yerde render edilir.
+- CSP raporları temiz.
+- Dışa aktarımınız ve kontrol paneli arasında son bir yorum sayısı karşılaştırması.
 
-### What You Lose and What Is Different
+### Kaybedecekleriniz ve Farklı Olanlar
 
-Being direct about the gaps:
+Boşluklar hakkında doğrudan:
 
-- **Live Blog.** No equivalent. Keep it in your CMS or a live blogging tool and put FastComments under it.
-- **Topic Tracker.** No cross-article topic or author following. Page subscriptions only.
-- **Community Spotlight.** No CTA card product. `headerHTML` gives you a message above the composer, not an email capture.
-- **Ad revenue.** None. The widget is ad-free by design.
-- **Notification webhook.** Webhooks are on comment events, not per-user notification events.
-- **Threading on import.** The current importer flattens replies to top-level comments on the same page. Tell us if you need the tree rebuilt.
-- **Reactions history.** Article-level reaction counts are not in the comment export and start fresh.
-- **Polls history.** Poll definitions and votes are not in the comment export; the poll's comment text imports, the poll does not.
-- **Login model.** Readers without SSO log in by magic link instead of a password or a social login button.
-- **Human moderation staff.** OpenWeb bundles a moderation team with Aida. FastComments provides tooling, classifiers and agents; the humans are yours.
+- **Canlı Blog.** 1:1 eşdeğer yok. CMS'inizde veya bir canlı blog aracında tutun ve FastComments'ı altına yerleştirin.
+- **Konu İzleyici.** Makaleler arası konu veya yazar takibi yok. Sadece sayfa abonelik abonelikler.
+- **Community Spotlight.** CTA kart ürünü yok. `headerHTML` size kompozitörün üstünde bir mesaj verir, e-posta yakalama formu değil.
+- **Reklam geliri.** Yok. Widget tasarım gereği reklamsızdır.
+- **Bildirim webhook'u.** Webhook'lar yorum olayları üzerindedir, kullanıcı başına bildirim olayları değil.
+- **Reaksiyon geçmişi.** Makale düzeyinde reaksiyon sayıları yorum dışa aktarımında yoktur ve sıfırdan başlar. Bazen sitenizden kazıyabiliriz.
+- **Anket geçmişi.** Anket tanımları ve oylar yorum dışa aktarımında yoktur; anketin yorum metni içe aktarılır, anket kendisi değil. Bazen sitenizden kazıyabiliriz.
+- **Giriş modeli.** SSO olmayan okuyucular varsayılan olarak bir şifre veya sosyal giriş düğmesi yerine sihirli bağlantı ile giriş yapar.
+- **İnsan moderasyon ekibi.** OpenWeb, Aida ile bir moderasyon ekibi sunar. FastComments araçlar, sınıflandırıcılar ve ajanlar sağlar; insanlar sizin tarafınızdadır.
 
-What you gain, in the same spirit: a widget that adds one small script and no ad requests, moderation that one person can run for a large site with bulk actions and agents, SSO that is a signing function rather than a protocol, and a vendor that is not under court supervision.
+Aynı ruhla edindiğiniz şey: tek bir küçük betik ekleyen ve reklam isteği olmayan bir widget, büyük bir site için tek bir kişinin toplu eylemler ve ajanlarla yönetebileceği moderasyon, protokol yerine imzalama işlevi olan SSO ve mahkeme denetimi altında olmayan bir satıcı.
 
-### Timeline and the Free Import Offer
+### Zaman Çizelgesi ve Ücretsiz İçeri Aktarma Teklifi
 
-Plan one to two weeks for a publisher with one SSO integration and a few hundred thousand comments: a day or two on the export and first import, a few days on SSO and templates, a parallel-run window, then the final import and switch. The platform already carries this scale: United Cloud runs more than ten portals and millions of comments on FastComments, and itsfoss.com moved an 88,000-comment history from another provider through the same self-service importer.
+Bir SSO entegrasyonu ve birkaç yüz bin yorum olan bir yayıncı için bir ila iki hafta planlayın: dışa aktarım ve ilk içe aktarma için bir iki gün, SSO ve şablonlar için birkaç gün, paralel çalışma penceresi, ardından son içe aktarma ve geçiş. Platform zaten bu ölçeği taşıyor: United Cloud, FastComments'ta ondan fazla portal ve milyonlarca yorum çalıştırıyor, ve itsfoss.com aynı self-service içe aktarıcıyla başka bir sağlayıcıdan 88.000 yorumluk bir geçmişi taşıdı.
 
-FastComments imports your OpenWeb CSV export for free, helps you run OpenWeb and FastComments in parallel during the cutover, and helps with the migration itself, including threading and user matching questions. Enterprise plans include a 99.99% SLA and support replies within one hour during business hours. Flex usage-based pricing is available for sites that want to start without a contract.
+FastComments, OpenWeb CSV dışa aktarımınızı ücretsiz olarak içe aktarır, geçiş sırasında OpenWeb ve FastComments'ı paralel çalıştırmanıza yardımcı olur ve geçişin kendisiyle, dizileme ve kullanıcı eşleştirme sorularıyla ilgili yardımcı olur. Enterprise planları %99.99 SLA ve iş saatlerinde bir saat içinde destek yanıtları içerir. Flex kullanım bazlı fiyatlandırma, sözleşmesiz başlamak isteyen siteler için mevcuttur.
 
-Write to <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> with your export size and your SSO setup and we will come back with a plan.
+<a href="https://fastcomments.com/contact-us">Bize Yazın</a> dışa aktarım boyutunuz ve SSO kurulumunuz ile ve size bir planla geri döneceğiz.
 
-### In Conclusion
+### Sonuç
 
-Pull your export today. The rest of the migration is mechanical: the same post IDs become URL IDs, the same usernames claim their comments through SSO, moderation state carries over, and the embed is a straight swap. The places where FastComments differs are listed above so you can decide with the facts in front of you.
+Dışa aktarımınızı bugün alın. Unutmayın: aynı gönderi ID'leri URL ID'lerine dönüşür, moderasyon durumu taşınır ve gömme doğrudan bir değişimdir. FastComments'ın farklı olduğu yerler yukarıda listelenmiştir, böylece önünüzdeki gerçeklerle karar verebilirsiniz. :)
 
-Cheers!
-
-{{/isPost}}
-
----
+Şerefe!{{/isPost}}

@@ -5,134 +5,141 @@
 # [postlink]Як мігрувати з OpenWeb до FastComments у 2026 році[/postlink]
 
 {{#unless isPost}}
-A feature-by-feature guide for publishers moving off OpenWeb (formerly Spot.IM): what maps 1:1, what is different, how the CSV import works, how the SSO handshake changes, and a step-by-step cutover plan.
+Посібник по функціях для видавців, які переходять з OpenWeb (раніше Spot.IM): що відповідає 1:1, що відрізняється, як працює імпорт CSV, як змінюється процес SSO, та покроковий план переходу.
 {{/unless}}
 
 {{#isPost}}
 
-### <i class="circle">!</i> У цій статті міститься технічний жаргон
+### <i class="circle">!</i> This Article Contains Technical Jargon
 
-Цей посібник призначений для керівників продукту та інженерії, а також менеджерів спільнот, які сьогодні працюють з OpenWeb і потребують плану переходу. Він проходить по кожному елементу OpenWeb, називає еквівалент FastComments і чітко вказує, де немає 1:1 відповідності.
+Ця стаття містить технічний жаргон
 
-### Чому саме зараз
+### Why Now
 
-30 вересня 2026 р. Тель-Авівський районний суд постановив про призначення тимчасового отримувача над OpenWeb за проханням його кредитора, Mars Growth Capital, який має першочергову заставу на активи та рахунки компанії і намагається її виконати щодо ізраїльських активів, банківських рахунків та інтелектуальної власності OpenWeb (<a href="https://www.calcalistech.com/ctechnews/article/aaji32ku3" target="_blank">Calcalist, Sept 30</a>). Наступного дня був призначений тимчасовий довірений, адвокат Ехуд Гіндес (<a href="https://www.calcalistech.com/ctechnews/article/rmmk2cphu" target="_blank">Calcalist, Oct 4</a>). Раніше у 2026 р. Microsoft, один із найбільших клієнтів OpenWeb, завершив співпрацю та утримав платежі через спір щодо трафіку, який OpenWeb відхиляє (<a href="https://www.calcalistech.com/ctechnews/article/s1kfnxo5mx" target="_blank">Calcalist, Sept 28</a>).
+30 вересня 2026 р. Тель‑Авівський окружний суд наказав призначити тимчасового отримувача над OpenWeb за запитом його кредитора, Mars Growth Capital, який має першочергову заставу на активи та рахунки компанії і прагне її виконати щодо ізраїльських активів, банківських рахунків та інтелектуальної власності OpenWeb (<a href="https://www.calcalistech.com/ctechnews/article/aaji32ku3" target="_blank">Calcalist, Sept 30</a>). Тимчасовим довіреним, адв. Ехудом Гіндесом, був призначений наступного дня (<a href="https://www.calcalistech.com/ctechnews/article/rmmk2cphu" target="_blank">Calcalist, Oct 4</a>). Раніше у 2026 р. Microsoft, один із найбільших клієнтів OpenWeb, завершив співпрацю і утримав платежі через спір щодо трафіку, який OpenWeb відхиляє (<a href="https://www.calcalistech.com/ctechnews/article/s1kfnxo5mx" target="_blank">Calcalist, Sept 28</a>).
 
-OpenWeb заявляє, що платформа продовжує працювати. Судовий нагляд, кредитор, який здійснює заставу на IP, від якого залежить ваш віджет коментарів, і довірений, чия задача — зберегти вартість активів, не є умовами, які видавництво хоче мати під час основної взаємодії. Якщо ви ще не завантажили повний експорт даних, зробіть це спочатку, сьогодні, перед будь‑яким іншим кроком у цьому посібнику.
+OpenWeb стверджує, що платформа продовжує працювати. Судовий нагляд, кредитор, що виконує застави на IP, від якого залежить ваш віджет коментарів, і довірець, чия задача — зберегти вартість активів, не є умовами, які ви хочете як видавцю для ключової поверхні взаємодії. Якщо ви ще не завантажили повний експорт даних, зробіть це спочатку, сьогодні, перед будь‑яким іншим кроком у цьому посібнику.
 
-### Що потрібно підготувати перед початком
+### What You Need Before You Start
 
 Зберіть це перед тим, як торкатися коду:
 
-- **Ваш експорт коментарів OpenWeb.** OpenWeb надає Export API (v4), який генерує zip‑файли CSV, максимум 100 000 коментарів у файлі, з вікнами діапазону дат до одного місяця та посиланнями для завантаження, які закінчуються через тиждень (<a href="https://developers.openweb.com/docs/export-comments-v4" target="_blank">OpenWeb docs</a>). Запросіть усі потрібні вікна і збережіть файли в безпечному місці. Якщо ваш контакт в OpenWeb раніше надавав CSV‑експорт через Admin Panel, збережіть і його. FastComments імпортер читає CSV OpenWeb з колонками `id`, `post_id`, `parent_comment_id`, `user_name`, `user_display_name`, `content`, `written_at`, `message_status`, `likes_count`, `dislikes_count`, `reports_count` та `url`.
-- **Ваш Spot ID та список ID статей.** Кожен `data-post-id`, який ви передаєте в лончер, стає FastComments URL ID. Якщо ваші ID статей — це CMS‑ідентифікатори, зафіксуйте, як вони генеруються, щоб можна було передавати ті ж значення у FastComments.
-- **Ваш список користувачів SSO.** Зокрема значення `primary_key` та `user_name`, які ви зареєстрували в OpenWeb. Авторство коментаря співставляється за іменем користувача під час імпорту, тому треба передавати ті ж імена у SSO‑payload FastComments.
-- **Ваш список модераторів та ролі.** Облікові записи адміністраторів, модераторів і журналістів, а також розділи, які вони модерують.
-- **Ваші налаштування модерації.** Політика сайту (автоматичне схвалення, публікація та модерація, вимога схвалення), переваги per‑article, список заборонених слів, вимкнені та заблоковані користувачі.
-- **Користувацькі CSS та налаштування теми.** Експортуйте все, що є в Admin Panel, щоб потім відтворити у FastComments.
-- **Де розташований лончер у ваших шаблонах**, включаючи будь‑які сторінки, що використовують Reactions, Topic Tracker, Spotlight, Notification Bell або Standalone Ad без Conversation.
+- **Your OpenWeb comment export.** OpenWeb надає Export API (v4), який створює zip‑файли CSV, максимум 100 000 коментарів у файлі, з вікнами діапазону дат до одного місяця і посиланнями для завантаження, які закінчуються через тиждень (<a href="https://developers.openweb.com/docs/export-comments-v4" target="_blank">OpenWeb docs</a>). Запросіть усі потрібні вікна і збережіть файли в безпечному місці. Якщо ваш контакт в OpenWeb раніше надавав CSV‑експорт через Admin Panel, збережіть і його. FastComments імпортер читає CSV OpenWeb з колонками, такими як `id`, `post_id`, `parent_comment_id`, `user_name`, `user_display_name`, `content`, `written_at`, `message_status`, `likes_count`, `dislikes_count`, `reports_count` і `url`.
+- **Your Spot ID and the list of post IDs.** Кожен `data-post-id`, який ви передаєте в launcher, стає FastComments URL ID. Якщо ваші post IDs — це CMS‑ідентифікатори статей, зафіксуйте, як вони генеруються, щоб ви могли передавати ті ж значення у FastComments.
+- **Your SSO user list.** Зокрема значення `primary_key` і `user_name`, які ви зареєстрували в OpenWeb. Авторство коментаря співставляється за іменем користувача під час імпорту, тому ви хочете передавати ті ж імена користувачів у payload SSO FastComments.
+- **Your moderator list and roles.** Облікові записи адміністраторів, модераторів і журналістів, і які розділи кожен модерує.
+- **Your moderation configuration.** Політика сайту (approve all, publish and moderate, require approval), переваги per‑article, список заборонених слів, вимкнені та забанені користувачі.
+- **Custom CSS and theme settings.** Експортуйте все, що маєте в Admin Panel, щоб ви могли відтворити це на сторінці налаштувань FastComments widget.
+- **Where the launcher lives in your templates**, включаючи будь‑які сторінки, що запускають Reactions, Topic Tracker, Spotlight, Notification Bell або Standalone Ad без Conversation.
 
-### Як OpenWeb Post IDs відображаються у FastComments URL IDs
+### AI Assisted Migration
 
-FastComments прив’язує гілку коментарів до `urlId`. За замовчуванням URL ID — це очищений URL сторінки, але ви можете задати будь‑який рядок, і саме це робить імпортер OpenWeb: він читає колонку `post_id` і використовує її як FastComments URL ID для кожного коментаря в цій статті. Він також зберігає колонку `url` як відображуваний URL, щоб посилання в модерації та листи‑сповіщення вказували на правильну сторінку.
+FastComments provides an [LLM Kit and MCP server to speed up the migration](https://docs.fastcomments.com/guide-llm-kit.html).
 
-Отже, правило для ваших шаблонів таке: де б ви не передавали `data-post-id="POST_ID"` і `data-post-url="ARTICLE_URL"` в OpenWeb, передайте `urlId: 'POST_ID'` і `url: 'ARTICLE_URL'` у FastComments. Імпортовані гілки збігаються з живими без перенаправлень і без переписування URL. Дивіться <a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#url-id" target="_blank">документацію про URL ID</a>.
+### How OpenWeb Post IDs Map to FastComments URL IDs
 
-Якщо ви хочете надалі прив’язувати гілки за URL замість ID статті, спочатку імпортуйте, а потім використайте інструмент Migrate Comments у Manage Data, щоб масово перемістити гілки з ID статті на URL.
+FastComments прив’язує гілку коментаря до `urlId`. За замовчуванням URL ID — це очищений URL сторінки, але ви можете задати будь‑який рядок, і саме це робить імпортер OpenWeb: він читає колонку `post_id` і використовує її як FastComments URL ID для кожного коментаря в цій статті. Він також зберігає колонку `url` як відображуваний URL, щоб посилання модерації та листи‑сповіщення вказували на правильну сторінку.
 
-### Карта функцій
+Отже, правило для ваших шаблонів таке: де б ви не передавали `data-post-id="POST_ID"` і `data-post-url="ARTICLE_URL"` в OpenWeb, передайте `urlId: 'POST_ID'` і `url: 'ARTICLE_URL'` в FastComments. Імпортовані гілки збігаються з живими гілками без перенаправлень і без переписування URL. Дивіться <a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#url-id" target="_blank">документацію про URL ID</a>.
+
+Якщо ви хочете надалі ключувати гілки за URL замість post ID, спочатку імпортуйте, а потім використайте інструмент Migrate Comments у Manage Data, щоб масово перемістити гілки з post ID на URL.
+
+### The Feature Map
+
+<div class="pretty-table wide-table">
 
 | OpenWeb | FastComments | Примітки |
 | --- | --- | --- |
-| Conversation with real-time updates | Comment widget with live commenting | Live by default. New comments collapse behind a "Show N New Comments" button, or appear instantly with `showLiveRightAway`. |
-| Likes and dislikes on comments | Up and down votes | Import preserves `likes_count` and `dislikes_count`. Heart style and "disable voting" are config options. |
-| Reactions (article-level icons) | Page Reacts | Configurable icon set on the page, remembered per user. |
-| Replies and threading | Threaded replies, unlimited depth | `maxReplyDepth` caps nesting. See the import note on threads below. |
-| Sorting: best, newest, oldest | Most Relevant, Newest First, Oldest First | `defaultSortDirection` sets the default per site or per URL pattern. |
-| User profiles | User profiles | Avatar, bio, badges, karma, activity, DMs. Works for SSO users. |
-| Author Badge | `displayLabel`, `isAdmin`, `isModerator`, badges | Set in the SSO payload. No backend lookup call needed. |
-| Pinned Live Blog updates, highlighted comments | Pin and Unpin on any comment | Moderators pin from the widget or dashboard. An AI agent template pins top-voted comments. |
-| In Conversation Polls | Polls on comments | 2 to 10 options, close dates, privacy modes, creator restrictions. |
-| Ask Me Anything formats | No dedicated product | Run as a thread with the author's SSO user labeled and the question pinned. |
-| Live Blog | No 1:1 equivalent | Live Chat widget and chat-mode comments exist. Editorial live blogging stays in your CMS. |
-| Topic Tracker (follow topics and authors) | Page subscriptions | Users follow a page, not a topic or author. No cross-article follow. |
-| Notification Bell | Notification bell in the widget | Replies, mentions, thread activity, votes, subscriptions, badges, DMs. |
-| Email notifications | Email notifications with templates | Per-user opt-in via SSO flags. Custom templates, branded sender. |
-| SSO handshake (codeA/codeB) | Secure SSO (HMAC-SHA256 payload) | No register-user call. Sign a payload server-side, pass it to the widget. |
-| Third-party SSO (Auth0, Gigya, Piano) | Secure SSO after your provider authenticates | Same payload. Your backend signs it once the user is logged in. |
-| Identity (OpenWeb registration screens) | Magic-link login, Simple SSO | Readers log in with an email link. No passwords. |
-| Moderation policy per article | Customization rules per URL ID pattern | Approval mode, spam filter and more vary by `*/section/*` patterns. |
-| Aida AI moderation | Spam classifiers, ChatGPT 4 option, image moderation, AI Agents | Agents start in dry run and can require human approval. |
-| Restricted words | Word blacklist | ~450 default phrases, editable. |
-| User muting | Block User | Per-reader block from the comment menu. |
-| Bans | Bans | Permanent, timed, shadow, IP-hashed, plus-alias aware. |
-| Moderation Panel | Moderate Comments dashboard | Filters, bulk actions with undo, moderation groups, digest emails with one-click approve. |
-| Notification Webhook | Webhooks | Comment created, updated, deleted. No per-user notification webhook. |
-| Engagement dashboard | Analytics | Live users online, top pages, page loads, comments, votes, accounts by day. No ad revenue reporting. |
-| In-conversation ads, Standalone Ad | None | FastComments runs no ads. You keep your own ad stack around the widget. |
-| Social Reviews (star ratings) | Ratings and Reviews | Separate product on the same account. |
-| Popular in the Community | Recent Discussions and Top Pages widgets | Recirculation driven by comment activity. |
-| Comment Counter | Comment count widgets | Single and bulk. |
-| Export Comments API | CSV export, API, webhooks | Export from the dashboard any time. |
-| Export and Delete User Data (GDPR/CCPA) | Account and data deletion, EU region | eu.fastcomments.com keeps data in the EU. DPA available. |
-| Android, iOS, React Native SDKs | Android, iOS, React Native SDKs | Native UI, SSO, live updates, threading, moderation actions. |
-| Launcher, Virtual Pages, React SDK | Embed script, `fcConfigs`, React, Vue, Angular, SolidJS libraries | `update()` and `destroy()` for SPAs. |
+| Conversation with real-time updates | Comment widget with live commenting | За замовчуванням живе. Нові коментарі згортатимуться за кнопкою "Показати N нових коментарів", або з’являтимуться миттєво за допомогою `showLiveRightAway`. |
+| Likes and dislikes on comments | Up and down votes | Імпорт зберігає `likes_count` та `dislikes_count`. Стиль у вигляді серця та опція "вимкнути голосування" є налаштуваннями. |
+| Reactions (article-level icons) | Page Reacts | Налаштовуваний набір іконок на сторінці, запам’ятовується для кожного користувача. |
+| Replies and threading | Threaded replies, unlimited depth | `maxReplyDepth` обмежує глибину. |
+| Sorting: best, newest, oldest | Most Relevant, Newest First, Oldest First | `defaultSortDirection` встановлює значення за замовчуванням для сайту або шаблону URL. |
+| User profiles | User profiles | Аватар, біо, бейджі, карма, активність, приватні повідомлення. Працює для SSO користувачів. |
+| Author Badge | `displayLabel`, `isAdmin`, `isModerator`, badges | Встановлюється у SSO payload. Не потрібен запит до бекенду. |
+| Pinned Live Blog updates, highlighted comments | Pin and Unpin on any comment | Модератори закріплюють з віджету або панелі. Шаблон AI‑агента закріплює коментарі з найвищим голосуванням. |
+| In Conversation Polls | Polls on comments | Від 2 до 10 варіантів, дати закриття, режим конфіденційності, обмеження для створювача. |
+| Ask Me Anything formats | No dedicated product | Запускається як гілка з SSO користувачем автора, позначеним, і питанням, закріпленим. |
+| Live Blog | No 1:1 equivalent | Існує віджет Live Chat та коментарі в чат‑режимі. Редакційне живе блогу залишається у вашій CMS. |
+| Topic Tracker (follow topics and authors) | Page subscriptions | Користувачі підписуються на сторінку, а не на тему чи автора. Немає підписки між статтями. |
+| Notification Bell | Notification bell in the widget | Відповіді, згадки, активність гілки, голоси, підписки, бейджі, приватні повідомлення. |
+| Email notifications | Email notifications with templates | Опція підписки для кожного користувача через SSO прапорці. Кастомні шаблони, брендований відправник. |
+| SSO handshake (codeA/codeB) | Secure SSO (HMAC‑SHA256 payload) | Не потрібно викликати register‑user. Підписуйте payload на сервері, передайте його у віджет. |
+| Third‑party SSO (Auth0, Gigya, Piano) | Secure SSO after your provider authenticates | Той самий payload. Ваш бекенд підписує його після входу користувача. |
+| Identity (OpenWeb registration screens) | Magic‑link login, Simple SSO | Читачі входять за посиланням у електронній пошті. Без паролів. |
+| Moderation policy per article | Customization rules per URL ID pattern | Режим схвалення, спам‑фільтр та інше змінюються за шаблонами `*/section/*`. |
+| Aida AI moderation | Spam classifiers, LLM based filters, image moderation, AI Agents | Агенти стартують у режимі dry run і можуть вимагати схвалення людини. |
+| Restricted words | Word blacklist customizable by locale | ~450 типових фраз, редагованих. |
+| User muting | Block User | Блокування окремого читача з меню коментаря. |
+| Bans | Bans | Постійне, з таймером, тіньове, за хешованим IP, з урахуванням псевдонімів. |
+| Moderation Panel | Moderate Comments dashboard | Фільтри, масові дії з відміною, групи модерації, дайджести електронною поштою з однокліковим схваленням. |
+| Notification Webhook | Webhooks | Створення, оновлення, видалення коментаря. Немає webhook для сповіщень per user. |
+| Engagement dashboard | Analytics | Онлайн користувачі, топ‑сторінки, завантаження сторінок, коментарі, голоси, акаунти за день. Без звітності про рекламний дохід. |
+| In‑conversation ads, Standalone Ad | None | FastComments не показує рекламу. Ви зберігаєте власний рекламний стек навколо віджету. |
+| Social Reviews (star ratings) | Ratings and Reviews | Окремий продукт в межах того ж акаунту. |
+| Popular in the Community | Recent Discussions and Top Pages widgets | Перенаправлення, кероване активністю коментарів. |
+| Comment Counter | Comment count widgets | Одинарний та масовий. |
+| Export Comments API | CSV export, API, webhooks | Експорт з дашборду в будь‑який час. |
+| Export and Delete User Data (GDPR/CCPA) | Account and data deletion, EU region | eu.fastcomments.com зберігає дані в ЄС. Доступна DPA. |
+| Android, iOS, React Native SDKs | Android, iOS, React Native SDKs | Нативний UI, SSO, живі оновлення, гілкування, дії модерації. |
+| Launcher, Virtual Pages, React SDK | Embed script, `fcConfigs`, React, Vue, Angular, SolidJS libraries | `update()` та `destroy()` для SPA. |
+</div>
 
 The rest of this section goes through each group in detail.
 
 ### Conversation, Votes and Reactions
 
-OpenWeb's Conversation is a real-time thread. The FastComments comment widget is too: comments, edits, deletions, votes and moderation actions are pushed to everyone viewing the thread (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#disable-live-commenting" target="_blank">docs</a>). By default new comments from other people appear behind a "Show 2 New Comments" button so the page does not jump under the reader. For live events set `showLiveRightAway` so they render immediately, and `newCommentsToBottom` if you want them to flow downward like a chat.
+OpenWeb's Conversation — це гілка в реальному часі. Віджет коментарів FastComments теж: коментарі, правки, видалення, голоси та дії модерації поширюються до всіх, хто переглядає гілку (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#disable-live-commenting" target="_blank">docs</a>). За замовчуванням нові коментарі від інших людей з’являються за кнопкою "Показати 2 нових коментаря", щоб сторінка не стрибала під читачем. Для живих подій встановіть `showLiveRightAway`, щоб вони рендерилися миттєво, і `newCommentsToBottom`, якщо ви хочете, щоб вони текли вниз, як у чаті.
 
-Likes and dislikes become up and down votes. The importer keeps both counts per comment. If your community is used to a single like, switch the vote style to hearts in the widget customization page. Voting can also be turned off entirely.
+Likes і dislikes стають голосами "за" і "проти". Імпортер зберігає обидві кількості на кожному коментарі. Якщо ваша спільнота звикла до одного лайка, переключіть стиль голосування на серця у налаштуваннях віджету. Голосування можна також повністю вимкнути.
 
-OpenWeb Reactions is a separate widget with two to four labeled icons on the article (<a href="https://developers.openweb.com/docs/reactions" target="_blank">OpenWeb docs</a>). The FastComments equivalent is Page Reacts: a configurable set of reaction images attached to the comment widget, remembered per page and per user (<a href="https://docs.fastcomments.com/guide-page-reacts.html" target="_blank">docs</a>). Reaction counts are not part of the OpenWeb comment export, so they start from zero.
+OpenWeb Reactions — окремий віджет з двома‑чотирма позначеними іконками на статті (<a href="https://developers.openweb.com/docs/reactions" target="_blank">OpenWeb docs</a>). Еквівалент FastComments — Page Reacts: налаштовуваний набір реакційних зображень, прикріплених до віджету коментаря, запам’ятовується на сторінці та для кожного користувача (<a href="https://docs.fastcomments.com/guide-page-reacts.html" target="_blank">docs</a>). Кількість реакцій не входить до експорту коментарів OpenWeb, тому вони стартують з нуля.
 
-Sorting maps directly. OpenWeb's `data-sort-by` values best, newest and oldest correspond to Most Relevant, Newest First and Oldest First. Set the default with `defaultSortDirection` (`MR`, `NF`, `OF`) in code or in a customization rule. Readers can switch in the widget.
+Сортування мапиться безпосередньо. Значення `data-sort-by` OpenWeb — best, newest і oldest — відповідають Most Relevant, Newest First і Oldest First. Встановіть за замовчуванням за допомогою `defaultSortDirection` (`MR`, `NF`, `OF`) у коді або в правилі кастомізації. Читачі можуть перемикатися у віджеті.
 
-`data-read-only="true"` becomes `readonly: true`, which blocks new comments, votes, edits and deletes. `data-post-staleness-days` has no direct equivalent, but a customization rule can apply `readonly` to a URL ID pattern, and you can also flip it from your templates based on article age. `data-messages-count` is the page size, set in the widget customization page anywhere from 10 to 200 comments.
+`data-read-only="true"` стає `readonly: true`, що блокує нові коментарі, голоси, правки та видалення. `data-post-staleness-days` не має прямого еквіваленту, але правило кастомізації може застосовувати `readonly` до шаблону URL ID, і ви також можете перемикати його у шаблонах залежно від віку статті. `data-messages-count` — це розмір сторінки, задається у налаштуваннях віджету від 10 до 200 коментарів.
 
 ### Replies and Threading
 
-FastComments supports unlimited nesting by default; `maxReplyDepth` limits it (`1` gives a flat two-level structure). The OpenWeb CSV includes `parent_id` and `parent_comment_id` columns. The current importer imports every row as a top-level comment on its page, in date order, with author, timestamp, votes, flag count and approval state intact. It does not rebuild the parent-child tree. If your threads are reply-heavy, tell us when you send the export and we will handle threading as part of the import rather than leaving you with a flattened thread.
+FastComments підтримує необмежену глибину за замовчуванням; `maxReplyDepth` обмежує її (`1` дає плоску двохрівневу структуру). CSV OpenWeb містить колонки `parent_id` і `parent_comment_id`. Імпортер читає `parent_comment_id` і відновлює дерево відповідей у повній глибині, тому відповідь на відповідь залишається під своїм безпосереднім батьком, з автором, міткою часу, голосами, кількістю скарг і станом схвалення без змін. Відповіді зв’язуються навіть коли вони з’являються до їх батька у файлі, або коли батько був імпортований з попереднього вікна експорту. Відповідь, у якої батька немає в жодному експорті, стає коментарем верхнього рівня. Ідентифікатор повідомлення OpenWeb зберігається в кожному коментарі, тому повторний імпорт старого плоского імпорту «підв’язує» його на місці.
 
 ### User Profiles and Badges
 
-FastComments users, including SSO users, get a profile with avatar, display name, bio, social links, badges, karma, comment count, a public activity feed, and direct messages (<a href="https://docs.fastcomments.com/guide-user-profiles.html" target="_blank">docs</a>). Each of the activity, profile comments and DM surfaces can be disabled per user in the SSO payload or globally in configuration.
+FastComments користувачі, включаючи SSO‑користувачів, отримують профіль з аватаром, відображуваним ім’ям, біо, соціальними посиланнями, бейджами, кармою, кількістю коментарів, публічним стрічкою активності та приватними повідомленнями (<a href="https://docs.fastcomments.com/guide-user-profiles.html" target="_blank">docs</a>). Кожну зі сторінок активності, коментарів профілю та DM‑поверхонь можна вимкнути per‑user у payload SSO або глобально у конфігурації.
 
-OpenWeb's Author Badge requires you to call `GET /sso/v1/user/{primary_key}` for the author and place the returned ID in `data-author-id`. In FastComments you set `displayLabel: 'Author'` (or any label up to 100 characters) in the user's SSO payload, and `isAdmin` or `isModerator` for staff. The label renders next to their name on every comment. For a richer system, configure badges under Customize, Badges: image or text badges, awarded automatically on thresholds (comment count, upvotes, pinned comments, veteran status, reply speed) or manually, and assignable from the SSO payload with `badgeConfig` (<a href="https://docs.fastcomments.com/guide-badges.html" target="_blank">docs</a>).
+OpenWeb Author Badge вимагав виклику `GET /sso/v1/user/{primary_key}` для автора і розміщення отриманого ID у `data-author-id`. У FastComments ви встановлюєте `displayLabel: 'Author'` (або будь‑яку мітку до 100 символів) у payload SSO, і `isAdmin` або `isModerator` для персоналу. Мітка відображається поруч з їх ім’ям у кожному коментарі. Для більш розширеної системи налаштуйте бейджі у Customize → Badges: зображення або текстові бейджі, які автоматично надаються за порогами (кількість коментарів, голоси «за», закріплені коментарі, статус ветерана, швидкість відповіді) або вручну, і їх можна призначати з payload SSO за допомогою `badgeConfig` (<a href="https://docs.fastcomments.com/guide-badges.html" target="_blank">docs</a>).
 
 ### Pinned Comments, Polls and Q&A
 
-Any moderator can Pin or Unpin a comment from the comment menu in the widget or from the moderation dashboard. Pinned comments are pushed live to everyone on the thread. If you want this automated, the AI Agents feature ships a Top Comment Pinner template that pins a top-level comment once it crosses a vote threshold (<a href="https://docs.fastcomments.com/guide-ai-agents.html" target="_blank">docs</a>).
+Будь‑який модератор може Pin або Unpin коментар з меню коментаря у віджеті або з панелі модерації. Закріплені коментарі поширюються в реальному часі до всіх у гілці. Якщо ви хочете автоматизувати це, функція AI Agents постачає шаблон Top Comment Pinner, який закріплює коментар верхнього рівня, коли він перевищує поріг голосування (<a href="https://docs.fastcomments.com/guide-ai-agents.html" target="_blank">docs</a>).
 
-OpenWeb's In Conversation Polls let staff attach a 2 to 4 option poll to a top-level comment. FastComments polls also attach to a comment, with 2 to 10 options, an optional close date, result privacy (anonymous, admins only, everyone), and a "vote to see results" mode. You choose who can create polls (disabled, admins and moderators, everyone) and whether anonymous readers can vote. Polls are also exposed in the public API for creating them from your CMS.
+OpenWeb In Conversation Polls дозволяє персоналу прикріплювати опитування з 2‑4 варіантами до коментаря верхнього рівня. Polls FastComments також прикріплюються до коментаря, з 2‑10 варіантами, необов’язковою датою закриття, режимом конфіденційності (анонімний, лише адміністратори, всі) і режимом «голосувати, щоб побачити результати». Ви обираєте, хто може створювати опитування (вимкнено, адміністратори та модератори, всі) і чи можуть анонімні читачі голосувати. Опитування також доступні у публічному API для створення їх з вашої CMS.
 
-OpenWeb has run Ask Me Anything formats on its platform. FastComments has no separate Q&A product. The practical replacement is a normal thread on a dedicated URL ID: the guest's SSO user carries a `displayLabel`, you pin the intro comment, readers ask in top-level comments, the guest replies in-thread, and mention and reply notifications pull people back. Set `noNewRootComments` after the window closes so only replies continue.
+OpenWeb запускав формати Ask Me Anything. FastComments не має окремого Q&A продукту. Практичний замінник — це звичайна гілка на спеціальному URL ID: SSO‑користувач гостя має `displayLabel`, ви закріплюєте вступний коментар, читачі задають питання у коментарях верхнього рівня, гість відповідає в гілці, а сповіщення про згадки та відповіді повертають їх назад. Після закриття вікна встановіть `noNewRootComments`, щоб продовжували лише відповіді.
 
-Community Spotlight (OpenWeb's email collector, counter and redirect cards) has no equivalent. The widget supports custom header HTML above the comment input via `headerHTML`, which covers a call to action but not an email capture form.
+Community Spotlight (збирач електронних листів, лічильник і редирект‑карти OpenWeb) не має еквіваленту. Віджет підтримує кастомний HTML‑заголовок над полем вводу коментаря через `headerHTML`, що покриває заклик до дії, але не форму захоплення електронної пошти.
 
 ### Live Blog
 
-There is no FastComments Live Blog. OpenWeb's Live Blog is an editorial product: reporters assigned in the Admin Panel post updates with embedded links, tweets and video, and readers follow along (<a href="https://developers.openweb.com/docs/live-blog" target="_blank">OpenWeb docs</a>).
+Немає FastComments Live Blog. Live Blog OpenWeb — це редакційний продукт: репортери, призначені в Admin Panel, публікують оновлення з вбудованими посиланнями, твітами та відео, а читачі слідкують у реальному часі (<a href="https://developers.openweb.com/docs/live-blog" target="_blank">OpenWeb docs</a>).
 
-What FastComments offers for live coverage is the reader side: a Live Chat widget (`embed-live-chat.min.js`) for streaming chat, and the comment widget in chat mode (`showLiveRightAway` plus `newCommentsToBottom`) alongside your live coverage. For the editorial updates themselves, publishers moving off OpenWeb keep them in their CMS or a dedicated live blog tool and embed FastComments below for discussion. Media embeds (YouTube, SoundCloud and others) are supported inside comments, so staff updates posted as comments do carry rich media.
+Що FastComments пропонує для живого покриття, — це сторона читача: віджет Live Chat (`embed-live-chat.min.js`) для потокового чату і віджет коментаря в чат‑режимі (`showLiveRightAway` плюс `newCommentsToBottom`) поряд з вашою живою трансляцією. Для самих редакційних оновлень видавці, які залишаються на OpenWeb, зберігають їх у своїй CMS або окремому інструменті live‑blog і вбудовують FastComments нижче для обговорення. Медійні вбудовування (YouTube, SoundCloud та інші) підтримуються всередині коментарів, тому оновлення персоналу, розміщені як коментарі, несуть багаті медіа.
 
 ### Topic Tracker, Notifications and Email
 
-OpenWeb's Topic Tracker lets a reader follow topics and authors drawn from page metadata and get notified when new articles match (<a href="https://developers.openweb.com/docs/topic-tracker" target="_blank">OpenWeb docs</a>). FastComments has no topic or author follow across articles. Readers subscribe to a page from the notification bell and receive updates for that thread, with the frequency chosen per subscription: every minute, hourly digest or daily digest. If cross-article following matters to your retention numbers, this is a feature you lose.
+Topic Tracker OpenWeb дозволяє читачу слідкувати за темами та авторами, отримуючи сповіщення, коли нові статті відповідають (<a href="https://developers.openweb.com/docs/topic-tracker" target="_blank">OpenWeb docs</a>). FastComments не має підписки на теми чи авторів між статтями. Читачі підписуються на сторінку через сповіщувальний дзвінок і отримують оновлення для цієї гілки, з частотою, обраною per‑subscription: кожну хвилину, щогодинний дайджест або щоденний дайджест. Якщо вам важливе крос‑статейне слідкування для утримання аудиторії, дайте нам знати — ця функція в нашій дорожній карті.
 
-Everything else in the Notification Bell maps. The widget has a bell that turns red with the unread count and lists: replies to you, replies in a thread you commented in, mentions, upvotes on your comments, activity on subscribed pages, badge awards and direct messages (<a href="https://docs.fastcomments.com/guide-notifications.html" target="_blank">docs</a>). In-app notifications are real time over a WebSocket. Reply and mention emails go out every minute for approved comments only.
+Все інше в Notification Bell мапиться. Віджет має дзвінок, який стає червоним з кількістю непрочитаних і перелічує: відповіді вам, відповіді в гілці, в якій ви коментували, згадки, голоси за ваші коментарі, активність на підписаних сторінках, нагороди бейджами та приватні повідомлення (<a href="https://docs.fastcomments.com/guide-notifications.html" target="_blank">docs</a>). Сповіщення в додатку — у реальному часі через WebSocket. Листи‑повідомлення про відповіді та згадки надходять кожну хвилину лише для схвалених коментарів.
 
-For SSO users, pass `optedInNotifications` and `optedInSubscriptionNotifications` in the payload and FastComments updates their preferences on the next page load. Emails need an email address in the payload. Email templates are editable per type and per locale under Customize, Email Templates, and sending from your own domain with DKIM is supported. Moderators and admins get a daily, weekly or monthly digest with one-click approve, respond and spam links.
+Для SSO‑користувачів передайте `optedInNotifications` і `optedInSubscriptionNotifications` у payload, і FastComments оновить їхні налаштування при наступному завантаженні сторінки. Листи потребують електронної адреси у payload. Шаблони листів редагуються per‑type і per‑locale у Customize → Email Templates, і надсилання з вашого домену з DKIM підтримується. Модератори та адміністратори отримують щоденний, щотижневий або щомісячний дайджест з однокліковим схваленням, відповіддю та посиланням на спам.
 
-OpenWeb's Notification Webhook posts per-user notification events (`replied-message`, `liked-message`, `topic-by-keyword` and so on) to your endpoint. FastComments webhooks cover the comment resource: created, updated and removed, with as many subscribing endpoints as you want (<a href="https://docs.fastcomments.com/guide-webhooks.html" target="_blank">docs</a>). If you were using the notification webhook to feed your own email system, you will rebuild that logic on comment events, or let FastComments send the emails.
+Notification Webhook OpenWeb надсилає per‑user події сповіщень (`replied-message`, `liked-message`, `topic-by-keyword` тощо) на ваш endpoint. Webhooks FastComments охоплюють ресурс коментаря: створено, оновлено, видалено, з будь‑якою кількістю підписаних endpoint‑ів (<a href="https://docs.fastcomments.com/guide-webhooks.html" target="_blank">docs</a>). Якщо ви використовували webhook сповіщень, щоб живити власну систему листів, вам доведеться перебудувати цю логіку на події коментаря, або дозволити FastComments надсилати листи.
 
 ### SSO: From codeA/codeB to a Signed Payload
 
-OpenWeb's handshake has six steps: wait for `spot-im-api-ready`, OpenWeb mints `codeA`, your client sends it to your backend, your backend confirms the user and calls `GET https://www.spot.im/api/sso/v1/register-user?code_a=...&access_token=...&primary_key=...&user_name=...`, OpenWeb returns `codeB`, and your client hands `codeB` back to OpenWeb (<a href="https://developers.openweb.com/docs/single-sign-on" target="_blank">OpenWeb docs</a>). Logout calls `window.SPOTIM.logout()`.
+Handshake OpenWeb має шість кроків: чекати `spot-im-api-ready`, OpenWeb генерує `codeA`, ваш клієнт надсилає його вашому бекенду, ваш бекенд підтверджує користувача і викликає `GET https://www.spot.im/api/sso/v1/register-user?code_a=...&access_token=...&primary_key=...&user_name=...`, OpenWeb повертає `codeB`, і ваш клієнт передає `codeB` назад OpenWeb (<a href="https://developers.openweb.com/docs/single-sign-on" target="_blank">OpenWeb docs</a>). Вихід викликає `window.SPOTIM.logout()`.
 
-FastComments Secure SSO has no round trip and no new endpoint on your side. When you render the page for a logged-in user, your backend serializes the user, Base64-encodes it, and signs it with HMAC-SHA256 using your API secret. The widget sends the payload with its requests and FastComments verifies the signature (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso-secure" target="_blank">docs</a>). In Node:
+Secure SSO FastComments не має кругового запиту і не потребує нового endpoint. Коли ви рендерите сторінку для залогіненого користувача, ваш бекенд серіалізує користувача, кодує Base64 і підписує HMAC‑SHA256 за допомогою вашого API‑секрету. Віджет надсилає payload у своїх запитах, а FastComments перевіряє підпис (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso-secure" target="_blank">docs</a>). У Node:
 
 <div class="code">    const crypto = require('crypto');
     const user = {
@@ -155,63 +162,63 @@ FastComments Secure SSO has no round trip and no new endpoint on your side. When
     //        loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout' }
 </div>
 
-The timestamp is epoch milliseconds and is rejected if it is more than two days old. For a logged-out reader, omit the three signed fields and pass only `loginURL` (or a `loginCallback` function) and the widget shows a login prompt instead of a composer. Full working examples in Node, Java and PHP are in the <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">code examples repository</a>.
+Таймстамп — це мілісекунди епохи, і відхиляється, якщо старший за два дні. Для незалогіненого читача пропустіть три підписані поля і передайте лише `loginURL` (або функцію `loginCallback`), і віджет покаже запит на вхід замість композитора. Повні робочі приклади в Node, Java і PHP у <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">репозначеному сховищі коду</a>.
 
-Users are created on first page load. You do not bulk-register anyone. Because the OpenWeb importer matches comment authors by `user_name`, a user whose SSO payload carries the same `username` claims their imported comments the first time they load a thread and can edit or delete them from then on. There is also an SSO user API if you want to pre-create users.
+Користувачі створюються при першому завантаженні сторінки. Ви не реєструєте їх масово. Оскільки імпортер OpenWeb співставляє авторів коментарів за `user_name`, користувач, payload SSO якого містить той самий `username`, отримує свої імпортовані коментарі під час першого завантаження гілки і може їх редагувати чи видаляти далі. Є також API SSO‑користувачів, якщо ви хочете попередньо створити користувачів.
 
-Each time the payload is sent, FastComments updates the user record from it, so a changed display name or avatar on your side propagates on the next page view. Set a field to `null` to clear it.
+Кожен раз, коли payload надсилається, FastComments оновлює запис користувача, тому змінене відображуване ім’я чи аватар з вашого боку поширюються при наступному перегляді. Встановіть поле в `null`, щоб очистити його.
 
-If you used OpenWeb's third-party SSO with Auth0, Gigya or Piano via `window.SPOTIM.startSSOForProvider`, the FastComments flow is the same as above: once your provider has authenticated the user, your backend builds and signs the payload. There is no provider-specific integration to configure on the FastComments side.
+Якщо ви використовували стороннє SSO OpenWeb через Auth0, Gigya або Piano за допомогою `window.SPOTIM.startSSOForProvider`, потік FastComments такий самий: після того, як ваш провайдер автентифікував користувача, ваш бекенд створює і підписує payload. Немає провайдер‑специфічної інтеграції, яку треба налаштовувати у FastComments.
 
-Two other options exist. Simple SSO passes the user object unsigned from the client, for platforms without a backend, and marks activity as verified when an email is present (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso-simple" target="_blank">docs</a>). SAML 2.0 signs your staff into the FastComments dashboard itself through Okta, Azure AD or ADFS, with role mapping, and is available on enterprise plans (<a href="https://docs.fastcomments.com/guide-saml.html" target="_blank">docs</a>).
+Інші два варіанти існують. Simple SSO передає об’єкт користувача без підпису з клієнта, для платформ без бекенду, і позначає активність як верифіковану, коли присутня електронна пошта (<a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso-simple" target="_blank">docs</a>). SAML 2.0 підписує ваш персонал у самій панелі FastComments через Okta, Azure AD або ADFS, з мапінгом ролей, і доступний у корпоративних планах (<a href="https://docs.fastcomments.com/guide-saml.html" target="_blank">docs</a>).
 
 ### Moderation
 
-OpenWeb's per-article Moderation Policy API has four values: `spot_policy`, `approve_all`, `publish_and_moderate` and `require_approval`. FastComments configures the same behaviors in Moderation Settings: automatic approval on or off, approval required only for a user's first comment, and auto-approve only verified (logged-in or SSO) comments. Rules apply site-wide or to a URL ID pattern such as `*/politics/*`, which is how you reproduce per-section policy. Every comment, approved or not, lands in the Moderate Comments dashboard, so the publish-then-review model is the default view there (<a href="https://docs.fastcomments.com/guide-moderation.html" target="_blank">docs</a>).
+API політики модерації per‑article OpenWeb має чотири значення: `spot_policy`, `approve_all`, `publish_and_moderate` і `require_approval`. FastComments налаштовує ті ж поведінки у Moderation Settings: автоматичне схвалення увімкнено або вимкнено, схвалення потрібне лише для першого коментаря користувача, і авто‑схвалення лише для верифікованих (залогінених або SSO) коментарів. Правила застосовуються на рівні сайту або до шаблону URL ID, наприклад `*/politics/*`, що дозволяє відтворити політику per‑section. Коженний коментар, схвалений чи ні, потрапляє у панель Moderate Comments, тому модель «опублікувати‑потім‑переглянути» є стандартним виглядом (<a href="https://docs.fastcomments.com/guide-moderation.html" target="_blank">docs</a>).
 
-Import carries moderation state across. OpenWeb `message_status` of `approved` imports as approved and reviewed; `rejected` imports as spam and reviewed; anything else imports unapproved and unreviewed so it appears in your moderation queue. `reports_count` becomes the comment's flag count.
+Імпорт переносить стан модерації. OpenWeb `message_status` зі значенням `approved` імпортується як схвалений і переглянутий; `rejected` імпортується як спам і переглянутий; будь‑яке інше імпортується як не схвалений і не переглянутий, тому з’являється у вашій черзі модерації. `reports_count` стає кількістю скарг коментаря.
 
-Automated moderation on FastComments is layered rather than a single system like Aida:
+Автоматизована модерація у FastComments багаторівнева, а не одинарна система типу Aida:
 
-- A spam classifier, continuously trained, available as a shared model across all tenants or isolated to your tenant, with a trust factor that relaxes filtering for long-standing or often-pinned users.
-- An optional ChatGPT 4 spam check on Flex billing.
-- Image content moderation at low, medium or high sensitivity for uploaded images.
-- A word blacklist of roughly 450 default phrases, editable, that masks matches with asterisks. This is where your OpenWeb restricted words go.
-- Flag thresholds that auto-hide a comment after N reports.
-- Repeated and near-duplicate message prevention, always on.
-- AI Agents: event-driven agents with an explicit tool allowlist (mark spam, approve, lock, pin, warn by DM, ban, award badge, reply). Every agent starts in dry run, sensitive tools can be gated behind human approval, and every action is logged with a justification and confidence score.
+- Спам‑класифікатор, безперервно навчається, доступний як спільна модель для всіх орендарів або ізольовано для вашого орендаря, з фактором довіри, що розслабляє фільтрацію для довгострокових або часто закріплених користувачів.
+- Додаткова LLM‑перевірка спаму на тарифі Flex (доступні відкриті моделі типу GLM‑5.3)
+- Модерація зображень з низькою, середньою або високою чутливістю для завантажених зображень.
+- Локалізований чорний список слів приблизно 450 типових фраз, редагований, який маскує збіги зірочками. Ось куди йдуть ваші обмежені слова OpenWeb.
+- Пороги скарг, які автоматично приховують коментар після N скарг.
+- Запобігання повторним та майже дублюючим повідомленням, завжди ввімкнено.
+- AI Agents: подієві агенти з явним allowlist інструментів (позначити спам, схвалити, заблокувати, закріпити, попередити DM, бан, нагородити бейдж, відповісти). Кожен агент стартує в dry run, чутливі інструменти можуть бути під контролем людського схвалення, і кожна дія журналюється з обґрунтуванням і рівнем впевненості.
 
-OpenWeb's User Muting API lets one SSO reader mute another. The FastComments equivalent is Block User in the comment menu, available to any logged-in reader. Bans are a moderator action: permanent or for a set duration, optionally a shadow ban (the user sees their comment post but nobody else does), optionally by hashed IP, with plus-aliases of an email treated as one address. The banned users list is searchable by email, name, moderator and the comment that triggered the ban.
+OpenWeb User Muting API дозволяє одному SSO‑читачу заглушити іншого. FastComments еквівалент — Block User у меню коментаря, доступний будь‑якому залогіненому читачу. Бан — це дія модератора: постійний або на певний час, за бажанням тіньовий бан (користувач бачить свій коментар, а інші ні), за хешованим IP, з урахуванням псевдонімів електронної пошти. Список забанених користувачів можна шукати за електронною поштою, ім’ям, модератором і коментарем, який викликав бан.
 
-The Moderate Comments dashboard supports filters (needing review, needing approval, spam, flagged, from banned users) and text search, bulk actions with undo and pause, "select all matching" for very large queues, moderation groups so your sports desk only sees sports threads, per-comment logs that show why an email did or did not go out, and shareable filtered links. Moderators have the dashboard only; they cannot change settings or import data.
+Панель Moderate Comments підтримує фільтри (потрібен перегляд, потрібне схвалення, спам, позначені, від забанених користувачів) і текстовий пошук, масові дії з відміною та паузою, «вибрати всі відповідні» для дуже великих черг, групи модерації, щоб ваш спортивний деск бачив лише спортивні гілки, журнали per‑comment, які показують, чому лист був чи не був надісланий, і подільні посилання з фільтрами. Модератори мають лише панель; вони не можуть змінювати налаштування чи імпортувати дані.
 
 ### Analytics
 
-FastComments Analytics shows users online right now across your sites and per page, top pages by comments or by live readers, and per-day series for page loads, comments, votes and accounts created (<a href="https://docs.fastcomments.com/guide-analytics.html" target="_blank">docs</a>). Moderator statistics are separate. Counts are near real time, delayed by at most a minute, and every page load is counted rather than sampled.
+FastComments Analytics показує користувачів онлайн зараз на ваших сайтах і per‑page, топ‑сторінки за кількістю коментарів або живих читачів, та щоденні ряди за завантаженнями сторінок, коментарями, голосами і створеними акаунтами (<a href="https://docs.fastcomments.com/guide-analytics.html" target="_blank">docs</a>). Статистика модераторів окрема. Показники майже в реальному часі, затримка максимум одна хвилина, і кожне завантаження сторінки рахується, а не вибірково.
 
-What you will not find is anything about ad fill, CPM or revenue, because there are no ads. If OpenWeb's dashboard was your source for engagement‑to‑revenue reporting, that reporting moves to your own ad stack.
+Того, чого ви не знайдете, — це будь‑яка інформація про заповнення реклами, CPM чи дохід, бо реклами немає. Якщо дашборд OpenWeb був вашим джерелом звітності про залучення‑до‑доходу, ця звітність переходить до вашого власного рекламного стеку.
 
 ### Monetization
 
-OpenWeb places ads inside and around the Conversation and offers a Standalone Ad unit, with campaigns set up through your OpenWeb contact (<a href="https://developers.openweb.com/docs/standalone-ad" target="_blank">OpenWeb docs</a>). FastComments does not run ads in the widget, does not run a revenue share, and does not load third‑party ad or tracking scripts. The widget is an iframe you place; the ad slots above and below it are yours and run through whatever you already use.
+OpenWeb розміщує рекламу всередині та навколо Conversation і пропонує Standalone Ad unit, з кампаніями, налаштованими через ваш контакт в OpenWeb (<a href="https://developers.openweb.com/docs/standalone-ad" target="_blank">OpenWeb docs</a>). FastComments не показує рекламу у віджеті, не має поділу доходу і не завантажує сторонні рекламні чи трекінгові скрипти. Віджет — це iframe, який ви розміщуєте; рекламні слоти над і під ним — ваші і працюють через те, що ви вже використовуєте.
 
-The trade‑off is explicit: you lose whatever OpenWeb paid you, and you gain a fixed, predictable cost and a widget that does not add ad requests to your page. Branding is removed on Flex and Pro plans, and white labeling is available on Pro and Enterprise.
+Компроміс явний: ви втрачаєте те, що OpenWeb вам платив, і отримуєте фіксовану, передбачувану вартість і віджет, який не додає рекламних запитів до вашої сторінки. Брендування прибирається у планах Flex і Pro, а white‑labeling доступний у Pro і Enterprise.
 
 ### Data Export and Privacy
 
-All comment data exports from the FastComments dashboard as CSV at any time, with dates in UTC ISO format, and the same data is available over the API. Webhooks cover ongoing sync. Import files are deleted from FastComments as soon as the import completes.
+Весь експорт даних коментарів з дашборду FastComments у CSV доступний у будь‑який час, з датами у форматі UTC ISO, і ті ж дані доступні через API. Webhooks охоплюють постійний синхронізм. Файли імпорту видаляються з FastComments одразу після завершення імпорту.
 
-For GDPR and CCPA, OpenWeb provides an export and delete API where deleted users' comments remain attached to a random guest account (<a href="https://developers.openweb.com/docs/export-and-delete-user-data" target="_blank">OpenWeb docs</a>). FastComments supports data export and deletion requests, offers a Data Processing Agreement, and runs a separate EU deployment at <a href="https://eu.fastcomments.com" target="_blank">eu.fastcomments.com</a> with data replicated only within EU points of presence. Create your account there if your readers are in Europe. In the EU region, AI agent bans always require human approval to satisfy DSA Article 17.
+Для GDPR та CCPA OpenWeb надає API експорту та видалення, де видалені користувачі залишають свої коментарі прив’язаними до випадкового гостьового акаунту (<a href="https://developers.openweb.com/docs/export-and-delete-user-data" target="_blank">OpenWeb docs</a>). FastComments підтримує запити на експорт та видалення даних, пропонує Data Processing Agreement, і працює в окремому EU‑розгортанні за адресою <a href="https://eu.fastcomments.com" target="_blank">eu.fastcomments.com</a> з даними, реплікованими лише в межах точок присутності EU. Створіть акаунт там, якщо ваші читачі в Європі. У EU‑регіоні заборони AI‑агентів завжди потребують людського схвалення, щоб відповідати DSA статті 17.
 
-Comment data in the global deployment is replicated across regions including a Singapore node, and the widget is served from FastComments' own DNS and CDN. The embed script is under 30 KB on disk and about 6 KB compressed on the wire.
+Дані коментарів у глобальному розгортанні реплікуються між регіонами, включаючи вузолійський вузол, а віджет подається з власного DNS та CDN FastComments. Скрипт embed — близько 35 KB стисло в мережі.
 
 ### Mobile SDKs
 
-OpenWeb ships Android, iOS and React Native SDKs with Conversation, Articles, Authentication, Notifications, Reactions and In Conversation Polls. FastComments ships native <a href="https://docs.fastcomments.com/guide-lib-android.html" target="_blank">Android</a>, <a href="https://docs.fastcomments.com/guide-lib-ios.html" target="_blank">iOS</a> and <a href="https://docs.fastcomments.com/guide-lib-react-native-sdk.html" target="_blank">React Native</a> libraries with threaded comments, live updates over WebSocket, Secure SSO, voting, mentions, image uploads, moderation actions (flag, pin, lock, block), theming, a live chat mode and a social feed component. EU region is a configuration flag. There is no separate ad SDK because there are no ads.
+OpenWeb постачає Android, iOS і React Native SDKs з Conversation, Articles, Authentication, Notifications, Reactions і In Conversation Polls. FastComments постачає нативні <a href="https://docs.fastcomments.com/guide-lib-android.html" target="_blank">Android</a>, <a href="https://docs.fastcomments.com/guide-lib-ios.html" target="_blank">iOS</a> і <a href="https://docs.fastcomments.com/guide-lib-react-native-sdk.html" target="_blank">React Native</a> бібліотеки з гілками коментарів, живими оновленнями через WebSocket, Secure SSO, голосуванням, згадками, завантаженням зображень, діями модерації (скарги, закріплення, блокування, блокування), темізацією, режимом live‑chat і компонентом соціальної стрічки. EU‑регіон — це прапорець конфігурації. Окремого рекламного SDK немає, бо реклами немає.
 
 ### Embed and SPA Integration
 
-The OpenWeb launcher and container:
+OpenWeb launcher і container:
 
 <div class="code">    &lt;script async src="https://launcher.spot.im/spot/SPOT_ID" data-spotim-module="spotim-launcher"&gt;&lt;/script&gt;
     &lt;div data-spotim-module="conversation"
@@ -220,7 +227,7 @@ The OpenWeb launcher and container:
          data-article-tags="TOPIC1, TOPIC2"&gt;&lt;/div&gt;
 </div>
 
-The FastComments equivalent:
+FastComments еквівалент:
 
 <div class="code">    &lt;script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"&gt;&lt;/script&gt;
     &lt;div id="fastcomments-widget"&gt;&lt;/div&gt;
@@ -235,69 +242,68 @@ The FastComments equivalent:
     &lt;/script&gt;
 </div>
 
-Your tenant ID is on the <a href="https://fastcomments.com/auth/my-account/get-acct-code" target="_blank">embed code page</a> once you have an account. `data-article-tags` has no equivalent since there is no topic following; hashtags inside comments are a different feature.
+Ваш tenant ID знаходиться на <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">сторінці облікових даних</a>, коли у вас є акаунт. `data-article-tags` не має еквіваленту, оскільки немає підписки на теми; хештеги всередині коментарів — це інша функція.
 
-For infinite scroll and single‑page apps, OpenWeb's Virtual Pages approach is one container per article. In FastComments you call `FastCommentsUI(element, config)` per thread and later `instance.update(newConfig)` to swap the URL ID or `instance.destroy()` to remove it (<a href="https://docs.fastcomments.com/guide-dynamic-comment-widget.html" target="_blank">docs</a>). The React, Vue, Angular and SolidJS libraries handle this when the config prop changes. Lifecycle callbacks (`onInit`, `onRender`, `commentCountUpdated`, `onReplySuccess`, `onVoteSuccess`, `onAuthenticationChange`, `onCommentSubmitStart`) replace the `spot-im-*` DOM events you were listening for.
+Для нескінченного скролу та SPA OpenWeb Virtual Pages підходить один контейнер на статтю. У FastComments ви викликаєте `FastCommentsUI(element, config)` per‑thread, а потім `instance.update(newConfig)` для заміни URL ID або `instance.destroy()` для видалення (<a href="https://docs.fastcomments.com/guide-dynamic-comment-widget.html" target="_blank">docs</a>). Бібліотеки React, Vue, Angular і SolidJS обробляють це, коли змінюються пропси конфігурації. Колбеки життєвого циклу (`onInit`, `onRender`, `commentCountUpdated`, `onReplySuccess`, `onVoteSuccess`, `onAuthenticationChange`, `onCommentSubmitStart`) замінюють `spot-im-*` DOM‑події, які ви слухали.
 
-Comment counts on index pages use the comment count widget, single or bulk. For SEO, comments are rendered directly into the page for search engine crawlers rather than inside the iframe, so there is no SEO API call to configure.
+Лічильники коментарів на індексних сторінках використовують віджет лічильника коментарів, одиничний або масовий. Для SEO коментарі рендеряться безпосередньо в сторінці для сканерів пошукових систем, а не всередині iframe, тому немає SEO‑API‑виклику для налаштування.
 
 ### Step-by-Step Cutover
 
-**1. Create the account and configure the basics.** Sign up on fastcomments.com or eu.fastcomments.com. Set your moderation settings, word blacklist, vote style, default sort, and custom CSS in the widget customization page. Add moderators and moderation groups. If you have many admin users, support imports them for you.
+**1. Create the account and configure the basics.** Зареєструйтесь на fastcomments.com або eu.fastcomments.com. Встановіть налаштування модерації, чорний список слів, стиль голосування, сортування за замовчуванням і кастомний CSS у сторінці налаштувань віджету. Додайте модераторів і групи модерації. Якщо у вас багато адміністраторів, підтримка імпортує їх за вас.
 
-**2. Run a first import.** Go to <a href="https://fastcomments.com/auth/my-account/manage-data/import" target="_blank">Manage Data, Import</a>, choose OpenWeb (.csv) and upload. The import runs as a background job; the page shows row counts and status, and you receive an email when it completes (<a href="https://docs.fastcomments.com/guide-migrations.html" target="_blank">docs</a>). Each OpenWeb message ID becomes the FastComments comment ID, so re‑running an import does not create duplicates.
+**2. Run a first import.** Перейдіть у <a href="https://fastcomments.com/auth/my-account/manage-data/import" target="_blank">Manage Data, Import</a>, виберіть OpenWeb (.csv) і завантажте. Імпорт працює у фоні; сторінка показує кількість рядків і статус, і ви отримуєте лист, коли він завершиться (<a href="https://docs.fastcomments.com/guide-migrations.html" target="_blank">docs</a>). Кожен коментар зберігає свій OpenWeb message ID як external ID, тому повторний імпорт оновлює існуючі коментарі замість створення дублів.
 
-**3. Verify counts.** Compare the job's row count against your export. Open a few high‑traffic URL IDs in the moderation dashboard and spot check authors, dates, vote totals and approval states. Confirm rejected comments show as spam and pending ones sit in the queue.
+**3. Verify counts.** Порівняйте кількість рядків у завданні з вашим експортом. Відкрийте кілька URL ID з високим трафіком у панелі модерації і швидко перевірте авторів, дати, підсумки голосів і стани схвалення. Переконайтеся, що відхилені коментарі позначені як спам, а очікуючі — у черзі.
 
-**4. Build the SSO payload.** Implement the signing code above in your backend, using the same `id` and `username` you used with OpenWeb. Test with a staff account on a staging page: the user's imported comments show as theirs, and edit and delete appear in their comment menu.
+**4. Build the SSO payload.** Реалізуйте код підпису, наведений вище, у вашому бекенді, використовуючи ті ж `id` і `username`, які ви використовували в OpenWeb. Протестуйте на тестовій сторінці: імпортовані коментарі користувача мають виглядати його, а редагування та видалення мають з’являтися в його меню коментаря.
 
-**5. Swap the embed on a staging template.** Replace the launcher and container with the FastComments snippet, mapping `data-post-id` to `urlId` and `data-post-url` to `url`. Remove `window.SPOTIM.logout()` and `spot-im-*` listeners, or map them to the callbacks. Apply your CSS in a customization rule rather than in code so it is tested on every FastComments release.
+**5. Swap the embed on a staging template.** Замініть launcher і container на snippet FastComments, зіставляючи `data-post-id` → `urlId` і `data-post-url` → `url`. Видаліть `window.SPOTIM.logout()` і `spot-im-*` слухачі, або зіставте їх з колбеками. Додайте ваш CSS у правило кастомізації, а не у код, щоб він тестувався у кожному випуску FastComments.
 
-**6. Run in parallel.** Put FastComments on a section or a percentage of articles while OpenWeb stays on the rest. Nothing on the OpenWeb side needs to change. Watch the moderation queue and the analytics page. Readers commenting on FastComments pages during this window are not in your OpenWeb export, so plan the final import before they start, not after.
+**6. Run in parallel.** Розмістіть FastComments у розділі або у відсотку статей, залишаючи OpenWeb на решті. На стороні OpenWeb нічого не потрібно змінювати. Слідкуйте за чергою модерації та сторінкою аналітики. Коментарі, залишені на сторінках FastComments під час цього вікна, не будуть у вашому експорті OpenWeb, тому плануйте фінальний імпорт до їх появи, а не після.
 
-**7. CSP and DNS.** If you run a Content‑Security‑Policy, allow `cdn.fastcomments.com` and `fastcomments.com` (or `eu.fastcomments.com`) for `script-src`, `frame-src` and `connect-src`, and remove the `spot.im` and `openweb.com` entries once the launcher is gone. Nothing changes on your own DNS. No redirects are needed because the URL IDs match.
+**7. CSP and DNS.** Якщо ви використовуєте Content‑Security‑Policy, дозвольте `cdn.fastcomments.com` і `fastcomments.com` (або `eu.fastcomments.com`) для `script-src`, `frame-src` і `connect-src`, і видаліть записи `spot.im` і `openweb.com`, коли launcher буде видалено. Ваш DNS не змінюється. Перенаправлення не потрібні, бо URL ID збігаються.
 
-**8. Final import and go live.** Pull one more OpenWeb export covering the parallel‑run window, upload it (re‑import is safe), then deploy the template change across all pages and remove the launcher, Reactions, Topic Tracker, Spotlight, bell and ad containers.
+**8. Final import and go live.** Завантажте ще один експорт OpenWeb, що охоплює період паралельного запуску, завантажте його (повторний імпорт безпечний), потім розгорніть зміну шаблону на всіх сторінках і видаліть launcher, Reactions, Topic Tracker, Spotlight, bell і рекламні контейнери.
 
 **9. Go‑live checklist.**
 
-- Live commenting visible on a production article from two browsers.
-- SSO login, logout and a comment under a real subscriber account.
-- Moderators receive the digest and can approve from it.
-- Reply and mention emails arrive and link to the correct page.
-- Bans list and word blacklist populated.
-- Page Reacts and comment counts rendering where Reactions and the counter used to be.
-- CSP reports clean.
-- One last comment‑count comparison between your export and the dashboard.
+- Живе коментування видно на продакшн‑статті в двох браузерах.
+- SSO вхід, вихід і коментар під реальним акаунтом підписника.
+- Модератори отримують дайджест і можуть схвалювати з нього.
+- Листи‑повідомлення про відповіді та згадки надходять і посилаються на правильну сторінку.
+- Список банів і чорний список слів заповнені.
+- Page Reacts і лічильники коментарів відображаються там, де раніше були Reactions і counter.
+- CSP‑звіти чисті.
+- Останнє порівняння лічильника коментарів між вашим експортом і дашбордом.
 
 ### What You Lose and What Is Different
 
-Being direct about the gaps:
+Будьте прямими щодо прогалин:
 
-- **Live Blog.** No equivalent. Keep it in your CMS or a live‑blogging tool and put FastComments under it.
-- **Topic Tracker.** No cross‑article topic or author following. Only page subscriptions.
-- **Community Spotlight.** No CTA card product. `headerHTML` gives you a message above the composer, not an email capture.
-- **Ad revenue.** None. The widget is ad‑free by design.
-- **Notification webhook.** Webhooks are on comment events, not per‑user notification events.
-- **Threading on import.** The current importer flattens replies to top‑level comments on the same page. Tell us if you need the tree rebuilt.
-- **Reactions history.** Article‑level reaction counts are not in the comment export and start fresh.
-- **Polls history.** Poll definitions and votes are not in the comment export; the poll's comment text imports, the poll does not.
-- **Login model.** Readers without SSO log in by magic link instead of a password or a social login button.
-- **Human moderation staff.** OpenWeb bundles a moderation team with Aida. FastComments provides tooling, classifiers and agents; the humans are yours.
+- **Live Blog.** Немає еквіваленту. Тримайте його у вашій CMS або інструменті live‑blog і розміщуйте FastComments під ним.
+- **Topic Tracker.** Немає крос‑статейного слідкування за темами або авторами. Тільки підписки на сторінки.
+- **Community Spotlight.** Немає продукту CTA‑картки. `headerHTML` дає вам повідомлення над композером, а не форму захоплення електронної пошти.
+- **Ad revenue.** Немає. Віджет без реклами за дизайном.
+- **Notification webhook.** Webhooks працюють лише на події коментаря, а не на події сповіщення per‑user.
+- **Reactions history.** Кількість реакцій на рівні статті не входить у експорт коментаря і стартує з нуля. Ми іноді можемо скрапити їх з вашого сайту.
+- **Polls history.** Визначення опитувань і голоси не входять у експорт коментаря; текст коментаря‑опитування імпортується, сам опитування — ні. Ми іноді можемо скрапити їх з вашого сайту.
+- **Login model.** Читачі без SSO входять за магічним посиланням замість пароля чи соціальної кнопки за замовчуванням.
+- **Human moderation staff.** OpenWeb постачає команду модерації з Aida. FastComments надає інструменти, класифікатори і агентів; люди — ваші.
 
-What you gain, in the same spirit: a widget that adds one small script and no ad requests, moderation that one person can run for a large site with bulk actions and agents, SSO that is a signing function rather than a protocol, and a vendor that is not under court supervision.
+Що ви отримуєте, у тому ж дусі: віджет, що додає лише один маленький скрипт і не створює рекламних запитів, модерація, яку може вести одна людина для великого сайту за допомогою масових дій і агентів, SSO, що є функцією підпису, а не протоколом, і постачальник, який не під судовим наглядом.
 
 ### Timeline and the Free Import Offer
 
-Plan one to two weeks for a publisher with one SSO integration and a few hundred thousand comments: a day or two on the export and first import, a few days on SSO and templates, a parallel‑run window, then the final import and switch. The platform already carries this scale: United Cloud runs more than ten portals and millions of comments on FastComments, and itsfoss.com moved an 88 000‑comment history from another provider through the same self‑service importer.
+Заплануйте один‑два тижні для видавця з однією інтеграцією SSO і кількома сотнями тисяч коментарів: день‑два на експорт і перший імпорт, кілька днів на SSO і шаблони, вікно паралельного запуску, потім фінальний імпорт і перемикання. Платформа вже працює у такому масштабі: United Cloud керує більше десяти порталами і мільйонами коментарів у FastComments, а itsfoss.com переніс історію в 88 000 коментарів з іншого провайдера через той самий самостійний імпортер.
 
-FastComments imports your OpenWeb CSV export for free, helps you run OpenWeb and FastComments in parallel during the cutover, and helps with the migration itself, including threading and user‑matching questions. Enterprise plans include a 99.99% SLA and support replies within one hour during business hours. Flex usage‑based pricing is available for sites that want to start without a contract.
+FastComments імпортує ваш CSV‑експорт OpenWeb безкоштовно, допомагає вам працювати з OpenWeb і FastComments паралельно під час переходу і допомагає з самим процесом міграції, включаючи питання гілкування та співставлення користувачів. Плани Enterprise включають SLA 99.99 % і підтримку з відповіддю протягом однієї години в робочі години. Ціноутворення Flex за використанням доступне для сайтів, які хочуть стартувати без контракту.
 
-Write to <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> with your export size and your SSO setup and we will come back with a plan.
+<a href="https://fastcomments.com/contact-us">Write to us</a> with your export size and your SSO setup and we will come back with a plan.
 
 ### In Conclusion
 
-Pull your export today. The rest of the migration is mechanical: the same post IDs become URL IDs, the same usernames claim their comments through SSO, moderation state carries over, and the embed is a straight swap. The places where FastComments differs are listed above so you can decide with the facts in front of you.
+Pull your export today. Remember: the same post IDs become URL IDs, moderation state carries over, and the embed is a straight swap. The places where FastComments differs are listed above so you can decide with the facts in front of you. :)
 
 Cheers!
 
