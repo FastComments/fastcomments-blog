@@ -291,7 +291,7 @@ Wat je wint, in dezelfde geest: een widget die één klein script toevoegt en ge
 
 Plan één tot twee weken voor een uitgever met één SSO‑integratie en enkele honderdduizend reacties: een dag of twee voor de export en eerste import, een paar dagen voor SSO en templates, een parallel‑run‑venster, daarna de finale import en switch. Het platform heeft dit al op schaal: United Cloud draait meer dan tien portals en miljoenen reacties op FastComments, en itsfoss.com migreerde een geschiedenis van 88 000 reacties van een andere provider via dezelfde self‑service‑importeur.
 
-FastComments importeert je OpenWeb‑CSV‑export gratis, helpt je OpenWeb en FastComments parallel te draaien tijdens de cutover, en ondersteunt de migratie zelf, inclusief threading‑ en gebruikers‑matching‑vragen. Enterprise‑plannen omvatten een SLA, support‑reacties binnen één uur tijdens kantooruren, en de optie van een Isolated Cloud‑deployment in je eigen cloud‑account (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Flex‑usage‑based pricing is beschikbaar voor sites die zonder contract willen starten.
+FastComments importeert je OpenWeb‑CSV‑export gratis, helpt je OpenWeb en FastComments parallel te draaien tijdens de cutover, en ondersteunt de migratie zelf, inclusief threading‑ en gebruikers‑matching‑vragen. Enterprise‑plannen omvatten een SLA van 99,99 % en support‑reacties binnen één uur tijdens kantooruren. Flex‑usage‑based pricing is beschikbaar voor sites die zonder contract willen starten.
 
 Schrijf naar <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> met je export‑grootte en je SSO‑setup en we komen met een plan terug.
 

@@ -291,7 +291,7 @@ FastComments 的對應：
 
 對於具備單一 SSO 整合與數十萬評論的出版商，建議規劃 1–2 週：1–2 天完成匯出與首次匯入，數天完成 SSO 與模板調整，平行運行窗口，最後匯入與切換。FastComments 已在大規模環境中驗證此流程：United Cloud 管理超過十個入口網站與數百萬評論，itsfoss.com 亦透過相同自助匯入器搬遷了 88,000 筆評論歷史。
 
-FastComments 會免費匯入您的 OpenWeb CSV，協助您在切換期間平行運行 OpenWeb 與 FastComments，並在遷移過程中提供支援，包括串樹與使用者匹配等問題。企業方案提供 SLA、營業時間內一小時內回覆支援，以及在您自有雲帳號中部署隔離雲端（<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>）。Flex 計費模式適合想先行使用、無合約的站點。
+FastComments 會免費匯入您的 OpenWeb CSV，協助您在切換期間平行運行 OpenWeb 與 FastComments，並在遷移過程中提供支援，包括串樹與使用者匹配等問題。企業方案提供 99.99% SLA，以及營業時間內一小時內的支援回覆。Flex 計費模式適合想先行使用、無合約的站點。
 
 請寫信至 <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a>，提供您的匯出規模與 SSO 設定，我們會回覆您具體方案。
 

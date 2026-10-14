@@ -291,7 +291,7 @@ FastComments 对应：
 
 对于拥有单一 SSO 集成和数十万条评论的出版商，计划约 1‑2 周：导出与首次导入 1‑2 天，SSO 与模板几天，平行运行窗口，然后最终导入与切换。平台已有此规模的案例：United Cloud 运营十余门户和数百万条 FastComments 评论，itsfoss.com 通过同一自助导入器迁移了 88,000 条历史评论。
 
-FastComments 免费导入您的 OpenWeb CSV 导出，帮助您在切换期间并行运行 OpenWeb 与 FastComments，并在迁移过程中提供支持，包括线程和用户匹配问题。企业计划提供 SLA、工作时间内一小时内回复支持，以及在您自有云账户中的隔离云部署选项（<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">文档</a>）。Flex 基于使用量的计费适用于希望无合同起步的站点。
+FastComments 免费导入您的 OpenWeb CSV 导出，帮助您在切换期间并行运行 OpenWeb 与 FastComments，并在迁移过程中提供支持，包括线程和用户匹配问题。企业计划提供 99.99% SLA，以及工作时间内一小时内的支持回复。Flex 基于使用量的计费适用于希望无合同起步的站点。
 
 请发送邮件至 <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a>，说明您的导出规模和 SSO 设置，我们将提供方案。
 

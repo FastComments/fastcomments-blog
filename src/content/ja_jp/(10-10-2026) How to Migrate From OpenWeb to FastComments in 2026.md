@@ -299,7 +299,7 @@ Content‑Security‑Policy を使用している場合、`cdn.fastcomments.com`
 
 SSO 統合と数十万件コメントを持つ出版社の場合、1〜2 週間を想定：エクスポートと初回インポートに 1〜2 日、SSO とテンプレートに数日、並行運用ウィンドウ、最終インポートと切り替え。FastComments は同規模の導入実績があります（United Cloud が 10 以上のポータルで数百万コメントを運用、itsfoss.com が 88,000 件のコメント履歴を同様のセルフサービスインポーターで移行）。
 
-FastComments は OpenWeb CSV エクスポートを無料でインポートし、カットオーバー期間中の並行運用を支援、スレッド構築やユーザー照合の質問にも対応します。エンタープライズプランには SLA が含まれ、営業時間内に 1 時間以内のサポート返信、顧客専用クラウドアカウントへの Isolated Cloud デプロイオプションがあります（<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>）。Flex の従量課金プランは契約なしで開始可能です。
+FastComments は OpenWeb CSV エクスポートを無料でインポートし、カットオーバー期間中の並行運用を支援、スレッド構築やユーザー照合の質問にも対応します。エンタープライズプランには 99.99% の SLA と、営業時間内 1 時間以内のサポート返信が含まれます。Flex の従量課金プランは契約なしで開始可能です。
 
 <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> にエクスポートサイズと SSO 設定を添えてご連絡ください。プランをご提案します。
 

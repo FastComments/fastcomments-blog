@@ -291,7 +291,7 @@ What you gain, in the same spirit: a widget that adds one small script and no ad
 
 Plan one to two weeks for a publisher with one SSO integration and a few hundred thousand comments: a day or two on the export and first import, a few days on SSO and templates, a parallel-run window, then the final import and switch. The platform already carries this scale: United Cloud runs more than ten portals and millions of comments on FastComments, and itsfoss.com moved an 88,000-comment history from another provider through the same self-service importer.
 
-FastComments imports your OpenWeb CSV export for free, helps you run OpenWeb and FastComments in parallel during the cutover, and helps with the migration itself, including threading and user matching questions. Enterprise plans include an SLA, support replies within one hour during business hours, and the option of an Isolated Cloud deployment in your own cloud account (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Flex usage-based pricing is available for sites that want to start without a contract.
+FastComments imports your OpenWeb CSV export for free, helps you run OpenWeb and FastComments in parallel during the cutover, and helps with the migration itself, including threading and user matching questions. Enterprise plans include a 99.99% SLA and support replies within one hour during business hours. Flex usage-based pricing is available for sites that want to start without a contract.
 
 Write to <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> with your export size and your SSO setup and we will come back with a plan.
 

@@ -291,7 +291,7 @@ FastComments 대응:
 
 OpenWeb과 FastComments를 병행 운영해야 하는 퍼블리셔(SSO 통합 1개, 수십만 댓글) 기준으로 1~2주 정도를 계획하세요: 내보내기·첫 번째 가져오기 1~2일, SSO·템플릿 며칠, 병행 운영 창, 최종 가져오기·전환. FastComments는 이미 United Cloud와 같은 대규모 고객이 수백만 댓글을 처리하고 있습니다.
 
-FastComments는 OpenWeb CSV 내보내기를 무료로 가져오며, 전환 기간 동안 병행 운영을 지원하고, 스레딩·사용자 매칭 등 마이그레이션 질문에 답변합니다. 엔터프라이즈 플랜은 SLA, 영업시간 내 1시간 이내 지원, 자체 클라우드 계정에 격리된 클라우드 배포 옵션을 포함합니다(<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). 계약 없이 시작하고 싶은 사이트는 Flex 사용량 기반 요금제를 이용할 수 있습니다.
+FastComments는 OpenWeb CSV 내보내기를 무료로 가져오며, 전환 기간 동안 병행 운영을 지원하고, 스레딩·사용자 매칭 등 마이그레이션 질문에 답변합니다. 엔터프라이즈 플랜은 99.99% SLA와 영업시간 내 1시간 이내 지원 응답을 포함합니다. 계약 없이 시작하고 싶은 사이트는 Flex 사용량 기반 요금제를 이용할 수 있습니다.
 
 <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a>으로 내보내기 크기와 SSO 설정을 알려 주시면 플랜을 제안해 드립니다.
 

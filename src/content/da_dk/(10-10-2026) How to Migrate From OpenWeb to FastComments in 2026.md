@@ -291,7 +291,7 @@ Hvad du får, i samme ånd: en widget, der kun tilføjer et lille script og inge
 
 Planlæg en til to uger for en udgiver med én SSO‑integration og et par hundrede tusinde kommentarer: en dag eller to på eksport og første import, et par dage på SSO og skabeloner, et parallel‑kørsels‑vindue, derefter den endelige import og skift. Platformen håndterer allerede denne skala: United Cloud driver mere end ti portaler og millioner af kommentarer på FastComments, og itsfoss.com flyttede en 88.000‑kommentar‑historik fra en anden leverandør via den samme selv‑service importør.
 
-FastComments importerer din OpenWeb CSV‑eksport gratis, hjælper dig med at køre OpenWeb og FastComments parallelt under cut‑over, og hjælper med selve migrationen, inklusiv tråd‑opbygning og bruger‑match‑spørgsmål. Enterprise‑planer inkluderer en SLA, support‑svar inden for en time i arbejdstiden, og muligheden for en Isolated Cloud‑deployment i din egen cloud‑konto (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Flex‑brugsbaseret prisfastsættelse er tilgængelig for sites, der vil starte uden kontrakt.
+FastComments importerer din OpenWeb CSV‑eksport gratis, hjælper dig med at køre OpenWeb og FastComments parallelt under cut‑over, og hjælper med selve migrationen, inklusiv tråd‑opbygning og bruger‑match‑spørgsmål. Enterprise‑planer inkluderer en 99,99 % SLA og support‑svar inden for en time i arbejdstiden. Flex‑brugsbaseret prisfastsættelse er tilgængelig for sites, der vil starte uden kontrakt.
 
 Skriv til <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> med din eksport‑størrelse og din SSO‑opsætning, så vender vi tilbage med en plan.
 

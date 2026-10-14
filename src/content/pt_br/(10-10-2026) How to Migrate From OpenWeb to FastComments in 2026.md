@@ -291,7 +291,7 @@ O que você ganha, no mesmo espírito: um widget que adiciona apenas um pequeno 
 
 Planeje de uma a duas semanas para um editor com uma integração SSO e algumas centenas de milhares de comentários: um ou dois dias na exportação e primeira importação, alguns dias em SSO e templates, janela de execução paralela, depois importação final e troca. A plataforma já lida com essa escala: United Cloud roda mais de dez portais e milhões de comentários no FastComments, e itsfoss.com migrou um histórico de 88 000 comentários de outro provedor usando o mesmo importador self‑service.
 
-O FastComments importa seu CSV do OpenWeb gratuitamente, ajuda a rodar OpenWeb e FastComments em paralelo durante a transição, e auxilia na migração propriamente dita, incluindo questões de encadeamento e correspondência de usuários. Planos Enterprise incluem SLA, respostas de suporte em até uma hora durante horário comercial, e a opção de um deployment Isolated Cloud na sua própria conta de nuvem (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Preço baseado em uso Flex está disponível para sites que desejam começar sem contrato.
+O FastComments importa seu CSV do OpenWeb gratuitamente, ajuda a rodar OpenWeb e FastComments em paralelo durante a transição, e auxilia na migração propriamente dita, incluindo questões de encadeamento e correspondência de usuários. Planos Enterprise incluem SLA de 99,99% e respostas de suporte em até uma hora durante o horário comercial. Preço baseado em uso Flex está disponível para sites que desejam começar sem contrato.
 
 Escreva para <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> com o tamanho da sua exportação e sua configuração SSO que retornaremos com um plano.
 

@@ -291,7 +291,7 @@ Co zyskujesz, w tym samym duchu: widget, który dodaje jedynie mały skrypt i ni
 
 Zaplanowanie od jednego do dwóch tygodni dla wydawcy z jedną integracją SSO i kilkuset tysiącami komentarzy: dzień lub dwa na eksport i pierwszy import, kilka dni na SSO i szablony, okno równoległego działania, a potem ostateczny import i przełączenie. Platforma już obsługuje tę skalę: United Cloud obsługuje ponad dziesięć portali i miliony komentarzy na FastComments, a itsfoss.com przeniosło historię 88 000 komentarzy z innego dostawcy przy użyciu tego samego samodzielnego importera.
 
-FastComments importuje Twój eksport CSV z OpenWeb bezpłatnie, pomaga uruchomić OpenWeb i FastComments równolegle podczas przejścia oraz wspiera samą migrację, w tym pytania o wątkowanie i dopasowanie użytkowników. Plany Enterprise zawierają SLA, wsparcie w ciągu godziny w godzinach pracy oraz opcję izolowanego wdrożenia w chmurze w Twoim własnym koncie (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Cena Flex oparta na zużyciu jest dostępna dla stron, które chcą rozpocząć bez umowy.
+FastComments importuje Twój eksport CSV z OpenWeb bezpłatnie, pomaga uruchomić OpenWeb i FastComments równolegle podczas przejścia oraz wspiera samą migrację, w tym pytania o wątkowanie i dopasowanie użytkowników. Plany Enterprise zawierają SLA na poziomie 99,99% oraz odpowiedzi wsparcia w ciągu godziny w godzinach pracy. Cena Flex oparta na zużyciu jest dostępna dla stron, które chcą rozpocząć bez umowy.
 
 Napisz na <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> podając rozmiar eksportu i konfigurację SSO, a otrzymasz plan.
 

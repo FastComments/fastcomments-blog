@@ -291,7 +291,7 @@ Kaj pridobite, v istem duhu: pripomoček, ki doda le majhen skript in ne zahteva
 
 Načrtujte en do dva tedna za založnika z eno SSO integracijo in nekaj sto tisoč komentarji: en do dva dneva za izvoz in prvi uvoz, nekaj dni za SSO in predloge, obdobje vzporednega delovanja, nato končni uvoz in preklop. Platforma že obvladuje to skalo: United Cloud poganja več kot deset portalov in milijone komentarjev na FastComments, itsfoss.com je prenesel zgodovino 88 000 komentarjev iz drugega ponudnika s tem samim samopostrežnim uvoznikom.
 
-FastComments brezplačno uvozi vaš OpenWeb CSV izvoz, pomaga vam poganjati OpenWeb in FastComments vzporedno med prehodom, in pomaga pri sami migraciji, vključno z gnezdenjem in vprašanji o ujemanju uporabnikov. Enterprise načrti vključujejo SLA, podporne odgovore v eni uri med delovnim časom, in možnost izolirane Cloud namestitve v vašem lastnem oblačnem računu (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Flex plačilo po uporabi je na voljo za strani, ki želijo začeti brez pogodbe.
+FastComments brezplačno uvozi vaš OpenWeb CSV izvoz, pomaga vam poganjati OpenWeb in FastComments vzporedno med prehodom, in pomaga pri sami migraciji, vključno z gnezdenjem in vprašanji o ujemanju uporabnikov. Enterprise načrti vključujejo 99,99 % SLA in podporne odgovore v eni uri med delovnim časom. Flex plačilo po uporabi je na voljo za strani, ki želijo začeti brez pogodbe.
 
 Pišite na <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> z velikostjo vašega izvoza in nastavitvijo SSO, mi bomo odgovorili s načrtom.
 

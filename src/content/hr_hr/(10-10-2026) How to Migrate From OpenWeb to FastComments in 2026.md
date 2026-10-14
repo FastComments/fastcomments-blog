@@ -291,7 +291,7 @@ Biti izravan o prazninama:
 
 Planirajte jedan do dva tjedna za izdavača s jednim SSO integracijom i nekoliko stotina tisuća komentara: dan ili dva za izvoz i prvi uvoz, nekoliko dana za SSO i predloške, paralelni period, zatim finalni uvoz i prebacivanje. Platforma već nosi ovu skalu: United Cloud upravlja s više od deset portala i milijunima komentara na FastComments, a itsfoss.com je premjestio povijest od 88 000 komentara s drugog providera kroz isti samouslužni uvoz.
 
-FastComments uvozi vaš OpenWeb CSV izvoz besplatno, pomaže vam voditi OpenWeb i FastComments paralelno tijekom prebacivanja, i pomaže s migracijom samom, uključujući pitanja o ugniježđivanju i podudaranju korisnika. Enterprise planovi uključuju SLA, podršku s odgovorom unutar jednog sata tijekom radnog vremena, i opciju Isolated Cloud implementacije u vašem vlastitom cloud računu (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Flex naplata po korištenju dostupna je za stranice koje žele započeti bez ugovora.
+FastComments uvozi vaš OpenWeb CSV izvoz besplatno, pomaže vam voditi OpenWeb i FastComments paralelno tijekom prebacivanja, i pomaže s migracijom samom, uključujući pitanja o ugniježđivanju i podudaranju korisnika. Enterprise planovi uključuju SLA od 99,99 % i podršku s odgovorom unutar jednog sata tijekom radnog vremena. Flex naplata po korištenju dostupna je za stranice koje žele započeti bez ugovora.
 
 Pišite na <a href="mailto:sales@fastcomments.com">sales@fastcomments.com</a> s veličinom vašeg izvoza i postavkama SSO‑a i vratit ćemo se s planom.
 
