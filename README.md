@@ -78,10 +78,10 @@ npm run watch-posix  # Watch for changes and rebuild (Linux/macOS)
 
 ## Translation
 
-The build automatically detects missing translations and runs GPT-based translation. To manually check or translate:
+The build automatically detects missing translations, and translations left outdated by an edit to the `en` post (via the source hashes in `src/translation-cache.json`), and runs GPT-based translation. To manually check or translate:
 
 ```bash
-node src/check-translations.js   # Check for missing translations
-node src/translate-with-gpt.js   # Auto-translate missing posts
+node src/check-translations.js   # Check for missing or outdated translations
+node src/translate-with-gpt.js   # Auto-translate missing or outdated posts
 node src/check-categories.js     # Validate categories in translated posts
 ```

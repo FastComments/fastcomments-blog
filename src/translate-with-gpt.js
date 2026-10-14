@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Script to translate missing blog posts using an LLM chat-completions API.
- * Uses check-translations.js to identify missing translations.
- * Uses snapshot mechanism to detect when source files have changed.
+ * Script to translate missing or outdated blog posts using an LLM chat-completions API.
+ * Uses the translation cache (source hash per locale/file) to detect when source files have changed.
  *
  * Usage: node src/translate-with-gpt.js [--locale <locale>] [--concurrency <n>] [--dry-run] [--force]
  *
@@ -13,11 +12,7 @@
  *   LLM_BASE_URL - Optional. Chat-completions API base (default DeepInfra).
  */
 
-const fs = require('fs');
-const path = require('path');
-
 const {
-    getMissingTranslations,
     getSourceContent,
     saveTranslation,
     getDefaultLocaleFiles,
@@ -25,47 +20,12 @@ const {
     defaultLocale
 } = require('./check-translations');
 
-const { hashContent } = require('./translation-snapshot');
+const { hashContent, loadCache, saveCache, getCacheKey } = require('./translation-snapshot');
 
 const LLM_API_KEY = process.env.LLM_API_KEY;
 const LLM_MODEL = process.env.LLM_MODEL || 'openai/gpt-oss-120b-Turbo';
 const LLM_BASE_URL = process.env.LLM_BASE_URL || 'https://api.deepinfra.com/v1/openai';
 const LLM_ENDPOINT = `${LLM_BASE_URL.replace(/\/+$/, '')}/chat/completions`;
-const CACHE_FILE = path.join(__dirname, 'translation-cache.json');
-
-/**
- * Load translation cache from disk
- * @returns {Object} - Cache object { "locale/filename": "md5hash", ... }
- */
-function loadCache() {
-    if (!fs.existsSync(CACHE_FILE)) {
-        return {};
-    }
-    try {
-        return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-    } catch (e) {
-        console.warn(`Failed to load cache: ${e.message}`);
-        return {};
-    }
-}
-
-/**
- * Save translation cache to disk
- * @param {Object} cache - Cache object
- */
-function saveCache(cache) {
-    fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8');
-}
-
-/**
- * Generate cache key
- * @param {string} locale - Target locale
- * @param {string} filename - Filename
- * @returns {string} - Cache key
- */
-function getCacheKey(locale, filename) {
-    return `${locale}/${filename}`;
-}
 
 /**
  * Posts are compiled as handlebars templates, so a translation that drops a {{#isPost}} /

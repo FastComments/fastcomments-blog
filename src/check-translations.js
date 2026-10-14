@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Script to check for untranslated blog posts.
- * Returns exit code 1 if there are missing translations, 0 if all content is translated.
+ * Script to check for untranslated blog posts, and translations left outdated by an edit to the source post.
+ * Returns exit code 1 if any translation is missing or outdated, 0 if all content is translated and current.
  *
  * Usage: node src/check-translations.js [--verbose]
  */
@@ -10,6 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 const {locales, defaultLocale} = require('./locales');
+const {hashContent, loadCache, getCacheKey} = require('./translation-snapshot');
 
 const CONTENT_DIR = path.join(__dirname, 'content');
 const verbose = process.argv.includes('--verbose');
@@ -99,52 +100,78 @@ function estimateTokens(content) {
 }
 
 /**
- * Check for missing translations
+ * Get translations that are missing, or outdated because the source post was edited after translating.
+ * Outdated means the cached source hash differs from the current source, the same rule
+ * translate-with-gpt.js uses to pick its work, so the build gate and the translator always agree.
+ * @returns {Object} - { locale: { missing: [filenames], outdated: [filenames] } } for locales needing work
+ */
+function getTranslationsNeedingWork() {
+    const result = {};
+    const cache = loadCache();
+    const defaultFiles = getDefaultLocaleFiles();
+    const sourceHashes = new Map(defaultFiles.map(file => [file, hashContent(getSourceContent(file))]));
+    const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
+
+    for (const locale of nonDefaultLocales) {
+        const localeFiles = new Set(getLocaleFiles(locale));
+        const missing = [];
+        const outdated = [];
+        for (const file of defaultFiles) {
+            if (!localeFiles.has(file)) {
+                missing.push(file);
+            } else if (cache[getCacheKey(locale, file)] !== sourceHashes.get(file)) {
+                outdated.push(file);
+            }
+        }
+        if (missing.length > 0 || outdated.length > 0) {
+            result[locale] = { missing, outdated };
+        }
+    }
+
+    return result;
+}
+
+/**
+ * Check for missing and outdated translations
  * @returns {Object} - Translation status
  */
 function checkTranslations() {
-    const missingTranslations = {};
+    const needingWork = getTranslationsNeedingWork();
     let totalMissing = 0;
-    let totalFiles = 0;
+    let totalOutdated = 0;
     let totalWords = 0;
     let totalInputTokens = 0;
     let totalOutputTokens = 0;
 
-    const defaultFiles = getDefaultLocaleFiles();
     const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
+    const totalFiles = getDefaultLocaleFiles().length * nonDefaultLocales.length;
 
     // Cache source file stats to avoid re-reading
     const sourceFileCache = new Map();
 
-    for (const locale of nonDefaultLocales) {
-        const localeFiles = new Set(getLocaleFiles(locale));
-        const missing = defaultFiles.filter(file => !localeFiles.has(file));
+    for (const { missing, outdated } of Object.values(needingWork)) {
+        totalMissing += missing.length;
+        totalOutdated += outdated.length;
 
-        if (missing.length > 0) {
-            missingTranslations[locale] = missing;
-            totalMissing += missing.length;
-
-            // Add word and token counts for missing files
-            for (const file of missing) {
-                if (!sourceFileCache.has(file)) {
-                    const content = getSourceContent(file);
-                    sourceFileCache.set(file, {
-                        words: countWords(content),
-                        tokens: estimateTokens(content)
-                    });
-                }
-                const cached = sourceFileCache.get(file);
-                totalWords += cached.words;
-                totalInputTokens += cached.tokens.inputTokens;
-                totalOutputTokens += cached.tokens.outputTokens;
+        for (const file of [...missing, ...outdated]) {
+            if (!sourceFileCache.has(file)) {
+                const content = getSourceContent(file);
+                sourceFileCache.set(file, {
+                    words: countWords(content),
+                    tokens: estimateTokens(content)
+                });
             }
+            const cached = sourceFileCache.get(file);
+            totalWords += cached.words;
+            totalInputTokens += cached.tokens.inputTokens;
+            totalOutputTokens += cached.tokens.outputTokens;
         }
-        totalFiles += defaultFiles.length;
     }
 
     return {
-        missingTranslations,
+        needingWork,
         totalMissing,
+        totalOutdated,
         totalFiles,
         totalWords,
         totalInputTokens,
@@ -153,33 +180,13 @@ function checkTranslations() {
     };
 }
 
-/**
- * Get detailed missing translation info for programmatic use
- * @returns {Object} Object with missing translations by locale
- */
-function getMissingTranslations() {
-    const result = {};
-    const defaultFiles = getDefaultLocaleFiles();
-    const nonDefaultLocales = Object.keys(locales).filter(l => l !== defaultLocale);
-
-    for (const locale of nonDefaultLocales) {
-        const localeFiles = new Set(getLocaleFiles(locale));
-        const missing = defaultFiles.filter(file => !localeFiles.has(file));
-
-        if (missing.length > 0) {
-            result[locale] = missing;
-        }
-    }
-
-    return result;
-}
-
 function main() {
-    console.log('Checking for untranslated blog posts...\n');
+    console.log('Checking for missing or outdated blog post translations...\n');
 
     const {
-        missingTranslations,
+        needingWork,
         totalMissing,
+        totalOutdated,
         totalFiles,
         totalWords,
         totalInputTokens,
@@ -187,31 +194,34 @@ function main() {
         totalTokens
     } = checkTranslations();
 
-    const localesWithMissing = Object.keys(missingTranslations);
+    const localesNeedingWork = Object.keys(needingWork);
 
-    if (localesWithMissing.length > 0) {
-        console.log('Missing translations:\n');
+    if (localesNeedingWork.length > 0) {
+        console.log('Translations needing work:\n');
 
-        for (const locale of localesWithMissing.sort()) {
+        for (const locale of localesNeedingWork.sort()) {
             const localeInfo = locales[locale];
             const localeName = localeInfo ? localeInfo.nativeName : locale;
-            const files = missingTranslations[locale];
+            const { missing, outdated } = needingWork[locale];
 
-            console.log(`${locale} (${localeName}): ${files.length} file(s)`);
+            console.log(`${locale} (${localeName}): ${missing.length} missing, ${outdated.length} outdated`);
             if (verbose) {
-                for (const file of files.sort()) {
-                    console.log(`  - ${file}`);
+                for (const file of [...missing].sort()) {
+                    console.log(`  - [missing] ${file}`);
+                }
+                for (const file of [...outdated].sort()) {
+                    console.log(`  - [outdated] ${file}`);
                 }
             }
         }
         console.log('');
 
-        const translated = totalFiles - totalMissing;
+        const translated = totalFiles - totalMissing - totalOutdated;
         const percentage = totalFiles > 0 ? ((translated / totalFiles) * 100).toFixed(1) : 0;
 
         console.log('---');
-        console.log(`Total: ${totalMissing} missing translations across ${localesWithMissing.length} locale(s)`);
-        console.log(`Coverage: ${translated}/${totalFiles} files translated (${percentage}%)`);
+        console.log(`Total: ${totalMissing} missing and ${totalOutdated} outdated translations across ${localesNeedingWork.length} locale(s)`);
+        console.log(`Coverage: ${translated}/${totalFiles} files up to date (${percentage}%)`);
         console.log('');
         console.log('Estimated translation workload:');
         console.log(`  Words to translate: ${totalWords.toLocaleString()}`);
@@ -221,13 +231,13 @@ function main() {
         process.exit(1);
     }
 
-    console.log('All blog posts are translated.');
+    console.log('All blog post translations are up to date.');
     process.exit(0);
 }
 
 // Export functions for programmatic use
 module.exports = {
-    getMissingTranslations,
+    getTranslationsNeedingWork,
     getSourceContent,
     saveTranslation,
     checkTranslations,
