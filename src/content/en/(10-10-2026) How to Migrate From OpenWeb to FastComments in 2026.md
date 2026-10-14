@@ -253,7 +253,7 @@ Comment counts on index pages use the comment count widget, single or bulk. For 
 
 **1. Create the account and configure the basics.** Sign up on fastcomments.com or eu.fastcomments.com. Set your moderation settings, word blacklist, vote style, default sort, and custom CSS in the widget customization page. Add moderators and moderation groups. If you have many admin users, support imports them for you.
 
-**2. Run a first import.** Go to <a href="https://fastcomments.com/auth/my-account/manage-data/import" target="_blank">Manage Data, Import</a>, choose OpenWeb (.csv) and upload. The import runs as a background job; the page shows row counts and status, and you receive an email when it completes (<a href="https://docs.fastcomments.com/guide-migrations.html" target="_blank">docs</a>). Each OpenWeb message ID becomes the FastComments comment ID, so re-running an import does not create duplicates.
+**2. Run a first import.** Go to <a href="https://fastcomments.com/auth/my-account/manage-data/import" target="_blank">Manage Data, Import</a>, choose OpenWeb (.csv) and upload. The import runs as a background job; the page shows row counts and status, and you receive an email when it completes (<a href="https://docs.fastcomments.com/guide-migrations.html" target="_blank">docs</a>). Each comment keeps its OpenWeb message ID as an external ID, so re-running an import updates the existing comments instead of creating duplicates.
 
 **3. Verify counts.** Compare the job's row count against your export. Open a few high-traffic URL IDs in the moderation dashboard and spot check authors, dates, vote totals and approval states. Confirm rejected comments show as spam and pending ones sit in the queue.
 
@@ -298,7 +298,7 @@ What you gain, in the same spirit: a widget that adds one small script and no ad
 
 Plan one to two weeks for a publisher with one SSO integration and a few hundred thousand comments: a day or two on the export and first import, a few days on SSO and templates, a parallel-run window, then the final import and switch. The platform already carries this scale: United Cloud runs more than ten portals and millions of comments on FastComments, and itsfoss.com moved an 88,000-comment history from another provider through the same self-service importer.
 
-FastComments imports your OpenWeb CSV export for free, helps you run OpenWeb and FastComments in parallel during the cutover, and helps with the migration itself, including threading and user matching questions. Enterprise plans include an SLA, support replies within one hour during business hours, and the option of an Isolated Cloud deployment in your own cloud account (<a href="https://docs.fastcomments.com/guide-your-own-cloud.html" target="_blank">docs</a>). Flex usage-based pricing is available for sites that want to start without a contract.
+FastComments imports your OpenWeb CSV export for free, helps you run OpenWeb and FastComments in parallel during the cutover, and helps with the migration itself, including threading and user matching questions. Enterprise plans include a 99.99% SLA and support replies within one hour during business hours. Flex usage-based pricing is available for sites that want to start without a contract.
 
 a href="https://fastcomments.com/contact-us">Write to us</a> with your export size and your SSO setup and we will come back with a plan.
 
