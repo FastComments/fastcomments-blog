@@ -69,6 +69,10 @@ Comments that are very long, or whose language can't be detected with confidence
 at. The language line under a translated comment is in the reader's language too, so a Spanish reader of an English
 comment sees "Traducido del inglés" and "Mostrar original".
 
+### Overhead
+
+The code for this new feature isn't loaded unless it's enabled, so it doesn't slow down the comment widget for our other users.
+
 ### Documentation
 
 <a href="https://docs.fastcomments.com/guide-customizations-and-configuration.html#comment-translation" target="_blank">The Comment Translation guide</a>
@@ -79,8 +83,7 @@ covers how the widget's language is chosen in the first place.
 ### In Conclusion
 
 This one came from a neighborhood association whose residents comment in English and Spanish, and who wanted both groups
-reading the same thread without asking anyone to install a browser extension or register for anything. That's a good
-description of what a comment section is for.
+reading the same thread without asking anyone to install a browser extension or register for anything.
 
 If you run a community that writes in more than one language, turn it on and tell us below how the translations read.
 
