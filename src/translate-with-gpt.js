@@ -8,7 +8,7 @@
  *
  * Environment variables:
  *   LLM_API_KEY - Required. Your LLM provider API key.
- *   LLM_MODEL - Optional. Model to use (default: openai/gpt-oss-120b-Turbo).
+ *   LLM_MODEL - Optional. Model to use (default: openai/gpt-oss-120b).
  *   LLM_BASE_URL - Optional. Chat-completions API base (default DeepInfra).
  */
 
@@ -23,7 +23,7 @@ const {
 const { hashContent, loadCache, saveCache, getCacheKey } = require('./translation-snapshot');
 
 const LLM_API_KEY = process.env.LLM_API_KEY;
-const LLM_MODEL = process.env.LLM_MODEL || 'openai/gpt-oss-120b-Turbo';
+const LLM_MODEL = process.env.LLM_MODEL || 'openai/gpt-oss-120b';
 const LLM_BASE_URL = process.env.LLM_BASE_URL || 'https://api.deepinfra.com/v1/openai';
 const LLM_ENDPOINT = `${LLM_BASE_URL.replace(/\/+$/, '')}/chat/completions`;
 
@@ -400,7 +400,7 @@ Options:
 
 Environment variables:
   LLM_API_KEY            Required. Your LLM provider API key.
-  LLM_MODEL              Optional. Model to use (default: openai/gpt-oss-120b-Turbo).
+  LLM_MODEL              Optional. Model to use (default: openai/gpt-oss-120b).
   LLM_BASE_URL           Optional. Chat-completions API base (default DeepInfra).
 
 Examples:
