@@ -14,10 +14,9 @@ You can now add credit to your FastComments account from the billing page. Credi
 
 Until now there was one way to pay for FastComments: we charged your card when an invoice came due. That's fine for
 most accounts, but not all of them. Some finance departments would rather make one payment and be done for a while.
-Some Flex customers would rather pay for a busy month ahead of time than be surprised by it. And some of you asked
-whether you could just put money on the account.
+Some Flex customers would rather pay for a busy month ahead of time than be surprised by it.
 
-Now you can. The billing page has a new **Manage Credits** button, next to **View Invoices** and **Invoice
+Now you can put money on the account. The billing page has a new **Manage Credits** button, next to **View Invoices** and **Invoice
 Settings**. It opens a **Credits** page where you can see your balance and add to it.
 
 Credit is money held on your FastComments account, in your billing currency. When an invoice is created, your credit
